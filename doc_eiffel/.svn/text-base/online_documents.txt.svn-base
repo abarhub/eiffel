@@ -1,0 +1,297 @@
+===============================================================================
+
+                       Online Eiffel Documentation
+                           by Geoff Eldridge
+                              (15 Jun 99)
+
+       see: http://www.deja.com/=dnc/[ST_rn=ps]/getdoc.xp?AN=489608637
+
+-------------------------------------------------------------------------------
+
+Online Books/Papers:
+--------------------
+
+ * Object-Oriented Software Engineering with Eiffel
+   by Jean-Marc Jezequel
+      http://www.irisa.fr/pampa/EPEE/book.html
+
+   -- (This is my pick ..)
+   -- NB: The first 4 chapters are available here in pdf format:
+   --    http://www.irisa.fr/pampa/EPEE/oosewe.pdf
+
+ * Object-Oriented Programming in Eiffel
+   by Robert Rist
+      http://www-staff.socs.uts.edu.au/~rist/eiffel/
+
+   -- There are two main sections in the Online Eiffel book which
+   -- are The language and Case study. You may read through The
+   -- language part first then look at the Case study for examples
+   -- of each topic covered in The language.
+
+ * An Invitation to Eiffel
+   by Bertrand Meyer
+      http://www.eiffel.com/doc/manuals/language/intro/
+
+   -- on-line introduction to the Eiffel method and language. This
+   -- material was derived from chapter 1, An Invitation to Eiffel,
+   -- of the book Eiffel: The Language, the official reference on
+   -- Eiffel, published by Prentice Hall and available from bookstores
+   -- as well as from ISE.
+
+ * An Eiffel Overview
+   by Richard Paige
+      http://www.elj.com/eiffel/rp/eiffel-overview.pdf
+   -- see also summary of BON:
+   --    http://www.elj.com/eiffel/rp/bon-intro.pdf
+
+ * Eiffel: An Advanced Introduction
+   by Alan A. Snyder and Brian N. Vetter
+      http://www.elj.com/eiffel/intro/
+
+ * Into Eiffel
+   by Ian Joyner
+      http://www.elj.com/eiffel/ij/into-eiffel/ij-into-eiffel.pdf
+
+ * Downloadable Eiffel Papers page:
+   collated by Roger Browne
+      http://www.eiffel.tm/papers.htm
+
+ * Principles of Eiffel
+   by Roger Browne
+      http://www.eiffel.tm/gustave/ref/principl.htm
+
+ * Why Eiffel?
+   by Todd Plessel
+      http://www.elj.com/eiffel/why-eiffel/
+
+ * Eiffel for Native Speakers of C++
+   by Patrick Doyle (C++ Report Mar 99 Issue)
+      http://www.elj.com/eiffel/cpp/cpp-report-pd/
+
+   -- [An article to help] demystify some of the major concepts
+   -- of the [Eiffel] language, including Design by Contract,
+   -- Command-Query Separation, and multiple inheritance, by
+   -- casting them in terms that C++ programmers can readily
+   -- embrace.
+
+ * Eiffel FAQ
+
+http://www.cis.ohio-state.edu/hypertext/faq/usenet/eiffel-faq/faq.html
+
+Books:
+------
+
+ * Eiffel, The Language by Bertrand Meyer
+   http://www.eiffel.com/doc/documentation.html#etl
+http://www.bestbookbuys.com/cgi-bin/bbb.cgi?searchtype=ISBN&searchparam=
+0132479257
+
+ * Object Oriented Software Construction 2nd Edition by Bertrand Meyer
+   http://www.eiffel.com/doc/oosc.html
+http://www.bestbookbuys.com/cgi-bin/bbb.cgi?searchtype=ISBN&searchparam=
+0136291554
+
+ * for more books ..
+   http://www.eiffel.com/doc/
+
+Books in the works
+------------------
+
+ * Design Patterns with Contracts
+   by Jean-Marc Jézéquel, Michel Train and Christine Mingins
+      http://www.elj.com/patterns/books/dpwc/
+      http://www.elj.com/new/9905/#990523a
+
+ * Objects Unencapsulated: Java, Eiffel, and C++??
+   by Ian Joyner
+      http://www.elj.com/oue1/
+      http://www.elj.com/new/9905/#990521a
+      http://www.elj.com/new/9905/#990519a
+
+ * Windows Programming Made Easy
+   by Glenn Maughan and Raphael Simon
+      http://www.westernport.com/windows.htm
+      http://www.elj.com/new/9905/#990518a
+
+Eiffel Langugage:
+-----------------
+
+Controlled by the Non-Profit International Consortium for Eiffel (NICE):
+
+   http://www.eiffel-nice.org/
+
+Eiffel Portability Issues:
+
+   http://www.gobo.demon.co.uk/eiffel/gobo/portability/
+
+Contributed documentation:
+
+ * Eiffel, The Language by Bertrand Meyer
+   http://www.eiffel.com/doc/documentation.html#etl
+
+ * Eiffel: The Syntax by Eric Bezault
+      http://www.gobo.demon.co.uk/eiffel/syntax/
+
+ * Eiffel Syntax Diagrams by ISE
+      ftp://eiffel.com/pub/doc/language/diagrams.ps.gz
+
+ * Eiffel Syntax Summary by Graham Perkins
+      http://www.elj.com/eiffel/syntax/summary/
+
+ * Eiffel Kernel Library Standard 1995
+      http://eiffel.com/doc/manuals/library/elks/
+      http://www.gobo.demon.co.uk/eiffel/nice/elks95/
+
+ * Summary of Kernel Classes, Features and Signatures
+   by Roger Browne
+      http://www.eiffel.tm/gustave/ref/elssum.htm
+
+ * Eiffel Gotchas
+   by Roger Browne
+      http://www.eiffel.tm/gustave/gotcha/
+
+ * Eiffel Style Guide by Bertrand Meyer (from OOSC)
+      http://eiffel.com/doc/manuals/language/style/
+
+ * Eiffel: The Reference
+      http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/
+
+   -- Roger writes .. ``Prepared by Neil Wilson as a
+   -- proposed update to Bertrand Meyer's "Eiffel The Reference" -
+   -- but NICE chose not to pursue it. Neil logged his
+   -- changes, which include some pointers to parts of
+   -- the specification worth reviewing.
+
+Some language extensions include:
+
+ * Precusor [All vendors have implemented this proposal]:
+http://www.eiffel.com/doc/manuals/technology/language/precursor/
+http://www.eiffel.com/doc/manuals/technology/language/precursor/formal.h
+tml
+
+ * [Proposed] Tuples:
+      http://eiffel.com/doc/manuals/language/tuples/page.html
+
+ * [Proposed] Creating objects of formal generic types
+      http://eiffel.com/doc/manuals/language/generic-creation/page.html
+
+ * [Proposed] Agents, introspection and iterators:
+      http://eiffel.com/doc/manuals/language/agent/page.html
+
+Eiffel Compilers:
+-----------------
+
+Eiffel Forum has a page titled ``Tools for Eiffel Developers'' here:
+
+   http://www.eiffel-forum.org/archive/tools.htm
+
+There should be a compiler there to fit your needs.
+
+Eiffel Libraries:
+-----------------
+
+The Eiffel Forum Archive:
+
+   http://www.eiffel-forum.org/archive/category.htm
+
+Another collection with commercial libraries:
+
+   http://www.cetus-links.org/oo_eiffel_libraries.html
+
+Two libraries that you can learn much from are:
+
+  * Eric Bezault's GOBO Eiffel Project (includes an Eiffel
+    lex, yacc and data structures libraries):
+
+       http://www.gobo.demon.co.uk/eiffel/gobo/
+
+  * Pylon: a compact foundation library for writing portable
+    Eiffel software and libraries.
+
+       http://www.altsoft.demon.co.uk/free/pylon.html
+
+    An excellent description of the Eiffel Conventions used
+    in Pylon is provided here:
+
+       http://www.altsoft.demon.co.uk/doc/pylonA.html
+
+Eiffel GUI Libraries for SmallEiffel:
+
+   http://www.deja.com/=dnc/[ST_rn=ps]/getdoc.xp?AN=463286320
+
+Eiffel Projects:
+----------------
+
+   http://www.elj.com/eiffel/projects/
+
+   http://www.eiffel.com/eiffel/projects/list.html
+   http://www.eiffel.com/eiffel/projects/hp/creel.html
+
+Web sites?:
+-----------
+
+ * Eiffel Forum:
+      http://www.eiffel-forum.org/
+
+ * elj.com (Eiffel Liberty):
+      http://www.elj.com/
+      -- to all things Eiffel, plus a bit more ..
+      -- There are dozens of sites to explore from elj.com
+
+ * Cetus Links - Eiffel Collection collated by Loryn Jenkins
+      http://www.cetus-links.org/oo_eiffel.html
+
+[Some other sites/papers ..]
+----------------------------
+
+ * Getting acquainted with Eiffel
+   by Cameron Laird and Kathryn Soraiz (in SunWorld's Nov 98 Issue)
+      http://www.sunworld.com/swol-11-1998/swol-11-regex.html#2
+
+ * Eiffel<=>C++ Terminology Map
+   by Loryn Jenkins
+      http://www.elj.com/eiffel/lj/eiffel-cpp-map/
+
+ * Eiffel vs C++ (in 1989)
+   by Bertrand Meyer
+      http://www.elj.com/eiffel/bm/eiffelvscpp89/
+
+ * Design by Contract
+   by Todd Plessel
+      http://www.elj.com/eiffel/dbc/
+
+ * C++?? Critique (Version 3)
+   by Ian Joyner
+      http://www.elj.com/cppcv3/
+      -- an updated book version is due mid-year from Prentice-Hall
+      -- see above
+
+ * Collective Hypnosis: Avoiding the Second Historic Mistake
+   by Bertrand Meyer
+      http://www.elj.com/eiffel/bm/mistake/
+
+ * A critique of Java
+   by Harold Thimbleby
+      http://www.cs.mdx.ac.uk/harold/papers/javaspae.html
+
+ * Bertrand Meyer (Eiffel's main designer)
+      http://www.elj.com/eiffel/bm/
+
+ * Ian Joyner
+      http://www.elj.com/eiffel/ij/
+      -- particularly - http://www.elj.com/eiffel/ij/correctness/
+
+Finally, for fun:
+-----------------
+
+  * Academic Programmers - A Spotter's Guide
+    by Pete Fenelon
+    http://www.ee.ryerson.ca/~elf/hack/academic.html
+
+Hope this helps ..
+
+Geoff Eldridge
+
+-- geoff@elj.com
+
+===============================================================================

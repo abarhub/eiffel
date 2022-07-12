@@ -1,0 +1,45 @@
+<!DOCTYPE classe SYSTEM "..\..\..\test_unitaire\verif.dtd">
+<classe nom="INTEGER">
+<liste_verification>
+<attribut_conflit nom_classe="INTEGER">
+<nom_feature nom="i" />
+<position nom_fichier="test\simple\test3\INTEGER.e" x="5" y="19" />
+</attribut_conflit>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\INTEGER.e" x="5" y="21" />
+</classe_existe>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\INTEGER.e" x="5" y="30" />
+</classe_existe>
+<attribut_conflit nom_classe="INTEGER">
+<nom_feature nom="i" />
+<position nom_fichier="test\simple\test3\INTEGER.e" x="9" y="19" />
+</attribut_conflit>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\INTEGER.e" x="9" y="21" />
+</classe_existe>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\INTEGER.e" x="9" y="30" />
+</classe_existe>
+<attribut_conflit nom_classe="INTEGER">
+<nom_feature nom="i" />
+<position nom_fichier="test\simple\test3\INTEGER.e" x="13" y="19" />
+</attribut_conflit>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\INTEGER.e" x="13" y="21" />
+</classe_existe>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\INTEGER.e" x="13" y="30" />
+</classe_existe>
+<attribut_conflit nom_classe="INTEGER">
+<nom_feature nom="i" />
+<position nom_fichier="test\simple\test3\INTEGER.e" x="17" y="19" />
+</attribut_conflit>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\INTEGER.e" x="17" y="21" />
+</classe_existe>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\INTEGER.e" x="17" y="30" />
+</classe_existe>
+</liste_verification>
+</classe>

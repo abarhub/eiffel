@@ -1,0 +1,1579 @@
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+	java -classpath test_unitaire\junit.jar;.;E:\java\xerces-2_5_0\xercesImpl.jar;E:\java\xerces-2_5_0\xmlParserAPIs.jar;c:\antlr-2.7.3\antlr.jar -ea compiler.Eiffel
+Compilation de test\parser\test_exemple\fibonacci.ace
+++++++++++++++++++++++++
+classe racine:fibonacci
+----------------------
+parse de fibonacci.e
+parse de any.e
+parse de INTEGER.e
+fin du parsing
+parse de PLATFORM.e
+fin du parsing
+parse de INTEGER_REF.e
+fin du parsing
+parse de DOUBLE.e
+fin du parsing
+parse de BOOLEAN.e
+fin du parsing
+parse de REAL.e
+fin du parsing
+parse de STRING.e
+fin du parsing
+parse de NUMBER.e
+fin du parsing
+parse de NUMBER_TOOLS.e
+fin du parsing
+parse de CHARACTER.e
+fin du parsing
+parse de GENERAL.e
+fin du parsing
+parse de NUMERIC.e
+fin du parsing
+parse de COMPARABLE.e
+fin du parsing
+parse de DOUBLE_REF.e
+fin du parsing
+parse de NATIVE_ARRAY.e
+fin du parsing
+parse de BOOLEAN_REF.e
+fin du parsing
+parse de REAL_REF.e
+fin du parsing
+parse de HASHABLE.e
+fin du parsing
+parse de POINTER.e
+fin du parsing
+parse de TEXT_FILE_READ.e
+fin du parsing
+parse de ARRAY.e
+fin du parsing
+parse de COLLECTION.e
+fin du parsing
+parse de ITERATOR.e
+fin du parsing
+parse de ITERATOR_ON_STRING.e
+fin du parsing
+parse de ABSTRACT_INTEGER.e
+fin du parsing
+parse de ABSTRACT_FRACTION.e
+fin du parsing
+parse de SMALL_INTEGER.e
+fin du parsing
+parse de LARGE_POSITIVE_INTEGER.e
+fin du parsing
+parse de LARGE_NEGATIVE_INTEGER.e
+fin du parsing
+parse de INTEGER_FRACTION.e
+fin du parsing
+parse de NUMBER_FRACTION.e
+fin du parsing
+parse de FIXED_ARRAY.e
+fin du parsing
+parse de INPUT_STREAM.e
+fin du parsing
+parse de CHARACTER_REF.e
+fin du parsing
+parse de STD_INPUT_OUTPUT.e
+fin du parsing
+parse de STD_INPUT.e
+fin du parsing
+parse de STD_OUTPUT.e
+fin du parsing
+parse de STD_ERROR.e
+fin du parsing
+parse de OUTPUT_STREAM.e
+fin du parsing
+parse de FILE_TOOLS.e
+fin du parsing
+parse de SYSTEM.e
+fin du parsing
+parse de SAFE_EQUAL.e
+fin du parsing
+parse de POINTER_REF.e
+fin du parsing
+parse de ARRAYED_COLLECTION.e
+fin du parsing
+parse de ITERATOR_ON_COLLECTION.e
+fin du parsing
+parse de LARGE_INTEGER.e
+fin du parsing
+parse de TIME.e
+fin du parsing
+parse de CLOCK.e
+fin du parsing
+parse de TIME_IN_SOME_LANGUAGE.e
+fin du parsing
+parse de MICROSECOND_TIME.e
+fin du parsing
+parse de MEMO.e
+fin du parsing
+parse de BASIC_TIME.e
+fin du parsing
+Classes chargees:
+0:FIBONACCI
+1:ANY
+2:NONE
+3:INTEGER
+4:PLATFORM
+5:INTEGER_REF
+6:DOUBLE
+7:BOOLEAN
+8:REAL
+9:STRING
+10:NUMBER
+11:NUMBER_TOOLS
+12:CHARACTER
+13:GENERAL
+14:NUMERIC
+15:COMPARABLE
+16:DOUBLE_REF
+17:NATIVE_ARRAY
+18:BOOLEAN_REF
+19:REAL_REF
+20:HASHABLE
+21:POINTER
+22:TEXT_FILE_READ
+23:ARRAY
+24:COLLECTION
+25:ITERATOR
+26:ITERATOR_ON_STRING
+27:ABSTRACT_INTEGER
+28:ABSTRACT_FRACTION
+29:SMALL_INTEGER
+30:LARGE_POSITIVE_INTEGER
+31:LARGE_NEGATIVE_INTEGER
+32:INTEGER_FRACTION
+33:NUMBER_FRACTION
+34:FIXED_ARRAY
+35:INPUT_STREAM
+36:CHARACTER_REF
+37:STD_INPUT_OUTPUT
+38:STD_INPUT
+39:STD_OUTPUT
+40:STD_ERROR
+41:OUTPUT_STREAM
+42:FILE_TOOLS
+43:SYSTEM
+44:SAFE_EQUAL
+45:POINTER_REF
+46:ARRAYED_COLLECTION
+47:ITERATOR_ON_COLLECTION
+48:LARGE_INTEGER
+49:TIME
+50:CLOCK
+51:TIME_IN_SOME_LANGUAGE
+52:MICROSECOND_TIME
+53:MEMO
+54:BASIC_TIME
+calcul de :FIBONACCI(0)FIBONACCI
+attributs0 de la classe FIBONACCI
+herite de ANY
+attributs0 de la classe ANY
+herit(1,4)
+herite de PLATFORM
+attributs0 de la classe PLATFORM
+herit(4,13)
+herite de GENERAL
+attributs0 de la classe GENERAL
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+i=39
+i=40
+i=41
+i=42
+i=43
+i=44
+i=45
+i=46
+i=47
+i=48
+i=49
+i=50
+i=51
+i=52
+i=53
+i=54
+i=55
+i=56
+i=57
+i=58
+i=59
+i=60
+i=61
+i=62
+i=63
+i=64
+i=65
+i=66
+i=67
+i=68
+i=69
+i=70
+i=71
+i=72
+i=73
+i=74
+i=75
+i=76
+i=77
+i=78
+i=79
+i=80
+i=81
+i=82
+i=83
+i=84
+i=85
+i=86
+i=87
+i=88
+i=89
+i=90
+i=91
+i=92
+i=93
+Fin des attributs de la classe GENERAL
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+Fin des attributs de la classe PLATFORM
+Fin des attributs de la classe ANY
+i=0
+i=1
+Fin des attributs de la classe FIBONACCI
+calcul de :ANY(1)FIBONACCI
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :INTEGER(3)FIBONACCI
+attributs0 de la classe INTEGER
+herit(3,5)
+herite de INTEGER_REF
+attributs0 de la classe INTEGER_REF
+herit(5,14)
+herite de NUMERIC
+attributs0 de la classe NUMERIC
+herit(14,20)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe HASHABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+Fin des attributs de la classe NUMERIC
+herit(5,15)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+herit(15,1)
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+Fin des attributs de la classe COMPARABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+Fin des attributs de la classe INTEGER_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+Fin des attributs de la classe INTEGER
+calcul de :PLATFORM(4)FIBONACCI
+attributs0 de la classe PLATFORM
+Fin des attributs de la classe PLATFORM
+calcul de :INTEGER_REF(5)FIBONACCI
+attributs0 de la classe INTEGER_REF
+Fin des attributs de la classe INTEGER_REF
+calcul de :DOUBLE(6)FIBONACCI
+attributs0 de la classe DOUBLE
+herit(6,16)
+herite de DOUBLE_REF
+attributs0 de la classe DOUBLE_REF
+herit(16,20)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+herit(16,14)
+herite de NUMERIC
+attributs0 de la classe NUMERIC
+Fin des attributs de la classe NUMERIC
+herit(16,15)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+Fin des attributs de la classe DOUBLE_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+i=39
+i=40
+i=41
+i=42
+i=43
+Fin des attributs de la classe DOUBLE
+calcul de :BOOLEAN(7)FIBONACCI
+attributs0 de la classe BOOLEAN
+herit(7,18)
+herite de BOOLEAN_REF
+attributs0 de la classe BOOLEAN_REF
+herit(18,1)
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+Fin des attributs de la classe BOOLEAN_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+Fin des attributs de la classe BOOLEAN
+calcul de :REAL(8)FIBONACCI
+attributs0 de la classe REAL
+herit(8,19)
+herite de REAL_REF
+attributs0 de la classe REAL_REF
+herit(19,20)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+herit(19,14)
+herite de NUMERIC
+attributs0 de la classe NUMERIC
+Fin des attributs de la classe NUMERIC
+herit(19,15)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+Fin des attributs de la classe REAL_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+Fin des attributs de la classe REAL
+calcul de :STRING(9)FIBONACCI
+attributs0 de la classe STRING
+herit(9,20)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+herit(9,15)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+i=39
+i=40
+i=41
+i=42
+i=43
+i=44
+i=45
+i=46
+i=47
+i=48
+i=49
+i=50
+i=51
+i=52
+i=53
+i=54
+i=55
+i=56
+i=57
+i=58
+i=59
+i=60
+i=61
+i=62
+i=63
+i=64
+i=65
+i=66
+i=67
+i=68
+i=69
+i=70
+i=71
+i=72
+i=73
+i=74
+i=75
+i=76
+i=77
+i=78
+i=79
+i=80
+i=81
+i=82
+i=83
+i=84
+i=85
+i=86
+i=87
+i=88
+i=89
+i=90
+i=91
+i=92
+i=93
+i=94
+i=95
+i=96
+i=97
+i=98
+i=99
+i=100
+i=101
+i=102
+i=103
+Fin des attributs de la classe STRING
+calcul de :NUMBER(10)FIBONACCI
+attributs0 de la classe NUMBER
+herit(10,20)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+i=39
+i=40
+i=41
+i=42
+i=43
+i=44
+i=45
+i=46
+i=47
+i=48
+i=49
+i=50
+i=51
+i=52
+i=53
+i=54
+i=55
+i=56
+i=57
+i=58
+i=59
+i=60
+i=61
+i=62
+i=63
+i=64
+i=65
+i=66
+i=67
+i=68
+i=69
+i=70
+i=71
+i=72
+i=73
+i=74
+i=75
+i=76
+i=77
+i=78
+i=79
+i=80
+i=81
+i=82
+i=83
+i=84
+i=85
+i=86
+i=87
+i=88
+i=89
+i=90
+i=91
+i=92
+i=93
+i=94
+i=95
+i=96
+i=97
+i=98
+i=99
+Fin des attributs de la classe NUMBER
+calcul de :NUMBER_TOOLS(11)FIBONACCI
+attributs0 de la classe NUMBER_TOOLS
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+Fin des attributs de la classe NUMBER_TOOLS
+calcul de :CHARACTER(12)FIBONACCI
+attributs0 de la classe CHARACTER
+herit(12,36)
+herite de CHARACTER_REF
+attributs0 de la classe CHARACTER_REF
+herit(36,20)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+herit(36,15)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+Fin des attributs de la classe CHARACTER_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+Fin des attributs de la classe CHARACTER
+calcul de :GENERAL(13)FIBONACCI
+attributs0 de la classe GENERAL
+Fin des attributs de la classe GENERAL
+calcul de :NUMERIC(14)FIBONACCI
+attributs0 de la classe NUMERIC
+Fin des attributs de la classe NUMERIC
+calcul de :COMPARABLE(15)FIBONACCI
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+calcul de :DOUBLE_REF(16)FIBONACCI
+attributs0 de la classe DOUBLE_REF
+Fin des attributs de la classe DOUBLE_REF
+calcul de :NATIVE_ARRAY(17)FIBONACCI
+attributs0 de la classe NATIVE_ARRAY
+herit(17,44)
+herite de SAFE_EQUAL
+attributs0 de la classe SAFE_EQUAL
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe SAFE_EQUAL
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+Fin des attributs de la classe NATIVE_ARRAY
+calcul de :BOOLEAN_REF(18)FIBONACCI
+attributs0 de la classe BOOLEAN_REF
+Fin des attributs de la classe BOOLEAN_REF
+calcul de :REAL_REF(19)FIBONACCI
+attributs0 de la classe REAL_REF
+Fin des attributs de la classe REAL_REF
+calcul de :HASHABLE(20)FIBONACCI
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+calcul de :POINTER(21)FIBONACCI
+attributs0 de la classe POINTER
+herit(21,45)
+herite de POINTER_REF
+attributs0 de la classe POINTER_REF
+herit(45,20)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+i=0
+i=1
+i=2
+Fin des attributs de la classe POINTER_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+Fin des attributs de la classe POINTER
+calcul de :TEXT_FILE_READ(22)FIBONACCI
+attributs0 de la classe TEXT_FILE_READ
+herit(22,35)
+herite de INPUT_STREAM
+attributs0 de la classe INPUT_STREAM
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+Fin des attributs de la classe INPUT_STREAM
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+Fin des attributs de la classe TEXT_FILE_READ
+calcul de :ARRAY(23)FIBONACCI
+attributs0 de la classe ARRAY
+herit(23,46)
+herite de ARRAYED_COLLECTION
+attributs0 de la classe ARRAYED_COLLECTION
+herit(46,24)
+herite de COLLECTION
+attributs0 de la classe COLLECTION
+herit(24,44)
+herite de SAFE_EQUAL
+attributs0 de la classe SAFE_EQUAL
+Fin des attributs de la classe SAFE_EQUAL
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+i=39
+i=40
+i=41
+i=42
+i=43
+i=44
+i=45
+i=46
+i=47
+Fin des attributs de la classe COLLECTION
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+Fin des attributs de la classe ARRAYED_COLLECTION
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+Fin des attributs de la classe ARRAY
+calcul de :COLLECTION(24)FIBONACCI
+attributs0 de la classe COLLECTION
+Fin des attributs de la classe COLLECTION
+calcul de :ITERATOR(25)FIBONACCI
+attributs0 de la classe ITERATOR
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+Fin des attributs de la classe ITERATOR
+calcul de :ITERATOR_ON_STRING(26)FIBONACCI
+attributs0 de la classe ITERATOR_ON_STRING
+herit(26,25)
+herite de ITERATOR
+attributs0 de la classe ITERATOR
+Fin des attributs de la classe ITERATOR
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+Fin des attributs de la classe ITERATOR_ON_STRING
+calcul de :ABSTRACT_INTEGER(27)FIBONACCI
+attributs0 de la classe ABSTRACT_INTEGER
+herit(27,10)
+herite de NUMBER
+attributs0 de la classe NUMBER
+Fin des attributs de la classe NUMBER
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+Fin des attributs de la classe ABSTRACT_INTEGER
+calcul de :ABSTRACT_FRACTION(28)FIBONACCI
+attributs0 de la classe ABSTRACT_FRACTION
+herit(28,10)
+herite de NUMBER
+attributs0 de la classe NUMBER
+Fin des attributs de la classe NUMBER
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+Fin des attributs de la classe ABSTRACT_FRACTION
+calcul de :SMALL_INTEGER(29)FIBONACCI
+attributs0 de la classe SMALL_INTEGER
+herit(29,27)
+herite de ABSTRACT_INTEGER
+attributs0 de la classe ABSTRACT_INTEGER
+Fin des attributs de la classe ABSTRACT_INTEGER
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+i=39
+i=40
+i=41
+i=42
+i=43
+i=44
+i=45
+i=46
+i=47
+i=48
+i=49
+i=50
+Fin des attributs de la classe SMALL_INTEGER
+calcul de :LARGE_POSITIVE_INTEGER(30)FIBONACCI
+attributs0 de la classe LARGE_POSITIVE_INTEGER
+herit(30,48)
+herite de LARGE_INTEGER
+attributs0 de la classe LARGE_INTEGER
+herit(48,27)
+herite de ABSTRACT_INTEGER
+attributs0 de la classe ABSTRACT_INTEGER
+Fin des attributs de la classe ABSTRACT_INTEGER
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+Fin des attributs de la classe LARGE_INTEGER
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+i=39
+i=40
+i=41
+i=42
+i=43
+i=44
+Fin des attributs de la classe LARGE_POSITIVE_INTEGER
+calcul de :LARGE_NEGATIVE_INTEGER(31)FIBONACCI
+attributs0 de la classe LARGE_NEGATIVE_INTEGER
+herit(31,48)
+herite de LARGE_INTEGER
+attributs0 de la classe LARGE_INTEGER
+Fin des attributs de la classe LARGE_INTEGER
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+i=39
+i=40
+i=41
+i=42
+i=43
+i=44
+Fin des attributs de la classe LARGE_NEGATIVE_INTEGER
+calcul de :INTEGER_FRACTION(32)FIBONACCI
+attributs0 de la classe INTEGER_FRACTION
+herit(32,28)
+herite de ABSTRACT_FRACTION
+attributs0 de la classe ABSTRACT_FRACTION
+Fin des attributs de la classe ABSTRACT_FRACTION
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+i=39
+i=40
+Fin des attributs de la classe INTEGER_FRACTION
+calcul de :NUMBER_FRACTION(33)FIBONACCI
+attributs0 de la classe NUMBER_FRACTION
+herit(33,28)
+herite de ABSTRACT_FRACTION
+attributs0 de la classe ABSTRACT_FRACTION
+Fin des attributs de la classe ABSTRACT_FRACTION
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+i=27
+i=28
+i=29
+i=30
+i=31
+i=32
+i=33
+i=34
+i=35
+i=36
+i=37
+i=38
+Fin des attributs de la classe NUMBER_FRACTION
+calcul de :FIXED_ARRAY(34)FIBONACCI
+attributs0 de la classe FIXED_ARRAY
+herit(34,46)
+herite de ARRAYED_COLLECTION
+attributs0 de la classe ARRAYED_COLLECTION
+Fin des attributs de la classe ARRAYED_COLLECTION
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+i=20
+i=21
+i=22
+i=23
+i=24
+i=25
+i=26
+Fin des attributs de la classe FIXED_ARRAY
+calcul de :INPUT_STREAM(35)FIBONACCI
+attributs0 de la classe INPUT_STREAM
+Fin des attributs de la classe INPUT_STREAM
+calcul de :CHARACTER_REF(36)FIBONACCI
+attributs0 de la classe CHARACTER_REF
+Fin des attributs de la classe CHARACTER_REF
+calcul de :STD_INPUT_OUTPUT(37)FIBONACCI
+attributs0 de la classe STD_INPUT_OUTPUT
+herit(37,38)
+herite de STD_INPUT
+attributs0 de la classe STD_INPUT
+herit(38,35)
+herite de INPUT_STREAM
+attributs0 de la classe INPUT_STREAM
+Fin des attributs de la classe INPUT_STREAM
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+Fin des attributs de la classe STD_INPUT
+herit(37,39)
+herite de STD_OUTPUT
+attributs0 de la classe STD_OUTPUT
+herit(39,41)
+herite de OUTPUT_STREAM
+attributs0 de la classe OUTPUT_STREAM
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+i=18
+i=19
+Fin des attributs de la classe OUTPUT_STREAM
+i=0
+i=1
+i=2
+i=3
+i=4
+Fin des attributs de la classe STD_OUTPUT
+
+** error 1 ** deleting run5

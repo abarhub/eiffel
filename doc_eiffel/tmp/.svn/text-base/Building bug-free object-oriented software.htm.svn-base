@@ -1,0 +1,490 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://beth.canberra.edu.au/u4604/Design.html -->
+<HTML><HEAD><TITLE>Building bug-free object-oriented software</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff><A href="http://beth.canberra.edu.au/objectcurrents/"><IMG 
+src="" border=0></A> 
+<H2>Building bug-free O-O software: <BR>An introduction to Design by 
+Contract</H2><STRONG><A href="mailto:info@eiffel.com">Bertrand 
+Meyer</A></STRONG> <BR><A href="http://www.eiffel.com/general/ise.html">ISE 
+Inc.</A>, Santa Barbara, California 
+<P>
+<HR>
+
+<BLOCKQUOTE>
+  <H3>OVERVIEW</H3>The notion of Design by Contract is central in the systematic 
+  approach to object-oriented software construction, as embodied in the Eiffel 
+  method. This article presents the key ideas. 
+  <P>I should perhaps preface the description by stating that in my opinion the 
+  techniques outlined below are <B><I>as important as anything else in object 
+  technology</B></I>: as important as classes, objects, inheritance, 
+  polymorphism and dynamic binding (which they complement). This may appear 
+  surprising at first, since only a subset of the O-O literature - including the 
+  references at the end of this paper - has described then in depth; but in my 
+  experience the use of Design by Contract provides the software developer with 
+  an order-of-magnitude improvement over previous techniques. 
+  <P>The reader is urged to go beyond the theoretical understanding provided by 
+  this paper and try the power of the ideas by using the <A 
+  href="http://www.eiffel.com/eiffel">Eiffel environment</A>, which is their 
+  direct implementation. 
+  <H3>1 - INTRODUCTION </H3>
+  <P>When thinking of new software development methods and tools, many people 
+  tend to view <I>productivity</I> as the major expected benefit. For 
+  object-oriented technology, this is, I believe, inappropriate. Who really 
+  cares about the number of lines programmers churn out each month? What matters 
+  is how good these lines are. In other words the focus should be less on 
+  productivity than on <I>quality</I>. Better software methods, languages and 
+  tools should also better productivity, of course, but mainly as a by-product 
+  of improved quality. 
+  <P>In the words of K. Fujino, Vice President of NEC Corporation's C&amp;C 
+  Software Development Group: 
+  <P>
+  <DL>
+    <DD><I>When quality is pursued, productivity follows</I> <BR><BR>(Quoted in 
+    Carlo Ghezzi, Dino Mandrioli and Mehdi Jazayeri, <I>Software 
+    Engineering</I>, Prentice Hall 1991.) </DD></DL>
+  <P>A major component of quality in software is reliability: a system's ability 
+  to perform its job according to the specification </I>(<I>correctness</I>) and 
+  to handle abnormal situations </I>(<I>robustness</I>). Put more simply, 
+  reliability is the absence of bugs. 
+  <P>Reliability, although desirable in software construction regardless of the 
+  approach, is particularly important in the object-oriented method because of 
+  the special role given by the method to reusability</I>: unless we can obtain 
+  reusable software components whose correctness we can trust much more than we 
+  trust the correctness of usual run-of-the-mill software, reusability is a 
+  losing proposition. 
+  <P>How can we build reliable object-oriented software? The answer has several 
+  components. Static typing, for example, is a major help for catching 
+  inconsistencies before they have had time to become bugs. Such a technique as 
+  garbage collection, although sometimes dismissed as an implementation detail, 
+  is actually essential too, removing the specter of devious memory management 
+  errors. By itself, reusability also helps: if you are able to reuse component 
+  libraries produced and </I>(presumably</I>) validated by a reputable outside 
+  source, rather than developing your own solution for every single problem you 
+  encounter, you can start trusting part of the software no less than you trust 
+  the machine on which it runs. In effect, the reusable libraries become part of 
+  the "hardware-software machine" </I>(hardware, operating system, 
+  compiler</I>). 
+  <P>But this is not enough. To be sure that our object-oriented software will 
+  perform properly, we need a systematic approach to specifying and implementing 
+  object-oriented software elements and their relations in a software system. 
+  This article introduces such a method, known as Design by Contract. Under the 
+  Design by Contract theory, a software system is viewed as a set of 
+  communicating components whose interaction is based on precisely defined 
+  specifications of the mutual obligations -- contracts. 
+  <P>The benefits of Design by Contract include the following: 
+  <UL>
+    <LI>A better understanding of the object-oriented method and, more 
+    generally, of software construction. 
+    <LI>A systematic approach to building bug-free object-oriented systems. 
+    <LI>An effective framework for debugging, testing and, more generally, 
+    quality assurance. 
+    <LI>A method for documenting software components. 
+    <LI>Better understanding and control of the inheritance mechanism. 
+    <LI>A technique for dealing with abnormal cases, leading to a safe and 
+    effective language construct for exception handling. </LI></UL>
+  <P>The ideas developed below are part of <A 
+  href="http://www.eiffel.com/eiffel">Eiffel</A> [<A 
+  href="http://www.eiffel.com/documentation.html#oosc">1</A>, <A 
+  href="http://www.eiffel.com/documentation.html#etl">3</A>] which the reader is 
+  urged to view here not so much as a programming language but rather as a 
+  software development method. A longer exposition of the approach may be found 
+  in a recent article [2]. 
+  <H3>2 - SPECIFICATION AND DEBUGGING </H3>
+  <P>As a key step towards improving software reliability, it is important to 
+  realize that the first and perhaps most difficult problem is to define as 
+  precisely as possible, for each software element, what it is supposed to do. 
+  The immediate objection is that specifying a module's purpose will not ensure 
+  that it will achieve that specification</I>; this is obviously true, but: 
+  <UL>
+    <LI>One may reverse this proposition and note that if we don't state what a 
+    module should do, there is little likelihood that it will do it. (The law of 
+    excluded miracles.) 
+    <LI>In practice, it is amazing to see how far just stating what a module 
+    should do goes towards helping to ensure that it does it. </LI></UL>As will be 
+  seen below, the presence of a specification, even if it does not fully 
+  guarantee the module's correctness, is a good basis for systematic testing and 
+  debugging. 
+  <P>The Design by Contract theory, then, suggests associating a specification 
+  with every software element. These specifications </I>(or contracts</I>) 
+  govern the interaction of the element with the rest of the world. 
+  <P>This presentation will not, however, advocate the use of full formal 
+  specifications. Although the work on formal specifications in general is 
+  attractive, we settle for an approach in which specifications are not 
+  necessarily exhaustive. This has the advantage that the specification language 
+  is embedded in the design and programming language </I>(here Eiffel</I>), 
+  whereas formal specification languages are typically non-executable or, if 
+  they are executable, can only be used for prototypes. Here our criteria are 
+  more demanding: we want our language to be used for practical commercial 
+  development and hence to yield efficient implementation. This preserves a key 
+  property of a well-understood object-oriented process</I>: its 
+  <B>seamlessness</I>, which makes it possible to use a single notation and a 
+  single set of concepts throughout the software lifecycle, from analysis to 
+  implementation and maintenance, ensuring better mapping from solution to 
+  problem and hence, among other benefits, smoother evolution. 
+  <H3>3 - THE NOTION OF CONTRACT </H3>
+  <P>In human affairs, contracts are written between two parties when one of 
+  them </I>(the <I>supplier</I>) performs some task for the other </I>(the 
+  <I>client</I>). Each party expects some benefits from the contract, and 
+  accepts some obligations in return. Usually, what one of the parties sees as 
+  an obligation is a benefit for the other. The aim of the contract document is 
+  to spell out these benefits and obligations. 
+  <P>A tabular form such as the following </I>(illustrating a contract between 
+  an airline and a customer</I>) is often convenient for expressing the terms of 
+  such a contract: 
+  <TABLE border=1>
+    <TBODY>
+    <TR>
+      <TH></TH>
+      <TH>Obligations</TH>
+      <TH>Benefits</TH></TR>
+    <TR>
+      <TD>Client</TD>
+      <TD>Be at the Santa Barbara airport at least 5 minutes before scheduled 
+        departure time. Bring only acceptable baggage. Pay ticket price. </TD>
+      <TD>Reach Chicago. </TD></TR>
+    <TR>
+      <TD>Supplier </TD>
+      <TD>Bring customer to Chicago. </TD>
+      <TD>No need to carry passenger who is late, has unacceptable baggage, or 
+        has not paid ticket price. </TD></TR></TBODY></TABLE>
+  <P>A contract document protects both the client, by specifying how much should 
+  be done, and the supplier, by stating that the supplier is not liable for 
+  failing to carry out tasks outside of the specified scope. 
+  <P>The same ideas apply to software. Consider a software element <I>E</I>. To 
+  achieve its purpose </I>(fulfil its own contract</I>), <I>E</I> uses a certain 
+  strategy, which involves a number of subtasks, <I>t<FONT size=-2>1</FONT>, ... 
+  t<FONT size=-2>n</FONT></I>. If subtask <I>t<FONT size=-2>i</FONT></I> is 
+  non-trivial, it will be achieved by calling a certain routine <I>R</I>. In 
+  other words, <I>E</I> contracts out the subtask to <I>R</I>. Such a situation 
+  should be governed by a well-defined roster of obligations and benefits -- a 
+  contract. 
+  <P>Assume for example that <I>t<FONT size=-2>i</FONT></I> is the task of 
+  inserting a certain element into a dictionary </I>(a table where each element 
+  is identified by a certain character string used as key</I>) of bounded 
+  capacity. The contract will be: 
+  <TABLE border=1>
+    <TBODY>
+    <TR>
+      <TH></TH>
+      <TH>Obligations</TH>
+      <TH>Benefits</TH></TR>
+    <TR>
+      <TD>Client</TD>
+      <TD>Make sure table is not full and key is a non-empty string. </TD>
+      <TD>Get updated table where the given element now appears, associated 
+        with the given key. </TD></TR>
+    <TR>
+      <TD>Supplier </TD>
+      <TD>Record given element in table, associated with given key. </TD>
+      <TD>No need to do anything if table is full, or key is empty string. 
+    </TD></TR></TBODY></TABLE>
+  <P>This contract governs the relations between the routine and any potential 
+  caller. It contains the most important information that can be given about the 
+  routine</I>: what each party in the contract must guarantee for a correct 
+  call, and what each party is entitled to in return. 
+  <P>So important indeed is this information that we cannot remain satisfied 
+  with an informal specification of the contract as above. In the spirit of 
+  seamlessness </I>(encouraging us to include every relevant information, at all 
+  levels, in a single software text</I>), we should equip the routine text with 
+  a listing of the appropriate conditions. Assuming the routine is called 
+  <I>put</I>, it will look as follows in Eiffel syntax, as part of a generic 
+  class <I>DICTIONARY </I>[<I>ELEMENT</I>]: <PRE><I>
+put </I>(<I>x</I>:<I> ELEMENT</I>;<I> key</I>:<I> STRING</I>)<I> <B>is</B>
+</I>-- Insert <I>x</I> so that it will be retrievable through <I>key</I>.
+<I><B>require</B>
+count &lt;= capacity</I>;<I>
+<B>not</B> key.empty
+<B>do</B>
+</I>... Some insertion algorithm ...<I>
+<B>ensure</B>
+has </I>(<I>x</I>);<I>
+item </I>(<I>key</I>)<I> = x</I>;<I>
+count = <B>old</B> count + 1
+<B>end</B></I>
+</PRE>
+  <P>The <B><I>require</I></B> clause introduces an input condition, or 
+  precondition; the <B><I>ensure</I></B> clause introduces an output condition, 
+  or postcondition. Both of these conditions are examples of assertions, or 
+  logical conditions (contract clauses) associated with software elements. In 
+  the precondition, <I>count</I> is the current number of elements and 
+  <I>capacity</I> is the maximum number; in the postcondition, <I>has</I> is the 
+  boolean query which tells whether a certain element is present, and 
+  <I>item</I> returns the element associated with a certain key. The notation 
+  <I><B>old</B> count</I> refers to the value of <I>count</I> on entry to the 
+  routine. 
+  <H3>4 - CONTRACTS IN ANALYSIS </H3>
+  <P>The above example is extracted from a routine describing an implementation 
+  (although the notion of dictionary is in fact meaningful independently of any 
+  implementation concern). But the concepts are just as interesting at the 
+  analysis level. Imagine for example a model of a chemical plant, with classes 
+  such as <I>TANK</I>, <I>PIPE</I>, <I>VALVE</I>, <I>CONTROL_ROOM</I>. Each one 
+  of these classes describes a certain data abstraction -- a certain type of 
+  real-world objects, characterized by the applicable features (operations). For 
+  example, <I>TANK</I> may have the following features: 
+  <UL>
+    <LI>Yes/no queries: <I>is_empty, is_full...</I> 
+    <LI>Other queries: <I>in_valve, out_valve</I> (both of type <I>VALVE</I>), 
+    <I>gauge_reading</I>, <I>capacity</I>... 
+    <LI>Commands: <I>fill, empty, ...</I></I> </LI></UL>
+  <P>Then to characterize a command such as <I>fill</I> we may use a 
+  precondition and postcondition as above: <PRE><I>fill <B>is</B>
+</I>-- Fill tank with liquid<I>
+<B>require</B>
+in_valve.open</I>;<I>
+out_valve.closed
+<B>deferred</B>	</I>-- i.e., no implementation<I>
+<B>ensure</B>
+in_valve.closed</I>;<I>
+out_valve.closed</I>;<I>
+is_full
+<B>end</B></I>
+</PRE>
+  <P>This style of analysis avoids a classic dilemma of analysis and 
+  specification: either you use a programming notation and run the risk of 
+  making premature implementation commitments; or you stick with a higher-level 
+  notation ("bubbles and arrows") and you must remain vague, forsaking one of 
+  the major benefit of the analysis process, the ability to state and clarify 
+  delicate properties of the system. Here the notation is precise (thanks to the 
+  assertion mechanism, which may be used to capture the semantics of various 
+  operations) but avoids any implementation commitment. (There is no danger of 
+  such a commitment in the above example, since what it describes includes no 
+  software and indeed no computer yet! Here we are using the notation just as a 
+  modeling tool.) 
+  <P>The <A href="http://www.eiffel.com/products/bon">Business Object 
+  Notation</A>, as described by Waldén and Nerson [<A 
+  href="http://www.eiffel.com/documentation.html#soosa">5</A>], is as far as I 
+  know the only O-O method that fully integrates these ideas at the analysis and 
+  design level, providing graphical notation for the ideas developed in the 
+  present article. 
+  <H3>5 - INVARIANTS </H3>
+  <P>Preconditions and postconditions apply to individual routines. It is also 
+  important to use assertions to characterize a class as a whole, rather than 
+  its individual routines. An assertion describing a property which holds of all 
+  instances of a class is called a <B>class invariant</I>. For example, the 
+  invariant of <I>DICTIONARY</I> could state <PRE><I><B>invariant</B>
+0 &lt;= count; count &lt;="capacity" </PRE>
+  <P>and the invariant of <I>TANK</I> could state that <I>is_full</I> really 
+  means "is approximately full": <PRE><I><B>invariant</B>
+is_full = </I>(<I>0.97 * capacity &lt;= gauge</I>)<I> <B>and </I></I>(<I>gauge
+&lt;= 1.03 * capacity</I>) ... </PRE>
+  <P>Class invariants are consistency constraints characterizing the semantics 
+  of a class. This notion is important as a basis for configuration management 
+  and regression testing, since it describes the deeper properties of a class: 
+  not just the characteristics it has at at a certain moment of its evolution, 
+  but the constraints which must also apply to subsequent changes. In my view, 
+  the notion of class invariant is one of the three or four most important 
+  concepts in the whole object-oriented approach. 
+  <P>Viewed from the contract theory, an invariant is a general clause which 
+  applies to the entire set of contracts defining a class. 
+  <H3>6 - DOCUMENTATION </H3>
+  <P>Another key application of contracts is to provide a standard way to 
+  document software elements -- classes. To provide client programmers with a 
+  proper description of the interface properties of a class, it suffices to give 
+  them a version of the class, known as the <B>short form</I>, which is stripped 
+  of all implementation information but retains the essential usage information: 
+  the contract. 
+  <P>In the <A href="http://www.eiffel.com/products/bench.html">EiffelBench 
+  environment</A>, you obtain the short form interactively by clicking on the 
+  Short button of the Class Tool. The output can be plain text or can be 
+  converted to any text processing format (Microsoft's RTF, HTML for Web 
+  publishing, MIF or MML for FrameMaker, TEX, troff, Postscript etc.) through 
+  one of the environment's predefined filters -- to which you can add any of 
+  your own filters since the mechanism is completely open. (An online 
+  introduction to the environment, showing the Class Tool, the short form and 
+  other basic facilities, is <A 
+  href="http://www.eiffel.com/doc/manuals/bench/tour/index.html">available for 
+  Web browsing</A>.) 
+  <P>The short form retains headers and assertions of exported features, as well 
+  as invariants, but discards everything else. For example: <PRE><I><B>class interface </B>DICTIONARY </I>[<I>ELEMENT</I>]<I> <B>feature</B>
+<BR><BR>
+put </I>(<I>x</I>:<I> ELEMENT</I>;<I> key</I>:<I> STRING</I>)<I> <B>is</B>
+</I>-- Insert <I>x</I> so that it will be retrievable through <I>key</I>.<I>
+<B>require</B>
+count &lt;= capacity</I>;<I>
+<B>not</B> key.empty
+<B>ensure</B>
+has </I>(<I>x</I>);<I>
+item </I>(<I>key</I>)<I> = x</I>;<I>
+count = <B>old</B> count + 1
+<BR><BR>
+</I>... Interface specifications of other features ...<I> <BR><BR>
+<B>invariant</B>
+<BR><BR>
+0 &lt;= count; count &lt;="capacity" <BR><BR>
+<B>end class interface </B> </I>-- <I>DICTIONARY</I></I> </PRE>
+  <P>This short form serves as the basic tool for documenting libraries and 
+  other software elements. It also serves as a central communication tool 
+  between developers. We have learned from our customers and from our own 
+  experience that emphasis on the short form facilitates software design and 
+  project management, as it encourages developers and managers to discuss the 
+  key issues (interface, specification, inter-module protocols) rather than 
+  internal details. 
+  <H3>7 - TESTING, DEBUGGING AND QUALITY ASSURANCE </H3>
+  <P>Given a class text equipped with assertions, we should ideally be able to 
+  prove mathematically that the routine implementations are consistent with the 
+  assertions. In the absence of realistic tools to do this, we can settle for 
+  the next best thing, which is to use assertions for testing. 
+  <P>Compilation options enable the developers, class by class, what effect 
+  assertions should have if any: </I>no assertion checking (under which 
+  assertions have no effect at all, serving as a form of standardized comments), 
+  preconditions only </I>(the default</I>), preconditions and postconditions, 
+  all of the above plus class invariants, all assertions. 
+  <P>These mechanisms provide a powerful tool for finding mistakes. Assertion 
+  monitoring is a way to check what the software does against what its author 
+  thinks it does. This yields a productive approach to debugging, testing and 
+  quality assurance, in which the search for errors is not blind but based on 
+  consistency conditions provided by the developers themselves. 
+  <P>The availability of these mechanisms is in my experience one of the most 
+  significant consequences of moving to this technology. It causes a dramatic 
+  drop in the number of bugs, and a new attitude of developers towards software 
+  reliability. 
+  <H3>8 - CONTRACTS AND INHERITANCE </H3>
+  <P>An important consequence of the contract theory is to yield a better 
+  understanding of the central object-oriented notions of inheritance, 
+  polymorphism, redefinition and dynamic binding. 
+  <P>A class <I>B</I> which inherits from a class <I>A</I> may provide a new 
+  declaration for a certain inherited feature <I>r</I> of <I>A</I>. For example 
+  a specialized implementation of <I>DICTIONARY</I> might redefine the algorithm 
+  for <I>put</I>. Such redefinitions are potentially dangerous, however, as the 
+  redefined version could in principle have a completely different semantics. 
+  This is particularly worrisome in the presence of polymorphism, which means 
+  that in the call <PRE><I>a.r</I>
+</PRE>
+  <P>the target <I>a</I> of the call, although declared statically of type 
+  <I>A</I>, could in fact be attached at run time to an object of type <I>B</I>. 
+  Then <B>dynamic binding</I> implies that the <I>B</I> version of <I>r</I> will 
+  be called in such a case. 
+  <P>This is a form of subcontracting: <I>A</I> subcontracts <I>r</I> to 
+  <I>B</I> for targets of the corresponding type. But a subcontractor must be 
+  bound by the original contract. A client which executes a call under the form <PRE><I><B>if</B> a.pre <B>then</B>
+a.r
+<B>end</B></I>
+</PRE>
+  <P>must be guaranteed the contractually promised result: the call will be 
+  correctly executed since the precondition is satisfied (assuming that 
+  <I>pre</I> implies the precondition of <I>r</I>); and on exit <I>a.post</I> 
+  will be true, where <I>post</I> is the postcondition of <I>r</I>. 
+  <P>The fundamental <B>principle of subcontracting</I> follows from these 
+  observations: a redefined version of <I>r</I> may keep or weaken the 
+  precondition; it may keep or strengthen the postcondition. Strengthening the 
+  precondition, or weakening the postcondition, would be a case of "dishonest 
+  subcontracting" and could lead to disaster. The Eiffel language rules for 
+  assertion redefinition [<A 
+  href="http://www.eiffel.com/documentation.html#etl">3</A>] support the 
+  principle of subcontracting. 
+  <P>These observations shed light on the true significance of inheritance: not 
+  just a reuse, subtyping and classification mechanism, but a way to ensure 
+  compatible semantics by other means. They also provide useful guidance as to 
+  how to use inheritance properly. 
+  <H3>9 - EXCEPTION HANDLING </H3>
+  <P>Among the many other applications of the contract theory we may note that 
+  the theory leads naturally to a systematic approach to the thorny problem of 
+  exception handling -- handling abnormal cases. 
+  <P>A software element is always a way to fulfil a certain contract, explicit 
+  or not. An exception is the element's inability to fulfil its contract, for 
+  any reason: a hardware failure has occurred, a called routine has failed, a 
+  software bug makes it impossible to satisfy the contract. 
+  <P>In such cases only three responses make sense: 
+  <OL>
+    <LI><B>Retrying</I>: an alternative strategy is available. The routine will 
+    restore the invariant and and make another attempt, using the new strategy. 
+    <LI><B>Organized panic</I>: no such alternative is available. Restore the 
+    invariant, terminate, and report failure to the caller by triggering a new 
+    exception. (The caller will itself have to choose between the same three 
+    responses.) 
+    <LI><B>False alarm</I>: it is in fact possible to continue, perhaps after 
+    taking some corrective measures. This case seldom occurs (regrettably, since 
+    it is the easiest to implement!). </LI></OL>
+  <P>The exception mechanism follows directly from this analysis. It is based on 
+  the notion of "rescue clause" associated with a routine, and of "retry 
+  instruction", which implements retrying. This is similar to clauses that occur 
+  in human contracts, to allow for exceptional, unplanned circumstances. If 
+  there is a Rescue clause, any exception occurring during the routine's 
+  execution will interrupt the execution of the body </I>(the <B>do</I> 
+  clause</I>) and start execution of the Rescue</I> clause. The clause contains 
+  one or more instructions</I>; one of them is a <B>retry</I>, which will cause 
+  re-execution of the routine's body (the <B>do</I> clause). An integer local 
+  entity such as <I>failure</I> is always initialized to zero on routine entry 
+  (but not, of course, after a <B>retry</I>). 
+  <P>Here is an example illustrating the mechanism (see [2, 3] for details). We 
+  assume a low-level procedure <I>unsafe_transmit</I> for transmitting a message 
+  over a network. We have no control over that procedure but know that it may 
+  fail, in which case we want to try again, although after 100 unsuccessful 
+  attempts we will give up, passing on the exception to our caller. The 
+  Rescue/Retry mechanism supports this simply and directly: <PRE><I>attempt_transmission </I>(<I>message: STRING</I>)<I> <B>is</B>
+</I>-- Attempt to transmit <I>message</I> over a communication line
+-- using the low-level (C) procedure <I>unsafe_transmit</I>,
+-- which may fail, triggering an exception.
+-- After 100 unsuccessful attempts, give up (triggering
+-- an exception in the caller).<I>
+<BR><BR>
+<B>local</B>
+failures</I>:<I> INTEGER
+<B>do</B>
+unsafe_transmit </I>(<I>message</I>)<I>
+<BR><BR>
+<B>rescue</B>
+failures </I>:=<I> failures + 1</I>;<I>
+<BR><BR>
+<B>if</B> failures &lt;100 <B>then</B>
+<B>retry</B>
+<B>end</B>
+<B>end</B></I>
+</PRE>
+  <H3>10 - FURTHER DEVELOPMENTS AND CONCLUSION </H3>
+  <P>This article has provided an overview of the basic ideas of Design by 
+  Contract. This is a very active area of application and further research, with 
+  several books in preparation. Two particularly important areas of development 
+  are: 
+  <UL>
+    <LI><B>Concurrency and distribution</B>: the principles of Design by 
+    Contract yield what I think is <I>the</I> solution to the problem of 
+    concurrent and distribution object-oriented programming (avoiding the 
+    so-called "inheritance anomaly" and other non-issues of O-O concurrent 
+    computation, resulting from a misunderstanding of object technology). An 
+    article [4] describes in detail the Eiffel approach to concurrent 
+    computation, based on the Design by Contract concepts and currently in the 
+    process of being implemented. I will devote one of my future columns to a 
+    description of how these principles yield a simple, elegant approach to 
+    object-oriented programming for the Internet. 
+    <LI><B>An extended specification language</B>, allowing the expression of a 
+    richer set of assertions. </LI></UL>
+  <P>Design by Contract has already been widely applied; the theory provides a 
+  powerful thread throughout the object-oriented method, and addresses at least 
+  in part many of the issues that many people are encountering as they start 
+  applying object-oriented techniques and languages seriously: what kind of 
+  "methodology" to apply, on what concepts to base the analysis step, how to 
+  specify components, how to document object-oriented software, how to guide the 
+  testing process and, most importantly, how to build software so that bugs do 
+  not show up in the first place. 
+  <P>In modern software development, reliability should be a built-in component 
+  -- not an afterthought. 
+  <H3>BIBLIOGRAPHY </H3>
+  <P>[1] Bertrand Meyer: <A 
+  href="http://www.eiffel.com/documentation.html#oosc"><I>Object-Oriented 
+  Software Construction</I></A>, Prentice Hall, 1988. 
+  <P>[2] Bertrand Meyer: <I>Applying "Design by Contract</I>, in <I>Computer 
+  (IEEE)</I>, vol. 25, no. 10, October 1992, pages 40-51. 
+  <P>[3] Bertrand Meyer: <A 
+  href="http://www.eiffel.com/documentation.html#etl"><I>Eiffel: The 
+  Language</I></A>, Prentice Hall, 1992. 
+  <P>[4] Bertrand Meyer: <I>Systematic Concurrent Object-Oriented 
+  Programming</I>, in <I>Communications of the ACM</I>, vol. 36, no. 9, 
+  September 1993, pages 56-80. 
+  <P>[5] Kim Waldén and Jean-Marc Nerson, <A 
+  href="http://www.eiffel.com/documentation.html#soosa"><I>Seamless 
+  Object-Oriented Software Architecture: Analysis and Design of Reliable 
+  Systems</I></A>, Prentice Hall, 1995. 
+  <P>Note: an earlier version of the present article appeared in the <I>Hotline 
+  on Object Technology</I>. </P></BLOCKQUOTE><IMG src="" align=right border=0> <BR 
+clear=all>
+<P><BR><BR>
+<CENTER><A href="http://www.sigs.com/"><IMG src="" border=0></A> <A 
+href="http://beth.canberra.edu.au/objectcurrents/"><IMG src="" border=0></A> <A 
+href="http://beth.canberra.edu.au/objectcurrents/twio.html"><IMG src="" 
+border=0></A> <A href="http://beth.canberra.edu.au/xspot/"><IMG src="" 
+border=0></A> <A href="http://beth.canberra.edu.au/xspot/twiux.html"><IMG src="" 
+border=0></A> 
+</CENTER></B></B></B></B></B></B></B></B></B></B></B></B></B></BODY></HTML>

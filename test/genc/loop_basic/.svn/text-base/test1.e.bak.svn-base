@@ -1,0 +1,33 @@
+class TEST1
+
+creation make
+
+feature
+
+	make is
+	local
+	i:INTEGER;
+	do
+	-- test loop
+	i:=5;
+	from i:=0;
+	until i<3
+	loop
+		i:=i+1;
+	end;
+	i:=i;
+	from i:=100;
+	until i<30
+	loop
+		i:=i+1;
+	end;
+	i:=i;
+	from 
+	until i<30
+	loop
+		i:=i+1;
+	end;
+	i:=i;
+	end;
+
+end

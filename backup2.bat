@@ -1,0 +1,1 @@
+e:\winrar\rar a -agDD-MM-YY.N -r -x.\backup\*.* backup\backup *.*

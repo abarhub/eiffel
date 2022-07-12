@@ -1,0 +1,14 @@
+class TEST5
+
+	inherit B
+		redefine a
+		end;
+
+feature
+
+	a:INTEGER is
+	do
+	
+	end;
+
+end

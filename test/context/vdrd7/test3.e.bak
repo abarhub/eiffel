@@ -1,0 +1,13 @@
+class TEST3
+
+	inherit A
+		redefine toto
+		end;
+
+feature
+
+	toto:INTEGER is
+	external "C"
+	end;
+
+end

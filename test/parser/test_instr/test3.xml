@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST3"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<affect>
+							<variable nom="x"/>
+							<expression>
+								<entier valeur="0"/>
+							</expression>
+						</affect>
+					</instruction>
+					<instruction>
+						<tentative_affect>
+							<variable nom="x"/>
+							<expression>
+								<entier valeur="0"/>
+							</expression>
+						</tentative_affect>
+					</instruction>
+					<instruction>
+						<appel nom="x">
+							<parametre_reel>
+								<expression>
+									<entier valeur="1"/>
+								</expression>
+							</parametre_reel>
+							<parametre_reel>
+								<expression>
+									<entier valeur="2"/>
+								</expression>
+							</parametre_reel>
+						</appel>
+					</instruction>
+					<instruction>
+						<appel nom="Current">
+							<appel nom="x">
+								<parametre_reel>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</parametre_reel>
+								<parametre_reel>
+									<expression>
+										<entier valeur="2"/>
+									</expression>
+								</parametre_reel>
+								<appel nom="ta"/>
+							</appel>
+						</appel>
+					</instruction>
+					<instruction>
+						<affect current="Current">
+							<variable nom="x"/>
+							<expression>
+								<entier valeur="5"/>
+							</expression>
+						</affect>
+					</instruction>
+					<instruction>
+						<tentative_affect current="Current">
+							<variable nom="x"/>
+							<expression>
+								<entier valeur="5"/>
+							</expression>
+						</tentative_affect>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

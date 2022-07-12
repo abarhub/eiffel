@@ -1,0 +1,794 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0078)http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html -->
+<HTML><HEAD><TITLE>SWT Component Development Resources</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="SWT Component Development Resources_fichiers/default_style.css" 
+type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY text=#000000 bgColor=#ffffff>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica color=#ffffff>SWT Component Development 
+      Resources</FONT></B> </TD></TR>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><B>Index</B> 
+      <UL>
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/faq.html">SWT 
+        FAQ</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#bugs">Bugs</A> 
+
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#docs">Documents</A> 
+
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#plugins">Plug-ins</A> 
+
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#opengl">Experimental 
+        OpenGL Plug-in</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#mailing">Mailing 
+        Lists</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#ports">Port 
+        Status</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/test_plan.html">Test 
+        Plan</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#tools">Tools</A> 
+
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#snippets">Snippets</A> 
+
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#pocketsnippets">Snippets 
+        for Pocket PC</A> </LI></UL></TD></TR>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><A name=bugs><B>Bugs</B></A> 
+      <UL>
+        <LI><A 
+        href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;priority=P1&amp;email1=&amp;emailtype1=substring&amp;emailassigned_to1=1&amp;email2=&amp;emailtype2=substring&amp;emailreporter2=1&amp;bugidtype=include&amp;bug_id=&amp;changedin=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;product=Platform&amp;version=&amp;component=SWT&amp;short_desc=&amp;short_desc_type=allwordssubstr&amp;long_desc=&amp;long_desc_type=allwordssubstr&amp;keywords=&amp;keywords_type=anywords&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time" 
+        target=_top>Priority 1</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;email1=&amp;emailtype1=substring&amp;emailassigned_to1=1&amp;email2=&amp;emailtype2=substring&amp;emailreporter2=1&amp;bugidtype=include&amp;bug_id=&amp;changedin=&amp;votes=&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;product=Platform&amp;component=SWT&amp;short_desc=&amp;short_desc_type=allwordssubstr&amp;long_desc=&amp;long_desc_type=allwordssubstr&amp;keywords=&amp;keywords_type=anywords&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=&amp;cmdtype=doit&amp;newqueryname=&amp;order=Reuse%2Bsame%2Bsort%2Bas%2Blast%2Btime" 
+        target=_top>New, Assigned and Reopened</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/bugs/buglist.cgi?bug_status=RESOLVED&amp;bug_status=VERIFIED&amp;bug_status=CLOSED&amp;email1=&amp;emailtype1=substring&amp;emailassigned_to1=1&amp;email2=&amp;emailtype2=substring&amp;emailreporter2=1&amp;bugidtype=include&amp;bug_id=&amp;changedin=7&amp;votes=&amp;chfield=resolution&amp;chfieldfrom=&amp;chfieldto=Now&amp;chfieldvalue=&amp;product=Platform&amp;version=&amp;component=SWT&amp;short_desc=&amp;short_desc_type=allwordssubstr&amp;long_desc=&amp;long_desc_type=allwordssubstr&amp;keywords=&amp;keywords_type=anywords&amp;field0-0-0=noop&amp;type0-0-0=noop&amp;value0-0-0=&amp;cmdtype=doit&amp;order=Reuse+same+sort+as+last+time" 
+        target=_top>Resolved in the last week</A> </LI></UL></TD></TR>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><A name=docs><B>Documents</B></A> 
+      <UL>
+        <LI><A href="http://dev.eclipse.org/conventions.html">coding 
+        conventions</A> </LI></UL>
+      <P>There is also a list of SWT documents in the <A 
+      href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/faq.html">SWT 
+      FAQ</A>. </P></TD></TR>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><A name=plugins><B>Plug-ins</B></A> 
+      <P></P>The SWT component consists of the following plug-ins (follow link 
+      to access code in CVS): 
+      <UL>
+        <LI><A href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt" 
+        target=_top>org.eclipse.swt</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.win32" 
+        target=_top>org.eclipse.swt.win32</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.gtk" 
+        target=_top>org.eclipse.swt.gtk</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.motif" 
+        target=_top>org.eclipse.swt.motif</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.photon" 
+        target=_top>org.eclipse.swt.photon</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.carbon" 
+        target=_top>org.eclipse.swt.carbon</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.examples" 
+        target=_top>org.eclipse.swt.examples</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.examples.controls" 
+        target=_top>org.eclipse.swt.examples.controls</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.examples.launcher" 
+        target=_top>org.eclipse.swt.examples.launcher</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.examples.ole.win32" 
+        target=_top>org.eclipse.swt.examples.ole.win32</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.examples.paint" 
+        target=_top>org.eclipse.swt.examples.paint</A> </LI></UL>
+      <P></P>
+      <P>The 2.0 javadoc for the SWT packages can be accessed below:</P>
+      <UL>
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/package-summary.html" 
+        target=_top>org.eclipse.swt</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/widgets/package-summary.html" 
+        target=_top>org.eclipse.swt.widgets</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/graphics/package-summary.html" 
+        target=_top>org.eclipse.swt.graphics</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/events/package-summary.html" 
+        target=_top>org.eclipse.swt.events</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/layout/package-summary.html" 
+        target=_top>org.eclipse.swt.layout</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/dnd/package-summary.html" 
+        target=_top>org.eclipse.swt.dnd</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/printing/package-summary.html" 
+        target=_top>org.eclipse.swt.printing</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/accessibility/package-summary.html" 
+        target=_top>org.eclipse.swt.accessibility</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/program/package-summary.html" 
+        target=_top>org.eclipse.swt.program</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/ole/win32/package-summary.html" 
+        target=_top>org.eclipse.swt.ole.win32</A> 
+        <LI><A 
+        href="http://download.eclipse.org/downloads/documentation/2.0/html/plugins/org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/custom/package-summary.html" 
+        target=_top>org.eclipse.swt.custom</A> </LI></UL></TD></TR>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><A name=opengl><B>Experimental OpenGL Plug-in</B></A> 
+      <P></P>An OpenGL plug-in has been developed and is available for download 
+      here. The plugin consists of a library that provides bindings for all 
+      native OpenGL functions, and the classes that facilitate the use of these 
+      bindings for drawing on an SWT Canvas. Note that this plug-in is purely 
+      experimental in nature and is not intended to be part of the standard SWT 
+      distribution. 
+      <UL>
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/opengl/opengl.html">org.eclipse.swt.opengl</A> 
+        </LI></UL></TD></TR>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><A name=mailing><B>Mailing Lists</B></A> 
+      <UL>
+        <LI><A 
+        href="http://dev.eclipse.org/mailman/listinfo/platform-swt-dev">http://dev.eclipse.org/mailman/listinfo/platform-swt-dev</A> 
+        (<A href="mailto:platform-swt-dev@eclipse.org">post</A>, <A 
+        href="http://dev.eclipse.org/mhonarc/lists/platform-swt-dev/maillist.html">archives</A>) 
+        </LI></UL></TD></TR>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><A name=ports><B>Port Status</B></A> 
+      <DL>This section has capsule summaries of all SWT ports whose status is 
+        known. (Note: the headings are of the form "os/ws".) 
+        <P></P>
+        <DT><B>aix/motif</B> 
+        <DD>Running well. A significant number of low level performance 
+        improvements were made in release 2.1. Support for DBCS was added in 
+        2.1. Accessibility support is still required. 
+        <P>You can run SWT applications using the VM from IBM Developer Kit for 
+        AIX versions 1.3.0, 1.3.1, and 1.4.0. The IBM Developer Kit for AIX can 
+        be downloaded from: 
+        http://www.ibm.com/developerworks/java/jdk/aix/service.html 
+        <P>To run SWT applications on AIX, you must ensure that your AIX install 
+        includes the necessary service updates. Please use the following command 
+        to determine the service level of an AIX fileset on your machine: 
+        <UL>
+          <LI>lslpp -l | grep FilesetName</LI></UL>
+        <P>Please see the section below that corresponds to your AIX release. 
+        <P>AIX Version 4.3.3: <BR>For fileset X11.base.lib: 
+        <UL>
+          <LI>If service level &lt; 4.3.3.79, you must apply APAR IY27694 
+        </LI></UL><BR>For fileset X11.motif.lib: 
+        <UL>
+          <LI>If service level &gt; 4.3.3.81, you must apply APAR IY41939 
+        </LI></UL>
+        <P>AIX Version 5.1: <BR>For fileset X11.base.lib: 
+        <UL>
+          <LI>If service level &lt; 5.1.0.25, you must apply APAR 
+        IY27695</LI></UL><BR>For fileset X11.motif.lib: 
+        <UL>
+          <LI>If service level &gt; 5.1.0.36, you must apply APAR 
+IY41942</LI></UL>
+        <P>AIX Version 5.2: <BR>For fileset X11.motif.lib: 
+        <UL>
+          <LI>If service level &gt; 5.2.0.0, you must apply APAR IY41944</LI></UL>
+        <P>IBM APARs can be downloaded from: 
+        <BR>http://techsupport.services.ibm.com/server/fixes 
+        <P>Availability information for these fixes is as follows: 
+        <UL>
+          <LI>IY27694 now (March 2003) 
+          <LI>IY27695 now (March 2003) 
+          <LI>IY41939 anticipated May 7, 2003 
+          <LI>IY41942 anticipated May 21, 2003 
+          <LI>IY41944 anticipated June 4, 2003 </LI></UL>
+        <P></P>
+        <DT><B>hpux/motif</B> 
+        <DD>Running well. A significant number of low level performance 
+        improvements were made in release 2.1. Support for DBCS was added in 
+        2.1. Accessibility support is still required. 
+        <P>On HP-UX, the JVM process that runs the SWT application does not 
+        terminate upon closing the workbench. This can be fixed by passing the 
+        -XdoCloseWithReadPending VM option to the VM on startup. 
+        <P></P>
+        <DT><B>linux/gtk</B> 
+        <DD>The GTK port of SWT is based on GTK2. It is stable but needs 
+        performance tuning and is missing Printing and Accessibility. Drag and 
+        Drop and DBCS support were added in release 2.1. 
+        <P></P>
+        <DT><B>linux/motif</B> 
+        <DD>The performance of this port is now comparable to win32 version for 
+        most uses. A significant number of low level performance improvements 
+        were made. Support for DBCS was added in 2.1. Accessibility support is 
+        still required. 
+        <P></P>
+        <DT><B>linux/qt</B> 
+        <DD>SWT for Qt/E will be included in the next release of the IBM 
+        WebSphere Micro Environment and WebSphere Customer Environment products. 
+        We are currently working on determining the feasibility of releasing SWT 
+        for Qt/E to the Eclipse project. 
+        <P></P>
+        <DT><B>macos/carbon</B> 
+        <DD>This port is still "early access". Functionality such as Printing, 
+        Drag and Drop and Accessibility are still missing plus miscellanious 
+        features in some widgets. Performance tuning is required. 
+        <P>SWT requires Jaguar (10.2.x), it does not run on earlier versions of 
+        MacOS X. 
+        <P>NOTE: Build I20030429 is missing the swt library. If you are using 
+        this build, please download the following zip file (<A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/swt_patch_I20030429.zip">http</A>) 
+        and unzip it over you eclipse installation. 
+        <P></P>
+        <DT><B>qnx/photon</B> 
+        <DD>Running reasonably, but needs performance tuning. QNX has a hard 
+        limit on file name lengths (48 characters) that may be hit by some 
+        Eclipse users. Accessibility, Drag and Drop and Printing support is 
+        still required. 
+        <P></P>
+        <DT><B>solaris/motif</B> 
+        <DD>Running well. No obvious problems other than some poor default font 
+        choices. A significant number of low level performance improvements were 
+        made in release 2.1. Support for DBCS was added in 2.1. Accessibility 
+        support is still required. 
+        <P></P>
+        <DT><B>win32/win32</B> 
+        <DD>The win32 version is stable and feature complete. Incremental bug 
+        fixing is going on, and some new development, but our focus is largely 
+        on the other platforms. 
+        <P></P>
+        <DT><B>win32-ce/win32</B> 
+        <DD>Essentially complete with respect to the embedded subset of SWT. No 
+        outstanding serious issues. Note: This is an *embedded* SWT target only; 
+        we are not (yet) attempting to make Eclipse run on WinCE. We are 
+        actively working to decrease the size of both the jar and the dll. 
+      </DD></DL></TD></TR>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><A name=testplan><B>Test Plan</B></A> 
+      <P>The current version of the <A 
+      href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/test_plan.html">test 
+      plan</A> is updated to reflect the current release under 
+    development.</P></TD>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><A name=tools><B>Tools</B></A> 
+      <UL>
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/tools/org.eclipse.swt.sleak_1.0.0.zip">Sleak 
+        plug-in (Eclipse version &gt; 20021129 required)</A> 
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/tools/sleak.html">Sleak.java</A> 
+        </LI></UL>
+      <P>Sleak is a simple tool that monitors SWT graphics resources. The Sleak 
+      plug-in requires the following line in the Eclipse .options file.</P><PRE>org.eclipse.ui/trace/graphics=true</PRE></TD>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><B><A name=snippets>Snippets</A></B> 
+      <P>There have been a significant number of small example code fragments 
+      which have been posted to the newsgroup which provide insights into some 
+      aspect of SWT programming. This section is an attempt to capture these for 
+      future reference. Most of these have been written by one of the SWT 
+      committers, but in some cases they were created by modifying examples 
+      provided by other readers of the newsgroup. For simplicity, no attempt has 
+      been made to attribute these to a particular author. <EM>If you see 
+      something you wrote here, and want that to be noted, please email <A 
+      href="mailto:platform-swt-dev@eclipse.org">platform-swt-dev@eclipse.org</A> 
+      and a by-line will be added.</EM></P>
+      <P>You should also remember that, examples from the newsgroup are often 
+      edited for brevity rather than completeness. They are intended to guide 
+      the reader towards the correct solution, rather than be finished products. 
+      NOTE: Snippets are tested against the HEAD stream and may reference new 
+      API or require bug fixes from there.</P>
+      <UL>
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet1.html">"Hello 
+        World"</A> 
+        <LI>Button 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet108.html">set 
+          the default button</A> </LI></UL>
+        <LI>Canvas 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet48.html">scroll 
+          an image (flicker free, no double buffering)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet21.html">implement 
+          tab traversal (behave like a tab group)</A> </LI></UL>
+        <LI>Caret 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet74.html">create 
+          a caret</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet43.html">create 
+          a caret (using an image)</A> </LI></UL>
+        <LI>Clipboard 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet94.html">copy 
+          and paste data with the clipboard</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet122.html">enable/disable 
+          menu depending on clipboard content availability</A> </LI></UL>
+        <LI>Combo 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet26.html">create 
+          a combo box (non-editable)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet24.html">detect 
+          return in a combo box (default selelection)</A> </LI></UL>
+        <LI>Composite 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet9.html">scroll 
+          a child control automatically</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet75.html">set 
+          the tab traversal order of children</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet98.html">create 
+          and dispose children of a composite</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet115.html">force 
+          radio behavior on two different composites</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet46.html">intercept 
+          mouse events (drag a button with the mouse)</A> </LI></UL>
+        <LI>Control 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet14.html">detect 
+          mouse enter, exit and hover events</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet25.html">print 
+          key state, code and character</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet62.html">print 
+          mouse state and button (down, move, up)</A> </LI></UL>
+        <LI>CoolBar 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet20.html">create 
+          a cool bar</A> </LI></UL>
+        <LI>CTabFolder 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet82.html">prevent 
+          an item from closing</A> </LI></UL>
+        <LI>Cursor 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet44.html">set 
+          the hand cursor into a control</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet92.html">create 
+          a cursor from a source and a mask</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet119.html">create 
+          a color cursor from a source and a mask</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet118.html">create 
+          a color cursor from an image file</A> </LI></UL>
+        <LI>DirectoryDialog 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet33.html">prompt 
+          for a directory</A> </LI></UL>
+        <LI>Display 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet60.html">create 
+          two one shot timers (5000 ms, 2000 ms)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet16.html">create 
+          one repeating timer (every 500 ms)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet68.html">stop 
+          a repeating timer when a button is pressed</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet42.html">get 
+          the bounds and client area of a display</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet7.html">fill 
+          a table from a background thread (sync exec)</A> </LI></UL>
+        <LI>Drag and Drop 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet78.html">drag 
+          text between two labels</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet91.html">drag 
+          leaf items in a tree</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet79.html">define 
+          my own data transfer type</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet84.html">define 
+          a default operation (in this example, Copy)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet83.html">determine 
+          data types available (win32 only)</A> </LI></UL>
+        <LI>FileDialog 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet72.html">prompt 
+          for a file name (to save)</A> </LI></UL>
+        <LI>Font 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet100.html">create 
+          a large font for use by a text widget</A> </LI></UL>
+        <LI>FormLayout 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet65.html">create 
+          a simple dialog using form layout</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet69.html">center 
+          a label and single line text using a form layout</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet71.html">create 
+          a simple OK/CANCEL dialog using form layout</A> </LI></UL>
+        <LI>GC 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet13.html">draw 
+          a thick line</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet93.html">measure 
+          a string</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet66.html">implement 
+          a simple scribble program</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet70.html">create 
+          an icon (in memory)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet95.html">capture 
+          a widget image with a GC</A> </LI></UL>
+        <LI>GridLayout 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet6.html">insert 
+          widgets into a grid layout</A> </LI></UL>
+        <LI>Image 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet112.html">display 
+          an image in a group</A> </LI></UL>
+        <LI>Label 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet34.html">create 
+          a label (with an image)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet37.html">create 
+          a label (a separator)</A> </LI></UL>
+        <LI>List 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet59.html">print 
+          selected items in a list</A> </LI></UL>
+        <LI>Menu 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet29.html">create 
+          a bar and pull down menu (accelerators, mnemonics) </A>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet40.html">create 
+          a popup menu (set in multiple controls)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet73.html">enable 
+          menu items dynamically (when menu shown)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet97.html">fill 
+          a menu dynamically (when menu shown)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet89.html">add 
+          radio items to a menu</A> </LI></UL>
+        <LI>Monitor 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet120.html">center 
+          a shell on the primary monitor</A> </LI></UL>
+        <LI>OLE and ActiveX 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet81.html">browse 
+          the typelibinfo for a program id</A> </LI></UL>
+        <LI>Program 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet32.html">find 
+          the icon of the program that edits .bmp files</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet105.html">invoke 
+          an external batch file</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet30.html">invoke 
+          the system text editor on autoexec.bat</A> </LI></UL>
+        <LI>ProgressBar 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet57.html">update 
+          a progress bar (from the UI thread)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet56.html">update 
+          a progress bar (another thread)</A> </LI></UL>
+        <LI>Sash 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet54.html">create 
+          a sash (allow it to be moved)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet107.html">implement 
+          a simple splitter (with a 20 pixel limit)</A> </LI></UL>
+        <LI>SashForm 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet109.html">create 
+          a sash form with three children</A> </LI></UL>
+        <LI>Scale 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet45.html">create 
+          a scale (maximum 40, page increment 5)</A> </LI></UL>
+        <LI>ScrolledComposite 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet5.html">scroll 
+          a control in a scrolled composite</A> </LI></UL>
+        <LI>Shell 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet50.html">create 
+          a dialog shell</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet63.html">create 
+          a dialog shell (prompt for a value)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet104.html">create 
+          a splash screen</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet99.html">prevent 
+          a shell from closing (prompt the user)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet4.html">prevent 
+          escape from closing a dialog</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet27.html">open 
+          a shell minimized (iconified)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet28.html">open 
+          a shell maximized (full screen)</A> </LI></UL>
+        <LI>Slider 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet17.html">print 
+          scroll event details</A> </LI></UL>
+        <LI>TabFolder 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet76.html">create 
+          a tab folder (six pages)</A> </LI></UL>
+        <LI>Table 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet35.html">create 
+          a table (no columns, no headers)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet38.html">create 
+          a table (columns, headers, lines)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet7.html">create 
+          a table (lazy)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet113.html">detect 
+          a selection or check event in a table (SWT.CHECK)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet3.html">find 
+          a table cell from mouse down (SWT.FULL_SELECTION)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet110.html">find 
+          a table cell from mouse down (works for any table style)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet101.html">insert 
+          a table item (at an index)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet106.html">insert 
+          a table column (at an index)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet64.html">print 
+          selected items in a table</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet53.html">remove 
+          selected items</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet77.html">resize 
+          columns as table resizes</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet51.html">scroll 
+          a table (set the top index)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet52.html">select 
+          an index (select and scroll)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet2.html">sort 
+          a table by column</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet103.html">update 
+          a table's contents dynamically</A> </LI></UL>
+        <LI>TableCursor 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet96.html">navigate 
+          a table cells with arrow keys</A> </LI></UL>
+        <LI>TableEditor 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet88.html">edit 
+          a cell in a table (in place)</A> </LI></UL>
+        <LI>Text 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet11.html">set 
+          the selection (i-beam)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet12.html">set 
+          the selection (start, end)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet19.html">verify 
+          input (only allow digits)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet22.html">select 
+          all the text in the control</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet24.html">detect 
+          CR in a text control (default selelection)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet55.html">resize 
+          a text control (show about 10 characters)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet116.html">stop 
+          CR from going to the default button</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet117.html">add 
+          a select all menu item to the control</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet121.html">prompt 
+          for a password (set the echo character)</A> </LI></UL>
+        <LI>ToolBar 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet18.html">create 
+          a tool bar (text)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet36.html">create 
+          a flat tool bar (images)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet47.html">create 
+          tool bar (normal, hot and disabled images)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet49.html">create 
+          tool bar (wrap on resize)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet58.html">place 
+          a combo box in a tool bar</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet67.html">place 
+          a drop down menu in a tool bar</A> </LI></UL>
+        <LI>Tool Tips 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet41.html">create 
+          tool tips for a tab folder, tool bar and control</A> </LI></UL>
+        <LI>Tree 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet15.html">create 
+          a tree</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet8.html">create 
+          a tree (lazy)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet114.html">detect 
+          a selection or check event in a tree (SWT.CHECK)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet102.html">insert 
+          a tree item (at an index)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet61.html">print 
+          selected items in a tree</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet80.html">limit 
+          selection to items that match a pattern</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet90.html">detect 
+          mouse down in a tree item</A> </LI></UL>
+        <LI>TreeEditor 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet111.html">edit 
+          the text of a tree item (in place, fancy)</A> </LI></UL>
+        <LI>Tracker 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet23.html">create 
+          a tracker (drag on mouse down)</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet31.html">create 
+          a tracker (drag when torn off)</A> </LI></UL>
+        <LI>... and a lots more still to come. Keep checking back. 
+</LI></UL></TD></TR>
+  <TR>
+    <TD vAlign=top align=right width="2%"><IMG height=16 
+      src="SWT Component Development Resources_fichiers/Adarrow.gif" width=16 
+      border=0> </TD>
+    <TD width="98%"><A name=pocketsnippets><B>Snippets for Pocket PC</B></A> 
+      <UL>
+        <LI><A 
+        href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet85.html">"Hello 
+        World"</A> 
+        <LI>Shell 
+        <UL>
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet86.html">'Ok' 
+          button</A> 
+          <LI><A 
+          href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet87.html">resize 
+          automatically as SIP is on or off</A> 
+</LI></UL></LI></UL></TD></TR></TBODY></TABLE></BODY></HTML>

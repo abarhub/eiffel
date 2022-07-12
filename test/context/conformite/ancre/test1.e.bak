@@ -1,0 +1,61 @@
+class TEST1
+
+creation make
+
+feature
+
+	make is
+	local
+	a:A;
+	b:like a;
+	c:like a;
+	d:A;
+	do
+	a:=a;
+	b:=b;
+	c:=c;
+	a:=b;
+	b:=c;
+	c:=b;
+	-- b:=a2;
+	b:=a;
+	f(a,b1);
+	f(b1,b1);
+	g(a,a);
+	g(a,b1);
+	g(b1,b1);
+	h(a,a);
+	h(a,b1);
+	h(b1,b1);
+	h(c1,c1);
+	c1:=f1;
+	c2:=f2(c1);
+	end;
+
+	b1:B;
+	c1,c2:C;
+
+	f(a:A;b:B) is
+	do
+
+	end;
+
+	g(a:A;b:like a) is
+	do
+
+	end;
+
+	h(a:ANY;b:like a) is
+	do
+
+	end;
+
+	f1:like c1 is
+	do
+	end;
+
+	f2(a:ANY):like a is
+	do
+	end;
+
+end

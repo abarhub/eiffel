@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE liste_testes SYSTEM "E:\projet\eiffel\test_unitaire\type.dtd">
+<liste_testes>
+	<conformite nom="test\context\conformite\generique\test1.ace">
+		<test de="TEST1" ancetre="TEST1" conforme="oui" />
+		<test de="A[C]" ancetre="A[C]" conforme="oui" />
+		<test de="A[C]" ancetre="C" conforme="non" />
+		<test de="A[C]" ancetre="B[C]" conforme="non" />
+		<test de="B[C]" ancetre="A[C]" conforme="oui" />
+		<test de="A[A[C]]" ancetre="A[A[C]]" conforme="oui" />
+		<test de="A[A[A[C]]]" ancetre="A[A[A[C]]]" conforme="oui" />
+		<test de="B[A[A[C]]]" ancetre="A[A[A[C]]]" conforme="oui" />
+		<test de="A[B[A[C]]]" ancetre="A[A[A[C]]]" conforme="oui" />
+		<test de="A[A[B[C]]]" ancetre="A[A[A[C]]]" conforme="oui" />
+		<test de="A[A[A[C]]]" ancetre="B[A[A[C]]]" conforme="non" />
+		<test de="A[D]" ancetre="A[C]" conforme="non" />
+		<test de="A[C]" ancetre="A[D]" conforme="non" />
+		<test de="A[A[A[C]]]" ancetre="A[B[A[C]]]" conforme="non" />
+		<test de="A[A[A[C]]]" ancetre="A[A[B[C]]]" conforme="non" />
+		<test de="C1[TL,TN]" ancetre="B1[TK,TL,TM]" conforme="oui" />
+	</conformite>
+	<conformite nom="test\context\conformite\generique\test2.ace">
+		<test de="X" ancetre="ANY" conforme="oui" lieux="E" />
+	</conformite>
+	<conformite nom="test\context\conformite\generique\test3.ace" nb_erreur="1">
+		<test de="C2[IE,DE]" ancetre="B2[IR,DE,IR]" conforme="oui" />
+		<test de="B2[X,Y,X]" ancetre="B2[IR,DE,IR]" conforme="non" lieux="C2" />
+		<test de="X" ancetre="IR" conforme="oui" lieux="D2" />
+		<test de="X" ancetre="X" conforme="oui" lieux="D2" />
+		<test de="Y" ancetre="DE" conforme="oui" lieux="D2" />
+		<test de="B2[X,Y,X]" ancetre="B2[IR,DE,IR]" conforme="oui" lieux="D2" />
+		<test de="IR" ancetre="IR" conforme="oui" />
+		<test de="IE" ancetre="IE" conforme="oui" />
+		<test de="DR" ancetre="DR" conforme="oui" />
+		<test de="DE" ancetre="DE" conforme="oui" />
+		<test de="IE" ancetre="IR" conforme="oui" />
+		<test de="DE" ancetre="DR" conforme="oui" />
+		<test de="IR" ancetre="IE" conforme="non" />
+		<test de="DR" ancetre="DE" conforme="non" />
+	</conformite>
+	<conformite nom="test\context\conformite\generique\test4.ace" nb_erreur="1">
+		<test de="IR" ancetre="IR" conforme="oui" />
+		<test_expr de="var2" ancetre="var1:C" conforme="oui" lieux="TEST4" />
+		<test_expr de="var1" ancetre="var2:like var1" conforme="oui" lieux="TEST4" />
+		<test_expr de="var3" ancetre="var2:like var1" conforme="non" lieux="TEST4" />
+		<test_expr de="var2" ancetre="var3:C" conforme="oui" lieux="TEST4" />
+	</conformite>
+	<!--<conformite nom="test\context\conformite\generique\test5.e">
+		<test_expr de="&lt;&lt;1,2,3&gt;&gt;" ancetre="tab1:ARRAY[ANY]" conforme="oui" lieux="TEST5" />
+		<test_expr de="&lt;&lt;1,2,3&gt;&gt;" ancetre="tab2:ARRAY[INTEGER]" conforme="oui" lieux="TEST5" />
+		<test_expr de="&lt;&lt;1,2,'a'&gt;&gt;" ancetre="tab1:ARRAY[ANY]" conforme="oui" lieux="TEST5" />
+		<test_expr de="&lt;&lt;1,2,'a'&gt;&gt;" ancetre="tab1:ARRAY[INTEGER]" conforme="non" lieux="TEST5" />
+		<test_expr de="&lt;&lt;1,2,'a'&gt;&gt;" ancetre="tab1:ARRAY[CHARACTER]" conforme="non" lieux="TEST5" />
+		<test_expr de="&lt;&lt;1,2,'a'&gt;&gt;" ancetre="tab1:ARRAY[COMPARABLE]" conforme="oui" lieux="TEST5" />
+	</conformite>-->
+</liste_testes>
+

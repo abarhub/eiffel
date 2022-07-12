@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap7.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 7 Clients and exports</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 7 Clients and exports_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm"><IMG 
+src="Eiffel The Reference - 7 Clients and exports_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm"><IMG 
+src="Eiffel The Reference - 7 Clients and exports_fichiers/next.gif"></A> 
+<P>
+<H1>7 Clients and exports </H1>
+<H2>7.3 CONVENTIONS </H2>
+<H3>Definition: client </H3>
+<P>A class <I>C</I> is a <B>client</B> of type <I>S</I> if some ancestor of 
+<I>C</I> is a simple client, an expanded client or a generic client of <I>S</I>. 
+
+<P>
+<H3>Definition: client relation between classes</H3>
+<P>A class <I>C</I> is a client of a class <I>B</I> if <I>C</I> is a client of a 
+type whose base class is <I>B</I>. 
+<P>
+<H3>Definition: direct or indirect client</H3>
+<P>A class <I>C</I> is a <B>direct or indirect client</B> of a type <I>S</I> of 
+base type <I>B</I> if there is a sequence of classes C1 == A, C2, ..., Cn == B 
+such that n &gt; 1 and every Ci is a client of C{i+1} for 1 &lt;= i &lt; n. 
+<P>
+<P>The ''direct or indirect'' forms of the simple client, expanded client and 
+generic client relations are defined similarly. 
+<P>
+<H2>7.4 SIMPLE CLIENTS </H2>
+<H3>Definition: simple client </H3>
+<P>A class <I>C</I> is a <B>simple client</B> of a type <I>S</I> if some entity 
+or expression of <I>C</I> is of type <I>S</I>. 
+<P>
+<H2>7.5 EXPANDED CLIENTS </H2>
+<H3>Definition: expanded client </H3>
+<P>A class <I>C</I> is an <B>expanded client</B> of a type <I>S</I> if <I>S</I> 
+is an expanded type and some attribute of <I>C</I> is of type <I>S</I>. 
+<P>
+<P><B>Expanded Client rule</B> <B></B>
+<P>
+<P>It is valid for a class <I>C</I> to be an expanded client of a class 
+<I>SC</I> if and only if <I>SC</I> is not a direct or indirect expanded client 
+of <I>C</I>. 
+<P>
+<H2>7.6 GENERIC CLIENTS </H2>
+<H3>Definition: generic client </H3>
+<P>A class <I>C</I> is a <B>generic client</B> of a type <I>S</I> if for some 
+generically derived type <I>T</I> of the form <I>B </I>[...<I>, S, </I>...] one 
+of the following holds: 
+<OL>
+  <LI><I>C</I> is a client of <I>T</I>. 
+  <LI>One of the Parent clauses of <I>C</I>, or of a proper ancestor of 
+  <I>C</I>, lists <I>T</I> as parent. </LI></OL>
+<H2>7.12 THE EXPORT STATUS OF FEATURES </H2>
+<H3>Definition: exported, generally avaialable, selectively available, secret 
+</H3>
+<P>The status of a feature of a class is one of the following: 
+<P>
+<UL>
+  <LI>The feature may be available to all classes. Such a feature is said to be 
+  <B>exported</B>, or <B>generally available</B>. 
+  <LI>The feature may be available to specific classes only. In that case it is 
+  also available to the descendants of all these classes. Such a feature is said 
+  to be <B>selectively </B>available to the given classes and their descendants. 
+
+  <LI>The feature may be available to no classes. Then it is said to be 
+  <B>secret</B>. </LI></UL>
+<H3>Definition: available </H3>
+<P>A feature of a class <I>S</I> is said to be <B>available</B> to a class 
+<I>C</I> if and only if it is either selectively available to <I>C</I> or 
+generally available. 
+<P>
+<H2>7.13 ADAPTING THE EXPORT STATUS</H2>
+<P>
+<P>
+<P>A Clients part is valid if and only if every Class_name appearing in its 
+Class_list is the name of a class in the surrounding universe.
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>
+<P><B>Export List rule</B> <B></B>
+<P>
+<P>A New_exports parent appearing in class <I>C</I> in a Parent clause for a 
+parent <I>B</I>, of the form
+<P>
+<P><B>export</B> {<I>class_list</I><I>1</I>}<I> feature_list</I><I>1</I>; ... 
+{<I>class_list</I><I>n</I>}<I> feature_list</I><I>n</I>
+<P>
+<P>is valid if and only if (for <I>i</I> in the interval 1..<I>n</I>): 
+<P>
+<OL>
+  <LI>At most one of the <I>feature_list</I><I>i</I> is the keyword <B>all</B>. 
+  <LI>All the other <I>feature_list</I><I>i</I> are lists of final names of 
+  features of <I>C</I> obtained from <I>B</I>. 
+  <LI>No final feature name appears twice in any such list, or appears in more 
+  than one list. </LI></OL>
+<P>An immediate feature of a class has the following export status: 
+<P>
+<UL>
+  <LI>If the Feature_clause which introduces it has no Clients part (that is to 
+  say, begins with the keyword <B>feature</B> with no further qualification), 
+  the feature is exported (generally available). 
+  <LI>If the Feature_clause which introduces it has a Clients part (that is to 
+  say, begins with <B>feature</B><I> </I>{<I>A, B, C </I>...}), the feature is 
+  selectively available to the descendants of the classes listed in that Clients 
+  part, and to these descendants only. </LI></UL>
+<P>If a Feature_clause has an empty Clients list, that is to say, begins with 
+<I>feature </I>{}, then the features it introduces are secret. 
+<P>
+<P>If a non-redeclared inherited feature <I>f</I> has more than one precursor, 
+it is available to all classes to which it would be available as a consequence 
+of applying the preceding rule separately to each of its precursors. 
+<P>
+<H2>7.14 DESCRIBING A CLASS FOR CLIENTS: THE SHORT FORM </H2>
+<H3>Definition: short form, abstract form</H3>
+<P>The short form of a class, also called its abstract form, is a text which has 
+the same structure as the class but does not include non-public elements. The 
+short form is the one that should be used as interface documentation for the 
+class. 
+<P>
+<H2>7.15 THE FLAT-SHORT FORM </H2>
+<H3>Definition: flat-short form</H3>
+<P>The flat-short form of a class is similar to the short form, but applies to 
+the ''reconstructed'' full text of a class; you may view it as resulting from a 
+shortening step that has been preceded by a ''flattening'' step, which expands 
+the class text to unfold all the features obtained from proper ancestors, 
+putting them at the same level as the immediate features of the class. Clearly, 
+flattening must take both renaming and redefinition into account. 
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 7 Clients and exports_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm"><IMG 
+src="Eiffel The Reference - 7 Clients and exports_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm"><IMG 
+src="Eiffel The Reference - 7 Clients and exports_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

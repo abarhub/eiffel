@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST8"/>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="point">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="@">
+					<expression>
+						<expression_binaire op="free_op" nom="@">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="|">
+					<expression>
+						<expression_binaire op="free_op" nom="|">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="&amp;">
+					<expression>
+						<expression_binaire op="free_op" nom="&amp;">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="#">
+					<expression>
+						<expression_binaire op="free_op" nom="#">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="fois">
+					<expression>
+						<expression_binaire op="fois">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="div">
+					<expression>
+						<expression_binaire op="div">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="div_entier">
+					<expression>
+						<expression_binaire op="div_entier">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="mod">
+					<expression>
+						<expression_binaire op="mod">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="diff">
+					<expression>
+						<expression_binaire op="diff">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="infs">
+					<expression>
+						<expression_binaire op="infs">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="inf">
+					<expression>
+						<expression_binaire op="inf">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sups">
+					<expression>
+						<expression_binaire op="sups">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sup">
+					<expression>
+						<expression_binaire op="sup">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<expression_binaire op="and">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<expression_binaire op="and_then">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or">
+					<expression>
+						<expression_binaire op="or">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or_else">
+					<expression>
+						<expression_binaire op="or_else">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="xor">
+					<expression>
+						<expression_binaire op="xor">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="implies">
+					<expression>
+						<expression_binaire op="implies">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="3"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+							<expression>
+								<entier valeur="3"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+</class>

@@ -1,0 +1,20 @@
+class TEST13
+
+creation make
+
+feature
+
+	make is
+	local
+	c:CHARACTER;
+	s:STRING;
+	i,j:INTEGER;
+	do
+	c:='a';
+	s:="abc";
+	i:=0;
+	i:=i+2;
+	i:=i*j-i+6-(10+78);
+	end;
+
+end

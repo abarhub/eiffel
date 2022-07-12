@@ -1,0 +1,274 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST8"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<inspect>
+							<expression>
+								<variable nom="x"/>
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</expression_when>
+							</when_then>
+						</inspect>
+					</instruction>
+					<instruction>
+						<inspect>
+							<expression>
+								<variable nom="x"/>
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+								</expression_when>
+							</when_then>
+							<when_then/>
+						</inspect>
+					</instruction>
+					<instruction>
+						<inspect>
+							<expression>
+								<variable nom="x"/>
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="1"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+						</inspect>
+					</instruction>
+					<instruction>
+						<inspect>
+							<expression>
+								<variable nom="x"/>
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+								</expression_when>
+							</when_then>
+							<when_then>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="2"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+						</inspect>
+					</instruction>
+					<instruction>
+						<inspect>
+							<expression>
+								<variable nom="x"/>
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="7"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+							<when_then>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="8"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+						</inspect>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<inspect>
+							<expression>
+								<expression_binaire op="plus">
+									<expression>
+										<entier valeur="7"/>
+									</expression>
+									<expression>
+										<variable nom="p"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="2"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="3"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="5"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+							<when_then>
+								<expression_when>
+									<expression>
+										<car>'a'</car>
+									</expression>
+									<expression>
+										<car>'z'</car>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<reel valeur="5.6"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<variable nom="p"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="8"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+						</inspect>
+					</instruction>
+					<instruction>
+						<inspect>
+							<expression>
+								<expression_binaire op="plus">
+									<expression>
+										<entier valeur="7"/>
+									</expression>
+									<expression>
+										<variable nom="p"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="2"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="3"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="5"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+							<when_then>
+								<expression_when>
+									<expression>
+										<car>'a'</car>
+									</expression>
+									<expression>
+										<car>'z'</car>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<reel valeur="5.6"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<variable nom="p"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="8"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+							<when_then>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="7"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+						</inspect>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

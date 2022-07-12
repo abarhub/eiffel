@@ -1,0 +1,9 @@
+class A
+
+feature
+
+	toto is 
+	external "C"
+	end;
+
+end

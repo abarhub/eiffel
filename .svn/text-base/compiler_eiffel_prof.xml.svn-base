@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14204</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Compilation de test\interm\test_attribut2\test1.ace (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14206</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>configuration lue (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14207</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Parsing de test1 ...</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14208</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>parsing fait (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14209</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Parsing de any ...</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14210</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>parsing fait (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14211</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Parsing de A ...</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14212</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>parsing fait (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14213</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Parsing de B ...</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14214</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>parsing fait (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14215</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Fin des parsing (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14216</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>affichage des classes</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14218</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Affichage réalisé (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14219</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>1ere annalyse contextuelle ...</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14220</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>1ere analyse réalisée (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14221</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>affichage des heritages</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14222</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Affichage fait (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14223</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>2eme annalyse contextuelle ...</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14224</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>2eme analyse réalisée (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14225</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Affichage de la table des symbols</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14226</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Affichage fait (mem utilisée=1 Mo ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859546</millis>
+  <sequence>14228</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>conversion code intermediaire...(mem utilisée=855 Ko ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859546</millis>
+  <sequence>14229</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Conversion faite (mem utilisée=887 Ko ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859562</millis>
+  <sequence>14230</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Liberation de l'objet conversion fait (mem utilisée=783 Ko ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859562</millis>
+  <sequence>14232</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>generation du fichier de code intermediaire...</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859578</millis>
+  <sequence>14233</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Génération faite (mem utilisée=955 Ko ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859593</millis>
+  <sequence>14241</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Fin de la compilation (mem utilisée=799 Ko ; total=4 Mo)</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859593</millis>
+  <sequence>14242</sequence>
+  <logger>tinyeiffel.profiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>termine_profile</method>
+  <thread>10</thread>
+  <message>fin (mem utilisée=799 Ko ; total=4 Mo)</message>
+</record>
+</log>

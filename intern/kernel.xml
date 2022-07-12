@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\test_unitaire\programme.dtd">
+<!-- les procédures kernels  -->
+<programme>
+	<classe>
+		<type nom="INTEGER"/>
+		<attribut est_defaut="oui">
+			<nom_attribut nom="$val_int"/>
+			<type nom="INTEGER"/>
+			<type nom="$integer"/>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="BOOLEAN"/>
+		<attribut est_defaut="oui">
+			<nom_attribut nom="$val_bool"/>
+			<type nom="BOOLEAN"/>
+			<type nom="$boolean"/>
+		</attribut>
+		<attribut>
+			<nom_attribut nom="$not"/>
+			<type nom="BOOLEAN"/>
+			<type nom="BOOLEAN"/>
+			<routine>
+				<signature/>
+				<declare_var nom="Result">
+					<type nom="BOOLEAN"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="$val_bool" src="Result"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="not">
+								<expression_scalaire type="var">
+									<var nom="$val_bool"/>
+								</expression_scalaire>
+							</expression_un>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+		<!--<attribut>
+			<nom_attribut nom="$and"/>
+			<type nom="BOOLEAN"/>
+			<type nom="BOOLEAN"/>
+			<routine>
+				<signature><declare_var nom="p">
+					<type nom="BOOLEAN"></type>
+				</declare_var>
+				</signature>
+				<declare_var nom="Result">
+					<type nom="BOOLEAN"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="Result"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="not">
+								<expression_scalaire type="var">
+									<var nom="$val_bool"/>
+								</expression_scalaire>
+							</expression_un>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>-->
+	</classe>
+	<classe>
+		<type nom="REAL"/>
+		<attribut est_defaut="oui">
+			<nom_attribut nom="$val_real"/>
+			<type nom="REAL"/>
+			<type nom="$real"/>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="DOUBLE"/>
+		<attribut est_defaut="oui">
+			<nom_attribut nom="$val_double"/>
+			<type nom="DOUBLE"/>
+			<type nom="$double"/>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="CHARACTER"/>
+		<attribut est_defaut="oui">
+			<nom_attribut nom="$val_char"/>
+			<type nom="CHARACTER"/>
+			<type nom="$character"/>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ARRAY">
+			<type nom="E"/>
+		</type>
+		<attribut est_defaut="oui">
+			<nom_attribut nom="$tab"/>
+			<type nom="ARRAY"/>
+			<type nom="$array"/>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="STRING"/>
+		<attribut est_defaut="oui">
+			<nom_attribut nom="$val_string"/>
+			<type nom="STRING"/>
+			<type nom="$string"/>
+		</attribut>
+	</classe>
+</programme>

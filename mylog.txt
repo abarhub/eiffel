@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2005-04-07T22:16:26</date>
+  <millis>1112904986019</millis>
+  <sequence>0</sequence>
+  <logger>tinyeiffel.test.test_unitaire</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.test_unitaire.Test_unitaire1</class>
+  <method>setUp</method>
+  <thread>10</thread>
+  <message>doing stuff</message>
+</record>

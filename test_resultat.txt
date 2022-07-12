@@ -1,0 +1,108 @@
+Debut des tests 
+Compilation de test\genc\int_basic2\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\int_basic2\test1.e 
+Compilation de test\genc\bool_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\bool_basic\test1.e 
+Compilation de test\genc\char_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\char_basic\test1.e 
+Compilation de test\genc\str_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\str_basic\test1.e 
+Compilation de test\genc\real_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\real_basic\test1.e 
+Compilation de test\genc\dbl_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\dbl_basic\test1.e 
+Compilation de test\genc\creation_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\creation_basic\test1.e 
+Compilation de test\genc\appel_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\appel_basic\test1.e 
+Compilation de test\genc\loop_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\loop_basic\test1.e 
+Compilation de test\genc\if_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\if_basic\test1.e 
+Compilation de test\genc\compare_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\compare_basic\test1.e 
+Compilation de test\genc\rattachement_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Fin compilation de test\genc\rattachement_basic\test1.e 
+Fin des tests : Aucun probleme 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 
+Execution de test1.exe 
+Comparaison des trace.log 
+Compilation de test\genc\general_basic\test1.e 
+Compilation C 

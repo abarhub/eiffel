@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0041)http://www.eclipse.org/articles/main.html -->
+<HTML><HEAD><TITLE>Eclipse Corner Articles</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="main_fichiers/default_style.css" type=text/css rel=stylesheet>
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>&nbsp; 
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD align=left width="54%">
+      <P><FONT class=indextop>technical <BR>articles</FONT><BR><FONT 
+      class=indexsub>technical information for tool developers</FONT> </P></TD>
+    <TD width="46%"><IMG height=111 src="main_fichiers/howto_banner.jpg" 
+      width=272 align=center></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica color=#ffffff>Eclipse Corner 
+Articles</FONT></B></TD></TR>
+  <TR>
+    <TD>
+      <P><FONT face=arial,helvetica,geneva size=-1>The following articles have 
+      been written by members of the development team and other members of the 
+      eclipse community. You too can contribute! Eclipse Corner depends on 
+      contributions from people like you. </FONT></P>
+      <UL>
+        <LI><FONT face=arial,helvetica,geneva size=-1><B>Interested in writing 
+        an article?</B> &nbsp;&nbsp;&nbsp;See <A target=_top 
+        href="http://www.eclipse.org/arg/index.html">how to contribute an 
+        article</A>.</FONT> 
+        <LI><FONT face=arial,helvetica,geneva size=-1>Have an idea for an 
+        article or need an idea? See <A 
+        href="http://www.eclipse.org/arg/future.html">Future 
+        articles</A>.</FONT> </LI></UL></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica color=#ffffff>New Articles </FONT></B></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A target=_top 
+      href="http://www.eclipse.org/articles/Article-UI-Guidelines/Index.html">Eclipse 
+      User Interface Guidelines</A></B> Dave Springgay (OTI), Jin Li (IBM), 
+      Julian Jones (IBM), and Greg Adams (OTI) May 2, 2002</FONT> <BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1><SPAN 
+      style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418">User Interface Guidelines "best 
+      practices" document intended for use by designers and implementors of an 
+      Eclipse user interface extension.</SPAN></SPAN></FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/treeviewer-cg/TreeViewerArticle.htm">How 
+      to use the JFace Tree Viewer</A></B><A 
+      href="http://www.eclipse.org/articles/preferences/preferences.htm">&nbsp;</A> 
+      Chris Grindstaff (Applied Reasoning - chrisg at appliedReasoning.com ) May 
+      2, 2002</FONT> <BR><FONT face=arial,helvetica,geneva><FONT size=-1><SPAN 
+      style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418">The goal of this article is to teach 
+      you how to use TreeViewers in your Eclipse plug-ins or stand-alone 
+      JFace/SWT applications. We'll start with a simple example and 
+      progressively add functionality. </SPAN></SPAN></FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Understanding%20Layouts/Understanding%20Layouts.htm">Understanding 
+      Layouts in SWT (Revised for 2.0)</A></B><A 
+      href="http://www.eclipse.org/articles/preferences/preferences.htm">&nbsp;</A> 
+      <SPAN style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418"><SPAN lang=EN-US 
+      style="mso-ansi-language: EN-US">Carolyn MacLeod</SPAN></SPAN></SPAN> 
+      (OTI), <SPAN style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418"><SPAN lang=EN-US 
+      style="mso-ansi-language: EN-US">Shantha Ramachandran 
+      (OTI)</SPAN></SPAN></SPAN> May 2, 2002</FONT> <BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1><SPAN 
+      style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418"><SPAN lang=EN-US 
+      style="mso-ansi-language: EN-US">When writing applications in SWT, you may 
+      need to use <I style="mso-bidi-font-style: normal">layouts</I> to give 
+      your windows a specific look. A layout controls the position and size of 
+      children in a <I style="mso-bidi-font-style: normal">Composite</I>. Layout 
+      classes are subclasses of the abstract class <I 
+      style="mso-bidi-font-style: normal">Layout</I>. This article shows you how 
+      to work with standard layouts, and write your own custom layout 
+      class.</SPAN></SPAN></SPAN></FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica color=#ffffff>General</FONT></B></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/product-guide/guide.html">Creating 
+      Product Branding</A></B>&nbsp;Greg Adams (OTI) November 27, 2001</FONT> 
+      <BR><FONT face=arial,helvetica,geneva><FONT size=-1>In this document we 
+      will look at the steps needed to create a product. Before we get too 
+      excited hoping the magic of product building will be revealed, we should 
+      first confess that we will focus only on those aspects of the platform 
+      which you will need to modify in order to give your product some branding. 
+      This will include such items as the splash screen, about dialog, the 
+      program executable and so forth. </FONT></FONT></TD></TR><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Article-API%20use/eclipse-api-usage-rules.html">How 
+      to Use the Eclipse API</A></B>&nbsp;Jim des Rivieres&nbsp;(OTI) April 24, 
+      2001</FONT> <BR><FONT face=arial,helvetica,geneva><FONT size=-1>The 
+      Eclipse Platform offers a comprehensive API (Application Programmer 
+      Interface) to developers writing plug-ins. This article discusses the 
+      general ground rules for using the Eclipse Platform API, including how to 
+      tell API from non-API, and how to stay in the API "sweet spot" to avoid 
+      the risk of being broken as the platform and its APIs evolve. These 
+      general ground rules are also recommended practice for plug-ins that must 
+      declare API elements of their own. </FONT></FONT></TD></TR><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Article-Levels-Of-Integration/Levels%20Of%20Integration.html">Levels 
+      of Integration</A></B>&nbsp;Jim Amsden&nbsp;(OTI) March 25, 2001</FONT> 
+      <BR><FONT face=arial,helvetica,geneva><FONT size=-1>The types of problems 
+      web application developers face today require the use of a diverse set of 
+      tools that operate in many domains. In order to provide flexible tool 
+      integration, a tool integration platform must allow tool developers to 
+      target different levels or integration based on the desired level of 
+      investment, time to market, and specific tool needs. Each integration 
+      level determines how a tool must behave, and what end users can expect as 
+      a result. This article defines the different levels of tool integration 
+      supported by Eclipse, and gives an overview of how they work. 
+      </FONT></FONT><BR></TD></TR>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica color=#ffffff>Help</FONT></B></TD></TR><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Online%20Help/help1.htm">Help - Part 
+      1: Contributing a Little Help</A></B>&nbsp;Greg Adams (OTI) and Dorian 
+      Birsan&nbsp;(IBM) May 30, 2001</FONT> <BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1>The Eclipse platform's help 
+      system defines two extension points ("contributions" and"contexts") that 
+      allow individual plug-ins to contribute online help and context-sensitive 
+      help for their components. In this article we will investigate the 
+      'contributions' extension point and how you can use it to contribute 
+      documentation for your plug-in. </FONT></FONT><BR></TD></TR><!-- Add the Articles --><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica color=#ffffff>SWT</FONT></B></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Understanding%20Layouts/Understanding%20Layouts.htm">Understanding 
+      Layouts in SWT (Revised for 2.0)</A></B><A 
+      href="http://www.eclipse.org/articles/preferences/preferences.htm">&nbsp;</A> 
+      <SPAN style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418"><SPAN lang=EN-US 
+      style="mso-ansi-language: EN-US">Carolyn MacLeod 
+      (OTI)</SPAN></SPAN></SPAN>, <SPAN 
+      style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418"><SPAN lang=EN-US 
+      style="mso-ansi-language: EN-US">Shantha Ramachandran</SPAN></SPAN></SPAN> 
+      (OTI) April 24, 2002</FONT> <BR><FONT face=arial,helvetica,geneva><FONT 
+      size=-1><SPAN style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418"><SPAN lang=EN-US 
+      style="mso-ansi-language: EN-US">When writing applications in SWT, you may 
+      need to use <I style="mso-bidi-font-style: normal">layouts</I> to give 
+      your windows a specific look. A layout controls the position and size of 
+      children in a <I style="mso-bidi-font-style: normal">Composite</I>. Layout 
+      classes are subclasses of the abstract class <I 
+      style="mso-bidi-font-style: normal">Layout</I>. This article shows you how 
+      to work with standard layouts, and write your own custom layout 
+      class.</SPAN></SPAN></SPAN></FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/swt-design-2/swt-design-2.html">SWT: 
+      The Standard Widget Toolkit - Part 2</A></B>&nbsp;Carolyn MacLeod (OTI) 
+      and Steve Northover (OTI) November 27, 2001</FONT> <BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1>SWT uses operating system 
+      resources to deliver its native graphics and widget functionality. 
+      Allocating and freeing operating system resources is traditionally an area 
+      of programming that is error prone. Languages that include garbage 
+      collection, such as the Java&#8482; language, relieve the programmer from the 
+      burden of managing memory, but not from the allocation and freeing of 
+      operating system resources. This article discusses the simple strategy 
+      used by SWT to help application designers manage operating system 
+      resources. </FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD>
+      <P><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/StyledText%202/article2.html">Into 
+      the Deep End of SWT StyledText Widget</A></B>&nbsp;Lynne Kues (OTI) and 
+      Knut Radloff&nbsp;(OTI) October 22, 2001</FONT> <BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1>This is the second of two 
+      articles on the SWT StyledText widget. This article dives into some of the 
+      more advanced concepts of StyledText and builds on the previous article 
+      </FONT></FONT><FONT face=arial,helvetica,geneva size=-1>"Getting Your Feet 
+      Wet With the SWT StyledText Widget". </FONT><BR></P></TD></TR><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/StyledText%201/article1.html">Getting 
+      Your Feet Wet with the SWT StyledText Widget</A></B>&nbsp;Lynne Kues (OTI) 
+      and Knut Radloff&nbsp;(OTI) May 31, 2001</FONT> <BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1>The StyledText widget is a 
+      customizable widget that can be used to display and edit text with 
+      different colors and font styles. This article presents an overview of the 
+      concepts, issues, and rules that you should be aware of when using the 
+      StyledText widget. </FONT></FONT><BR></TD></TR><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/SWT%20Color%20Model/swt-color-model.htm">SWT 
+      Color Model</A></B>&nbsp;James Moody (OTI) and Carolyn MacLeod (OTI) April 
+      24, 2001</FONT> <BR><FONT face=arial,helvetica,geneva><FONT size=-1>The 
+      combination of platforms, display devices and color depth makes providing 
+      an easy to use yet powerful and portable color model an interesting 
+      challenge. In this article we will examine the color management models of 
+      Windows and X/Motif and then dig into the makings of the SWT color model 
+      and its implications for client code. </FONT></FONT><BR></TD></TR><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Article-SWT-Design-1/SWT-Design-1.html">SWT: 
+      The Standard Widget Toolkit - Part 1</A></B>&nbsp;Steve Northover&nbsp; 
+      (OTI) March 22, 2001</FONT> <BR><FONT face=arial,helvetica,geneva><FONT 
+      size=-1>SWT is the software component that delivers native widget 
+      functionality for the Eclipse platform in an operating system independent 
+      manner. It is analogous to AWT/Swing in Java with a difference - SWT uses 
+      native widgets. This article is the first in series of articles that 
+      discuss the SWT widget toolkit. This article discusses the low level 
+      implementation techniques used to implement SWT on different platforms. 
+      Examples are drawn from the windows and Motif implementations. 
+      </FONT></FONT><BR></TD></TR><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Article-ActiveX%20Support%20in%20SWT/ActiveX%20Support%20in%20SWT.html">ActiveX 
+      Support in SWT</A></B>&nbsp;Veronika Irvine&nbsp; (OTI) March 22, 
+      2001</FONT> <BR><FONT face=arial,helvetica,geneva><FONT size=-1>OLE 
+      Documents, such as Word, Excel or PowerPoint, and ActiveX Controls such as 
+      Internet Explorer are COM objects that can be embedded into other 
+      applications running on a Microsoft Windows platform. This article 
+      provides an overview of OLE and how to integrate OLE Documents and ActiveX 
+      Controls into an application using SWT. </FONT></FONT><BR></TD></TR><!-- Add the Articles --><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Article-Writing%20Your%20Own%20Widget/Writing%20Your%20Own%20Widget.htm">Creating 
+      Your Own Widgets using SWT</A></B>&nbsp;Steve Northover (OTI) &amp; 
+      Carolyn MacLeod&nbsp; (OTI) March 22, 2001</FONT> <BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1>When writing applications, you 
+      typically use the standard widgets provided by SWT. On occasion, you will 
+      need to extend the set of base widgets by creating your own custom 
+      widgets. For example, you might want to add a new type of widget not 
+      provided by the standard widgets, or extend the functionality of an 
+      existing widget. This article explains the different SWT extension 
+      strategies and shows you how to use them. </FONT></FONT><BR></TD></TR>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica color=#ffffff>Workbench &amp; JFace</FONT></B></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A target=_top 
+      href="http://www.eclipse.org/articles/Article-UI-Guidelines/Index.html">Eclipse 
+      User Interface Guidelines</A></B> Dave Springgay (OTI), Jin Li (IBM), 
+      Julian Jones (IBM), and Greg Adams (OTI) May 2, 2002</FONT> <BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1><SPAN 
+      style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418">User Interface Guidelines "best 
+      practices" document intended for use by designers and implementors of an 
+      Eclipse user interface extension.</SPAN></SPAN></FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/treeviewer-cg/TreeViewerArticle.htm">How 
+      do use the JFace Tree Viewer</A></B><A 
+      href="http://www.eclipse.org/articles/preferences/preferences.htm">&nbsp;</A> 
+      Chris Grindstaff (Applied Reasoning) May 2, 2002</FONT> <BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1><SPAN 
+      style="mso-bookmark: _Toc509864523"><SPAN 
+      style="mso-bookmark: _Toc496069418">The goal of this article is to teach 
+      you how to use TreeViewers in your Eclipse plug-ins or stand-alone 
+      JFace/SWT applications. We&#8217;ll start with a simple example and 
+      progressively add functionality. </SPAN></SPAN></FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/preferences/preferences.htm">Preferences 
+      in the Eclipse Workbench UI</A></B>&nbsp;Tod Creasey (OTI) December 15, 
+      2001</FONT> <BR><FONT face=arial,helvetica,geneva><FONT size=-1>In the 
+      Eclipse Platform plug-in developers define preference pages for their 
+      plug-ins for use in the Workbench Preferences Dialog. This article 
+      explains when to use a preference and some of the features the Eclipse 
+      Platform provides to support preferences. <BR></FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Your%20First%20Plug-in.html">Your 
+      First Plug-in</A></B>&nbsp;Jim Amsden&nbsp; May 30, 2001</FONT> (updated: 
+      November 14, 2001) <BR><FONT face=arial,helvetica,geneva><FONT size=-1>The 
+      traditional Hello World program doesn't do that much, but it can be 
+      invaluable when exploring a new development environment. In this article 
+      we'll develop the Eclipse Hello World plug-in and show you how to 
+      integrate it with the Eclipse Workbench. After you read this article you 
+      should know how to use the Eclipse Java Development Tooling to create, 
+      run, and debug a simple plug-in that extends the Eclipse Platform. You'll 
+      see how to setup a project for your plug-in, edit the Java code, compile, 
+      and run or debug your plug-in in another launched copy of Eclipse. We'll 
+      be looking at plug-in manifest files, extensions, and extension points to 
+      see how plug-ins are described to Eclipse and how they are integrated with 
+      the Platform. </FONT></FONT><BR></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/viewArticle/ViewArticle2.html">Creating 
+      an Eclipse View</A></B>&nbsp;Dave Springgay (OTI) November 2, 2001</FONT> 
+      <BR><FONT face=arial,helvetica,geneva><FONT size=-1>In the Eclipse 
+      Platform a view is typically used to navigate a hierarchy of information, 
+      open an editor, or display properties for the active editor.&nbsp; In this 
+      article the design and implementation of a view will be examined in 
+      detail.&nbsp; You'll learn how to create a simple view based on SWT, and a 
+      more advanced view using the JFace viewer hierarchy.&nbsp; We'll also look 
+      at ways to achieve good integration with many of the existing features in 
+      the workbench, such as the window menu and toolbar, view linking, 
+      workbench persistence and action extension.<BR></FONT></FONT></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Article-action-contribution/Contributing%20Actions%20to%20the%20Eclipse%20Workbench.html">Contributing 
+      Actions to the Eclipse Workbench</A></B>&nbsp;</FONT>Simon Arsenault <FONT 
+      face=arial,helvetica,geneva size=-1>(OTI)</FONT> October 18, 2001<BR><FONT 
+      face=arial,helvetica,geneva><FONT size=-1>The Eclipse Platform is an open 
+      and extensible platform. This article explains in detail how the Workbench 
+      can be extended to add new actions and provides guidance to the plug-in 
+      developers on how they can design for extensibility. 
+  </FONT></FONT><BR></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/using-perspectives/PerspectiveArticle.html">Using 
+      Perspectives in the Eclipse UI</A></B>&nbsp;Dave Springgay (OTI) 
+      &nbsp;August 27, 2001</FONT> <BR><FONT face=arial,helvetica,geneva><FONT 
+      size=-1>In the Eclipse Platform a Perspective determines the visible 
+      actions and views within a window.&nbsp; Perspectives also go well beyond 
+      this by providing mechanisms for task oriented interaction with resources 
+      in the Eclipse Platform, multi-tasking and information filtering.&nbsp; In 
+      this article the concepts behind perspectives are examined.&nbsp; The 
+      process for perspective definition, extension and instantiation will also 
+      be covered in detail with coding examples and sample scenarios. 
+      </FONT></FONT><BR></TD></TR><!-- Add the Articles -->
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Using%20Images%20In%20Eclipse.htm">Using 
+      Images in the Eclipse UI</A></B>&nbsp;John Arthorne&nbsp;(OTI) April 20, 
+      2001</FONT> <BR><FONT face=arial,helvetica,geneva><FONT size=-1>Managing 
+      images in a large graphical application can be a daunting task. Since 
+      modern operating systems such as Windows only support a small number of 
+      images in memory at once, an application's icons and background images 
+      must be carefully managed and sometimes shared between widgets. This 
+      article describes the image management facilities provided by the Eclipse 
+      Platform, along with some best practice guidelines to keep in mind when 
+      writing your own Eclipse UI plug-ins. We assume the reader already has a 
+      basic understanding of Eclipse, the UI extension points defined by the 
+      Eclipse Platform, and the Standard Widget Toolkit (SWT). 
+    </FONT></FONT><BR></TD></TR>
+  <TR>
+    <TD vAlign=top align=right><IMG height=16 src="main_fichiers/Adarrow.gif" 
+      width=16 border=0></TD>
+    <TD><FONT face=arial,helvetica,geneva size=-1><B><A 
+      href="http://www.eclipse.org/articles/Article-Mark%20My%20Words/Mark%20My%20Words.html">Mark 
+      My Words</A></B>&nbsp;Dejan Glozic (IBM)and Jeff McAffer (OTI)&nbsp;April 
+      1, 2001</FONT> <BR><FONT face=arial,helvetica,geneva><FONT size=-1>Eclipse 
+      workbench has a central mechanism for managing resource annotations. They 
+      are called markers. In this article, you will learn how to use markers to 
+      mark-up resources as well as how to define your own marker types and 
+      enhance the Tasks view to handle them in a special way. 
+    </FONT></FONT><BR></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST10"/>
+	<invariant>
+		<assert>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<entier valeur="5"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert tag="b">
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<variable nom="x"/>
+					</expression>
+					<expression>
+						<entier valeur="9"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="diff">
+					<expression>
+						<variable nom="u"/>
+					</expression>
+					<expression>
+						<variable nom="v"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<variable nom="x"/>
+					</expression>
+					<expression>
+						<variable nom="y"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+	</invariant>
+</class>

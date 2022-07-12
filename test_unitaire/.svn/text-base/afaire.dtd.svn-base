@@ -1,0 +1,12 @@
+<!ELEMENT liste_afaire (herarchie*)>
+
+
+<!ELEMENT herarchie (herarchie|afaire)*>
+<!ATTLIST herarchie nom CDATA #IMPLIED>
+
+
+<!ELEMENT afaire (#PCDATA)>
+<!ATTLIST afaire fait (oui|non|yes) #IMPLIED>
+<!ATTLIST afaire debut CDATA #REQUIRED>
+<!ATTLIST afaire fin CDATA #IMPLIED>
+

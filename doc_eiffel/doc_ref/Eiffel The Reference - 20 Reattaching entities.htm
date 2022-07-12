@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap20.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 20 Reattaching entities</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 20 Reattaching entities_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap19.htm"><IMG 
+src="Eiffel The Reference - 20 Reattaching entities_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap21.htm"><IMG 
+src="Eiffel The Reference - 20 Reattaching entities_fichiers/next.gif"></A> 
+<P>
+<H1>20 Reattaching entities </H1>
+<H2>20.4 SYNTAX AND VALIDITY OF DIRECT REATTACHMENT</H2>
+<H3>Assignment rule </H3>
+<P>An Assignment is valid if and only if its source expression conforms to its 
+target entity. 
+<P>
+<H2>20.5 SEMANTICS OF DIRECT REATTACHMENT</H2>
+<P>For the exception raised in case 2 if the value of <I>y</I> is void, the 
+Kernel Library class <I>EXCEPTIONS</I> introduces the integer code 
+<I>Void_attached_to_expanded</I>. 
+<P>
+<H2>20.9 POLYMORPHISM </H2>
+<H3>Definition: dynamic type </H3>
+<P>The dynamic type of an entity or expression <I>x</I>, at some instant of 
+execution when <I>x</I> is not void, is the type of the object to which <I>x</I> 
+is attached. This should not be confused with the ''type'' of <I>x</I> (called 
+its <I>static type</I> if there is any ambiguity), which for an entity is the 
+type with which it is declared, and for an expression is the type deduced from 
+the types of its constituents. 
+<P>
+<H3>Definition: polymorphism</H3>
+<P>The ability to have more than one dynamic type is called polymorphism; an 
+entity or expression which has two or more possible dynamic types (that is to 
+say, which may become attached at run time to objects of two or more types) is 
+itself a polymorphic entity. Only entities or expressions of reference types may 
+be polymorphic. 
+<P>
+<H3>Definition: dynamic type set, dynamic class set</H3>
+<P>The set of possible dynamic types for an entity or expression <I>x</I> is 
+called the dynamic type set of <I>x</I>. The set of base classes of these types 
+is called the dynamic class set of <I>x</I>. 
+<P>
+<H2>20.14 RULES ON ASSIGNMENT ATTEMPT</H2>
+<P>
+<P>
+<P><B>Assignment Attempt rule </B>
+<P>
+<P>An Assignment_attempt is valid if and only if the type of the target entity 
+is a reference type. 
+<P>
+<P>The effect of an Assignment_attempt of source <I>y</I> and target <I>x</I>, 
+of type <I>TX</I>, is the following: 
+<OL>
+  <LI>If <I>y</I> is attached to an object whose type conforms to <I>TX</I>, 
+  then the effect is that of a direct reattachment of <I>y</I> to <I>x</I>, as 
+  given earlier in this chapter. 
+  <LI>If <I>y</I> is void or attached to an object whose type does not conform 
+  to <I>TX</I>, the effect is to make the value of <I>x</I> void. </LI></OL>
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 20 Reattaching entities_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap19.htm"><IMG 
+src="Eiffel The Reference - 20 Reattaching entities_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap21.htm"><IMG 
+src="Eiffel The Reference - 20 Reattaching entities_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

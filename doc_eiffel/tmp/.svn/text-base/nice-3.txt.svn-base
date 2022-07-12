@@ -1,0 +1,367 @@
+NICE-3 - THE EIFFEL LIBRARY KERNEL STANDARD, 2000 VINTAGE
+=========================================================
+
+Adopted by the NICE Board in March 2000.
+Ratified by the members of NICE in April 2000.
+
+
+The class text at the end of this document replaces the existing
+ARRAY class in NICE-2 (The Eiffel Library Kernel Standard, 1995
+Vintage) to yield NICE-3 (The Eiffel Library Kernel Standard,
+2000 Vintage).
+
+The explanatory notes at the front of this document are not
+part of the official standard.
+
+
+The design process
+==================
+
+Although this proposal builds on earlier work, this version is the
+result of intensive discussions over the last six months on the
+eiffel-nice-libraries email list.
+
+Every part of the ARRAY class has been considered in detail, with
+respect to the following goals:
+
+1. To maximise interoperability between the different implementations
+   of Eiffel.
+
+2. To minimise the impact on existing code.
+
+3. To minimise the work required by vendors to support the updated
+   standard.
+
+It was most definitely not a goal to achieve the best possible design.
+We all knew better ways to do things, if we were starting with a 
+blank slate. But we realised that a significant improvement in
+interoperability now would be much better than a "perfect" design
+that may never be implemented.
+
+The discussions have been both extensive and intensive. We have
+explored many underlying issues relating to the nature of kernel
+classes in Eiffel and to the formulation of Eiffel library standards.
+We have looked in detail at every feature of the class. More messages
+have been exchanged about the ARRAY class in the past six months,
+than about all NICE library issues in the previous eight years.
+
+Participants in the discussions included library authors, end users,
+and representatives of all Eiffel vendors. We are all very excited
+by the possibility to achieve a truly interoperable kernel library
+for Eiffel.
+
+
+About the specification
+=======================
+
+For the first time, an ELKS class has been fully-specified by means
+of assertions. This yields some precise but lengthy postconditions
+that use recursion to assert a condition over all elements of the
+ARRAY.
+
+Please note the following points:
+
+  - Eiffel turns off assertion checking for features called within
+    an assertion, so the recursive postconditions are not fully 
+    executable.
+
+  - A vendor is not required to include these assertions in
+    the delivery of a conforming kernel library.
+
+  - The complex postconditions may be rather daunting to the novice,
+    and we anticipate that versions of the standard will be circulated
+    in other formats too.
+
+Three of the features are grouped together under the tag "Basic
+specifiers", and have no postconditions. All other queries are
+specified (directly or indirectly) in terms of these three queries.
+All commands are specified by their effect on the values of these
+three queries. This approach is due to James McKim, and has enabled
+us to fully-specify the ARRAY class.
+
+
+Changes from ELKS 1995 to ELKS 2000
+===================================
+
+Remove features `make_from_array' and `to_c'.
+
+   We could not find a way to include these features in ELKS 2000 in
+   a way that was meaningful, interoperable, and readily
+   implementable by all vendors. Features removed from the standard
+   may still be supported by a conforming implementation, and could
+   be re-introduced into a future version of the standard if the 
+   interoperability problems can be overcome.
+
+Add features `is_empty', `subarray', `all_default', `same_items', and
+`clear_all'.
+
+   We considered these features to be very useful, and easy to
+   implement in a way that is interoperable. Many of these features
+   are already implemented outside of ELKS 1995 by one or more
+   vendors. Some of these new features are particularly useful in the
+   specification itself.
+
+Refine the specifications of `is_equal', `resize', and `force'.
+
+   There is significant divergence in the current implementations of
+   these features. We have refined these specifications to make them
+   rigorous. We have specified these features in a way that should
+   make it as easy as possible for all vendors to implement them, and
+   should cause as little disruption to existing code as possible -
+   but unfortunately some disruption seems unavoidable.
+
+Refine the specifications of `valid_index', `count', `put', `item',
+infix "@", `copy', `make', and the class invariant.
+
+   These specifications were refined to make them rigorous. Sometimes
+   the specification matches what is already implemented by all
+   vendors. Other times, minor changes will be needed by one or
+   more vendors. However, we do not expect significant disruption
+   to existing code.
+
+Remove frozen status from `put', `item' and infix "@". Remove
+features `entry' and `enter'.
+
+   There appear to be no technical barriers to removing the frozen
+   status from `put', `item' and infix "@". This makes `entry' and
+   `enter' redundant. Consolidating these features yields a cleaner
+   and simpler class interface.
+
+It is not possible in this short presentation to effectively
+summarise the discussions that led to these changes. If you want
+to know why these changes were considered appropriate, please
+browse the archive of the discussions at
+http://www.egroups.com/group/eiffel-nice-library
+
+We took a consensus poll for every one of these changes. The majority
+of changes gained near-unanimous or unanimous support.
+
+
+ELKS 2000 ARRAY class
+=====================
+
+indexing
+
+   description: "Sequences of values, all of the same type or of a %
+                %conforming one, accessible through integer indices %
+                %in a contiguous interval"
+
+class interface
+
+   ARRAY [G]
+
+creation
+
+   make (min_index, max_index: INTEGER)
+      -- Allocate array to hold values for indexes in
+      -- `min_index' .. `max_index'.
+      -- Set all values to default.
+      -- (Make array empty if `maxindex' = `minindex' - 1).
+      require
+         valid_bounds: min_index <= max_index + 1
+      ensure
+         lower_set: lower = min_index
+         upper_set: upper = max_index
+         items_set: all_default
+
+feature -- Basic specifiers
+
+   item (i: INTEGER): G
+      -- Item at index `i'.
+      require
+         valid_index: valid_index (i)
+
+   lower: INTEGER
+      -- Minimum index
+
+   upper: INTEGER
+      -- Maximum index
+
+feature -- Access
+
+   infix "@" (i: INTEGER): G
+      -- Item at index `i'.
+      require
+         valid_index: valid_index (i)
+      ensure
+         definition: Result = item (i)
+
+feature -- Measurement
+
+   count: INTEGER
+      -- Number of available indices
+      ensure
+         consistent_with_bounds: Result = upper - lower + 1
+
+feature -- Comparison
+
+   is_equal (other: like Current): BOOLEAN
+      -- Do both arrays have the same `lower', `upper', and items?
+      -- (Redefined from GENERAL.)
+      require -- from GENERAL
+         other_not_void: other /= Void
+      ensure -- from GENERAL
+         consistent: standard_is_equal (other) implies Result
+         same_type: Result implies same_type (other)
+         symmetric: Result implies other.is_equal (Current)
+      ensure then
+         definition: Result = (same_type (other) and then
+            (lower = other.lower) and then same_items (other))
+
+feature -- Status report
+
+   all_default: BOOLEAN
+      -- Do all items have their type's default value?
+      ensure
+         definition: Result = (
+            count = 0 or else (
+             (item(upper) = Void or else
+              item(upper) = item(upper).default)
+              and subarray(lower, upper - 1).all_default
+            ))
+
+   is_empty: BOOLEAN
+       -- Is array empty?
+       ensure
+          definition: Result = (count = 0)
+
+   same_items (other: like Current): BOOLEAN
+      -- Do both arrays have the same items?
+      require
+         other_not_void: other /= Void
+      ensure
+         definition: Result = 
+            ((count = other.count) and then
+            (count = 0 or else
+            (item (upper) = other.item (other.upper) and
+              subarray (lower, upper-1).same_items 
+               (other.subarray (other.lower, other.upper - 1)))))
+
+   valid_index (i: INTEGER): BOOLEAN
+      -- Is `i' within bounds?
+      ensure
+         definition: Result = ((lower <= i) and (i <= upper))
+
+feature -- Element change
+
+   clear_all
+      -- Set every item to its default value.
+      ensure
+         stable_upper: upper = old upper
+         stable_lower: lower = old lower
+         default_items: all_default
+
+   force (v: like item; i: INTEGER)
+      -- Make `v' the item at index `i', enlarging the
+      -- array if necessary.
+      ensure
+         new_lower: lower = i.min (old lower)
+         new_upper: upper = i.max (old upper)
+         new_item: item (i) = v
+         new_low_items:
+            i < old lower implies
+             subarray (i + 1, old lower - 1).all_default
+         new_high_items:
+            i > old upper implies
+             subarray (old upper + 1, i - 1).all_default
+         between_lower_and_i:
+            subarray (old lower, ((i-1).max (old lower-1))
+             .min (old upper)).same_items
+             (old subarray (lower, ((i-1).max (lower-1)).min (upper)))
+         between_i_and_upper:
+            subarray (((i+1).min (old upper+1))
+             .max (old lower), old upper).same_items
+             (old subarray (((i+1).min (upper+1)).max (lower), upper))
+
+   put (v: like item; i: INTEGER)
+      -- Make 'v' the item at index `i'.
+      require
+         valid_index: valid_index (i)
+      ensure
+         stable_lower: lower = old lower
+         stable_upper: upper = old upper
+         new_item: item (i) = v
+         stable_before_i:
+          subarray (lower, i - 1).is_equal
+             (old subarray (lower, i - 1))
+         stable_after_i:
+          subarray (i + 1, upper).is_equal
+             (old subarray (i + 1, upper))
+
+feature -- Resizing
+
+   resize (min_index, max_index: INTEGER)
+      -- Resize to bounds `min_index' and `max_index'.
+      -- Do not lose any item whose index is in both
+      -- `lower..upper' and `min_index..max_index'.
+   require
+      valid_bounds: min_index <= max_index + 1
+   ensure
+      new_lower: lower = min_index
+      new_upper: upper = max_index
+      default_if_too_small:
+         min_index < old lower implies subarray
+          (min_index, max_index.min (old lower - 1)).all_default
+      default_if_too_large:
+         max_index > old upper implies subarray 
+          (min_index.max (old upper + 1), max_index).all_default
+      stable_in_intersection:
+         subarray ((min_index.max (old lower)).min(old upper + 1), 
+            (max_index.min (old upper)).max(old lower - 1)).same_items
+               (old subarray ((min_index.max (lower)).min(upper + 1), 
+               (max_index.min (upper)).max(lower - 1)))
+
+feature -- Duplication
+
+   copy (other: like Current)
+      -- Reinitialize by copying all the items of `other'.
+      -- (Also used by `clone'.)
+      -- (Redefined from GENERAL.)
+      require --from GENERAL
+         other_not_void: other /= Void
+         type_identity: same_type (other)
+      ensure -- from GENERAL
+         is_equal: is_equal (other)
+
+   subarray (min, max: INTEGER): ARRAY [G]
+      -- New array consisting of items at indexes
+      -- in `min .. max'
+      require
+         min_large_enough: lower <= min
+         max_small_enough: max <= upper
+         valid_bounds: min <= max + 1
+      ensure
+         subarray_not_void: Result /= Void
+         lower_set: Result.lower = min
+         upper_set: Result.upper = max
+         items_set:
+            Result.count > 0 implies
+               (Result.item (max) = item (max) and
+               Result.subarray (min, max - 1).is_equal
+                  (subarray (min, max - 1)))
+
+invariant
+
+   valid_bounds: lower <= upper + 1
+
+end
+
+--   The correctness of this specification is based on the following
+--   assumptions:
+--
+--   1. No feature of ARRAY calls a command on any of its arguments.
+--
+--   2. No query of ARRAY changes the value of any basic specifier.
+--
+--   3. No feature of ARRAY shares internal structures in any way that
+--       could lead to behaviour not deducible from this
+--       specification.
+--
+--   4. The phrase "new ARRAY" in a header comment means a
+--       newly-created ARRAY to which there is no reference other than
+--       from 'result'.
+--
+--   5. Every type has a single default value as returned by feature
+--       'default' in class GENERAL.
+
+

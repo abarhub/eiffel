@@ -1,0 +1,165 @@
+Erreur de redefinition:
+- redefine sans effectif (VDRS4)
+- ancetre deferred+redefine+effectif (VDRS4)
+- ancetre deferred+deferred (VDRS4)
+- frozen +redefine (VDRS2)
+- conflit d'attribut effectif entre ancetre et directe (VMCN2)
+- conflit d'attribut effectif entre ancetres (VMCN3)
+- ancetre effectif+redefine+deferred (VDRD5)
+- ancetre redefine+aucun effectif (VDRS4)
+- ancetre deferred+redefine+effectif (VDRS4)
+- + de 1 deferred 
+- frozen de deferred (VFFD4)
+- undefine de deferred (VDUS3)
+- redefine de constante (VDRS2)
+- nombre de parametre non conforme (VNCS1)
+- non conformité de type dans héritage (VNCS2)
+- redefine de plusieurs fois le meme attribut (VDRS3)
+- undefine de plusieurs fois le meme attribut (VDUS4)
+- attribut redefini non présent dans l'ancetre (VDRS1)
+- attribut undefine non présent dans l'ancetre (VDUS1)
+- undefine d'un attribut frozen ou d'une variable (VDUS2)
+- redefinition de ou vers external (VDRD7)
+- redefinition de attribut variable, avec ou sans difference d'expanded (VDRD6)
+
+Erreur de typage:
+- type generique présent dans l'univers (VCFG1)
+- type generique déclaré plusieurs fois dans une classe (VCFG2)
+- type non generique utilisé comme un generique (VTUG1)
+- type generique avec une difference dans le nombre de parametre (VTUG2)
+- type generique avec erreur dans la conformité d'une contrainte (VTCG3)
+- type non présent dans l'univers (VTCT) ???
+- type ancre vers rien (VTAT1 ou VTAT2 si dans feature)
+- type ancre vers type expanded (VTAT1 ou VTAT2 si dans feature)
+- type ancre vers generique (VTAT1 ou VTAT2 si dans feature)
+- type ancre vers ancre (VTAT1 ou VTAT2 si dans feature)
+- type expanse d'un type abstrait (VTEC1)
+- type expanse d'un type avec plusieurs procédures de création (VTEC2)
+- type expanse d'un type avec une procedure avec des parametres (VTEC2)
+
+Erreur dans une classe:
+- Cycle dans l'heritage (VHPR)
+- classe concrete avec attribut deferred (VCCH1)
+- classe abstraite sans attribut deferred (VCCH2) 
+- pas de classe ANY (VHAY)
+- la classe racine est generique (VSRC1)
+- une des routines de création de la classe racine n'a pas la bonne signature (VSRC2)
+- test invariant non BOOLEAN (VWBE)
+
+Erreur dans section de création:
+- section creation dans classe abstrainte (VGCP1)
+- creation d'attribut non defini (VGCP3)
+- plusieurs attributs de creation dans une classe expanded (VGCP5)
+- attribut de creation once (VGCP4)
+- attributs de creation avec des parametres dans une classe expanded (VGCP5)
+- attribut de création répété (VGCP2)
+
+Erreur dans une expression:
+- variable sans type de retour (VKCN1)
+- appel sans type de retour (VKCN1)
+- expression unaire sans type de retour (VKCN1)
+- expression binaire sans type de retour (VKCN1)
+
+Erreur dans une instruction:
+- test de if non BOOLEAN (VWBE)
+- test de elseif non BOOLEAN (VWBE)
+- test invariant de boucle non BOOLEAN (VWBE)
+- test de boucle non BOOLEAN (VWBE)
+- test de check non BOOLEAN (VWBE)
+- le type du variant n'est pas un entier (VAVE)
+- affectation entre type non conforme (VJAR)
+- tentative d'affectation vers un type non reference (VJRV)
+- l'expression d'inspection n'est ni INTEGER, ni CHARACTER (VOMB1)
+- la constante d'inspection n'est pas conforme a l'expression d'inspection (VOMB2)
+- la constante d'inspection n'est pas constante (VOMB2)
+- les constantes d'inspection non uniques sont différentes (VOMB3)
+- les constantes d'inspection uniques ont des noms différentes (VOMB4)
+- s'il y a une constante d'inspection uniques, les cst non uniques sont négatives (VOMB5)
+- une affectation vers une entité non variables (affect)
+- une tentative d'affectation vers une entité non variables (affect)
+- un appel non qualifié qui n'existe pas (VUEX1)
+- un appel qualifié qui n'existe pas (VUEX2)
+- nombre de parametre réel d'un appel different du nombre de parametre formel (VUAR1)
+- un parametre réel d'un appel non compatible (VUAR2)
+- une instruction d'appel avec un type de retour (VKCN2)
+- le type de création est generique (VGCC1)
+- le type de création est abstrait (VGCC2)
+- le type de création est expended (VGCC3)
+- instruction de création avec appel, mais le type de création n'a pas de section de création (VGCC4)
+- instruction de création sans appel, mais le type de création a une section de création (VGCC5)
+- instruction de création avec appel, et pas A-valide (VUAR*)
+- instruction de création avec appel, mais la routine n'est pas déclaré dans section création (VGCC5)
+- instruction de création avec appel, mais pas une procedure (VGCC6)
+- instruction de création avec appel, mais routine once (VGCC6)
+- instruction de création avec appel, mais routine pas visible (VGCC6)
+- instructiond de creation vers une entité non variables (affect)
+- retry pas dans section rescue (vxrt)
+- une affectation vers une entité inexistante (VEEN)
+- une tentative d'affectation vers une entité inexistante (VEEN)
+- une création d'une entité inexistante (VEEN)
+
+Erreur de feature:
+- attribut prefix avec des parametres (VFFD5)
+- attribut prefix sans type de retour (VFFD5)
+- attribut infix avec nb parametres different de 1 (VFFD6)
+- attribut infix sans type de retour (VFFD6)
+- attribut routine avec type de retour ancré ou generique (VFFD7)
+- conflit entre parametres d'une routine (VREG)
+- conflit entre variables locales d'une routine (VREG)
+- conflit entre 1 parametre et 1 attribut (VRFA)
+- conflit entre 1 variable local et un parametre (VRLE2)
+- conflit entre 1 variable local et un attribut (VRLE1)
+- attribut unique pas de type INTEGER (VQUI)
+- attribut constant pas déclaré BOOLEAN (VQMC1)
+- attribut constant pas déclaré CHARACTER (VQMC1)
+- attribut constant pas déclaré INTEGER (VQMC1)
+- attribut constant pas déclaré REAL ou DOUBLE (VQMC1)
+- attribut constant pas déclaré STRING (VQMC1)
+- attribut constant non constant (VQMC)
+- test precondition non BOOLEAN (VWBE)
+- test postcondition non BOOLEAN (VWBE)
+
+
+Regle de nommage des regles:
+- VD: declaration d'heritage
+- VM: heritage
+- VT: type
+- VA: 
+- VN: conformité
+- VG: creation
+- VX: rescue
+- VE: 
+- VJ: affectation
+- VK: 
+- VU: appel
+- VW: expression
+- VI: identificateur
+- VQ: 
+- VO: choix multiple
+- VR: entites
+- VL: visibilité
+- VH: 
+- VF: 
+- VC: 
+- VS: 
+- VB: 
+
+
+
+A faire:
+- faire les exportations de feature (export+appel)
+- instruction strip
+- verification de S-validité pour appel et création
+- amélioré le code de vérification d'un appel
+- traité les expressions
+- traité la conformité et le typage
+- traité vkcn1
+- traiter type d'un tableau
+- corriger les erreurs generé par vtcg3/test5 (pas d'erreur normalement)
+- corriger les erreurs dans expr\test1.e (pas d'erreur normalement si ligne 108 sans commentaire)
+- corriger les erreurs dans expr\test2.e (pas d'erreur normalement a la ligne 63 sans commentaire)
+- prendre en compte le "or else" et le "and then"
+- retour de fonction de type like "un des parametres"
+- section select
+- nettoyer Attribut_Complet
+- regler le pb de l'instruction f1(5).f3.titi; avec aucune erreur

@@ -1,0 +1,68 @@
+<!DOCTYPE classe SYSTEM "..\..\..\test_unitaire\verif.dtd">
+<classe nom="BOOLEAN">
+<liste_verification>
+<attribut_conflit nom_classe="BOOLEAN">
+<nom_feature nom="b" />
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="5" y="21" />
+</attribut_conflit>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="5" y="23" />
+</classe_existe>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="5" y="32" />
+</classe_existe>
+<attribut_conflit nom_classe="BOOLEAN">
+<nom_feature nom="b" />
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="9" y="20" />
+</attribut_conflit>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="9" y="22" />
+</classe_existe>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="9" y="31" />
+</classe_existe>
+<attribut_conflit nom_classe="BOOLEAN">
+<nom_feature nom="b" />
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="13" y="26" />
+</attribut_conflit>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="13" y="28" />
+</classe_existe>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="13" y="37" />
+</classe_existe>
+<attribut_conflit nom_classe="BOOLEAN">
+<nom_feature nom="b" />
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="17" y="25" />
+</attribut_conflit>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="17" y="27" />
+</classe_existe>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="17" y="36" />
+</classe_existe>
+<attribut_conflit nom_classe="BOOLEAN">
+<nom_feature nom="b" />
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="21" y="21" />
+</attribut_conflit>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="21" y="23" />
+</classe_existe>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="21" y="32" />
+</classe_existe>
+<attribut_conflit nom_classe="BOOLEAN">
+<nom_feature nom="b" />
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="25" y="25" />
+</attribut_conflit>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="25" y="27" />
+</classe_existe>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="25" y="36" />
+</classe_existe>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\BOOLEAN.e" x="29" y="22" />
+</classe_existe>
+</liste_verification>
+</classe>

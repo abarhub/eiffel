@@ -1,0 +1,14 @@
+class B
+
+creation make
+
+feature
+
+	make is
+	local
+	k2:INTEGER;
+	do
+	k2:=100;
+	end
+
+end

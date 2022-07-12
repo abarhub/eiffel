@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST9"/>
+	<heritage>
+		<nom_classe nom="A"/>
+		<rename>
+			<nom_feature nom="toto"/>
+			<nom_feature nom="test1"/>
+		</rename>
+		<rename>
+			<nom_feature nom="tata"/>
+			<nom_feature nom="test2"/>
+		</rename>
+	</heritage>
+</class>

@@ -1,0 +1,678 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="COUCOU"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<expression>
+				<entier valeur="5"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<parametre_formel nom="a">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<parametre_formel nom="b">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<affect>
+							<variable nom="i"/>
+							<expression>
+								<expression_binaire op="plus">
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+									<expression>
+										<entier valeur="2"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+						</affect>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d"/>
+		<parametre_formel nom="ze">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<parametre_formel nom="rty">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<parametre_formel nom="kj">
+			<nom_classe nom="BOOLEAN"/>
+		</parametre_formel>
+		<corps>
+			<corps2>
+				<deferred/>
+			</corps2>
+		</corps>
+	</feature>
+	
+	<feature>
+		<nom_feature nom="e"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<chaine>
+									<chaine1>"coucou a tous"</chaine1>
+								</chaine>
+							</expression>
+							<expression>
+								<chaine>
+									<chaine1>"salut% a tous"</chaine1>
+								</chaine>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<chaine>
+							<chaine1>"un %"text%" fin"</chaine1>
+						</chaine>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	
+	<feature>
+		<nom_feature nom="f"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<car>'a'</car>
+					</expression>
+					<expression>
+						<car>'a%'b'</car>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	
+	<feature>
+		<nom_feature nom="g"/>
+		<corps>
+			<expression>
+				<expression_binaire op="implies">
+					<expression>
+						<expression_binaire op="and">
+							<expression>
+								<expression_binaire op="div">
+									<expression>
+										<entier valeur="45"/>
+									</expression>
+									<expression>
+										<entier valeur="86"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<expression>
+								<entier valeur="78" />
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<expression_binaire op="or_else">
+							<expression>
+								<entier valeur="7512"/>
+							</expression>
+							<expression>
+								<expression_binaire op="infs">
+									<expression>
+										<entier valeur="452" />
+									</expression>
+									<expression>
+										<entier valeur="78" />
+									</expression>
+								</expression_binaire>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="h"/>
+		<corps>
+			<corps2>
+				<code>
+					<local nom="i">
+						<nom_classe nom="k"/>
+					</local>
+					<local nom="j">
+						<nom_classe nom="k"/>
+					</local>
+					<local nom="f">
+						<nom_classe nom="i"/>
+					</local>
+					<local nom="ty">
+						<nom_classe nom="mlo"/>
+					</local>
+					<local nom="hg">
+						<nom_classe nom="mlo"/>
+					</local>
+					<local nom="ds">
+						<nom_classe nom="mlo"/>
+					</local>
+					<local nom="rg">
+						<nom_classe nom="mlo"/>
+					</local>
+					<instruction>
+						<tentative_affect>
+							<variable nom="p"/>
+							<expression>
+								<expression_binaire op="plus">
+									<expression>
+										<entier valeur="45"/>										
+									</expression>
+									<expression>
+										<entier valeur="21"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+						</tentative_affect>
+					</instruction>
+					<instruction>
+						<affect>
+							<variable nom="l"/>
+							<expression>
+								<expression_binaire op="plus">
+									<expression>
+										<entier valeur="75"/>										
+									</expression>
+									<expression>
+										<entier valeur="12"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+						</affect>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<expression_binaire op="egal">
+									<expression>
+										<entier valeur="75"/>
+									</expression>
+									<expression>
+										<entier valeur="12"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<instruction>
+								<appel nom="fg">
+									<parametre_reel>
+										<expression>
+											<entier valeur="45"/>
+										</expression>
+									</parametre_reel>
+									<parametre_reel>
+										<expression>
+											<entier valeur="213"/>
+										</expression>
+									</parametre_reel>									
+								</appel>
+							</instruction>
+							<instruction>
+								<appel nom="f"/>
+							</instruction>
+							<instruction>
+								<appel nom="kljjlk">
+									<parametre_reel>
+										<expression>
+											<chaine>
+												<chaine1>"sdfgdf"</chaine1>
+											</chaine>
+										</expression>
+									</parametre_reel>
+								</appel>
+							</instruction>
+							<else>
+								<instruction>
+									<appel nom="f">
+										<parametre_reel>
+											<expression>
+												<entier valeur="45"/>
+											</expression>
+										</parametre_reel>
+									</appel>
+								</instruction>
+							</else>
+						</if>
+					</instruction>
+					<instruction>
+						<check>
+							<assert>
+								<expression>
+									<entier valeur="123"/>
+								</expression>
+							</assert>
+							<assert>
+								<expression>
+									<expression_binaire op="implies">
+										<expression>
+											<vrai/>
+										</expression>
+										<expression>
+											<faux/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</assert>
+						</check>
+					</instruction>
+					<instruction>
+						<affect>
+							<variable nom="s"/>
+							<expression>
+								<expression_binaire op="plus">
+									<expression>
+										<chaine>
+											<chaine1>"abc"</chaine1>
+										</chaine>
+									</expression>
+									<expression>
+										<chaine>
+											<chaine1>"coucou%</chaine1>
+											<chaine1>% a tous %</chaine1>
+											<chaine1>%et a vous aussi"</chaine1>
+										</chaine>
+									</expression>
+								</expression_binaire>
+							</expression>
+						</affect>
+					</instruction>
+					<instruction>
+						<loop>
+							<instruction>
+								<affect>
+									<variable nom="i"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+							<expression>
+								<expression_binaire op="sups">
+									<expression>
+										<variable nom="i"/>
+									</expression>
+									<expression>
+										<entier valeur="45"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="i"/>
+									<expression>
+										<expression_binaire op="plus">
+											<expression>
+												<variable nom="i"/>												
+											</expression>
+											<expression>
+												<entier valeur="1"/>
+											</expression>
+										</expression_binaire>
+									</expression>
+								</affect>
+							</instruction>
+						</loop>
+					</instruction>
+					<instruction>
+						<debug>
+							<chaine>
+								<chaine1>"a"</chaine1>
+							</chaine>
+							<chaine>
+								<chaine1>"b"</chaine1>
+							</chaine>
+							<instruction>
+								<affect>
+									<variable nom="i"/>
+									<expression>
+										<expression_binaire op="diff">
+											<expression>
+												<variable nom="a"/>												
+											</expression>
+											<expression>
+												<variable nom="b"/>
+											</expression>
+										</expression_binaire>
+									</expression>
+								</affect>
+							</instruction>
+							<instruction>
+								<affect>
+									<variable nom="j"/>
+									<expression>
+										<expression_binaire op="fois">
+											<expression>
+												<entier valeur="7"/>											
+											</expression>
+											<expression>
+												<entier valeur="8"/>
+											</expression>
+										</expression_binaire>
+									</expression>
+								</affect>
+							</instruction>
+						</debug>
+					</instruction>
+					<instruction>
+						<creation2>
+							<appel nom="a" />
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="b">
+							<appel nom="make" />
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2>
+							<nom_classe nom="ARRAY" />
+							<appel nom="c" />
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="d">
+							<nom_classe nom="ARRAY" />
+							<appel nom="make" />
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="e">
+							<nom_classe nom="ARRAY" />
+							<appel nom="make" >
+								<parametre_reel>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</parametre_reel>
+							</appel>		
+						</creation2>
+					</instruction>
+					<instruction>
+						<inspect>
+							<expression>
+								<variable nom="i" />
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="4"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="i"/>
+										<expression>
+											<expression_binaire op="plus">
+												<expression>
+													<variable nom="i"/>													
+												</expression>
+												<expression>
+													<entier valeur="1"/>
+												</expression>
+											</expression_binaire>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+							<when_then>
+								<instruction>
+									<affect>
+										<variable nom="j"/>
+										<expression>
+											<expression_binaire op="plus">
+												<expression>
+													<variable nom="j"/>													
+												</expression>
+												<expression>
+													<entier valeur="2"/>
+												</expression>
+											</expression_binaire>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+						</inspect>
+					</instruction>
+					<instruction>
+						<inspect>
+							<expression>
+								<variable nom="i" />
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="4"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="i"/>
+										<expression>
+											<expression_binaire op="plus">
+												<expression>
+													<variable nom="i"/>													
+												</expression>
+												<expression>
+													<entier valeur="1"/>
+												</expression>
+											</expression_binaire>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="4"/>
+									</expression>
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="7"/>
+									</expression>
+									<expression>
+										<entier valeur="8"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="i"/>
+										<expression>
+											<expression_binaire op="plus">
+												<expression>
+													<variable nom="i"/>													
+												</expression>
+												<expression>
+													<entier valeur="1"/>
+												</expression>
+											</expression_binaire>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+							<when_then>
+								<instruction>
+									<affect>
+										<variable nom="j"/>
+										<expression>
+											<expression_binaire op="plus">
+												<expression>
+													<variable nom="j"/>													
+												</expression>
+												<expression>
+													<entier valeur="2"/>
+												</expression>
+											</expression_binaire>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+						</inspect>
+					</instruction>
+					<instruction>
+						<inspect>
+							<expression>
+								<variable nom="i" />
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="4"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="i"/>
+										<expression>
+											<expression_binaire op="plus">
+												<expression>
+													<variable nom="i"/>													
+												</expression>
+												<expression>
+													<entier valeur="1"/>
+												</expression>
+											</expression_binaire>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="4"/>
+									</expression>
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</expression_when>
+								<expression_when>
+									<expression>
+										<entier valeur="7"/>
+									</expression>
+									<expression>
+										<entier valeur="8"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="i"/>
+										<expression>
+											<expression_binaire op="plus">
+												<expression>
+													<variable nom="i"/>													
+												</expression>
+												<expression>
+													<entier valeur="1"/>
+												</expression>
+											</expression_binaire>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+						</inspect>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<instruction>
+								<appel nom="a"/>
+							</instruction>
+							<else>
+								<instruction>
+									<appel nom="a"/>
+								</instruction>
+							</else>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<instruction>
+								<appel nom="a"/>
+							</instruction>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<instruction>
+								<appel nom="a"/>
+							</instruction>
+							<elseif>
+								<expression>
+									<faux/>
+								</expression>
+								<instruction>
+									<appel nom="a"/>
+								</instruction>
+							</elseif>
+							<else>
+								<instruction>
+									<appel nom="a"/>
+								</instruction>
+							</else>
+						</if>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

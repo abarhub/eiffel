@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0092)http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet1.html -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY><PRE>/*
+ * Copyright (c) 2000, 2002 IBM Corp.  All rights reserved.
+ * This file is made available under the terms of the Common Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/cpl-v10.html
+ */
+ 
+import org.eclipse.swt.widgets.*;
+
+public class Main {
+
+public static void main (String [] args) {
+	Display display = new Display ();
+	Shell shell = new Shell(display);
+	shell.open ();
+	while (!shell.isDisposed ()) {
+		if (!display.readAndDispatch ()) display.sleep ();
+	}
+	display.dispose ();
+}
+}
+</PRE></BODY></HTML>

@@ -1,0 +1,302 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Eiffel: The Syntax</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+<div align="left">
+
+<table border="0">
+    <tr>
+        <td width="100%"><font size="6"><strong>Eiffel: The
+        Syntax</strong></font></td>
+    </tr>
+</table>
+</div>
+
+<hr size="1">
+
+<center>
+This document is avialable from:<br>
+<a href="http://www.gobosoft.com/eiffel/syntax/">
+http://www.gobosoft.com/eiffel/syntax/</a><p>
+
+<a href="http://www.deja.com/=dnc/[ST_rn=ps]/getdoc.xp?AN=489608637">More Eiffel Documentation</a>
+</center><p>
+
+<p align="center"><a href="#A"><font size="5"><strong><tt>A</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#B"><font
+size="5"><strong><tt>B</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#C"><font size="5"><strong><tt>C</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#D"><font
+size="5"><strong><tt>D</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#E"><font size="5"><strong><tt>E</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#F"><font
+size="5"><strong><tt>F</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#G"><font size="5"><strong><tt>G</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#H"><font
+size="5"><strong><tt>H</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#I"><font size="5"><strong><tt>I</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#J"><font
+size="5"><strong><tt>J</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#K"><font size="5"><strong><tt>K</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#L"><font
+size="5"><strong><tt>L</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#M"><font size="5"><strong><tt>M</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#N"><font
+size="5"><strong><tt>N</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#O"><font size="5"><strong><tt>O</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#P"><font
+size="5"><strong><tt>P</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#Q"><font size="5"><strong><tt>Q</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#R"><font
+size="5"><strong><tt>R</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#S"><font size="5"><strong><tt>S</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#T"><font
+size="5"><strong><tt>T</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#U"><font size="5"><strong><tt>U</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#V"><font
+size="5"><strong><tt>V</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#W"><font size="5"><strong><tt>W</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#X"><font
+size="5"><strong><tt>X</tt></strong></font></a><font size="5"><strong><tt>
+</tt></strong></font><a href="#Y"><font size="5"><strong><tt>Y</tt></strong></font></a><font
+size="5"><strong><tt> </tt></strong></font><a href="#Z"><font
+size="5"><strong><tt>Z</tt></strong></font></a></p>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="A"><font size="5"><strong><tt>A</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Actual"><tt>Actual</tt></a><tt><br>
+        </tt><a href="syntax.html#Actual_generics"><tt>Actual_generics</tt></a><tt><br>
+        </tt><a href="syntax.html#Actual_list"><tt>Actual_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Actuals"><tt>Actuals</tt></a><tt><br>
+        </tt><a href="syntax.html#Address"><tt>Address</tt></a><tt><br>
+        </tt><a href="syntax.html#Address_mark"><tt>Address_mark</tt></a><tt><br>
+        </tt><a href="syntax.html#Anchor"><tt>Anchor</tt></a><tt><br>
+        </tt><a href="syntax.html#Anchored"><tt>Anchored</tt></a><tt><br>
+        </tt><a href="syntax.html#Assertion"><tt>Assertion</tt></a><tt><br>
+        </tt><a href="syntax.html#Assertion_clause"><tt>Assertion_clause</tt></a><tt><br>
+        </tt><a href="syntax.html#Assignment"><tt>Assignment</tt></a><tt><br>
+        </tt><a href="syntax.html#Assignment_attempt"><tt>Assignment_attempt</tt></a><tt><br>
+        </tt><a href="syntax.html#Attribute"><tt>Attribute</tt></a><tt><br>
+        </tt><a href="syntax.html#Attribute_list"><tt>Attribute_list</tt></a></dd>
+    <dt><a name="B"><font size="5"><strong><tt>B</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Binary"><tt>Binary</tt></a><tt><br>
+        </tt><a href="syntax.html#Binary_expression"><tt>Binary_expression</tt></a><tt><br>
+        </tt><a href="syntax.html#Bit_constant"><tt>Bit_constant</tt></a><tt><br>
+        </tt><a href="syntax.html#Bit_length"><tt>Bit_length</tt></a><tt><br>
+        </tt><a href="syntax.html#Bit_type"><tt>Bit_type</tt></a><tt><br>
+        </tt><a href="syntax.html#Boolean_constant"><tt>Boolean_constant</tt></a><tt><br>
+        </tt><a href="syntax.html#Boolean_expression"><tt>Boolean_expression</tt></a><tt><br>
+        </tt><a href="syntax.html#Break"><tt>Break</tt></a></dd>
+    <dt><a name="C"><font size="5"><strong><tt>C</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Call"><tt>Call</tt></a><tt><br>
+        </tt><a href="syntax.html#Call_chain"><tt>Call_chain</tt></a><tt><br>
+        </tt><a href="syntax.html#Call_qualifier"><tt>Call_qualifier</tt></a><tt><br>
+        </tt><a href="syntax.html#Call_target"><tt>Call_target</tt></a><tt><br>
+        </tt><a href="syntax.html#Character_constant"><tt>Character_constant</tt></a><tt><br>
+        </tt><a href="syntax.html#Check"><tt>Check</tt></a><tt><br>
+        </tt><a href="syntax.html#Choice"><tt>Choice</tt></a><tt><br>
+        </tt><a href="syntax.html#Choice_constant"><tt>Choice_constant</tt></a><tt><br>
+        </tt><a href="syntax.html#Choices"><tt>Choices</tt></a><tt><br>
+        </tt><a href="syntax.html#Class_declaration"><tt>Class_declaration</tt></a><tt><br>
+        </tt><a href="syntax.html#Class_header"><tt>Class_header</tt></a><tt><br>
+        </tt><a href="syntax.html#Class_list"><tt>Class_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Class_name"><tt>Class_name</tt></a><tt><br>
+        </tt><a href="syntax.html#Class_type"><tt>Class_type</tt></a><tt><br>
+        </tt><a href="syntax.html#Class_type_expanded"><tt>Class_type_expanded</tt></a><tt><br>
+        </tt><a href="syntax.html#Class_type_separate"><tt>Class_type_separate</tt></a><tt><br>
+        </tt><a href="syntax.html#Clients"><tt>Clients</tt></a><tt><br>
+        </tt><a href="syntax.html#Comment"><tt>Comment</tt></a><tt><br>
+        </tt><a href="syntax.html#Comparison"><tt>Comparison</tt></a><tt><br>
+        </tt><a href="syntax.html#Compound"><tt>Compound</tt></a><tt><br>
+        </tt><a href="syntax.html#Conditional"><tt>Conditional</tt></a><tt><br>
+        </tt><a href="syntax.html#Constant_or_routine"><tt>Constant_or_routine</tt></a><tt><br>
+        </tt><a href="syntax.html#Constraint"><tt>Constraint</tt></a><tt><br>
+        </tt><a href="syntax.html#Creation"><tt>Creation</tt></a><tt><br>
+        </tt><a href="syntax.html#Creation_call"><tt>Creation_call</tt></a><tt><br>
+        </tt><a href="syntax.html#Creation_clause"><tt>Creation_clause</tt></a><tt><br>
+        </tt><a href="syntax.html#Creators"><tt>Creators</tt></a></dd>
+    <dt><a name="D"><font size="5"><strong><tt>D</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Debug"><tt>Debug</tt></a><tt><br>
+        </tt><a href="syntax.html#Debug_key"><tt>Debug_key</tt></a><tt><br>
+        </tt><a href="syntax.html#Debug_key_list"><tt>Debug_key_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Debug_keys"><tt>Debug_keys</tt></a><tt><br>
+        </tt><a href="syntax.html#Declaration_body"><tt>Declaration_body</tt></a><tt><br>
+        </tt><a href="syntax.html#Deferred"><tt>Deferred</tt></a></dd>
+    <dt><a name="E"><font size="5"><strong><tt>E</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Effective"><tt>Effective</tt></a><tt><br>
+        </tt><a href="syntax.html#Else_part"><tt>Else_part</tt></a><tt><br>
+        </tt><a href="syntax.html#Entity_declaration_group"><tt>Entity_declaration_group</tt></a><tt><br>
+        </tt><a href="syntax.html#Entity_declaration_list"><tt>Entity_declaration_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Equality"><tt>Equality</tt></a><tt><br>
+        </tt><a href="syntax.html#Exit"><tt>Exit</tt></a><tt><br>
+        </tt><a href="syntax.html#Expression"><tt>Expression</tt></a><tt><br>
+        </tt><a href="syntax.html#Expression_list"><tt>Expression_list</tt></a><tt><br>
+        </tt><a href="syntax.html#External"><tt>External</tt></a><tt><br>
+        </tt><a href="syntax.html#External_name"><tt>External_name</tt></a></dd>
+    <dt><a name="F"><font size="5"><strong><tt>F</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Feature_adaptation"><tt>Feature_adaptation</tt></a><tt><br>
+        </tt><a href="syntax.html#Feature_clause"><tt>Feature_clause</tt></a><tt><br>
+        </tt><a href="syntax.html#Feature_declaration"><tt>Feature_declaration</tt></a><tt><br>
+        </tt><a href="syntax.html#Feature_declaration_list"><tt>Feature_declaration_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Feature_list"><tt>Feature_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Feature_name"><tt>Feature_name</tt></a><tt><br>
+        </tt><a href="syntax.html#Feature_set"><tt>Feature_set</tt></a><tt><br>
+        </tt><a href="syntax.html#Feature_value"><tt>Feature_value</tt></a><tt><br>
+        </tt><a href="syntax.html#Features"><tt>Features</tt></a><tt><br>
+        </tt><a href="syntax.html#Formal_arguments"><tt>Formal_arguments</tt></a><tt><br>
+        </tt><a href="syntax.html#Formal_generic"><tt>Formal_generic</tt></a><tt><br>
+        </tt><a href="syntax.html#Formal_generic_list"><tt>Formal_generic_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Formal_generic_name"><tt>Formal_generic_name</tt></a><tt><br>
+        </tt><a href="syntax.html#Formal_generics"><tt>Formal_generics</tt></a><tt><br>
+        </tt><a href="syntax.html#Free_operator"><tt>Free_operator</tt></a></dd>
+    <dt><a name="G"><font size="5"><strong><tt>G</tt></strong></font></a></dt>
+    <dt><a name="H"><font size="5"><strong><tt>H</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Header_comment"><tt>Header_comment</tt></a><tt><br>
+        </tt><a href="syntax.html#Header_mark"><tt>Header_mark</tt></a><tt><br>
+        </tt><a href="syntax.html#Hexadecimal_constant"><tt>Hexadecimal_constant</tt></a></dd>
+    <dt><a name="I"><font size="5"><strong><tt>I</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Identifier"><tt>Identifier</tt></a><tt><br>
+        </tt><a href="syntax.html#Identifier_list"><tt>Identifier_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Index"><tt>Index</tt></a><tt><br>
+        </tt><a href="syntax.html#Index_clause"><tt>Index_clause</tt></a><tt><br>
+        </tt><a href="syntax.html#Index_list"><tt>Index_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Index_terms"><tt>Index_terms</tt></a><tt><br>
+        </tt><a href="syntax.html#Index_value"><tt>Index_value</tt></a><tt><br>
+        </tt><a href="syntax.html#Indexing"><tt>Indexing</tt></a><tt><br>
+        </tt><a href="syntax.html#Infix"><tt>Infix</tt></a><tt><br>
+        </tt><a href="syntax.html#Infix_operator"><tt>Infix_operator</tt></a><tt><br>
+        </tt><a href="syntax.html#Inheritance"><tt>Inheritance</tt></a><tt><br>
+        </tt><a href="syntax.html#Initialization"><tt>Initialization</tt></a><tt><br>
+        </tt><a href="syntax.html#Instruction"><tt>Instruction</tt></a><tt><br>
+        </tt><a href="syntax.html#Integer"><tt>Integer</tt></a><tt><br>
+        </tt><a href="syntax.html#Integer_constant"><tt>Integer_constant</tt></a><tt><br>
+        </tt><a href="syntax.html#Internal"><tt>Internal</tt></a><tt><br>
+        </tt><a href="syntax.html#Interval"><tt>Interval</tt></a><tt><br>
+        </tt><a href="syntax.html#Invariant"><tt>Invariant</tt></a></dd>
+    <dt><a name="J"><font size="5"><strong><tt>J</tt></strong></font></a></dt>
+    <dt><a name="K"><font size="5"><strong><tt>K</tt></strong></font></a></dt>
+    <dt><a name="L"><font size="5"><strong><tt>L</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Language_name"><tt>Language_name</tt></a><tt><br>
+        </tt><a href="syntax.html#Local_declarations"><tt>Local_declarations</tt></a><tt><br>
+        </tt><a href="syntax.html#Loop"><tt>Loop</tt></a><tt><br>
+        </tt><a href="syntax.html#Loop_body"><tt>Loop_body</tt></a></dd>
+    <dt><a name="M"><font size="5"><strong><tt>M</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Manifest_array"><tt>Manifest_array</tt></a><tt><br>
+        </tt><a href="syntax.html#Manifest_constant"><tt>Manifest_constant</tt></a><tt><br>
+        </tt><a href="syntax.html#Manifest_string"><tt>Manifest_string</tt></a><tt><br>
+        </tt><a href="syntax.html#Message"><tt>Message</tt></a><tt><br>
+        </tt><a href="syntax.html#Multi_branch"><tt>Multi_branch</tt></a></dd>
+    <dt><a name="N"><font size="5"><strong><tt>N</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#New_export_item"><tt>New_export_item</tt></a><tt><br>
+        </tt><a href="syntax.html#New_export_list"><tt>New_export_list</tt></a><tt><br>
+        </tt><a href="syntax.html#New_exports"><tt>New_exports</tt></a><tt><br>
+        </tt><a href="syntax.html#New_feature"><tt>New_feature</tt></a><tt><br>
+        </tt><a href="syntax.html#New_feature_list"><tt>New_feature_list</tt></a></dd>
+    <dt><a name="O"><font size="5"><strong><tt>O</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Obsolete"><tt>Obsolete</tt></a><tt><br>
+        </tt><a href="syntax.html#Old"><tt>Old</tt></a><tt><br>
+        </tt><a href="syntax.html#Operator"><tt>Operator</tt></a><tt><br>
+        </tt><a href="syntax.html#Operator_expression"><tt>Operator_expression</tt></a></dd>
+    <dt><a name="P"><font size="5"><strong><tt>P</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Parent"><tt>Parent</tt></a><tt><br>
+        </tt><a href="syntax.html#Parent_list"><tt>Parent_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Parent_qualification"><tt>Parent_qualification</tt></a><tt><br>
+        </tt><a href="syntax.html#Parenthesized"><tt>Parenthesized</tt></a><tt><br>
+        </tt><a href="syntax.html#Postcondition"><tt>Postcondition</tt></a><tt><br>
+        </tt><a href="syntax.html#Precondition"><tt>Precondition</tt></a><tt><br>
+        </tt><a href="syntax.html#Precursor"><tt>Precursor</tt></a><tt><br>
+        </tt><a href="syntax.html#Prefix"><tt>Prefix</tt></a><tt><br>
+        </tt><a href="syntax.html#Prefix_operator"><tt>Prefix_operator</tt></a><tt><br>
+        </tt><a href="syntax.html#Procedure_list"><tt>Procedure_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Procedure_name"><tt>Procedure_name</tt></a></dd>
+    <dt><a name="Q"><font size="5"><strong><tt>Q</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Qualified_call"><tt>Qualified_call</tt></a></dd>
+    <dt><a name="R"><font size="5"><strong><tt>R</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Real"><tt>Real</tt></a><tt><br>
+        </tt><a href="syntax.html#Real_constant"><tt>Real_constant</tt></a><tt><br>
+        </tt><a href="syntax.html#Redefine"><tt>Redefine</tt></a><tt><br>
+        </tt><a href="syntax.html#Rename"><tt>Rename</tt></a><tt><br>
+        </tt><a href="syntax.html#Rename_list"><tt>Rename_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Rename_pair"><tt>Rename_pair</tt></a><tt><br>
+        </tt><a href="syntax.html#Rescue"><tt>Rescue</tt></a><tt><br>
+        </tt><a href="syntax.html#Reserved_word"><tt>Reserved_word</tt></a><tt><br>
+        </tt><a href="syntax.html#Retry"><tt>Retry</tt></a><tt><br>
+        </tt><a href="syntax.html#Routine"><tt>Routine</tt></a><tt><br>
+        </tt><a href="syntax.html#Routine_body"><tt>Routine_body</tt></a><tt><br>
+        </tt><a href="syntax.html#Routine_mark"><tt>Routine_mark</tt></a></dd>
+    <dt><a name="S"><font size="5"><strong><tt>S</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Select"><tt>Select</tt></a><tt><br>
+        </tt><a href="syntax.html#Semicolon"><tt>Semicolon</tt></a><tt><br>
+        </tt><a href="syntax.html#Sign"><tt>Sign</tt></a><tt><br>
+        </tt><a href="syntax.html#Special_character"><tt>Special_character</tt></a><tt><br>
+        </tt><a href="syntax.html#Strip"><tt>Strip</tt></a></dd>
+    <dt><a name="T"><font size="5"><strong><tt>T</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Tag"><tt>Tag</tt></a><tt><br>
+        </tt><a href="syntax.html#Tag_mark"><tt>Tag_mark</tt></a><tt><br>
+        </tt><a href="syntax.html#Then_part"><tt>Then_part</tt></a><tt><br>
+        </tt><a href="syntax.html#Then_part_list"><tt>Then_part_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Type"><tt>Type</tt></a><tt><br>
+        </tt><a href="syntax.html#Type_list"><tt>Type_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Type_mark"><tt>Type_mark</tt></a></dd>
+    <dt><a name="U"><font size="5"><strong><tt>U</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Unary"><tt>Unary</tt></a><tt><br>
+        </tt><a href="syntax.html#Unary_expression"><tt>Unary_expression</tt></a><tt><br>
+        </tt><a href="syntax.html#Undefine"><tt>Undefine</tt></a><tt><br>
+        </tt><a href="syntax.html#Unique"><tt>Unique</tt></a><tt><br>
+        </tt><a href="syntax.html#Unlabeled_assertion_clause"><tt>Unlabeled_assertion_clause</tt></a><tt><br>
+        </tt><a href="syntax.html#Unqualified_call"><tt>Unqualified_call</tt></a></dd>
+    <dt><a name="V"><font size="5"><strong><tt>V</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#Variant"><tt>Variant</tt></a></dd>
+    <dt><a name="W"><font size="5"><strong><tt>W</tt></strong></font></a></dt>
+    <dd><a href="syntax.html#When_part"><tt>When_part</tt></a><tt><br>
+        </tt><a href="syntax.html#When_part_list"><tt>When_part_list</tt></a><tt><br>
+        </tt><a href="syntax.html#Wide_character_constant"><tt>Wide_character_constant</tt></a><tt><br>
+        </tt><a href="syntax.html#Wide_manifest_string"><tt>Wide_manifest_string</tt></a><tt><br>
+        </tt><a href="syntax.html#Writable"><tt>Writable</tt></a></dd>
+    <dt><a name="X"><font size="5"><strong><tt>X</tt></strong></font></a></dt>
+    <dt><a name="Y"><font size="5"><strong><tt>Y</tt></strong></font></a></dt>
+    <dt><a name="Z"><font size="5"><strong><tt>Z</tt></strong></font></a></dt>
+</dl>
+
+<hr size="1">
+
+<table border="0" width="100%">
+    <tr>
+        <td><address>
+            <font size="2"><b>Copyright © 1997</b></font><font
+            size="1"><b>, </b></font><font size="2"><strong>Eric
+            Bezault</strong></font><strong> </strong><font
+            size="2"><br>
+            <strong>mailto:</strong></font><a
+            href="mailto:ericb@gobosoft.com"><font size="2">ericb@gobosoft.com</font></a><font
+            size="2"><br>
+            <strong>http:</strong></font><a
+            href="http://www.gobosoft.com"><font size="2">//www.gobosoft.com</font></a><font
+            size="2"><br>
+            <strong>Last Updated:</strong> 6 September 1997</font><br>
+            <!--webbot bot="PurpleText"
+            preview="
+$Date: 1999/06/12 18:48:32 $ 
+$Revision: 1.5 $"
+            --> 
+        </address>
+        </td>
+<!--        <td align="right" valign="top"><a
+        href="http://www.gobosoft.com"><img
+        src="../../image/home.gif" alt="Home" border="0"
+        width="40" height="40"></a><a href="syntax.html"><img
+        src="../../image/toc.gif" alt="Home" border="0"
+        width="40" height="40"></a></td> -->
+    </tr>
+</table>
+</body>
+</html>

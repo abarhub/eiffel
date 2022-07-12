@@ -1,0 +1,16 @@
+Initialisation
+prologue(1:TEST1.make)
+instr :.appel6( loc=(19,9,'appel6','test\genc\appel_basic\test1.e'))
+prologue(1:TEST1.appel6)
+instr : j:=I5( loc=(63,9,'j','test\genc\appel_basic\test1.e'))
+instr : !A!Result.make( loc=(64,9,'!','test\genc\appel_basic\test1.e'))
+prologue(8:A.make)
+instr : k:=I37( loc=(11,9,'k','test\genc\appel_basic\A.e'))
+epilogue(8:A.make)
+epilogue(1:TEST1.appel6)
+instr :.appel( loc=(19,16,'appel','test\genc\appel_basic\test1.e'))
+prologue(8:A.appel)
+instr : var:=I89( loc=(18,9,'var','test\genc\appel_basic\A.e'))
+epilogue(8:A.appel)
+epilogue(1:TEST1.make)
+Terminaison

@@ -1,0 +1,291 @@
+BODY {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; FONT-SIZE: 0.75em; PADDING-BOTTOM: 0px; MARGIN: 0px 25px 0px 8px; BORDER-LEFT: 0px; COLOR: black; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, Lucida, Sans-serif; BACKGROUND-COLOR: ivory
+}
+LI {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; FONT-SIZE: 0.75em; PADDING-BOTTOM: 0px; MARGIN: 0px 25px 0px 8px; BORDER-LEFT: 0px; COLOR: black; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, Lucida, Sans-serif; BACKGROUND-COLOR: ivory
+}
+TD {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; FONT-SIZE: 0.75em; PADDING-BOTTOM: 0px; MARGIN: 0px 25px 0px 8px; BORDER-LEFT: 0px; COLOR: black; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; FONT-FAMILY: Verdana, Arial, Helvetica, Lucida, Sans-serif; BACKGROUND-COLOR: ivory
+}
+A {
+	COLOR: #1d38ff; TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: underline
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: green; TEXT-DECORATION: underline
+}
+A.buy {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A.download {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A.footer-link {
+	FONT-WEIGHT: normal; COLOR: #ffffff
+}
+A.inparagraph {
+	
+}
+A.menu-link {
+	FONT-WEIGHT: normal; COLOR: #0f3a89
+}
+A.more {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A.navy {
+	FONT-WEIGHT: bold; COLOR: navy; TEXT-DECORATION: none
+}
+A.paper {
+	COLOR: #00aa00; TEXT-DECORATION: none
+}
+A.rightlink {
+	
+}
+A.top-menu-link {
+	FONT-WEIGHT: normal; COLOR: #61622e
+}
+A.xref {
+	FONT-SIZE: 100%
+}
+BLOCKQUOTE {
+	FONT-STYLE: italic; TEXT-ALIGN: justify
+}
+BLOCKQUOTE.talks {
+	MARGIN-TOP: 2pt; MARGIN-BOTTOM: 6pt
+}
+BLOCKQUOTE.talksbio {
+	MARGIN-TOP: 2pt; MARGIN-BOTTOM: 6pt; FONT-STYLE: normal
+}
+EM.ee-text {
+	COLOR: #003300
+}
+EM.ff-italics {
+	COLOR: black
+}
+H1 {
+	PADDING-RIGHT: 0px; MARGIN-TOP: 12pt; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 1.6em; PADDING-BOTTOM: 0px; MARGIN-LEFT: 0pt; COLOR: #990000; PADDING-TOP: 4px; TEXT-ALIGN: left
+}
+H1.book {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 1.5em; PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #0f3a89; TEXT-ALIGN: left
+}
+H1.stuck {
+	MARGIN-TOP: 4pt
+}
+H2 {
+	BORDER-RIGHT: #827db0 0px solid; PADDING-RIGHT: 3px; BORDER-TOP: #827db0 0px solid; PADDING-LEFT: 3px; FONT-WEIGHT: bold; FONT-SIZE: 1.3em; PADDING-BOTTOM: 3px; MARGIN: 2px 0% 0px 0px; BORDER-LEFT: #827db0 0px solid; COLOR: #0f3a89; PADDING-TOP: 3px; BORDER-BOTTOM: #827db0 0px solid; BACKGROUND-COLOR: #e0e0e0
+}
+H2.a {
+	FONT-SIZE: 1.5em; MARGIN-RIGHT: 0%
+}
+H2.biblio {
+	MARGIN-RIGHT: 0%
+}
+H2.intable {
+	MARGIN-RIGHT: 0%
+}
+H3 {
+	PADDING-RIGHT: 0mm; PADDING-LEFT: 0mm; FONT-WEIGHT: bold; FONT-SIZE: 1em; MARGIN-BOTTOM: 0pt; PADDING-BOTTOM: 0.1mm; MARGIN-LEFT: 0pt; COLOR: navy; PADDING-TOP: 0mm
+}
+H3.biblio {
+	MARGIN-TOP: 15px; FONT-SIZE: 0.9em; MARGIN-BOTTOM: 5px; COLOR: #006400; MARGIN-RIGHT: 0%
+}
+H3.links {
+	MARGIN-LEFT: 0pt; COLOR: green
+}
+H3.talks {
+	MARGIN-TOP: 6pt; FONT-SIZE: 0.9em; MARGIN-BOTTOM: 0pt; PADDING-BOTTOM: 0pt; COLOR: black
+}
+H4 {
+	PADDING-RIGHT: 0mm; MARGIN-TOP: 0pt; PADDING-LEFT: 0mm; FONT-WEIGHT: normal; FONT-SIZE: 0.75em; MARGIN-BOTTOM: 0pt; PADDING-BOTTOM: 0.1mm; MARGIN-LEFT: 0pt; COLOR: #0f3a89; PADDING-TOP: 0mm
+}
+HR {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; COLOR: navy; HEIGHT: 1px
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+LI {
+	FONT-SIZE: 0.75em; PADDING-BOTTOM: 8px; VERTICAL-ALIGN: top; COLOR: #000000; TEXT-ALIGN: justify
+}
+LI.quote {
+	FONT-SIZE: 0.75em; PADDING-BOTTOM: 8px; VERTICAL-ALIGN: top; WIDTH: 90%; COLOR: #005522; TEXT-ALIGN: justify
+}
+OL {
+	LIST-STYLE-IMAGE: none; COLOR: #0f3a89
+}
+P {
+	MARGIN-TOP: 0.4em; MARGIN-LEFT: 0px; VERTICAL-ALIGN: top; TEXT-ALIGN: justify
+}
+P.after-ul {
+	MARGIN-TOP: -1px
+}
+P.bigger {
+	FONT-SIZE: 0.9em; MARGIN-LEFT: 0px; VERTICAL-ALIGN: top; TEXT-ALIGN: justify
+}
+P.blockquote {
+	
+}
+P.bullet {
+	MARGIN-TOP: 5px; MARGIN-BOTTOM: 10px
+}
+P.credit {
+	PADDING-LEFT: 45px; MARGIN-LEFT: 0px; VERTICAL-ALIGN: top; WIDTH: 90%; COLOR: #005522; TEXT-ALIGN: right
+}
+P.nospace {
+	MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px; LINE-HEIGHT: 1.1em
+}
+P.quote {
+	PADDING-LEFT: 40px; MARGIN-LEFT: 0px; VERTICAL-ALIGN: top; WIDTH: 90%; COLOR: #005522; TEXT-ALIGN: justify
+}
+P.rr-entry {
+	MARGIN-TOP: 5pt
+}
+P.rr-entry1 {
+	MARGIN-TOP: 0pt
+}
+P.rightlink {
+	FONT-SIZE: 0.8em; TEXT-ALIGN: left
+}
+P.smallprint {
+	FONT-SIZE: 0.6em; COLOR: #000000; TEXT-ALIGN: justify
+}
+P.section {
+	MARGIN-TOP: 4pt
+}
+P.space {
+	MARGIN-BOTTOM: 6pt
+}
+P.spacedown {
+	MARGIN-BOTTOM: 7px
+}
+P.ul {
+	MARGIN-TOP: 5px
+}
+PRE {
+	FONT-SIZE: 1em; MARGIN-LEFT: 5px
+}
+SPAN.box-subtitle-small {
+	FONT-WEIGHT: normal; FONT-SIZE: 0.6em; BACKGROUND: #ffffff; VERTICAL-ALIGN: top; COLOR: #0f3a89
+}
+SPAN.information {
+	COLOR: #0f3a89
+}
+SPAN.highlighted {
+	COLOR: #ff0000
+}
+SPAN.normal {
+	
+}
+STRONG {
+	FONT-WEIGHT: bold
+}
+TABLE {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; MARGIN: 0px; PADDING-TOP: 1px
+}
+TABLE.box {
+	BORDER-RIGHT: #827db0 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #827db0 1px solid; PADDING-LEFT: 0px; BACKGROUND: #827db0; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #827db0 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #827db0 1px solid
+}
+TABLE.frame {
+	BORDER-RIGHT: #827db0 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #827db0 1px solid; PADDING-LEFT: 3px; BACKGROUND: #ffffff; PADDING-BOTTOM: 3px; MARGIN: 0px; BORDER-LEFT: #827db0 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #827db0 1px solid
+}
+TABLE.invisible {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px
+}
+TABLE.menu {
+	BORDER-RIGHT: #baba78 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #baba78 1px solid; PADDING-LEFT: 0px; BACKGROUND: #baba78; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #baba78 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #baba78 1px solid; TEXT-ALIGN: center
+}
+TABLE.region-menu {
+	BORDER-RIGHT: #827db0 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #827db0 1px solid; PADDING-LEFT: 0px; BACKGROUND: #827db0; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: #827db0 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #827db0 1px solid
+}
+TD.ise {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: #ffffff; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; PADDING-TOP: 3px; TEXT-ALIGN: justify
+}
+TD.box-body {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: #ffffff; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; COLOR: #000000; PADDING-TOP: 3px
+}
+TD.box-row-title {
+	BORDER-RIGHT: #827db0 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #827db0 0px solid; PADDING-LEFT: 3px; FONT-WEIGHT: bold; BACKGROUND: #ffffff; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; BORDER-LEFT: #827db0 0px solid; COLOR: #0f3a89; PADDING-TOP: 3px; BORDER-BOTTOM: #827db0 0px solid
+}
+TD.box-subtitle {
+	BORDER-RIGHT: #827db0 0px solid; PADDING-RIGHT: 3px; BORDER-TOP: #827db0 0px solid; PADDING-LEFT: 3px; FONT-WEIGHT: bold; BACKGROUND: #ffffff; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; BORDER-LEFT: #827db0 0px solid; COLOR: #0f3a89; PADDING-TOP: 3px; BORDER-BOTTOM: #827db0 1px solid
+}
+TD.box-title {
+	BORDER-RIGHT: #827db0 0px solid; PADDING-RIGHT: 3px; BORDER-TOP: #827db0 0px solid; PADDING-LEFT: 3px; FONT-WEIGHT: bold; BACKGROUND: #e0ebfc; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; BORDER-LEFT: #827db0 0px solid; COLOR: #0f3a89; PADDING-TOP: 3px; BORDER-BOTTOM: #827db0 1px solid
+}
+TD.how-to-buy {
+	BORDER-RIGHT: #cccccc 0px solid; PADDING-RIGHT: 8px; BORDER-TOP: #cccccc 1px solid; PADDING-LEFT: 8px; FONT-WEIGHT: normal; BACKGROUND: #e0ebfc; PADDING-BOTTOM: 8px; VERTICAL-ALIGN: top; BORDER-LEFT: #cccccc 0px solid; PADDING-TOP: 8px; BORDER-BOTTOM: #cccccc 0px solid
+}
+TD.invisible {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+TD.menu-body {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: #ffffff; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; COLOR: #0f3a89; PADDING-TOP: 3px
+}
+TD.menu-title {
+	BORDER-RIGHT: #baba78 0px solid; PADDING-RIGHT: 3px; BORDER-TOP: #baba78 0px solid; PADDING-LEFT: 3px; FONT-WEIGHT: bold; BACKGROUND: #efefce; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; BORDER-LEFT: #baba78 0px solid; COLOR: #61622e; PADDING-TOP: 3px; BORDER-BOTTOM: #baba78 1px solid
+}
+TD.more {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: #ffffff; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; PADDING-TOP: 3px; TEXT-ALIGN: right
+}
+TD.no-padding {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #ffffff; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: top; PADDING-TOP: 0px
+}
+TD.region-menu-title {
+	BORDER-RIGHT: #827db0 0px; PADDING-RIGHT: 3px; BORDER-TOP: #827db0 0px; PADDING-LEFT: 3px; FONT-WEIGHT: bold; BACKGROUND: #e0ebfc; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; BORDER-LEFT: #827db0 0px; COLOR: #0f3a89; PADDING-TOP: 3px; BORDER-BOTTOM: #827db0 0px
+}
+TD.standard-footer {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: #006631; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; COLOR: #ffffff; PADDING-TOP: 3px; TEXT-ALIGN: center
+}
+TD.standard-footer-fade {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: url(/images/eiffel/general/white-black-green_fade.png) #006631 repeat-x; PADDING-BOTTOM: 3px; COLOR: #ffffff; PADDING-TOP: 3px; TEXT-ALIGN: center
+}
+TD.standard-header-border {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: url(/images/eiffel/general/beige-brown-white.png) #ffffff repeat-x; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; COLOR: #61622e; PADDING-TOP: 3px; TEXT-ALIGN: left
+}
+TD.standard-header-bottom {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; BACKGROUND: #efefce; PADDING-BOTTOM: 7px; VERTICAL-ALIGN: top; COLOR: #61622e; PADDING-TOP: 7px; TEXT-ALIGN: left
+}
+TD.standard-header-fade {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: url(/images/eiffel/general/green-black-beige_fade.png) #efefce repeat-x; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; COLOR: #61622e; PADDING-TOP: 3px; TEXT-ALIGN: left
+}
+TD.standard-header-top {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; BACKGROUND: #006631; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; COLOR: #ffffff; PADDING-TOP: 3px; TEXT-ALIGN: center
+}
+TD.title {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-WEIGHT: bold; BACKGROUND: #e0ebfc; PADDING-BOTTOM: 3px; VERTICAL-ALIGN: top; COLOR: #0f3a89; PADDING-TOP: 3px
+}
+TR.title {
+	MARGIN-TOP: 200pt; MARGIN-BOTTOM: 200pt; PADDING-TOP: 200pt
+}
+SPAN {
+	VERTICAL-ALIGN: top; TEXT-ALIGN: justify
+}
+DIV {
+	VERTICAL-ALIGN: top; TEXT-ALIGN: justify
+}
+DD {
+	VERTICAL-ALIGN: top; TEXT-ALIGN: justify
+}
+DT {
+	VERTICAL-ALIGN: top; TEXT-ALIGN: justify
+}
+DL {
+	VERTICAL-ALIGN: top; TEXT-ALIGN: justify
+}
+UL {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; MARGIN-TOP: 0em; LIST-STYLE-IMAGE: url(/images/eiffel/icons/hollow-bullet.png); MARGIN-BOTTOM: 0em; VERTICAL-ALIGN: top; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; TEXT-ALIGN: justify
+}
+UL.biblio {
+	MARGIN-TOP: 0px
+}
+UL.next {
+	MARGIN-TOP: 6px
+}
+UL.quote {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; LIST-STYLE-IMAGE: none; MARGIN-BOTTOM: 0px; VERTICAL-ALIGN: top; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; TEXT-ALIGN: justify; i: 40px
+}

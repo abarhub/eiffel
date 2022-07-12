@@ -1,0 +1,93 @@
+Debut de la trace
+Entre methode TEST1.make
+0:i:=9
+1:Call extern  lang("JVM:Test1:static") printi(i)
+2:i:=-64
+3:Call extern  lang("JVM:Test1:static") printi(i)
+4:Call extern  lang("JVM:Test1:static") prints(Test supS)
+5:b:=15 > 14
+6:Call extern  lang("JVM:Test1:static") printb(b)
+7:b:=15 > 15
+8:Call extern  lang("JVM:Test1:static") printb(b)
+9:b:=15 > 16
+10:Call extern  lang("JVM:Test1:static") printb(b)
+11:Call extern  lang("JVM:Test1:static") prints(Test sup)
+12:b:=15 >= 14
+13:Call extern  lang("JVM:Test1:static") printb(b)
+14:b:=15 >= 15
+15:Call extern  lang("JVM:Test1:static") printb(b)
+16:b:=15 >= 16
+17:Call extern  lang("JVM:Test1:static") printb(b)
+18:Call extern  lang("JVM:Test1:static") prints(Test egal)
+19:b:=15 = 14
+20:Call extern  lang("JVM:Test1:static") printb(b)
+21:b:=15 = 15
+22:Call extern  lang("JVM:Test1:static") printb(b)
+23:b:=15 = 16
+24:Call extern  lang("JVM:Test1:static") printb(b)
+25:Call extern  lang("JVM:Test1:static") prints(Test inf)
+26:b:=15 <= 14
+27:Call extern  lang("JVM:Test1:static") printb(b)
+28:b:=15 <= 15
+29:Call extern  lang("JVM:Test1:static") printb(b)
+30:b:=15 <= 16
+31:Call extern  lang("JVM:Test1:static") printb(b)
+32:Call extern  lang("JVM:Test1:static") prints(Test infS)
+33:b:=15 < 14
+34:Call extern  lang("JVM:Test1:static") printb(b)
+35:b:=15 < 15
+36:Call extern  lang("JVM:Test1:static") printb(b)
+37:b:=15 < 16
+38:Call extern  lang("JVM:Test1:static") printb(b)
+39:Call extern  lang("JVM:Test1:static") prints(Test diff)
+40:b:=15 /= 14
+41:Call extern  lang("JVM:Test1:static") printb(b)
+42:b:=15 /= 15
+43:Call extern  lang("JVM:Test1:static") printb(b)
+44:b:=15 /= 16
+45:Call extern  lang("JVM:Test1:static") printb(b)
+46:Call extern  lang("JVM:Test1:static") prints(Test plus)
+47:i:=21 + 7
+48:Call extern  lang("JVM:Test1:static") printi(i)
+49:Call extern  lang("JVM:Test1:static") prints(Test moins)
+50:i:=4 - 10
+51:Call extern  lang("JVM:Test1:static") printi(i)
+52:Call extern  lang("JVM:Test1:static") prints(Test fois)
+53:i:=6 * 8
+54:Call extern  lang("JVM:Test1:static") printi(i)
+55:Call extern  lang("JVM:Test1:static") prints(Test div entier)
+56:i:=20 // 4
+57:Call extern  lang("JVM:Test1:static") printi(i)
+58:Call extern  lang("JVM:Test1:static") prints(Test div reel)
+59:d:=1 / 3
+60:Call extern  lang("JVM:Test1:static") printd(d)
+61:Call extern  lang("JVM:Test1:static") prints(Test mod)
+62:i:=23 mod 10
+63:Call extern  lang("JVM:Test1:static") printi(i)
+64:Call extern  lang("JVM:Test1:static") prints(Test puissance)
+65:i:=4 ^ 3
+66:Call extern  lang("JVM:Test1:static") printi(i)
+67:Call extern  lang("JVM:Test1:static") prints(Test conv caractere)
+68:i:=conv_c2e 'a'
+69:Call extern  lang("JVM:Test1:static") printi(i)
+70:c:=conv_e2c 97
+71:Call extern  lang("JVM:Test1:static") printc(c)
+72:Call extern  lang("JVM:Test1:static") prints(Test conv reel)
+73:i:=conv_r2e 4.9
+74:Call extern  lang("JVM:Test1:static") printi(i)
+75:r:=conv_e2r 73
+76:Call extern  lang("JVM:Test1:static") printr(r)
+77:Call extern  lang("JVM:Test1:static") prints(Test conv double)
+78:i:=conv_d2e 4.9
+79:Call extern  lang("JVM:Test1:static") printi(i)
+80:d:=conv_e2d 73
+81:Call extern  lang("JVM:Test1:static") printd(d)
+82:Call extern  lang("JVM:Test1:static") prints(Test moins unaire)
+83:i:=- 7
+84:Call extern  lang("JVM:Test1:static") printi(i)
+85:Call extern  lang("JVM:Test1:static") prints(Test plus unaire)
+86:i:=+ 7
+87:Call extern  lang("JVM:Test1:static") printi(i)
+88:Return
+Sort methode TEST1.make
+Fin de la trace

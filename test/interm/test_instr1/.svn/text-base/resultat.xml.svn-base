@@ -1,0 +1,1736 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<programme ><system>
+</system>
+<classe>
+<type nom="TEST1" />
+<hierarchie>
+<type nom="any" />
+</hierarchie>
+<creation>
+<nom_attribut nom="make"  />
+</creation>
+<attribut>
+<nom_attribut nom="Void"  />
+<type nom="any" />
+<type nom="NONE" />
+<ascendant no="0" />
+</attribut>
+<attribut>
+<nom_attribut nom="make"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+</signature>
+<instruction>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test_if"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+</signature>
+<declare_var nom="a" >
+<type nom="A" />
+</declare_var>
+<declare_var nom="b" >
+<type nom="B" />
+</declare_var>
+<declare_var nom="tmp2" >
+<type nom="BOOLEAN" />
+</declare_var>
+<declare_var nom="tmp3" >
+<type nom="BOOLEAN" />
+</declare_var>
+<declare_var nom="tmp6" >
+<type nom="BOOLEAN" />
+</declare_var>
+<declare_var nom="tmp7" >
+<type nom="BOOLEAN" />
+</declare_var>
+<declare_var nom="tmp10" >
+<type nom="BOOLEAN" />
+</declare_var>
+<declare_var nom="tmp11" >
+<type nom="BOOLEAN" />
+</declare_var>
+<declare_var nom="tmp13" >
+<type nom="BOOLEAN" />
+</declare_var>
+<declare_var nom="tmp14" >
+<type nom="BOOLEAN" />
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp2" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp3" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp6" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp7" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp10" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp11" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp13" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp14" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp3" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+</expression_bin>
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp2" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_un type="not">
+<expression_scalaire type="var" >
+<var nom="tmp3" >
+</var>
+</expression_scalaire>
+</expression_un>
+</expression>
+</instr_affect>
+<instr_si label="label0">
+<expression>
+<expression_scalaire type="var" >
+<var nom="tmp2" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_si>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="fin1"  />
+<instr_label label="label0"  />
+<instr_label label="fin1"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp7" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+</expression_bin>
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp6" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_un type="not">
+<expression_scalaire type="var" >
+<var nom="tmp7" >
+</var>
+</expression_scalaire>
+</expression_un>
+</expression>
+</instr_affect>
+<instr_si label="label4">
+<expression>
+<expression_scalaire type="var" >
+<var nom="tmp6" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_si>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="fin5"  />
+<instr_label label="label4"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_label label="fin5"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp11" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+</expression_bin>
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp10" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_un type="not">
+<expression_scalaire type="var" >
+<var nom="tmp11" >
+</var>
+</expression_scalaire>
+</expression_un>
+</expression>
+</instr_affect>
+<instr_si label="label8">
+<expression>
+<expression_scalaire type="var" >
+<var nom="tmp10" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_si>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="fin9"  />
+<instr_label label="label8"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp14" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+</expression_bin>
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp13" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_un type="not">
+<expression_scalaire type="var" >
+<var nom="tmp14" >
+</var>
+</expression_scalaire>
+</expression_un>
+</expression>
+</instr_affect>
+<instr_si label="label12">
+<expression>
+<expression_scalaire type="var" >
+<var nom="tmp13" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_si>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="fin9"  />
+<instr_label label="label12"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_label label="fin9"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test_loop"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+</signature>
+<declare_var nom="a" >
+<type nom="A" />
+</declare_var>
+<declare_var nom="b" >
+<type nom="B" />
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="test0"  />
+<instr_label label="debut_boucle2"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_label label="test0"  />
+<instr_si label="debut_boucle2">
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+</expression_bin>
+</expression>
+</instr_si>
+<instr_label label="fin1"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test_inspect"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+</signature>
+<declare_var nom="a" >
+<type nom="A" />
+</declare_var>
+<declare_var nom="b" >
+<type nom="B" />
+</declare_var>
+<declare_var nom="i" >
+<type nom="INTEGER" />
+</declare_var>
+<declare_var nom="var_test1" >
+<type nom="INTEGER" />
+</declare_var>
+<declare_var nom="var_test7" >
+<type nom="INTEGER" />
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="entier" text="0" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="var_test1" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="entier" text="0" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="var_test7" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="entier" text="0" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="var_test1" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_si label="suite3">
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="var_test1" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="entier" text="0" />
+</expression_bin>
+</expression>
+</instr_si>
+<instr_si label="suite3">
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="var_test1" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="entier" text="2" />
+</expression_bin>
+</expression>
+</instr_si>
+<instr_goto label="label2"  />
+<instr_label label="suite3"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="label0"  />
+<instr_label label="label2"  />
+<instr_goto label="label4"  />
+<instr_label label="label_else5"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="label0"  />
+<instr_label label="label4"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="7" />
+</expression>
+</instr_raise >
+<instr_goto label="label_else5"  />
+<instr_label label="label0"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="var_test7" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_si label="suite9">
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="var_test7" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="entier" text="0" />
+</expression_bin>
+</expression>
+</instr_si>
+<instr_si label="suite9">
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="var_test7" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="entier" text="2" />
+</expression_bin>
+</expression>
+</instr_si>
+<instr_si label="test_intervalle10">
+<expression>
+<expression_bin type="sup">
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="entier" text="5" />
+</expression_bin>
+</expression>
+</instr_si>
+<instr_goto label="fin_test_intervalle11"  />
+<instr_label label="test_intervalle10"  />
+<instr_si label="suite9">
+<expression>
+<expression_bin type="inf">
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="entier" text="9" />
+</expression_bin>
+</expression>
+</instr_si>
+<instr_label label="fin_test_intervalle11"  />
+<instr_goto label="label8"  />
+<instr_label label="suite9"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="label6"  />
+<instr_label label="label8"  />
+<instr_goto label="label12"  />
+<instr_label label="label_else13"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="label6"  />
+<instr_label label="label12"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="7" />
+</expression>
+</instr_raise >
+<instr_goto label="label_else13"  />
+<instr_label label="label6"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test_rescue"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+</signature>
+<declare_var nom="a" >
+<type nom="ANY" />
+</declare_var>
+<declare_var nom="b" >
+<type nom="ANY" />
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test_retry"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+</signature>
+<declare_var nom="a" >
+<type nom="ANY" />
+</declare_var>
+<declare_var nom="b" >
+<type nom="ANY" />
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="b" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_goto label="debut_routine"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test_check"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+</signature>
+<declare_var nom="i" >
+<type nom="INTEGER" />
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="entier" text="0" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_si_non label="suite_check0">
+<expression>
+<expression_scalaire type="var_syst" >
+<expr_var_syst nom="$niveau_verif">
+<expression_scalaire type="entier" text="-1" />
+</expr_var_syst>
+</expression_scalaire>
+</expression>
+</instr_si_non>
+<instr_si label="assert1">
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="entier" text="0" />
+</expression_bin>
+</expression>
+</instr_si>
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+<instr_label label="assert1"  />
+<instr_label label="suite_check0"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test_debug"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+</signature>
+<declare_var nom="i" >
+<type nom="INTEGER" />
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="entier" text="0" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_si_non label="suite_debug0">
+<expression>
+<expression_scalaire type="var_syst" >
+<expr_var_syst nom="$niveau_verif_debug">
+</expr_var_syst>
+</expression_scalaire>
+</expression>
+</instr_si_non>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="entier" text="0" />
+</expression>
+</instr_affect>
+<instr_label label="suite_debug0"  />
+<instr_si_non label="suite_debug1">
+<expression>
+<expression_scalaire type="var_syst" >
+<expr_var_syst nom="$niveau_verif_debug">
+<expression_scalaire type="chaine" text="a" />
+<expression_scalaire type="chaine" text="b" />
+</expr_var_syst>
+</expression_scalaire>
+</expression>
+</instr_si_non>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="entier" text="2" />
+</expression>
+</instr_affect>
+<instr_label label="suite_debug1"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test_pre"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+</signature>
+<precondition>
+<instruction>
+<instr_si label="assert0">
+<expression>
+<expression_bin type="diff">
+<expression_scalaire type="var" >
+<var nom="k" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="var" >
+<var nom="k" >
+</var>
+</expression_scalaire>
+</expression_bin>
+</expression>
+</instr_si>
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+<instr_label label="assert0"  />
+</instruction>
+</precondition>
+<instruction>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test_post"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+<declare_var nom="c" >
+<type nom="C" />
+</declare_var>
+</signature>
+<declare_var nom="a" >
+<type nom="A" />
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+<postcondition>
+<declare_var nom="tmp2" >
+<type nom="C" />
+</declare_var>
+<instruction>
+<instr_si label="tmp1">
+<expression>
+<expression_bin type="diff">
+<expression_scalaire type="void" />
+<expression_scalaire type="var" >
+<var nom="k" >
+</var>
+</expression_scalaire>
+</expression_bin>
+</expression>
+</instr_si>
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="6" />
+</expression>
+</instr_raise >
+<instr_label label="tmp1"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="tmp2" >
+</var>
+</expression_scalaire>
+<expression>
+<expr_appel>
+<expression_scalaire type="var" >
+<var nom="k" >
+</var>
+</expression_scalaire>
+<nom_attribut nom="+" type="infix" 
+ />
+<expression_scalaire type="var" >
+<var nom="k" >
+</var>
+</expression_scalaire>
+</expr_appel>
+</expression>
+</instr_affect>
+<instr_si label="assert0">
+<expression>
+<expression_bin type="diff">
+<expression_scalaire type="var" >
+<var nom="tmp2" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="var" >
+<var nom="c" >
+</var>
+</expression_scalaire>
+</expression_bin>
+</expression>
+</instr_si>
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+<instr_label label="assert0"  />
+<instr_si label="assert3">
+<expression>
+<expression_bin type="egal">
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+<expression_scalaire type="var" >
+<var nom="a" >
+</var>
+</expression_scalaire>
+</expression_bin>
+</expression>
+</instr_si>
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+<instr_label label="assert3"  />
+</instruction>
+</postcondition>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="coucou_a_tous"  />
+<type nom="TEST1" />
+<routine>
+<signature>
+<declare_var nom="i" >
+<type nom="ANY" />
+</declare_var>
+<declare_var nom="j" >
+<type nom="ANY" />
+</declare_var>
+</signature>
+<instruction>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="k"  />
+<type nom="TEST1" />
+<type nom="INTEGER" />
+</attribut>
+</classe>
+<classe>
+<type nom="ANY" />
+<hierarchie>
+</hierarchie>
+<attribut>
+<nom_attribut nom="Void"  />
+<type nom="ANY" />
+<type nom="NONE" />
+<descendant>
+<nom_attribut nom="Void"  />
+<type nom="TEST1" />
+</descendant>
+<descendant>
+<nom_attribut nom="Void"  />
+<type nom="A" />
+</descendant>
+<descendant>
+<nom_attribut nom="Void"  />
+<type nom="BOOLEAN" />
+</descendant>
+<descendant>
+<nom_attribut nom="Void"  />
+<type nom="INTEGER" />
+</descendant>
+<descendant>
+<nom_attribut nom="Void"  />
+<type nom="STRING" />
+</descendant>
+<descendant>
+<nom_attribut nom="Void"  />
+<type nom="C" />
+</descendant>
+</attribut>
+</classe>
+<classe>
+<type nom="NONE" />
+<hierarchie>
+<type nom="TEST1" />
+<type nom="ANY" />
+<type nom="A" />
+<type nom="B" />
+<type nom="BOOLEAN" />
+<type nom="INTEGER" />
+<type nom="STRING" />
+<type nom="C" />
+</hierarchie>
+</classe>
+<classe>
+<type nom="A" />
+<hierarchie>
+<type nom="any" />
+</hierarchie>
+<attribut>
+<nom_attribut nom="Void"  />
+<type nom="any" />
+<type nom="NONE" />
+<ascendant no="0" />
+<descendant>
+<nom_attribut nom="Void"  />
+<type nom="B" />
+</descendant>
+</attribut>
+<attribut>
+<nom_attribut nom="toto"  />
+<type nom="A" />
+<routine>
+<signature>
+</signature>
+<instruction>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+<descendant>
+<nom_attribut nom="toto"  />
+<type nom="B" />
+</descendant>
+</attribut>
+<attribut>
+<nom_attribut nom="tata"  />
+<type nom="A" />
+<routine>
+<signature>
+<declare_var nom="a" >
+<type nom="A" />
+</declare_var>
+</signature>
+<instruction>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+<descendant>
+<nom_attribut nom="tata"  />
+<type nom="B" />
+</descendant>
+</attribut>
+<attribut>
+<nom_attribut nom="titi"  />
+<type nom="A" />
+<type nom="A" />
+<routine>
+<signature>
+<declare_var nom="a" >
+<type nom="A" />
+</declare_var>
+<declare_var nom="Result" >
+<type nom="A" />
+</declare_var>
+</signature>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="Result" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="Result" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="Void" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+<descendant>
+<nom_attribut nom="titi"  />
+<type nom="B" />
+</descendant>
+</attribut>
+</classe>
+<classe>
+<type nom="B" />
+<hierarchie>
+<type nom="A" />
+</hierarchie>
+<creation>
+<nom_attribut nom="tata2"  />
+</creation>
+<attribut>
+<nom_attribut nom="Void"  />
+<type nom="A" />
+<type nom="NONE" />
+<ascendant no="0" />
+</attribut>
+<attribut>
+<nom_attribut nom="toto"  />
+<type nom="A" />
+<ascendant no="0" />
+</attribut>
+<attribut>
+<nom_attribut nom="tata"  />
+<type nom="A" />
+<ascendant no="0" />
+</attribut>
+<attribut>
+<nom_attribut nom="titi"  />
+<type nom="A" />
+<type nom="A" />
+<ascendant no="0" />
+</attribut>
+<attribut>
+<nom_attribut nom="tata2"  />
+<type nom="B" />
+<routine>
+<signature>
+</signature>
+<instruction>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="titi0"  />
+<type nom="B" />
+<routine>
+<signature>
+</signature>
+<instruction>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="titi2"  />
+<type nom="B" />
+<type nom="ANY" />
+</attribut>
+<attribut>
+<nom_attribut nom="titi3"  />
+<type nom="B" />
+<type nom="ANY" />
+<routine>
+<signature>
+<declare_var nom="Result" >
+<type nom="ANY" />
+</declare_var>
+</signature>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="Result" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="titi4"  />
+<type nom="B" />
+<type nom="ANY" />
+<routine>
+<signature>
+<declare_var nom="a" >
+<type nom="B" />
+</declare_var>
+<declare_var nom="b" >
+<type nom="B" />
+</declare_var>
+<declare_var nom="Result" >
+<type nom="ANY" />
+</declare_var>
+</signature>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="Result" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="titi5"  />
+<type nom="B" />
+<routine>
+<signature>
+<declare_var nom="a" >
+<type nom="A" />
+</declare_var>
+<declare_var nom="b" >
+<type nom="A" />
+</declare_var>
+</signature>
+<instruction>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+</classe>
+<classe>
+<type nom="BOOLEAN" />
+<hierarchie>
+<type nom="any" />
+</hierarchie>
+<attribut>
+<nom_attribut nom="Void"  />
+<type nom="any" />
+<type nom="NONE" />
+<ascendant no="0" />
+</attribut>
+<attribut>
+<nom_attribut nom="and" type="infix" 
+ />
+<type nom="BOOLEAN" />
+<type nom="BOOLEAN" />
+<routine>
+<signature>
+<declare_var nom="a" >
+<type nom="BOOLEAN" />
+</declare_var>
+<declare_var nom="Result" >
+<type nom="BOOLEAN" />
+</declare_var>
+</signature>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="Result" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="or" type="infix" 
+ />
+<type nom="BOOLEAN" />
+<type nom="BOOLEAN" />
+<routine>
+<signature>
+<declare_var nom="a" >
+<type nom="BOOLEAN" />
+</declare_var>
+<declare_var nom="Result" >
+<type nom="BOOLEAN" />
+</declare_var>
+</signature>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="Result" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="not" type="prefix" 
+ />
+<type nom="BOOLEAN" />
+<type nom="BOOLEAN" />
+<routine>
+<signature>
+<declare_var nom="Result" >
+<type nom="BOOLEAN" />
+</declare_var>
+</signature>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="Result" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="booleen" text="false" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut est_defaut="oui">
+<nom_attribut nom="$val_bool"  />
+<type nom="boolean" />
+<type nom="$boolean" />
+</attribut>
+</classe>
+<classe>
+<type nom="INTEGER" />
+<hierarchie>
+<type nom="any" />
+</hierarchie>
+<attribut>
+<nom_attribut nom="Void"  />
+<type nom="any" />
+<type nom="NONE" />
+<ascendant no="0" />
+</attribut>
+<attribut>
+<nom_attribut nom="+" type="infix" 
+ />
+<type nom="INTEGER" />
+<type nom="C" />
+<routine>
+<signature>
+<declare_var nom="a" >
+<type nom="ANY" />
+</declare_var>
+<declare_var nom="Result" >
+<type nom="C" />
+</declare_var>
+</signature>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="Result" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="test0"  />
+<type nom="INTEGER" />
+<routine>
+<signature>
+</signature>
+<instruction>
+<instr_label label="debut_routine"  />
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut est_defaut="oui">
+<nom_attribut nom="$val_int"  />
+<type nom="integer" />
+<type nom="$integer" />
+</attribut>
+</classe>
+<classe>
+<type nom="STRING" />
+<hierarchie>
+<type nom="any" />
+</hierarchie>
+<attribut>
+<nom_attribut nom="Void"  />
+<type nom="any" />
+<type nom="NONE" />
+<ascendant no="0" />
+</attribut>
+</classe>
+<classe>
+<type nom="C" />
+<hierarchie>
+<type nom="any" />
+</hierarchie>
+<attribut>
+<nom_attribut nom="Void"  />
+<type nom="any" />
+<type nom="NONE" />
+<ascendant no="0" />
+</attribut>
+</classe>
+</programme>

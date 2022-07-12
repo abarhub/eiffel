@@ -1,0 +1,6 @@
+<!ELEMENT root (test*)>
+
+<!ELEMENT test (erreur*)>
+<!ATTLIST test nom CDATA #REQUIRED>
+
+<!ELEMENT erreur (#PCDATA)>

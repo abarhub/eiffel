@@ -1,0 +1,8 @@
+class TEST2
+
+feature
+
+	toto:CHARACTER is 'C';
+	tata:CHARCATER is '%N';
+
+end

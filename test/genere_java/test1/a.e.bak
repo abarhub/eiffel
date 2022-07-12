@@ -1,0 +1,11 @@
+class A
+
+creation make
+
+feature
+
+	toto is
+	do
+	end;
+
+end

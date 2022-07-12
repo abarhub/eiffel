@@ -1,0 +1,9 @@
+class TEST2
+
+feature
+
+	toto, infix "not",tata(p1,p2:INTEGER):INTEGER is
+	do
+	end;
+
+end

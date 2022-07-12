@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST10"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<loop>
+							<expression>
+								<expression_binaire op="egal">
+									<expression>
+										<variable nom="i"/>
+									</expression>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+						</loop>
+					</instruction>
+					<instruction>
+						<loop>
+							<expression>
+								<expression_binaire op="egal">
+									<expression>
+										<variable nom="i"/>
+									</expression>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="2"/>
+									</expression>
+								</affect>
+							</instruction>
+						</loop>
+					</instruction>
+					<instruction>
+						<loop>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+							<expression>
+								<expression_binaire op="egal">
+									<expression>
+										<variable nom="i"/>
+									</expression>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+						</loop>
+					</instruction>
+					<instruction>
+						<loop>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+							<expression>
+								<expression_binaire op="egal">
+									<expression>
+										<variable nom="i"/>
+									</expression>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<variant>
+								<expression>
+									<expression_binaire op="moins">
+										<expression>
+											<variable nom="x"/>
+										</expression>
+										<expression>
+											<entier valeur="9"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</variant>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+						</loop>
+					</instruction>
+					<instruction>
+						<loop>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+							<expression>
+								<expression_binaire op="egal">
+									<expression>
+										<variable nom="i"/>
+									</expression>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<invariant>
+								<assert>
+									<expression>
+										<expression_binaire op="egal">
+											<expression>
+												<variable nom="x"/>
+											</expression>
+											<expression>
+												<entier valeur="1"/>
+											</expression>
+										</expression_binaire>
+									</expression>
+								</assert>
+								<assert>
+									<expression>
+										<expression_binaire op="infs">
+											<expression>
+												<variable nom="y"/>
+											</expression>
+											<expression>
+												<entier valeur="2"/>
+											</expression>
+										</expression_binaire>
+									</expression>
+								</assert>
+							</invariant>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+						</loop>
+					</instruction>
+					<instruction>
+						<loop>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+							<expression>
+								<expression_binaire op="egal">
+									<expression>
+										<variable nom="i"/>
+									</expression>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<variant>
+								<expression>
+									<expression_binaire op="moins">
+										<expression>
+											<variable nom="x"/>
+										</expression>
+										<expression>
+											<variable nom="y"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</variant>
+							<invariant>
+								<assert>
+									<expression>
+										<expression_binaire op="egal">
+											<expression>
+												<variable nom="x"/>
+											</expression>
+											<expression>
+												<entier valeur="1"/>
+											</expression>
+										</expression_binaire>
+									</expression>
+								</assert>
+								<assert>
+									<expression>
+										<expression_binaire op="infs">
+											<expression>
+												<variable nom="y"/>
+											</expression>
+											<expression>
+												<entier valeur="2"/>
+											</expression>
+										</expression_binaire>
+									</expression>
+								</assert>
+							</invariant>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+						</loop>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

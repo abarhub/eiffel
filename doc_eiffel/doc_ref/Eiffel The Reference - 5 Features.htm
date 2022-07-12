@@ -1,0 +1,493 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 5 Features</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><!-- $Id: chap5.htm,v 1.2 1995/07/09 13:49:57 neil Exp neil $ -->
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 5 Features_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm"><IMG 
+src="Eiffel The Reference - 5 Features_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm"><IMG 
+src="Eiffel The Reference - 5 Features_fichiers/next.gif"></A> 
+<P>
+<H1>5 Features </H1>
+<H2>5.3 Immediate and Inherited Features</H2>
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/definit.gif"> <A 
+name="feature of class">features of a class</A>, <A name=origin>origin</A>, <A 
+name="immediate feature">immediate feature</A>, <A 
+name="inherited feature">inherited feature</A>, <A 
+name=introduced>introduced</A></H3>
+<P>The <B>features of a class </B><I>C</I> include its inherited features and 
+its immediate features, defined as follows: 
+<UL>
+  <LI>The <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">features</A> 
+  obtained by <I>C</I> from its <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6#parent">parents</A>, 
+  if any, are its <B>inherited features</B>. 
+  <LI>In the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Features">Features</A> 
+  part of <I>C</I>, consider a declaration describing a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+  <I>f</I>. If <I>f</I> is inherited, the declaration is in fact a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap10.htm#redeclaration">redeclaration</A> 
+  of <I>f</I>, giving <I>f</I> new properties in <I>C</I>. If this is not the 
+  case, <I>f</I> is a new <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A>, 
+  said to be <B>immediate</B> in <I>C</I>. <I>C</I> is then the class of origin 
+  (or simply <B>origin</B>) of <I>f</I>, which is also said to be <B>introduced 
+  in</B> <I>C</I>. </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+name</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#rename semantics">semantics 
+of rename</A> 
+<H2>5.7 Forms of Features </H2>Every <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+in the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Features">Features</A> 
+part of a class is either an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attribute</A> 
+or a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#routine">routine</A>. 
+
+<P>
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/definit.gif"> <A 
+name=attribute>attribute</A>, <A name=field>field</A> </H3>
+<P>By introducing an <B>attribute</B> in a class, you specify that at <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2#run time">run-time</A> 
+every <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#instance">instance</A> 
+of the class will possess a certain value, or <B>field</B>, corresponding to the 
+<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attribute</A>. 
+
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#constant attribute">constant 
+attribute</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#variable attribute">variable 
+attribute</A> 
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/definit.gif"> <A 
+name="constant attribute">constant attribute</A>, <A 
+name="variable attribute">variable attribute</A></H3>An <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attribute</A> 
+is either variable or constant: 
+<P>
+<UL>
+  <LI>If an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attribute</A> 
+  is <B>variable</B>, the corresponding <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#field">fields</A> 
+  may be different for various <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#instance">instances</A> 
+  of the class and may change at <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#run time">run-time</A>. 
+  As a consequence, the actual values must be stored in the representation of 
+  each <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#instance">instance</A>. 
+
+  <LI>If an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attribute</A> 
+  is <B>constant</B>, the corresponding <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#field">field</A> 
+  is the same value for all <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#instance">instances</A>, 
+  and may not change at <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#run time">run-time</A>. 
+  This value appears in the class as part of the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attribute</A> 
+  declaration. </LI></UL>
+<P>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#feature type">Recognizing 
+features</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#VFFD">Feature 
+Declaration Rule (VFFD)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#VHRC">Rename 
+Clause Rule (VHRC)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#multiple declaration rule">Multiple 
+Declaration Rule</A> 
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/definit.gif"> <A 
+name=routine>routine</A></H3>By introducing a <B>routine</B> in a class, you 
+specify that a certain computation (an algorithm) must be applicable to 
+instances of the class. 
+<P>
+<P>A routine is either a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#procedure">procedure</A> 
+or a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#function">function</A>: 
+
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#feature type">Recognizing 
+features</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#signature">signature</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#argument signature">argument 
+signature</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#obsolete feature">obsolete 
+features</A> 
+<P>
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/definit.gif"> <A 
+name=procedure>procedure</A>, <A name=function>function</A></H3>
+<UL>
+  <LI>A <B>procedure</B> does not return a result; it may perform a number of 
+  operations, some of which may modify the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#instance">instance</A> 
+  to which the procedure is applied. 
+  <LI>A <B>function</B> returns a result and may also perform operations. 
+</LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#feature type">Recognizing 
+features</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#signature">signature</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#VFFD">Feature 
+Declaration Rule (VFFD)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#VHRC">Rename 
+Clause Rule (VHRC)</A> 
+<H2>5.11 How to Recognize Features</H2><A name="feature type"><IMG 
+src="Eiffel The Reference - 5 Features_fichiers/syntax.gif"></A> 
+<P>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#variable attribute">variable 
+attribute</A> declaration if and only if it satisfies the following conditions: 
+<P>
+<UL>
+  <LI>There is no <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_arguments">Formal_arguments</A> 
+  part. 
+  <LI>There is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type_mark>Type_mark</a> part. <li>There is no <A HREF=" 
+  chap34.htm#Constant_or_routine?>Constant_or_routine</A> part. </LI></UL>
+<P>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#constant attribute">constant 
+attribute</A> declaration if and only if it satisfies the following conditions: 
+<P>
+<UL>
+  <LI>There is no <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_arguments">Formal_arguments</A> 
+  part. 
+  <LI>There is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type_mark>Type_mark</a> part. <li>There is a<A HREF=" 
+  chap34.htm#Constant_or_routine?>Constant_or_routine</A> part, which contains 
+  either a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_constant">Manifest_constant</A> 
+  or a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unique">Unique</A>. 
+  </LI></UL>
+<P>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#routine">routine</A> 
+declaration if and only if it satisfies the following condition: 
+<P>
+<UL>
+  <LI>There is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constant_or_routine">Constant_or_routine</A> 
+  part, whose <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_value">Feature_value</A> 
+  is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine">Routine</A>. 
+  </LI></UL>
+<P>In this case the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_arguments">Formal_arguments</A> 
+and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type_mark">Type_mark</A> 
+parts may or may not be present. If the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type_mark">Type_mark</A> 
+is present, the declaration describes a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#function">function</A>; 
+otherwise it describes a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#procedure">procedure</A>. 
+
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#VFFD">Feature 
+Declaration Rule (VFFD)</A> 
+<H2>5.12 The Signature of a Feature</H2>
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/definit.gif"> <A 
+name=signature>signature</A> </H3>
+<P>The <B>signature</B> of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+<I>f</I> is a pair &lt;<I>argument_types</I>, <I>result_type</I>&gt; where both 
+<I>argument_types</I> and <I>result_type</I> are sequences of types, defined as 
+follows. 
+<P>
+<UL>
+  <LI>If <I>f</I> is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#routine">routine</A>, 
+  <I>argument_types</I> is the possibly empty sequence of the types of its 
+  arguments. If <I>f</I> is an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attribute</A>, 
+  <I>argument_types</I> is an empty sequence. 
+  <LI>If <I>f</I> is an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attribute</A> 
+  or a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#function">function</A>, 
+  <I>result_type</I> is a one-element sequence, whose single element is the type 
+  of <I>f</I>. If <I>f</I> is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#procedure">procedure</A>, 
+  <I>result_type</I> is an empty sequence. </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#argument signature">argument 
+signature</A> 
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/definit.gif"> <A 
+name="argument signature">argument signature</A> </H3>
+<P>The first component of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A>'s 
+<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#signature">signature</A>, 
+written <I>argument_types</I> in the definitio above, is called the <B>argument 
+signature</B> of the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A>. 
+The argument signature gives the types of the feature's arguments; it is an 
+empty sequence for <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attributes</A> 
+and for <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#routine">routines</A> 
+without arguments. 
+<P>
+<H2>5.13 Feature Names</H2>
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/definit.gif"> <A 
+name="feature name">feature name</A>, <A name="identifier feature">identifier 
+feature</A>, <A name="operator feature">operator feature</A></H3>
+<P><B>Feature names</B> can either be operator features or identifier features: 
+<UL>
+  <LI>If a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+  is an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  then the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+  it is associated with is an <B>identifier feature</B>. 
+  <LI>Otherwise the associated <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+  is an <B>operator feature</B>. </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#same feature name">same 
+feature name</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#name of feature in class">name 
+of a feature in a class</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#VFOF">Operator 
+Feature Name Rule (VFOF)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#VFFD">Feature 
+Declaration Rule (VFFD)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#multiple declaration rule">multiple 
+declaration rule</A> | 
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/validity.gif"> <A 
+name=VFOF>(VFOF)</A> Operator Feature Name Rule </H3>The <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+<I>f</I> of an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#operator feature">operator 
+feature</A> is valid if and only if: 
+<OL>
+  <LI><I>f</I> is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#specimen">specimen</A> 
+  of <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix">Prefix</A> 
+  and the value of the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix_name">Prefix_name</A> 
+  would parse as a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix_operator">Prefix_operator</A>. 
+
+  <LI><I>f</I> is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#specimen">specimen</A> 
+  of <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix">Infix</A> 
+  and the value of the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix_name">Infix_name</A> 
+  would parse as an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix_operator">Infix_operator</A>. 
+  </LI></OL>
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/definit.gif"> <A 
+name="same feature name">same feature name</A></H3>
+<P>By convention, two <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#feature name">feature 
+names</A> are the same if and only if either of the following conditions holds: 
+<P>
+<UL>
+  <LI>They are both <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#identifier feature">identifier 
+  features</A>, with identical <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#lower name">lower 
+  names</A>. 
+  <LI>They are both <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#operator feature">operator 
+  features</A> and either of the following holds: 
+  <UL>
+    <LI>they are both <A 
+    href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#specimen">specimens</A> 
+    of <A 
+    href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix">Prefix</A> 
+    and the <A 
+    href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix_name">Prefix_names</A> 
+    converted to lower case are identical. 
+    <LI>they are both <A 
+    href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#specimen">specimens</A> 
+    of <A 
+    href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix">Infix</A> 
+    and the <A 
+    href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix_name">Infix_names</A> 
+    converted to lower case are identical. </LI></UL></LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#VFFD">Feature 
+Declaration Rule (VFFD)</A> 
+<H2>5.14 Validity of Feature Declarations </H2>
+<P>
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/validity.gif"> <A 
+name=VFFD>(VFFD)</A> Feature Declaration Rule </H3>
+<P>
+<P>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+appearing in a class <I>C</I>, and whose <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_feature_list">New_feature_list</A> 
+contains one or more <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#feature name">feature 
+names</A> <I>f<SUB>1</SUB></I>, ..., <I>f<SUB>n</SUB></I>, is valid if and only 
+if it satisfies all of the following conditions: 
+<P>
+<OL>
+  <LI>Its <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Declaration_body">Declaration_body</A> 
+  describes a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+  which is one of: <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#variable attribute">variable 
+  attribute</A>, <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#constant attribute">constant 
+  attribute</A>, <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#procedure">procedure</A>, 
+  or <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#function">function</A>. 
+
+  <LI>None of the <I>f<SUB>i</SUB></I> has the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#same feature name">same 
+  name</A> as another <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+  introduced in <I>C</I> (in particular, <I>f<SUB>i</SUB></I> is not the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#same feature name">same 
+  name</A> as <I>f<SUB>j</SUB></I> for different <I>i</I> and <I>j</I>). 
+  <LI>If the name of any of the <I>f<SUB>i</SUB></I> is the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#same feature name">same</A> 
+  as the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+  name</A> of any <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#inherited feature">inherited 
+  feature</A>, the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Declaration_body>Declaration_body</a> satisfies the <A HREF=" 
+  chap10.htm#VDRD?>Redeclaration Rule</A>. 
+  <LI>If the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Declaration_body">Declaration_body</A> 
+  describes a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap10.htm#deferred feature">deferred 
+  feature</A>, then none of the <I>f<SUB>i</SUB></I> is preceded by the keyword 
+  <B>frozen</B>. 
+  <LI>If any of the <I>f<SUB>i</SUB></I> is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix">Prefix</A> 
+  name, the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Declaration_body">Declaration_body</A> 
+  describes a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#constant attribute">constant 
+  attribute</A> or a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#function">function</A> 
+  with no <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm#formal argument">formal 
+  arguments</A>. 
+  <LI>If any of the <I>f<SUB>i</SUB></I> is an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix>Infix</a> name, the <A HREF=" 
+  chap34.htm#Declaration_body?>Declaration_body</A> describes a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#function">function</A> 
+  with a single <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm#formal argument">formal 
+  argument</A>. 
+  <LI>If the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Declaration_body">Declaration_body</A> 
+  describes a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm#once routine">once 
+  function</A>, the result type involves neither a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generic_name">Formal_generic_name</A> 
+  nor an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Anchored">Anchored</A> 
+  type. </LI></OL>
+<H2>5.16 Synonyms </H2>
+<P>
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/semantic.gif"> <A 
+name="multiple declaration rule">Multiple Declaration rule</A> </H3>
+<P>The semantics of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+applying to more than one <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#feature name">feature 
+name</A>, as in
+<P>
+<P><I>f<SUB>1</SUB></I>, <I>f<SUB>2</SUB></I>, ... , <I>f<SUB>n</SUB></I> 
+<I>some_declaration_body </I>
+<P>
+<P>is (except in one special case) defined as the semantics of the corresponding 
+sequence of declarations naming only one <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+each, and with identical declaration bodies, as in: 
+<P>
+<P><I>f<SUB>1</SUB></I><I> some_declaration_body</I>;
+<P>
+<P><I>f<SUB>2</SUB></I><I> some_declaration_body</I>;
+<P>
+<P>...
+<P>
+<P><I>f<SUB>n</SUB></I><I> some_declaration_body</I> 
+<P>
+<P>The special case is that of a multiple declaration introducing <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unique>Unique</a> <A HREF=" 
+attribute? #constant>constant attributes</A>, which is covered by the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap16#unique declaration rule">Unique 
+Declaration Rule</A>. 
+<P>
+<H2>5.17 <A name="obsolete feature">Obsolete Features</A> </H2>
+<H3><IMG src="Eiffel The Reference - 5 Features_fichiers/semantic.gif"></H3>
+<P>Declaring a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#routine">routine</A> 
+as <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Obsolete">Obsolete</A> 
+does not affect its semantics. But <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#language processing tool">language 
+processing tools</A>, or at least some of them, should produce a warning when 
+they process a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap7.htm#client">client</A> 
+or <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#descendant">descendant</A> 
+class that uses the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#routine">routine</A>. 
+The warning should include the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Message">Message</A>. 
+
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 5 Features_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm"><IMG 
+src="Eiffel The Reference - 5 Features_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm"><IMG 
+src="Eiffel The Reference - 5 Features_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS>
+<P><!-- $Log: chap5.htm,v $
+# Revision 1.2  1995/07/09  13:49:57  neil
+# New validity rule (VFOF)
+# VFFD (5) restricted to constant attributes
+# Signature definition fixed
+# Chapter reformatted
+# same feature name altered slightly
+# feature name definition altered slightly
+#
+# Revision 1.1  1995/07/08  09:29:51  neil
+# Initial revision
+#
+--></P></BODY></HTML>

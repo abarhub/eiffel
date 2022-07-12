@@ -1,0 +1,17 @@
+class STRING
+
+feature
+
+   hash_code: INTEGER is
+      do
+      i:=1
+         from
+--	    j := count;
+	    i := 1
+	 until
+	    true
+	 loop
+         end;
+      end;
+
+end

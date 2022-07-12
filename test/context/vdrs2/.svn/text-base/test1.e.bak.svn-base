@@ -1,0 +1,12 @@
+class TEST1
+
+	inherit TOTO1
+		redefine a,b;
+	end;
+
+feature
+
+	a,b:INTEGER;
+
+
+end

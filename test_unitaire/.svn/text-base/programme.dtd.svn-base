@@ -1,0 +1,130 @@
+<!ELEMENT programme (system?,classe*)>
+<!ATTLIST programme date CDATA #IMPLIED>
+
+<!ELEMENT classe (type,hierarchie?,creation*,attribut*,invariant?,source?)>
+
+<!ELEMENT hierarchie (type*)>
+
+<!ELEMENT creation (type*,nom_attribut+,source?)>
+
+<!ELEMENT  type_containt (type,type?,source?)>
+
+<!ELEMENT type (type*,contrainte?,source?)>
+<!ATTLIST type nom CDATA #REQUIRED>
+<!ATTLIST type est_like (oui|non) #IMPLIED>
+<!ATTLIST type expanded (oui|non) #IMPLIED>
+
+<!ELEMENT contrainte (type) >
+
+<!ELEMENT system (declare_var*)>
+
+<!ELEMENT attribut (nom_attribut,type,type?,(routine|expression)?,
+			ascendant*,descendant*,source?)>
+
+<!ATTLIST attribut est_static (oui|non) #IMPLIED>
+<!ATTLIST attribut est_defaut (oui|non) #IMPLIED>
+
+<!ELEMENT descendant (nom_attribut,type,source?)>
+
+<!ELEMENT ascendant (nom_attribut?,source?)>
+<!ATTLIST ascendant no CDATA #REQUIRED>
+
+<!ELEMENT signature (declare_var*)>
+
+<!ELEMENT nom_attribut (source?)>
+<!ATTLIST nom_attribut nom CDATA #REQUIRED>
+<!ATTLIST nom_attribut type (rien|prefix|infix) #IMPLIED>
+
+<!ELEMENT declare_var (type,expression_scalaire?,source?)>
+<!ATTLIST declare_var nom CDATA #REQUIRED>
+
+<!ELEMENT routine (signature,precondition?,declare_var*,
+			instruction,postcondition?,source?)>
+
+<!ELEMENT precondition (declare_var*,instruction,source?)>
+
+<!ELEMENT postcondition (declare_var*,instruction,source?)>
+
+<!ELEMENT invariant (declare_var*,instruction,source?)>
+
+<!ELEMENT expression (expression_bin|expression_un|
+			expression_scalaire|var|expr_appel|
+			expression_type|expression_creation|
+			expression_extern)>
+
+<!ELEMENT expression_scalaire ((var|expr_var_syst)?,source?) >
+<!ATTLIST expression_scalaire type (entier|reel|chaine|car|booleen|
+					void|var|var_syst|double) #REQUIRED>
+<!ATTLIST expression_scalaire text CDATA #IMPLIED>
+
+<!ELEMENT expression_bin (expression_scalaire,expression_scalaire,source?)>
+<!ATTLIST expression_bin type (plus|moins|fois|div_entier|
+			div_reel|mod|and|or|
+			puiss|sups|sup|inf|infs|
+			egal|diff|and_then|or_else|
+			xor|implies) #REQUIRED>
+
+<!ELEMENT expression_un (expression_scalaire)>
+<!ATTLIST expression_un type (plus|moins|not|old|
+			conv_e2d|conv_e2r|conv_r2d|
+			addr|conv_d2e|conv_r2e|
+			conv_e2c|conv_c2e|conv_d2r) #REQUIRED>
+
+<!ELEMENT expression_type (expression_scalaire,type,source?)>
+
+<!ELEMENT expression_creation (type,(expr_appel|expression_scalaire)?,
+				source?)>
+
+<!ELEMENT expr_var_syst (expression_scalaire*)>
+<!ATTLIST expr_var_syst nom CDATA #REQUIRED>
+
+<!ELEMENT var (expression_scalaire)? >
+<!ATTLIST var nom CDATA #REQUIRED>
+<!ATTLIST var src CDATA #IMPLIED>
+
+<!ELEMENT expr_appel (expression_scalaire?,nom_attribut,
+			expression_scalaire*,source?)>
+
+<!ELEMENT expression_extern (type,expression_scalaire?,nom_attribut,
+			expression_scalaire*,source?)>
+<!ATTLIST expression_extern lang_extern CDATA #REQUIRED>
+<!ATTLIST expression_extern opt_extern CDATA #IMPLIED>
+
+<!ELEMENT instruction (instr_affect|instr_appel|instr_si|
+			instr_goto|instr_label|instr_return|
+			instr_raise|instr_si_non|instr_extern)*>
+
+<!ELEMENT instr_affect (expression_scalaire,expression,source?)>
+<!ATTLIST instr_affect force (oui|non) #IMPLIED>
+
+<!ELEMENT instr_appel (expression_scalaire?,nom_attribut,
+			expression_scalaire*,source?)>
+
+<!ELEMENT instr_si (expression,source?)>
+<!ATTLIST instr_si label CDATA #REQUIRED>
+
+<!ELEMENT instr_si_non (expression,source?)>
+<!ATTLIST instr_si_non label CDATA #REQUIRED>
+
+<!ELEMENT instr_goto (source?) >
+<!ATTLIST instr_goto label CDATA #REQUIRED>
+
+<!ELEMENT instr_label (source?) >
+<!ATTLIST instr_label label CDATA #REQUIRED>
+
+<!ELEMENT instr_return (source?)>
+
+<!ELEMENT instr_raise (expression,expression?,source?)>
+
+<!ELEMENT instr_extern (expression_scalaire?,nom_attribut,
+			expression_scalaire*,source?) >
+<!ATTLIST instr_extern lang_extern CDATA #REQUIRED>
+<!ATTLIST instr_extern opt_extern CDATA #IMPLIED>
+
+<!ELEMENT source EMPTY>
+<!ATTLIST source ligne CDATA #REQUIRED>
+<!ATTLIST source colonne CDATA #REQUIRED>
+<!ATTLIST source fichier CDATA #IMPLIED>
+
+
+

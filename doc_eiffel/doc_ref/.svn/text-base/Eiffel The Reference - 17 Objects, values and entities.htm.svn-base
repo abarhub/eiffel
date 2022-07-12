@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap17.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 17 Objects, values and entities</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 17 Objects, values and entities_fichiers/toc.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap16.htm"><IMG 
+src="Eiffel The Reference - 17 Objects, values and entities_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap18.htm"><IMG 
+src="Eiffel The Reference - 17 Objects, values and entities_fichiers/next.gif"></A> 
+
+<P>
+<H1>17 Objects, values and entities </H1>
+<H2>17.2 OBJECTS </H2>
+<H3>Definition: standard object, special object</H3>
+<P>There are two kinds of object, standard and special: 
+<P>
+<UL>
+  <LI>A standard object is the direct result of a Creation instruction or clone 
+  operation executed by the system. 
+  <LI>A special object is a sequence of values, all compatible with a given 
+  type. It may be a <B>string</B> or an <B>array</B>. In a string, the values 
+  are all characters; in an array, they are either all references, or all direct 
+  instances of a single type. </LI></UL>
+<H2>17.4 INSTANCES OF A CLASS </H2>
+<H3>Definition: instance of a class</H3>
+<P>An instance of a class <I>C</I> is an instance of any type <I>T</I> based on 
+<I>C</I>, and similarly for direct instances. 
+<P>
+<H2>17.5 INSTANCES AND DIRECT INSTANCES OF A TYPE</H2>
+<H3>Definition: instances of a type </H3>
+<P>The instances of a type <I>TX</I> are the direct instances of any type 
+conforming to <I>TX</I>. 
+<P>
+<P><B>Definition: diirect instances of non-basic expanded types </B>
+<P>
+<P>Let <I>TX</I> be an expanded type which is neither one of the basic types 
+(<I>BOOLEAN</I>, <I>CHARACTER</I>, <I>INTEGER</I>, <I>REAL</I>, <I>DOUBLE</I>, 
+<I>POINTER</I>) nor a Bit_type. The direct instances of <I>TX </I>are the the 
+direct instances of the base type of <I>TX</I>. 
+<P>
+<H2>17.6 DIRECT INSTANCES OF BASIC TYPES </H2>
+<P><B>Direct instances of basic types </B>
+<P>
+<P>The direct instances of the basic types are the following. 
+<P>
+<UL>
+  <LI>For <I>BOOLEAN</I>: the boolean values true and false. 
+  <LI>For <I>CHARACTER</I>: any character. 
+  <LI>For <I>INTEGER</I>: all the integer values which may be represented on 
+  <I>Integer_bits</I> bits. 
+  <LI>For <I>REAL</I>: all floating-point values which may be represented on 
+  <I>Real_bits</I> bits. 
+  <LI>For <I>DOUBLE</I>: all the floating-point values which may be represented 
+  on <I>Double_</I>bits bits. 
+  <LI>For <I>POINTER</I>: all possible feature addresses, for transmission to 
+  non-Eiffel routines. 
+  <LI>For <I>BIT n</I>, with <I>n</I> &gt;= 0: all the sequences of <I>n</I> 
+  binary (zero or one) values (none if <I>n</I> = 0). </LI></UL>
+<H2>17.7 FIELDS OF COMPLEX OBJECTS </H2>
+<H3>Definition: complex class, complex type</H3>
+<P>Every class other than <I>BOOLEAN</I>, <I>CHARACTER</I>, <I>INTEGER</I>, 
+<I>REAL</I>, <I>DOUBLE</I> and <I>POINTER</I> is said to be a complex class. Any 
+type whose base class is complex is itself a complex type, and its instances are 
+complex objects. 
+<P>
+<P>Consider a class type <I>TC</I>, of base class <I>C</I>, and an attribute 
+<I>a</I> of class <I>C</I>, with <I>TA</I> being the type of <I>a</I>. The 
+possible values for the field corresponding to attribute <I>a</I> in a direct 
+instance of <I>TC</I> depend on the nature of <I>TA</I>. There are three 
+possible cases for <I>TA</I>: 
+<P>
+<OL>
+  <LI>Reference type. (This also covers the case of an anchored type, of the 
+  form <B>like</B><I> x</I>, which has a class type as base type.) 
+  <LI>Expanded type. 
+  <LI>Formal generic parameter of class <I>C</I>.</LI></OL>
+<P>In case 1, the field corresponding to attribute <I>a</I> is a reference. That 
+reference may be void, or it may be attached to an instance of <I>TA</I>'s base 
+type not necessarily a direct instance. 
+<P>
+<H3>Definition: sub-object</H3>
+<P>In case 2, the field corresponding to attribute <I>a</I> is an instance of 
+the expanded type <I>TA</I>. In other words, the field is itself an object, 
+called a sub-object of the enclosing object. Depending on the precise nature of 
+<I>TA</I>, the sub-object may be of various forms: 
+<P>
+<UL>
+  <LI><I>TA</I> may be a basic type, in which case the sub-object is a basic 
+  object of the corresponding type. </LI></UL>
+<H3>Definition: composite object</H3>
+<UL>
+  <LI>If <I>TA</I> is a non-basic expanded type, the sub-object is itself a 
+  complex object. In this case the enclosing complex object is said to be 
+  composite. </LI></UL>
+<H2>17.9 EXPRESSIONS AND ENTITIES </H2>
+<H3>Definition: entity</H3>
+<P>In a class text, four kinds of entity may appear: 
+<OL>
+  <LI>Final names of attributes of the class. 
+  <LI>Local entities of routines, including the predefined entity <I>Result</I> 
+  for functions. 
+  <LI>Formal routine arguments. 
+  <LI><I>Current</I>, the predefined entity used to represent a reference to the 
+  current object (the target of the latest not yet completed routine 
+call).</LI></OL>
+<P>
+<P>
+<P><B>Entity rule </B>
+<P>
+<P>An occurrence of an entity <I>e</I> in the text of a class <I>C </I>(other 
+than as feature of a qualified call) is valid if and only if it satisfies one of 
+the following conditions: 
+<OL>
+  <LI><I>e</I> is the final name of an attribute of <I>C</I>. 
+  <LI>The occurrence is in a Local_declarations, Routine_body, Postcondition or 
+  Rescue part of a Routine text for a function, and <I>e</I> is the Local entity 
+  <I>Result</I>. 
+  <LI>The occurrence is in a Local_declarations, Routine_body or Rescue part of 
+  a Routine text for a routine <I>r</I>, and the Local_declarations part for 
+  <I>r</I> contains an Entity_declaration_list including <I>e</I> as part of its 
+  Identifier_list. 
+  <LI>The occurrence is in a Feature_declaration for a routine <I>r</I>, and the 
+  Formal_arguments part for <I>r</I> contains an Entity_declaration_list 
+  including <I>e</I> as part of its Identifier_list. 
+  <LI><I>e</I> is <I>Current</I>. </LI></OL>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 17 Objects, values and entities_fichiers/toc.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap16.htm"><IMG 
+src="Eiffel The Reference - 17 Objects, values and entities_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap18.htm"><IMG 
+src="Eiffel The Reference - 17 Objects, values and entities_fichiers/next.gif"></A> 
+
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

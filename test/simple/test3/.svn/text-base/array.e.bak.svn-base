@@ -1,0 +1,5 @@
+class STRING
+
+feature
+
+end

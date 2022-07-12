@@ -1,0 +1,658 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://www.eclipse.org/articles/StyledText%202/article2.html -->
+<HTML><HEAD><TITLE>Into the Deep End of the SWT StyledText Widget</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+href="article2_fichiers/default_style.css" rel=stylesheet>
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY vLink=#800080 link=#0000ff>
+<DIV align=right>&nbsp; <FONT face="Times New Roman, Times, serif" 
+size=2>Copyright © 2001,2002 International Business Machines Corp.</FONT> 
+<TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica><FONT color=#ffffff>&nbsp;Eclipse Corner 
+      Article</FONT></FONT></B></TD></TR></TBODY></TABLE></DIV>
+<DIV align=left>
+<H1><IMG height=86 src="article2_fichiers/Idea.jpg" width=120 
+align=center></H1></DIV>
+<P>&nbsp;</P>
+<H1 align=center>Into the Deep End of the</H1>
+<H1 align=center>SWT StyledText Widget</H1>
+<BLOCKQUOTE><B>Summary</B> 
+  <P>The<I> StyledText</I> widget is a customizable widget that can be used to 
+  display and edit text with different colors and font styles. In this article 
+  we discuss why you might want to customize the <I>StyledText</I> widget and 
+  how you would do that. The article assumes you are familiar with the concepts 
+  presented in our other article, <A 
+  href="http://www.eclipsecorner.org/articles/StyledText%201/article1.html">"Getting 
+  Your Feet Wet With the SWT StyledText Widget"</A>.</P>
+  <P><B>By Lynne Kues and Knut Radloff, OTI</B> <BR>October 17, 2001; updated 
+  September 18, 2002 for Eclipse 2.0</P></BLOCKQUOTE>
+<HR width="100%">
+
+<H2>Overview</H2>
+<P>The <I>StyledText</I> widget is designed as a pluggable widget. You can 
+supply any or all of the following components in order to customize the widget 
+to your needs: 
+<UL>
+  <LI><I>StyledTextContent</I> for storing and manipulating the widget’s text. 
+  The <I>StyledText</I> widget interacts with its <I>StyledTextContent</I> in 
+  order to access and update the text that is being displayed and edited in the 
+  widget. 
+  <LI><I>LineStyleListener</I> for answering the style information that is 
+  associated with the widget’s text. When the <I>StyledText</I> widget displays 
+  a line of text, it will ask its <I>LineStyleListener</I> for the line’s style 
+  information. 
+  <LI><I>LineBackgroundListener</I> for answering background colors for the 
+  lines that are displayed by the widget. When the <I>StyledText</I> widget 
+  displays a line, it will ask its <I>LineBackgroundListener</I> for the line’s 
+  background color. </LI></UL>
+<P>The <I>StyledText</I> widget supplies default implementations for all of the 
+above objects. Therefore, you can supply any combination of the above 
+components. For example, you could supply just a <I>StyledTextContent</I> 
+implementation and use the <I>StyledText</I> widget’s default 
+<I>LineStyleListener</I> and <I>LineBackgroundListener</I>.</P>
+<H2>Implementing a StyledTextContent</H2>
+<H3>StyledTextContent Applicability</H3>
+<P>One of the main reasons to provide a content implementation for the 
+<I>StyledText</I> widget is to avoid data duplication. If the text that is to be 
+displayed by the <I>StyledText</I> widget is already stored and maintained in an 
+object, you can eliminate data duplication by providing a content 
+implementation. </P>
+<P>Providing your own <I>StyledTextContent</I> implementation will also give you 
+more flexibility since you will have direct access to the text content. For 
+example, you may want to manipulate the text independently of the widget. </P>
+<H3>StyledTextContent Method Overview</H3>
+<P>The <I>StyledTextContent </I>interface defines the protocol that is used by 
+the <I>StyledText</I> widget to get information about the text content it should 
+display. The interface contains all the methods that must be implemented in 
+order to supply your own content implementation. </P><I>
+<P>void addTextChangeListener(TextChangeListener listener)</I> 
+<DIR>
+<P>This method is called by the <I>StyledText </I>widget in order to register 
+itself as a listener for content changes. The <I>StyledTextContent</I> 
+implementer must store <I>TextChangeListeners </I>and notify these listeners 
+when content changes occur. Notification occurs in two steps. First a 
+<I>TextChangingEvent</I> should be sent when text content is about to change and 
+then a <I>TextChangedEvent</I> should be sent when the text content has changed. 
+Notification should occur in the <B>replaceTextRange</B> method (discussed 
+below).</P></DIR>
+<ADDRESS>int getCharCount() </ADDRESS>
+<DL>
+  <DD>This method should return the number of characters in the text content. 
+  </DD></DL><I>
+<P>String getLine(int lineIndex)</I> 
+<DIR>
+<P>This method should return the line at the given <I>lineIndex</I> without the 
+line delimiter.&nbsp; Line indexes are zero-based. For example:</P><PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line delimiter = "\r\n"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text content = "Line 1\r\nLine2\r\nLine 3"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT><I>getLine(0)</I><TT> should answer "Line 1"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT><I>getLine(2)</I><TT> should answer "Line 3"</TT></PRE></DIR><I>
+<P>int getLineAtOffset(int offset)</I> 
+<DIR>
+<P>This method should return the index of the line at the given character 
+<I>offset</I>. Character offsets are zero-based.&nbsp; For example:</P><PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line delimiter = "\n"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text content = "Line 1\nLine2\nLine 3"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT><I>getLineAtOffset(6)</I><TT> should answer 0
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT><I>getLineAtOffset(7)</I><TT> should answer 1</TT></PRE></DIR><I>
+<P>int getLineCount()</I> 
+<DIR>
+<P>This method should return the number of lines in the text content.&nbsp; For 
+example:</P><PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line delimiter = "\n"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text content = "Line 1\nLine2\nLine 3"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT><I>getLineCount()</I><TT> should answer 3</TT></PRE></DIR><I>
+<P>String getLineDelimiter()</I> 
+<DIR>
+<P>This method should return the line delimiter that should be used when 
+inserting new lines (i.e., via the keyboard) into the text content.</P></DIR><I>
+<P>int getOffsetAtLine(int lineIndex)</I> 
+<DIR>
+<P>This method should return the character offset of the first character for the 
+given <I>lineIndex</I>. Character offsets are zero-based.&nbsp; For example:</P><PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line delimiter = "\r\n"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text content = "Line 1\r\nLine2\r\nLine 3"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT><I>getOffsetAtLine(1)</I><TT> should answer 8
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT><I>getOffsetAtLine(2)</I><TT> should answer 15</TT></PRE></DIR><I>
+<P>String getTextRange(int start, int length)</I> 
+<DIR>
+<P>This method should return the text for the given range. The range begins at 
+character offset <I>start</I> and continues <I>length</I> characters. For 
+example:</P><PRE><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text content = "Line 1\r\nLine2\r\nLine 3"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </TT><I>getTextRange(3,8)</I><TT> should answer "e 1\r\nLin"</TT></PRE></DIR><I>
+<P>void removeTextChangeListener(TextChangeListener listener)</I> 
+<UL>
+  <P>This method should remove a registered <I>TextChangeListener.</I> The 
+  listener will no longer be notified of content changes.</P></UL><I>
+<P>void replaceTextRange(int start, int length, String newText)</I> 
+<DIR>
+<P>This method should replace the given text range (beginning at offset 
+<I>start</I> and continuing for <I>replaceLength</I> characters) with 
+<I>newText</I>. Before the text update occurs, the <I>StyledTextContent</I> 
+implementor should notify its registered <I>TextChangeListeners</I> of the 
+pending change. Notification should occur via the <I>TextChangingEvent</I>.</P>
+<DIR><TT><PRE><FONT color=#000080>public class</FONT> TextChangingEvent <FONT color=#000080>extends</FONT> TypedEvent {
+<FONT color=#000080>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public int</FONT> newCharCount;	<FONT color=#800000>// the length of the new text
+</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color=#000080>public int</FONT> newLineCount;	<FONT color=#800000>// the number of new lines to be inserted
+</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color=#000080>public</FONT> String newText;&nbsp;&nbsp;&nbsp;&nbsp; 	<FONT color=#800000>// the text to be inserted
+</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color=#000080>public int</FONT> replacedCharCount;	<FONT color=#800000>// the length of the text to be replaced
+</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color=#000080>public int</FONT> replacedLineCount;	<FONT color=#800000>// the number of lines to be replaced
+</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT color=#000080>public int</FONT> start;		<FONT color=#800000>// the start offset of the text to be replaced
+</FONT>}</PRE></TT></DIR>
+<P>Note that <I>newLineCount<B> </B></I>and <I>replacedLineCount<B> 
+</B></I>should indicate the number of lines in the text to be inserted and the 
+number of lines in the text to be replaced, respectively. For example:</P></DIR>
+<DIV align=center>
+<CENTER>
+<TABLE borderColor=#000000 cellSpacing=2 cellPadding=7 width=576 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="22%">
+      <P align=center><FONT face="Courier New" size=2><I>replaced 
+      text</I></FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2><I>
+      <P align=center>inserted text</I></FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2><I>
+      <P align=center>replacedLineCount</I></FONT></P></TD>
+    <TD vAlign=top width="22%"><FONT face="Courier New" size=2><I>
+      <P align=center>newLineCount</I></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face="Courier New" size=2>
+      <P align=center>""</FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2>
+      <P align=center>"\n"</FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2>
+      <P align=center>0</FONT></P></TD>
+    <TD vAlign=top width="22%"><FONT face="Courier New" size=2>
+      <P align=center>1</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face="Courier New" size=2>
+      <P align=center>"\n\n"</FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2>
+      <P align=center>"a"</FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2>
+      <P align=center>2</FONT></P></TD>
+    <TD vAlign=top width="22%"><FONT face="Courier New" size=2>
+      <P align=center>0</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face="Courier New" size=2>
+      <P align=center>"a"</FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2>
+      <P align=center>"\n\n"</FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2>
+      <P align=center>0</FONT></P></TD>
+    <TD vAlign=top width="22%"><FONT face="Courier New" size=2>
+      <P align=center>2</FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width="22%"><FONT face="Courier New" size=2>
+      <P align=center>"\n"</FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2>
+      <P align=center>""</FONT></P></TD>
+    <TD vAlign=top width="28%"><FONT face="Courier New" size=2>
+      <P align=center>1</FONT></P></TD>
+    <TD vAlign=top width="22%"><FONT face="Courier New" size=2>
+      <P align=center>0</FONT></P></TD></TR></TBODY></TABLE></CENTER></DIV>
+<DIR>
+<P>After the text content is updated, the <I>StyledTextContent </I>implementor 
+should notify its registered <I>TextChangeListeners</I> that the change is 
+complete. Notification should occur via the <I>TextChangedEvent. </I>When the 
+StyledText widget receives this event, it will update the widget to reflect the 
+change. The <I>TextChangedEvent</I> does not contain any data since all the 
+information about the change is included in the <I>TextChangingEvent</I>. 
+</P></DIR>
+<P><EM>void setText(String newText)</EM><FONT face="Courier New" size=2> </FONT>
+<DIR>
+<P>This method replaces the entire existing text with <I>newText</I>. Use this 
+method to initially specify the text content.</P></DIR>
+<P>Note that the <I>StyledTextContent</I> implementation does not deal with text 
+styles. It is only responsible for managing the text content. The 
+<I>LineStyleListener</I> and <I>LineBackgroundListener </I>objects manage style 
+information. When you implement a <I>StyledTextContent</I>, you are not required 
+to implement a <I>LineStyleListener</I> or a <I>LineBackgroundListener</I>. 
+&nbsp; <EM>StyledText's</EM> default implementations of 
+<EM>LineStyleListener</EM> and <EM>LineBackgroundListener</EM> will not change 
+style information when a content change occurs.&nbsp; Styles for existing text 
+will remain as before the content change and new text will not be assigned any 
+styles. If a content change requires style changes, you can use the 
+<B>replaceStyleRanges</B> (new since Eclipse 2.0) and <B>setStyleRange</B> API 
+to update the style information. When to update style information is discussed 
+below in the "Text Content/Style Update Processing" section</P>
+<H3>StyledTextContent Rules</H3>
+<P>It is up to the <I>StyledTextContent</I> implementation to decide which line 
+delimiters it will recognize in order to determine the lines that are 
+represented in a text string. The default <I>StyledTextContent</I> 
+implementation that is supplied with the <I>StyledText</I> widget recognizes any 
+combination of "\n", "\r\n", and "\r" as line delimiters. Doing so ensures that 
+strings created with different line delimiters are interpreted correctly. Note 
+that the delimiter for a specific platform comes into play when new lines are 
+inserted. When inserting text, you want the new lines to be created with the 
+platform line delimiter so that copy and paste operations between platform 
+applications work properly. You specify the delimiter to use when inserting new 
+text via the <B>getLineDelimiter </B>method. </P>
+<P>As discussed above, when a text change occurs, the <I>StyledTextContent</I> 
+needs to send a <I>TextChangingEvent</I> and a <I>TextChangedEvent</I> to notify 
+the <I>StyledText</I> widget about the text change. Text changes can occur in 
+one of three ways: 
+<OL type=A>
+  <LI>via the <I>StyledText</I> widget because of user input (e.g., keyboard 
+  entry) 
+  <LI>via the <I>StyledText</I> widget because API was called (e.g., 
+  <B>replaceTextRange </B>or <B>paste</B>) 
+  <LI>via your <I>StyledTextContent</I> implementation (i.e., your application 
+  changes text independent of the <I>StyledText</I> widget) </LI></OL>
+<P>The following diagram indicates how these text changes occur within the 
+<EM>StyledText</EM> widget.&nbsp; The boxes in gray are discussed in length in 
+our <A 
+href="http://www.eclipsecorner.org/articles/StyledText%201/article1.html">first 
+article</A>, "Getting Your Feet Wet With the SWT StyledText Widget".&nbsp; For 
+this article, we will expand upon the processing that occurs in Step 4, "Text 
+Content/Style Update".</P>
+<P align=center><IMG height=995 alt="TextChanges.gif (12968 bytes)" 
+src="article2_fichiers/TextChanges.gif" width=420></P>
+<DIV align=center><B>Figure 1 – Text Change Processing</B> </DIV>
+<H4>Text Content/Style Update Processing </H4>
+<P>The Text Content/Style Update process begins with the <EM>StyledText</EM> 
+widget or your application (for Case C) calling the<STRONG> 
+replaceTextRange(int, int, String)</STRONG> method.&nbsp; This method is the 
+time and place to send the text change events and to update your text 
+content.&nbsp;&nbsp; How processing should occur is depicted in the diagram 
+below. The light gray boxes represent the processing that your 
+<I>StyledTextContent</I> implementation should perform, while the dark gray 
+boxes represent the processing that occurs in the <I>StyledText</I> 
+widget.</P><FONT face="Courier New" size=2>
+<P align=center>&nbsp;<IMG height=796 alt="TextUpdate.gif (11618 bytes)" 
+src="article2_fichiers/TextUpdate.gif" width=607></P></FONT>
+<DIV align=center><B>Figure 2 – Text Content/Style Update Processing</B> </DIV>
+<P>The text content/style update process is started by sending the 
+<I>TextChangingEvent</I> (1). In response to this event, the <I>StyledText</I> 
+widget prepares for the text change by posting screen update operations for the 
+area of the text change (2). After the <I>TextChangingEvent</I> is sent, the 
+application should update its text content to reflect the change (3), apply 
+style changes (4), and send the <I>TextChanged</I> event (5). When the 
+<I>StyledText</I> widget receives the <I>TextChangedEvent</I> it will update 
+itself in accordance with the change (e.g., scroll bars will be adjusted) and 
+the text change will be visibly presented in the <I>StyledText</I> widget (6). 
+If you don't supply a <I>LineStyleListener</I> as described below, part of the 
+text change process will include updating the style ranges to accommodate the 
+text change (occurs in Step 2). As discussed in the first article <A 
+href="http://www.eclipsecorner.org/articles/StyledText%201/article1.html">"Getting 
+Your Feet Wet With the SWT StyledText Widget"</A>, the StyledText widget 
+maintains styles for existing text and does not apply styles for any new text. 
+If the new text requires styles or the existing styles need to be modified, this 
+should be done in Step 4. </P>
+<P>Note that the rules that apply to updating styles also apply to updating line 
+background colors. If you do not supply a <I>LineBackgroundListener</I> as 
+described below, part of the text change process will include updating line 
+background colors if the text change includes adding or removing lines. As with 
+styles, the <I>StyledText</I> widget maintains existing line background colors. 
+If the line background colors need to be updated as a result of the text change, 
+this should be done in Step 4. </P>
+<P>Note that between the time that your <EM>StyledTextContent</EM> 
+implementation sends the <I>TextChangingEvent</I> and the 
+<I>TextChangedEvent</I>, your implementation should not use API that will cause 
+a scroll operation to occur or that will cause posted paints to be flushed. The 
+<I>StyledText</I> widget also does not handle nested text content updates, so 
+when processing text content changes, the application should not use API that 
+will cause text updates to occur.</P>
+<P>The <I>StyledText</I> widget only modifies the cursor location when text is 
+changed via user input. In all other instances (i.e., Case B and Case C in 
+Figure 1 above), if the application wishes the cursor location to change as a 
+result of the text content change, the following methods can be used to set the 
+cursor location to an offset and to make that offset visible: </P><TT><PRE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; setSelection(offset, 0)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; showSelection()</PRE></TT>
+<H3>StyledTextContent Considerations</H3>
+<P>When implementing a <I>StyledTextContent</I>, the algorithm for updating the 
+text content when modifications occur must be fast. If it is not, you will 
+experience sluggishness during typing (i.e., as your <I>StyledTextContent</I> 
+attempts to deal with the text change). Similarly, the algorithm for returning 
+the text for a line should be fast. If it is not, you will experience 
+sluggishness during scrolling. It is also important to ensure that your 
+implementation scales well. When the text content gets larger, handling of text 
+replace operations and answering lines should not be adversely affected from a 
+performance standpoint. </P>
+<P>For an example of a <I>StyledTextContent</I> implementation, refer to the 
+class <I>org.eclipse.swt.custom.DefaultContent</I>. <I>DefaultContent</I> is the 
+content implementation that the <I>StyledText</I> widget uses by default. </P>
+<H3>StyledTextContent Implementation Validation</H3>
+<P>The following Java™ class can be used to test a <I>StyledTextContent</I> 
+implementation. When executed, the class will run through a number of test 
+scenarios that exercise the <I>StyledTextContent</I> interface. To use the 
+class, import it into the package that contains your <I>StyledTextContent</I> 
+implementation. Then specify the fully qualified name of your implementation 
+class as an argument to the<I> StyledTextContentSpec’s</I> <B>main</B> 
+method.&nbsp; As each test scenario is executed, <B>System.out</B> will be 
+updated to indicate whether or not each test passed.&nbsp; Note that this class 
+is designed to work with a <EM>StyledTextContent</EM> implementation that 
+supports "\r", "\n", and '\r\n" as line delimiters.</P>
+<P><A 
+href="http://www.eclipse.org/articles/StyledText%202/StyledTextContentSpec.java">StyledTextContentSpec.java</A> 
+<BR></P>
+<H2>Implementing a LineStyleListener</H2>
+<H3>LineStyleListener Applicability</H3>
+<P>One of the main reasons to use a customized <I>LineStyleListener</I> is to 
+support on-demand line styling. Instead of using the <B>replaceStyleRanges</B> 
+(new in Eclipse 2.0), <B>setStyleRanges</B> and <B>setStyleRange</B> methods to 
+statically set the style information for the widget’s text, style information 
+can be provided dynamically on a line-by-line basis. </P>
+<P>If styles are determined based on the actual text content, on-demand line 
+styling can be used since the text of each line is passed to the 
+<I>LineStyleListener</I>. Text styles that are used for syntax highlighting can 
+typically be provided dynamically. For example, except for block comments, all 
+of Java’s syntactic elements occur on one line. It would be more efficient to 
+use a dynamic, customized<I> LineStyleListener </I>vs. the <I>StyledText</I> API 
+to implement Java syntax highlighting. If you used the <I>StyledText</I> API, 
+style information would be maintained statically and any time text changes 
+occurred this information would have to be updated (e.g., via the 
+<B>setStyleRange</B> API). Using the <I>StyledText</I> API would also require 
+you to parse the entire text up front. If on-demand line styling were used, the 
+text would be parsed on an as needed basis, as it is displayed, thus improving 
+initial load time. </P>
+<P>Another reason to use a customized <I>LineStyleListener</I> is to avoid 
+duplicating data. When the <I>StyledText</I> methods <B>replaceStyleRanges</B>, 
+<B>setStyleRanges</B> and <B>setStyleRange </B>are called, the <I>StyledText</I> 
+widget will cache the <I>StyleRange</I> objects that are supplied as input 
+parameters. However, if the information needed to construct style ranges is 
+already stored by an object in your application, introducing a 
+<I>LineStyleListener</I> that uses this object may be beneficial. </P>
+<P>You may also use a customized <I>LineStyleListener</I> in order to provide 
+application-specific text coloring behavior. By default, when text changes occur 
+in the <I>StyledText</I> widget, text colors are updated as follows: 
+<OL>
+  <OL>
+    <LI>If text is deleted, its associated style will also be deleted. 
+    <LI>If new text is inserted, it’s associated style will be null (i.e., the 
+    text background color will be the widget background color, the text 
+    foreground color will be the widget foreground color, and the text font 
+    style will be the widget font style). </LI></OL></OL>
+<DIR>
+<DIR>
+<DIR>
+<P>Note: A text replace operation is treated as a text delete operation followed 
+by a text insert operation.</P></DIR></DIR></DIR>
+<P>The <I>StyledText</I> widget does not make any assumptions about how to apply 
+styles when text is inserted or deleted because how to update the styles will 
+depend on how the <I>StyledText</I> widget is being used. For example, if the 
+widget is being used to support syntax highlighting for a source code editor, 
+coloring will occur only when inserted text completes a keyword. Whereas, if the 
+widget is being used to support text attributes for a word processor, inserted 
+text will most likely take on the style values of the characters adjacent to the 
+text. To provide specific text style updating behavior you can introduce your 
+own <I>LineStyleListener</I>.</P>
+<H3>LineStyleListener Method Overview</H3>
+<P>The <I>LineStyleListener </I>interface defines the protocol that is used by 
+the <I>StyledText</I> widget to get the styles of a displayed line.</P><I>
+<P>void lineGetStyle (LineStyleEvent event) </I>
+<DIR>
+<P>The <B>lineGetStyle</B> method is called when a line is about to be drawn in 
+order to get the line’s style information. When the method is called, the 
+<I>LineStyleEvent</I> has two input fields set - 
+<B>LineStyleEvent.lineOffset</B> contains the start offset of the line and&nbsp; 
+<B>LineStyleEvent<FONT color=#000080>.</FONT>lineText</B> contains the text of 
+the line. It is your responsibility to set the output field, 
+<B>LineStyleEvent.styles</B>. This field defines the StyleRanges for the text 
+line. The widget uses the StyleRanges for measuring and rendering text when the 
+<B>lineGetStyle</B> listener method returns. Each <I>StyleRange</I> object 
+describes the foreground color, background color and font style for a range of 
+text in the particular line your listener was called for. The range start offset 
+is relative to the beginning of the document, not the beginning of the 
+line.</P></DIR>
+<H3>LineStyleListener Rules</H3>
+<P>If you implement your own <I>LineStyleListener </I>to supply line styles you 
+may no longer use the <B>replaceStyleRanges</B>, <B>setStyleRange, 
+setStyleRanges</B> or <B>getStyleRange</B> API. You can supply style information 
+using a <I>LineStyleListener </I>or the API, but not both. </P>
+<P>Ideally, you only have to use the line text and offset information supplied 
+in the <I>LineStyleEvent</I> passed in to the <B>lineGetStyle</B> listener 
+method to calculate line style information. However, it may be necessary for you 
+to store style information and simply look up the styles when your listener 
+method is called. In this case, you will have to update the style information 
+when text changes occur. To do this, you can listen to the <B>extended modify 
+event</B> (described in detail in our <A 
+href="http://www.eclipsecorner.org/articles/StyledText%201/article1.html">first 
+article</A>). The <B>extended modify event</B> is sent after the widget text has 
+been updated, but before the screen updates take effect. In this manner, 
+inserted text can immediately use any styles that have been specified. Note that 
+it does not make sense to use the <B>modify event</B> to update styles in this 
+manner since the <B>modify event</B> does not contain any specific information 
+about the text change (e.g., character offset of the inserted text).&nbsp;<A 
+name=StyleRedraw></A> &nbsp; </P>
+<P>If, as a result of the text change, style information before or after the 
+lines modified by the text change is changed, you will have to redraw the 
+affected area of the widget. For example, if you are using the <I>StyledText</I> 
+widget for java syntax highlighting in a source code editor, deleting the 
+beginning of a block comment (i.e., "/*") will affect lines after the line on 
+which the text change occurred. In this instance, it would be the application’s 
+responsibility to redraw the other comment lines. The <I>StyledText</I> widget 
+will only update text lines based on the text change that occurred.</P>
+<P>The <I>StyledText</I> widget provides two redraw methods to support the above 
+scenarios: </P><TT><PRE>	<FONT color=#000080>public void</FONT> redrawRange(<FONT color=#000080>int</FONT> start, <FONT color=#000080>int</FONT> length, <FONT color=#000080>boolean</FONT> clearBackground)
+	<FONT color=#000080>public void</FONT> redraw(<FONT color=#000080>int</FONT> x, <FONT color=#000080>int</FONT> y, <FONT color=#000080>int</FONT> width, <FONT color=#000080>int</FONT> height, <FONT color=#000080>boolean</FONT> all)</PRE></TT>
+<P>The first, <B>redrawRange</B>, lets you specify the exact text range to 
+redraw using character offsets. The second method, <B>redraw</B>, is the 
+standard SWT redraw method that redraws a pixel based rectangle in the widget. 
+SWT provides another redraw method, which is not shown here. It does not have 
+any arguments and redraws the whole widget. You can use this method, but it will 
+cause the text to flash since it performs a full clear and redraw of the 
+widget.</P>
+<H3>LineStyleListener Considerations</H3>
+<P>If you implement your own <I>LineStyleListener</I>, keep in mind that the 
+listener is called every time a line is rendered or scrolled and when a key is 
+pressed. It is therefore important that the <B>lineGetStyle</B> method is fast 
+and that it scales well for use with large amounts of text. If you experience a 
+lag when typing and scrolling, your <I>LineStyleListener </I>implementation is 
+too slow. If typing and scrolling is slow at the end of the text, your algorithm 
+does not scale well. Note that unresponsive typing may also be caused by slow 
+processing in <I>VerifyListeners</I>, <I>ModifyListeners</I> or 
+<I>ExtendedModifyListeners </I>(see our <A 
+href="http://www.eclipsecorner.org/articles/StyledText%201/article1.html">first 
+article</A> for more information about verify and modify listeners). </P>
+<P>If you implement a <I>LineStyleListener </I>and store the <I>StyleRange</I> 
+objects (instead of calculating them on demand) it is advisable to merge 
+adjacent styles that have the same style data. Merging StyleRanges improves the 
+performance of text measuring and rendering in the <I>StyledText</I> widget 
+because fewer <I>StyleRange</I> objects have to be processed. </P>
+<P><A name=LineStyleListenerRedraw></A>If you redraw text during the <B>extended 
+modified event</B>, make sure that you only redraw text ranges that actually 
+have new styles. Unnecessary refresh operations can cause flash and degrade 
+performance. See the discussion in the "Text Refresh" section of our <A 
+href="http://www.eclipsecorner.org/articles/StyledText%201/article1.html">first 
+article</A> for more information about what flash means and what causes it. </P>
+<P>For an example of a <I>LineStyleListener</I> implementation, refer to the 
+class <I>org.eclipse.swt.custom.DefaultLineStyler</I>. This class’ 
+implementation of the <I>LineStyleListener</I> interface is the implementation 
+that the <I>StyledText</I> widget uses by default. The class illustrates the 
+concepts discussed above, including how to merge neighboring styles </P>
+<H3>LineStyleListener Example</H3>
+<P>The following example is the <B>lineGetStyle</B> method from a 
+<I>LineStyleListener </I>that implements a simple Java syntax coloring strategy. 
+The method constructs the <EM>StyleRange</EM> objects dynamically (i.e., every 
+time they are requested) and merges similar styles for improved rendering 
+performance.&nbsp; The example method code is taken from the SWT Java Syntax 
+Viewer example, which is part of the example plugins that can be downloaded with 
+the Eclipse SDK.&nbsp; The example code can be found in the plugins 
+subdirectory<EM> </EM>org.eclipse.swt.examples.&nbsp; Three classes comprise the 
+example - <EM>JavaViewer</EM>, <EM>JavaLineStyler</EM> and <EM>JavaScanner</EM>. 
+&nbsp; The <EM>JavaScanner</EM> class is an inner class of 
+<EM>JavaLineStyler</EM>.</P>
+<P>The <I>JavaScanner</I> class implements a Java syntax scanner. The 
+<I>JavaScanner</I> public API includes the methods: </P><TT><PRE>	<FONT color=#000080>void</FONT> setRange(String)
+	<FONT color=#000080>int</FONT> nextToken()&nbsp;
+	<FONT color=#000080>int</FONT> getStartOffset()
+	<FONT color=#000080>int</FONT> getLength()</PRE></TT>
+<P>as well as constants for the different Java syntax elements that need 
+highlighting. In addition, the method <B>Color getColor(int)</B> returns a 
+<I>Color</I> object for a given Java syntax constant. </P>
+<P>In the example, we set the text of the line we want to syntax scan in the 
+Java scanner. We apply different colors to each token and keyword tokens are 
+given a font style of bold. If the color for a token differs from the widget 
+foreground color or if the token is a keyword (in which case a <I>StyleRange</I> 
+would be necessary in order to specify a bold font style), we create a new 
+<I>StyleRange</I> object for that element. If the previous <I>StyleRange</I> 
+object has the same foreground color, background color and font style, it is 
+considered similar and the two ranges can be merged. Merging StyleRanges 
+improves the performance of text measuring and rendering in the 
+<I>StyledText</I> widget.</P>
+<P>The lineGetStyle method also includes special processing for handling the 
+<I>StyleRanges</I> that are created for keywords. In Java code, multiple 
+keywords are often grouped together (e.g., "public static final int"). To 
+minimize the number of <I>StyleRanges</I> that are created in this instance, 
+spaces between the keywords are assigned a bold font style. This strategy will 
+lead to only one <I>StyleRange</I> for a group of keywords vs. multiple 
+<I>StyleRanges</I> (i.e., one for each keyword and one for each space between 
+the keywords).&nbsp; The strategy will also minimize the number of font style 
+changes that occur during rendering (i.e., the number of changes from the normal 
+font to the bold font).</P>
+<P>When the complete line has been scanned and processed, the styles are copied 
+into the <I>LineStyleEvent</I>. 
+<DIR>
+<DIR><TT><PRE><FONT color=#000080>public</FONT> <FONT color=#000080>void</FONT> lineGetStyle(LineStyleEvent event) {
+    Vector styles = <FONT color=#000080>new</FONT> Vector();
+
+<FONT color=#800000>    // If the line is part of a block comment, create one style for the entire line.
+</FONT>    <FONT color=#000080>if</FONT> (inBlockComment(event.lineOffset, event.lineOffset + event.lineText.length())) {
+        styles.addElement(new StyleRange(event.lineOffset, event.lineText.length(), getColor(COMMENT), <FONT color=#000080>null</FONT>));
+        event.styles = <FONT color=#000080>new</FONT> StyleRange[styles.size()];
+        styles.copyInto(event.styles);
+        <FONT color=#000080>return</FONT>;
+    }
+    
+<FONT color=#000080>    int</FONT> token;
+    StyleRange lastStyle;
+    Color defaultFgColor = ((Control)event.widget).getForeground();
+    scanner.setRange(event.lineText);
+    token = scanner.nextToken();
+    <FONT color=#000080>while</FONT> (token != EOF) {
+        <FONT color=#000080>if</FONT> (token == OTHER) {
+<FONT color=#800000>            // no syntax highlighting necessary
+</FONT>        } <FONT color=#000080>else</FONT> <FONT color=#000080>if</FONT> ((token != WHITE) {
+<FONT color=#800000>            // Only create a style if the token color is different than the widget's default foreground color and the 
+            // token’s fontStyle is not bold.
+</FONT>            Color color = getColor(token);
+<FONT color=#000080>            if</FONT> ((!color.equals(defaultFgColor)) || (token == KEY)) {
+                StyleRange style = new StyleRange(scanner.getStartOffset() + event.lineOffset, scanner.getLength(), color, <FONT color=#000080>null</FONT>);
+                <FONT color=#000080>if</FONT> (token == KEY) {
+                    style.fontStyle = SWT.BOLD;
+                }
+                <FONT color=#000080>if</FONT> (styles.isEmpty()) {
+                    styles.addElement(style);
+                } <FONT color=#000080>else</FONT> {
+<FONT color=#800000>                    // Merge similar styles. 
+</FONT>                    lastStyle = (StyleRange)styles.lastElement();
+                    <FONT color=#000080>if</FONT> (lastStyle.similarTo(style) &amp;&amp; (lastStyle.start + lastStyle.length == style.start)) {
+                        lastStyle.length += style.length;
+                    } <FONT color=#000080>else</FONT> {
+                        styles.addElement(style); 
+                    }
+                }
+            }
+        } <FONT color=#000080>else if</FONT> (!styles.isEmpty()) &amp;&amp; ((lastStyle=(StyleRange)styles.lastElement()).fontStyle == SWT.BOLD)) {
+<FONT color=#800000>            // Have the white space take on the bold style before it to minimize the number of style ranges.
+</FONT>            <FONT color=#000080>int</FONT> start = scanner.getStartOffset() + event.lineOffset;
+<FONT color=#800000>            </FONT><FONT color=#000080>if</FONT> (lastStyle.start + lastStyle.length == start) {
+<FONT color=#800000>                </FONT>lastStyle.length += scanner.getLength();
+            }
+        }
+        token= scanner.nextToken();
+    }
+    event.styles = new StyleRange[styles.size()];
+    styles.copyInto(event.styles);
+}
+</PRE></TT></DIR></DIR>
+<H2>Implementing a LineBackgroundListener</H2>
+<H3>LineBackgroundListener Applicability</H3>
+<P>As with the LineStyleListener, one reason to use a customized 
+<I>LineBackgroundListener</I> is to avoid duplicating data. When the 
+<I>StyledText</I> method <B>setLineBackground</B> is called, the 
+<I>StyledText</I> widget will cache the colors for the specified lines. If this 
+information is already stored by an object in your application, introducing a 
+<I>LineBackgroundListener</I> that interacts with this object will eliminate 
+data duplication. </P>
+<P>You may also use a customized <I>LineBackgroundListener</I> in order to 
+provide application-specific line background coloring behavior. The 
+<I>StyledText</I> widget maintains line background colors relative to text 
+lines. By default, when text changes occur in the <I>StyledText</I> widget, line 
+background colors are updated as follows: 
+<OL>
+  <OL>
+    <LI>If a line is deleted, its associated line background color will also be 
+    deleted. 
+    <LI>If a new line is inserted, its associated line background color will be 
+    null (i.e., the widget background color) and line background colors for 
+    existing lines of text are unchanged. </LI></OL></OL>
+<P>For example, in the window below, a line background color of gray is used to 
+emphasize the import statements. If text lines are inserted or deleted, you 
+would want the line background color that is associated with the block of import 
+statements to be maintained. </P>
+<P align=center><IMG height=169 src="article2_fichiers/Image8.gif" 
+width=427></P>
+<P><FONT size=2><BR></FONT>Your application may want line background colors to 
+be updated differently when text changes occur. For example, if you want the 
+background of every other line to be gray (e.g., in order to facilitate reading 
+tabulated text), you would need to "shift" line background colors as lines are 
+deleted or inserted. You could easily support this behavior by implementing your 
+own <I>LineBackgroundListener</I>.</P>
+<H3>LineBackgroundListener Method Overview</H3>
+<P>The <I>LineBackgroundListener</I> interface defines the protocol that is used 
+by the <I>StyledText</I> widget to get the line background colors to use when 
+displaying the text. The interface, <I>LineBackgroundListener</I>, contains the 
+methods that must be implemented in order to supply your own line background 
+color implementation. </P><I>
+<P>void lineGetBackground(LineBackgroundEvent event)</I> 
+<DIR>
+<P>This method is called when a line is to be drawn in order to get the line’s 
+background color. <I>LineBackgroundEvent</I> will contain the start offset, 
+<B>lineOffset</B>, and the text, <B>lineText</B>, of the line to be drawn. Fill 
+in the background color in the <B>lineBackground</B> field. A value of null 
+indicates that the default widget background should be used for the line. 
+<BR>&nbsp;</P></DIR>
+<P>In the following example, a LineBackgroundListener is used to color the 
+background of every other line to light gray. The method assumes that we have a 
+cache of colors indexed by RGB value. 
+<DIR>
+<DIR><TT><PRE><FONT color=#000080>public void</FONT> lineGetBackground(LineBackgroundEvent event) {
+    <FONT color=#000080>int</FONT> line = ((StyledText) event.widget).getLineAtOffset(event.lineOffset);
+    <FONT color=#000080>if</FONT> ((line % 2) == 1) {
+        event.lineBackground = (Color)colors.get(<FONT color=#000080>new</FONT> RGB(222, 222, 222));
+    }
+}</PRE></TT></DIR></DIR>
+<H3>LineBackgroundListener Rules</H3>
+<P>Line background colors are drawn for the width of the widget, not the width 
+of the text. If a text background color is defined (i.e., via a 
+<I>StyleRange</I>), this color will overlay the line background color. </P>
+<P>If you implement your own <I>LineBackgroundListener, </I>the following 
+<I>StyledText</I> methods are not applicable and should not be used since your 
+<I>LineBackgroundListener</I> will be maintaining and storing line background 
+colors: 
+<DIR>
+<DIR>
+<P><TT><FONT color=#000080>public</FONT> Color getLineBackground(<FONT 
+color=#000080>int</FONT> index)</TT><FONT size=2> <BR></FONT><TT><FONT 
+color=#000080>public</FONT> <FONT color=#000080>void</FONT> 
+setLineBackground(<FONT color=#000080>int</FONT> startLine, <FONT 
+color=#000080>int</FONT> lineCount, Color background)</TT> </P></DIR></DIR>
+<H3>LineBackgroundListener Considerations</H3>
+<P>When you implement a <I>LineBackgroundListener</I>, since the 
+<B>setLineBackground</B> API is no longer available, you will be responsible for 
+refreshing line background colors within the widget. For example, if a text 
+content change alters line background colors for lines other than the lines on 
+which the text change occurred, it would be the LineBackgroundListener’s 
+responsibility to redraw these lines. You can refresh line background colors by 
+using the <B>redraw(int x, int y, int width, int</B><B>height, boolean all)</B> 
+method. The input parameters to this method specify a pixel-based rectangle. You 
+can use other <I>StyledText</I> API (e.g., <B>getLocationAtOffset</B>) to 
+calculate the rectangle for a line. </P>
+<P><A name=LineBackgroundListenerRedraw></A>When you implement a 
+<I>LineBackgroundListener</I> you should make sure that you only initiate line 
+background updates when necessary. Unnecessary refreshing of lines will cause 
+flash and degrade performance of the <I>StyledText</I> widget, as discussed in 
+the Text Refresh section of our <A 
+href="http://www.eclipsecorner.org/articles/StyledText%201/article1.html">first 
+article</A>.</P>
+<P>For an example of how to implement a <I>LineBackgroundListener</I>, refer to 
+the class <I>org.eclipse.swt.custom.DefaultLineStyler</I>. The 
+<I>DefaultLineStyler </I>implements the<I> LineBackgroundListener</I> behavior 
+that the <I>StyledText</I> widget uses by default. 
+<DL>
+  <DT> </DT></DL>
+<P><SMALL>Java and all Java-based trademarks and logos are trademarks or 
+registered trademarks of Sun Microsystems, Inc. in the United States, other 
+countries, or both.</SMALL></P></BODY></HTML>

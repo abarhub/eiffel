@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST6"/>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="point">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="puiss">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+</class>

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 25 Lexical Components</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><!-- $Id: chap3.htm,v 1.2 1995/07/08 09:29:51 neil Exp neil $ -->
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/next.gif"></A> 
+<P>
+<H1>3 The architecture of Eiffel software </H1>
+<H2>3.1 Overview </H2>
+<P>The constituents of Eiffel software are called classes. By extracting classes 
+from a given <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#universe">universe</A>, 
+you may assemble them into executable <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#system">systems</A>. 
+To keep your classes and your development organized, it is convenient to group 
+classes into <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#cluster">clusters</A>. 
+
+<P>Of these, only ''class'', describing the basic building blocks, corresponds 
+directly to a construct of the language. To build <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#system">systems</A> 
+out of classes, you will use not a language mechanism, but tools of the 
+supporting environment. As to <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#cluster">clusters</A> 
+and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#universe">universes</A>, 
+they are not language constructs but mechanisms for grouping and storing classes 
+using the facilities provided by the underlying operating system, such as files 
+and directories. 
+<P>
+<H2>3.3 Class Texts and Class Names </H2>
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/definit.gif"> <A 
+name="class name">class name</A>, <A name="class text">class text</A>, <A 
+name="same class name">same class name</A> </H3>
+<P>Every class has a name, such as <I>DOCUMENT</I> or <I>PARAGRAPH</I>, and a 
+<B>class text</B> which describes the features of the class and its other 
+properties. 
+<P>The term <B>class name</B> as used in this book denotes the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#upper name">upper 
+name</A> of the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_name">Class_name</A> 
+part of the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_header">Class_header</A>. 
+In particular, two classes are said to have the <B>same class name</B> if they 
+have the same <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#upper name">upper 
+names</A>, even if the names are written with different case conventions in the 
+class texts. 
+<P>
+<H2>3.4 Systems </H2>
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/definit.gif"> <A 
+name=system>system</A>, <A name=root>root</A> </H3>
+<P>A <B>system</B> is a set of classes, one of which has been designated as the 
+<B>root</B> of the system, such that all the classes on which the root depends 
+belong to the system.
+<P>
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/definit.gif"><A 
+name=dependency>dependency</A></H3>
+<P>Here a class <I>C</I> is said to <B>depend</B> on a class <I>A</I> if one of 
+the following holds: 
+<P>
+<UL>
+  <LI><I>C</I> is an heir of <I>A</I>. 
+  <LI><I>C</I> is a client of <I>A</I>. 
+  <LI>Recursively, there is a class <I>B</I> such that <I>C</I> depends on 
+  <I>B</I> and <I>B</I> depends on <I>A</I>. </LI></UL>
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/validity.gif"><A 
+name=VSRC>(VSRC)</A> Root Class Rule </H3>
+<P>A class <I>C</I> may be used as <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#root">root</A> 
+of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#system">system</A> 
+if and only if it satisfies the following three conditions:
+<P>
+<OL>
+  <LI><I>C</I> is not generic. 
+  <LI><I>C</I> is not deferred. 
+  <LI>Any creation procedure of <I>C</I> has either no formal argument, or a 
+  single formal argument of type <I>ARRAY </I>[<I>STRING</I>].</LI></OL>
+<H2>3.5 Clusters</H2>
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/definit.gif"><A 
+name=cluster>cluster</A></H3>
+<P>A <B>cluster</B> is a set of classes, all with different names. 
+<P>
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/validity.gif"><A 
+name=VSCN>(VSCN)</A> Cluster Class Name Rule </H3>No two classes in a given <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#cluster">cluster</A> 
+may have the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#same class name">same 
+class name</A>. 
+<P>
+<H2>3.6 Universes </H2>
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/definit.gif"><A 
+name=universe>universe</A></H3>
+<P>A <B>universe</B> is a set of <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#cluster">clusters</A>. 
+
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS>
+<P><!-- $Log: chap3.htm,v $
+# Revision 1.2  1995/07/08  09:29:51  neil
+# Chapter reformatted
+# Hyperlinks included
+# Road sign graphics included
+#
+--></P></BODY></HTML>

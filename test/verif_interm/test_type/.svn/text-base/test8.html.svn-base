@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+   <link rel="stylesheet" href="..\..\..\test_unitaire\programme.css"></link>
+   <body><SPAN CLASS="toto">Programme :</SPAN><br></br>
+      		var_global:<br></br><span class="classe">classe</span><span class="type">TEST1</span><br></br>Void
+      		[<span class="type">ANY</span>]
+      		<br></br>
+      				:<span class="type">NONE</span><br></br>make_boolean
+      		[<span class="type">TEST1</span>]
+      		<br></br>tmpb : <span class="type">$boolean</span><br></br><span class="mot_clef">do</span><BR></BR>
+      					tmpb
+      		:= 
+      							<span class="mot_clef">true</span>
+      						<br></br>
+      					tmpb
+      		:= 
+      							<span class="mot_clef">false</span>
+      						<br></br>
+      					tmpb
+      		:= 
+      							<span class="mot_clef">falSe</span>
+      						<br></br>
+      					tmpb
+      		:= 
+      							<span class="mot_clef">TrUE</span>
+      						<br></br>
+      				<span class="mot_clef">end</span><br></br>make_character
+      		[<span class="type">TEST1</span>]
+      		<br></br>tmpc : <span class="type">$character</span><br></br><span class="mot_clef">do</span><BR></BR>
+      					tmpc
+      		:= 
+      							<span class="car">'a'</span>
+      						<br></br>
+      					tmpc
+      		:= 
+      							<span class="car">'''</span>
+      						<br></br>
+      					tmpc
+      		:= 
+      							<span class="car">'&#8364;'</span>
+      						<br></br>
+      				<span class="mot_clef">end</span><br></br>make_integer
+      		[<span class="type">TEST1</span>]
+      		<br></br>tmpi : <span class="type">$integer</span><br></br><span class="mot_clef">do</span><BR></BR>
+      					tmpi
+      		:= 
+      							5
+      						<br></br>
+      					tmpi
+      		:= 
+      							-865
+      						<br></br>
+      				<span class="mot_clef">end</span><br></br>make_double
+      		[<span class="type">TEST1</span>]
+      		<br></br>tmpd : <span class="type">$double</span><br></br><span class="mot_clef">do</span><BR></BR>
+      					tmpd
+      		:= 
+      							5
+      						<br></br>
+      					tmpd
+      		:= 
+      							86.59
+      						<br></br>
+      					tmpd
+      		:= 
+      							.056
+      						<br></br>
+      					tmpd
+      		:= 
+      							15478.89
+      						<br></br>
+      				<span class="mot_clef">end</span><br></br>make_real
+      		[<span class="type">TEST1</span>]
+      		<br></br>tmpr : <span class="type">$real</span><br></br><span class="mot_clef">do</span><BR></BR>
+      					tmpr
+      		:= 
+      							5
+      						<br></br>
+      					tmpr
+      		:= 
+      							86.59
+      						<br></br>
+      					tmpr
+      		:= 
+      							.056
+      						<br></br>
+      					tmpr
+      		:= 
+      							15478.89
+      						<br></br>
+      				<span class="mot_clef">end</span><br></br>make_string
+      		[<span class="type">TEST1</span>]
+      		<br></br>tmps : <span class="type">$string</span><br></br><span class="mot_clef">do</span><BR></BR>
+      					tmps
+      		:= 
+      							<span class="chaine">"bonjour a tous"</span>
+      						<br></br>
+      					tmps
+      		:= 
+      							<span class="chaine">""</span>
+      						<br></br>
+      				<span class="mot_clef">end</span><br></br><span class="classe">classe</span><span class="type">ANY</span><br></br>
+      		ancetre:()<br></br><span class="classe">classe</span><span class="type">NONE</span><br></br>
+      		ancetre:(<span class="type">TEST1</span><span class="type">ANY</span>)<br></br></body>
+</html>

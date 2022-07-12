@@ -1,0 +1,517 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.eclipse.org/articles/swt-design-2/swt-design-2.html -->
+<HTML><HEAD><TITLE>Managing Operating System Resources</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Carolyn MacLeod" name=Author><LINK 
+href="swt-design-2_fichiers/default_style.css" rel=stylesheet>
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY>
+<DIV align=right><FONT face="Times New Roman, Times, serif"><FONT 
+size=-1>Copyright © 2001 Object Technology International, 
+Inc.</FONT></FONT></DIV>
+<TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica><FONT color=#ffffff>&nbsp;Eclipse Corner 
+      Article</FONT></FONT></B></TD></TR></TBODY></TABLE>
+<H1><IMG height=86 src="swt-design-2_fichiers/Idea.jpg" width=120 
+align=center></H1>
+<CENTER>
+<H1>SWT: The Standard Widget Toolkit</H1></CENTER>
+<CENTER>
+<H3>PART 2: Managing Operating System Resources</H3></CENTER>
+<CENTER><I>The second in a series of articles about the design ideas behind 
+SWT.</I></CENTER>
+<BLOCKQUOTE><B>Summary</B> <BR>SWT uses operating system resources to deliver 
+  its native graphics and widget functionality. Allocating and freeing operating 
+  system resources is traditionally an area of programming that is error prone. 
+  Languages that include garbage collection, such as the Java™ language, relieve 
+  the programmer from the burden of managing memory, but not from the allocation 
+  and freeing of operating system resources. This article discusses the simple 
+  strategy used by SWT to help application designers manage operating system 
+  resources. 
+  <P><B>By Carolyn MacLeod and Steve Northover, OTI</B><BR><SPAN 
+  style="FONT-SIZE: 10pt; mso-bookmark: _Toc496069418">November 27, 
+  2001</SPAN></P></BLOCKQUOTE>
+<P>
+<HR width="100%">
+
+<H3>Simple rules to help get it right!</H3>
+<P>When programming in a GUI operating system, you allocate operating system 
+resources for widgets, images, fonts, and other graphical objects.&nbsp; Since 
+there is a platform limit on the amount of resources you can allocate, you must 
+be careful to free any objects that you allocate in your application.&nbsp; If 
+you allocate a resource and do not free it when you are done with it, your 
+application is "leaking" resources. An application that repeatedly leaks 
+resources will eventually consume all of the available resources, forcing the 
+user to reboot the operating system.</P>
+<P>Fortunately, SWT makes resource allocation and disposal a straightforward 
+process. There are only two rules that you need to remember when allocating and 
+freeing SWT resource-based objects:</P>
+<P 
+style="BORDER-TOP-STYLE: solid; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BORDER-BOTTOM-STYLE: solid" 
+align=center><B>Rule 1: </B><I>If you created it, you dispose it</I>.
+<P>This is a simple rule.&nbsp;SWT makes it easy for you to remember when 
+operating system resources are allocated: <I>all</I> SWT resource-based objects 
+(like <I>Color</I>, <I>Cursor</I>, <I>Display</I>, <I>Font</I>, <I>GC</I>, 
+<I>Image</I>, <I>Printer</I>, <I>Region</I>, <I>Widget and subclasses</I>) 
+allocate any needed operating system resources in their constructor.&nbsp; There 
+are no exceptions to this rule.&nbsp; There are no methods in SWT (other than 
+constructors) that allocate operating system resources that the programmer must 
+manage. If you didn't call the constructor, then you don't need to free the 
+resources, so don't call dispose on the object.&nbsp; For example, in the 
+following line of code, an operating system font is allocated: 
+<P>&nbsp;&nbsp;&nbsp; <FONT size=-1>Font font = new Font (display, "Courier", 
+10, SWT.NORMAL);</FONT> 
+<P>Since you called the <I>Font</I> constructor to create the resource, you must 
+dispose the font when you are finished with it, as follows: 
+<P>&nbsp;&nbsp;&nbsp; <FONT size=-1>font.dispose();</FONT> 
+<P>In the following line of code, however, a constructor is not called: 
+<P>&nbsp;&nbsp;&nbsp; <FONT size=-1>Font font = control.getFont ();</FONT> 
+<P>Therefore, you must not call dispose. The <B>font</B> variable does contain 
+an operating system font resource, but you did not allocate it. If you were to 
+dispose of this font, you would be leaving the <B>control</B> without a 
+font!&nbsp; The results are undefined.&nbsp; So, if you are using <I>any</I> 
+getter that returns an SWT resource-based object that you did not allocate, do 
+not dispose the object. 
+<P>This rule occasionally leads to API that seems artificial.&nbsp; For example, 
+<B>GC.getClipping (Region)</B> forces the programmer to create a <I>Region</I> 
+in order to get the clipping region from a <I>GC</I>. Although it might have 
+been a bit "prettier" to provide GC.getClipping () that returned a 
+<I>Region</I>, this would break the rule because it would have to allocate an 
+operating system resource outside of a constructor. While it could be documented 
+that the programmer needs to free the <I>Region</I> returned by GC.getClipping 
+(), programmers don't always read the documentation.&nbsp; Making the programmer 
+call the constructor for the <I>Region</I> makes it clear that it is the 
+<I><U>programmer's</U></I> responsibility to free the resource. 
+<P 
+style="BORDER-TOP-STYLE: solid; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BORDER-BOTTOM-STYLE: solid" 
+align=center><B>Rule 2: </B><I>Disposing the parent disposes the 
+children.</I>&nbsp; 
+<P>When you dispose a <I>Shell</I>, its children are disposed.&nbsp; In fact, 
+disposing any <I>Composite</I> will dispose all of the <I>Composite</I>'s 
+children.&nbsp; Disposing a <I>Menu</I> disposes all menu items.&nbsp; Disposing 
+a <I>Tree</I> or <I>TreeItem</I> disposes all child items. 
+<P>Why does this make sense?&nbsp; Apart from the obvious burden of having to 
+dispose each child if this were not the case, the fact that a widget cannot 
+exist in the operating system without a parent implies that when the parent is 
+disposed, the child <I>must</I> also be disposed. 
+<P>What about the fonts and colors that you created and set into a 
+<I>Widget</I>?&nbsp; Since they are not children of the widget, they are not 
+disposed when the parent&nbsp; is disposed.&nbsp; A widget will never dispose a 
+resource that you allocated.&nbsp; To do so would mean that the widget was 
+breaking rule 1.&nbsp; Because fonts and colors can be shared by different 
+widgets, disposing a resource in one widget would dispose it in another, leading 
+to unpredictable results. 
+<H4>Extensions to Rule 2</H4>
+<P>There are two extensions to rule 2. These are places where a relationship 
+exists that is not strictly a parent-child relationship, but where it still 
+makes sense for rule 2 to apply. 
+<P><B>MenuItem.setMenu: </B>Disposing a cascade <I>MenuItem</I> that has a 
+submenu set with <B>setMenu (Menu)</B> disposes the submenu. This is a natural 
+extension of rule 2.&nbsp; It would be a burden to the programmer to dispose 
+each individual submenu. It's also common behavior in most operating systems to 
+do this automatically. Both Windows® and X dispose submenus when a cascade menu 
+item is disposed.
+<P><B>Control.setMenu: </B>Disposing a <I>Control</I> that has a pop-up menu set 
+with <B>setMenu (Menu)</B> disposes the pop-up menu. Many application 
+programmers expected this behavior, even though many operating systems don't do 
+this automatically. Leaving the application programmer responsible for disposing 
+a pop-up menu when disposing the <I>Control</I> led to temporary leaks. (The 
+leak was only temporary because the pop-up menu is eventually disposed when the 
+shell is disposed). 
+<H3>Why free at all?</H3>The operating system frees all of a program's resources 
+when the program exits. Why not just rely on this? Operating system resources 
+are not infinite. If your program doesn't free up resources as they are no 
+longer needed, it can run out of resources. It can also cause other programs to 
+run out of resources. So waiting until the program exits to free up resources is 
+generally a bad idea. Leak tools exist to help detect resource leaks. You can 
+use the <I><A 
+href="http://www.eclipse.org/articles/swt-design-2/sleak.htm">Sleak</A></I> tool 
+to look for leaks in your SWT application. 
+<H3>The Java language has Garbage Collection - Why not use it?</H3>The Java 
+language successfully uses a garbage collector to manage the memory used by Java 
+objects.&nbsp; Why doesn't SWT use the Java garbage collector to manage 
+operating system resources too? Many Java programmers ask this question. We will 
+answer it with the following discussion on finalization.
+<H4><B>Finalization</B></H4>
+<P>Most attempts to use the Java garbage collector to manage operating system 
+resources involve finalization.&nbsp; When an object is about to become garbage, 
+the garbage collector sends it the finalize message. This seems like a logical 
+place to free the resource, right?
+<P>Conventional wisdom says that managing operating system resources in 
+finalization is difficult and error prone.&nbsp; To quote Joshua Bloch in his 
+"Java Series" book <I>Effective Java</I>, 
+<BLOCKQUOTE>
+  <P><I>"Finalizers are unpredictable, often dangerous, and generally 
+  unnecessary.&nbsp; Their use can cause erratic behavior, poor performance, and 
+  portability problems."</I>&nbsp; [JB, 2.6]. </P></BLOCKQUOTE>
+<P>One of the main reasons that this statement is true is that there is no 
+guarantee how soon after an object becomes garbage that the finalize method for 
+the object will run. Even if you could predict this time interval for a 
+particular VM, you certainly couldn't guarantee it for new versions of the VM. 
+Worse still, if there is plenty of memory or if an exception occurs in an 
+object's finalize method, there is no guarantee that the object will be 
+finalized at all! All of this is stated right in <I>The Java Language 
+Specification</I>: 
+<BLOCKQUOTE>
+  <P><I>"<SPAN 
+  style="mso-fareast-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">The 
+  Java programming language does not specify how soon a finalizer will be 
+  invoked, except to say that it will happen before the storage for the object 
+  is reused. ... If an uncaught exception is thrown during the finalization, the 
+  exception is ignored and finalization of that object 
+  terminates.</SPAN>"</I>&nbsp; <SPAN 
+  style="mso-fareast-font-family: Times New Roman; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">[JLS, 
+  12.6]</SPAN>. </P></BLOCKQUOTE>
+<P>Releasing operating system resources is critical to correct program 
+execution.&nbsp; Freeing resources at some unknown time in the future (or not at 
+all) typically leads to program failure. Here are some examples of typical 
+problems encountered when using finalization: 
+<UL>
+  <LI>If a non-garbage object references another object, that object is not 
+  garbage and won't be collected. If the object has operating system resources 
+  that it frees in its finalize method, those resources will never be freed 
+  because finalize will never be called. This is a classic programming error 
+  because it's easy to hang on to objects accidentally in an inner class or a 
+  static variable.<BR>
+  <LI>It is possible to starve other operating system processes by creating lots 
+  of "garbage resources" that have not yet been finalized.&nbsp; When another 
+  program attempts to acquire a resource, it fails because it cannot run the 
+  Java finalizer.&nbsp; SWT could run the finalizer if it couldn't get a 
+  resource, but other programs (i.e. non-Java programs or even Java programs 
+  running in a different VM) - and operating system calls that allocate and free 
+  resources internally - can't run the Java finalizer.<BR>
+  <LI>Some resources are very limited.&nbsp; For example, only a small number of 
+  cached HDCs are available on Windows 98.&nbsp; It is essential to free these 
+  up right away, instead of waiting for finalization.<BR>
+  <LI>Different types of resource are shared on the same operating system heap, 
+  so a failure to acquire one resource may be caused by failure to free 
+  another.&nbsp; For example, on Windows 98, HBRUSH and HFONT are both allocated 
+  from the GDI heap, so failure to create an HBRUSH can happen if too many 
+  HFONTs are awaiting finalization. This can cause applications to have some 
+  strange dependencies on the timing of finalizer runs. </LI></UL>
+<P class=MsoNormal>The non-deterministic nature of finalization is sufficient 
+reason to avoid using it to free resources, but even if we decided to go against 
+conventional wisdom and implement a resource management scheme using 
+finalization, we would still face many other problems. The implementation would 
+require the addition of some very complex, platform-specific code that would be 
+difficult to get right, and tough to debug. Here are a few examples of some of 
+the tricky issues that would need to be carefully coded around in each object's 
+finalize method:</P>
+<UL>
+  <LI>
+  <P class=MsoNormal>Operating system objects can have subtle limitations on 
+  when particular objects can be disposed. For example in the X Window System, a 
+  GC can contain a Font. If you dispose the Font before the GC, you leave the 
+  operating system in an indeterminate state. The following quote from <I>The 
+  Java Language Specification</I> hints at the complexity of the code that would 
+  be required to handle such limitations for each object finalizer: </P></LI></UL>
+<BLOCKQUOTE>
+  <BLOCKQUOTE>
+    <P class=MsoNormal><I>"The Java programming language imposes no ordering on 
+    finalize method calls. Finalizers may be called in any order, or even 
+    concurrently."</I><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>[JLS 
+    12.6.2]</P></BLOCKQUOTE>
+  <P class=MsoNormal>Add to this that for some operating systems, subtle 
+  platform behavior in this area may be undocumented and can change in future 
+  versions of the operating system.</P></BLOCKQUOTE>
+<UL>
+  <LI>
+  <P class=MsoNormal>On some platforms, operating system resources need to be 
+  disposed in the UI thread. According to <I>The Java Language 
+  Specification</I>: </P></LI></UL>
+<BLOCKQUOTE>
+  <BLOCKQUOTE>
+    <P class=MsoNormal><I>"... the language does not specify which thread will 
+    invoke the finalizer for any given object."</I> [JLS 12.6]</P></BLOCKQUOTE>
+  <P class=MsoNormal>This means that SWT finalize methods would need to 
+  synchronize with the UI thread, which would mean that there would be a 
+  significant cost overhead for each dispose. In addition, given the previous 
+  point that disposal order is important for some resources, we think it is 
+  possible to get into a deadlock situation if we are trying to reorder multiple 
+  concurrent threads that are trying to synchronize with the UI 
+thread.</P></BLOCKQUOTE>
+<UL>
+  <LI>The Java objects that model operating system objects need to capture all 
+  of the subtle relationships between the operating system objects. For example, 
+  on Windows, an HBRUSH can be referenced in the operating system by an HDC, but 
+  not referenced in Java code.&nbsp; When the Java object representing the 
+  HBRUSH becomes garbage, freeing it will cause unexpected results.&nbsp; In 
+  fact, it's necessary to break the reference from the HDC first before 
+  attempting to free the HBRUSH. If these relationships are not captured and 
+  managed, it is possible for a resource to be finalized when there are still 
+  references to it in the operating system.&nbsp;&nbsp;<BR>
+  <LI>Freeing some resources automatically frees others. For example, on 
+  Windows, destroying a parent HWND automatically destroys the children 
+  HWNDs.&nbsp; On some operating systems, freeing a top level window also frees 
+  the icon associated with the window.&nbsp; Different rules for freeing 
+  resources need to be custom coded on a per platform basis.&nbsp;&nbsp;<BR>
+  <LI>Freeing resources can be time consuming, so a critical memory allocation 
+  may need to wait until finalization is complete.<BR>
+  <LI>Long waits in finalizers can also make it difficult to get good benchmarks 
+  when you are trying to performance tune your code. </LI></UL>
+<P>Our final point against finalization is this: SWT keeps as much state in the 
+operating system as possible to simplify the implementation (less code, smaller 
+objects).&nbsp; If we were to use finalization, we could not store resources 
+only in the operating system.&nbsp; We would have to hold on to them in Java 
+code so that they would not get garbage collected.&nbsp; For example, when you 
+set a <I>Font</I> into a <I>Button</I>, SWT sets the font resource in the OS 
+button.&nbsp; The <I>Button</I> doesn't keep a reference to the font resource, 
+because it doesn't need to.&nbsp; The state is in the operating system. In order 
+to determine the <I>Button</I>'s font, we query the OS.&nbsp; There is no point 
+caching the font resource in Java code, because it just takes up space and 
+complicates the <I>Button</I> code, which now has to make sure there are no 
+stale cache problems.</P>
+<P>Given that there are many problems when trying to use finalization to free 
+resources, we think it’s dangerous to offer it as a solution in SWT, which is 
+designed to expose operating system functionality.&nbsp; We believe it is 
+reasonable to expect programs to explicitly free operating system 
+resources.&nbsp; We see this as simply a fact of life because the current 
+generation of operating systems do not support garbage collection. 
+<H3>When should you free?</H3>
+<P class=MsoNormal>You have created an SWT resource, so when do you free it? 
+First of all, for many of the reasons mentioned above, we do not recommend that 
+you use finalization to manage your SWT resources either. If you feel you 
+absolutely must implement a finalize method in your classes, do so only as a 
+"safety net" or "backup", and dispose your resource as usual. Remember to 
+synchronize with the UI thread, as follows:</P><FONT size=-1>
+<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;&nbsp;&nbsp; protected void 
+finalize() {<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>// NOT 
+recommended 
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>super.finalize();</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>display.asyncExec(new Runnable() {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>public void run() {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>if (!myResource.isDisposed()) {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>myResource.dispose();</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>});</P>
+<P class=MsoNormal 
+style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;&nbsp;&nbsp; }</P></FONT>
+<P class=MsoNormal>Even this minimal "safety net" use of finalizers is not 
+recommended, because if memory is limited, your application could end up having 
+to wait for a bunch of your finalize methods to run before the memory from those 
+objects can be reclaimed.</P>
+<P class=MsoNormal>The best way to manage SWT resources is to dispose them as 
+soon as you are through with them. In the case of certain resource types, such 
+as GC and Printer, you almost always create them and dispose them within the 
+scope of the same method.<SPAN style="mso-spacerun: yes">&nbsp;This makes it 
+easy to verify that the resource is being disposed properly, because you only 
+have to go to one place to see the code to create the resource and the code to 
+dispose it. </SPAN>For example:</P><FONT size=-1>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>GC gc = new GC(canvas);</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+gc.draw...&nbsp;&nbsp; </SPAN>// do some drawing on the canvas using the GC</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>gc.dispose();</P></FONT>
+<P class=MsoNormal>In the case of resources that are set into a GC for drawing, 
+you need to be careful not to dispose them while they are still set into the GC. 
+Dispose the GC before the resource. For example:</P><FONT size=-1>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><FONT color=#000000>Font font </FONT>= new Font (display, "Courier", 10, 
+SWT.NORMAL);</P>
+<P class=MsoNormal 
+style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;&nbsp;&nbsp;<SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>GC gc = new GC(canvas);</P>
+<P class=MsoNormal 
+style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+gc.setFont(font);</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+gc.drawText...&nbsp;&nbsp;&nbsp; </SPAN>// do some text drawing on the canvas 
+using the GC</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>gc.dispose();</P>
+<P class=MsoNormal 
+style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+font.dispose();</P></FONT>
+<P class=MsoNormal>Remember that you do not dispose the GC that is passed to you 
+in a paint listener, because you did not allocate it!</P><FONT size=-1>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>public void paintControl(PaintEvent event) {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>event.gc.draw...</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>&nbsp;&nbsp;&nbsp;<SPAN style="mso-tab-count: 1"> // do NOT call 
+event.</SPAN>gc.dispose();</P>
+<P class=MsoNormal 
+style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</P></FONT>
+<P class=MsoNormal>If you are using graphics resources in a widget - for 
+example, widget.setFont(font) - it is often best to clean these up when the 
+widget they are used in is disposed, so you can hook a dispose listener on the 
+widget as follows:</P><FONT size=-1>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>widget.addDisposeListener(new DisposeListener() {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>public void widgetDisposed(DisposeEvent e) {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>font.dispose();</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</P></FONT>
+<P class=MsoNormal>If resources are shared by multiple widgets (or other 
+objects) in your application, then you may want to implement a 
+reference-counting scheme in a "resource manager" class, which would keep track 
+of the number of references to a resource, and dispose the resource when the 
+reference count reaches 0.<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>In this 
+case, you would ask your resource manager for each resource you need, perhaps 
+something like this:</P><FONT size=-1>
+<P class=MsoNormal><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>Image image = myResourceManager.getNamedResource("imageName");</P></FONT>
+<P class=MsoNormal>and the dispose listener on your widget(s) might look 
+something like this:</P><FONT size=-1>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>widget.addDisposeListener(new DisposeListener() {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>public void widgetDisposed(DisposeEvent e) {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>myResourceManager.dispose(image);</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>});</P></FONT>
+<P class=MsoNormal>Whether or not to use a reference-counting scheme, and how to 
+implement it, are design decisions that must be made on a per-application 
+basis.</P>
+<P class=MsoNormal>Widgets themselves do not usually need to be disposed 
+programmatically. A shell and its children are disposed when the user closes its 
+window. There are a couple of places where shells are typically disposed 
+programmatically: when the user selects File-&gt;Exit in an application window, 
+or OK in a dialog. Here is an example of disposing a shell when File-&gt;Exit is 
+selected:</P><FONT size=-1>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// Create menu bar </SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN><SPAN style="mso-tab-count: 1">Menu menuBar = new Menu(shell, SWT.BAR); 
+</SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// Create File menu </SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+MenuItem item = new MenuItem(menuBar, SWT.CASCADE); </SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+item.setText("File"); </SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Menu fileMenu = new Menu(shell, SWT.DROP_DOWN); </SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+item.setMenu(fileMenu); </SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// Create File -&gt; Exit menu item and add selection listener </SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+item = new MenuItem(fileMenu, SWT.NULL); </SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+item.setText("Exit"); </SPAN></P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>item.addSelectionListener(new SelectionAdapter() {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>public void widgetSelected(SelectionEvent event) {</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>shell.close(); // calls dispose() - see note below</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>}</P>
+<P class=MsoNormal style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px"><SPAN 
+style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN>});</P></FONT>
+<P class=MsoNormal>Note that we actually call <B>close()</B> instead of 
+<B>dispose()</B>. This gives the application a chance to cancel the close 
+operation if necessary (for example, if something was not saved) inside of a 
+shell listener. We could call <B>dispose()</B>, which would simply destroy the 
+shell without invoking the shell listener, but it's better style to call 
+<B>close()</B>.</P>
+<H3>A note about Color</H3><I>Color</I> is just like any other SWT 
+resource-based object. To ensure that your application works on all platforms 
+for all display types, always follow rule 1. If you are using a high-color 
+(direct palette) display and you forget to follow the rules for disposing 
+<I>Color</I>, you may notice that nothing bad happens. But if the rules for 
+disposing <I>Color</I> are not followed on a low-color (indexed palette) 
+display, real problems can occur. You should always program your application 
+with the assumption that some of your customers will be using low-color 
+displays. For more information, see the <I>SWT Color Model</I> article. 
+<H3>Conclusion</H3>When you use SWT, you will probably need to manage operating 
+system resources allocated by SWT objects. Resource management takes thought to 
+get right. Getting into good habits and following the rules reduces the 
+programming effort significantly. Simple rules help make it clear who has 
+responsibility for disposing resources: 
+<UL>
+  <LI><I>If you created it, you dispose it</I> (<I>if you didn't create it, 
+  don't dispose it)</I>. 
+  <LI><I>Disposing the parent disposes the children.</I> </LI></UL>
+<H3>Further reading</H3>
+<P>JFace provides a registry mechanism on top of SWT for image and font resource 
+management. See the article <I>Using Images in the Eclipse UI</I> for more 
+information on the JFace image management facilities.</P>
+<H3>References</H3>
+<P>[JB]&nbsp;&nbsp;&nbsp; Bloch, Joshua. <I>Effective Java - Programming 
+Language Guide</I>. Addison-Wesley, Boston, 
+2001.<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ISBN: 
+0-201-31005-8.</P>
+<P>[JLS]&nbsp; Gosling James, Bill Joy, Guy Steele, Gilad Bracha. <I>The Java 
+Language Specification</I>, <I>Second Edition<BR>&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+http://java.sun.com/docs/books/jls/second_edition/html/j.title.doc.html</I></P>
+<P><SMALL>Java and all Java-based trademarks and logos are trademarks or 
+registered trademarks of Sun Microsystems, Inc. in the United States, other 
+countries, or both.</SMALL></P>
+<P><SMALL>Microsoft, Windows, Windows NT, and the Windows logo are trademarks of 
+Microsoft Corporation in the United States, other countries, or 
+both.</SMALL></P></BODY></HTML>

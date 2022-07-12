@@ -1,0 +1,207 @@
+<p><a href="TOC.htm"><IMG SRC=toc.gif></a>
+<a href="chap0.htm"><IMG SRC=previous.gif></a>
+<a href="chap2.htm"><IMG SRC=next.gif></a>
+<p>
+<title>Eiffel: The Reference -  Preface</title>
+<h1> Preface</h1>
+<p>
+This document serves two purposes:<p>
+<ul>
+<li>It is submitted to the Language Committee of the 
+<I>Nonprofit International 
+</I>Consortium for Eiffel 
+as the second step towards a standard definition of Eiffel (the 
+first step was the book 
+<I>Eiffel: The Language</I>).
+<li>It provides users of Eiffel with a short language definition.</ul><p>
+For the first of these goals, note that the present Preface is not part of the intended 
+Standard. 
+<p>
+<h2>WHAT IS EIFFEL?</h2>
+<p>
+The name Eiffel covers a method and a language for the systematic development of 
+quality software, based on the full application of object-oriented principles. 
+<p>
+<p>
+Only the language aspect is covered in this book. Other documents are available on 
+the method and on the various compilers, tools and environments that make it possible to 
+develop software with Eiffel. 
+<p>
+<p>
+A complete description of the Eiffel language has been previously published: the 
+book 
+<I>Eiffel: The Language 
+</I>(Prentice Hall, second printing with corrections, 1992, ISBN 
+0-13-24795-7). The intent of that document is to provide under a single cover a precise 
+reference, a tutorial, a Guide for the Perplexed, and a detailed user's manual for the 
+language. As a result, much of the space in it is occupied by examples, explanations, 
+justifications, discussions, previews, reminders and comments. ''Eiffel: The Language'' 
+does not shun repetition; occasionally, for example, some part of the  discussion needs to 
+refer to the syntax of a construct seen in a distant chapter, and simply reproduces the 
+syntax specification for the convenience of the reader. 
+<p>
+<p>
+In some cases, however, a shorter reference may be necessary. A typical example is 
+that of someone implementing an Eiffel compiler, who may be presumed to be familiar 
+with the rationale behind the various components of the language, but will need a 
+document where he can quickly find precise answers to specific questions, often on fine 
+points (''Can the target of an anchored declaration be anchored too?''). Another example 
+is that of a user who is familiar with the language but wants to keep a concise reference 
+on his desk. 
+<p>
+<p>
+Providing such a no-frills description of Eiffel is the purpose of 
+<I>Eiffel: The 
+</I>Reference.<p>
+<h2>THE SHORT FORM</h2>
+<p>
+The worst that could happen to the description of Eiffel is to follow the fate of so many 
+earlier languages: the emergence of several descriptions, each slightly incompatible with 
+the others. 
+<I>Eiffel: The Language</I> went to considerable length to prevent this from 
+happening. By threading several levels of discourse into a single cloth, the book was able 
+to forestall eventual divergence. 
+<p>
+<p>
+In particular, the book relied on an extensive system of ''road signs'' to identify each 
+of the interwoven threads: syntax, validity, semantics, comment, caveat, preview, reminder. 
+<p>
+<p>
+As this system is directly reflected in the source electronic form of the original 
+document, it is possible to use software tools, aided by a little human intervention, to 
+extract one or several of the threads. This approach is what made the present book 
+possible. It is not, strictly speaking, a new book, but an 
+<B>extract</B> of the relevant parts of 
+<I>Eiffel: The Language</I>. 
+<p>
+<p>
+Another way of expressing this observation is to claim that producing this book was, 
+to a certain extent, a software project: writing the tools that would extract the essential parts 
+of the complete document and ignore the rest. This effort required some ''massaging'', as 
+programmers say, of the original text, to mark some parts as retained and others as 
+discarded. But the extent of that massaging was remarkably limited: the text was organized 
+in such a systematic way that most of the extraction could be done automatically, based on 
+a number of selection rules not unlike those of a little expert systems. 
+<p>
+<p>
+Anyone familiar with the Eiffel method will have recognized the idea: it is the 
+notion of short form. To document an Eiffel class, you do not as a rule write a separate 
+document; you should instead include the relevant information in the class text itself, and 
+rely on computer tools to extract views of the class at various levels of abstraction, in 
+particular the short (or flat-short) form which only keeps the interface properties of the 
+class 
+ signatures, preconditions, postconditions and header comments of exported 
+features, class invariant 
+ while discarding the implementation information (non-exported features, routine bodies, distinction between functions and attributes). Here we 
+are doing the same with respect to the language itself: using the power of the computer 
+to remove the non-essential information from a complete description. 
+<p>
+<p>
+The major advantage, in the case of classes, is that we can keep a single description. 
+So when things evolve 
+ as they inevitably will, be they classes or languages 
+ we have 
+only one document to maintain. This may be called the 
+<B>principle of single reference</B> and 
+is essential to the smooth evolution of the language and its description.<p>
+<p>
+Although the work of the NICE library committee may cause changes to be brought 
+to the present document independently of 
+<I>Eiffel: The Language</I>, every effort will be made 
+to maintain the principle of single reference, avoiding the disaster that divergence 
+between the two documents would mean for Eiffel. In particular, the structure and section 
+numbering will be kept the same for the two books, and changes made to the present one 
+as a result of the committee's work will be continuously reflected back into the electronic 
+version of 
+<I>Eiffel: The Language</I>.<p>
+<h2>LIBRARY ELEMENTS</h2>
+<p>
+The definition of Eiffel relies on a number of predefined classes in the "Kernel Library", 
+covering such fundamental notions as basic types (<I>BOOLEAN</I>, 
+<I>INTEGER 
+</I>and the like), 
+arrays, input and output.<p>
+<p>
+A standard document for the Kernel Library, known as the ELS
+(<I>The Eiffel Library Standard</I>) has been adopted by NICE. To avoid 
+any ambiguity or contradiction, all discussions of Kernel Library classes in this book 
+have been replaced by references to the ELS. The version of ELS referred to by
+this document is 'Vintage 95'.<p>
+<h2>CHANGES</h2>
+<p>
+This book correspnds to the second printing of 
+<I>Eiffel: The Language</I>. It incorporates a 
+few corrections corresponding to mistakes that have been detected since the publication 
+of the book. The principal among these changes are listed in chapter 14 of 
+<I>ISE Eiffel: The 
+</I>Environment 
+(Technical Report TR-39/IE).<I></I><p>
+<p>
+A complete list of the changes will be made available separately. Time prevented 
+inclusion of change bars for the first release of this document, but they will be part of 
+future editions; all changes have been carefully logged. 
+<p>
+<p>
+In case of discrepancy between 
+<I>Eiffel: The Language</I> and 
+<I>Eiffel: The Reference</I>, 
+follow the document that has the latest printing date, unless the problem appears to be due 
+to a text processing mistake. Remember that at the basis of Eiffel there is only one 
+document; the only differences result from how one selects and prints portions of that 
+document. This is the required condition for the stability, maturity and credibility of the 
+Eiffel language; in other words, for its success. 
+<p>
+<p>
+The present book uses the same conventions as 
+<I>Eiffel: The Language</I>. To avoid any 
+confusion, the original chapter and section numbers have been retained. So if you have 
+leafed through this book before reading the present preface, you may have wondered why 
+the first chapter is number 2 and its first section 2.2; but the purpose is clear: making it 
+easy to find the corresponding place in 
+<I>Eiffel: The Language</I> if when examining some part 
+of the edifice you want to retrieve the scaffolding 
+ in other words some of the 
+supporting comments and examples. Using a different section numbering scheme for the 
+present book would have caused endless misunderstandings. 
+<p>
+<p>
+Unlike the sections, the pages have been renumbered, since consecutive numbering 
+facilitates searching for specific information. 
+<p>
+<p>
+In contrast with 
+<I>Eiffel: The Language</I>, this book avoids repetition of any kind. This 
+is why you will find no syntax summary or syntax diagram. Such elements (which are 
+present in the complete description) will be easy to add if readers feel they are necessary. 
+<p>
+<p>
+There is currently no index, but this omission will be repaired in a future version.<p>
+<p>
+<h2>ACKNOWLEDGMENTS</h2>
+<p>
+In addition to the acknowledgments included at the end of  the preface to 
+<I>Eiffel: The 
+</I>Language, it is appropriate to thank the various readers who have contributed comments 
+since the book's publication, most remarkably David Hollenberg from the Information 
+Systems Institute of the University of Southern California and Helmut Weber from 
+Austria, formerly from IBM. 
+
+<h4>Note by consolidator</h4>
+It is now time to enshrine in print the marvellous contribution to the
+furtherance of software engineering made by Bertrand Meyer in creating
+Eiffel and its techniques. Although he is quick to pass credit to the
+many who have contributed to Eiffel's development over the years,
+without his role as chief architect Eiffel would be much less than it is
+today. More than likely it would not exist.  I would like to say 'thank
+you' on behalf of Eiffel users everywhere.
+
+<p>
+<p><a href="TOC.htm"><IMG SRC=toc.gif></a>
+<a href="chap0.htm"><IMG SRC=previous.gif></a>
+<a href="chap2.htm"><IMG SRC=next.gif></a>
+<p>
+<P><address>
+Layout Copyright 1995 Mossy Rock Productions<BR>
+Eiffel is a trademark of the Nonprofit International Consortium for Eiffel (NICE).<BR>
+Contact NICE at <a HREF="mailto:nice@twr.com">nice@twr.com</a>
+</address>

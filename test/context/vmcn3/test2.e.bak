@@ -1,0 +1,10 @@
+class TEST2
+
+	inherit C;
+		B;
+
+feature
+
+
+
+end

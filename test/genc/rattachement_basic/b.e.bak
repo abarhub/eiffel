@@ -1,0 +1,8 @@
+class B
+
+feature
+
+	n2:INTEGER;
+	a:A;
+
+end

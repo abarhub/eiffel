@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\test_unitaire\classe.dtd">
+
+<class type="deferred">
+	<nom_classe nom="SALUT"/>
+	<obsolete>
+		<chaine>
+			<chaine1>"coucou, %</chaine1>
+			<chaine1>%c'est fini"</chaine1>
+		</chaine>
+	</obsolete>
+	<heritage>
+		<nom_classe nom="TOTO"/>
+	</heritage>
+	<heritage>
+		<nom_classe nom="TATA">
+		
+		</nom_classe>
+		<rename>
+			<nom_feature nom="a"/>
+			<nom_feature nom="b"/>
+		</rename>
+		<export>
+			<nom_feature nom="a0"/>
+			<nom_feature nom="b0"/>
+			<nom_classe nom="TOTO_" />
+			<nom_classe nom="TATA_" />
+		</export>
+		<undefine>
+			<nom_feature nom="c"/>
+			<nom_feature nom="d"/>
+		</undefine>
+		<redefine>
+			<nom_feature nom="ta"/>
+			<nom_feature nom="ton"/>
+		</redefine>
+		<select>
+			<nom_feature nom="zy"/>
+			<nom_feature nom="va"/>
+		</select>
+	</heritage>
+	<heritage>
+		<nom_classe nom="TYTY" />
+	</heritage>
+	<heritage>
+		<nom_classe nom="TUTU"/>
+		<rename>
+			<nom_feature nom="t0"/>
+			<nom_feature nom="t"/>
+		</rename>
+		<rename>
+			<nom_feature nom="t1"/>
+			<nom_feature nom="t2"/>
+		</rename>
+		<export>
+			<nom_classe nom="TETE"/>
+		</export>
+	</heritage>
+	<heritage>
+		<nom_classe nom="TATA">
+		
+		</nom_classe>
+		<rename>
+			<nom_feature nom="a"/>
+			<nom_feature nom="b"/>
+		</rename>
+		<export>
+			<nom_feature nom="a0"/>
+			<nom_feature nom="b0"/>
+			<nom_classe nom="TOTO_" />
+			<nom_classe nom="TATA_" />
+		</export>
+		<undefine>
+			<nom_feature nom="c"/>
+			<nom_feature nom="d"/>
+		</undefine>
+		<redefine>
+			<nom_feature nom="ta"/>
+			<nom_feature nom="ton"/>
+		</redefine>
+		<select>
+			<nom_feature nom="zy"/>
+			<nom_feature nom="va"/>
+		</select>
+	</heritage>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="FIXED_ARRAY">
+			<nom_classe nom="INTEGER"/>
+		</nom_classe>
+		<corps>
+			<expression>
+				<tableau>
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</tableau>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<obsolete>
+				<chaine>
+					<chaine1>"toto"</chaine1>
+				</chaine>
+			</obsolete>
+			<require>
+				<assert>
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<entier valeur="5"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</assert>
+			</require>
+			<corps2>
+				<code once="yes">
+					<instruction>
+						<affect>
+							<variable nom="t"/>
+							<expression>
+								<entier valeur="78"/>
+							</expression>
+						</affect>
+					</instruction>
+				</code>
+			</corps2>
+			<ensure>
+				<assert>
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<variable nom="b"/>								
+							</expression>
+							<expression>
+								<entier valeur="6"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</assert>
+			</ensure>
+			<rescue>
+				<instruction>
+					<affect>
+						<variable nom="p"/>
+						<expression>
+							<entier valeur="96"/>
+						</expression>
+					</affect>
+				</instruction>
+			</rescue>
+		</corps>
+	</feature>
+	<feature>
+		<liste_export>
+			<nom_classe nom="A"/>
+			<nom_classe nom="B"/>
+		</liste_export>
+		<nom_feature nom="i"/>
+		<nom_classe nom="INTEGER"/>
+	</feature>
+	<feature>
+		<nom_feature nom="j"/>
+		<nom_classe nom="BOOLEAN"/>
+	</feature>
+</class>

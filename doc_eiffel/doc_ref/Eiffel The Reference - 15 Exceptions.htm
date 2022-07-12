@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap15.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 15 Exceptions</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 15 Exceptions_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap14.htm"><IMG 
+src="Eiffel The Reference - 15 Exceptions_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap16.htm"><IMG 
+src="Eiffel The Reference - 15 Exceptions_fichiers/next.gif"></A> 
+<P>
+<H1>15 Exceptions </H1>
+<H2>15.2 WHAT IS AN EXCEPTION? </H2>
+<H3>Definitions: failure, exception</H3>
+<P>Under certain circumstances, the execution of a construct (such as an 
+instruction) may be unable to terminate as you normally expect it to. The 
+execution is then said to result in a failure.
+<P>
+<P>If a routine executes a component and that component fails, this will prevent 
+the routine's execution from proceeding as planned; such an event is called an 
+exception. 
+<P>
+<H2>15.3 EXCEPTION HANDLING POLICY</H2>
+<P>Only three possibilities make sense for handling an exception: 
+<P>
+<UL>
+  <LI>A favorable albeit unlikely case is one in which the exception was in fact 
+  not justified. This is called the <B>false alarm</B>. 
+  <LI>When writing the component, you may have anticipated the possibility of an 
+  exception, and provided for an alternative way to fulfil the contract. Then 
+  the execution will try that alternative. This case is called 
+  <B>resumption</B>. 
+  <LI>If you have no way of fulfilling the contract, then you should try to 
+  return the objects involved into an acceptable state, and signal your failure 
+  to the client. This is called <B>organized panic</B>. </LI></UL>
+<H3>Definition: recipient</H3>
+<P>Any execution of a software component is part of the execution of a call to a 
+certain routine, known as the <I>current routine</I>. If the component's 
+execution fails, this will trigger an exception in the current routine, which 
+becomes the recipient of the exception. Depending on how the software has been 
+written, the exception will be handled through one of the three techniques 
+listed above. 
+<P>
+<H2>15.8 SYNTAX AND VALIDITY OF THE EXCEPTION CONSTRUCTS</H2>
+<P>
+<P>
+<P>It is valid for a Routine to include a Rescue clause if and only if its 
+Routine_body is of the Internal form. 
+<P>
+<P>A Retry instruction is valid if and only if it appears in a Rescue clause. 
+<P>
+<H2>15.9 SEMANTICS OF EXCEPTION HANDLING </H2>
+<H3>Definition: rescue block </H3>
+<P>Any Internal routine <I>r</I> of a class <I>C</I> has a <B>rescue block 
+</B><I>rb</I>, which is a Compound defined as follows: 
+<P>
+<OL>
+  <LI>If <I>r</I> has a Rescue clause, <I>rb</I> is the Compound contained in 
+  that clause. 
+  <LI>If <I>r</I> has no Rescue clause, <I>rb</I> is a Compound made of a single 
+  instruction: a call to the version of <I>default_rescue</I> in <I>C</I>. 
+</LI></OL>
+<P>An exception triggered during an execution of a routine <I>r</I> leads, if it 
+is neither ignored nor continued, to the following sequence of events. 
+<P>
+<OL>
+  <LI>Some or all of the remaining instructions are not executed. 
+  <LI>The rescue block of the routine is executed. 
+  <LI>If the rescue block executes a Retry, the body of the routine is executed 
+  again. This terminates processing of the current exception. Any new triggering 
+  of an exception is a new occurrence, which will (recursively) be handled 
+  according to the present semantics. 
+  <LI>If the rescue block is executed to the end without executing a Retry, this 
+  terminates the processing of the current exception and the current execution 
+  of <I>r</I>, causing a <B>failure</B> of that execution. If there is a calling 
+  routine, this failure triggers an exception in the calling routine, which will 
+  be handled (recursively) according to the same semantics. If there is no 
+  calling routine, <I>r</I> is the root's creation procedure; its execution will 
+  terminate.</LI></OL>
+<P>The definition mentions that it applies only to an exception which is neither 
+ignored nor continued. This corresponds to two facilities provided through 
+features of the Kernel Library class <I>EXCEPTIONS</I>, implementing the false 
+alarm response: 
+<P>
+<UL>
+  <LI>You may specify that a certain type of exception must be altogether 
+  ignored. 
+  <LI>You may specify that a certain type of exception must cause execution of a 
+  designated procedure and then continuation. </LI></UL>
+<H2>15.10 EXCEPTION CORRECTNESS </H2>
+<H3>Definition: exception- correct </H3>
+<P>A routine <I>r</I> of a class <I>C</I> is <B>exception-correct </B>if and 
+only if, for every branch <I>b</I> of its rescue block: 
+<OL>
+  <LI>If <I>b</I> ends with a Retry: {<B>true</B>}<I> b 
+  </I>{<I>INV</I><I>C</I><I> </I><B>and</B> <I>pre</I><I>r</I>} 
+  <LI>If <I>b</I> does not end with a Retry: {<B>true</B>}<I> b 
+  </I>{<I>INV</I><I>C</I>} </LI></OL>
+<P>In this rule, <I>INV</I><I>C</I> is the invariant of class <I>C</I> and 
+<I>pre</I><I>r</I> is the precondition of <I>r</I>. 
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 15 Exceptions_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap14.htm"><IMG 
+src="Eiffel The Reference - 15 Exceptions_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap16.htm"><IMG 
+src="Eiffel The Reference - 15 Exceptions_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

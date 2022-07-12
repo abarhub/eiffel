@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST9"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<liste_export>
+			<nom_classe nom="B"/>
+		</liste_export>
+		<nom_feature nom="b"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<liste_export/>
+		<nom_feature nom="c"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+</class>

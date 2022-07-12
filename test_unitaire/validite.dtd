@@ -1,0 +1,18 @@
+<!ELEMENT liste_validite (regle*)>
+
+<!ELEMENT regle (titre,corps)>
+<!ATTLIST regle nom CDATA #REQUIRED>
+<!ATTLIST regle page CDATA #REQUIRED>
+<!ATTLIST regle chapitre CDATA #REQUIRED>
+
+<!ELEMENT titre (#PCDATA)>
+
+<!ELEMENT corps (#PCDATA|liste|ref)*>
+
+<!ELEMENT liste (enum)+>
+
+<!ELEMENT enum (#PCDATA|liste|ref)*>
+
+<!ELEMENT ref (#PCDATA)>
+<!ATTLIST ref href CDATA #REQUIRED>
+<!ATTLIST ref type (lien|grammaire) #REQUIRED>

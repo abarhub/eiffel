@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap12.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 12 Types</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 12 Types_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap11.htm"><IMG 
+src="Eiffel The Reference - 12 Types_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap13.htm"><IMG 
+src="Eiffel The Reference - 12 Types_fichiers/next.gif"></A> 
+<P>
+<H1>12 Types </H1>
+<H2>12.4 HOW TO DECLARE A TYPE </H2>
+<H2>12.5 BASE CLASS, BASE TYPE </H2>
+<P><B>Class Type rule</B> 
+<P>
+<P>An Identifier <I>CC</I> is valid as the Class_name part of a Class_type if 
+and only if it is the name of a class in the surrounding universe. 
+<P>
+<H2>12.7 UNCONSTRAINED GENERICITY </H2>
+<H3>Definition: base class, base type (class Type)</H3>
+<P>The base class of a generically derived type is the class used to derive it 
+by providing actual generic parameters. 
+<P>
+<H3>Definition: constrained, unconstrained generic</H3>
+<P>The syntax for Class_declaration includes an optional Constraint part after 
+every formal generic parameter. If present, this part makes the parameter 
+constrained; if not, the parameter is unconstrained. A generic class is 
+constrained if it has at least one constrained parameter, unconstrained 
+otherwise. 
+<P>
+<H3>Definition: generic class, generic derivation, non-generic</H3>
+<P>Any class declared with a non-empty Formal_generics part (constrained or not) 
+is said to be a generic class. A generic class does not describe a type but a 
+template for a set of possible types. To derive an actual type from this 
+template, you must provide an Actual_generics list, whose elements are 
+themselves types. The result is called a generic derivation. 
+<P>
+<P><B>Unconstrained Genericity rule</B> 
+<P>
+<P>Let <I>CT</I> be a Class_type having a non-empty Actual_generics part, whose 
+base class <I>C</I> is not a constrained generic class. <I>CT</I> is valid if 
+and only if <I>C</I> satisfies the following two conditions: 
+<OL>
+  <LI><I>C</I> is a generic class. 
+  <LI>The number of Type components in <I>CT</I>'s Actual_generics list is the 
+  same as the number of Formal_generic parameters in the Formal_generic_list of 
+  <I>C</I>'s declaration. </LI></OL>
+<P>A generically derived type is expanded if its base class is an expanded 
+class; otherwise it is a reference type. 
+<P>
+<H2>12.8 CONSTRAINED GENERICITY </H2>
+<P>The effect of a Constraint, if present, is to restrict allowable actual 
+generic parameters to types that conform to the Class_type given.
+<P>
+<P><B>Constrained Genericity rule</B> 
+<P>
+<P>Let <I>C</I> be a constrained generic class. A Class_type <I>CT</I> having 
+<I>C</I> as base class is valid if and only if <I>CT</I> satisfies the two 
+conditions of the Unconstrained Genericity rule (VTUG) and, in addition: 
+<OL>
+  <LI>For any Formal_generic parameter in the declaration of <I>C</I> having a 
+  constraint of the form &gt; <I>D</I>, the corresponding Type in the 
+  Actual_generics list of <I>CT</I> conforms to <I>D</I>. </LI></OL>
+<H2>12.9 USING FORMAL GENERIC PARAMETERS AS TYPES </H2>
+<H3>Definition: base class, base type (constrained generic)</H3>
+<P>We consider the base type of a constrained generic parameter to be its 
+constraining type, with the associated base class.
+<P>
+<H3>Definition: base class, base type (unconstrained generic)</H3>
+<P><I>ANY</I> serves as both the base type and the base class of any 
+unconstrained Formal_generic_name. 
+<P>
+<H2>12.11 CLASS TYPES EXPANDED </H2>
+<P>If <I>T</I> is a valid Class_type, generically derived or not, 
+<B>expanded</B><I> T</I> is a valid Class_type_expanded, and the possible values 
+for entities of that type are instances of <I>T</I>. 
+<P>
+<H2>12.12 RULES ON EXPANDED TYPES </H2>
+<H3>Definition: expanded type, reference type </H3>
+<P>A type <I>T</I> is expanded if and only if one of the following conditions 
+holds: 
+<OL>
+  <LI><I>T</I> is a Class_type whose base class <I>C</I> is an expanded class. 
+  <LI><I>T</I> is of the form <B>expanded</B><I> CT</I>. (As noted, it is 
+  redundant but not erroneous for the base class of <I>CT</I> to be an expanded 
+  class.) 
+  <LI><I>T</I> is of the form <I>BIT</I> M for some non-negative integer M. 
+</LI></OL>
+<P><I>T</I> is a reference type if it is not a Formal_generic_name and none of 
+the above conditions applies. 
+<P>
+<P><B>Expanded Type rule</B> 
+<P>
+<P>It is valid to use an expanded type of base class <I>C</I> in the text of a 
+class <I>B</I> if and only if it satisfies the following two conditions: 
+<OL>
+  <LI><I>C</I> is not a deferred class. 
+  <LI><I>C</I> either has no Creators part, or has a Creators part containing 
+  exactly one creation procedure, with no argument, available to <I>B</I> for 
+  creation. </LI></OL>
+<P>Any entity declared of an expanded type has run-time values which are 
+instances of the corresponding base type. 
+<P>
+<H2>12.14 BIT TYPES </H2>
+<P>A Bit_type declaration is valid if and only if its Constant is of type 
+<I>INTEGER</I>, and has a positive value. 
+<P>
+<P>The possible values of an entity declared as <I>BIT N</I> for some <I>N</I> 
+are bit sequences of exactly <I>N</I> bits. 
+<P>
+<H2>12.15 ANCHORED TYPES </H2>
+<H3>Definition: anchored type, anchor</H3>
+<P>An Anchored type is of the form 
+<P>
+<P><B>like</B><I> anchor</I> <I></I>
+<P>
+<P>where <I>anchor</I> is called the anchor of the type. 
+<P>
+<P>An anchored type of the form <B>like</B><I> anchor</I> appearing in a class 
+<I>C</I> is valid if and only if one of the following holds: 
+<OL>
+  <LI><I>anchor</I> is the final name of an attribute or function of <I>C</I>, 
+  whose declared type is a non-Anchored reference type. 
+  <LI>The type appears in the text of a routine <I>r</I> of <I>C</I>, and 
+  <I>anchor</I> is a formal argument of <I>r</I>, whose declared type is a 
+  non-Anchored reference type. 
+  <LI><I>anchor</I> is the reserved word <I>Current</I>. </LI></OL>
+<P>The base type <I>BT</I> of an anchored type <B>like</B><I> anchor</I> 
+appearing in a class <I>C</I> is determined as follows: 
+<P>
+<H3>Definition: base class, base type (anchored) </H3>
+<OL>
+  <LI>If <I>anchor</I> is the final name of some feature of <I>C</I>, then 
+  <I>BT</I> is the declared type of that feature in <I>C</I>. 
+  <LI>If <I>anchor</I> is a formal routine argument, then <I>BT</I> is the type 
+  declared for that argument in the Formal_arguments list. 
+  <LI>If <I>anchor</I> is <I>Current</I>, then <I>BT</I> is <I>C</I> followed by 
+  its Formal_generics, if any, with any Constraint removed. </LI></OL>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 12 Types_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap11.htm"><IMG 
+src="Eiffel The Reference - 12 Types_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap13.htm"><IMG 
+src="Eiffel The Reference - 12 Types_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

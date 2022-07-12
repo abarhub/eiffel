@@ -1,0 +1,1 @@
+pkzip -a -r eiffel.zip *.*

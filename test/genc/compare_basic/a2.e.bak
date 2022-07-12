@@ -1,0 +1,13 @@
+expanded class A2
+
+feature
+
+	make(n:INTEGER) is
+	do
+	i:=n;
+	end;
+
+	i:INTEGER;
+	a:A;
+
+end

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST5"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<expression>
+				<vrai/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+	</feature>
+	<feature>
+		<nom_feature nom="a1"/>
+		<corps>
+			<corps2>
+				<external>
+					<chaine>
+						<chaine1>"C"</chaine1>
+					</chaine>
+				</external>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a2"/>
+		<corps>
+			<corps2>
+				<external>
+					<chaine>
+						<chaine1>"C"</chaine1>
+					</chaine>
+					<chaine>
+						<chaine1>"toto"</chaine1>
+					</chaine>
+				</external>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d1"/>
+		<corps>
+			<corps2>
+				<deferred/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d2"/>
+		<corps>
+			<require>
+				<assert>
+					<expression>
+						<vrai/>
+					</expression>
+				</assert>
+			</require>
+			<corps2>
+				<deferred/>
+			</corps2>
+			<ensure>
+				<assert>
+					<expression>
+						<faux/>
+					</expression>
+				</assert>
+			</ensure>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="e"/>
+		<corps>
+			<unique/>
+		</corps>
+	</feature>
+</class>

@@ -1,0 +1,18 @@
+a faire:
+
+* ajouter une fonction qui, pour un nom de classe et une fonction, retourne
+  la liste des couples (nom_classe,nom_fonction) qui peut etre appeler
+  en cas de polymorphisme
+* simplifier la construction de l'arbre des types
+  (moins de fonction, calculs repetitifs qui donne les memes resultats)
+* quel cible? (java ou bytecode java, C, C++, assembleur, bytecode interprete).
+* comment gerer les classes d'autres langages ? a la Sather ?
+* gerer un melange de compiler/interpreter (suivant la classe?).
+* appelet java.
+* select non gere (a voir dans "ajoute_type_heritage")
+* export non gere
+* les liens dynamiques ne sont pas finis (quelques erreurs 
+  (dans io de GENERAL, il y a test de PLATFORM, surement un pb avec rename),
+  et general n'a pas io de INTEGER etc...) )
+* verifier qu'avec redefine et deferred, le nombre et le typage soit correcte
+* prendre en compte "like Current"

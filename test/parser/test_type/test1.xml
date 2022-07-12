@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST1"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+	</feature>
+	<feature>
+		<nom_feature nom="b1"/>
+		<nom_classe nom="A">
+			<nom_classe nom="X"/>
+		</nom_classe>
+	</feature>
+	<feature>
+		<nom_feature nom="b2"/>
+		<nom_classe nom="A">
+			<nom_classe nom="X"/>
+			<nom_classe nom="Y"/>
+			<nom_classe nom="Z"/>
+		</nom_classe>
+	</feature>
+	<feature>
+		<nom_feature nom="b3"/>
+		<nom_classe nom="A">
+			<nom_classe nom="X"/>
+			<nom_classe nom="A">
+				<nom_classe nom="T"/>
+				<nom_classe>
+					<like>
+						<expression>
+							<variable nom="u"/>
+						</expression>
+					</like>
+				</nom_classe>
+			</nom_classe>
+			<nom_classe nom="Z"/>
+		</nom_classe>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<nom_classe>
+			<like>
+				<expression>
+					<variable nom="toto"/>
+				</expression>
+			</like>
+		</nom_classe>
+	</feature>
+	<feature>
+		<nom_feature nom="d"/>
+		<nom_classe>
+			<like>
+				<expression>
+					<expression_binaire op="point">
+						<expression>
+							<variable nom="x"/>
+						</expression>
+						<expression>
+							<variable nom="y"/>
+						</expression>
+					</expression_binaire>
+				</expression>
+			</like>
+		</nom_classe>
+	</feature>
+</class>

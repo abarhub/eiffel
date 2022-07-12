@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST2">
+		<nom_classe nom="X"/>
+		<nom_classe nom="Y">
+			<nom_classe nom="U"/>
+		</nom_classe>
+		<nom_classe nom="Z"/>
+	</nom_classe>
+</class>

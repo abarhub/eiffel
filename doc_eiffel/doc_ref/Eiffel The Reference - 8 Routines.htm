@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 8 Routines</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 8 Routines_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap7.htm"><IMG 
+src="Eiffel The Reference - 8 Routines_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap9.htm"><IMG 
+src="Eiffel The Reference - 8 Routines_fichiers/next.gif"></A> 
+<P>
+<H1>8 Routines </H1>
+<H2>8.3 FORMAL ARGUMENTS</H2>
+<P><B>Formal Argument rule</B> <B></B>
+<P>
+<P>Let <I>fa</I> be the Formal_arguments part of a routine <I>r</I> in a class 
+<I>C</I>. Let <I>formals</I> be the concatenation of every Identifier_list of 
+every Entity_declaration_group in <I>fa</I>. Then <I>fa</I> is valid if and only 
+if no Identifier <I>e</I> appearing in <I>formals</I> is the final name of a 
+feature of <I>C</I>. 
+<P>
+<P>Let <I>el</I> be an Entity_declaration_list. Let <I>identifiers</I> be the 
+concatenation of every Identifier_list of every Entity_declaration_group in 
+<I>fa</I>. Then <I>el</I> is valid if and only if no Identifier appears more 
+than once in the list <I>identifiers</I>. 
+<P>
+<H2>8.5 ROUTINE STRUCTURE</H2>
+<P>
+<P>
+<P><B>Routine rule</B> 
+<P>
+<P>A Routine part of a routine declaration is valid if and only if one of the 
+following conditions holds: 
+<OL>
+  <LI>Its Routine_body is an Internal body (beginning with <B>do</B> or 
+  <B>once</B>). 
+  <LI>In the other cases (where the Routine_body is External or Deferred), there 
+  is neither a Local_declarations part nor a Rescue part. </LI></OL>
+<H2>8.6 ROUTINE BODY</H2>
+<P>The introductory keywords <B>do</B> or <B>once</B> of an Internal body 
+correspond to different semantics for calls to the routine: 
+<OL>
+  <LI>For a <B>do</B> body, as indicated above, the initialization and body are 
+  executed anew on each call. 
+  <LI>If routine <I>o</I> of class <I>C</I> has a <B>once</B> body (<I>o</I> is 
+  then called a ''once routine''), the initialization and body of <I>o</I> are 
+  executed only for the first call to <I>o</I> applied to an instance of 
+  <I>C</I> during any given session. For every subsequent call to <I>o</I> 
+  applied to an instance of <I>C</I> during the same session, the routine call 
+  has no effect; if the routine is a function, the value it returns is the same 
+  as the value returned by the first call. </LI></OL>
+<H2>8.7 LOCAL ENTITIES AND Result</H2>
+<P><B>Local Entity rule</B> <B></B>
+<P>
+<P>Let <I>ld</I> be the Local_declarations part of a routine <I>r</I> in a class 
+<I>C</I>. Let <I>locals</I> be the concatenation of every Identifier_list of 
+every Entity_declaration_group in <I>ld</I>. Then <I>ld</I> is valid if and only 
+if every Identifier <I>e</I> in <I>ld</I> satisfies the following two 
+conditions: 
+<OL>
+  <LI>No feature of <I>C</I> has <I>e</I> as its final name. 
+  <LI>No formal argument of <I>r</I> has <I>e</I> as its Identifier. </LI></OL>
+<H3>Definition: local entity </H3>
+<P>Most of the rules governing the validity and semantics of declared local 
+entities also apply to a special predefined entity: <I>Result</I>, which may 
+only appear in the Routine_body or Postcondition of a function, and denotes the 
+result to be returned by the function. Reflecting this similarity, this book 
+uses the term "local entity" to cover <I>Result</I> as well as declared local 
+entities. 
+<P>
+<H2>8.9 TYPES OF INSTRUCTIONS</H2>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 8 Routines_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap7.htm"><IMG 
+src="Eiffel The Reference - 8 Routines_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap9.htm"><IMG 
+src="Eiffel The Reference - 8 Routines_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

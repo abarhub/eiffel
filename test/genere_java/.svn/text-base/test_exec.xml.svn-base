@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE test_all SYSTEM "test_exec.dtd">
+<test_all>
+	<test source="test\genere_java\test2\test1.ace" reference="test\genere_java\test2\sortie.out"/>
+	<test source="test\genere_java\test3\test1.ace" reference="test\genere_java\test3\sortie.out"/>
+	<test source="test\genere_java\test4\test1.ace" reference="test\genere_java\test4\sortie.out"/>
+</test_all>

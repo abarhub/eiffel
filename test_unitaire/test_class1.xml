@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "E:\projet\eiffel\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="ANY" />
+	<heritage>
+		<nom_classe nom="PLATFORM"/>
+	</heritage>
+</class>
+

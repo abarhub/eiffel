@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE test_all SYSTEM "tests.dtd">
+<test_all>
+	<test source="test\interm\test1\test1.ace" reference="test\interm\test1\valide.xml" />
+	<test source="test\interm\test_heritage1\test1.ace" reference="test\interm\test_heritage1\valide.xml" />
+	<test source="test\interm\test_attribut1\test1.ace" reference="test\interm\test_attribut1\valide.xml" />
+	<test source="test\interm\test_instr1\test1.ace" reference="test\interm\test_instr1\valide.xml" />
+	<test source="test\interm\test_attribut2\test1.ace" reference="test\interm\test_attribut2\valide.xml" />
+	<!--<test source="test\interm\test_external\test1.ace" reference="test\interm\test_external\valide.xml" />-->
+</test_all>
+
+

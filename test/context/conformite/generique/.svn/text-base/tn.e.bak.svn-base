@@ -1,0 +1,7 @@
+class TN
+
+	--inherit TM;
+
+feature
+
+end

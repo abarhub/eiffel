@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <meta>
+        <lastOpenedFiles>
+            <file name="file:/E:/projet/eiffel/test/verif_interm/test.xml"/>
+            <file name="programme.dtd"/>
+            <file name="file:/E:/projet/eiffel/test/genere_java/test_exec.dtd"/>
+            <file name="file:/E:/projet/eiffel/test/interm/tests.dtd"/>
+            <file name="file:/E:/projet/eiffel/test/interm/test_all.xml"/>
+            <file name="file:/E:/projet/eiffel/test/genere_java/test_exec.xml"/>
+            <file name="file:/E:/projet/eiffel/intern/kernel.xml"/>
+            <file name="file:/E:/projet/eiffel/test/interpretation/test_exec.xml"/>
+            <file focused="true" name="file:/C:/Documents and Settings/Barret/Sans titre1.xml"/>
+        </lastOpenedFiles>
+    </meta>
+    <projectTree name="projet_xml.xpr">
+        <file name="a_faire.xml"/>
+        <file name="afaire.dtd"/>
+        <file name="afaire.xml"/>
+        <file name="classe.dtd"/>
+        <file name="conforme.xml"/>
+        <file name="context.dtd"/>
+        <file name="extern.dtd"/>
+        <file name="liste_a_faire.css"/>
+        <file name="liste_a_faire.xsl"/>
+        <file name="programme.css"/>
+        <file name="programme.dtd"/>
+        <file name="programme.xsl"/>
+        <file name="test.dtd"/>
+        <file name="test.xml"/>
+        <file name="test_class1.xml"/>
+        <file name="type.dtd"/>
+        <file name="valide.css"/>
+        <file name="valide2.xsl"/>
+        <file name="validite.dtd"/>
+        <file name="validite.xml"/>
+        <file name="validite.xsl"/>
+        <file name="verif.dtd"/>
+    </projectTree>
+</project>

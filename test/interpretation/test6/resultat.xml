@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<programme>
+	<system/>
+	<classe>
+		<type nom="TEST1"/>
+		<creation>
+			<nom_attribut nom="make"/>
+		</creation>
+		<attribut>
+			<nom_attribut nom="make"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="i">
+					<type nom="$integer"/>
+				</declare_var>
+				<declare_var nom="b">
+					<type nom="$boolean"/>
+				</declare_var>
+				<declare_var nom="d">
+					<type nom="$double"/>
+				</declare_var>
+				<declare_var nom="r">
+					<type nom="$real"/>
+				</declare_var>
+				<declare_var nom="c">
+					<type nom="$character"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="entier" text="9"/>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="entier" text="-64"/>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test supS -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test supS"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sups">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="14"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sups">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="15"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sups">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="16"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test sup -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test sup"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sup">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="14"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sup">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="15"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sup">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="16"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test egal -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test egal"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="egal">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="14"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="egal">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="15"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="egal">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="16"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test inf -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test inf"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="inf">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="14"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="inf">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="15"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="inf">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="16"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test infS -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test infS"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="infs">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="14"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="infs">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="15"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="infs">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="16"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test diff -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test diff"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="diff">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="14"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="diff">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="15"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="diff">
+								<expression_scalaire type="entier" text="15"/>
+								<expression_scalaire type="entier" text="16"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printb"/>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test plus -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test plus"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="plus">
+								<expression_scalaire type="entier" text="21"/>
+								<expression_scalaire type="entier" text="7"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test moins -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test moins"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="moins">
+								<expression_scalaire type="entier" text="4"/>
+								<expression_scalaire type="entier" text="10"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test fois -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test fois"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="fois">
+								<expression_scalaire type="entier" text="6"/>
+								<expression_scalaire type="entier" text="8"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test div entier -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test div entier"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="div_entier">
+								<expression_scalaire type="entier" text="20"/>
+								<expression_scalaire type="entier" text="4"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test div reel -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test div reel"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="d"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="div_reel">
+								<expression_scalaire type="entier" text="1"/>
+								<expression_scalaire type="entier" text="3"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printd"/>
+						<expression_scalaire type="var">
+							<var nom="d"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test modulo -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test mod"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="mod">
+								<expression_scalaire type="entier" text="23"/>
+								<expression_scalaire type="entier" text="10"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test puissance -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test puissance"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="puiss">
+								<expression_scalaire type="entier" text="4"/>
+								<expression_scalaire type="entier" text="3"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test conv caractere -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test conv caractere"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_c2e">
+								<expression_scalaire type="car" text="a"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="c"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_e2c">
+								<expression_scalaire type="entier" text="97"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printc"/>
+						<expression_scalaire type="var">
+							<var nom="c"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test conv real -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test conv reel"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_r2e">
+								<expression_scalaire type="reel" text="4.9"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="r"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_e2r">
+								<expression_scalaire type="entier" text="73"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printr"/>
+						<expression_scalaire type="var">
+							<var nom="r"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test conv double -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test conv double"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_d2e">
+								<expression_scalaire type="double" text="4.9"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="d"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_e2d">
+								<expression_scalaire type="entier" text="73"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printd"/>
+						<expression_scalaire type="var">
+							<var nom="d"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test moins unaire -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test moins unaire"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="moins">
+								<expression_scalaire type="entier" text="7"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<!-- test plus unaire -->
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="prints"/>
+						<expression_scalaire type="chaine" text="Test plus unaire"/>
+					</instr_extern>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="plus">
+								<expression_scalaire type="entier" text="7"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="printi"/>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+					</instr_extern>
+					<instr_return/>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+</programme>

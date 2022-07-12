@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+<div style="color:red">liste_afaireHello World</div>
+<table border="1">
+<tr><td colspan="2"><h1>Liste des taches</h1></td></tr>
+<tr>
+<td>titre1</td>
+<td>
+<ul>
+<li/>
+<div style="color:blue">coucou 1</div>
+<li/>
+<div style="color:blue">coucou 2</div>
+</ul>
+</td>
+</tr>
+<tr>
+<td>titre2</td>
+<td>
+<ul>
+<li/>
+<div style="color:blue">coucou 3</div>
+<li/>
+<div style="color:blue">coucou 4</div>
+</ul>
+</td>
+</tr>
+</table>
+</html>

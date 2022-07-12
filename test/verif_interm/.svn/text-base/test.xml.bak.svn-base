@@ -1,0 +1,57 @@
+<!DOCTYPE root SYSTEM "file:/E:/projet/eiffel/test_unitaire/verif_interm.dtd">
+<root>
+    <test nom="test/verif_interm/test_correcte/test1.xml"/>
+    <test nom="test/verif_interm/test_nom_classe/test.xml">
+        <erreur>(TEST1) Les classes no 3 et 0 ont le meme nom</erreur>
+    </test>
+    <test nom="test/verif_interm/test_nom_classe/test2.xml">
+        <erreur>(TEST1.make) Le type A n'existe pas</erreur>
+    </test>
+    <test nom="test/verif_interm/test_nom_attribut/test.xml">
+        <erreur>(TEST1.make) L'attribut make est présent plusieurs fois dans la classe TEST1</erreur>
+    </test>
+    <test nom="test/verif_interm/test_nom_attribut/test2.xml"/>
+    <!-- test sur les variables -->
+    <test nom="test/verif_interm/test_var/test.xml"/>
+    <test nom="test/verif_interm/test_var/test2.xml"/>
+    <test nom="test/verif_interm/test_var/test3.xml"/>
+    <test nom="test/verif_interm/test_var/test4.xml">
+        <erreur>(TEST1.make instruction no 1) L'expression de type ANY n'est pas compatible avec la variable tmp de type NONE</erreur>
+    </test>
+    <test nom="test/verif_interm/test_var/test5.xml"/>
+    <!-- test sur les labels -->
+    <test nom="test/verif_interm/test_label/test1.xml"/>
+    <test nom="test/verif_interm/test_label/test2.xml">
+        <erreur>(TEST2.make instruction no 3) Le label label1 est declaré 2 fois</erreur>
+    </test>
+    <test nom="test/verif_interm/test_label/test3.xml"/>
+    <test nom="test/verif_interm/test_label/test4.xml">
+        <erreur>(TEST1.make instruction no 3) Le label label10 n'existe pas</erreur>
+    </test>
+    <test nom="test/verif_interm/test_label/test5.xml"/>
+    <test nom="test/verif_interm/test_label/test6.xml">
+        <erreur>(TEST1.make instruction no 5) Le label label10 n'existe pas</erreur>
+    </test>
+    <test nom="test/verif_interm/test_label/test7.xml">
+        <erreur>(TEST1.make instruction no 5) Le label label20 n'existe pas</erreur>
+    </test>
+    <!-- test sur les appels -->
+    <test nom="test/verif_interm/test_appel/test1.xml"/>
+    <test nom="test/verif_interm/test_appel/test2.xml"/>
+    <test nom="test/verif_interm/test_appel/test3.xml">
+        <erreur>(TEST1.make instruction no 1) Le nombre de parametres ne correspond pas pour l'appel test{NONE}</erreur>
+    </test>
+    <test nom="test/verif_interm/test_appel/test4.xml">
+        <erreur>(TEST1.make instruction no 1) type incompatible dans le parametre no 0 pour l'appel test{NONE}</erreur>
+    </test>
+    <test nom="test/verif_interm/test_appel/test5.xml"/>
+    <!-- test sur le typage -->
+    <test nom="test/verif_interm/test_type/test1.xml"/>
+    <test nom="test/verif_interm/test_type/test2.xml">
+        <erreur>(TEST1.make instruction no 1) L'expression de type B n'est pas compatible avec la variable tmp de type A</erreur>
+    </test>
+    <test nom="test/verif_interm/test_type/test3.xml"/>
+    <test nom="test/verif_interm/test_type/test4.xml">
+        <erreur>(TEST1.make instruction no 1) L'expression de type A n'est pas compatible avec la variable tmp de type B</erreur>
+    </test>
+</root>

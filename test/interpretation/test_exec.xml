@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE test_all SYSTEM "test_exec.dtd">
+<test_all>
+	<test source="test\interpretation\test1\resultat.xml" reference="test\interpretation\test1\sortie.out" 
+		trace="test\interpretation\test1\trace.txt"/>
+	<test source="test\interpretation\test2\resultat.xml" reference="test\interpretation\test2\sortie.out" 
+		trace="test\interpretation\test2\trace.txt"/>
+	<test source="test\interpretation\test3\resultat.xml" reference="test\interpretation\test3\sortie.out" 
+		trace="test\interpretation\test3\trace.txt"/>
+	<test source="test\interpretation\test4\resultat.xml" reference="test\interpretation\test4\sortie.out" 
+		trace="test\interpretation\test4\trace.txt"/>
+	<test source="test\interpretation\test5\resultat.xml" reference="test\interpretation\test5\sortie.out" 
+		trace="test\interpretation\test5\trace.txt"/>
+	<test source="test\interpretation\test6\resultat.xml" reference="test\interpretation\test6\sortie.out" 
+		trace="test\interpretation\test6\trace.txt"/>
+	<!--<test source="test\interpretation\test3\test1.ace" reference="test\interpretation\test3\sortie.out"/>
+	<test source="test\interpretation\test4\test1.ace" reference="test\interpretation\test4\sortie.out"/>-->
+</test_all>

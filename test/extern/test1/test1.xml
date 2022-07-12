@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE module SYSTEM "..\..\..\test_unitaire\extern.dtd">
+<module nom="test1" langage="java">
+	<routine nom="carre" fonction="oui" >
+		<type nom="integer"/>
+		<type nom="Real"/>
+	</routine>
+	<routine nom="errno">
+		<type nom="integer"/>
+	</routine>
+</module>
+

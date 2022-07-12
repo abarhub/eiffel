@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT classe (liste_verification)>
+<!ATTLIST classe nom CDATA #REQUIRED>
+
+<!ELEMENT  liste_verification (classe_existe | attribut_existe | 
+                attribut_conflit | type_conforme | methode_creation | methode |
+                inspect )*>
+ 
+ <!ELEMENT  classe_existe (position)>
+ <!ATTLIST classe_existe nom CDATA #REQUIRED>
+ 
+ <!ELEMENT position EMPTY>
+ <!ATTLIST position nom_fichier CDATA #REQUIRED>
+ <!ATTLIST position x CDATA #REQUIRED>
+ <!ATTLIST position y CDATA #REQUIRED>
+ 
+ <!ELEMENT nom_feature EMPTY>
+ <!ATTLIST nom_feature frozen (on) #IMPLIED>
+ <!ATTLIST nom_feature nom CDATA #REQUIRED>
+ <!ATTLIST nom_feature type (infix|prefix) #IMPLIED>
+ 
+ <!ELEMENT  attribut_existe (nom_feature,position)>
+ <!ATTLIST attribut_existe nom_classe CDATA #REQUIRED>
+ 
+ <!ELEMENT  attribut_conflit (nom_feature,position)>
+ <!ATTLIST attribut_conflit nom_classe CDATA #REQUIRED>
+ 
+ <!ELEMENT nom_classe (nom_classe*|like)>
+<!ATTLIST nom_classe nom CDATA #IMPLIED>
+<!ATTLIST nom_classe expanded (yes|no) #IMPLIED>
+<!ELEMENT like (expression)>
+ 
+ <!ELEMENT verif_type (nom_classe?) >
+ <!ATTLIST verif_type var_type CDATA #REQUIRED>
+ 
+ <!ELEMENT type_conforme (verif_type?,verif_type,nom_classe)>
+ 
+ <!ELEMENT methode_creation (verif_type,nom_feature,position) >
+ 
+ <!ELEMENT methode (verif_type,nom_feature,param,verif_type?,position) >
+ 
+ <!ELEMENT param (verif_type*) >
+ 
+ <!ELEMENT inspect (verif_type,position)>
+ 

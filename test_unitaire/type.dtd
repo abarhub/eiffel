@@ -1,0 +1,21 @@
+<!ELEMENT liste_testes (conformite)*>
+
+<!ELEMENT conformite (test|test_expr)*>
+<!ATTLIST conformite nom CDATA #REQUIRED>
+<!ATTLIST conformite nb_erreur CDATA #IMPLIED>
+
+<!ELEMENT test EMPTY>
+<!ATTLIST test de CDATA #REQUIRED>
+<!ATTLIST test ancetre CDATA #REQUIRED>
+<!ATTLIST test conforme (oui|non) #REQUIRED>
+<!ATTLIST test lieux CDATA #IMPLIED>
+
+<!ELEMENT test_expr EMPTY>
+<!ATTLIST test_expr de CDATA #REQUIRED>
+<!ATTLIST test_expr ancetre CDATA #REQUIRED>
+<!ATTLIST test_expr conforme (oui|non) #REQUIRED>
+<!ATTLIST test_expr lieux CDATA #REQUIRED>
+<!ATTLIST test_expr nom_feature CDATA #IMPLIED>
+<!ATTLIST test_expr dans_corps (oui|non) #IMPLIED>
+
+

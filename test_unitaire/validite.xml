@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- <?xml-stylesheet type="text/xsl" href="file://D:\projet\eiffel\test_unitaire\validite2.xsl"?> -->
+<?xml-stylesheet type="text/xsl" href="valide2.xsl"?>
+
+<!DOCTYPE liste_validite SYSTEM "validite.dtd">
+
+<liste_validite>
+	<regle nom="VFFD" page="65" chapitre="5.14">
+		<titre>Regle de Déclaration de Primitive</titre>
+		<corps>
+		Dans une classe C, une Déclaration_de_primitive
+		dont la section Liste_nouvelles_primitives contient 
+		un ou plusieurs noms de primitives f1, ... , fn
+		est valide si et seulement si elle verifie les
+		conditions suivantes :
+		<liste>
+		<enum>Son Coprs_de_declaration décrit une primitive
+		   qui, en vertu de la regle énoncée en 5.11, et :
+		   un attribut variable, ou un attribut constant,
+		   ou une procédure, ou une fonction.
+		</enum>
+		<enum>Aucune des fi ne porte le meme nom qu'une autre
+		   des primitives introduites dans C (en 
+		   particulier, fi est un nom distinct de fj dès 
+		   lors que i et j sont différents).
+		</enum>
+		<enum>Si le nom de l'une des primitives fi est 
+		   similaire au nom final d'une quelconque
+		   primitive héritée, le Coprs_de_déclaration
+		   doit satisfaire la Règle de Redéclaration.
+		</enum>
+		<enum>Lorsque le Corps_de_déclaration s'applique à
+		   une primitive différée, aucune des fi ne doit
+		   être précedée du mot clef frozen.
+		</enum>
+		<enum>Si l'une quelconque des fi porte un nom de type
+		   préfixé, le Corp_de_déclaration décrit un 
+		   attribut ou une fonction sans argument.
+		</enum>
+		<enum>Si l'une quelconque des fi porte un nom de type
+		   infixé, le Corp_de_déclaration décrit une 
+		   fonction acceptant un parametre et un seul.
+		</enum>
+		<enum>Lorsque le Corps_de_déclaration décrit une 
+		   fonction d'une fois (ou fonction à simple
+		   détente), le type de son résultat ne peut être
+		   ni un Nom_générique, ni un type ancré.
+		</enum>
+		</liste>
+		Salut a tous
+		</corps>
+	</regle>
+	<regle page="153" nom="VDUS" chapitre="10.19">
+		<titre>Règle de validité d'une sous-clause 
+		A-définition</titre>
+		<corps>
+			Soit une classe C héritant d'une classe B.
+			Lorsqu'une clause Parent pour B dans C 
+			contient une sous-clause A-définition,
+			cette clause est valide si et seulement si,
+			pour tout Identificateur_de_primitive
+			nom_prim énuméré dans sa Liste_primitives :
+			<liste>
+				<enum>
+					nom_prim est le nom final dans C 
+					d'une primitive hérité de B.
+				</enum>
+				<enum>
+					Cette primitive n'etait pas figée et 
+					n'était pas un attribut.
+				</enum>
+				<enum>
+					Cette primitive était contrète dans B.
+				</enum>
+				<enum>
+					nom_prim apparaît à une seule reprise
+					dans la Liste_primitives.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="152" nom="VDRS" chapitre="10.19">
+		<titre>Règle de validité d'une sous-clause 
+		redéfinition</titre>
+		<corps>
+			Soit une classe C héritant d'une parente B.
+			Lorsqu'une section Parent pour B dans C
+			contient une sous-clause Redéfinition, cette
+			derniere est valide si et seulement si, dans 
+			la Liste_primitives, chacun des 
+			Identificateur_de_primitive nom_prim énumérés 
+			respecte les conditions suivantes :
+			<liste>
+				<enum>
+					<ref type="grammaire" href="abc">nom_prim</ref>
+					est le nom final dans C 
+					d'une primitive héritée de B.
+				</enum>
+				<enum>
+					Cette primitive n'était pas figée
+					et n'était pas un attribut constant.
+				</enum>
+				<enum>
+					nom_prim apparaît une fois et une
+					seule dans la Liste_primitives.
+				</enum>
+				<enum>
+					La section Primitives de C 
+					comporte une déclaration_de_primitive
+					relative à nom_prim, qui doit être
+					une redéclaration valide de la 
+					primitive d'origine mais ne peut pas
+					en être une concrétisation.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="118" nom="VAOL" chapitre="9.9">
+		<titre></titre>
+		<corps>
+			Une expression Anterieur de la forme old e, 
+			où e est une expression de type TE, est 
+			valide si et seulement si elle vérifie les
+			deux conditions suivantes :
+			<liste>
+				<enum>
+					Elle figure dans une clause de la 
+					Postcondition d'une Routine r.
+				</enum>
+				<enum>
+					La transformation de r en une 
+					fonction dont le résultat est de
+					type TE (ce qui se fait en ajoutant
+					un résultat typé si r est une 
+					procédure, ou en modifivant le type
+					initial du résultat si r est deja
+					une fonction), suivie du remplacement 
+					complet de sa section Routine par
+					la séquence:
+					do
+						Result:=e;
+					end
+					aboutit à une routine valide.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="123" nom="VAVE" chapitre="9.14">
+		<titre></titre>
+		<corps>
+			Un Variant est valide si et seulement si
+			l'Expression dont il est constitué est de
+			type INTEGER.
+		</corps>
+	</regle>
+	<regle page="116" nom="VAPE" chapitre="9.8">
+		<titre></titre>
+		<corps>
+			Une Précondition d'une routine r dans une
+			classe C est valide si et seulement si
+			toute primitive dont le nom final apparaît
+			dans une Clause_d_assertion quelconque est 
+			visible par les memes classes que la
+			classe C.
+		</corps>
+	</regle>
+	<regle page="156" nom="VDRD" chapitre="10.22">
+		<titre>Règle de Redéclaration</titre>
+		<corps>
+			Soit une classe C et q une primitive de C;
+			q est une redéclaration valide d'une
+			primitive p héritée d'une parente B de C
+			si et seulement si les conditions suivantes
+			sont satisfaites :
+			<liste>
+				<enum>
+					Aucune primitive concrète de C autre
+					que p et q ne porte un nom final
+					similaire à celui de p et q.
+				</enum>
+				<enum>
+					La signature de q et conforme celle
+					de p.
+				</enum>
+				<enum>
+					Si q est une routine, sa Précondition,
+					si elle existe, débute par require
+					else (et non require simplement)
+					et sa Postcondition, si elle existe,
+					par ensure then (et non ensure
+					seulement).
+				</enum>
+				<enum>
+					Si la redéclaration est une 
+					redéfinition (par opposition à une
+					concrétisation), la sous-clause
+					Redéfinition de la section Parent
+					pour B comporte dans l'enumeration
+					de sa section Liste_primitives le
+					nom final de p.
+				</enum>
+				<enum>
+					Si p est heritée sous forme concrète,
+					alors q est egalement concrète.
+				</enum>
+				<enum>
+					Si p est un attribut, q est un 
+					attribut, p et q sont tous deux
+					variables et leurs types sont soit
+					tous deux expansés soit tous deux
+					non expansés.
+				</enum>
+				<enum>
+					Si l'une ou l'autre de p et q est
+					une routine Externe, alors la 
+					seconde l'est également.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="27" nom="VBAR" chapitre="2.6">
+		<titre>Règle d'Affectation</titre>
+		<corps>
+			Une affectation est valide si et seulement si
+			l'expression source est conforme à l'entité
+			cible.
+		</corps>
+	</regle>
+	<regle page="27" nom="VBGV" chapitre="2.7">
+		<titre>Règle Générale de Validité</titre>
+		<corps>
+			Toute contrainte de validité relative à une
+			construction doit être comprise comme
+			incluant une condition supplémentaire
+			implicite, stipulant que chaque composant
+			de cette construction satisfait lui-même
+			la totalité des contraintes de validité
+			qui lui sont imposées.
+		</corps>
+	</regle>
+	<regle page="49" nom="VCCH" chapitre="4.8">
+		<titre></titre>
+		<corps>
+			Un Entete_de_classe figurant dans le corps
+			d'une classe C est valide si et seulement
+			si il satisfait l'une ou l'autre des deux 
+			conditions suivantes :
+			<liste>
+				<enum>
+					Il ne contient aucun qualifieur de 
+					la forme deferred, et C est concrète.
+				</enum>
+				<enum>
+					Il contient un Qualifieur_entête de
+					la forme deferred, et C est différée.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="51" nom="VCFG" chapitre="4.9">
+		<titre></titre>
+		<corps>
+			Une section Générique_formels dans une 
+			Déclaration_de_classe est valide si et
+			seulement si tout Nom_générique_formel
+			G qu'elle contient vérifie les deux
+			conditions suivantes :
+			<liste>
+				<enum>
+					G est distinct de tout nom de classe
+					dans l'univers d'appartenance.
+				</enum>
+				<enum>
+					G est distinct de tout autre 
+					Nom_générique_formel apparaissant
+					dans la même section 
+					Générique_formels.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="52" nom="VCRN" chapitre="4.11">
+		<titre></titre>
+		<corps>
+			Lorsque figure un commentaire de type :
+			-- class Nom_de_classe
+			, il doit reprendre le Nom_de_classe
+			mentionné en tête de la classe.
+		</corps>
+	</regle>
+	<regle page="350" nom="VWEQ" chapitre="23.3">
+		<titre></titre>
+		<corps>
+			Une expression Egalité est valide si et 
+			seulement si chacun de ses opérandes est 
+			conforme à l'autre.
+		</corps>
+	</regle>
+	<regle page="350" nom="VWBE" chapitre="23.2">
+		<titre></titre>
+		<corps>
+			Une Expression_booléenne est valide si et 
+			seulement si il s'agit d'une Expression 
+			de type BOOLEAN.
+		</corps>
+	</regle>
+	<regle page="354" nom="VWOE" chapitre="23.6">
+		<titre></titre>
+		<corps>
+			Une Expression_opérateur est valide si et
+			seulement si sa forme pointée équivalente 
+			est un Appel valide.
+		</corps>
+	</regle>
+	<regle page="36" nom="VSRC" chapitre="3.4">
+		<titre>Règle de Choix de la Classe Racine</titre>
+		<corps>
+			Une classe C peut être utilisée comme classe
+			racine d'un système si et seulement si elle
+			vérifie les deux conditions suivantes :
+			<liste>
+				<enum>
+					C n'est pas générique.
+				</enum>
+				<enum>
+					Toute procédure de création de C 
+					requiert soit un argument formel
+					unique et de type ARRAY[STRING],
+					soit aucun.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="37" nom="VSCN" chapitre="3.5">
+		<titre></titre>
+		<corps>
+			Deux classes dans une grappe donnée ne 
+			peuvent porter le même nom.
+		</corps>
+	</regle>
+	<regle page="490" nom="VDCN" chapitre="D.5">
+		<titre></titre>
+		<corps>
+			Les noms utilisés dans un Ace sont soumis
+			à une condition de cohérence: le 
+			Nom_de_grappe doit etre distinct pour
+			chacune des grappes. L'emploi d'un même
+			identificateur est néanmoins possible 
+			lorsqu'on veut lui faire jouer des roles
+			différents : Nom_de_grappe, Nom_de_système, 
+			Nom_de_classe.
+		</corps>
+	</regle>
+	<regle page="158" nom="VDJR" chapitre="10.23">
+		<titre>Règle de Jointure</titre>
+		<corps>
+			Lorsqu'une classe C hérite sous forme différée
+			deux primitives distinctes sous un même nom
+			final, cette opération est valide si et 
+			seulement si les signatures de ces primitives
+			sont identiques, après redéclaration le 
+			cas échéant.
+		</corps>
+	</regle>
+	<regle page="497" nom="VDOC" chapitre="D.11">
+		<titre></titre>
+		<corps>
+			Une Liste_cibles ne peut apparaître que dans
+			un constituant Options, et non au sein de 
+			Valeurs_par_défaut. Une construction 
+			Etiquette_opt_système ne peut apparaître que 
+			dans une clause Valeurs_par_défaut applicable
+			à un Ace.
+		</corps>
+	</regle>
+	<regle page="493" nom="VDUC" chapitre="D.8">
+		<titre></titre>
+		<corps>
+			Pour que les choses restent simples, la
+			section Propriétés_grappe contenue dans 
+			un fichier désigné par une Mention ne doit 
+			pas contenir elle-même son propre 
+			constituant Mention.
+		</corps>
+	</regle>
+	<regle page="261" nom="VEEN" chapitre="17.9">
+		<titre>Règle de Validité d'une Entité</titre>
+		<corps>
+			Dans le code-source d'une classe C, une 
+			occurence d'une entité e (autre qu'une 
+			primitive apparaissant dans un appel 
+			qualifié) est valide si et seulement si elle
+			vérifie l'une des conditions suivantes :
+			<liste>
+				<enum>
+					e est le nom final d'un attribut de 
+					C.
+				</enum>
+				<enum>
+					(A) L'occurence est située dans une 
+					section Déclarations_locales,
+					Corps_de_routine, ou Postcondition,
+					voire la section Sauvetage du code
+					de la Routine dans le cas d'une 
+					fonction, et e est l'entité 
+					prédéfinie Result.
+				</enum>
+				<enum>
+					(B) L'occurence est située dans une 
+					section Déclarations_locales,
+					Corps_de_routine, voire, dans le 
+					cas d'une routine r, la section 
+					Sauvetage du code de la Routine ;
+					en outre, e figure dans la 
+					Liste_identificateurs d'une 
+					Liste_déclaration_entités elle-même
+					incluse dans la section 
+					Déclarations_locales de la routine r.
+				</enum>
+				<enum>
+					L'occurence est située dans une 
+					section Déclaration_de_primitive 
+					d'une routine r, et la section 
+					Arguments_formels de r contient 
+					une Liste_déclarations dont la 
+					Liste_identificateurs contient e.
+				</enum>
+				<enum>
+					e est l'entité prédéfinie Current.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="253" nom="VQUI" chapitre="16.6">
+		<titre>Règle de Déclaration d'une constante
+		Unique</titre>
+		<corps>
+			La valeur d'un attribut déclaré sous la 
+			forme d'un unique est un entier positif. 
+			Lorsque deux attributs uniques sont 
+			introduits dans une même classe, leurs 
+			valeurs sont distinctes. Qui plus est, 
+			ce mode de déclaration garantit que les 
+			valeurs des attributs uniques déclarés dans 
+			une même Déclaration_de_primitive sont 
+			consécutives, par ordre d'apparition.
+		</corps>
+	</regle>
+	<regle page="251" nom="VQMC" chapitre="16.5">
+		<titre></titre>
+		<corps>
+			La déclaration d'une primitive p, dans 
+			laquelle est introduite une constante 
+			manifeste, est valide si et seulement si 
+			la Constante_manifeste m utilisée dans la 
+			déclaration correspond au type utilisé pour
+			déclarer p et vérifie l'une des conditions 
+			suivantes :
+			<liste>
+				<enum>
+					m est une Constante_booléenne et T 
+					est le type BOOLEAN.
+				</enum>
+				<enum>
+					m est une Constante_caractère et T 
+					est le type CHARACTER.
+				</enum>
+				<enum>
+					m est une Constante_entière et T 
+					est le type INTEGER.
+				</enum>
+				<enum>
+					m est une Constante_réelle et T 
+					est le type REAL ou DOUBLE.
+				</enum>
+				<enum>
+					m est une Chaine_manifeste et T 
+					est le type STRING.
+				</enum>
+				<enum>
+					m est une Constante_binaire et T 
+					est le type Type_binaire.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="244" nom="VXRC" chapitre="15.8">
+		<titre></titre>
+		<corps>
+			Une Routine comportant une clause Sauvetage 
+			est valide si et seulement si son 
+			Corps_de_routine est de forme Interne.
+		</corps>
+	</regle>
+	<regle page="244" nom="VXRT" chapitre="15.8">
+		<titre></titre>
+		<corps>
+			Une instruction Réessai est valide si et 
+			seulement si elle figure dans une 
+			clause Sauvetage.
+		</corps>
+	</regle>
+	<regle page="229" nom="VOMB" chapitre="14.5">
+		<titre>Règle de Sélection à Choix Multiple</titre>
+		<corps>
+			Une instruction Choix_multiple est valide si
+			et seulement si sa forme explicitée vérifie 
+			les conditions suivantes :
+			<liste>
+				<enum>
+					L'expression d'inspection est de type
+					INTEGER ou CHARACTER.
+				</enum>
+				<enum>
+					Les constantes d'inspection (les 
+					valeurs situées dans les différentes 
+					sections Choix) sont des attributs 
+					constants du même type que 
+					l'expression d'inspection.
+				</enum>
+				<enum>
+					Les éventuelles constantes 
+					d'inspection non uniques possèdent 
+					des valeurs deux à deux distinctes.
+				</enum>
+				<enum>
+					Les éventuelles constantes 
+					d'inspection Unique portent 
+					des noms deux à deux distinctes.
+				</enum>
+				<enum>
+					Dès lors qu'il existe une constante 
+					d'inspection Unique, toutes les
+					autres constantes d'inspection 
+					de la même instruction sont soit
+					Unique, soit de valeur négative ou
+					nulle.
+				</enum>
+				<enum>
+					Toutes les éventuelles constantes
+					d'inspection Unique possèdent la 
+					même classe d'origine (la classe 
+					contenant l'instruction 
+					Choix_multiple ou une ancêtre 
+					propre).
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="217" nom="VNCX" chapitre="13.9">
+		<titre>Conformité (Expression)</titre>
+		<corps>
+			Une expression v de type VT est conforme
+			à une expression t de type TT si et seulement
+			si elle vérifie l'une au moins des quatre
+			conditions suivantes :
+			<liste>
+				<enum>
+					VT est conforme à TT.
+				</enum>
+				<enum>
+					VT est de type like v (v doit etre
+					une entité).
+				</enum>
+				<enum>
+					VT et TT sont tous deux de type 
+					like x par rapport à un même x.
+				</enum>
+				<enum>
+					TT étant de type like x, et x un 
+					paramètre formel d'une routine r,
+					v est une argument réel dans un 
+					appel à r, et VT est conforme au 
+					type de l'argument réel 
+					correspondant à x dans cet appel.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="216" nom="VNCH" chapitre="13.8">
+		<titre>Conformité Directe (Ancrage)</titre>
+		<corps>
+			Dans une classe C, le type like Current est 
+			directement conforme à son type de base CT, 
+			lui-même formé de C suivi de sa 
+			Liste_génériques_formels s'il y a lieu, 
+			expurgée de toute contrainte.
+			Le type like ancre, ancre étant une 
+			primitive de C ou un argument formel d'une 
+			routine de C, est directement conforme au 
+			type de ancre dans C. Un type ancré n'est 
+			directement conforme à aucun autre type que 
+			ceux cités dans ces règles. Aucun type 
+			n'est directement conforme à un type ancré.
+		</corps>
+	</regle>
+	<regle page="219" nom="VNCE" chapitre="13.10">
+		<titre>Conformité Directe (Type Expansés)</titre>
+		<corps>
+			Soit T un type expansé, autre qu'un 
+			Type_binaire. Un type U est directement 
+			conforme à T si et seulement si tous deux 
+			vérifient l'une des trois conditions 
+			suivantes :
+			<liste>
+				<enum>
+					T est de la forme expanded BT et U 
+					est de type BT
+				</enum>
+				<enum>
+					T est le type REAL et U est le type
+					INTEGER
+				</enum>
+				<enum>
+					T est le type DOUBLE et U est le 
+					type REAL ou INTEGER
+				</enum>
+			</liste>
+			Dans le cas 1, T est également directement 
+			conforme à U.
+			Un type expansé n'est directement conforme 
+			à aucun autre type que ceux déterminés par 
+			la présente règle et celle énoncées en 
+			13.5 et 13.6.
+		</corps>
+	</regle>
+	<regle page="220" nom="VNCB" chapitre="13.11">
+		<titre>Conformité Directe (Type_binaire)</titre>
+		<corps>
+			Les cas possibles de conformité mettant 
+			en cause un Type_binaire sont les suivants 
+			(N et P étant deux entiers positifs 
+			quelconques) :
+			<liste>
+				<enum>
+					BIT N est directement conforme à ANY.
+				</enum>
+				<enum>
+					BIT N est directement conforme à
+					BIT P si N&lt;=P.
+				</enum>
+			</liste>
+			Aucun autre type que ceux mentionnés ci-dessus
+			n'est directement conforme à un Type_binaire,
+			et un Type_binaire n'est directement conforme
+			à aucun type.
+		</corps>
+	</regle>
+	<regle page="215" nom="VNCF" chapitre="13.7">
+		<titre>Conformité Directe (Générique Formel)</titre>
+		<corps>
+			Soit G, paramètre générique formel d'une 
+			classe, utilisable dans cette classe comme 
+			un type de catégorie Nom_générique_formel.
+			Aucun type n'est directement conforme à G.
+			Si G n'est pas contraint, il est directement
+			conforme à ANY (basé sur la classe 
+			universelle correspondante) et à ce type 
+			exclusivement. Si G est contraint par CT, 
+			G est directement conforme à CT et à lui 
+			seul.
+		</corps>
+	</regle>
+	<regle page="214" nom="VNCG" chapitre="13.6">
+		<titre>Conformité Directe (Substitution 
+		Générique)</titre>
+		<corps>
+			Soit BT un type générique dérivé ayant pour
+			type de base B[X1, ... ,Xn], n étant 
+			supérieur ou égal à 1; soient G1, ..., Gn les
+			paramètres génériques formels de B. Soit CT 
+			un type reposant sur la classe de base C, 
+			distincte de B. Pour déterminer si CT est 
+			directement conforme à BT, on définit la 
+			substitution rho de la façon suivant :
+			<liste>
+				<enum>
+					si CT est non générique, la 
+					substitution rho est l'identité.
+				</enum>
+				<enum>
+					Si CT est un type génériquement 
+					dérivé, de la forme C[Y1, ..., Ym],
+					et si la classe C est déclarée avec
+					les paramètres génériques formels 
+					H1, ..., Hm, alors rho associe à 
+					chacun des Hi (1&lt;=i&lt;=m) le 
+					paramètre Yi, tandis qu'elle 
+					conserve tout autre élément (à tout
+					élément autre que Hi, elle associe 
+					cette élément).
+				</enum>
+			</liste>
+			Sous ces hypothèses, CT est directement 
+			conforme à BT si et seulement si B[Z1, ..., 
+			Zn] compte parmi les sections Parents 
+			figurant dans la clause Héritage de C et,
+			pour tout j compris entre 1 et n, 
+			l'application à Zj de la substitution rho
+			donne Xj.
+		</corps>
+	</regle>
+	<regle page="212" nom="VNCN" chapitre="13.5">
+		<titre>Conformité directe (non générique)</titre>
+		<corps>
+			Soit CT un type de référence basé sur la 
+			classe C, et BT un type dont la classe de
+			base B est non générique. CT est directement
+			conforme à BT si et seulement si la clause
+			Héritage de C mentionne B dans l'une au 
+			moins de ses sections Parents.
+		</corps>
+	</regle>
+	<regle page="210" nom="VNCS" chapitre="13.3">
+		<titre>Conformité de signature</titre>
+		<corps>
+			Une signature t=(&lt;B1, ..., Bn&gt;,
+			&lt;S&gt;) est conforme à une signature 
+			s= (&lt;A1, ..., An&gt;,&lt;R&gt;) si et 
+			seulement si elle vérifie les deux conditions
+			suivantes :
+			<liste>
+				<enum>
+					Les composants de chacune de ces 
+					paires t et s ont deux à deux le même
+					nombre d'éléments.
+				</enum>
+				<enum>
+					Au sein de chaque composant de la 
+					signature t, chaque élément Ti est 
+					d'un type conforme à celui de 
+					l'élément Si correspondant dans s.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="211" nom="VNCC" chapitre="13.4">
+		<titre>Conformité générale</titre>
+		<corps>
+			Soient T et V deux types. V est conforme à T 
+			si et seulement si l'on se trouve dans l'un 
+			des cas suivants :
+			<liste>
+				<enum>
+					V et T sont identiques.
+				</enum>
+				<enum>
+					V est directement conforme à T.
+				</enum>
+				<enum>
+					V est le type NONE et T est un type 
+					de référence.
+				</enum>
+				<enum>
+					V est de la forme B[Y1, ..., Yn], 
+					B étant une classe générique ; T 
+					est de la forme B[X1, ..., Xn], et 
+					chacun des types Y est conforme au 
+					type X correspondant.
+				</enum>
+				<enum>
+					T est un type de référence et, U 
+					étant un type quelconque, V est 
+					directement conforme à U et U 
+					lui-même conforme (récursivement)
+					à T.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="207" nom="VTAT" chapitre="12.15">
+		<titre></titre>
+		<corps>
+			Dans une classe C, un type ancré de la forme
+			like ancre est valide si et seulement si 
+			l'une des conditions suivantes est 
+			satisfaite :
+			<liste>
+				<enum>
+					ancre est le nom final d'un attribut 
+					ou d'une fonction de C, dont le type 
+					déclaré est un type de référence non 
+					ancré.
+				</enum>
+				<enum>
+					Le type en question apparaît dans le 
+					code d'une routine r de C, et ancre 
+					est un argument formel de r, dont 
+					le type déclaré est un type de 
+					référence non ancré.
+				</enum>
+				<enum>
+					ancre est le mot réservé Current.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="203" nom="VTBT" chapitre="12.14">
+		<titre></titre>
+		<corps>
+			Une déclaration de Type_binaire est valide 
+			si et seulement si sa Constante est de type 
+			INTEGER est a une valeur positive.
+		</corps>
+	</regle>
+	<regle page="202" nom="VTEC" chapitre="12.12">
+		<titre>Règle de Validité d'un Type Expansé</titre>
+		<corps>
+			L'emploi dans une classe B d'un type expansé 
+			dont la classe de base est C est valide si 
+			et seulement si les deux conditions suivantes
+			sont vérifiées :
+			<liste>
+				<enum>
+					C n'est pas une classe différée.
+				</enum>
+				<enum>
+					Ou bien C ne possède pas de section
+					Créateurs, ou bien celle-ci contient
+					exactement une procédure de création,
+					sans arguments, visible par B lors
+					de la création.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="195" nom="VTUG" chapitre="12.7">
+		<titre>Règle de généricité Sans Contrainte</titre>
+		<corps>
+			Soit C une classe générique non contrainte.
+			Un Type_classe TC dont la classe de base est
+			C est valide si et seulement si les deux
+			conditions suivantes sont satisfaites :
+			<liste>
+				<enum>
+					C est une classe générique.
+				</enum>
+				<enum>
+					Le nombre de types composant la liste
+					des Génériques_réèls de TC est égal
+					au nombre de paramètres 
+					Génériques_formels figurant dans la 
+					Liste_génériques_formels de la 
+					déclaration de C.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="196" nom="VTCG" chapitre="12.8">
+		<titre>Règle de Généricité Contrainte</titre>
+		<corps>
+			Soit C une classe générique contrainte. Un 
+			Type_classe TC ayant pour classe de base C 
+			est valide si et seulement si TC obéit à 
+			la Règle de Généricité Sans Contrainte 
+			(VTUG, paragraphe 12.7), ainsi qu'à une 
+			condition supplémentaire :
+			<liste>
+				<enum>
+					(3) Pour tout paramètre 
+					Générique_formel figurant dans la 
+					déclaration de C et possédant une 
+					contrainte de la forme --&gt;D, le 
+					type correspondant dans la liste 
+					Générique_réèls de TC est conforme 
+					à D.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="192" nom="VTCT" chapitre="12.5">
+		<titre>Règle de Dénomination des Types-classes</titre>
+		<corps>
+			L'emploi d'un identificateur CC comme section 
+			Nom_de_classe d'un Type_de_classe est valide 
+			si et seulement si il désigne une classe de 
+			l'univers environnant.
+		</corps>
+	</regle>
+	<regle page="181" nom="VMFN" chapitre="11.11">
+		<titre>Règle de Dénomination des 
+		Primitives</titre>
+		<corps>
+			Lorsque, dans une classe C, on introduit une
+			primitive avec un Identificateur_de_primitive
+			prim_f, ou lorsqu'une primitive est héritée 
+			sous ce nom prim_f, la validité est garantie
+			si et seulement si aucune autre primitive
+			ne possède déja ce même nom final.
+		</corps>
+	</regle>
+	<regle page="182" nom="VMCN" chapitre="11.11">
+		<titre></titre>
+		<corps>
+			<liste>
+				<enum>
+					Deux primitives, différentes mais 
+					soit toutes deux différées soit 
+					toutes deux concrètes, ne peuvent 
+					être introduites dans une classe 
+					sous le même nom.
+				</enum>
+				<enum>
+					Lorsqu'une primitive est introduite
+					dans une classe avec le même nom 
+					que l'une des primitives héritée sous
+					forme concrète par cette classe, la 
+					version héritée doit etre renomée.
+				</enum>
+				<enum>
+					Lorsque deux primitives sont héritées 
+					sous forme concrète de deux parentes
+					différentes et portent le même nom 
+					final, la classe qui les hérite doit
+					également résoudre le conflit de noms
+					en recourant au renommage (sauf s'il
+					s'agit d'un partage sur héritage 
+					répété).
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="184" nom="VMRC" chapitre="11.13">
+		<titre></titre>
+		<corps>
+			Lorsqu'une classe D est descendante répétée 
+			d'une classe A, elle est valide si et 
+			seulement si, pour toute primitive p de A,
+			D satisfait les deux conditions suivantes :
+			<liste>
+				<enum>
+					Lorsque la Règled'Héritage à 
+					Répétition conduit au partage de p 
+					dans D, toutes les versions héritées 
+					de p ne sont qu'une même primitive.
+				</enum>
+				<enum>
+					Lorsque la Règle d'Héritage à 
+					Répétition conduit à la duplication
+					de p dans D, si p est potentiellement
+					ambiguë, alors la clause Sélection
+					d'une et une seule section Parent de 
+					D doit mentionner la version 
+					correspondante de p, en utilisant 
+					le nom final que porte cette dernière
+					dans D.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="185" nom="VMSS" chapitre="11.13">
+		<titre>Règle de Validité d'une Sous-clause 
+		Sélection</titre>
+		<corps>
+			Une sous-clause Sélection figurant dans la
+			section Parent pour B dans une classe D est 
+			valide si et seulement si, pour tout 
+			Identificateur_de_primitive nom_prim 
+			figurant dans sa Liste_primitives, nom_prim 
+			n'apparaît qu'une seule fois dans la 
+			Liste_primitives, et il est le nom final 
+			dans D d'une primitive ayant au moins 
+			deux versions potentielles dans D.
+		</corps>
+	</regle>
+	<regle page="107" nom="VRLE" chapitre="8.7">
+		<titre>Règle de Déclaration des Entités 
+		Locales</titre>
+		<corps>
+			Soit dl une section Déclarations_locales
+			d'une routine r dans une classe C, et 
+			elocales la concaténation de toutes les 
+			Liste_itentificateurs de tous les 
+			Groupe_déclarations_entités figurant dans dl;
+			dl est valide si et seulement si tout 
+			identificateur e dans dl vérifie les deux 
+			conditions suivantes :
+			<liste>
+				<enum>
+					Aucune des primitives de C ne porte 
+					le nom final e.
+				</enum>
+				<enum>
+					Aucun argument formel de la routine
+					r n'a pour Identificateur e.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="106" nom="VRRR" chapitre="8.5">
+		<titre>Règle de Validité des Routines</titre>
+		<corps>
+			Dans une déclaration de routine, une 
+			section Routine est valide si et seulement
+			si l'une des deux conditions suivantes 
+			est vérifiée :
+			<liste>
+				<enum>
+					Son Corps_de_routine est un corps
+					Interne (débutant par do ou once).
+				</enum>
+				<enum>
+					Dans tout autre cas 
+					(Corps_de_routine de catégorie 
+					Externe ou Différé), le corps de 
+					routine ne contient ni section 
+					Déclarations_locales ni section
+					Sauvetage.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="103" nom="VRFA" chapitre="8.3">
+		<titre>Règle de Choix des Arguments 
+		Formels</titre>
+		<corps>
+			Supposons que af soit la section 
+			Arguments_formels d'une routine r dans une 
+			classe C, et formels la concaténation de 
+			toutes les Listes_identificateurs de tous
+			les Groupe_déclarations_entités figurant 
+			dans af. La section af est valide si et 
+			seulement si aucun Identificateur e 
+			apparaissant dans formels n'est le nom 
+			final d'une primitive de C.
+		</corps>
+	</regle>
+	<regle page="103" nom="VREG" chapitre="8.3">
+		<titre></titre>
+		<corps>
+			Soit le une Liste_déclarations_entités, et
+			identificateurs la concaténation de toutes
+			les Liste_identificateurs de tous les 
+			Groupe_déclarations_entités figurant dans
+			af. La section le est valide si et 
+			seulement si aucun Identificateur ne figure
+			plus d'une fois dans la liste 
+			identificateurs.
+		</corps>
+	</regle>
+	<regle page="96" nom="VLEL" chapitre="7.13">
+		<titre>Règle de Sélection de Visibilité</titre>
+		<corps>
+			Soit une section Nouvelle_visibilité 
+			figurant dans une classe C, au sein d'une
+			clause Parent relative à une classe B,
+			sous la forme suivante :
+			export
+				{liste_classe1} liste_primitives1;
+				...
+				{liste_classen} liste_primitivesn;
+			Un telle section est valide si et seulement
+			si (pour tout i compris entre 1 et n):
+			<liste>
+				<enum>
+					Pas plus d'une des liste_primitivesi
+					n'est égale au mot-clé all;
+				</enum>
+				<enum>
+					Toutes les autres liste_primitivesi
+					sont des énumérations de noms finals
+					de primitives de C obtenues de B.
+				</enum>
+				<enum>
+					Aucun nom final de primitive 
+					n'apparaît plus d'une fois, ni dans
+					une même liste de ce type, ni dans 
+					deux listes distinctes.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="95" nom="VLCP" chapitre="7.13">
+		<titre></titre>
+		<corps>
+			Une section Clients est valide si et 
+			seulement si tout Nom_de_classe figurant 
+			dans sa section Liste_classes est le nom 
+			d'une classe appartenant au même univers.
+		</corps>
+	</regle>
+	<regle page="89" nom="VLEC" chapitre="7.5">
+		<titre>Règle de Validité d'un Client 
+		Expansé</titre>
+		<corps>
+			Une classe C peut être un client expansé 
+			d'une classe FC si et seulement si FC n'est
+			ni directement ni indirectement client
+			expansé de C.
+		</corps>
+	</regle>
+	<regle page="83" nom="VHAY" chapitre="6.15">
+		<titre></titre>
+		<corps>
+			Que l'on utilise la classe ANY par defaut
+			ou une autre, tout système doit posséder
+			une classe portant ce nom. Cette contrainte
+			s'applique à tout univers valide.
+		</corps>
+	</regle>
+	<regle page="77" nom="VHRC" chapitre="6.9">
+		<titre>Règle de Validité d'une Clause de 
+		Renommage</titre>
+		<corps>
+			Comme premier élément d'une Paire_renommage, 
+			figurant au sein d'une classe C dans la 
+			sous-clause Renomage d'une clause Parent
+			pour B, l'utilisation d'ancien_nom est
+			valide si et seulement si les deux
+			conditions suivantes sont vérifiées :
+			<liste>
+				<enum>
+					ancien_nom est le nom final d'une 
+					primitive de B.
+				</enum>
+				<enum>
+					ancien_nom n'apparaît comme premier 
+					élément dans aucune autre 
+					Paire_renomage au sein de la 
+					même sous-clause Renomage.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="74" nom="VHPR" chapitre="6.6">
+		<titre>Régle de Parenté</titre>
+		<corps>
+			La clause Héritage d'une classe D est valide
+			si et seulement si elle vérifie les deux
+			conditions suivantes :
+			<liste>
+				<enum>
+					Dans chacune des clauses Parent pour
+					une classe B, B n'est pas descendante 
+					de D.
+				</enum>
+				<enum>
+					Si deux clauses Parent au moins font 
+					référence à des classes ayant une
+					ancêtre commune A, D remplit les
+					conditions de la Contrainte de
+					Cohérence sur Héritage Répété, 
+					appliquée à A.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="270" nom="VGCP" chapitre="18.8">
+		<titre>Règle de Validité d'une 
+		Clause_création</titre>
+		<corps>
+			Une Clause_creation figurant dans la section
+			Créateurs d'une classe C est valide si et
+			seulement si elle vérifie les cinq 
+			conditions suivantes (la seconde et la 
+			troisième portant sur tout 
+			Identificateur_de_primitive nom_prim 
+			figurant dans la Liste_primitives de la 
+			clause):
+			<liste>
+				<enum>
+					C est une classe concrète.
+				</enum>
+				<enum>
+					nom_prim apparaît une fois et une
+					seule dans la Liste_primitives.
+				</enum>
+				<enum>
+					nom_prim est le nom final d'une
+					procédure de C; soit pc cette 
+					procédure.
+				</enum>
+				<enum>
+					pc n'est pas une routine d'une fois.
+				</enum>
+				<enum>
+					Si C est expansée, pc n'a pas 
+					d'arguments et la Liste_primitives
+					ne contient aucun autre 
+					Identificateur_de_primitive.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="271" nom="VGCC" chapitre="18.9">
+		<titre>Règle de Validité d'une Instruction
+		de Création</titre>
+		<corps>
+			Soit une instruction Création figurant dans
+			une classe X. Soit x la cible de cette 
+			instruction, T son type de création et C la 
+			classe de base de T.
+			Cette instruction est C-valide si et 
+			seulement si elle vérifie les conditions
+			suivantes :
+			<liste>
+				<enum>
+					T n'est pas un Nom_générique_formel
+					(autrement dit un paramètre 
+					générique formel de la classe dans
+					laquelle figure cette instruction).
+				</enum>
+				<enum>
+					C est une classe concrète.
+				</enum>
+				<enum>
+					Si la section Type est présente,
+					le type qu'elle contient 
+					(autrement dit T) est un type de 
+					référence et il est conforme au type
+					de x.
+				</enum>
+				<enum>
+					Si C ne possède pas de section 
+					Créateurs, alors elle ne contient 
+					pas de section Appel_création.
+				</enum>
+				<enum>
+					Si C possède une section Créateurs,
+					il existe une section Appel_création
+					et l'appel associé doit être 
+					A-valide (validité par rapport à ses
+					arguments) dès lors qu'il apparaît 
+					dans le code de C.
+				</enum>
+				<enum>
+					Dans les conditions du ca 5, et si
+					p est une primitive de la section 
+					Appel_création, alors p est une 
+					procédure, son Corps_de_routine est
+					d'une forme autre que once ... et
+					p est visible en création par X.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="273" nom="VGCI" chapitre="18.10">
+		<titre></titre>
+		<corps>
+			Une instruction Création est valide si et 
+			seulement si elle est à la fois C-valide et
+			S-valide.
+		</corps>
+	</regle>
+	<regle page="272" nom="VGCS" chapitre="18.10">
+		<titre></titre>
+		<corps>
+			Une instruction Création est S-valide 
+			(valide à l'échelle du système) si et 
+			seulement si elle satifait l'une des deux
+			conditions suivantes :
+			<liste>
+				<enum>
+					Le type à la création est explicite
+					(autrement dit, l'instruction 
+					débute sous la forme !T!..., T
+					étant un certain type).
+				</enum>
+				<enum>
+					Le type à la création est implicite
+					(autrement dit, l'instruction débute
+					par !!...) et tout type dynamique
+					potentiel T de x (basé sur une
+					classe C) vérifie les conditions
+					1 à 6 de la règle de Validité d'une
+					Instruction de Création (cf. 18.9).
+					Pour appliquer les conditions 5 et
+					6, la primitive de l'appel 
+					considéré, p, doit être remplacée
+					par sa version dans C.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="391" nom="VIRW" chapitre="25.9">
+		<titre></titre>
+		<corps>
+			Un identificateur est valide si et seulement
+			si il est distinct de tous les mots réservés
+			du langage.
+		</corps>
+	</regle>
+	<regle page="293" nom="VJAR" chapitre="20.4">
+		<titre>Règle d'Affectation</titre>
+		<corps>
+			Une Affectation est valide si et seulement 
+			si son expression source est conforme
+			à son entité cible.
+		</corps>
+	</regle>
+	<regle page="311" nom="VJRV" chapitre="20.14">
+		<titre>Règle de Validité d'une Tentative
+		d'Affectation</titre>
+		<corps>
+			Une Tentative_d_affectation est valide si
+			et seulement si le type de l'entité cible
+			est un type de référence.
+		</corps>
+	</regle>
+	<regle page="318" nom="VKCN" chapitre="21.3">
+		<titre></titre>
+		<corps>
+			Le fait qu'un appel soit une instruction ou
+			une expression dépend de la nature de la 
+			primitive de l'appel :
+			<liste>
+				<enum>
+					Si la primitive est un attribut ou 
+					une fonction, du point de vue 
+					syntaxique, l'Appel est une 
+					expression.
+				</enum>
+				<enum>
+					Si l'Appel est une procédure, 
+					l'Appel est une instruction.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="342" nom="VUGV" chapitre="22.9">
+		<titre>Règle de Validité d'un Appel</titre>
+		<corps>
+			Un appel est valide si et seulement si il 
+			est à la fois C-valide et S-valide.
+		</corps>
+	</regle>
+	<regle page="343" nom="VUCS" chapitre="22.9">
+		<titre></titre>
+		<corps>
+			Considérons un appel mono-pointé portant 
+			sur une cible x et figurant dans une classe
+			C. Soit F le type de x. Sous ces hypothèse :
+			<liste>
+				<enum>
+					L'appel est C-valide lorsqu'il est 
+					E-valide et A-valide par rapport 
+					à F.
+				</enum>
+				<enum>
+					L'appel est S-valide lorsque, pour
+					tout élément D du jeu de classes 
+					dynamiques de x, il est E-valide et
+					A-valide par rapport à D.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="343" nom="VUEX" chapitre="22.9">
+		<titre></titre>
+		<corps>
+			Un Appel, apparaissant dans une classe C et 
+			dont la primitive d'appel est nom_prim, 
+			est E-valide pour une classe D si et 
+			seulement si il vérifie l'une des conditions
+			suivantes :
+			<liste>
+				<enum>
+					L'appel est un Appel_non_qualifié 
+					et nom_prim est le nom final d'une
+					primitive de C.
+				</enum>
+				<enum>
+					L'appel est qualifié (il possède au 
+					moins un point de notation), est
+					accolé à une primitive portant 
+					le nom nom_prim et visible par C,
+					et sa cible est soit une entité 
+					valide de C, soit (récursivement)
+					un appel lui-même E-valide pour D.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="344" nom="VUAR" chapitre="22.9">
+		<titre></titre>
+		<corps>
+			Soit un appel E-valide figurant dans une 
+			classe C, accolé à une primitive nom_prim
+			et portant sur une cible cible (dans le cas 
+			d'un Appel_non_qualifié, cible s'identifie 
+			à Current). Soit TS le type de cible, S la 
+			classe de base de TS et prim_s la primitive
+			portant dans S le nom final nom_prim. Soit
+			D une descendante de S, et prim_d la version
+			dans D de prim_s. L'appel est A-valide pour
+			D si et seulement si il satisfait les quatre
+			conditions suivantes :
+			<liste>
+				<enum>
+					Le nombre de ses arguments réels est
+					égal au nombre d'arguments formels
+					déclarés pour prim_d.
+				</enum>
+				<enum>
+					Chaque argument réel éventuel est 
+					conforme à l'argument formel 
+					correspondant de prim_d.
+				</enum>
+				<enum>
+					Lorsque cible est elle-même un 
+					appel, celui-ci est (récursivement)
+					A-valide pour D.
+				</enum>
+				<enum>
+					Si l'un quelconque des arguments 
+					réels se présente sous forme Adresse
+					("$np"), np est le nom final d'une
+					primitive de C, autre qu'un attribut
+					constant.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="360" nom="VWID" chapitre="23.12">
+		<titre>Règle de Choix d'un 
+		Identificateur</titre>
+		<corps>
+			Soit un Identificateur apparaissant dans une
+			expression servant de constituant du 
+			code-source d'une routine r dans une classe 
+			C, soit en tant que telle, soit en tant 
+			que cible ou argument réel d'un Appel;
+			cet Identificateur est impérativement le
+			nom d'une primitive de C, ou le nom
+			d'une entité locale de r, ou un argument
+			formel de r.
+		</corps>
+	</regle>
+	<regle page="361" nom="VWCA" chapitre="23.13">
+		<titre></titre>
+		<corps>
+			Un Attribut_constant figurant dans une 
+			classe C est valide si et seulement si son 
+			Entité est le nom final d'un attribut
+			constant de C
+		</corps>
+	</regle>
+	<regle page="364" nom="VWMS" chapitre="23.18">
+		<titre></titre>
+		<corps>
+			Une Chaine_manifeste est valide si et 
+			seulement si elle vérifie les deux 
+			conditions suivantes :
+			<liste>
+				<enum>
+					Aucun des caractères de la 
+					Chaine_ordinaire à laquelle elle est
+					associée n'est un guillemet anglais.
+				</enum>
+				<enum>
+					Dans le format étendu, aucun 
+					caractère autre que des blancs
+					ou des tabulations ne peut 
+					préceder le symbole pourcentage
+					sur la deuxième ligne et les 
+					suivantes.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="367" nom="VWMA" chapitre="23.2">
+		<titre>Règle de Validité d'un Tableau
+		Manifeste</titre>
+		<corps>
+			Un Tableau_manifeste &lt;&lt;e1,e2, ...,
+			en&gt;&gt; est une expression de type
+			ARRAY[T] valide si et seulement si le type 
+			de chacune des ei est conforme à T.
+		</corps>
+	</regle>
+	<regle page="370" nom="VWST" chapitre="23.21">
+		<titre></titre>
+		<corps>
+			Une expression Dépouillé figurant dans une 
+			classe C est valide si et seulement si sa 
+			Liste_attributs vérifie les deux conditions
+			suivantes :
+			<liste>
+				<enum>
+					Tout Itentificateur figurant 
+					dans la liste est le nom final d'un
+					attribut de C.
+				</enum>
+				<enum>
+					Aucun Identificateur ne figure plus 
+					d'une fois dans la liste.
+				</enum>
+			</liste>
+		</corps>
+	</regle>
+	<regle page="348" nom="***" chapitre="22.9">
+		<titre>Règle de Typage des Tableaux</titre>
+		<corps>
+			Pour étudier l'effet des manipulations de 
+			tableaux sur les jeux de types dynamiques,
+			il faut supposer que dans la classe ARRAY la
+			primitive item est un attribut et que 
+			put(v,i) sont toutes deux implémentées de 
+			la façon suivante :
+			item:=v
+		</corps>
+	</regle>
+</liste_validite>
+

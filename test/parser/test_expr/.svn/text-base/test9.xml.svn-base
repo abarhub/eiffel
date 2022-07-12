@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST9"/>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="puiss">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<expression_binaire op="puiss">
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+							<expression>
+								<entier valeur="3"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+</class>

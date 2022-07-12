@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST7"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<invariant>
+		<assert>
+			<expression>
+				<vrai/>
+			</expression>
+		</assert>
+	</invariant>
+</class>

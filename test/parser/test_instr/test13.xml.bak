@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST13"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<retry/>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

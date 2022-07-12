@@ -1,0 +1,282 @@
+<project name="compiler eiffel" default="compile" basedir=".">
+	
+	<property name="src_ast" value="ast" />
+	<property name="build_ast" value="ast" />
+	
+	<property name="src_compiler" value="compiler" />
+	<property name="build_compiler" value="compiler" />
+	
+	<property name="src_test" value="test_unitaire" />
+	<property name="build_test" value="test_unitaire" />
+	
+	<property name="src_erreur" value="erreur" />
+	<property name="build_erreur" value="erreur" />
+	
+	<property name="src_lace" value="lace" />
+	<property name="build_lace" value="lace" />
+	
+	<property name="src_compare_xml" value="outils\\compare_xml" />
+	<property name="build_compare_xml" value="outils\\compare_xml" />
+	
+	<property name="src_eiffelv" value="eiffelviewer" />
+	<property name="build_eiffelv" value="eiffelviewer" />
+	
+	<!--<property name="classpath" value=".;D:\java\antlr-2.7.3\antlr.jar;test_unitaire\junit.jar;D:\java\xerces-2_5_0\xercesImpl.jar;D:\java\xerces-2_5_0\xmlParserAPIs.jar;eiffelviewer\swt.jar"/>-->
+	<property name="classpath" value=".;lib\antlr\antlr.jar;lib\junit\junit.jar;lib\xerces\xercesImpl.jar;lib\xerces\xmlParserAPIs.jar;lib\swt\swt.jar"/>
+	<property name="doc" value="doc"/>
+	<property name="dist" value="."/>
+	
+	<property name="src" value="${basedir}/src"/>
+	<property name="output" value="${basedir}/output"/>
+
+	<!--<property name="date_courante">
+		<tstamp/>
+	</property>-->
+
+	<taskdef resource="clovertasks"/>
+	<typedef resource="clovertypes"/>
+
+	<path id="build.classpath">
+		<pathelement path="${ant.home}/lib/clover.jar"/>
+		<pathelement path="test_unitaire\junit.jar"/>
+		<pathelement path="${build}"/>
+	</path>
+
+	<!--<clover-setup initstring="clover-db/coverage.db"/>
+	<clover-report>
+      <current outfile="current.xml"/>
+   </clover-report>-->
+	
+	<path id="eiffel.source">
+		<pathelement path="ast"/>
+		<pathelement path="compiler"/>
+		<pathelement path="test_unitaire"/>
+		<pathelement path="erreur"/>
+		<pathelement path="lace"/>
+		<pathelement path="outils\\compare_xml"/>
+		<pathelement path="eiffelviewer"/>
+	</path>
+	
+	<fileset dir="." id="eiffel.class">
+		<patternset >
+			<include name="compiler/*.class" />
+			<include name="erreur/*.class" />
+			<include name="lace/*.class" />
+			<include name="test_unitaire/*.class" />
+			<include name="outils/compare_xml/*.class"/>
+			<include name="eiffelviewer/*.class"/>
+		</patternset>
+	</fileset>
+	
+	<fileset dir="." id="eiffel.package">
+		<patternset >
+			<include name="compiler/*.java" />
+			<include name="erreur/*.java" />
+			<include name="lace/*.java" />
+			<include name="test_unitaire/*.java" />
+			<include name="outils/compare_xml/*.java"/>
+			<include name="eiffelviewer/*.java"/>
+		</patternset>
+	</fileset>
+	
+	<!-- cibles utiles : compile exec backup3 test.all dist2 -->
+
+	<target name="help">
+		<echo message="Targets utiles:" />
+		<echo message="* compile (default) : pour compiler le projet" />
+		<echo message="* exec : pour executer le programme" />
+		<echo message="* backup3 : pour faire un backup du programme" />
+		<echo message="* test.all : pour faire tous les tests" />
+		<echo message="* dist2 : pour faire un jar" />
+	</target>
+	
+	<target name="compile">
+		<echo message="Debut:${basedir}" />
+		<!--<exec executable="cmd.exe">
+			<arg line="/c"/> src_ast
+			<arg line="dir"/>
+		</exec> trace="on"-->
+		<antlr target="src/tinyeiffel/compiler/eiffel.g" outputdirectory="src/tinyeiffel/${build_compiler}"/>
+		<antlr target="src/tinyeiffel/lace/ace.g" outputdirectory="src/tinyeiffel/${build_lace}"/>
+		<javac source="1.4" debug="yes" debuglevel="lines,vars,source" 
+				classpath="${classpath}" srcdir="${src}" destdir="${output}" >
+			<!--<src refid="eiffel.source" />  destdir="${output}"-->
+		</javac>
+		<echo message="Terminer" />
+	</target>
+	
+	<property name="ch" value="d:\projet\eiffel" />
+	<property name="classpath2" value="output;lib\antlr\antlr.jar;lib\junit\junit.jar;lib\xerces\xercesImpl.jar;lib\xerces\xmlParserAPIs.jar;lib\swt\swt.jar"/>
+	<!-- execution du programme sans parametre -->
+	<target name="exec">
+		<echo message="Debut execution ..." />
+		<java classname="tinyeiffel.compiler.Eiffel" fork="yes" classpath="${classpath2}">
+			<!--<classpath>
+				<pathelement path="."/>
+				<pathelement path=".\src"/>
+				<pathelement path="..\lib\antlr\antlr.jar"/>
+				<pathelement path="..\lib\junit\junit.jar"/>
+				<pathelement path="..\lib\swt\swt"/>
+				<pathelement path="..\lib\xerces\xercesImpl.jar"/>
+				<pathelement path="..\lib\xerces\xml-apis.jar"/>
+				<pathelement path="..\lib\xerces\xmlParserAPIs.jar"/>
+			</classpath>-->
+			<assertions>
+				<enable/>
+			</assertions>
+		</java>
+		<echo message="Fin execution ..." />
+	</target>	
+
+	<target name="test.all" depends="compile">
+		<echo message="Debut des tests ..." />
+		<junit haltonfailure="yes" printsummary="yes">
+			<formatter type="plain"/>
+			<classpath>
+				<pathelement path="output"/>
+				<pathelement path="lib\antlr\antlr.jar"/>
+				<pathelement path="lib\junit\junit.jar"/>
+				<pathelement path="lib\swt\swt"/>
+				<pathelement path="lib\xerces\xercesImpl.jar"/>
+				<pathelement path="lib\xerces\xml-apis.jar"/>
+				<pathelement path="lib\xerces\xmlParserAPIs.jar"/>
+			</classpath>
+			<assertions>
+				<enable/>
+			</assertions>
+			<test name="tinyeiffel.test_unitaire.TestXmlSimple" fork="true"/>
+			<test name="tinyeiffel.test_unitaire.Test_unitaire1" fork="true"/>
+			<test name="tinyeiffel.test_unitaire.VerifieContextErreur" fork="true"/>
+			<test name="tinyeiffel.test_unitaire.TestType" fork="true"/>
+			<test name="tinyeiffel.test_unitaire.TestInterm" fork="true"/>
+			<!--<batchtest fork="yes">
+				<fileset dir="output/tinyeiffel/test_unitaire">
+					<include name="**/*Test*.java"/>
+					<include name="**/VerifieContextErreur.java"/>
+					<exclude name="**/TestAll.java"/>
+				</fileset>
+				<!- -<fileset dir=".">
+					<filename name="output/tinyeiffel/test_unitaire/TestXmlSimple.java"/>
+				</fileset>- ->
+			</batchtest>-->
+		</junit>
+		<echo message="Fin execution ..." />
+	</target>
+	
+	<target name="dist2" depends="compile">
+		<buildnumber />
+		<jar jarfile="bin/eiffel_exec.jar" duplicate="fail" compress="true">
+			<fileset dir="output" excludes="**/*.bak"/>
+			<manifest>
+				<attribute name="Built-By" value="Barret"/>
+				<attribute name="Built-Version" value="${build.number}"/>
+	    	</manifest>
+		</jar>
+	</target>
+	
+	<target name="with.clover">
+		<clover-setup initstring="D:\projet\eiffel\clover_db\coverage.db"/>
+	</target>
+
+	<target name="report.html" depends="with.clover">
+		<clover-report>
+			<current outfile="clover_html" title="Clover demo">
+				<format type="html"/>
+			</current>
+		</clover-report>
+	</target>
+
+	<target name="documentation">
+		<javadoc  classpath="${classpath}" source="1.4" 
+					packagenames=""  sourcepath="${basedir}"
+					destdir="${doc}">
+			<fileset refid="eiffel.package" />
+		</javadoc>
+	</target>
+
+	<target name="dist">
+		<jar jarfile="bin/eiffel_exec.jar" duplicate="fail">
+			<fileset refid="eiffel.class"/>
+		</jar>
+	</target>
+	
+	<target name="backup">
+		<exec executable="start" dir="${basedir}">
+			<arg value="pkzip.exe"/>
+			<arg value="-a -r -p \backup\tmp.zip ."/>
+		</exec>
+	</target>
+	
+	<target name="backup2">
+		<exec executable="e:\winrar\rar" dir="${basedir}">
+			<arg value="a"/>
+			<arg value="-agDD-MM-YY.N"/>
+			<arg value="-r"/>
+			<arg value="-x.\backup\*.*"/>
+			<arg value="backup\backup"/>
+			<arg value="*.*"/>
+		</exec>
+	</target>
+	
+	<target name="backup3">
+		<tstamp>
+			<format property="dstamp" pattern="dd-MM-yy" locale="en"/>
+		</tstamp>
+		<buildnumber file="backup/backup.version.txt"/>
+		<tar tarfile="backup/backup${dstamp}-${build.number}.tgz" basedir="${basedir}" excludes="backup/**" compression="gzip"/>
+		<tstamp />
+	</target>
+
+	<target name="test5">
+		<tstamp>
+			<format property="dstamp" pattern="dd-MM-yy" locale="en"/>
+		</tstamp>
+		<buildnumber file="backup/backup.version.txt"/>
+		<echo message="Debut" />
+		<echo message="date: ${dstamp}-${build.number}" />
+		<echo message="Fin" />
+		<tstamp />
+	</target>
+
+	<target name="clean">
+		<delete >
+			<fileset refid="eiffel.class" />
+			<fileset file="lace/AceLexer.java"/>
+			<fileset file="lace/AceParser.java"/>
+			<fileset file="lace/AceTokenTypes.java"/>
+			<fileset file="lace/AceTokenTypes.txt"/>
+			<fileset file="compiler/EiffelLexer.java"/>
+			<fileset file="compiler/EiffelParser.java"/>
+			<fileset file="compiler/EiffelTokenTypes.java"/>
+			<fileset file="compiler/EiffelTokenTypes.txt"/>
+		</delete>
+	</target>
+	
+	
+<!-- -ea -classpath test_unitaire\junit.jar;.;c:\antlr-2.7.2;E:\java\xerces-2_5_0\xercesImpl.jar;E:\java\xerces-2_5_0\xmlParserAPIs.jar test_unitaire.Test_unitaire1 -->	
+	<target name="test" depends="compile">
+		<java dir="${basedir}" fork="true" classname="test_unitaire.TestAll" >
+			<jvmarg value="-ea"/>
+			<classpath path="${classpath}"/>
+			<!--<arg value="test_unitaire.Test_unitaire1"/>-->
+		</java>
+		<echo message="Fin des tests"/>
+	</target>
+
+	<target name="test2" depends="compile">
+		<java dir="${basedir}" fork="true" classname="test_unitaire.TestAll" >
+			<jvmarg value="-ea"/>
+			<classpath path="${classpath}"/>
+			<!--<arg value="test_unitaire.Test_unitaire1"/>-->
+		</java>
+		<echo message="Fin des tests"/>
+	</target>
+<!-- depends="compile" -->
+	<target name="test3" >
+		<java dir="${basedir}" fork="true" classname="test_unitaire.TestXmlSimple" >
+			<jvmarg value="-ea"/>
+			<classpath path="${classpath}"/>
+		</java>
+		<echo message="Fin des tests"/>
+	</target>
+</project>

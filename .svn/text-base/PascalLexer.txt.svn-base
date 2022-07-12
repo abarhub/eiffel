@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Grammar compiler\eiffel.g</TITLE>
+</HEAD>
+<BODY>
+<table summary="" border="1" cellpadding="5">
+<tr>
+<td>
+<font size="+2">Grammar PascalLexer</font><br>
+<a href="http://www.ANTLR.org">ANTLR</a>-generated HTML file from compiler\eiffel.g
+<p>
+Terence Parr, <a href="http://www.magelang.com">MageLang Institute</a>
+<br>ANTLR Version 2.7.2; 1989-1999
+</td>
+</tr>
+</table>
+<PRE>
+
+Definition of lexer PascalLexer, which is a subclass of CharScanner.
+
+/** Lexer nextToken rule:
+ *  The lexer nextToken rule is synthesized from all of the user-defined
+ *  lexer rules.  It logically consists of one big alternative block with
+ *  each user-defined rule being an alternative.
+ */
+<a href="PascalLexer.html#mWS">mWS</a> 
+|	<a href="PascalLexer.html#mCOMMENTAIRE">mCOMMENTAIRE</a> 
+|	<a href="PascalLexer.html#mLPAREN">mLPAREN</a> 
+|	<a href="PascalLexer.html#mRPAREN">mRPAREN</a> 
+|	<a href="PascalLexer.html#mCROCHETO">mCROCHETO</a> 
+|	<a href="PascalLexer.html#mCROCHETF">mCROCHETF</a> 
+|	<a href="PascalLexer.html#mFLECHED">mFLECHED</a> 
+|	<a href="PascalLexer.html#mDEUX_POINT">mDEUX_POINT</a> 
+|	<a href="PascalLexer.html#mPLUS">mPLUS</a> 
+|	<a href="PascalLexer.html#mMOINS">mMOINS</a> 
+|	<a href="PascalLexer.html#mFOIS">mFOIS</a> 
+|	<a href="PascalLexer.html#mDIFF">mDIFF</a> 
+|	<a href="PascalLexer.html#mDIV_ENTIER">mDIV_ENTIER</a> 
+|	<a href="PascalLexer.html#mDIV">mDIV</a> 
+|	<a href="PascalLexer.html#mMOD">mMOD</a> 
+|	<a href="PascalLexer.html#mEGAL">mEGAL</a> 
+|	<a href="PascalLexer.html#mDEBUT_ARRAY">mDEBUT_ARRAY</a> 
+|	<a href="PascalLexer.html#mFIN_ARRAY">mFIN_ARRAY</a> 
+|	<a href="PascalLexer.html#mINFS">mINFS</a> 
+|	<a href="PascalLexer.html#mSUPS">mSUPS</a> 
+|	<a href="PascalLexer.html#mINF">mINF</a> 
+|	<a href="PascalLexer.html#mSUP">mSUP</a> 
+|	<a href="PascalLexer.html#mSEMI">mSEMI</a> 
+|	<a href="PascalLexer.html#mVIRGULE">mVIRGULE</a> 
+|	<a href="PascalLexer.html#mPOINT">mPOINT</a> 
+|	<a href="PascalLexer.html#mDOUBLE_POINT">mDOUBLE_POINT</a> 
+|	<a href="PascalLexer.html#mAFFECT">mAFFECT</a> 
+|	<a href="PascalLexer.html#mTENTATIVE_AFFECT">mTENTATIVE_AFFECT</a> 
+|	<a href="PascalLexer.html#mPUISS">mPUISS</a> 
+|	<a href="PascalLexer.html#mEXCLAMATION">mEXCLAMATION</a> 
+|	<a href="PascalLexer.html#mACOLADEO">mACOLADEO</a> 
+|	<a href="PascalLexer.html#mACOLADEF">mACOLADEF</a> 
+|	<a href="PascalLexer.html#mINT">mINT</a> 
+|	<a href="PascalLexer.html#mEXPOSANT">mEXPOSANT</a> 
+|	<a href="PascalLexer.html#mREAL">mREAL</a> 
+|	<a href="PascalLexer.html#mID">mID</a> 
+|	<a href="PascalLexer.html#mSTRING">mSTRING</a> 
+|	<a href="PascalLexer.html#mCHAR">mCHAR</a> 
+<a name="mWS">mWS</a>
+	:	(	&#039; &#039; 
+		|	&#039;\t&#039; 
+		|	&#039;\n&#039; 
+		|	&#039;\r&#039; 
+		) 
+		
+	;
+
+<a name="mCOMMENTAIRE">mCOMMENTAIRE</a>
+	:	&quot;--&quot; ( ( &#039;\n&#039; ) )* 
+	;
+
+<a name="mLPAREN">mLPAREN</a>
+	:	&quot;(&quot; 
+	;
+
+<a name="mRPAREN">mRPAREN</a>
+	:	&quot;)&quot; 
+	;
+
+<a name="mCROCHETO">mCROCHETO</a>
+	:	&quot;[&quot; 
+	;
+
+<a name="mCROCHETF">mCROCHETF</a>
+	:	&quot;]&quot; 
+	;
+
+<a name="mFLECHED">mFLECHED</a>
+	:	&quot;-&gt;&quot; 
+	;
+
+<a name="mDEUX_POINT">mDEUX_POINT</a>
+	:	&quot;..&quot; 
+	;
+
+<a name="mPLUS">mPLUS</a>
+	:	&quot;+&quot; 
+	;
+
+<a name="mMOINS">mMOINS</a>
+	:	&quot;-&quot; 
+	;
+
+<a name="mFOIS">mFOIS</a>
+	:	&quot;*&quot; 
+	;
+
+<a name="mDIFF">mDIFF</a>
+	:	&quot;/=&quot; 
+	;
+
+<a name="mDIV_ENTIER">mDIV_ENTIER</a>
+	:	&quot;//&quot; 
+	;
+
+<a name="mDIV">mDIV</a>
+	:	&quot;/&quot; 
+	;
+
+<a name="mMOD">mMOD</a>
+	:	&quot;\\\\&quot; 
+	;
+
+<a name="mEGAL">mEGAL</a>
+	:	&quot;=&quot; 
+	;
+
+<a name="mDEBUT_ARRAY">mDEBUT_ARRAY</a>
+	:	&quot;&lt;&lt;&quot; 
+	;
+
+<a name="mFIN_ARRAY">mFIN_ARRAY</a>
+	:	&quot;&gt;&gt;&quot; 
+	;
+
+<a name="mINFS">mINFS</a>
+	:	&quot;&lt;&quot; 
+	;
+
+<a name="mSUPS">mSUPS</a>
+	:	&quot;&gt;&quot; 
+	;
+
+<a name="mINF">mINF</a>
+	:	&quot;&lt;=&quot; 
+	;
+
+<a name="mSUP">mSUP</a>
+	:	&quot;&gt;=&quot; 
+	;
+
+<a name="mSEMI">mSEMI</a>
+	:	&quot;;&quot; 
+	;
+
+<a name="mVIRGULE">mVIRGULE</a>
+	:	&quot;,&quot; 
+	;
+
+<a name="mPOINT">mPOINT</a>
+	:	&quot;.&quot; 
+	;
+
+<a name="mDOUBLE_POINT">mDOUBLE_POINT</a>
+	:	&quot;:&quot; 
+	;
+
+<a name="mAFFECT">mAFFECT</a>
+	:	&quot;:=&quot; 
+	;
+
+<a name="mTENTATIVE_AFFECT">mTENTATIVE_AFFECT</a>
+	:	&quot;?=&quot; 
+	;
+
+<a name="mPUISS">mPUISS</a>
+	:	&quot;^&quot; 
+	;
+
+<a name="mEXCLAMATION">mEXCLAMATION</a>
+	:	&quot;!&quot; 
+	;
+
+<a name="mACOLADEO">mACOLADEO</a>
+	:	&quot;{&quot; 
+	;
+
+<a name="mACOLADEF">mACOLADEF</a>
+	:	&quot;}&quot; 
+	;
+
+<a name="mINT">mINT</a>
+	:	( <a href="PascalLexer.html#mDIGIT">mDIGIT</a> )+ 
+		(	&#039;.&#039; ( <a href="PascalLexer.html#mDIGIT">mDIGIT</a> )* 
+			(	<a href="PascalLexer.html#mEXPOSANT">mEXPOSANT</a> 
+			|	
+			) 
+			
+		|	
+		) 
+	;
+
+protected <a name="mDIGIT">mDIGIT</a>
+	:			'0'..'9' 
+	;
+
+<a name="mEXPOSANT">mEXPOSANT</a>
+	:	&#039;e&#039; 
+		(	&#039;+&#039; 
+		|	&#039;-&#039; 
+		|	
+		) 
+		( <a href="PascalLexer.html#mDIGIT">mDIGIT</a> )+ 
+	;
+
+<a name="mREAL">mREAL</a>
+	:	&#039;.&#039; ( <a href="PascalLexer.html#mDIGIT">mDIGIT</a> )+ 
+		(	<a href="PascalLexer.html#mEXPOSANT">mEXPOSANT</a> 
+		|	
+		) 
+	;
+
+<a name="mID">mID</a>
+	:	(				'a'..'z' 
+		|				'A'..'Z' 
+		|	&#039;_&#039; 
+		) 
+		(				'a'..'z' 
+		|				'A'..'Z' 
+		|	&#039;_&#039; 
+		|	<a href="PascalLexer.html#mDIGIT">mDIGIT</a> 
+		)* 
+		
+	;
+
+<a name="mSTRING">mSTRING</a>
+	:	(	&quot;\&quot;&quot; 
+		|	&quot;%&quot; 
+		) 
+		(	( &#039;%&#039; 
+				(	&#039;\n&#039; 
+				|	&#039;\r&#039; 
+				|	&#039;\t&#039; 
+				) ) 
+		|	(	&#039;\&quot;&#039; 
+			|	&#039;%&#039; 
+			) 
+		)+ 
+		(	&quot;\&quot;&quot; 
+		|	&quot;%&quot; 
+		) 
+		
+	;
+
+<a name="mCHAR">mCHAR</a>
+	:	&quot;&#039;&quot; 
+		(	( &#039;%&#039; . ) 
+		|	(	&#039;\&#039;&#039; 
+			|	&#039;%&#039; 
+			) 
+		)+ 
+		&quot;&#039;&quot; 
+	;

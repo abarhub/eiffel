@@ -1,0 +1,7 @@
+class D[X->INTEGER_REF,Y->DOUBLE]
+
+	inherit B[X,Y,X];
+
+feature
+
+end

@@ -1,0 +1,15 @@
+class TEST9
+
+inherit ANY
+	--rename Void as Coucou;
+	--redefine Void;
+	end;
+
+feature
+
+	make is
+	do
+	
+	end;
+
+end

@@ -1,0 +1,7 @@
+class TEST14
+
+feature {}
+
+	a is do end;
+
+end

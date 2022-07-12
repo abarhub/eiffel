@@ -1,0 +1,18 @@
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+	bcc32 -P -y -v -DMSS genere_c\test1.c genere_c\programme.c genere_c\interprete.c genere_c\debug.c e:\projet\eiffel\genere_c\mss121\mss32.lib -etest1.exe
+Borland C++ 5.5 for Win32 Copyright (c) 1993, 2000 Borland
+genere_c\TEST1.C:
+genere_c\programme.c:
+genere_c\interprete.c:
+Error E2453 genere_c\interprete.c 770: Size of the type 'TEIF_Expr *[]' is unknown or zero in function appel_routine(TEIF_Donnee *,TEIF_Feature *,TEIF_NomFeature *,TEIF_Expr * ( *)[],int)
+Error E2034 genere_c\interprete.c 770: Cannot convert 'TEIF_Expr * *' to 'TEIF_Expr *' in function appel_routine(TEIF_Donnee *,TEIF_Feature *,TEIF_NomFeature *,TEIF_Expr * ( *)[],int)
+Error E2342 genere_c\interprete.c 770: Type mismatch in parameter 'expr' (wanted 'TEIF_Expr *', got 'TEIF_Expr * *') in function appel_routine(TEIF_Donnee *,TEIF_Feature *,TEIF_NomFeature *,TEIF_Expr * ( *)[],int)
+Warning W8004 genere_c\interprete.c 1031: 'v4' is assigned a value that is never used in function evalue(TEIF_Donnee *,TEIF_Expr *)
+Warning W8004 genere_c\interprete.c 1031: 'v3' is assigned a value that is never used in function evalue(TEIF_Donnee *,TEIF_Expr *)
+Warning W8004 genere_c\interprete.c 1310: 'cl2' is assigned a value that is never used in function trouve_nom_feature(TEIF_Type *,TEIF_Type *,TEIF_NomFeature *)
+Warning W8057 genere_c\interprete.c 1310: Parameter 'nom' is never used in function trouve_nom_feature(TEIF_Type *,TEIF_Type *,TEIF_NomFeature *)
+Warning W8004 genere_c\interprete.c 1432: 'i' is assigned a value that is never used in function ajoute_var(TEIF_Membre * *,TEIF_Donnee *,char *,TEIF_Type *)
+*** 3 errors in Compile ***
+genere_c\debug.c:
+
+** error 1 ** deleting compc3

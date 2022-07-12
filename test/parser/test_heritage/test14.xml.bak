@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST14"/>
+	<heritage>
+		<nom_classe nom="A"/>
+		<rename>
+			<nom_feature nom="a"/>
+			<nom_feature nom="b"/>
+		</rename>
+		<rename>
+			<nom_feature nom="-" type="infix"/>
+			<nom_feature nom="+" type="infix"/>
+		</rename>
+		<export>
+			<nom_feature nom="toto"/>
+		</export>
+		<export>
+			<nom_classe nom="ANY"/>
+			<nom_classe nom="NONE"/>
+		</export>
+		<export>
+			<nom_feature nom="test"/>
+			<nom_feature nom="-" type="prefix"/>
+			<nom_classe nom="A"/>
+		</export>
+		<undefine>
+			<nom_feature nom="titi"/>
+			<nom_feature nom="not" type="prefix"/>
+		</undefine>
+		<select>
+			<nom_feature nom="+" type="infix"/>
+		</select>
+	</heritage>
+</class>

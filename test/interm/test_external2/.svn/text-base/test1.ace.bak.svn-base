@@ -1,0 +1,11 @@
+system test1
+
+root test1
+
+cluster
+
+	"..\test\interm\test_external2\";
+	--".\std_classe\";
+	--".\";
+
+end

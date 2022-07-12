@@ -1,0 +1,14 @@
+class TEST1
+
+	inherit A
+		undefine toto
+		end;
+
+feature
+
+	toto is
+	do
+
+	end;
+
+end

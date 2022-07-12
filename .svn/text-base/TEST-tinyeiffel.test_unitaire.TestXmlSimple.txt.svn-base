@@ -1,0 +1,2216 @@
+Testsuite: tinyeiffel.test_unitaire.TestXmlSimple
+Tests run: 4, Failures: 0, Errors: 0, Time elapsed: 13,86 sec
+------------- Standard Output ---------------
+parse de std_classe\any.e
+Ok
+parse de test\test1-2.e
+Ok
+parse de test\test1-3.e
+Ok
+parse de test\test1-4.e
+Ok
+parse de test\test1-5.e
+Ok
+parse de test\test1-6.e
+Ok
+parse de test\test7.e
+Ok
+parse de test\parser\test1\test1.e
+Ok
+parse de test\parser\test_classe1\test1.e
+Ok
+parse de test\parser\test_classe1\test2.e
+Ok
+parse de test\parser\test_classe1\test3.e
+Ok
+parse de test\parser\test_classe1\test4.e
+Ok
+parse de test\parser\test_classe1\test5.e
+Ok
+parse de test\parser\test_classe1\test6.e
+Ok
+parse de test\parser\test_classe1\test7.e
+Ok
+parse de test\parser\test_heritage\test1.e
+Ok
+parse de test\parser\test_heritage\test2.e
+Ok
+parse de test\parser\test_heritage\test3.e
+Ok
+parse de test\parser\test_heritage\test4.e
+Ok
+parse de test\parser\test_heritage\test5.e
+Ok
+parse de test\parser\test_heritage\test6.e
+Ok
+parse de test\parser\test_heritage\test7.e
+Ok
+parse de test\parser\test_heritage\test8.e
+Ok
+parse de test\parser\test_heritage\test9.e
+Ok
+parse de test\parser\test_heritage\test10.e
+Ok
+parse de test\parser\test_heritage\test11.e
+Ok
+parse de test\parser\test_heritage\test12.e
+Ok
+parse de test\parser\test_heritage\test13.e
+Ok
+parse de test\parser\test_classe1\test9.e
+Ok
+parse de test\parser\test_classe1\test10.e
+Ok
+parse de test\parser\test_classe1\test11.e
+Ok
+parse de test\parser\test_classe1\test12.e
+Ok
+parse de test\parser\test_classe1\test13.e
+Ok
+parse de test\parser\test_heritage\test14.e
+Ok
+parse de test\parser\test_heritage\test15.e
+Ok
+parse de test\parser\test_attr\test1.e
+Ok
+parse de test\parser\test_attr\test2.e
+Ok
+parse de test\parser\test_attr\test3.e
+Ok
+parse de test\parser\test_attr\test4.e
+Ok
+parse de test\parser\test_attr\test5.e
+Ok
+parse de test\parser\test_attr\test6.e
+Ok
+parse de test\parser\test_instr\test1.e
+Ok
+parse de test\parser\test_instr\test2.e
+Ok
+parse de test\parser\test_instr\test4.e
+Ok
+parse de test\parser\test_instr\test5.e
+Ok
+parse de test\parser\test_instr\test6.e
+Ok
+parse de test\parser\test_instr\test7.e
+Ok
+parse de test\parser\test_instr\test8.e
+Ok
+parse de test\parser\test_instr\test10.e
+Ok
+parse de test\parser\test_instr\test11.e
+Ok
+parse de test\parser\test_instr\test13.e
+Ok
+parse de test\parser\test_type\test1.e
+Ok
+parse de test\parser\test_type\test2.e
+Ok
+parse de test\parser\test_type\test3.e
+Ok
+parse de test\parser\test_expr\test1.e
+Ok
+parse de test\parser\test_expr\test2.e
+Ok
+parse de test\parser\test_expr\test3.e
+Ok
+parse de test\parser\test_expr\test4.e
+Ok
+parse de test\parser\test_expr\test6.e
+Ok
+parse de test\parser\test_expr\test5.e
+Ok
+parse de test\parser\test_expr\test7.e
+Ok
+parse de test\parser\test_expr\test8.e
+Ok
+parse de test\parser\test_classe1\test8.e
+Ok
+parse de test\parser\test_classe1\test14.e
+Ok
+parse de test\parser\test_classe1\test15.e
+Ok
+parse de test\parser\test_classe1\test16.e
+Ok
+parse de test\parser\test_expr\test9.e
+Ok
+parse de test\parser\test_instr\test12.e
+Ok
+parse de test\parser\test_type\test5.e
+Ok
+parse de test\parser\test_type\test4.e
+Ok
+parse de test\parser\test_instr\test3.e
+Ok
+parse de test\parser\test_expr\test10.e
+Ok
+parse de test\parser\test_expr\test11.e
+Ok
+parse de test\parser\test_expr\test12.e
+Ok
+parse de test\parser\test_expr\test13.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@1bcc0bc
+parse de std_classe\any.e
+Ok
+i=0;test_unitaire\test_class1.xml;std_classe\any.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 6
+classe=tinyeiffel.ast.Classe@1f78ef1
+parse de test\test1-2.e
+Ok
+i=2;test\test1.xml;test\test1-2.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 13
+classe=tinyeiffel.ast.Classe@17ce4e7
+parse de test\test1-3.e
+Ok
+i=4;test\test2.xml;test\test1-3.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 16
+instruction
+classe=tinyeiffel.ast.Classe@e80842
+parse de test\test1-4.e
+Ok
+i=6;test\test3.xml;test\test1-4.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 24
+classe=tinyeiffel.ast.Classe@1c247a0
+parse de test\test1-5.e
+Ok
+i=8;test\test4.xml;test\test1-5.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+type ="expanded"
+classe=tinyeiffel.ast.Classe@15e9756
+parse de test\test1-6.e
+Ok
+i=10;test\test5.xml;test\test1-6.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 17
+type ="deferred"
+classe=tinyeiffel.ast.Classe@4b035d
+parse de test\test7.e
+Ok
+i=12;test\test7.xml;test\test7.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 6
+classe=tinyeiffel.ast.Classe@ca0115
+parse de test\parser\test1\test1.e
+Ok
+i=14;test\parser\test1\test1.xml;test\parser\test1\test1.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@d1fa5
+parse de test\parser\test_classe1\test1.e
+Ok
+i=16;test\parser\test_classe1\test1.xml;test\parser\test_classe1\test1.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+type ="expanded"
+classe=tinyeiffel.ast.Classe@198a455
+parse de test\parser\test_classe1\test2.e
+Ok
+i=18;test\parser\test_classe1\test2.xml;test\parser\test_classe1\test2.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+type ="deferred"
+classe=tinyeiffel.ast.Classe@aa37a6
+parse de test\parser\test_classe1\test3.e
+Ok
+i=20;test\parser\test_classe1\test3.xml;test\parser\test_classe1\test3.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@76e369
+parse de test\parser\test_classe1\test4.e
+Ok
+i=22;test\parser\test_classe1\test4.xml;test\parser\test_classe1\test4.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1112783
+parse de test\parser\test_classe1\test5.e
+Ok
+i=24;test\parser\test_classe1\test5.xml;test\parser\test_classe1\test5.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 3
+classe=tinyeiffel.ast.Classe@1394894
+parse de test\parser\test_classe1\test6.e
+Ok
+i=26;test\parser\test_classe1\test6.xml;test\parser\test_classe1\test6.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1cbfe9d
+parse de test\parser\test_classe1\test7.e
+Ok
+i=28;test\parser\test_classe1\test7.xml;test\parser\test_classe1\test7.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@1a52fdf
+parse de test\parser\test_heritage\test1.e
+Ok
+i=30;test\parser\test_heritage\test1.xml;test\parser\test_heritage\test1.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@1ea0252
+parse de test\parser\test_heritage\test2.e
+Ok
+i=32;test\parser\test_heritage\test2.xml;test\parser\test_heritage\test2.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@1c695a6
+parse de test\parser\test_heritage\test3.e
+Ok
+i=34;test\parser\test_heritage\test3.xml;test\parser\test_heritage\test3.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@1386918
+parse de test\parser\test_heritage\test4.e
+Ok
+i=36;test\parser\test_heritage\test4.xml;test\parser\test_heritage\test4.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@7bb290
+parse de test\parser\test_heritage\test5.e
+Ok
+i=38;test\parser\test_heritage\test5.xml;test\parser\test_heritage\test5.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@10849bc
+parse de test\parser\test_heritage\test6.e
+Ok
+i=40;test\parser\test_heritage\test6.xml;test\parser\test_heritage\test6.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@120d62b
+parse de test\parser\test_heritage\test7.e
+Ok
+i=42;test\parser\test_heritage\test7.xml;test\parser\test_heritage\test7.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@1bc82e7
+parse de test\parser\test_heritage\test8.e
+Ok
+i=44;test\parser\test_heritage\test8.xml;test\parser\test_heritage\test8.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@1e59128
+parse de test\parser\test_heritage\test9.e
+Ok
+i=46;test\parser\test_heritage\test9.xml;test\parser\test_heritage\test9.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 3
+classe=tinyeiffel.ast.Classe@9ced8e
+parse de test\parser\test_heritage\test10.e
+Ok
+i=48;test\parser\test_heritage\test10.xml;test\parser\test_heritage\test10.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 3
+classe=tinyeiffel.ast.Classe@b02efa
+parse de test\parser\test_heritage\test11.e
+Ok
+i=50;test\parser\test_heritage\test11.xml;test\parser\test_heritage\test11.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 5
+classe=tinyeiffel.ast.Classe@dc57db
+parse de test\parser\test_heritage\test12.e
+Ok
+i=52;test\parser\test_heritage\test12.xml;test\parser\test_heritage\test12.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 4
+classe=tinyeiffel.ast.Classe@c24c0
+parse de test\parser\test_heritage\test13.e
+Ok
+i=54;test\parser\test_heritage\test13.xml;test\parser\test_heritage\test13.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@a1d1f4
+parse de test\parser\test_classe1\test9.e
+Ok
+i=56;test\parser\test_classe1\test9.xml;test\parser\test_classe1\test9.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1df280b
+parse de test\parser\test_classe1\test10.e
+Ok
+i=58;test\parser\test_classe1\test10.xml;test\parser\test_classe1\test10.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1be0f0a
+parse de test\parser\test_classe1\test11.e
+Ok
+i=60;test\parser\test_classe1\test11.xml;test\parser\test_classe1\test11.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 4
+classe=tinyeiffel.ast.Classe@cd5f8b
+parse de test\parser\test_classe1\test12.e
+Ok
+i=62;test\parser\test_classe1\test12.xml;test\parser\test_classe1\test12.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@13bd574
+parse de test\parser\test_classe1\test13.e
+Ok
+i=64;test\parser\test_classe1\test13.xml;test\parser\test_classe1\test13.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 5
+classe=tinyeiffel.ast.Classe@13adc56
+parse de test\parser\test_heritage\test14.e
+Ok
+i=66;test\parser\test_heritage\test14.xml;test\parser\test_heritage\test14.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 10
+classe=tinyeiffel.ast.Classe@1f8c6df
+parse de test\parser\test_heritage\test15.e
+Ok
+i=68;test\parser\test_heritage\test15.xml;test\parser\test_heritage\test15.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1c86be5
+parse de test\parser\test_attr\test1.e
+Ok
+i=70;test\parser\test_attr\test1.xml;test\parser\test_attr\test1.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 13
+classe=tinyeiffel.ast.Classe@123b25c
+parse de test\parser\test_attr\test2.e
+Ok
+i=72;test\parser\test_attr\test2.xml;test\parser\test_attr\test2.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 9
+classe=tinyeiffel.ast.Classe@92bbba
+parse de test\parser\test_attr\test3.e
+Ok
+i=74;test\parser\test_attr\test3.xml;test\parser\test_attr\test3.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@162dbb6
+parse de test\parser\test_attr\test4.e
+Ok
+i=76;test\parser\test_attr\test4.xml;test\parser\test_attr\test4.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@146c1d4
+parse de test\parser\test_attr\test5.e
+Ok
+i=78;test\parser\test_attr\test5.xml;test\parser\test_attr\test5.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@5f8172
+parse de test\parser\test_attr\test6.e
+Ok
+i=80;test\parser\test_attr\test6.xml;test\parser\test_attr\test6.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@2ba11b
+parse de test\parser\test_instr\test1.e
+Ok
+i=82;test\parser\test_instr\test1.xml;test\parser\test_instr\test1.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@15fadcf
+parse de test\parser\test_instr\test2.e
+Ok
+i=84;test\parser\test_instr\test2.xml;test\parser\test_instr\test2.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 6
+classe=tinyeiffel.ast.Classe@8c1dd9
+parse de test\parser\test_instr\test4.e
+Ok
+i=86;test\parser\test_instr\test4.xml;test\parser\test_instr\test4.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1df8b99
+parse de test\parser\test_instr\test5.e
+Ok
+i=88;test\parser\test_instr\test5.xml;test\parser\test_instr\test5.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1462851
+parse de test\parser\test_instr\test6.e
+Ok
+i=90;test\parser\test_instr\test6.xml;test\parser\test_instr\test6.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+instruction
+instruction
+instruction
+instruction
+classe=tinyeiffel.ast.Classe@1010058
+parse de test\parser\test_instr\test7.e
+Ok
+i=92;test\parser\test_instr\test7.xml;test\parser\test_instr\test7.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@bdab91
+parse de test\parser\test_instr\test8.e
+Ok
+i=94;test\parser\test_instr\test8.xml;test\parser\test_instr\test8.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1865b28
+parse de test\parser\test_instr\test10.e
+Ok
+i=96;test\parser\test_instr\test10.xml;test\parser\test_instr\test10.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1c56c60
+parse de test\parser\test_instr\test11.e
+Ok
+i=98;test\parser\test_instr\test11.xml;test\parser\test_instr\test11.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@4e280c
+parse de test\parser\test_instr\test13.e
+Ok
+i=100;test\parser\test_instr\test13.xml;test\parser\test_instr\test13.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 16
+classe=tinyeiffel.ast.Classe@1595f51
+parse de test\parser\test_type\test1.e
+Ok
+i=102;test\parser\test_type\test1.xml;test\parser\test_type\test1.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 4
+classe=tinyeiffel.ast.Classe@80d1ff
+parse de test\parser\test_type\test2.e
+Ok
+i=104;test\parser\test_type\test2.xml;test\parser\test_type\test2.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 5
+classe=tinyeiffel.ast.Classe@25d2b2
+parse de test\parser\test_type\test3.e
+Ok
+i=106;test\parser\test_type\test3.xml;test\parser\test_type\test3.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 15
+classe=tinyeiffel.ast.Classe@12be1bd
+parse de test\parser\test_expr\test1.e
+Ok
+i=108;test\parser\test_expr\test1.xml;test\parser\test_expr\test1.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 23
+classe=tinyeiffel.ast.Classe@f01a1e
+parse de test\parser\test_expr\test2.e
+Ok
+i=110;test\parser\test_expr\test2.xml;test\parser\test_expr\test2.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@142a80d
+parse de test\parser\test_expr\test3.e
+Ok
+i=112;test\parser\test_expr\test3.xml;test\parser\test_expr\test3.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@126f75b
+parse de test\parser\test_expr\test4.e
+Ok
+i=114;test\parser\test_expr\test4.xml;test\parser\test_expr\test4.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@41d05d
+parse de test\parser\test_expr\test6.e
+Ok
+i=116;test\parser\test_expr\test6.xml;test\parser\test_expr\test6.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@dc6a77
+parse de test\parser\test_expr\test5.e
+Ok
+i=118;test\parser\test_expr\test5.xml;test\parser\test_expr\test5.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@ff057f
+parse de test\parser\test_expr\test7.e
+Ok
+i=120;test\parser\test_expr\test7.xml;test\parser\test_expr\test7.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@c1f10e
+parse de test\parser\test_expr\test8.e
+Ok
+i=122;test\parser\test_expr\test8.xml;test\parser\test_expr\test8.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@b8deef
+parse de test\parser\test_classe1\test8.e
+Ok
+i=124;test\parser\test_classe1\test8.xml;test\parser\test_classe1\test8.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 3
+classe=tinyeiffel.ast.Classe@1342ba4
+parse de test\parser\test_classe1\test14.e
+Ok
+i=126;test\parser\test_classe1\test14.xml;test\parser\test_classe1\test14.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@ef2c60
+parse de test\parser\test_classe1\test15.e
+Ok
+i=128;test\parser\test_classe1\test15.xml;test\parser\test_classe1\test15.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@29ab3e
+parse de test\parser\test_classe1\test16.e
+Ok
+i=130;test\parser\test_classe1\test16.xml;test\parser\test_classe1\test16.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1a99561
+parse de test\parser\test_expr\test9.e
+Ok
+i=132;test\parser\test_expr\test9.xml;test\parser\test_expr\test9.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+tag ="a"
+tag ="y"
+tag ="x"
+classe=tinyeiffel.ast.Classe@8e32e7
+parse de test\parser\test_instr\test12.e
+Ok
+i=134;test\parser\test_instr\test12.xml;test\parser\test_instr\test12.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 16
+classe=tinyeiffel.ast.Classe@1b000e7
+parse de test\parser\test_type\test5.e
+Ok
+i=136;test\parser\test_type\test5.xml;test\parser\test_type\test5.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 30
+classe=tinyeiffel.ast.Classe@b76fa
+parse de test\parser\test_type\test4.e
+Ok
+i=138;test\parser\test_type\test4.xml;test\parser\test_type\test4.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@b01d43
+parse de test\parser\test_instr\test3.e
+Ok
+i=140;test\parser\test_instr\test3.xml;test\parser\test_instr\test3.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+tag ="b"
+classe=tinyeiffel.ast.Classe@513cf0
+parse de test\parser\test_expr\test10.e
+Ok
+i=142;test\parser\test_expr\test10.xml;test\parser\test_expr\test10.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+tag ="b"
+classe=tinyeiffel.ast.Classe@177b3cd
+parse de test\parser\test_expr\test11.e
+Ok
+i=144;test\parser\test_expr\test11.xml;test\parser\test_expr\test11.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+tag ="b"
+classe=tinyeiffel.ast.Classe@1bd7848
+parse de test\parser\test_expr\test12.e
+Ok
+i=146;test\parser\test_expr\test12.xml;test\parser\test_expr\test12.e
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 4
+classe=tinyeiffel.ast.Classe@23e5d1
+parse de test\parser\test_expr\test13.e
+Ok
+i=148;test\parser\test_expr\test13.xml;test\parser\test_expr\test13.e
+parse de std_classe\any.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@11e1e67
+parse de test\test1-2.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 6
+classe=tinyeiffel.ast.Classe@1549f94
+parse de test\test1-3.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 13
+classe=tinyeiffel.ast.Classe@b8c8e6
+parse de test\test1-4.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 16
+instruction
+classe=tinyeiffel.ast.Classe@176e552
+parse de test\test1-5.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 24
+classe=tinyeiffel.ast.Classe@281d4b
+parse de test\test1-6.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+type ="expanded"
+classe=tinyeiffel.ast.Classe@19b5217
+parse de test\test7.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 17
+type ="deferred"
+classe=tinyeiffel.ast.Classe@2a6f16
+parse de test\parser\test1\test1.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 6
+classe=tinyeiffel.ast.Classe@1e3118a
+parse de test\parser\test_classe1\test1.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@94884d
+parse de test\parser\test_classe1\test2.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+type ="expanded"
+classe=tinyeiffel.ast.Classe@1807ca8
+parse de test\parser\test_classe1\test3.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+type ="deferred"
+classe=tinyeiffel.ast.Classe@7808b9
+parse de test\parser\test_classe1\test4.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@13c468a
+parse de test\parser\test_classe1\test5.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@3b1d04
+parse de test\parser\test_classe1\test6.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 3
+classe=tinyeiffel.ast.Classe@ee22f7
+parse de test\parser\test_classe1\test7.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@39ab89
+parse de test\parser\test_heritage\test1.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@2cb49d
+parse de test\parser\test_heritage\test2.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@105d88a
+parse de test\parser\test_heritage\test3.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@cb6009
+parse de test\parser\test_heritage\test4.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@e28b9
+parse de test\parser\test_heritage\test5.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@193a66f
+parse de test\parser\test_heritage\test6.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@93d6bc
+parse de test\parser\test_heritage\test7.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@1f6df4c
+parse de test\parser\test_heritage\test8.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@be0e27
+parse de test\parser\test_heritage\test9.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@c9131c
+parse de test\parser\test_heritage\test10.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 3
+classe=tinyeiffel.ast.Classe@105b99f
+parse de test\parser\test_heritage\test11.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 3
+classe=tinyeiffel.ast.Classe@ce2187
+parse de test\parser\test_heritage\test12.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 5
+classe=tinyeiffel.ast.Classe@fb56b1
+parse de test\parser\test_heritage\test13.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 4
+classe=tinyeiffel.ast.Classe@f8968f
+parse de test\parser\test_classe1\test9.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@64c34e
+parse de test\parser\test_classe1\test10.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@9df354
+parse de test\parser\test_classe1\test11.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1d225a7
+parse de test\parser\test_classe1\test12.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 4
+classe=tinyeiffel.ast.Classe@9f5011
+parse de test\parser\test_classe1\test13.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@141b571
+parse de test\parser\test_heritage\test14.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 5
+classe=tinyeiffel.ast.Classe@ef137d
+parse de test\parser\test_heritage\test15.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 10
+classe=tinyeiffel.ast.Classe@157c2bd
+parse de test\parser\test_attr\test1.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@b23210
+parse de test\parser\test_attr\test2.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 13
+classe=tinyeiffel.ast.Classe@f4f44a
+parse de test\parser\test_attr\test3.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 9
+classe=tinyeiffel.ast.Classe@1d256fa
+parse de test\parser\test_attr\test4.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@182da3d
+parse de test\parser\test_attr\test5.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1c5f743
+parse de test\parser\test_attr\test6.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1ec8909
+parse de test\parser\test_instr\test1.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@18c56d
+parse de test\parser\test_instr\test2.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@497934
+parse de test\parser\test_instr\test4.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 6
+classe=tinyeiffel.ast.Classe@14384c2
+parse de test\parser\test_instr\test5.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1c0ec97
+parse de test\parser\test_instr\test6.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@ecb281
+parse de test\parser\test_instr\test7.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+instruction
+instruction
+instruction
+instruction
+classe=tinyeiffel.ast.Classe@1bb60c3
+parse de test\parser\test_instr\test8.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1fa1bb6
+parse de test\parser\test_instr\test10.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1315d34
+parse de test\parser\test_instr\test11.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1de256f
+parse de test\parser\test_instr\test13.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@e2cb55
+parse de test\parser\test_type\test1.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 16
+classe=tinyeiffel.ast.Classe@19360e2
+parse de test\parser\test_type\test2.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 4
+classe=tinyeiffel.ast.Classe@bdb503
+parse de test\parser\test_type\test3.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 5
+classe=tinyeiffel.ast.Classe@b6e39f
+parse de test\parser\test_expr\test1.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 15
+classe=tinyeiffel.ast.Classe@119dc16
+parse de test\parser\test_expr\test2.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 23
+classe=tinyeiffel.ast.Classe@c05d3b
+parse de test\parser\test_expr\test3.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@128f6ee
+parse de test\parser\test_expr\test4.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@6bade9
+parse de test\parser\test_expr\test6.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@166afb3
+parse de test\parser\test_expr\test5.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@b5dac4
+parse de test\parser\test_expr\test7.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@12d96f2
+parse de test\parser\test_expr\test8.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@110003
+parse de test\parser\test_classe1\test8.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@17e4ca
+parse de test\parser\test_classe1\test14.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 3
+classe=tinyeiffel.ast.Classe@adb1d4
+parse de test\parser\test_classe1\test15.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 2
+classe=tinyeiffel.ast.Classe@160a26f
+parse de test\parser\test_classe1\test16.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@1484a05
+parse de test\parser\test_expr\test9.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@f39b3a
+parse de test\parser\test_instr\test12.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+tag ="a"
+tag ="y"
+tag ="x"
+classe=tinyeiffel.ast.Classe@1542a75
+parse de test\parser\test_type\test5.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 16
+classe=tinyeiffel.ast.Classe@af993e
+parse de test\parser\test_type\test4.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 30
+classe=tinyeiffel.ast.Classe@75e4fc
+parse de test\parser\test_instr\test3.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+classe=tinyeiffel.ast.Classe@c62c8
+parse de test\parser\test_expr\test10.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+tag ="b"
+classe=tinyeiffel.ast.Classe@12940b3
+parse de test\parser\test_expr\test11.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+tag ="b"
+classe=tinyeiffel.ast.Classe@156b6b9
+parse de test\parser\test_expr\test12.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 1
+tag ="b"
+classe=tinyeiffel.ast.Classe@1f66cff
+parse de test\parser\test_expr\test13.e
+Ok
+Nombre d'element dans la racine : 0
+nom=class
+nom=[#text: 
+]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom=3
+Nombre d'element dans la racine : 4
+classe=tinyeiffel.ast.Classe@16de49c
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:05 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:07 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:07 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:07 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:07 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:07 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:07 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:08 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:12 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:14 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:17 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:17 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:17 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:17 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 16:30:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+------------- ---------------- ---------------
+
+Testcase: test_parser took 1,201 sec
+Testcase: test_correcte took 5,318 sec
+Testcase: test_correcte2 took 7,331 sec
+Testcase: testAssertion took 0 sec

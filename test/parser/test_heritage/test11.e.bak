@@ -1,0 +1,9 @@
+class TEST3
+
+	inherit A
+		export {ANY} toto,tata;
+		end;
+
+feature
+
+end

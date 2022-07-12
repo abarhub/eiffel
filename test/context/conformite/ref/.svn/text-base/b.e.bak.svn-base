@@ -1,0 +1,5 @@
+class B
+
+feature
+
+end

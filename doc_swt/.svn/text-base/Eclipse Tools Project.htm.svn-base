@@ -1,0 +1,641 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0072)http://download.eclipse.org/downloads/drops/R-2.1-200303272130/index.php -->
+<HTML><HEAD><TITLE>Eclipse Tools Project</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="Eclipse Tools Project_fichiers/default_style.css" type=text/css 
+rel=stylesheet>
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY>&nbsp; 
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD align=left width="80%">
+      <P><B><FONT face=Verdana size=+3>Release Build: 2.1</FONT></B><BR>March 
+      28, 2003. These downloads are provided under the <A 
+      href="http://www.eclipse.org/legal/notice.html">Eclipse.org Software User 
+      Agreement</A>.</P>
+      <P><FONT size=+1><A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/whats-new.html"><B>New 
+      and Noteworthy</B></A></FONT></P>
+      <P>To view the build notes for this build click <A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/buildNotes.php">here</A>.<BR>To 
+      view the test results for this build click <A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/testResults.php">here</A>.<BR>To 
+      view the map file entries for this build click <A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/directory.txt">here</A>.<BR><BR>To 
+      download a file via HTTP click on its corresponding http link below. To 
+      download a file via FTP click on its corresponding FTP link. If you have 
+      problems ftping a file directly try this <A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/">link</A> for ftp 
+      access to the entire build directory. You can also download builds via 
+      anonymous ftp at download.eclipse.org.</P>Click <A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/verifyMD5.html">here</A> 
+      for instructions on how to verify the integrity of your 
+  download.<BR></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=3><B><FONT 
+      face=Arial,Helvetica color=#ffffff>Eclipse SDK </FONT></B></TD></TR>
+  <TR>
+    <TD colSpan=2 height=48>
+      <P>The Eclipse SDK includes the Eclipse Platform, Java development tools, 
+      and Plug-in Development Environment, including source and both user and 
+      programmer documentation. If you aren't sure which download you want... 
+      then you probably want this one.<BR><B>Eclipse does not include a Java 
+      runtime environment (JRE).</B> You will need a 1.3 level Java runtime or 
+      Java development kit (JDK) installed on your machine in order to run 
+      Eclipse. <A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/java-runtimes.html">Click 
+      here</A> if you need help finding a Java runtime.</P></TD></TR></TBODY></TABLE>
+<TABLE borderColor=#999999 cellSpacing=2 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="6%">
+      <DIV align=left><B>Status</B></DIV></TD>
+    <TD width="31%"><B>Platform</B></TD>
+    <TD width="10%">
+      <DIV align=center><B>Download</B></DIV></TD>
+    <TD width="42%"><B>File</B></TD>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">Windows 98/ME/2000/XP</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-SDK-2.1-win32.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-SDK-2.1-win32.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-SDK-2.1-win32.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-SDK-2.1-win32.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">Linux (x86/Motif) (<A 
+      href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_2_1.html">Supported 
+      Versions</A>)</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-SDK-2.1-linux-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-SDK-2.1-linux-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-SDK-2.1-linux-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-SDK-2.1-linux-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">Linux (x86/GTK 2) (<A 
+      href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_2_1.html">Supported 
+      Versions</A>)</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-SDK-2.1-linux-gtk.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-SDK-2.1-linux-gtk.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-SDK-2.1-linux-gtk.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-SDK-2.1-linux-gtk.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">Solaris 8 (SPARC/Motif)</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-SDK-2.1-solaris-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-SDK-2.1-solaris-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-SDK-2.1-solaris-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-SDK-2.1-solaris-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">QNX (x86/Photon)</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-SDK-2.1-qnx-photon.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-SDK-2.1-qnx-photon.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-SDK-2.1-qnx-photon.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-SDK-2.1-qnx-photon.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">AIX (PPC/Motif)</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-SDK-2.1-aix-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-SDK-2.1-aix-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-SDK-2.1-aix-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-SDK-2.1-aix-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">HP-UX (HP9000/Motif)</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-SDK-2.1-hpux-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-SDK-2.1-hpux-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-SDK-2.1-hpux-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-SDK-2.1-hpux-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">Mac OSX (Mac/Carbon)</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-SDK-2.1-macosx-carbon.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-SDK-2.1-macosx-carbon.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-SDK-2.1-macosx-carbon.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-SDK-2.1-macosx-carbon.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">Source Build (Source in .zip) (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/srcIncludedBuildInstructions.html">instructions</A>)</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-sourceBuild-srcIncluded-2.1.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-sourceBuild-srcIncluded-2.1.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-sourceBuild-srcIncluded-2.1.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-sourceBuild-srcIncluded-2.1.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD width="31%">Source Build (Source fetched via CVS) (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/srcFetchBuildInstructions.html">instructions</A>)</TD>
+    <TD width="10%">
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-sourceBuild-srcFetch-2.1.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-sourceBuild-srcFetch-2.1.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD width="42%">eclipse-sourceBuild-srcFetch-2.1.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-sourceBuild-srcFetch-2.1.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD width="6%">&nbsp; </TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>
+      <P>&nbsp;</P></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#999999 colSpan=3><B><FONT 
+      face=Arial,Helvetica color=#ffffff>JUnit Plugin Tests and Automated 
+      Testing Framework</FONT></B></TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <P>This drop contains the JUnit Eclipse test plugins and the Automated 
+      Testing Framework used to run the tests from the command line. Click <A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/automatedtesting.html">here</A> 
+      for more information and installation instructions. Includes both source 
+      code and binary.</P></TD></TR></TBODY></TABLE>
+<TABLE borderColor=#999999 cellSpacing=2 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="7%">
+      <DIV align=left><B>Status</B></DIV></TD>
+    <TD width="36%"><B>Platform</B></TD>
+    <TD width="12%">
+      <DIV align=center><B>Download</B></DIV></TD>
+    <TD width="47%"><B>File</B></TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>All</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-Automated-Tests-2.1.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-Automated-Tests-2.1.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-Automated-Tests-2.1.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-Automated-Tests-2.1.zip.MD5">MD5</A>)</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#999999 colSpan=3><B><FONT 
+      face=Arial,Helvetica color=#ffffff>Example Plug-ins</FONT></B></TD></TR>
+  <TR>
+    <TD colSpan=2 height=48>
+      <P>To install the examples, first make sure you have exited your Eclipse 
+      program. Then download the zip file containing the examples and extract 
+      the contents of the zip file to the same directory you used for your SDK 
+      installation. For example, if you installed the Eclipse Project SDK on 
+      d:\eclipse-sdk then extract the contents of the examples zip file to 
+      d:\eclipse-sdk. Start Eclipse. The example plug-ins will be installed. For 
+      information on what the examples do and how to run them, look in the 
+      "Examples Guide" section of the "Platform Plug-in Developer Guide", by 
+      selecting Help Contents from the Help menu, and choosing "Platform Plug-in 
+      Developer Guide" book from the combo box.<BR></P></TD></TR></TBODY></TABLE>
+<TABLE borderColor=#999999 cellSpacing=2 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="7%">
+      <DIV align=left><B>Status</B></DIV></TD>
+    <TD width="36%"><B>Platform</B></TD>
+    <TD width="12%">
+      <DIV align=center><B>Download</B></DIV></TD>
+    <TD width="47%"><B>File</B></TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Windows 98/ME/2000/XP</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-examples-2.1-win32.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-examples-2.1-win32.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-examples-2.1-win32.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-examples-2.1-win32.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>All Other Platforms</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-examples-2.1.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-examples-2.1.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-examples-2.1.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-examples-2.1.zip.MD5">MD5</A>)</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#999999 colSpan=3><B><FONT 
+      face=Arial,Helvetica color=#ffffff>Platform Runtime 
+Binary</FONT></B></TD></TR>
+  <TR>
+    <TD colSpan=2 height=48>
+      <P>These drops contain only the Eclipse platform with user documentation 
+      and no source and no programmer documentation. The Java development tools 
+      and Plug-in Development Environment are NOT included. You can use these 
+      drops to help you package your tool plug-ins for redistribution when you 
+      don't want to ship the entire SDK.</P></TD></TR></TBODY></TABLE>
+<TABLE borderColor=#999999 cellSpacing=2 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="7%">
+      <DIV align=left><B>Status</B></DIV></TD>
+    <TD width="36%"><B>Platform</B></TD>
+    <TD width="12%">
+      <DIV align=center><B>Download</B></DIV></TD>
+    <TD width="47%"><B>File</B></TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Windows 98/ME/2000/XP</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-platform-2.1-win32.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-platform-2.1-win32.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-platform-2.1-win32.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-platform-2.1-win32.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Linux (x86/Motif) (<A 
+      href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_2_1.html">Supported 
+      Versions</A>)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-platform-2.1-linux-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-platform-2.1-linux-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-platform-2.1-linux-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-platform-2.1-linux-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Linux (x86/GTK 2) (<A 
+      href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_2_1.html">Supported 
+      Versions</A>)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-platform-2.1-linux-gtk.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-platform-2.1-linux-gtk.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-platform-2.1-linux-gtk.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-platform-2.1-linux-gtk.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Solaris 8 (SPARC/Motif)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-platform-2.1-solaris-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-platform-2.1-solaris-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-platform-2.1-solaris-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-platform-2.1-solaris-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>QNX (x86/Photon)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-platform-2.1-qnx-photon.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-platform-2.1-qnx-photon.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-platform-2.1-qnx-photon.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-platform-2.1-qnx-photon.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>AIX (PPC/Motif)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-platform-2.1-aix-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-platform-2.1-aix-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-platform-2.1-aix-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-platform-2.1-aix-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>HP-UX (HP9000/Motif)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-platform-2.1-hpux-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-platform-2.1-hpux-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-platform-2.1-hpux-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-platform-2.1-hpux-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Mac OSX (Mac/Carbon)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-platform-2.1-macosx-carbon.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-platform-2.1-macosx-carbon.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-platform-2.1-macosx-carbon.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-platform-2.1-macosx-carbon.zip.MD5">MD5</A>)</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#999999 colSpan=3><B><FONT 
+      face=Arial,Helvetica color=#ffffff>JDT Runtime Binary</FONT></B></TD></TR>
+  <TR>
+    <TD colSpan=2 height=48>
+      <P>These drops contain the Java development tools plug-ins only, with user 
+      documentation and no source and no programmer documentation. The Eclipse 
+      platform and Plug-in development environment are NOT included. You can 
+      combine this with the Platform Runtime Binary if your tools rely on the 
+      JDT being present.</P></TD></TR></TBODY></TABLE>
+<TABLE borderColor=#999999 cellSpacing=2 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="7%">
+      <DIV align=left><B>Status</B></DIV></TD>
+    <TD width="36%"><B>Platform</B></TD>
+    <TD width="12%">
+      <DIV align=center><B>Download</B></DIV></TD>
+    <TD width="47%"><B>File</B></TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>All</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-JDT-2.1.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-JDT-2.1.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-JDT-2.1.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-JDT-2.1.zip.MD5">MD5</A>)</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#999999 colSpan=3><B><FONT 
+      face=Arial,Helvetica color=#ffffff>FTP and WebDAV Support</FONT></B></TD></TR>
+  <TR>
+    <TD colSpan=2>
+      <P>These drops contain the FTP and WebDAV target management support 
+      plug-ins. You can combine this with the Platform Runtime Binary or Eclipse 
+      SDK. Includes both source code and binary.</P></TD></TR></TBODY></TABLE>
+<TABLE borderColor=#999999 cellSpacing=2 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="7%">
+      <DIV align=left><B>Status</B></DIV></TD>
+    <TD width="36%"><B>Platform</B></TD>
+    <TD width="12%">
+      <DIV align=center><B>Download</B></DIV></TD>
+    <TD width="47%"><B>File</B></TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>All</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=eclipse-FTP-WebDAV-2.1.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/eclipse-FTP-WebDAV-2.1.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV>
+    <TD>eclipse-FTP-WebDAV-2.1.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/eclipse-FTP-WebDAV-2.1.zip.MD5">MD5</A>)</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2>&nbsp;</TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=5 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#999999 colSpan=3><B><FONT 
+      face=Arial,Helvetica color=#ffffff>SWT Binary and Source</FONT></B></TD></TR>
+  <TR>
+    <TD colSpan=2 height=48>
+      <P>These drops contain the SWT libraries and source for standalone SWT 
+      application development. For examples of standalone SWT applications refer 
+      to the <A 
+      href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/dev.html#snippets">snippets</A> 
+      section of the SWT Component page. </P>
+      <P>To run a standalone SWT application, add the swt jar(s) to the 
+      classpath and add the directory/folder for the SWT JNI library to the 
+      java.library.path. For example, if you extract the download below to 
+      C:\SWT you would launch the HelloWorld application with the following 
+      command: </P><PRE><CODE>
+	java -classpath C:\SWT\swt.jar;C:\MyApp\helloworld.jar -Djava.library.path=C:\SWT  HelloWorld
+      </CODE></PRE></TD></TR></TBODY></TABLE>
+<TABLE borderColor=#999999 cellSpacing=2 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=right width="7%">
+      <DIV align=left><B>Status</B></DIV></TD>
+    <TD width="36%"><B>Platform</B></TD>
+    <TD width="12%">
+      <DIV align=center><B>Download</B></DIV></TD>
+    <TD width="47%"><B>File</B></TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Windows 98/ME/2000/XP</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=swt-2.1-win32.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/swt-2.1-win32.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV></TD>
+    <TD>swt-2.1-win32.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/swt-2.1-win32.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Linux (x86/Motif) (<A 
+      href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_2_1.html">Supported 
+      Versions</A>)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=swt-2.1-linux-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/swt-2.1-linux-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV></TD>
+    <TD>swt-2.1-linux-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/swt-2.1-linux-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Linux (x86/GTK 2) (<A 
+      href="http://www.eclipse.org/eclipse/development/eclipse_project_plan_2_1.html">Supported 
+      Versions</A>)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=swt-2.1-linux-gtk.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/swt-2.1-linux-gtk.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV></TD>
+    <TD>swt-2.1-linux-gtk.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/swt-2.1-linux-gtk.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Solaris 8 (SPARC/Motif)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=swt-2.1-solaris-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/swt-2.1-solaris-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV></TD>
+    <TD>swt-2.1-solaris-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/swt-2.1-solaris-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>QNX (x86/Photon)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=swt-2.1-qnx-photon.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/swt-2.1-qnx-photon.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV></TD>
+    <TD>swt-2.1-qnx-photon.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/swt-2.1-qnx-photon.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>AIX (PPC/Motif)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=swt-2.1-aix-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/swt-2.1-aix-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV></TD>
+    <TD>swt-2.1-aix-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/swt-2.1-aix-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>HP-UX (HP9000/Motif)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=swt-2.1-hpux-motif.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/swt-2.1-hpux-motif.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV></TD>
+    <TD>swt-2.1-hpux-motif.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/swt-2.1-hpux-motif.zip.MD5">MD5</A>)</TD></TR>
+  <TR>
+    <TD>
+      <DIV align=left><IMG height=23 src="Eclipse Tools Project_fichiers/OK.gif" 
+      width=19></DIV></TD>
+    <TD>Mac OSX (Mac/Carbon)</TD>
+    <TD>
+      <DIV align=center>(<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/download.php?dropFile=swt-2.1-macosx-carbon.zip">http</A>) 
+      &nbsp;&nbsp; (<A 
+      href="ftp://download.eclipse.org/R-2.1-200303272130/swt-2.1-macosx-carbon.zip">ftp</A>)</DIV></TD>
+    <DIV></DIV></TD>
+    <TD>swt-2.1-macosx-carbon.zip (<A 
+      href="http://download.eclipse.org/downloads/drops/R-2.1-200303272130/checksum/swt-2.1-macosx-carbon.zip.MD5">MD5</A>)</TD></TR></TBODY></TABLE></BODY></HTML>

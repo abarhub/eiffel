@@ -1,0 +1,11 @@
+class TEST6
+
+	inherit A
+		redefine affiche
+		end;
+
+feature
+
+	affiche is do end;
+
+end

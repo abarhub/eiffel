@@ -1,0 +1,21 @@
+<!DOCTYPE classe SYSTEM "..\..\..\test_unitaire\verif.dtd">
+<classe nom="STRING">
+<liste_verification>
+<attribut_conflit nom_classe="STRING">
+<nom_feature nom="s" />
+<position nom_fichier="test\simple\test3\STRING.e" x="5" y="19" />
+</attribut_conflit>
+<classe_existe nom="STRING">
+<position nom_fichier="test\simple\test3\STRING.e" x="5" y="21" />
+</classe_existe>
+<classe_existe nom="STRING">
+<position nom_fichier="test\simple\test3\STRING.e" x="5" y="29" />
+</classe_existe>
+<classe_existe nom="BOOLEAN">
+<position nom_fichier="test\simple\test3\STRING.e" x="9" y="20" />
+</classe_existe>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\STRING.e" x="13" y="20" />
+</classe_existe>
+</liste_verification>
+</classe>

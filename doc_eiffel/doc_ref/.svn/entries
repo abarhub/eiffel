@@ -1,0 +1,577 @@
+10
+
+dir
+58
+https://twist/svn/eiffel/eiffel/trunk/doc_eiffel/doc_ref
+https://twist/svn/eiffel
+
+
+
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67c01f0b-0d27-6e44-be05-7f44c70b15d8
+
+Eiffel The Reference - 10 Feature adaptation.htm
+file
+
+
+
+
+2006-09-17T13:46:39.921875Z
+737280fa8da0c06fcb102334cde3c024
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 10 Feature adaptation_fichiers
+dir
+
+Eiffel The Reference - 11 Repeated inheritance.htm
+file
+
+
+
+
+2006-09-17T13:46:40.031250Z
+6bf9e8a57e0ba0a9d7720437db6e6c3d
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 11 Repeated inheritance_fichiers
+dir
+
+Eiffel The Reference - 12 Types.htm
+file
+
+
+
+
+2006-09-17T13:46:40.046875Z
+7a8f6529df3fc4d7a54890c68030dfc2
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 12 Types_fichiers
+dir
+
+Eiffel The Reference - 13 Conformance.htm
+file
+
+
+
+
+2006-09-17T13:46:39.812500Z
+484c2d3d5835f29281631b4fae9d407f
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 13 Conformance_fichiers
+dir
+
+Eiffel The Reference - 14 Control structures.htm
+file
+
+
+
+
+2006-09-17T13:46:40.078125Z
+5852dd49903aa7bc4a894ed9d9b47915
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 14 Control structures_fichiers
+dir
+
+Eiffel The Reference - 15 Exceptions.htm
+file
+
+
+
+
+2006-09-17T13:46:40.015625Z
+eb25da7bb54773db4a15eeb957e65975
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 15 Exceptions_fichiers
+dir
+
+Eiffel The Reference - 16 Attributes.htm
+file
+
+
+
+
+2006-09-17T13:46:39.796875Z
+a29389a5041eed655ec53ac251012944
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 16 Attributes_fichiers
+dir
+
+Eiffel The Reference - 17 Objects, values and entities.htm
+file
+
+
+
+
+2006-09-17T13:46:39.890625Z
+b0e81e9709b922cf4a3bb249777546b7
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 17 Objects, values and entities_fichiers
+dir
+
+Eiffel The Reference - 18 Creating objects.htm
+file
+
+
+
+
+2006-09-17T13:46:39.953125Z
+da085b778c8ec4aeba2ba30e7e6eaa4c
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 18 Creating objects_fichiers
+dir
+
+Eiffel The Reference - 19 Duplicating and comparing objects.htm
+file
+
+
+
+
+2006-09-17T13:46:40.109375Z
+28b24d8d8a8c97052073f33f7c74a80b
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 19 Duplicating and comparing objects_fichiers
+dir
+
+Eiffel The Reference - 20 Reattaching entities.htm
+file
+
+
+
+
+2006-09-17T13:46:39.828125Z
+2f0aed9e5eb716dfbcfc615af4af26cd
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 20 Reattaching entities_fichiers
+dir
+
+Eiffel The Reference - 21 Feature call.htm
+file
+
+
+
+
+2006-09-17T13:46:39.781250Z
+f1c1940db95ac5992a173935687ea527
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 21 Feature call_fichiers
+dir
+
+Eiffel The Reference - 22 Type checking.htm
+file
+
+
+
+
+2006-09-17T13:46:39.781250Z
+e41646e251af90e0a73019ba4b7f2ad8
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 22 Type checking_fichiers
+dir
+
+Eiffel The Reference - 23 Expressions and constants.htm
+file
+
+
+
+
+2006-09-17T13:46:39.937500Z
+63518b33f049346f2b0f8e62deefd662
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 23 Expressions and constants_fichiers
+dir
+
+Eiffel The Reference - 24 Interfaces with other languages.htm
+file
+
+
+
+
+2006-09-17T13:46:40.140625Z
+467c01de734ec03f5259ce69bb6ead2b
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 24 Interfaces with other languages_fichiers
+dir
+
+Eiffel The Reference - 25 Lexical Components.htm
+file
+
+
+
+
+2006-09-17T13:46:40.078125Z
+ac4a1976a7e324f6b051e219f5795b6a
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 25 Lexical Components2.htm
+file
+
+
+
+
+2006-09-17T13:46:39.765625Z
+b915f9dcd686bd169089e5977bcea94c
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 25 Lexical Components2_fichiers
+dir
+
+Eiffel The Reference - 25 Lexical Components_fichiers
+dir
+
+Eiffel The Reference - 27 Universal features.htm
+file
+
+
+
+
+2006-09-17T13:46:40.062500Z
+21c0001adb01a82bb91c64ccb895206c
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 27 Universal features_fichiers
+dir
+
+Eiffel The Reference - 28 Arrays and strings.htm
+file
+
+
+
+
+2006-09-17T13:46:39.843750Z
+97d850c7451cbbb769e1fa6fafec1d35
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 28 Arrays and strings_fichiers
+dir
+
+Eiffel The Reference - 29 Exception facilities.htm
+file
+
+
+
+
+2006-09-17T13:46:39.828125Z
+a5c0cf541d48ff748979298a52741f4e
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 29 Exception facilities_fichiers
+dir
+
+Eiffel The Reference - 30 Persistence and environments.htm
+file
+
+
+
+
+2006-09-17T13:46:39.843750Z
+6ac3cac237e263a8ed4cbba9b4bbde6e
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 30 Persistence and environments_fichiers
+dir
+
+Eiffel The Reference - 31 Input and output.htm
+file
+
+
+
+
+2006-09-17T13:46:40.093750Z
+3080ea7b5c3ef3d1c158dfde874cfe15
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 31 Input and output_fichiers
+dir
+
+Eiffel The Reference - 32 Basic classes.htm
+file
+
+
+
+
+2006-09-17T13:46:40.093750Z
+11ed2c59f6536de7819541aaaca239e3
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 32 Basic classes_fichiers
+dir
+
+Eiffel The Reference - 4 Classes.htm
+file
+
+
+
+
+2006-09-17T13:46:40.000000Z
+5ce12a93bc39a12a6def64497f15603b
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 4 Classes_fichiers
+dir
+
+Eiffel The Reference - 5 Features.htm
+file
+
+
+
+
+2006-09-17T13:46:39.921875Z
+b1b3e9495c82a214a594f9bb252880c1
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 5 Features_fichiers
+dir
+
+Eiffel The Reference - 6 The inheritance relation.htm
+file
+
+
+
+
+2006-09-17T13:46:40.140625Z
+c0cef6360ad9bf94be4722830d5cef5b
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 6 The inheritance relation_fichiers
+dir
+
+Eiffel The Reference - 7 Clients and exports.htm
+file
+
+
+
+
+2006-09-17T13:46:39.812500Z
+fa459692480a9b8377417e6e9a92425c
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 7 Clients and exports_fichiers
+dir
+
+Eiffel The Reference - 8 Routines.htm
+file
+
+
+
+
+2006-09-17T13:46:39.906250Z
+1298fc48bd77a40ccaae42a4e0ae6cd4
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 8 Routines_fichiers
+dir
+
+Eiffel The Reference - 9 Correctness.htm
+file
+
+
+
+
+2006-09-17T13:46:39.875000Z
+d71a97a9c9511ce2f5e502f53970bb18
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - 9 Correctness_fichiers
+dir
+
+Eiffel The Reference - D Specifying systems in Lace.htm
+file
+
+
+
+
+2006-09-17T13:46:40.109375Z
+c242433bfda26820fbb71e23923e6ef5
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - D Specifying systems in Lace_fichiers
+dir
+
+Eiffel The Reference - G Reserved Words, etc.htm
+file
+
+
+
+
+2006-09-17T13:46:39.953125Z
+b724ffcb825bab78219b811950b1cf65
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - G Reserved Words, etc_fichiers
+dir
+
+Eiffel The Reference - H Syntax summary.htm
+file
+
+
+
+
+2006-09-17T13:46:40.125000Z
+37a99261834f4a402e275e4f54a41f27
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - H Syntax summary_fichiers
+dir
+
+Eiffel The Reference - I Alphabetical syntax summary.htm
+file
+
+
+
+
+2006-09-17T13:46:40.046875Z
+6381729c29d74d9c18dccb90866da461
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - I Alphabetical syntax summary_fichiers
+dir
+
+Eiffel The Reference - Table of Contents.htm
+file
+
+
+
+
+2006-09-17T13:46:39.781250Z
+867653156dc38143036c8dece41a338a
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Eiffel The Reference - Table of Contents_fichiers
+dir
+
+chap0.htm
+file
+
+
+
+
+2006-09-17T13:46:40.000000Z
+c4e10156baf8d4d7a9228ae277769838
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+chap0_fichiers
+dir
+
+chap1.html
+file
+
+
+
+
+2006-09-17T13:46:39.906250Z
+3fd93dd84f5963cdda30136840a16bd9
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+chap2.html
+file
+
+
+
+
+2006-09-17T13:46:40.015625Z
+931f2a1436108794066c24e01d5dbb95
+2006-09-17T13:29:14.703125Z
+1
+Barret
+

@@ -1,0 +1,8 @@
+class TEST3
+
+	inherit D;
+		B;
+
+feature
+
+end

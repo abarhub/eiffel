@@ -1,0 +1,118 @@
+10
+
+dir
+58
+https://twist/svn/eiffel/eiffel/trunk/test/genc
+https://twist/svn/eiffel
+
+
+
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67c01f0b-0d27-6e44-be05-7f44c70b15d8
+
+appel_basic
+dir
+
+bool_basic
+dir
+
+char_basic
+dir
+
+compare_basic
+dir
+
+creation_basic
+dir
+
+dbl_basic
+dir
+
+general_basic
+dir
+
+if_basic
+dir
+
+int_basic
+dir
+
+int_basic2
+dir
+
+loop_basic
+dir
+
+rattachement_basic
+dir
+
+real_basic
+dir
+
+str_basic
+dir
+
+test1.e
+file
+
+
+
+
+2006-09-17T13:50:08.359375Z
+5580f860d6fbbe8be933123d28266700
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+test1.e.bak
+file
+
+
+
+
+2006-09-17T13:50:08.359375Z
+c41532e5249a5697be2ece58e09393a9
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+test1old.e
+file
+
+
+
+
+2006-09-17T13:50:08.359375Z
+9b474adc588c3e949a8d715cd452bc7e
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+test2.e
+file
+
+
+
+
+2006-09-17T13:50:08.359375Z
+c5a83be1b92e50aa3a406fb4998ad016
+2006-09-17T13:29:14.703125Z
+1
+Barret
+

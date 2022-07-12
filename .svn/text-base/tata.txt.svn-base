@@ -1,0 +1,377 @@
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+	java antlr.Tool -o compiler compiler\eiffel.g
+	javac -source 1.4 ast\*.java compiler\*.java
+	javac -source 1.4 -classpath test_unitaire\junit.jar;.;E:\java\xerces-2_5_0\xercesImpl.jar;E:\java\xerces-2_5_0\xmlParserAPIs.jar test_unitaire\Test_unitaire1.java
+	java -ea -classpath test_unitaire\junit.jar;.;c:\antlr-2.7.2;E:\java\xerces-2_5_0\xercesImpl.jar;E:\java\xerces-2_5_0\xmlParserAPIs.jar test_unitaire.Test_unitaire1
+.Parsing...
+Debut du document
+Fin du document
+Terminé
+length:6
+.Parsing...
+Debut du document
+Fin du document
+Terminé
+length:6
+Compilation de test\test1.e
+classe:COUCOU
+Ok
+line=5
+classe:[INTEGER, BOOLEAN, k, i, mlo, COUCOU]
+classe:ANY
+Ok
+line=1
+classe:[PLATFORM, ANY]
+classe:INTEGER
+Ok
+line=1
+classe:[INTEGER_REF, COMPARABLE, HASHABLE, NUMERIC, INTEGER]
+classe:BOOLEAN
+Ok
+line=1
+classe:[BOOLEAN_REF, BOOLEAN]
+classe:PLATFORM
+Ok
+line=1
+classe:[GENERAL, PLATFORM]
+classe:INTEGER_REF
+Ok
+line=1
+classe:[INTEGER, INTEGER_REF]
+classe:COMPARABLE
+Ok
+line=1
+classe:[BOOLEAN, INTEGER, COMPARABLE]
+classe:HASHABLE
+Ok
+line=1
+classe:[INTEGER, HASHABLE]
+classe:NUMERIC
+Ok
+line=1
+classe:[BOOLEAN, NUMERIC]
+classe:BOOLEAN_REF
+Ok
+line=1
+classe:[BOOLEAN, BOOLEAN_REF]
+classe:GENERAL
+Ok
+line=1
+classe:[STD_FILE, STRING, NONE, GENERAL]
+classe:STD_FILE
+Ok
+line=1
+classe:[STRING, INTEGER, CHARACTER, POINTER, DOUBLE, REAL, BOOLEAN, STD_FILE]
+classe:STRING
+Ok
+line=1
+classe:[STRING]
+classe:CHARACTER
+Ok
+line=1
+classe:[CHARACTER_REF, CHARACTER]
+classe:POINTER
+Ok
+line=1
+classe:[POINTER_REF, POINTER]
+classe:DOUBLE
+Ok
+line=1
+classe:[DOUBLE_REF, DOUBLE]
+classe:REAL
+Ok
+line=1
+classe:[REAL_REF, REAL]
+classe:CHARACTER_REF
+Ok
+line=1
+classe:[CHARACTER, CHARACTER_REF]
+classe:POINTER_REF
+Ok
+line=1
+classe:[POINTER, POINTER_REF]
+classe:DOUBLE_REF
+Ok
+line=1
+classe:[DOUBLE, DOUBLE_REF]
+classe:REAL_REF
+Ok
+line=1
+classe:[REAL, REAL_REF]
+Classes chargees:
+0:COUCOU
+1:ANY
+2:NONE
+3:INTEGER
+4:BOOLEAN
+5:PLATFORM
+6:INTEGER_REF
+7:COMPARABLE
+8:HASHABLE
+9:NUMERIC
+10:BOOLEAN_REF
+11:GENERAL
+12:STD_FILE
+13:STRING
+14:CHARACTER
+15:POINTER
+16:DOUBLE
+17:REAL
+18:CHARACTER_REF
+19:POINTER_REF
+20:DOUBLE_REF
+21:REAL_REF
+attributs de la classe COUCOU
+attributs de la classe ANY
+herite de PLATFORM
+attributs de la classe PLATFORM
+herite de GENERAL
+attributs de la classe GENERAL
+Fin des attributs de la classe GENERAL
+Fin des attributs de la classe PLATFORM
+Fin des attributs de la classe ANY
+Fin des attributs de la classe COUCOU
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+attributs de la classe INTEGER
+herite de INTEGER_REF
+attributs de la classe INTEGER_REF
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe INTEGER_REF
+herite de COMPARABLE
+attributs de la classe COMPARABLE
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe COMPARABLE
+herite de HASHABLE
+attributs de la classe HASHABLE
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe HASHABLE
+herite de NUMERIC
+attributs de la classe NUMERIC
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe NUMERIC
+Fin des attributs de la classe INTEGER
+attributs de la classe BOOLEAN
+herite de BOOLEAN_REF
+attributs de la classe BOOLEAN_REF
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe BOOLEAN_REF
+Fin des attributs de la classe BOOLEAN
+attributs de la classe PLATFORM
+Fin des attributs de la classe PLATFORM
+attributs de la classe INTEGER_REF
+Fin des attributs de la classe INTEGER_REF
+attributs de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+attributs de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+attributs de la classe NUMERIC
+Fin des attributs de la classe NUMERIC
+attributs de la classe BOOLEAN_REF
+Fin des attributs de la classe BOOLEAN_REF
+attributs de la classe GENERAL
+Fin des attributs de la classe GENERAL
+attributs de la classe STD_FILE
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe STD_FILE
+attributs de la classe STRING
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe STRING
+attributs de la classe CHARACTER
+herite de CHARACTER_REF
+attributs de la classe CHARACTER_REF
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe CHARACTER_REF
+Fin des attributs de la classe CHARACTER
+attributs de la classe POINTER
+herite de POINTER_REF
+attributs de la classe POINTER_REF
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe POINTER_REF
+Fin des attributs de la classe POINTER
+attributs de la classe DOUBLE
+herite de DOUBLE_REF
+attributs de la classe DOUBLE_REF
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe DOUBLE_REF
+Fin des attributs de la classe DOUBLE
+attributs de la classe REAL
+herite de REAL_REF
+attributs de la classe REAL_REF
+attributs de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe REAL_REF
+Fin des attributs de la classe REAL
+attributs de la classe CHARACTER_REF
+Fin des attributs de la classe CHARACTER_REF
+attributs de la classe POINTER_REF
+Fin des attributs de la classe POINTER_REF
+attributs de la classe DOUBLE_REF
+Fin des attributs de la classe DOUBLE_REF
+attributs de la classe REAL_REF
+Fin des attributs de la classe REAL_REF
+heritage directe:
+classe COUCOU herite de :ANY
+attr:[a, b, c, d, e, f, g, h]
+attr ancetre:[io, out, Void]
+classe ANY herite de :PLATFORM
+attr:[]
+attr ancetre:[io, out, Void]
+classe NONE herite de :COUCOU,ANY,INTEGER,BOOLEAN,PLATFORM,INTEGER_REF,COMPARABLE,HASHABLE,NUMERIC,BOOLEAN_REF,GENERAL,STD_FILE,STRING,CHARACTER,POINTER,DOUBLE,REAL,CHARACTER_REF,POINTER_REF,DOUBLE_REF,REAL_REF
+attr:[]
+attr ancetre:[]
+classe INTEGER herite de :INTEGER_REF,COMPARABLE,HASHABLE,NUMERIC
+attr:[infix "+", infix "-", infix "*", infix "/", infix "^", prefix "+", prefix "-"]
+attr ancetre:[io, out, Void, item, set_item, io, out, Void, infix "<", infix "<=", infix ">=", infix ">", is_equal, max, min, three_way_comparison, io, out, Void, hash_code, io, out, Void, one, zero, divisible, exponentiable, infix "+", infix "-", infix "*", infix "/", infix "^", prefix "+", prefix "-"]
+classe BOOLEAN herite de :BOOLEAN_REF
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe PLATFORM herite de :GENERAL
+attr:[]
+attr ancetre:[io, out, Void]
+classe INTEGER_REF herite de :ANY
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe COMPARABLE herite de :ANY
+attr:[infix "<", infix "<=", infix ">=", infix ">", is_equal, max, min, three_way_comparison]
+attr ancetre:[io, out, Void]
+classe HASHABLE herite de :ANY
+attr:[hash_code]
+attr ancetre:[io, out, Void]
+classe NUMERIC herite de :ANY
+attr:[one, zero, divisible, exponentiable, infix "+", infix "-", infix "*", infix "/", infix "^", prefix "+", prefix "-"]
+attr ancetre:[io, out, Void]
+classe BOOLEAN_REF herite de :ANY
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe GENERAL herite de :
+attr:[io, out, Void]
+attr ancetre:[]
+classe STD_FILE herite de :ANY
+attr:[make, put_string, put_integer, put_character, put_pointer, put_double, put_real, put_boolean]
+attr ancetre:[io, out, Void]
+classe STRING herite de :ANY
+attr:[]
+attr ancetre:[io, out, Void]
+classe CHARACTER herite de :CHARACTER_REF
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe POINTER herite de :POINTER_REF
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe DOUBLE herite de :DOUBLE_REF
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe REAL herite de :REAL_REF
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe CHARACTER_REF herite de :ANY
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe POINTER_REF herite de :ANY
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe DOUBLE_REF herite de :ANY
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe REAL_REF herite de :ANY
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+heritage complet:
+classe COUCOU herite de :ANY,PLATFORM,GENERAL
+attr:[a, b, c, d, e, f, g, h]
+attr ancetre:[io, out, Void]
+classe ANY herite de :PLATFORM,GENERAL
+attr:[]
+attr ancetre:[io, out, Void]
+classe NONE herite de :COUCOU,ANY,INTEGER,BOOLEAN,PLATFORM,INTEGER_REF,COMPARABLE,HASHABLE,NUMERIC,BOOLEAN_REF,GENERAL,STD_FILE,STRING,CHARACTER,POINTER,DOUBLE,REAL,CHARACTER_REF,POINTER_REF,DOUBLE_REF,REAL_REF
+attr:[]
+attr ancetre:[]
+classe INTEGER herite de :ANY,PLATFORM,INTEGER_REF,COMPARABLE,HASHABLE,NUMERIC,GENERAL
+attr:[infix "+", infix "-", infix "*", infix "/", infix "^", prefix "+", prefix "-"]
+attr ancetre:[io, out, Void, item, set_item, io, out, Void, infix "<", infix "<=", infix ">=", infix ">", is_equal, max, min, three_way_comparison, io, out, Void, hash_code, io, out, Void, one, zero, divisible, exponentiable, infix "+", infix "-", infix "*", infix "/", infix "^", prefix "+", prefix "-"]
+classe BOOLEAN herite de :ANY,PLATFORM,BOOLEAN_REF,GENERAL
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe PLATFORM herite de :GENERAL
+attr:[]
+attr ancetre:[io, out, Void]
+classe INTEGER_REF herite de :ANY,PLATFORM,GENERAL
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe COMPARABLE herite de :ANY,PLATFORM,GENERAL
+attr:[infix "<", infix "<=", infix ">=", infix ">", is_equal, max, min, three_way_comparison]
+attr ancetre:[io, out, Void]
+classe HASHABLE herite de :ANY,PLATFORM,GENERAL
+attr:[hash_code]
+attr ancetre:[io, out, Void]
+classe NUMERIC herite de :ANY,PLATFORM,GENERAL
+attr:[one, zero, divisible, exponentiable, infix "+", infix "-", infix "*", infix "/", infix "^", prefix "+", prefix "-"]
+attr ancetre:[io, out, Void]
+classe BOOLEAN_REF herite de :ANY,PLATFORM,GENERAL
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe GENERAL herite de :
+attr:[io, out, Void]
+attr ancetre:[]
+classe STD_FILE herite de :ANY,PLATFORM,GENERAL
+attr:[make, put_string, put_integer, put_character, put_pointer, put_double, put_real, put_boolean]
+attr ancetre:[io, out, Void]
+classe STRING herite de :ANY,PLATFORM,GENERAL
+attr:[]
+attr ancetre:[io, out, Void]
+classe CHARACTER herite de :ANY,PLATFORM,GENERAL,CHARACTER_REF
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe POINTER herite de :ANY,PLATFORM,GENERAL,POINTER_REF
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe DOUBLE herite de :ANY,PLATFORM,GENERAL,DOUBLE_REF
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe REAL herite de :ANY,PLATFORM,GENERAL,REAL_REF
+attr:[]
+attr ancetre:[io, out, Void, item, set_item]
+classe CHARACTER_REF herite de :ANY,PLATFORM,GENERAL
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe POINTER_REF herite de :ANY,PLATFORM,GENERAL
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe DOUBLE_REF herite de :ANY,PLATFORM,GENERAL
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+classe REAL_REF herite de :ANY,PLATFORM,GENERAL
+attr:[item, set_item]
+attr ancetre:[io, out, Void]
+feature0:a
+feature0:c
+t=l'operation infix "+" n'existe pas dans la classe STRING
+E
+Time: 5,06
+There was 1 error:
+1) testParser(test_unitaire.Test_unitaire1)java.lang.AssertionError
+	at compiler.Compiler_Eiffel.erreur(Compiler_Eiffel.java:104)
+	at compiler.Compiler_Eiffel.verifie_expr(Compiler_Eiffel.java:667)
+	at compiler.Compiler_Eiffel.verifie_expr(Compiler_Eiffel.java:640)
+	at compiler.Compiler_Eiffel.verifie_feature(Compiler_Eiffel.java:190)
+	at compiler.Compiler_Eiffel.<init>(Compiler_Eiffel.java:80)
+	at test_unitaire.Test_unitaire1.testParser(Test_unitaire1.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at test_unitaire.Test_unitaire1.main(Test_unitaire1.java:62)
+
+FAILURES!!!
+Tests run: 2,  Failures: 0,  Errors: 1
+

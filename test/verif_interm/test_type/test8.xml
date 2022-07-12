@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- test des types primitifs -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+		<attribut>
+			<nom_attribut nom="Void"/>
+			<type nom="ANY"/>
+			<type nom="NONE"/>
+		</attribut>
+		<attribut>
+			<nom_attribut nom="make_boolean"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="tmpb">
+					<type nom="$boolean"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpb"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="booleen" text="true"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpb"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="booleen" text="false"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpb"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="booleen" text="falSe"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpb"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="booleen" text="TrUE"/>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+		<attribut>
+			<nom_attribut nom="make_character"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="tmpc">
+					<type nom="$character"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpc"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="car" text="a"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpc"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="car" text="'"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpc"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="car" text="&#x20ac;"/>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+		<attribut>
+			<nom_attribut nom="make_integer"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="tmpi">
+					<type nom="$integer"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpi"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="entier" text="5"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpi"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="entier" text="-865"/>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+		<attribut>
+			<nom_attribut nom="make_double"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="tmpd">
+					<type nom="$double"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpd"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="double" text="5"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpd"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="double" text="86.59"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpd"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="double" text=".056"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpd"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="double" text="15478.89"/>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+		<attribut>
+			<nom_attribut nom="make_real"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="tmpr">
+					<type nom="$real"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpr"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="reel" text="5"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpr"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="reel" text="86.59"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpr"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="reel" text=".056"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmpr"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="reel" text="15478.89"/>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+		<attribut>
+			<nom_attribut nom="make_string"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="tmps">
+					<type nom="$string"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmps"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="chaine" text="bonjour a tous"/>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmps"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="chaine" text=""/>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+		<hierarchie/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+</programme>

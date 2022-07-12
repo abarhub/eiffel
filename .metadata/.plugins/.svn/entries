@@ -1,0 +1,52 @@
+10
+
+dir
+58
+https://twist/svn/eiffel/eiffel/trunk/.metadata/.plugins
+https://twist/svn/eiffel
+
+
+
+2007-09-02T09:37:31.234375Z
+5
+Barret
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67c01f0b-0d27-6e44-be05-7f44c70b15d8
+
+org.eclipse.core.resources
+dir
+
+org.eclipse.core.runtime
+dir
+
+org.eclipse.debug.core
+dir
+
+org.eclipse.debug.ui
+dir
+
+org.eclipse.hyades.execution
+dir
+
+org.eclipse.ui
+dir
+
+org.eclipse.ui.ide
+dir
+
+org.eclipse.ui.workbench
+dir
+

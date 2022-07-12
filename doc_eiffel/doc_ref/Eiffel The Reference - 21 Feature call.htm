@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap21.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 21 Feature call</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 21 Feature call_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap20.htm"><IMG 
+src="Eiffel The Reference - 21 Feature call_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap22.htm"><IMG 
+src="Eiffel The Reference - 21 Feature call_fichiers/next.gif"></A> 
+<P>
+<H1>21 Feature call </H1>
+<H2>21.3 USES OF CALLS </H2>
+<UL>
+  <LI>If the feature is an attribute or a function, the Call is syntactically an 
+  expression. 
+  <LI>If the feature is a procedure, the Call is an instruction. </LI></UL>
+<H2>21.6 FORM OF A CALL </H2>
+<H2>21.12 EXECUTING THE BODY </H2>
+<P>To execute (or ''run'') a system on a machine means to get the machine to 
+apply a creation instruction to the system's root class. 
+<P>
+<H3>Definition: current object</H3>
+<P>In all but trivial cases, the root's creation procedure will create more 
+objects and execute more calls. This extremely simple semantic definition of 
+system execution has as its immediate consequence to yield a precise definition 
+of the current object and current routine. At any time during execution, the 
+current object CO is the object to which the latest non-completed routine call 
+applies, and the current routine <I>cr</I> is the feature of that call. They may 
+be defined precisely as follows: 
+<OL>
+  <LI>At the start of the execution of a system, CO is the <B>root object</B> 
+  (the instance of the root class whose creation is the first act of system 
+  execution) and <I>cr</I> is the selected creation procedure. (If the root 
+  class has no creation procedure, execution terminates immediately.) 
+  <LI>If <I>cr</I> executes any construct other than a call, the current object 
+  and current routine remain the same. 
+  <LI>If <I>cr</I> executes a qualified call of the form <I>target</I>.<I>fname 
+  </I>(...) where the value <I>target_value</I> of <I>target</I> is attached to 
+  an object OD, then for the duration of the call OD becomes the new current 
+  object and <I>df</I>, the routine deduced from <I>fname</I>, becomes the new 
+  current routine. When the qualified call terminates, the earlier CO and 
+  <I>cr</I> resume their roles as current object and current routine. 
+  <LI>When <I>cr</I> executes an unqualified call, the current object remains 
+  the same, and there is a new current routine for the duration of the call as 
+  in case 3. </LI></OL>
+<H2>21.14 SEMANTICS OF CALLS</H2>
+<P>Consider the execution, at a certain run-time instant, of a call 
+<P>
+<P><I>target</I>l<I>fname </I>(<I>y</I><I>1</I><I>, </I>...<I>, y</I><I>n</I>) 
+<P>
+<P>To define its effect, call <I>target_value</I> the value of <I>target</I> at 
+that instant. 
+<P>
+<P>The first possibility is for <I>target_value</I> to be void. Then the call 
+cannot be executed correctly; it will fail, triggering an exception.
+<P>
+<P>For the exception raised in this case, the Kernel Library class 
+<I>EXCEPTIONS</I> introduces the integer code <I>Void_call_target</I>.
+<P>
+<P>The rest of this section assumes that <I>target_value</I> is not void. Then 
+<I>target_value</I> is attached to some object OD, which must be a direct 
+instance of some type <I>DT</I> (for ''dynamic type'') based on some class 
+<I>D</I>. Let <I>ST</I> be the type of expression <I>target</I> and <I>S</I> the 
+base class of <I>ST</I>. The rules of reattachment indicate that <I>DT</I> 
+conforms to <I>ST</I>, and that <I>D</I> is a descendant of <I>S</I>. Also, 
+because <I>DT</I> has a direct instance OD, <I>D</I> must be an effective class.
+<P>
+<P>If the call is valid, the constraint on calls implies that <I>fname</I> is 
+the final name of a feature <I>sf</I> of class <I>S</I>, available to the class 
+which contains the call. Let <I>df</I> be the version of <I>sf</I> in <I>D</I>; 
+dynamic binding means that the effect of the call is determined by <I>df</I>, 
+not <I>sf</I>. If <I>df</I> is an external routine, the effect of the call is to 
+execute that routine on the actual arguments given, if any, according to the 
+rules of the language in which it is written.
+<P>
+<P>There remains to cover the case in which <I>df</I> is a non-external non-once 
+routine (with a Routine_body beginning with the keyword <B>do</B>). Then the 
+effect of the call is the effect of the following sequence of steps. 
+<OL>
+  <LI>If <I>df</I> has arguments, attach every formal argument to the value of 
+  the corresponding actual argument, applying the semantics of direct 
+  reattachment. 
+  <LI>If <I>df</I> has any local entities, save the current values of these 
+  entities if any call to <I>df</I> has been started but not yet terminated; 
+  then initialize each local entity to the default value of its base type. 
+  <LI>If <I>df</I> is a function, initialize the predefined entity 
+  <I>Result</I>, again according to the default initialization rules. 
+  <LI>Execute the body of <I>df</I>. In this execution, evaluation of the entity 
+  <I>Current</I> will return <I>target_value</I>; the effect of an 
+  Unqualified_call <I>u</I>, where <I>u</I> is neither <I>Current</I> nor 
+  <I>Result</I>, is defined (recursively) as the effect of the qualified call 
+  <I>target</I>l<I>u</I>; and the effect of a qualified call of the form 
+  <I>s</I>l<I>u</I>, where <I>s</I> is an expression and <I>u</I> is an 
+  Unqualified_call, is defined (recursively) as the effect of a call of the form 
+  <I>v</I>l<I>u</I>, executed after the assignment <I>v </I>:=<I> 
+  target</I>l<I>s</I>, <I>v</I> being a Writable entity used only for this 
+  definition. 
+  <LI>If <I>df</I> is a function, the call is syntactically an expression; the 
+  value of that expression is the value of the entity <I>Result</I> on 
+  termination of the function's execution. 
+  <LI>If the values of any local entities have been saved under D2, restore 
+  these entities to their earlier values. This terminates the execution. 
+</LI></OL>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 21 Feature call_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap20.htm"><IMG 
+src="Eiffel The Reference - 21 Feature call_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap22.htm"><IMG 
+src="Eiffel The Reference - 21 Feature call_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

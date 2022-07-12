@@ -1,0 +1,42 @@
+BODY {
+	MARGIN-TOP: 0px; FONT-SIZE: small; BACKGROUND: rgb(250,240,230); MARGIN-LEFT: 2%; MARGIN-RIGHT: 2%; FONT-FAMILY: arial, helvetica, sans-serif
+}
+PRE {
+	MARGIN-TOP: 1em; FONT-SIZE: small; LINE-HEIGHT: 110%; FONT-FAMILY: times new roman, times, arial, helvetica, sans-serif
+}
+P {
+	MARGIN-TOP: 0em; FONT-SIZE: small; LINE-HEIGHT: 110%; FONT-FAMILY: times new roman, times, arial, helvetica, sans-serif
+}
+SPAN.received {
+	FONT-SIZE: x-small; LINE-HEIGHT: 120%; FONT-STYLE: italic; FONT-FAMILY: times new roman, times, arial, helvetica, sans-serif
+}
+SPAN.title {
+	FONT-WEIGHT: bold; FONT-SIZE: small; LINE-HEIGHT: 120%; FONT-FAMILY: arial, helvetica, sans-serif
+}
+SPAN.help {
+	FONT-SIZE: x-small; FONT-FAMILY: times new roman, times, arial, helvetica, sans-serif
+}
+UL {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+H1 {
+	PADDING-LEFT: 1mm; FONT-WEIGHT: bold; FONT-SIZE: medium; PADDING-BOTTOM: 1mm; MARGIN-LEFT: 0mm; COLOR: #aa0000; PADDING-TOP: 1mm; FONT-FAMILY: arial, helvetica, sans-serif
+}
+H2 {
+	MARGIN-TOP: 0.4em; PADDING-LEFT: 1mm; FONT-WEIGHT: bold; FONT-SIZE: small; BACKGROUND-IMAGE: url(/images/bars/ltpink.gif); MARGIN-BOTTOM: 0.4em; PADDING-BOTTOM: 1mm; MARGIN-LEFT: 0mm; COLOR: navy; PADDING-TOP: 1mm; FONT-FAMILY: arial, helvetica, sans-serif
+}
+H3 {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+H4 {
+	PADDING-LEFT: 1mm; FONT-WEIGHT: bold; BACKGROUND-IMAGE: url(/images/bars/ltteal.gif); PADDING-BOTTOM: 1mm; MARGIN-LEFT: 0mm; COLOR: navy; PADDING-TOP: 1mm; FONT-FAMILY: arial, helvetica, sans-serif
+}
+BLOCKQUOTE {
+	FONT-WEIGHT: bold; COLOR: navy; font-angle: italics
+}
+H5 {
+	FONT-SIZE: small; BACKGROUND: teal; COLOR: white; FONT-FAMILY: arial, helvetica, sans-serif
+}
+.services {
+	FONT-WEIGHT: bold; BACKGROUND: black; COLOR: white; FONT-FAMILY: Arial, Helvetica, Sans-serif
+}

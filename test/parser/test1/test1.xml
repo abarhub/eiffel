@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="COUCOU"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<expression>
+				<entier valeur="5"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<parametre_formel nom="a">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<parametre_formel nom="b">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<affect>
+							<variable nom="i"/>
+							<expression>
+								<expression_binaire op="plus">
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+									<expression>
+										<entier valeur="2"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+						</affect>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d"/>
+		<parametre_formel nom="ze">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<parametre_formel nom="rty">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<parametre_formel nom="kj">
+			<nom_classe nom="BOOLEAN"/>
+		</parametre_formel>
+		<corps>
+			<corps2>
+				<deferred/>
+			</corps2>
+		</corps>
+	</feature>
+	
+	<feature>
+		<nom_feature nom="e"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<chaine>
+									<chaine1>"coucou a tous"</chaine1>
+								</chaine>
+							</expression>
+							<expression>
+								<chaine>
+									<chaine1>"salut% a tous"</chaine1>
+								</chaine>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<chaine>
+							<chaine1>"un %"text%" fin"</chaine1>
+						</chaine>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	
+	<feature>
+		<nom_feature nom="f"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<car>'a'</car>
+					</expression>
+					<expression>
+						<car>'a%'b'</car>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	
+	<feature>
+		<nom_feature nom="g"/>
+		<corps>
+			<expression>
+				<expression_binaire op="implies">
+					<expression>
+						<expression_binaire op="and">
+							<expression>
+								<expression_binaire op="div">
+									<expression>
+										<entier valeur="45"/>
+									</expression>
+									<expression>
+										<entier valeur="86"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<expression>
+								<entier valeur="78" />
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<expression_binaire op="or_else">
+							<expression>
+								<entier valeur="7512"/>
+							</expression>
+							<expression>
+								<expression_binaire op="infs">
+									<expression>
+										<entier valeur="452" />
+									</expression>
+									<expression>
+										<entier valeur="78" />
+									</expression>
+								</expression_binaire>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	
+</class>

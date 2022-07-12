@@ -1,0 +1,58 @@
+------------------------------------------------------------------------------
+MSS -- Memory Supervision System version 1.2
+Copyright (C) 1998  Juan Jesus Alcolea Picazo and Peter Palotas
+
+MSS Normal Logfile.
+
+WARNING: Environment variable `MSS_CFG' not set. Unable to use global 
+         configuration file.
+
+Option List:
+
+LogFileName                         mss.log        (default)
+GenerateSpecialLog                  No             (default)
+SpecialLogFileName                  slog.mss       (default)
+LogToSTDOUT                         No             (default)
+LogToSTDERR                         No             (default)
+ShowLogs                            No             (local file)
+WatchLimits                         Yes            (default)
+WatchSize                           32             (default)
+WatchValue                          0xA8           (default)
+CheckOnDealloc                      Yes            (default)
+CheckAllOnAlloc                     No             (default)
+FillMemOnAlloc                      Yes            (default)
+FillMemOnAllocValue                 0x98           (default)
+FillMemOnDeAlloc                    Yes            (default)
+FillMemOnDeAllocValue               0x86           (default)
+ExitOnWarning                       No             (default)
+FalseAllocFails                     0              (default)
+ExtraNewline                        Yes            (default)
+WordWrap                            Yes            (default)
+WarnOnAllNULLDeallocs               Yes            (default)
+ZeroLenAllocReturnNULL              Yes            (default)
+
+------------------------------------------------------------------------------
+Logging started at Sun Dec 12 19:04:58 2004
+
+------------------------------------------------------------------------------
+MSG: Listing info about allocated blocks at end(?) of program:
+INFO: 121 blocks currently allocated.
+INFO: 2629 bytes of memory currently used.
+INFO: 2629 bytes maximum memory used.
+
+Method       Times Called    Successful Calls
+---------------------------------------------
+new                 0                0 
+new[]               0                0 
+delete              0                0 
+delete[]            0                0 
+malloc            104              104 
+xmalloc             0                0 
+realloc             0                0 
+xrealloc            0                0 
+strdup             17               17 
+calloc              0                0 
+free                0                0 
+cfree               0                0 
+xfree               0                0 
+------------------------------------------------------------------------------

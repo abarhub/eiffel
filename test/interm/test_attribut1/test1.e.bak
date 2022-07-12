@@ -1,0 +1,28 @@
+class TEST1
+
+creation make
+
+feature
+
+	make is
+	do
+	end;
+
+	test_pre is
+	require
+		a/=a;
+	do
+	end;
+
+	test_post is
+	do
+	ensure
+		a/=a;
+	end;
+
+	a:A;
+	b:B;
+	c:C;
+	d:D;
+
+end

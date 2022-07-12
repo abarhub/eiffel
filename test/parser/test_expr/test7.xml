@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST7"/>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="old">
+					<expression>
+						<entier valeur="5"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="old">
+					<expression>
+						<expression_unaire op="old">
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="old">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="@">
+					<expression>
+						<expression_unaire op="old">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="not">
+					<expression>
+						<expression_unaire op="not">
+							<expression>
+								<variable nom="y"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="plus">
+					<expression>
+						<expression_unaire op="plus">
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="moins">
+					<expression>
+						<expression_unaire op="moins">
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="@">
+					<expression>
+						<expression_unaire op="free_op" nom="@">
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="&amp;">
+					<expression>
+						<expression_unaire op="free_op" nom="&amp;">
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="|">
+					<expression>
+						<expression_unaire op="free_op" nom="|">
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="#">
+					<expression>
+						<expression_unaire op="free_op" nom="#">
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="old">
+					<expression>
+						<expression_unaire op="not">
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="not">
+					<expression>
+						<expression_unaire op="old">
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="old">
+					<expression>
+						<expression_unaire op="free_op" nom="@">
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="@">
+					<expression>
+						<expression_unaire op="old">
+							<expression>
+								<variable nom="d"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="@">
+					<expression>
+						<expression_unaire op="free_op" nom="&amp;">
+							<expression>
+								<variable nom="d"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+</class>

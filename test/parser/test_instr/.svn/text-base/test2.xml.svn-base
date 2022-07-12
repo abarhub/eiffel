@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST2"/>
+	<feature>
+		<nom_feature nom="a0"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<affect>
+							<variable nom="x"/>
+							<expression>
+								<entier valeur="0"/>
+							</expression>
+						</affect>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a1"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<creation2 nom="x">
+							<appel nom="make"/>
+						</creation2>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a2"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<appel nom="x">
+							<appel nom="make"/>
+						</appel>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a3"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<tentative_affect>
+							<variable nom="x"/>
+							<expression>
+								<entier valeur="0"/>
+							</expression>
+						</tentative_affect>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a4"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+							<else>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="1"/>
+										</expression>
+									</affect>
+								</instruction>
+							</else>
+						</if>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a5"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<inspect>
+							<expression>
+								<variable nom="x"/>
+							</expression>
+							<when_then>
+								<expression_when>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</expression_when>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="0"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+							<when_then>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="1"/>
+										</expression>
+									</affect>
+								</instruction>
+							</when_then>
+						</inspect>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a6"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<loop>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+							<expression>
+								<expression_binaire op="sups">
+									<expression>
+										<variable nom="x"/>
+									</expression>
+									<expression>
+										<entier valeur="10"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<expression_binaire op="plus">
+											<expression>
+												<variable nom="x"/>
+											</expression>
+											<expression>
+												<entier valeur="1"/>
+											</expression>
+										</expression_binaire>
+									</expression>
+								</affect>
+							</instruction>
+						</loop>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a7"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<debug>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+						</debug>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a8"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<check>
+							<assert>
+								<expression>
+									<expression_binaire op="egal">
+										<expression>
+											<variable nom="x"/>
+										</expression>
+										<expression>
+											<entier valeur="0"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</assert>
+						</check>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a9"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<retry/>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

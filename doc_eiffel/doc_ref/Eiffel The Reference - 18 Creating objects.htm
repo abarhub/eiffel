@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap18.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 18 Creating objects</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 18 Creating objects_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap17.htm"><IMG 
+src="Eiffel The Reference - 18 Creating objects_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap19.htm"><IMG 
+src="Eiffel The Reference - 18 Creating objects_fichiers/next.gif"></A> 
+<P>
+<H1>18 Creating objects </H1>
+<H2>18.8 CREATION SYNTAX</H2>
+<P><B>Creation_clause rule </B>
+<P>
+<P>A Creation_clause appearing in the Creators part of a class <I>C</I> is valid 
+if and only if it satisfies the following five conditions, the last four for 
+every Feature_identifier <I>fname</I> in the clause's Feature_list: 
+<OL>
+  <LI><I>C</I> is effective. 
+  <LI><I>fname</I> appears only once in the Feature_list. 
+  <LI><I>fname</I> is the final name of a procedure of <I>C</I>; let <I>cp</I> 
+  be that procedure. 
+  <LI><I>cp</I> is not a once routine. 
+  <LI>If <I>C</I> is expanded, <I>cp</I> has no arguments, and no other 
+  Feature_identifier appears in the Feature_list. </LI></OL>
+<H3>Definition: creation procedure</H3>The procedures listed in any 
+Creation_clause of a Creators part are known as creation procedures. 
+<H3>Definition: available for creation, general creation procedure</H3>A 
+creation procedure appearing in a Creation_clause is available for creation to 
+the descendants of the classes given in the Clients restriction if there is one, 
+and otherwise to all classes. If there is no Clients restriction, the procedure 
+is also said to be a general creation procedure. 
+<H3>Definition: creation Type </H3>
+<P>To discuss the validity and semantics of the Creation instruction it is 
+useful to introduce the notion of creation type of a Creation instruction. The 
+creation type is the optional Type appearing in the instruction (between 
+exclamation marks) if present; otherwise it is the base type of the target. 
+<P>
+<H2>18.9 CREATION VALIDITY (CLASS-LEVEL) </H2>
+<P><B>Creation Instruction rule </B>
+<P>
+<P>Consider a Creation instruction appearing in a class <I>X</I>. Let <I>x</I> 
+be the target of the instruction, <I>T</I> its creation type, and <I>C </I>the 
+base class of <I>T</I>. 
+<P>
+<P>The instruction is <B>class-valid</B> if and only if it satisfies the 
+following conditions: 
+<OL>
+  <LI><I>T</I> is not a Formal_generic_name (that is to say, a formal parameter 
+  of the class where the instruction appears). 
+  <LI><I>C</I> is an effective class. 
+  <LI>If the Type part is present, the type that it contains (which is <I>T</I>) 
+  conforms to the type of <I>x</I>, and is a reference type. 
+  <LI>If <I>C</I> does not have a Creators part, there is no Creation_call part. 
+
+  <LI>If <I>C</I> has a Creators part, there is a Creation_call part, and the 
+  call would be argument-valid if it appeared in the text of <I>C</I>. 
+  <LI>If case 5 holds and <I>f</I> is the feature of the Creation_call, then 
+  <I>f</I> is available for creation to <I>X</I>. </LI></OL>
+<H2>18.10 CREATION VALIDITY (SYSTEM-LEVEL) </H2>
+<P>A Creation instruction is <B>system-valid</B> if and only if it satisfies one 
+of the following two conditions: 
+<OL>
+  <LI>The creation type is explicit (in other words, the instruction begins with 
+  !<I> T </I>!<I> </I>... for some type <I>T</I>). 
+  <LI>The creation type is implicit (in other words, the instruction begins with 
+  !!...) and every possible dynamic type <I>T</I> for <I>x</I>, with base class 
+  <I>C</I>, satisfies conditions 1 to 6 of the Creation Instruction rule. In 
+  applying conditions 5 and 6, the feature of the call, <I>f</I>, must be 
+  replaced by its version in <I>C</I>. </LI></OL>
+<P>A Creation instruction is valid if and only if it is both class-valid and 
+system-valid. 
+<P>
+<H2>18.11 CREATION SEMANTICS </H2>
+<P>With the above validity rules, we can define the precise semantics of a 
+Creation instruction. Consider such an instruction with target <I>x</I> and 
+creation type <I>T</I>. If <I>T</I> is a reference type, the effect of executing 
+the instruction is the following sequence of steps: 
+<P>
+<OL>
+  <LI>If there is not enough memory available to create a new direct instance of 
+  <I>T</I>, trigger an exception in the routine that executed the instruction. 
+  Steps 2 to 5 do not apply in this case. 
+  <LI>Create a new direct instance of <I>T</I>. 
+  <LI>Assign a value to every field of the new instance: for a field 
+  corresponding to a constant attribute, the value defined in the class text; 
+  for a field corresponding to a variable attribute, the default value of the 
+  attribute's type, according to the rules given below. 
+  <LI>If the Creation instruction includes a Creation_call, that is to say an 
+  Unqualified_call, execute that call on the resulting object. 
+  <LI>Attach <I>x</I> to the object. </LI></OL>
+<H2>18.13 DEFAULT INITIALIZATION VALUES </H2>
+<P>Consider a field of a newly created object, corresponding to an attribute of 
+type <I>FT</I> in the base class of the object's type. The default 
+initialization value <I>init</I> for the field is determined as follows 
+according to the nature of <I>FT</I>. 
+<P>
+<UL>
+  <LI>For a reference type: a void reference. 
+  <LI>For <I>BOOLEAN</I>: the boolean value false. 
+  <LI>For <I>CHARACTER</I>: the null character. 
+  <LI>For <I>INTEGER, REAL</I> or <I>DOUBLE</I>: the integer, single precision 
+  or double precision zero. 
+  <LI>For <I>POINTER</I>: a null pointer. 
+  <LI>For a Bit_type of the form <I>BIT</I> N: a sequence of N zeros. </LI></UL>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 18 Creating objects_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap17.htm"><IMG 
+src="Eiffel The Reference - 18 Creating objects_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap19.htm"><IMG 
+src="Eiffel The Reference - 18 Creating objects_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

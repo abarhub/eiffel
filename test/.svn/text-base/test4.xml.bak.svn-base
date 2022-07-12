@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\test_unitaire\classe.dtd">
+
+<class>
+	<nom_classe nom="COUCOU"/>
+	<obsolete>
+		<chaine>
+			<chaine1>"c'est obsolete"</chaine1>
+		</chaine>
+	</obsolete>
+	<feature>
+		<nom_feature nom="a" />
+		<nom_feature nom="b" />
+		<nom_classe nom="INTEGER"/>
+		<corps>
+			<expression>
+				<entier valeur="5"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<nom_feature nom="d"/>
+		<parametre_formel nom="a">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<parametre_formel nom="b">
+			<nom_classe nom="INTEGER"/>
+		</parametre_formel>
+		<parametre_formel nom="c">
+			<nom_classe nom="BOOLEAN"/>
+		</parametre_formel>
+		<nom_classe nom="BOOLEAN"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<external>
+					<chaine>
+						<chaine1>"toto"</chaine1>
+					</chaine>
+					<chaine>
+						<chaine1>"tata"</chaine1>
+					</chaine>
+				</external>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<corps2>
+				<external>
+					<chaine>
+						<chaine1>"tyty"</chaine1>
+					</chaine>
+				</external>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<corps2>
+				<deferred />
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="f"/>
+		<nom_feature nom="g"/>
+		<nom_classe nom="INTEGER"/>
+		<corps>
+			<unique/>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="h"/>
+		<nom_feature nom="i"/>
+		<nom_feature nom="j"/>
+		<nom_classe nom="INTEGER"/>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="TUPLE"/>
+	</feature>	
+	<feature>
+		<nom_feature nom="b"/>
+		<nom_classe nom="TUPLE">
+			<nom_classe nom="A"/>
+		</nom_classe>
+	</feature>	
+	<feature>
+		<nom_feature nom="c"/>
+		<nom_classe nom="TUPLE">
+			<nom_classe nom="A"/>
+			<nom_classe nom="B"/>
+		</nom_classe>
+	</feature>	
+	<feature>
+		<nom_feature nom="d"/>
+		<nom_classe nom="TUPLE">
+			<nom_classe nom="A">
+				<nom_classe nom="C">
+					<nom_classe nom="D"/>
+					<nom_classe nom="E"/>
+				</nom_classe>
+				<nom_classe nom="F"/>
+			</nom_classe>
+			<nom_classe nom="B"/>
+		</nom_classe>
+	</feature>
+	<feature>
+		<nom_feature nom="e"/>
+		<nom_classe>
+			<like>
+				<expression>
+					<variable nom="toto"/>
+				</expression>
+			</like>
+		</nom_classe>
+	</feature>
+	<feature>
+		<nom_feature nom="f"/>
+		<nom_classe>
+			<like>
+				<expression>
+					<expression_binaire op="point">
+						<expression>
+							<variable nom="a"/>
+						</expression>
+						<expression>
+							<variable nom="b"/>
+						</expression>
+					</expression_binaire>
+				</expression>
+			</like>
+		</nom_classe>
+	</feature>
+	<feature>
+		<nom_feature nom="g"/>
+		<nom_feature nom="h" frozen="on"/>
+		<nom_feature nom="j"/>
+		<nom_classe nom="INTEGER" />
+	</feature>
+</class>

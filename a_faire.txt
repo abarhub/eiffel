@@ -1,0 +1,34 @@
+A faire:
+- s'occuper de sauver les commentaires dans le lexer
+- creer l'ast, avec les informations precise sur chaque token
+- il ne faut pas garder certaines informations sur les token si c'est pas necessaire
+- faire la gestion des erreurs
+- terminer la grammaire
+- reflechir sur quoi generer (du C, du XML, ...?), quand faire l'annalyse semantique,
+etc ...
+- faire un IDE (avec SWT comme composant graphique ?)
+- faire des tests sur tout, avec automatisation (les exemples seront genere
+a la volée). utiliser JUnit ?
+- utiliser eclipse ?
+********************************************************
+pour les testes du parser
+- faire testes pour expressions
+- faire testes pour types
+- faire testes pour var locales
+- terminer testes pour instructions
+
+********************************************************
+pour les testes du code intermediaire
+- 
+
+********************************************************
+pour les testes contextuelles
+- 
+
+
+
+
+
+
+
+

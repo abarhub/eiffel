@@ -1,0 +1,1202 @@
+LCLint 2.5q --- 26 July 2000
+
+\djgpp\include\stdio.h(38,27): Datatype size_t declared with inconsistent type:
+                                  unsigned long int
+  A function, variable or constant is redefined with a different type.
+  (-incondefs will suppress message)
+   load file ansi.lcd: Specification of size_t:
+   arbitrary unsigned integral type
+\djgpp\include\stdio.h(55,3): Mutable abstract type FILE declared without
+    pointer indirection: struct { int _cnt; char * _ptr; char * _base;, ... }
+    (violates assignment semantics)
+  LCL semantics requires that a mutable type exhibits sharing semantics. In
+  order for objects to be shared a indirection is necessary in the
+  representation. A mutable type may be represented by a pointer or an abstract
+  mutable type. Handles into static data are fine, too, but will generate this
+  error message unless it is suppressed. (-mutrep will suppress message)
+\djgpp\include\stdio.h(55,3): Datatype FILE declared with inconsistent type:
+    struct { int _cnt; char * _ptr; char * _base;, ... }
+   load file ansi.lcd: Specification of FILE: void *
+\djgpp\include\stdio.h(57,24): Mutable abstract type fpos_t declared without
+    pointer indirection: unsigned long int (violates assignment semantics)
+\djgpp\include\stdio.h(57,24): Datatype fpos_t declared with inconsistent type:
+                                  unsigned long int
+   load file ansi.lcd: Specification of fpos_t: void *
+\djgpp\include\string.h(35,51): Parameter 3, _n, of function strncat has
+    inconsistent type: declared size_t, specified int
+  Types are incompatible. (-type will suppress message)
+   load file ansi.lcd: Specification of _n: int
+\djgpp\include\stdlib.h(39,24): Datatype wchar_t declared with inconsistent
+                                   type: unsigned short int
+   load file ansi.lcd: Specification of wchar_t: arbitrary integral type
+\djgpp\include\stdlib.h(90,40): Function parameter state declared as manifest
+                                   array (size constant is meaningless)
+  A formal parameter is declared as an array with size.  The size of the array
+  is ignored in this context, since the array formal parameter is treated as a
+  pointer. (-fixedformalarray will suppress message)
+\djgpp\include\stdlib.h(97,40): Function parameter state declared as manifest
+                                   array (size constant is meaningless)
+\djgpp\include\stdlib.h(100,40): Function parameter param declared as manifest
+                                    array (size constant is meaningless)
+\djgpp\include\stdlib.h(103,40): Function parameter state declared as manifest
+                                    array (size constant is meaningless)
+\djgpp\include\stdlib.h(105,39): Function parameter state_seed declared as
+    manifest array (size constant is meaningless)
+\djgpp\include\stdlib.h(111,28): Type qualifier unsigned used with long long
+  Duplicate type qualifiers not supported by ANSI. Some compilers (e.g., gcc)
+  do support duplicate qualifiers. (-duplicatequals will suppress message)
+\djgpp\include\signal.h(31,13): Datatype sig_atomic_t declared with
+                                   inconsistent type: int
+   load file ansi.lcd: Specification of sig_atomic_t: arbitrary integral type
+\djgpp\include\stddef.h(13,13): Datatype ptrdiff_t declared with inconsistent
+                                   type: int
+   load file ansi.lcd: Specification of ptrdiff_t: arbitrary integral type
+\djgpp\include\setjmp.h(20,3): Mutable abstract type jmp_buf declared without
+    pointer indirection: struct __jmp_buf [1] (violates assignment semantics)
+\djgpp\include\sys/types.h(34,13): Datatype ssize_t declared with inconsistent
+                                      type: int
+   load file ansi.lcd: Specification of ssize_t: arbitrary signed integral type
+\djgpp\include\sys/types.h(57,22): Datatype time_t declared with inconsistent
+                                      type: unsigned int
+   load file ansi.lcd: Specification of time_t: arbitrary integral type
+hello_world1.c: (in function se_malloc)
+hello_world1.c(47,31): Null storage passed as non-null param:
+                          error0 (..., NULL)
+  A possibly null pointer is passed as a parameter corresponding to a formal
+  parameter with no /*@null@*/ annotation.  If NULL may be used for this
+  parameter, add a /*@null@*/ annotation to the function parameter declaration.
+  (-nullpass will suppress message)
+hello_world1.c(54,10): Possibly null storage result returned as non-null:
+                          result
+  Function returns a possibly null pointer, but is not declared using
+  /*@null@*/ annotation of result.  If function may return NULL, add /*@null@*/
+  annotation to the return value declaration. (-nullret will suppress message)
+   hello_world1.c(42,18): Storage result may become null
+hello_world1.c(54,10): Returned storage result not completely defined (*result
+                          is undefined): result
+  Storage derivable from a parameter, return value or global is not defined.
+  Use /*@out@*/ to denote passed or returned storage which need not be defined.
+  (-compdef will suppress message)
+hello_world1.c: (in function se_calloc)
+hello_world1.c(74,10): Possibly null storage result returned as non-null:
+                          result
+   hello_world1.c(62,18): Storage result may become null
+hello_world1.c: (in function se_print_character)
+hello_world1.c(141,5): Return value (type int) ignored: fputc(c, stderr)
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (-retvalint will suppress message)
+hello_world1.c: (in function se_prinT3)
+hello_world1.c(161,3): Return value (type int) ignored: fputc('\'', stderr)
+hello_world1.c(162,22): Function se_print_character expects arg 1 to be char
+                           gets T3: *o
+hello_world1.c(163,3): Return value (type int) ignored: fputc('\'', stderr)
+hello_world1.c: (in function se_prinT6)
+hello_world1.c(175,7): Test expression for if not boolean, type T6: *o
+  Test expression type is not boolean. (-predboolothers will suppress message)
+hello_world1.c: (in function se_prinT7)
+hello_world1.c(193,26): Function se_print_character expects arg 1 to be char
+                           gets T3: storage[i++]
+hello_world1.c: (in function se_position2line)
+hello_world1.c(213,7): Test expression for if not boolean, type se_position:
+                          position & 1
+  Test expression type is not boolean or int. (-predboolint will suppress
+  message)
+hello_world1.c: (in function se_position2column)
+hello_world1.c(225,7): Test expression for if not boolean, type se_position:
+                          position & 1
+hello_world1.c: (in function se_position2path_id)
+hello_world1.c(237,16): Test expression for conditional not boolean, type
+                           se_position: (position & 1)
+hello_world1.c: (in function se_print_run_time_stack)
+hello_world1.c(277,5): Return value (type int) ignored: se_print_one_fra...
+hello_world1.c(289,9): Test expression for if not boolean, type int:
+                          --frame_count
+hello_world1.c: (in function se_print_one_frame)
+hello_world1.c(319,12): Incompatible types for + (int, char):
+                           (id * 10) + (local_format[i] - '0')
+  To make char and int types equivalent, use +charint.
+hello_world1.c(314,7): Test expression for if not boolean, type int:
+                          fd->use_current
+hello_world1.c(336,12): Incompatible types for + (int, char):
+                           (id * 10) + (local_format[i] - '0')
+hello_world1.c(341,9): Test expression for if not boolean, type int: expanded
+hello_world1.c(354,3): Return value (type int) ignored: fflush(stderr)
+hello_world1.c(356,3): Return value (type int) ignored: fflush(stderr)
+hello_world1.c(358,3): Return value (type int) ignored: fflush(stderr)
+hello_world1.c: (in function se_rci)
+hello_world1.c(381,11): Test expression for if not boolean, type int:
+                           fd->use_current
+hello_world1.c: (in function error0)
+hello_world1.c(397,51): Observer storage assigned to unqualified reference:
+                           f = "*** Error at Run Time ***: %s\n"
+  Observer storage is transferred to a non-observer reference. (-observertrans
+  will suppress message)
+   hello_world1.c(397,17): Storage becomes observer
+hello_world1.c: (in function vc)
+hello_world1.c(485,12): Implicitly temp storage o returned as implicitly only:
+                           ((T0 *)o)
+  Temp storage (associated with a formal parameter) is transferred to a
+  non-temporary reference. The storage may be released or new aliases created.
+  (-temptrans will suppress message)
+hello_world1.c: (in function ci)
+hello_world1.c(503,14): Implicitly temp storage o returned as implicitly only:
+                           ((T0 *)o)
+hello_world1.c(524,10): Implicitly temp storage o returned as implicitly only:
+                           ((T0 *)o)
+hello_world1.c: (in function ac_req)
+hello_world1.c(528,8): Operand of ! is non-boolean (int): !v
+  The operand of a boolean operator is not a boolean. Use +ptrnegate to allow !
+  to be used on pointers. (-boolops will suppress message)
+hello_world1.c(528,13): Right operand of && is non-boolean (int):
+                           !v && se_require_uppermost_flag
+hello_world1.c(535,26): Operands of && are non-boolean (int):
+                           se_require_last_result && v
+hello_world1.c(535,3): Assignment of boolean to int:
+                          se_require_last_result = se_require_last_result && v
+  To make bool and int types equivalent, use +boolint.
+hello_world1.c: (in function ac_ens)
+hello_world1.c(539,8): Operand of ! is non-boolean (int): !v
+hello_world1.c: (in function ac_inv)
+hello_world1.c(549,8): Operand of ! is non-boolean (int): !v
+hello_world1.c: (in function ac_liv)
+hello_world1.c(560,8): Operand of ! is non-boolean (int): !v
+hello_world1.c: (in function ac_civ)
+hello_world1.c(605,8): Operand of ! is non-boolean (int): !v
+hello_world1.c: (in function free_and_remove_from_gcmt)
+hello_world1.c(1947,8): Variable p shadows outer declaration
+  An outer declaration is shadowed by the local declaration. (-shadow will
+  suppress message)
+   hello_world.h(514,14): Previous declaration of p: char * []
+hello_world1.c(1957,8): Implicitly temp storage c passed as only param:
+                           free (c)
+hello_world1.c: (in function may_free_rsocfl)
+hello_world1.c(1967,24): Operands of > have incompatible types (int, unsigned
+                            int): count > (rsoc_count >> 1)
+  To ignore signs in type comparisons use +ignoresigns
+hello_world1.c(1972,11): Operands of == have incompatible types (int, unsigned
+                            int): current->isize == current->header.size
+hello_world1.c(1977,2): Unqualified static storage rsocfl assigned to
+                           implicitly only: current->next = rsocfl
+  Static storage is transferred in an inconsistent way. (-statictrans will
+  suppress message)
+hello_world1.c(1979,7): Clauses exit with next referencing implicitly only
+    storage in true branch, local storage in false branch
+  The state of a variable is different depending on which branch is taken. This
+  means no annotation can sensibly be applied to the storage. (-branchstate
+  will suppress message)
+   hello_world1.c(1977,2): Storage next becomes implicitly only
+hello_world1.c: (in function gc_mark)
+hello_world1.c(2065,11): Left operand of >> is not unsigned value (int):
+                            i2 >> 1
+  An operand to a shift operator is not unsigned values.  This may have
+  unexpected results depending on the signed representations. (-shiftsigned
+  will suppress message)
+hello_world1.c(2065,11): Variable m initialized to type unsigned int, expects
+                            int: i2 >> 1
+hello_world1.c(2067,20): Left operand of >> is not unsigned value (int):
+                            (i1 + i2) >> 1
+hello_world1.c(2067,17): Assignment of unsigned int to int:
+                            m = ((i1 + i2) >> 1)
+hello_world1.c: (in function garbage_delayed)
+hello_world1.c(2111,7): Operands of < have incompatible types (unsigned int,
+                           int): fsoc_count < (10240 / ((8192) >> 10))
+hello_world1.c(2111,42): Operands of < have incompatible types (unsigned int,
+                            int): rsoc_count < (10240 / ((32768) >> 10))
+hello_world1.c(2119,6): Operands of < have incompatible types (unsigned int,
+                           int): fsoc_count < (10240 / ((8192) >> 10))
+hello_world1.c(2128,6): Operands of < have incompatible types (unsigned int,
+                           int): rsoc_count < (10240 / ((32768) >> 10))
+hello_world1.c: (in function gc_update_ceils)
+hello_world1.c(2161,11): Operands of < have incompatible types (unsigned int,
+                            int): fsoc_count_ceil < (10240 / ((8192) >> 10))
+hello_world1.c(2166,6): Operands of < have incompatible types (unsigned int,
+                           int): fsoc_count_ceil < c
+hello_world1.c(2167,4): Assignment of int to unsigned int: fsoc_count_ceil = c
+hello_world1.c(2179,11): Operands of < have incompatible types (unsigned int,
+                            int): rsoc_count_ceil < (10240 / ((32768) >> 10))
+hello_world1.c(2184,6): Operands of < have incompatible types (unsigned int,
+                           int): rsoc_count_ceil < c
+hello_world1.c(2185,4): Assignment of int to unsigned int: rsoc_count_ceil = c
+hello_world1.c(2195,2): Function returns with non-null global fsocfl
+                           referencing null storage
+  A global variable does not satisfy its annotations when control is
+  transferred. (-globstate will suppress message)
+hello_world1.c(2195,2): Function returns with non-null global rsocfl
+                           referencing null storage
+   hello_world1.c(2005,14): Storage rsocfl may become null
+hello_world1.c: (in function gc_add_into_gcmt)
+hello_world1.c(2201,9): Variable p shadows outer declaration
+   hello_world.h(514,14): Previous declaration of p: char * []
+hello_world1.c(2203,5): Left operand of <<= is not unsigned value (int):
+                           gcmt_max <<= 1
+hello_world1.c(2204,29): Unqualified storage gcmt passed as only param:
+                            realloc (gcmt, ...)
+  Unqualified storage is transferred in an inconsistent way. (-unqualifiedtrans
+  will suppress message)
+hello_world1.c(2210,2): Function returns with non-null global gcmt referencing
+                           null storage
+   hello_world1.c(2204,12): Storage gcmt may become null
+hello_world1.c: (in function rso_from_store)
+hello_world1.c(2215,7): Operands of > have incompatible types (int, size_t):
+                           (nae->store_left) > sizeof(rsoh)
+  To allow arbitrary integral types to match any integral type, use
+  +matchanyintegral.
+hello_world1.c(2225,23): Released storage nae->store reachable from parameter
+                            at return point
+  Memory is used after it has been released (either by passing as an only param
+  or assigning to and only global. (-usereleased will suppress message)
+   hello_world1.c(2225,10): Storage nae->store is released
+hello_world1.c: (in function rsoc_sweep)
+hello_world1.c(2233,3): Implicitly only storage c->free_list_of_large not
+    released before assignment: c->free_list_of_large = NULL
+  A memory leak has been detected. Newly-allocated or only-qualified storage is
+  not released before the last reference to it is lost. (-mustfree will
+  suppress message)
+hello_world1.c(2237,7): Implicitly only storage c->next not released before
+                           assignment: c->next = nae->chunk_list
+hello_world1.c(2238,7): Implicitly temp storage c assigned to implicitly only:
+                           nae->chunk_list = c
+hello_world1.c(2251,2): Kept storage c assigned to implicitly only:
+                           nae->chunk_list = c
+  Kept storage is transferred to a non-temporary reference. The storage may be
+  released or new aliases created. (-kepttrans will suppress message)
+   hello_world1.c(2250,2): Storage c becomes kept
+hello_world1.c(2252,9): Storage c->nae->chunk_list->next reachable from
+                           parameter is kept (should be implicitly only)
+  Storage derivable from a parameter does not match the alias kind expected for
+  the formal parameter. (-compmempass will suppress message)
+   hello_world1.c(2251,2): Storage c->nae->chunk_list->next becomes kept
+hello_world1.c(2265,2): Implicitly only storage nae->store not released before
+    assignment (gp aliases &c->first_header): nae->store = gp
+hello_world1.c(2265,2): Immediate address &c->first_header assigned to
+                           implicitly only: nae->store = gp
+  An immediate address (result of & operator) is transferred inconsistently.
+  (-immediatetrans will suppress message)
+hello_world1.c(2266,2): Implicitly only storage nae->store_chunk not released
+                           before assignment: nae->store_chunk = c
+hello_world1.c(2266,2): Implicitly temp storage c assigned to implicitly only:
+                           nae->store_chunk = c
+hello_world1.c(2269,2): Only storage nae->store_chunk->free_list_of_large
+    assigned to unqualified: ((fll_rsoh *)nae->store)->nextflol =
+    nae->store_chunk->free_list_of_large
+  The only reference to this storage is transferred to another reference (e.g.,
+  by returning it) that does not have the only annotation. This may lead to a
+  memory leak, since the new reference is not necessarily released. (-onlytrans
+  will suppress message)
+hello_world1.c(2272,2): Immediate address &c->first_header assigned to
+    implicitly only (gp aliases &c->first_header): nae->store = gp
+hello_world1.c(2273,2): Implicitly only storage nae->store_chunk not released
+                           before assignment: nae->store_chunk = c
+hello_world1.c(2273,2): Implicitly temp storage c assigned to implicitly only:
+                           nae->store_chunk = c
+hello_world1.c(2276,2): Only storage c->free_list_of_large assigned to
+    unqualified: ((fll_rsoh *)gp)->nextflol = c->free_list_of_large
+hello_world1.c(2277,2): Immediate address &c->first_header assigned to
+    implicitly only (gp aliases &c->first_header):
+    c->free_list_of_large = ((fll_rsoh *)gp)
+hello_world1.c(2278,7): Clauses exit with c->next referencing kept storage in
+                           true branch, implicitly only storage in false branch
+   hello_world1.c(2273,2): Storage c->next becomes kept
+hello_world1.c(2278,7): Storage c->nae->store_chunk->next is kept in one path,
+                           but live in another.
+   hello_world1.c(2273,2): Storage c->nae->store_chunk->next becomes kept
+hello_world1.c(2278,7): Clauses exit with nae->chunk_list referencing kept
+    storage in true branch, implicitly only storage in false branch
+   hello_world1.c(2273,2): Storage nae->chunk_list becomes kept
+hello_world1.c(2278,7): Clauses exit with nae->store_chunk->next referencing
+    kept storage in true branch, implicitly only storage in false branch
+   hello_world1.c(2273,2): Storage nae->store_chunk->next becomes kept
+hello_world1.c(2279,5): Storage nae->chunk_list is kept in one path, but live
+                           in another.
+   hello_world1.c(2266,2): Storage nae->chunk_list becomes kept
+hello_world1.c(2279,5): Storage nae->store_chunk->next is kept in one path, but
+                           live in another.
+   hello_world1.c(2266,2): Storage nae->store_chunk->next becomes kept
+hello_world1.c(2279,5): Clauses exit with c->next referencing kept storage in
+                           true branch, implicitly only storage in continuation
+   hello_world1.c(2266,2): Storage c->next becomes kept
+hello_world1.c(2280,8): Variable pp used in inconsistent state
+  An rvalue is used that may not be initialized to a value on some execution
+  path. (-usedef will suppress message)
+   hello_world1.c(2279,5): Storage pp becomes inconsistent (released on one
+   branch)
+hello_world1.c(2285,5): Implicitly only storage nae->store_chunk not released
+                           before assignment: nae->store_chunk = NULL
+hello_world1.c(2290,5): Kept storage c assigned to implicitly only:
+                           nae->chunk_list = c
+   hello_world1.c(2281,3): Storage c becomes kept
+hello_world1.c(2291,3): Clauses exit with c->next referencing implicitly only
+                           storage in true branch, kept storage in false branch
+   hello_world1.c(2290,5): Storage c->next becomes kept
+hello_world1.c(2291,3): Storage nae->chunk_list->next is kept in one path, but
+                           live in another.
+   hello_world1.c(2290,5): Storage nae->chunk_list->next becomes kept
+hello_world1.c(2291,3): Clauses exit with nae->chunk_list referencing
+    implicitly only storage in true branch, kept storage in false branch
+   hello_world1.c(2290,5): Storage nae->chunk_list becomes kept
+hello_world1.c(2291,3): Clauses exit with nae->store_chunk referencing
+    implicitly only storage in true branch, kept storage in false branch
+   hello_world1.c(2290,5): Storage nae->store_chunk becomes kept
+hello_world1.c(2291,3): Storage c->nae->chunk_list->next is kept in one path,
+                           but live in another.
+   hello_world1.c(2290,5): Storage c->nae->chunk_list->next becomes kept
+hello_world1.c(2292,2): Storage *(c->nae->chunk_list) reachable from parameter
+                           contains 1 undefined field: next
+hello_world1.c(2305,5): Initializer block used for MRSOC.first_header where
+                           rsoh is expected: { { 0, 2 } }
+hello_world1.c: (in function rsoc_malloc)
+hello_world1.c(2317,3): Implicitly only storage r->nae not released before
+                           assignment: r->nae = nae
+hello_world1.c(2317,3): Implicitly temp storage nae assigned to implicitly
+                           only: r->nae = nae
+hello_world1.c(2319,3): Immediate address &r->first_header assigned to
+                           implicitly only: nae->store = (&(r->first_header))
+hello_world1.c(2323,3): Kept storage r assigned to implicitly only:
+                           nae->chunk_list = r
+   hello_world1.c(2321,3): Storage r becomes kept
+hello_world1.c(2325,2): Released storage MRSOC.free_list_of_large reachable
+                           from global
+   hello_world1.c(2316,3): Storage MRSOC.free_list_of_large is released
+hello_world1.c: (in function rsocfl_best_fit)
+hello_world1.c(2337,9): Operands of >= have incompatible types (unsigned int,
+                           int): c->header.size >= size
+hello_world1.c(2340,7): Assignment of unsigned int to int:
+                           best_size = c->header.size
+hello_world1.c(2347,7): Implicitly only storage best_pc->next not released
+                           before assignment: best_pc->next = best_c->next
+hello_world1.c(2349,7): Only storage best_c->next assigned to unqualified
+                           static: rsocfl = best_c->next
+hello_world1.c(2348,14): Storage best_c->next is kept in one path, but live in
+                            another.
+   hello_world1.c(2347,7): Storage best_c->next becomes kept
+hello_world1.c(2348,14): Clauses exit with rsocfl->next referencing kept
+    storage in true branch, implicitly only storage in false branch
+   hello_world1.c(2347,7): Storage rsocfl->next becomes kept
+hello_world1.c(2348,14): Clauses exit with pc->next referencing kept storage in
+    true branch, implicitly only storage in false branch
+   hello_world1.c(2347,7): Storage pc->next becomes kept
+hello_world1.c(2350,12): Returned storage *best_c contains 1 undefined field:
+                            next
+hello_world1.c(2350,19): Function returns with global rsocfl referencing
+                            released storage
+   hello_world1.c(2350,12): Storage rsocfl is released
+hello_world1.c(2353,10): Operands of >= have incompatible types (unsigned int,
+                            int): c->header.size >= size
+hello_world1.c(2353,38): Operands of < have incompatible types (unsigned int,
+                            int): c->header.size < best_size
+hello_world1.c(2356,7): Assignment of unsigned int to int:
+                           best_size = c->header.size
+hello_world1.c(2363,5): Only storage best_c->next assigned to unqualified
+                           static: rsocfl = best_c->next
+hello_world1.c(2366,5): Implicitly only storage best_pc->next not released
+                           before assignment: best_pc->next = best_c->next
+hello_world1.c(2367,3): Clauses exit with pc->next referencing kept storage in
+                           true branch, implicitly only storage in false branch
+   hello_world1.c(2366,5): Storage pc->next becomes kept
+hello_world1.c(2368,10): Kept storage rsocfl returned as implicitly only
+                            (best_c aliases rsocfl): best_c
+   hello_world1.c(2366,5): Storage rsocfl becomes kept
+hello_world1.c(2368,10): Storage best_c->next reachable from return value is
+                            kept (should be implicitly only)
+   hello_world1.c(2366,5): Storage best_c->next becomes kept
+hello_world1.c(2368,17): Function returns with global rsocfl referencing
+                            released storage
+   hello_world1.c(2368,10): Storage rsocfl is released
+hello_world1.c: (in function get_store_in)
+hello_world1.c(2378,7): Implicitly only storage nae->store not released before
+    assignment (f aliases c->free_list_of_large): nae->store = (rsoh *)f
+hello_world1.c(2379,7): Implicitly only storage nae->store_chunk not released
+                           before assignment: nae->store_chunk = c
+hello_world1.c(2379,7): Implicitly temp storage c assigned to implicitly only:
+                           nae->store_chunk = c
+hello_world1.c(2384,2): Implicitly only storage pf->nextflol not released
+                           before assignment: pf->nextflol = f->nextflol
+hello_world1.c(2385,7): Storage c->free_list_of_large is kept in one path, but
+                           live in another.
+   hello_world1.c(2378,7): Storage c->free_list_of_large becomes kept
+hello_world1.c(2385,7): Storage c->free_list_of_large->nextflol is kept in one
+                           path, but live in another.
+   hello_world1.c(2384,2): Storage c->free_list_of_large->nextflol becomes kept
+hello_world1.c(2385,7): Clauses exit with nae->store_chunk->free_list_of_large
+    referencing implicitly only storage in true branch, kept storage in false
+    branch
+   hello_world1.c(2378,7): Storage nae->store_chunk->free_list_of_large becomes
+   kept
+   hello_world1.c(2378,7): Storage nae->store_chunk->free_list_of_large becomes
+   implicitly only
+hello_world1.c(2386,16): Storage c->nae->store_chunk->free_list_of_large
+    reachable from parameter is kept (should be implicitly only)
+   hello_world1.c(2378,7): Storage c->nae->store_chunk->free_list_of_large
+   becomes kept
+hello_world1.c: (in function new_na_from_chunk_list)
+hello_world1.c(2398,9): Test expression for if not boolean, type int:
+                           get_store_in(c, size)
+hello_world1.c(2414,7): Assignment of int to unsigned int:
+                           c->header.size = csize_left
+hello_world1.c(2415,7): Implicitly only storage c->next not released before
+                           assignment: c->next = rsocfl
+hello_world1.c(2415,7): Unqualified static storage rsocfl assigned to
+                           implicitly only: c->next = rsocfl
+   hello_world1.c(2366,5): Storage rsocfl becomes unqualified static
+hello_world1.c(2423,7): Assignment of unsigned int to int:
+                           csize = c->header.size
+hello_world1.c(2425,5): Assignment of int to unsigned int:
+                           c->header.size = csize
+hello_world1.c(2427,5): Implicitly only storage c->free_list_of_large not
+    released before assignment: c->free_list_of_large = NULL
+hello_world1.c(2428,5): Implicitly only storage c->nae not released before
+                           assignment: c->nae = nae
+hello_world1.c(2428,5): Implicitly temp storage nae assigned to implicitly
+                           only: c->nae = nae
+hello_world1.c(2429,5): Immediate address &c->first_header assigned to
+                           implicitly only: nae->store = (&(c->first_header))
+hello_world1.c(2433,5): Kept storage c assigned to implicitly only:
+                           nae->chunk_list = c
+   hello_world1.c(2431,5): Storage c becomes kept
+hello_world1.c(2434,27): Storage nae->store_chunk reachable from passed
+                            parameter is kept (should be implicitly only): nae
+   hello_world1.c(2433,5): Storage nae->store_chunk becomes kept
+hello_world1.c: (in function new_na)
+hello_world1.c(2444,7): Only storage nae->store_chunk->free_list_of_large
+    assigned to unqualified: ((fll_rsoh *)(nae->store))->nextflol =
+    nae->store_chunk->free_list_of_large
+hello_world1.c(2446,5): Storage nae->store is kept in one path, but live in
+                           another.
+   hello_world1.c(2445,7): Storage nae->store becomes kept
+hello_world1.c(2449,33): Right operand of && is non-boolean (int):
+    (nae->store_chunk != NULL) && (get_store_in(nae->store_chunk, size))
+hello_world1.c(2453,35): Null storage nae->store_chunk derivable from parameter
+                            new_na_from_chunk_list (nae, ...)
+  A possibly null pointer is reachable from a parameter or global variable that
+  is not declared using a /*@null@*/ annotation. (-nullstate will suppress
+  message)
+hello_world1.c(2462,28): Function se_malloc expects arg 1 to be size_t gets
+                            int: rounded_size
+hello_world1.c(2467,7): Assignment of int to unsigned int:
+                           c->header.size = rounded_size
+hello_world1.c(2468,7): Implicitly only storage c->nae not released before
+                           assignment: c->nae = nae
+hello_world1.c(2468,7): Implicitly temp storage nae assigned to implicitly
+                           only: c->nae = nae
+hello_world1.c(2469,7): Implicitly only storage c->next not released before
+                           assignment: c->next = nae->chunk_list
+hello_world1.c(2475,27): Released storage MRSOC.free_list_of_large reachable
+                            from global
+   hello_world1.c(2465,7): Storage MRSOC.free_list_of_large is released
+hello_world1.c(2496,26): Function se_malloc expects arg 1 to be size_t gets
+                            int: rounded_size
+hello_world1.c(2501,5): Assignment of int to unsigned int:
+                           c->header.size = rounded_size
+hello_world1.c(2502,5): Implicitly only storage c->nae not released before
+                           assignment: c->nae = nae
+hello_world1.c(2502,5): Implicitly temp storage nae assigned to implicitly
+                           only: c->nae = nae
+hello_world1.c(2503,5): Implicitly only storage c->next not released before
+                           assignment: c->next = nae->chunk_list
+hello_world1.c(2510,25): Released storage MRSOC.free_list_of_large reachable
+                            from global
+   hello_world1.c(2499,5): Storage MRSOC.free_list_of_large is released
+hello_world1.c: (in function rsocfl_count)
+hello_world1.c(2567,8): Variable p shadows outer declaration
+   hello_world.h(514,14): Previous declaration of p: char * []
+hello_world1.c: (in function fsocfl_count)
+hello_world1.c(2577,8): Variable p shadows outer declaration
+   hello_world.h(514,14): Previous declaration of p: char * []
+hello_world1.c: (in function gc_dispose_before_exit)
+hello_world1.c(2586,9): Variable p shadows outer declaration
+   hello_world.h(514,14): Previous declaration of p: char * []
+hello_world1.c: (in function gc_fsoc_get1)
+hello_world1.c(2607,5): Only storage fsocfl->next assigned to unqualified:
+                           fsocfl = fsocfl->next
+hello_world1.c: (in function gc_fsoc_get2)
+hello_world1.c(2630,5): Only storage fsocfl->next assigned to unqualified:
+                           fsocfl = fsocfl->next
+hello_world1.c: (in function r6_ix_not)
+hello_world1.c(2645,6): Variable R initialized to type int, expects T6: 0
+hello_world1.c(2649,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2650,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void *)&C
+hello_world1.c(2661,1): Assignment of int to T6: R = 1
+hello_world1.c(2657,4): Test expression for if not boolean, type T6: C
+hello_world1.c(2665,10): Only storage ds.fd (type se_frame_descriptor *)
+    derived from variable declared in this scope is not released (memory leak)
+  A storage leak due to incomplete deallocation of a structure or deep pointer
+  is suspected. Unshared storage that is reachable from a reference that is
+  being deallocated has not yet been deallocated. LCLint assumes when an object
+  is passed as an out only void pointer that the outer object will be
+  deallocated, but the inner objects will not. (-compdestroy will suppress
+  message)
+hello_world1.c(2665,10): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2665,10): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r6_px_or)
+hello_world1.c(2669,6): Variable R initialized to type int, expects T6: 0
+hello_world1.c(2673,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2674,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void *)&C
+hello_world1.c(2683,3): Operands of || are non-boolean (T6): (C) || (a1)
+hello_world1.c(2683,1): Assignment of boolean to T6: R = (C) || (a1)
+hello_world1.c(2685,10): Only storage ds.fd (type se_frame_descriptor *)
+    derived from variable declared in this scope is not released (memory leak)
+hello_world1.c(2685,10): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2685,10): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r6_px_and)
+hello_world1.c(2689,6): Variable R initialized to type int, expects T6: 0
+hello_world1.c(2693,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2694,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void *)&C
+hello_world1.c(2703,3): Operands of && are non-boolean (T6): (C) && (a1)
+hello_world1.c(2703,1): Assignment of boolean to T6: R = (C) && (a1)
+hello_world1.c(2705,10): Only storage ds.fd (type se_frame_descriptor *)
+    derived from variable declared in this scope is not released (memory leak)
+hello_world1.c(2705,10): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2705,10): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r2is_equal)
+hello_world1.c(2709,6): Variable R initialized to type int, expects T6: 0
+hello_world1.c(2713,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2714,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void *)&C
+hello_world1.c(2723,18): Function r6_ix_not expects arg 2 to be T6 gets
+                            boolean: (C) < (a1)
+hello_world1.c(2723,14): Storage ds.locals reachable from passed parameter is
+                            stack (should be implicitly only): &ds
+   hello_world1.c(2717,1): Storage ds.locals becomes stack
+hello_world1.c(2723,14): Passed storage ds contains 1 undefined field: locals
+hello_world1.c(2723,45): Function r6_ix_not expects arg 2 to be T6 gets
+                            boolean: (a1) < (C)
+hello_world1.c(2723,3): Operands of && are non-boolean (T6):
+    (r6_ix_not(&ds, (C) < (a1))) && (r6_ix_not(&ds, (a1) < (C)))
+hello_world1.c(2723,1): Assignment of boolean to T6:
+    R = (r6_ix_not(&ds, (C) < (a1))) && (r6_ix_not(&ds, (a1) < (C)))
+hello_world1.c(2727,42): Function r6_ix_not expects arg 2 to be T6 gets
+                            boolean: (C) < (a1)
+hello_world1.c(2727,66): Function r6_ix_not expects arg 2 to be T6 gets
+                            boolean: (a1) < (C)
+hello_world1.c(2727,8): Function ac_ens expects arg 1 to be int gets boolean:
+    (R) == (r6_px_and(&ds, r6_ix_not(&ds, (C) < (a1)), r6_ix_not(&ds, (a1) <
+    (C))))
+hello_world1.c(2729,24): Right operand of || is non-boolean (T6):
+                            (!((C) == (a1))) || (R)
+hello_world1.c(2729,8): Function ac_ens expects arg 1 to be int gets boolean:
+                           (!((C) == (a1))) || (R)
+hello_world1.c(2731,10): Operand of ! is non-boolean (T6): !(R)
+hello_world1.c(2731,16): Right operand of || is non-boolean (T6):
+                            (!(R)) || (r2is_equal(&ds, a1, C))
+hello_world1.c(2731,8): Function ac_ens expects arg 1 to be int gets boolean:
+                           (!(R)) || (r2is_equal(&ds, a1, C))
+hello_world1.c(2724,4): Test expression for if not boolean, type int:
+                           fd.assertion_flag
+hello_world1.c(2735,10): Only storage ds.fd (type se_frame_descriptor *)
+    derived from variable declared in this scope is not released (memory leak)
+hello_world1.c(2735,10): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2735,10): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(2735,10): Only storage ds.locals (type void ***) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r9is_not_null)
+hello_world1.c(2739,6): Variable R initialized to type int, expects T6: 0
+hello_world1.c(2743,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2744,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void *)&C
+hello_world1.c(2751,1): Assignment of boolean to T6:
+                           R = (NULL != ((void *)(C)))
+hello_world1.c(2753,10): Only storage ds.fd (type se_frame_descriptor *)
+    derived from variable declared in this scope is not released (memory leak)
+hello_world1.c(2753,10): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2753,10): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r7item)
+hello_world1.c(2757,6): Variable R initialized to type int, expects T3: 0
+hello_world1.c(2761,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2762,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void **)&C
+hello_world1.c(2773,22): Storage ds.locals reachable from passed parameter is
+                            stack (should be implicitly only): &ds
+   hello_world1.c(2765,1): Storage ds.locals becomes stack
+hello_world1.c(2773,22): Passed storage ds contains 1 undefined field: locals
+hello_world1.c(2773,8): Function ac_req expects arg 1 to be int gets T6:
+                           r7valid_index(&ds, C, a1)
+hello_world1.c(2770,4): Test expression for if not boolean, type int:
+                           fd.assertion_flag
+hello_world1.c(2778,27): Storage ds.locals reachable from passed parameter is
+                            stack (should be implicitly only): &ds
+   hello_world1.c(2765,1): Storage ds.locals becomes stack
+hello_world1.c(2778,27): Passed storage ds contains 1 undefined field: locals
+hello_world1.c(2778,21): Return value (type T7 *) ignored: se_i7(&ds, C)
+  Result returned by function call is not used. If this is intended, can cast
+  result to (void) to eliminate message. (-retvalother will suppress message)
+hello_world1.c(2778,4): Test expression for if not boolean, type int:
+                           se_rci(caller, C)
+hello_world1.c(2780,10): Only storage ds.fd (type se_frame_descriptor *)
+    derived from variable declared in this scope is not released (memory leak)
+hello_world1.c(2780,10): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2780,10): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r7valid_index)
+hello_world1.c(2784,6): Variable R initialized to type int, expects T6: 0
+hello_world1.c(2788,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2789,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void **)&C
+hello_world1.c(2797,1): Assignment of boolean to T6:
+                           R = ((1) <= (a1)) && ((a1) <= (((C)->_count)))
+hello_world1.c(2801,28): Function r6_px_and expects arg 2 to be T6 gets
+                            boolean: (1) <= (a1)
+hello_world1.c(2801,38): Function r6_px_and expects arg 3 to be T6 gets
+                            boolean: (a1) <= (((C)->_count))
+hello_world1.c(2801,24): Storage ds.locals reachable from passed parameter is
+                            stack (should be implicitly only): &ds
+   hello_world1.c(2792,1): Storage ds.locals becomes stack
+hello_world1.c(2801,24): Passed storage ds contains 1 undefined field: locals
+hello_world1.c(2801,8): Function ac_ens expects arg 1 to be int gets boolean:
+    (R) == (r6_px_and(&ds, (1) <= (a1), (a1) <= (((C)->_count))))
+hello_world1.c(2798,4): Test expression for if not boolean, type int:
+                           fd.assertion_flag
+hello_world1.c(2804,27): Storage ds.locals reachable from passed parameter is
+                            stack (should be implicitly only): &ds
+   hello_world1.c(2792,1): Storage ds.locals becomes stack
+hello_world1.c(2804,27): Passed storage ds contains 1 undefined field: locals
+hello_world1.c(2804,21): Return value (type T7 *) ignored: se_i7(&ds, C)
+hello_world1.c(2804,4): Test expression for if not boolean, type int:
+                           se_rci(caller, C)
+hello_world1.c(2806,10): Only storage ds.fd (type se_frame_descriptor *)
+    derived from variable declared in this scope is not released (memory leak)
+hello_world1.c(2806,10): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2806,10): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function se_i7)
+hello_world1.c(2812,1): Immediate address &se_ifd7 assigned to implicitly only:
+                           ds.fd = &se_ifd7
+hello_world1.c(2813,1): Immediate address &C assigned to implicitly only:
+                           ds.current = ((void **)&C)
+hello_world1.c(2820,8): Function ac_inv expects arg 1 to be int gets boolean:
+                           (0) <= (((C)->_count))
+hello_world1.c(2822,8): Function ac_inv expects arg 1 to be int gets boolean:
+                           (((C)->_count)) <= (((C)->_capacity))
+hello_world1.c(2824,65): Passed storage ds contains 1 undefined field: locals
+hello_world1.c(2824,50): Right operand of || is non-boolean (T6):
+    (!((((C)->_capacity)) > (0))) || (r9is_not_null(&ds, ((C)->_storage)))
+hello_world1.c(2824,8): Function ac_inv expects arg 1 to be int gets boolean:
+    (!((((C)->_capacity)) > (0))) || (r9is_not_null(&ds, ((C)->_storage)))
+hello_world1.c(2817,4): Test expression for if not boolean, type int:
+                           ds.fd->assertion_flag
+hello_world1.c(2828,8): Implicitly temp storage C returned as implicitly only:
+                           C
+hello_world1.c(2828,10): Only storage ds.fd (type se_frame_descriptor *)
+    derived from variable declared in this scope is not released (memory leak)
+hello_world1.c(2828,10): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2828,10): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r18make)
+hello_world1.c(2834,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2835,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void **)&C
+hello_world1.c(2841,2): Only storage ds.fd (type se_frame_descriptor *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(2841,2): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2841,2): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(2841,2): Only storage ds.locals (type void ***) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r18put_character)
+hello_world1.c(2847,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2848,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void **)&C
+hello_world1.c(2856,20): Cast to underlying abstract type FILE *:
+                            (FILE *)((stdout))
+  An abstraction barrier is broken. If necessary, use /*@access <type>@*/ to
+  allow access to an abstract type. (-abstract will suppress message)
+hello_world1.c(2856,20): Cast from underlying abstract type FILE *:
+                            (FILE *)((stdout))
+hello_world1.c(2856,7): Function putc expects arg 1 to be int gets T3: (a1)
+hello_world1.c(2858,2): Only storage ds.fd (type se_frame_descriptor *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(2858,2): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2858,2): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r18put_string)
+hello_world1.c(2865,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2866,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void **)&C
+hello_world1.c(2877,8): Function ac_req expects arg 1 to be int gets boolean:
+                           (a1) != ((void *)(NULL))
+hello_world1.c(2874,4): Test expression for if not boolean, type int:
+                           fd.assertion_flag
+hello_world1.c(2882,48): Storage ds.locals reachable from passed parameter is
+                            stack (should be implicitly only): &ds
+   hello_world1.c(2869,1): Storage ds.locals becomes stack
+hello_world1.c(2882,48): Passed storage ds contains 1 undefined field: locals
+hello_world1.c(2882,52): New fresh storage passed as implicitly temp (not
+                            released): ((T7 *)ci(7, a1, 41954594))
+hello_world1.c(2885,45): New fresh storage passed as implicitly temp (not
+                            released): ((T7 *)ci(7, a1, 41955126))
+hello_world1.c(2885,35): New fresh storage passed as implicitly temp (not
+                            released): se_i7(&ds, ((T7 *)ci(7, a1, 41955126)))
+hello_world1.c(2890,2): Only storage ds.fd (type se_frame_descriptor *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(2890,2): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2890,2): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(2890,2): Only storage ds.locals (type void ***) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function r16make)
+hello_world1.c(2896,1): Immediate address &fd assigned to implicitly only:
+                           ds.fd = &fd
+hello_world1.c(2897,1): Immediate address &C assigned to implicitly only:
+                           ds.current = (void **)&C
+hello_world1.c(2903,19): New fresh storage passed as implicitly temp (not
+                            released): ((T18 *)ci(18, oBC1io, 33559316))
+hello_world1.c(2903,50): New fresh storage passed as implicitly temp (not
+                            released): ((T0 *)se_ms(13, "Hello World.\n"))
+hello_world1.c(2905,2): Only storage ds.fd (type se_frame_descriptor *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(2905,2): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(2905,2): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(2905,2): Only storage ds.locals (type void ***) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function initialize_eiffel_runtime)
+hello_world1.c(2917,1): Implicitly only storage ds.fd not released before
+                           assignment: ds.fd = &irfd
+hello_world1.c(2917,1): Immediate address &irfd assigned to implicitly only:
+                           ds.fd = &irfd
+hello_world1.c(2918,1): Implicitly only storage ds.caller not released before
+                           assignment: ds.caller = se_dst
+hello_world1.c(2918,1): Unqualified storage se_dst assigned to implicitly only:
+                           ds.caller = se_dst
+hello_world1.c(2923,1): Observer storage assigned to unqualified reference:
+                           p[0] = "???"
+   hello_world1.c(2923,6): Storage becomes observer
+hello_world1.c(2924,1): Observer storage assigned to unqualified reference:
+    p[31] = "c:\\smalle\176""1\\lib\\kernel\\safe_equal.e"
+   hello_world1.c(2924,7): Storage becomes observer
+hello_world1.c(2925,1): Observer storage assigned to unqualified reference:
+    p[20] = "c:\\smalle\176""1\\lib\\io\\output_stream.e"
+   hello_world1.c(2925,7): Storage becomes observer
+hello_world1.c(2926,1): Observer storage assigned to unqualified reference:
+                           p[17] = "c:\\smalle\176""1\\lib\\kernel\\platform.e"
+   hello_world1.c(2926,7): Storage becomes observer
+hello_world1.c(2927,1): Observer storage assigned to unqualified reference:
+                           p[2] = "c:\\smalle\176""1\\lib\\kernel\\integer.e"
+   hello_world1.c(2927,6): Storage becomes observer
+hello_world1.c(2928,1): Observer storage assigned to unqualified reference:
+                           p[7] = "c:\\smalle\176""1\\lib\\kernel\\string.e"
+   hello_world1.c(2928,6): Storage becomes observer
+hello_world1.c(2929,1): Observer storage assigned to unqualified reference:
+    p[24] = "c:\\smalle\176""1\\lib\\kernel\\comparable.e"
+   hello_world1.c(2929,7): Storage becomes observer
+hello_world1.c(2930,1): Observer storage assigned to unqualified reference:
+    p[23] = "c:\\smalle\176""1\\lib\\kernel\\integer_ref.e"
+   hello_world1.c(2930,7): Storage becomes observer
+hello_world1.c(2931,1): Observer storage assigned to unqualified reference:
+                           p[10] = "c:\\smalle\176""1\\lib\\kernel\\any.e"
+   hello_world1.c(2931,7): Storage becomes observer
+hello_world1.c(2932,1): Observer storage assigned to unqualified reference:
+                           p[19] = "c:\\smalle\176""1\\lib\\io\\std_output.e"
+   hello_world1.c(2932,7): Storage becomes observer
+hello_world1.c(2933,1): Observer storage assigned to unqualified reference:
+                           p[25] = "c:\\smalle\176""1\\lib\\kernel\\numeric.e"
+   hello_world1.c(2933,7): Storage becomes observer
+hello_world1.c(2934,1): Observer storage assigned to unqualified reference:
+                           p[1] = "c:\\smalle\176""1\\lib\\kernel\\general.e"
+   hello_world1.c(2934,6): Storage becomes observer
+hello_world1.c(2935,1): Observer storage assigned to unqualified reference:
+                           p[26] = "c:\\smalle\176""1\\lib\\kernel\\hashable.e"
+   hello_world1.c(2935,7): Storage becomes observer
+hello_world1.c(2936,1): Observer storage assigned to unqualified reference:
+    p[29] = "c:\\smalle\176""1\\lib\\kernel\\pointer_ref.e"
+   hello_world1.c(2936,7): Storage becomes observer
+hello_world1.c(2937,1): Observer storage assigned to unqualified reference:
+                           p[8] = "c:\\smalle\176""1\\lib\\kernel\\pointer.e"
+   hello_world1.c(2937,6): Storage becomes observer
+hello_world1.c(2938,1): Observer storage assigned to unqualified reference:
+                           p[16] = ".\\hello_world.e"
+   hello_world1.c(2938,7): Storage becomes observer
+hello_world1.c(2939,1): Observer storage assigned to unqualified reference:
+    p[30] = "c:\\smalle\176""1\\lib\\kernel\\native_array.e"
+   hello_world1.c(2939,7): Storage becomes observer
+hello_world1.c(2940,1): Observer storage assigned to unqualified reference:
+                           p[21] = "c:\\smalle\176""1\\lib\\io\\std_input.e"
+   hello_world1.c(2940,7): Storage becomes observer
+hello_world1.c(2941,1): Observer storage assigned to unqualified reference:
+    p[28] = "c:\\smalle\176""1\\lib\\kernel\\character_ref.e"
+   hello_world1.c(2941,7): Storage becomes observer
+hello_world1.c(2942,1): Observer storage assigned to unqualified reference:
+                           p[3] = "c:\\smalle\176""1\\lib\\kernel\\character.e"
+   hello_world1.c(2942,6): Storage becomes observer
+hello_world1.c(2943,1): Observer storage assigned to unqualified reference:
+                           p[22] = "c:\\smalle\176""1\\lib\\io\\input_stream.e"
+   hello_world1.c(2943,7): Storage becomes observer
+hello_world1.c(2944,1): Observer storage assigned to unqualified reference:
+                           p[6] = "c:\\smalle\176""1\\lib\\kernel\\boolean.e"
+   hello_world1.c(2944,6): Storage becomes observer
+hello_world1.c(2945,1): Observer storage assigned to unqualified reference:
+    p[27] = "c:\\smalle\176""1\\lib\\kernel\\boolean_ref.e"
+   hello_world1.c(2945,7): Storage becomes observer
+hello_world1.c(2946,1): Observer storage assigned to unqualified reference:
+    p[18] = "c:\\smalle\176""1\\lib\\io\\std_input_output.e"
+   hello_world1.c(2946,7): Storage becomes observer
+hello_world1.c(2990,1): Return value (type [function (int) returns void])
+                           ignored: signal(SIGINT, s...
+hello_world1.c(2993,1): Return value (type [function (int) returns void])
+                           ignored: signal(298, se_s...
+hello_world1.c(2996,1): Return value (type [function (int) returns void])
+                           ignored: signal(SIGTERM, ...
+hello_world1.c(3002,1): Return value (type [function (int) returns void])
+                           ignored: signal(296, se_s...
+hello_world1.c(3013,8): Function ac_ens expects arg 1 to be int gets boolean:
+                           (oBC1io) != ((void *)(NULL))
+hello_world1.c(3010,4): Test expression for if not boolean, type int:
+                           ds.fd->assertion_flag
+hello_world1.c(3021,2): Only storage irfd.name (type char *) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(3021,2): Only storage irfd.local_format (type char *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(3021,2): Only storage ds.fd (type se_frame_descriptor *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(3021,2): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(3021,2): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(3021,2): Only storage ds.locals (type void ***) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c: (in function main)
+hello_world1.c(3027,1): Immediate address &root assigned to implicitly only:
+                           ds.fd = &root
+hello_world1.c(3032,9): Storage ds.current reachable from passed parameter is
+                           stack (should be implicitly only): &ds
+   hello_world1.c(3028,1): Storage ds.current becomes stack
+hello_world1.c(3032,9): Passed storage ds contains 1 undefined field: locals
+hello_world1.c(3033,2): Only storage root.name (type char *) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(3033,2): Only storage root.local_format (type char *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(3033,2): Only storage ds.fd (type se_frame_descriptor *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(3033,2): Only storage ds.current (type void **) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(3033,2): Only storage ds.caller (type se_dump_stack *) derived
+    from variable declared in this scope is not released (memory leak)
+hello_world1.c(3033,2): Only storage ds.locals (type void ***) derived from
+    variable declared in this scope is not released (memory leak)
+hello_world1.c(3035,10): Global storage *se_dst contains 5 undefined fields
+                            when call returns: fd, current, p, caller, locals
+hello_world1.c(3035,8): Unreachable code: return 0
+  This code will never be reached on any possible execution. (-unreachable will
+  suppress message)
+hello_world1.c: (in function se_ms)
+hello_world1.c(3044,1): Implicitly only storage s->_storage not released before
+                           assignment: s->_storage = ((T9)new9(c + 1))
+hello_world1.c(3045,22): Function memcpy expects arg 3 to be size_t gets int:
+                            c + 1
+hello_world1.c: (in function se_string)
+hello_world1.c(3050,7): Variable c initialized to type size_t, expects int:
+                           strlen(e)
+hello_world1.c(3054,1): Implicitly only storage s->_storage not released before
+                           assignment: s->_storage = ((T9)new9(c + 1))
+hello_world1.c(3055,22): Function memcpy expects arg 3 to be size_t gets int:
+                            c + 1
+hello_world1.c: (in function once_function_mark)
+hello_world1.c(3063,2): Function returns with non-null global oBC1io
+                           referencing null storage
+   hello_world1.c(3007,8): Storage oBC1io may become null
+hello_world1.c: (in function mark_stack_and_registers)
+hello_world1.c(3091,28): Cast from underlying abstract type jmp_buf *:
+                            (void **)(&stack_top)
+hello_world1.c: (in function gc_start)
+hello_world1.c(3098,4): Test expression for if not boolean, type int: gc_is_off
+hello_world1.c(3099,4): Test expression for if not boolean, type int:
+                           garbage_delayed()
+hello_world1.c(3109,1): Implicitly only storage na_env9.chunk_list not released
+                           before assignment: na_env9.chunk_list = NULL
+hello_world1.c(3110,1): Implicitly only storage na_env9.store_chunk not
+    released before assignment: na_env9.store_chunk = NULL
+hello_world1.c: (in function gc_sweep18)
+hello_world1.c(3152,1): Unqualified storage gc_free18 assigned to implicitly
+                           only: o1->header.next = gc_free18
+hello_world1.c(3167,1): Immediate address &c->first_object assigned to
+    implicitly only (o2 aliases &c->first_object): flt->header.next = o2
+hello_world1.c(3162,13): Variable o2 used in inconsistent state (in post loop
+                            increment)
+   hello_world1.c(3169,1): Storage o2 becomes inconsistent (released on one
+   branch)
+hello_world1.c(3162,6): Variable o1 used in inconsistent state (in post loop
+                           test)
+   hello_world1.c(3169,1): Storage o1 becomes inconsistent (released on one
+   branch)
+hello_world1.c(3172,1): Implicitly only storage c->next not released before
+                           assignment: c->next = fsocfl
+hello_world1.c(3172,1): Unqualified storage fsocfl assigned to implicitly only:
+                           c->next = fsocfl
+hello_world1.c(3177,1): Unqualified storage gc_free18 assigned to implicitly
+                           only: flt->header.next = gc_free18
+hello_world1.c(3178,1): Only storage flh.header.next assigned to unqualified:
+                           gc_free18 = flh.header.next
+hello_world1.c(3171,5): Test expression for if not boolean, type int: dead
+hello_world1.c(3201,10): Initializer block for H18 has 3 fields, but fsoc has 4
+    fields: { 8192, (1), ([function (mch *, void *) returns void]
+    *)gc_align_mark18, ([function (mch *) returns void] *)gc_sweep18 }, NULL,
+    (((8192 - sizeof(fsoc) + sizeof(double)) / sizeof(gc18)) - 1)
+  Initializer does not set every field in the structure. (-fullinitblock will
+  suppress message)
+hello_world1.c: (in function new18)
+hello_world1.c(3214,1): Only storage n->header.next assigned to unqualified:
+                           gc_free18 = n->header.next
+hello_world1.c(3225,1): Only storage n->header.next assigned to unqualified:
+                           gc_free18 = n->header.next
+hello_world1.c(3234,1): Variable c is dependent in false branch, but
+                           independent in true branch.
+   hello_world1.c(3229,1): Storage c becomes dependent
+hello_world1.c(3234,1): Storage H18.next is released in one path, but live in
+                           another.
+   hello_world1.c(3230,1): Storage H18.next is released
+hello_world1.c(3238,17): Function returns with non-null global gc_free18
+                            referencing null storage
+   hello_world1.c(3102,11): Storage gc_free18 becomes null
+hello_world1.c(3238,17): Global storage H18 contains 1 undefined field when
+                            call returns: next
+hello_world1.c: (in function gc_sweep7)
+hello_world1.c(3250,1): Unqualified storage gc_free7 assigned to implicitly
+                           only: o1->header.next = gc_free7
+hello_world1.c(3265,1): Immediate address &c->first_object assigned to
+    implicitly only (o2 aliases &c->first_object): flt->header.next = o2
+hello_world1.c(3260,13): Variable o2 used in inconsistent state (in post loop
+                            increment)
+   hello_world1.c(3267,1): Storage o2 becomes inconsistent (released on one
+   branch)
+hello_world1.c(3260,6): Variable o1 used in inconsistent state (in post loop
+                           test)
+   hello_world1.c(3267,1): Storage o1 becomes inconsistent (released on one
+   branch)
+hello_world1.c(3270,1): Implicitly only storage c->next not released before
+                           assignment: c->next = fsocfl
+hello_world1.c(3270,1): Unqualified storage fsocfl assigned to implicitly only:
+                           c->next = fsocfl
+hello_world1.c(3275,1): Unqualified storage gc_free7 assigned to implicitly
+                           only: flt->header.next = gc_free7
+hello_world1.c(3276,1): Only storage flh.header.next assigned to unqualified:
+                           gc_free7 = flh.header.next
+hello_world1.c(3269,5): Test expression for if not boolean, type int: dead
+hello_world1.c(3302,9): Initializer block for H7 has 3 fields, but fsoc has 4
+    fields: { 8192, (1), ([function (mch *, void *) returns void]
+    *)gc_align_mark7, ([function (mch *) returns void] *)gc_sweep7 }, NULL,
+    (((8192 - sizeof(fsoc) + sizeof(double)) / sizeof(gc7)) - 1)
+hello_world1.c: (in function new7)
+hello_world1.c(3315,1): Only storage n->header.next assigned to unqualified:
+                           gc_free7 = n->header.next
+hello_world1.c(3326,1): Only storage n->header.next assigned to unqualified:
+                           gc_free7 = n->header.next
+hello_world1.c(3335,1): Variable c is dependent in false branch, but
+                           independent in true branch.
+   hello_world1.c(3330,1): Storage c becomes dependent
+hello_world1.c(3335,1): Storage H7.next is released in one path, but live in
+                           another.
+   hello_world1.c(3331,1): Storage H7.next is released
+hello_world1.c(3339,16): Function returns with non-null global gc_free7
+                            referencing null storage
+   hello_world1.c(3103,10): Storage gc_free7 becomes null
+hello_world1.c(3339,16): Global storage H7 contains 1 undefined field when call
+                            returns: next
+hello_world1.c(3339,16): Released storage M7._storage reachable from global
+   hello_world1.c(3338,1): Storage M7._storage is released
+hello_world1.c: (in function new9)
+hello_world1.c(3352,4): Operands of > have incompatible types (int, size_t):
+                           na_env9.store_left > sizeof(rsoh)
+hello_world1.c(3362,19): Released storage na_env9.store reachable from global
+   hello_world1.c(3362,7): Storage na_env9.store is released
+hello_world1.c: (in function gc_sweep16)
+hello_world1.c(3376,1): Unqualified storage gc_free16 assigned to implicitly
+                           only: o1->header.next = gc_free16
+hello_world1.c(3391,1): Immediate address &c->first_object assigned to
+    implicitly only (o2 aliases &c->first_object): flt->header.next = o2
+hello_world1.c(3386,13): Variable o2 used in inconsistent state (in post loop
+                            increment)
+   hello_world1.c(3393,1): Storage o2 becomes inconsistent (released on one
+   branch)
+hello_world1.c(3386,6): Variable o1 used in inconsistent state (in post loop
+                           test)
+   hello_world1.c(3393,1): Storage o1 becomes inconsistent (released on one
+   branch)
+hello_world1.c(3396,1): Implicitly only storage c->next not released before
+                           assignment: c->next = fsocfl
+hello_world1.c(3396,1): Unqualified storage fsocfl assigned to implicitly only:
+                           c->next = fsocfl
+hello_world1.c(3401,1): Unqualified storage gc_free16 assigned to implicitly
+                           only: flt->header.next = gc_free16
+hello_world1.c(3402,1): Only storage flh.header.next assigned to unqualified:
+                           gc_free16 = flh.header.next
+hello_world1.c(3395,5): Test expression for if not boolean, type int: dead
+hello_world1.c(3425,10): Initializer block for H16 has 3 fields, but fsoc has 4
+    fields: { 8192, (1), ([function (mch *, void *) returns void]
+    *)gc_align_mark16, ([function (mch *) returns void] *)gc_sweep16 }, NULL,
+    (((8192 - sizeof(fsoc) + sizeof(double)) / sizeof(gc16)) - 1)
+hello_world1.c: (in function new16)
+hello_world1.c(3438,1): Only storage n->header.next assigned to unqualified:
+                           gc_free16 = n->header.next
+hello_world1.c(3449,1): Only storage n->header.next assigned to unqualified:
+                           gc_free16 = n->header.next
+hello_world1.c(3458,1): Variable c is dependent in false branch, but
+                           independent in true branch.
+   hello_world1.c(3453,1): Storage c becomes dependent
+hello_world1.c(3458,1): Storage H16.next is released in one path, but live in
+                           another.
+   hello_world1.c(3454,1): Storage H16.next is released
+hello_world1.c(3462,17): Function returns with non-null global gc_free16
+                            referencing null storage
+   hello_world1.c(3111,11): Storage gc_free16 becomes null
+hello_world1.c(3462,17): Global storage H16 contains 1 undefined field when
+                            call returns: next
+\djgpp\include\stdio.h(60): Variable stdin implemented by a macro
+   load file ansi.lcd: Specification of stdin
+\djgpp\include\stdio.h(61): Variable stdout implemented by a macro
+   load file ansi.lcd: Specification of stdout
+\djgpp\include\stdio.h(62): Variable stderr implemented by a macro
+   load file ansi.lcd: Specification of stderr
+\djgpp\include\string.h(17): Macro NULL already defined
+  A macro is defined in more than one place. (-macroredef will suppress
+  message)
+   \djgpp\include\stdio.h(28,17): Previous definition of NULL
+\djgpp\include\stdlib.h: (in macro MB_CUR_MAX)
+\djgpp\include\stdlib.h(20,22): Constant MB_CUR_MAX specified as size_t, but
+                                   defined as int: __dj_mb_cur_max
+   load file ansi.lcd: Specification of MB_CUR_MAX
+\djgpp\include\stdlib.h(21): Macro NULL already defined
+   \djgpp\include\string.h(17,16): Previous definition of NULL
+\djgpp\include\signal.h: (in macro SIG_DFL)
+\djgpp\include\signal.h(23,35): Cast from function pointer type ([function
+    (int) returns void] *) to non-function pointer (int):
+    ([function (int) returns void] *)(0)
+  A pointer to a function is cast to (or used as) a pointer to void (or vice
+  versa). (-castfcnptr will suppress message)
+\djgpp\include\stddef.h(11): Macro NULL already defined
+   \djgpp\include\stdlib.h(21,17): Previous definition of NULL
+\djgpp\include\stdarg.h: (in macro va_end)
+\djgpp\include\stdarg.h(29,17): Macro parameter ap not used
+  A macro parameter is not used exactly once in all possible invocations of the
+  macro. To behave like a function, each macro parameter must be used exactly
+  once on all invocations of the macro so that parameters with side-effects are
+  evaluated exactly once. Use /*@sef@*/ to denote parameters that must be
+  side-effect free. (-macroparams will suppress message)
+   load file ansi.lcd: Specification of ap
+\djgpp\include\stdarg.h: (in macro va_start)
+\djgpp\include\stdarg.h(31,69): Unrecognized (possibly system) identifier:
+                                   __builtin_next_arg
+  Identifier used in code has not been declared. (Message repeated for future
+  uses in this file.)  Use +gnuextensions to make lclint recognize some
+  keywords that are gnu extensions. (-sysunrecog will suppress message)
+\djgpp\include\stdarg.h(31,35): Assignment to macro parameter: ap
+  A macro parameter is used as the left side of an assignment expression. This
+  exhibits behavior that could not be implemented by a function. (-macroassign
+  will suppress message)
+\djgpp\include\limits.h: (in macro CHAR_MAX)
+\djgpp\include\limits.h(11,20): Constant CHAR_MAX specified as char, but
+                                   defined as int: 127
+   load file ansi.lcd: Specification of CHAR_MAX
+\djgpp\include\limits.h: (in macro CHAR_MIN)
+\djgpp\include\limits.h(12,20): Constant CHAR_MIN specified as char, but
+                                   defined as int: (-128)
+   load file ansi.lcd: Specification of CHAR_MIN
+\djgpp\include\limits.h: (in macro SCHAR_MAX)
+\djgpp\include\limits.h(18,21): Constant SCHAR_MAX specified as char, but
+                                   defined as int: 127
+   load file ansi.lcd: Specification of SCHAR_MAX
+\djgpp\include\limits.h: (in macro SCHAR_MIN)
+\djgpp\include\limits.h(19,21): Constant SCHAR_MIN specified as char, but
+                                   defined as int: (-128)
+   load file ansi.lcd: Specification of SCHAR_MIN
+\djgpp\include\limits.h: (in macro UCHAR_MAX)
+\djgpp\include\limits.h(22,21): Constant UCHAR_MAX specified as unsigned char,
+                                   but defined as int: 255
+   load file ansi.lcd: Specification of UCHAR_MAX
+\djgpp\include\float.h(13): Variable FLT_DIG implemented by a macro
+   load file ansi.lcd: Specification of FLT_DIG
+\djgpp\include\float.h(14): Variable FLT_EPSILON implemented by a macro
+   load file ansi.lcd: Specification of FLT_EPSILON
+\djgpp\include\float.h(15): Variable FLT_MANT_DIG implemented by a macro
+   load file ansi.lcd: Specification of FLT_MANT_DIG
+\djgpp\include\float.h(16): Variable FLT_MAX implemented by a macro
+   load file ansi.lcd: Specification of FLT_MAX
+\djgpp\include\float.h(17): Variable FLT_MAX_10_EXP implemented by a macro
+   load file ansi.lcd: Specification of FLT_MAX_10_EXP
+\djgpp\include\float.h(18): Variable FLT_MAX_EXP implemented by a macro
+   load file ansi.lcd: Specification of FLT_MAX_EXP
+\djgpp\include\float.h(19): Variable FLT_MIN implemented by a macro
+   load file ansi.lcd: Specification of FLT_MIN
+\djgpp\include\float.h(20): Variable FLT_MIN_10_EXP implemented by a macro
+   load file ansi.lcd: Specification of FLT_MIN_10_EXP
+\djgpp\include\float.h(21): Variable FLT_MIN_EXP implemented by a macro
+   load file ansi.lcd: Specification of FLT_MIN_EXP
+\djgpp\include\float.h(23): Variable FLT_ROUNDS implemented by a macro
+   load file ansi.lcd: Specification of FLT_ROUNDS
+\djgpp\include\float.h(29): Variable DBL_DIG implemented by a macro
+   load file ansi.lcd: Specification of DBL_DIG
+\djgpp\include\float.h(30): Variable DBL_EPSILON implemented by a macro
+   load file ansi.lcd: Specification of DBL_EPSILON
+\djgpp\include\float.h(31): Variable DBL_MANT_DIG implemented by a macro
+   load file ansi.lcd: Specification of DBL_MANT_DIG
+\djgpp\include\float.h(32): Variable DBL_MAX implemented by a macro
+   load file ansi.lcd: Specification of DBL_MAX
+\djgpp\include\float.h(33): Variable DBL_MAX_10_EXP implemented by a macro
+   load file ansi.lcd: Specification of DBL_MAX_10_EXP
+\djgpp\include\float.h(34): Variable DBL_MAX_EXP implemented by a macro
+   load file ansi.lcd: Specification of DBL_MAX_EXP
+\djgpp\include\float.h(35): Variable DBL_MIN implemented by a macro
+   load file ansi.lcd: Specification of DBL_MIN
+\djgpp\include\float.h(36): Variable DBL_MIN_10_EXP implemented by a macro
+   load file ansi.lcd: Specification of DBL_MIN_10_EXP
+\djgpp\include\float.h(37): Variable DBL_MIN_EXP implemented by a macro
+   load file ansi.lcd: Specification of DBL_MIN_EXP
+\djgpp\include\float.h(43): Variable LDBL_DIG implemented by a macro
+   load file ansi.lcd: Specification of LDBL_DIG
+\djgpp\include\float.h(44): Variable LDBL_EPSILON implemented by a macro
+   load file ansi.lcd: Specification of LDBL_EPSILON
+\djgpp\include\float.h(45): Variable LDBL_MANT_DIG implemented by a macro
+   load file ansi.lcd: Specification of LDBL_MANT_DIG
+\djgpp\include\float.h(46): Variable LDBL_MAX implemented by a macro
+   load file ansi.lcd: Specification of LDBL_MAX
+\djgpp\include\float.h(47): Variable LDBL_MAX_10_EXP implemented by a macro
+   load file ansi.lcd: Specification of LDBL_MAX_10_EXP
+\djgpp\include\float.h(48): Variable LDBL_MAX_EXP implemented by a macro
+   load file ansi.lcd: Specification of LDBL_MAX_EXP
+\djgpp\include\float.h(49): Variable LDBL_MIN implemented by a macro
+   load file ansi.lcd: Specification of LDBL_MIN
+\djgpp\include\float.h(50): Variable LDBL_MIN_10_EXP implemented by a macro
+   load file ansi.lcd: Specification of LDBL_MIN_10_EXP
+\djgpp\include\float.h(51): Variable LDBL_MIN_EXP implemented by a macro
+   load file ansi.lcd: Specification of LDBL_MIN_EXP
+hello_world1.c(440,6): Function exported but not used outside hello_world1:
+                          se_print_string
+  A declaration is exported, but not used outside this module. Declaration can
+  use static qualifier. (-exportlocal will suppress message)
+   hello_world1.c(457,1): Definition of se_print_string
+hello_world1.c(459,6): Function exported but not used outside hello_world1:
+                          se_print_bad_target
+   hello_world1.c(471,1): Definition of se_print_bad_target
+hello_world1.c(2394,6): Function exported but not used outside hello_world1:
+                           new_na_from_chunk_list
+   hello_world1.c(2437,1): Definition of new_na_from_chunk_list
+
+Finished LCLint checking --- 468 code errors found

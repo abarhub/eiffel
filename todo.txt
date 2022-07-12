@@ -1,0 +1,16 @@
+A Faire:
+-utiliser un systeme de packages englobants pour la partie system.
+-les externes appellent une routine dans un des packages.
+-il faut ajouter les variables static dans les classes.
+-chaque once utilise 2 variables statics.
+-utiliser les logs.
+-utiliser CVS.
+-voir pour les outils XML
+-finir de tester (once,heritage,attribut,expressions,etc...)
+
+
+
+
+
+
+

@@ -1,0 +1,5823 @@
+Testsuite: tinyeiffel.test_unitaire.TestInterm
+Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 7,501 sec
+------------- Standard Output ---------------
+Nombre d'element dans la racine : 6
+nom=test_all
+nom=[#text: 
+	]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+reference ="test\interm\test1\valide.xml"
+source ="test\interm\test1\test1.ace"
+reference ="test\interm\test_heritage1\valide.xml"
+source ="test\interm\test_heritage1\test1.ace"
+reference ="test\interm\test_attribut1\valide.xml"
+source ="test\interm\test_attribut1\test1.ace"
+reference ="test\interm\test_instr1\valide.xml"
+source ="test\interm\test_instr1\test1.ace"
+reference ="test\interm\test_attribut2\valide.xml"
+source ="test\interm\test_attribut2\test1.ace"
+reference ="test\interm\test_external\valide.xml"
+source ="test\interm\test_external\test1.ace"
+Compilation de test\interm\test1\test1.ace
+++++++++++++++++++++++++
+classe racine:test1
+----------------------
+parse de test1.e
+Ok
+parse de any.e
+Ok
+parse de A.e
+Ok
+fin du parsing
+parse de B.e
+Ok
+fin du parsing
+parse de C.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST1
+1:ANY
+2:NONE
+3:A
+4:B
+5:C
+calcul de :TEST1(0)TEST1
+attributs0 de la classe TEST1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe TEST1
+calcul de :ANY(1)TEST1
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :A(3)TEST1
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+Fin des attributs de la classe A
+calcul de :B(4)TEST1
+attributs0 de la classe B
+herit(4,3)
+herite de A
+attributs0 de la classe A
+Fin des attributs de la classe A
+i=0
+Fin des attributs de la classe B
+calcul de :C(5)TEST1
+attributs0 de la classe C
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe C
+heritage directe:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B,C
+classe A herite de :ANY
+classe B herite de :A
+classe C herite de :ANY
+heritage complet:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B,C
+classe A herite de :ANY
+classe B herite de :ANY,A
+classe C herite de :ANY
+feature0:make
+conformite de:A , ancetre:A
+conformite de:B , ancetre:B
+conformite de:C , ancetre:C
+feature0:toto
+feature0:tata
+feature0:tata
+Les tables des symboles
+Table_Symbol de TEST1:{
+Attribut_Complet make:{directe=make<TEST1>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de ANY:{
+}
+Table_Symbol de NONE:{
+}
+Table_Symbol de A:{
+Attribut_Complet toto:{directe=toto<A>:null,no_reel=-1,deferred=null}
+Attribut_Complet tata:{directe=tata<A>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de B:{
+Attribut_Complet toto:{directe=Aucun,no_reel=0,deferred=(toto<A>:null)}
+Attribut_Complet tata:{directe=tata<B>:null,no_reel=-1,deferred=(tata<A>:null)}
+}
+Table_Symbol de C:{
+}
+Fin des tables des symboles
+Compilation du fichier test\interm\test1\test1.ace
+coucou
+Résultat:
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="c"
+nom ="C"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="c"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+nom ="b"
+type ="var"
+nom ="c"
+type ="var"
+nom ="c"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="ANY"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="C"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="toto"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="toto"
+nom ="B"
+est_static ="non"
+nom ="tata"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tata"
+nom ="B"
+nom ="B"
+nom ="A"
+est_static ="non"
+nom ="toto"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="tata"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+no ="0"
+nom ="C"
+nom ="any"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Fin de la compilation
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="c"
+nom ="C"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="c"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+nom ="b"
+type ="var"
+nom ="c"
+type ="var"
+nom ="c"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="ANY"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="C"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="toto"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="toto"
+nom ="B"
+est_static ="non"
+nom ="tata"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tata"
+nom ="B"
+nom ="B"
+nom ="A"
+est_static ="non"
+nom ="toto"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="tata"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+no ="0"
+nom ="C"
+nom ="any"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Compilation de test\interm\test_heritage1\test1.ace
+++++++++++++++++++++++++
+classe racine:test1
+----------------------
+parse de test1.e
+Ok
+parse de any.e
+Ok
+parse de A.e
+Ok
+fin du parsing
+parse de B.e
+Ok
+fin du parsing
+parse de C.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST1
+1:ANY
+2:NONE
+3:A
+4:B
+5:C
+calcul de :TEST1(0)TEST1
+attributs0 de la classe TEST1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+Fin des attributs de la classe TEST1
+calcul de :ANY(1)TEST1
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :A(3)TEST1
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+Fin des attributs de la classe A
+calcul de :B(4)TEST1
+attributs0 de la classe B
+herit(4,3)
+herite de A
+attributs0 de la classe A
+Fin des attributs de la classe A
+i=0
+Fin des attributs de la classe B
+calcul de :C(5)TEST1
+attributs0 de la classe C
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe C
+heritage directe:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B,C
+classe A herite de :ANY
+classe B herite de :A
+classe C herite de :ANY
+heritage complet:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B,C
+classe A herite de :ANY
+classe B herite de :ANY,A
+classe C herite de :ANY
+feature0:make
+feature0:toto
+feature0:tata
+feature0:tata
+Les tables des symboles
+Table_Symbol de TEST1:{
+Attribut_Complet make:{directe=make<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet a:{directe=a<TEST1>:A,no_reel=-1,deferred=null}
+Attribut_Complet b:{directe=b<TEST1>:B,no_reel=-1,deferred=null}
+Attribut_Complet c:{directe=c<TEST1>:C,no_reel=-1,deferred=null}
+Attribut_Complet a2:{directe=a2<TEST1>:expanded A,no_reel=-1,deferred=null}
+}
+Table_Symbol de ANY:{
+}
+Table_Symbol de NONE:{
+}
+Table_Symbol de A:{
+Attribut_Complet toto:{directe=toto<A>:null,no_reel=-1,deferred=null}
+Attribut_Complet tata:{directe=tata<A>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de B:{
+Attribut_Complet toto:{directe=Aucun,no_reel=0,deferred=(toto<A>:null)}
+Attribut_Complet tata:{directe=tata<B>:null,no_reel=-1,deferred=(tata<A>:null)}
+}
+Table_Symbol de C:{
+}
+Fin des tables des symboles
+Compilation du fichier test\interm\test_heritage1\test1.ace
+coucou
+Résultat:
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="a"
+nom ="TEST1"
+nom ="A"
+est_static ="non"
+nom ="b"
+nom ="TEST1"
+nom ="B"
+est_static ="non"
+nom ="c"
+nom ="TEST1"
+nom ="C"
+est_static ="non"
+nom ="a2"
+nom ="TEST1"
+expanded ="oui"
+nom ="A"
+nom ="ANY"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="C"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="toto"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="toto"
+expanded ="oui"
+nom ="B"
+est_static ="non"
+nom ="tata"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tata"
+expanded ="oui"
+nom ="B"
+expanded ="oui"
+nom ="B"
+nom ="A"
+est_static ="non"
+nom ="toto"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="tata"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+no ="0"
+nom ="C"
+nom ="any"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Fin de la compilation
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="a"
+nom ="TEST1"
+nom ="A"
+est_static ="non"
+nom ="b"
+nom ="TEST1"
+nom ="B"
+est_static ="non"
+nom ="c"
+nom ="TEST1"
+nom ="C"
+est_static ="non"
+nom ="a2"
+nom ="TEST1"
+expanded ="oui"
+nom ="A"
+nom ="ANY"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="C"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="toto"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="toto"
+expanded ="oui"
+nom ="B"
+est_static ="non"
+nom ="tata"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tata"
+expanded ="oui"
+nom ="B"
+expanded ="oui"
+nom ="B"
+nom ="A"
+est_static ="non"
+nom ="toto"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="tata"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+no ="0"
+nom ="C"
+nom ="any"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Compilation de test\interm\test_attribut1\test1.ace
+++++++++++++++++++++++++
+classe racine:test1
+----------------------
+parse de test1.e
+Ok
+parse de any.e
+Ok
+parse de A.e
+Ok
+fin du parsing
+parse de B.e
+Ok
+fin du parsing
+parse de C.e
+Ok
+fin du parsing
+parse de D.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST1
+1:ANY
+2:NONE
+3:A
+4:B
+5:C
+6:D
+calcul de :TEST1(0)TEST1
+attributs0 de la classe TEST1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+Fin des attributs de la classe TEST1
+calcul de :ANY(1)TEST1
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :A(3)TEST1
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+Fin des attributs de la classe A
+calcul de :B(4)TEST1
+attributs0 de la classe B
+herit(4,3)
+herite de A
+attributs0 de la classe A
+Fin des attributs de la classe A
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+Fin des attributs de la classe B
+calcul de :C(5)TEST1
+attributs0 de la classe C
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe C
+calcul de :D(6)TEST1
+attributs0 de la classe D
+herit(6,4)
+herite de B
+attributs0 de la classe B
+Fin des attributs de la classe B
+Fin des attributs de la classe D
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:B , ancetre:B
+conformite de:B , ancetre:B
+conformite de:ANY , ancetre:ANY
+conformite de:A , ancetre:A
+conformite de:A , ancetre:A
+heritage directe:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B,C,D
+classe A herite de :ANY
+classe B herite de :A
+classe C herite de :ANY
+classe D herite de :B
+heritage complet:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B,C,D
+classe A herite de :ANY
+classe B herite de :ANY,A
+classe C herite de :ANY
+classe D herite de :ANY,A,B
+feature0:make
+feature0:toto
+feature0:tata
+feature0:tata
+feature0:titi
+feature0:titi3
+feature0:titi4
+feature0:titi5
+Les tables des symboles
+Table_Symbol de TEST1:{
+Attribut_Complet make:{directe=make<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet a:{directe=a<TEST1>:A,no_reel=-1,deferred=null}
+Attribut_Complet b:{directe=b<TEST1>:B,no_reel=-1,deferred=null}
+Attribut_Complet c:{directe=c<TEST1>:C,no_reel=-1,deferred=null}
+Attribut_Complet d:{directe=d<TEST1>:D,no_reel=-1,deferred=null}
+}
+Table_Symbol de ANY:{
+}
+Table_Symbol de NONE:{
+}
+Table_Symbol de A:{
+Attribut_Complet toto:{directe=toto<A>:null,no_reel=-1,deferred=null}
+Attribut_Complet tata:{directe=tata<A>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de B:{
+Attribut_Complet toto:{directe=Aucun,no_reel=0,deferred=(toto<A>:null)}
+Attribut_Complet tata:{directe=tata<B>:null,no_reel=-1,deferred=(tata<A>:null)}
+Attribut_Complet titi:{directe=titi<B>:null,no_reel=-1,deferred=null}
+Attribut_Complet titi2:{directe=titi2<B>:ANY,no_reel=-1,deferred=null}
+Attribut_Complet titi3:{directe=titi3<B>:ANY,no_reel=-1,deferred=null}
+Attribut_Complet titi4:{directe=titi4<B>:ANY,no_reel=-1,deferred=null}
+Attribut_Complet titi5:{directe=titi5<B>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de C:{
+}
+Table_Symbol de D:{
+Attribut_Complet toto:{directe=Aucun,no_reel=0,deferred=(toto<B>:null)}
+Attribut_Complet tata:{directe=Aucun,no_reel=0,deferred=(tata<B>:null)}
+Attribut_Complet titi:{directe=Aucun,no_reel=0,deferred=(titi<B>:null)}
+Attribut_Complet titi2:{directe=Aucun,no_reel=0,deferred=(titi2<B>:ANY)}
+Attribut_Complet titi3:{directe=Aucun,no_reel=0,deferred=(titi3<B>:ANY)}
+Attribut_Complet titi4:{directe=Aucun,no_reel=0,deferred=(titi4<B>:ANY)}
+Attribut_Complet titi5:{directe=Aucun,no_reel=0,deferred=(titi5<B>:null)}
+}
+Fin des tables des symboles
+Compilation du fichier test\interm\test_attribut1\test1.ace
+coucou
+Résultat:
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="a"
+nom ="TEST1"
+nom ="A"
+est_static ="non"
+nom ="b"
+nom ="TEST1"
+nom ="B"
+est_static ="non"
+nom ="c"
+nom ="TEST1"
+nom ="C"
+est_static ="non"
+nom ="d"
+nom ="TEST1"
+nom ="D"
+nom ="ANY"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="C"
+nom ="D"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="toto"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="toto"
+nom ="B"
+est_static ="non"
+nom ="tata"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tata"
+nom ="B"
+nom ="B"
+nom ="A"
+est_static ="non"
+nom ="toto"
+nom ="A"
+no ="0"
+nom ="toto"
+nom ="D"
+est_static ="non"
+nom ="tata"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+no ="0"
+nom ="tata"
+nom ="D"
+est_static ="non"
+nom ="titi"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi"
+nom ="D"
+est_static ="non"
+nom ="titi2"
+nom ="B"
+nom ="ANY"
+nom ="titi2"
+nom ="D"
+est_static ="non"
+nom ="titi3"
+nom ="B"
+nom ="ANY"
+nom ="Result"
+nom ="ANY"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi3"
+nom ="D"
+est_static ="non"
+nom ="titi4"
+nom ="B"
+nom ="ANY"
+nom ="a"
+nom ="B"
+nom ="b"
+nom ="B"
+nom ="Result"
+nom ="ANY"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi4"
+nom ="D"
+est_static ="non"
+nom ="titi5"
+nom ="B"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi5"
+nom ="D"
+nom ="C"
+nom ="any"
+nom ="D"
+nom ="B"
+est_static ="non"
+nom ="toto"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="tata"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi2"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi3"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi4"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi5"
+nom ="B"
+no ="0"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Fin de la compilation
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="a"
+nom ="TEST1"
+nom ="A"
+est_static ="non"
+nom ="b"
+nom ="TEST1"
+nom ="B"
+est_static ="non"
+nom ="c"
+nom ="TEST1"
+nom ="C"
+est_static ="non"
+nom ="d"
+nom ="TEST1"
+nom ="D"
+nom ="ANY"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="C"
+nom ="D"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="toto"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="toto"
+nom ="B"
+est_static ="non"
+nom ="tata"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tata"
+nom ="B"
+nom ="B"
+nom ="A"
+est_static ="non"
+nom ="toto"
+nom ="A"
+no ="0"
+nom ="toto"
+nom ="D"
+est_static ="non"
+nom ="tata"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+no ="0"
+nom ="tata"
+nom ="D"
+est_static ="non"
+nom ="titi"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi"
+nom ="D"
+est_static ="non"
+nom ="titi2"
+nom ="B"
+nom ="ANY"
+nom ="titi2"
+nom ="D"
+est_static ="non"
+nom ="titi3"
+nom ="B"
+nom ="ANY"
+nom ="Result"
+nom ="ANY"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi3"
+nom ="D"
+est_static ="non"
+nom ="titi4"
+nom ="B"
+nom ="ANY"
+nom ="a"
+nom ="B"
+nom ="b"
+nom ="B"
+nom ="Result"
+nom ="ANY"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi4"
+nom ="D"
+est_static ="non"
+nom ="titi5"
+nom ="B"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi5"
+nom ="D"
+nom ="C"
+nom ="any"
+nom ="D"
+nom ="B"
+est_static ="non"
+nom ="toto"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="tata"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi2"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi3"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi4"
+nom ="B"
+no ="0"
+est_static ="non"
+nom ="titi5"
+nom ="B"
+no ="0"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Compilation de test\interm\test_instr1\test1.ace
+++++++++++++++++++++++++
+classe racine:test1
+----------------------
+parse de test1.e
+Ok
+parse de any.e
+Ok
+parse de A.e
+Ok
+fin du parsing
+parse de B.e
+Ok
+fin du parsing
+parse de INTEGER.e
+Ok
+fin du parsing
+parse de C.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST1
+1:ANY
+2:NONE
+3:A
+4:B
+5:INTEGER
+6:C
+calcul de :TEST1(0)TEST1
+attributs0 de la classe TEST1
+herite de ANY
+attributs0 de la classe ANY
+i=0
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+Fin des attributs de la classe TEST1
+calcul de :ANY(1)TEST1
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :A(3)TEST1
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+Fin des attributs de la classe A
+calcul de :B(4)TEST1
+attributs0 de la classe B
+herit(4,3)
+herite de A
+attributs0 de la classe A
+Fin des attributs de la classe A
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+Fin des attributs de la classe B
+calcul de :INTEGER(5)TEST1
+attributs0 de la classe INTEGER
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+Fin des attributs de la classe INTEGER
+calcul de :C(6)TEST1
+attributs0 de la classe C
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe C
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+conformite de:A , ancetre:A
+conformite de:A , ancetre:A
+conformite de:A , ancetre:A
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+heritage directe:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B,INTEGER,C
+classe A herite de :ANY
+classe B herite de :A
+classe INTEGER herite de :ANY
+classe C herite de :ANY
+heritage complet:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B,INTEGER,C
+classe A herite de :ANY
+classe B herite de :ANY,A
+classe INTEGER herite de :ANY
+classe C herite de :ANY
+feature0:make
+feature0:test_affect
+conformite de:ANY , ancetre:ANY
+feature0:test_appel
+debut1:tototype=A
+debut2
+debut3
+debut4
+debut1:tatatype=A
+debut2
+debut3
+conformite de:A , ancetre:A
+ref
+Parametre type:A->A
+Fin parametre type:A->A:true
+Ref:=* : true
+debut4
+conformite de:A , ancetre:ANY
+ref
+type de=A
+coucou2=A?=ANY!3:1
+coucou
+Parametre type:A->ANY
+Fin parametre type:A->ANY:true
+res=true
+Ref:=* : true
+conformite de:B , ancetre:ANY
+ref
+type de=B
+coucou2=B?=ANY!4:1
+coucou
+Parametre type:B->ANY
+Fin parametre type:B->ANY:true
+res=true
+Ref:=* : true
+debut1:tititype=A
+debut2
+debut3
+conformite de:NONE , ancetre:A
+debut4
+debut1:tototype=A
+debut2
+debut3
+debut4
+debut1:tititype=A
+debut2
+debut3
+conformite de:A , ancetre:A
+ref
+Parametre type:A->A
+Fin parametre type:A->A:true
+Ref:=* : true
+debut4
+debut1:tititype=A
+debut2
+debut3
+conformite de:A , ancetre:A
+ref
+Parametre type:A->A
+Fin parametre type:A->A:true
+Ref:=* : true
+debut4
+debut1:tototype=A
+debut2
+debut3
+debut4
+debut1:test0type=INTEGER
+debut2
+debut3
+debut4
+feature0:test_tent_affect
+feature0:test_creation
+classe0:TEST1
+feature0:test_if
+conformite de:A , ancetre:A
+conformite de:NONE , ancetre:B
+conformite de:A , ancetre:B
+ref
+type de=A
+coucou2=A?=B!3:4
+Ref:=* : false
+conformite de:B , ancetre:A
+ref
+type de=B
+coucou2=B?=A!4:3
+coucou
+Parametre type:B->A
+Fin parametre type:B->A:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:B
+conformite de:NONE , ancetre:A
+conformite de:B , ancetre:A
+ref
+type de=B
+coucou2=B?=A!4:3
+coucou
+Parametre type:B->A
+Fin parametre type:B->A:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:B
+conformite de:B , ancetre:B
+conformite de:B , ancetre:A
+ref
+type de=B
+coucou2=B?=A!4:3
+coucou
+Parametre type:B->A
+Fin parametre type:B->A:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:A
+feature0:test_loop
+conformite de:B , ancetre:B
+conformite de:NONE , ancetre:A
+conformite de:B , ancetre:A
+ref
+type de=B
+coucou2=B?=A!4:3
+coucou
+Parametre type:B->A
+Fin parametre type:B->A:true
+res=true
+Ref:=* : true
+feature0:test_inspect
+conformite de:INTEGER , ancetre:INTEGER
+ref
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Ref:=* : true
+null
+coucou:-1:0;(89,14,test\interm\test_instr1\test1.e)*******************
+conformite de:INTEGER , ancetre:INTEGER
+ref
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Ref:=* : true
+null
+coucou:-1:2;(89,16,test\interm\test_instr1\test1.e)*******************
+conformite de:NONE , ancetre:A
+conformite de:NONE , ancetre:B
+conformite de:INTEGER , ancetre:INTEGER
+ref
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Ref:=* : true
+null
+coucou:-1:0;(95,14,test\interm\test_instr1\test1.e)*******************
+conformite de:INTEGER , ancetre:INTEGER
+ref
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Ref:=* : true
+null
+coucou:-1:2;(95,16,test\interm\test_instr1\test1.e)*******************
+conformite de:INTEGER , ancetre:INTEGER
+ref
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Ref:=* : true
+conformite de:INTEGER , ancetre:INTEGER
+ref
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Ref:=* : true
+conformite de:NONE , ancetre:A
+conformite de:NONE , ancetre:B
+feature0:test_rescue
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+feature0:test_retry
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+feature0:test_check
+conformite de:INTEGER , ancetre:INTEGER
+ref
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Ref:=* : true
+feature0:test_debug
+conformite de:INTEGER , ancetre:INTEGER
+ref
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Ref:=* : true
+conformite de:INTEGER , ancetre:INTEGER
+ref
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Ref:=* : true
+feature0:test_pre
+conformite de:INTEGER , ancetre:INTEGER
+feature0:test_post
+conformite de:INTEGER , ancetre:ANY
+ref
+type de=INTEGER
+coucou2=INTEGER?=ANY!5:1
+coucou
+Parametre type:INTEGER->ANY
+Fin parametre type:INTEGER->ANY:true
+res=true
+Ref:=* : true
+conformite de:C , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+conformite de:A , ancetre:A
+feature0:coucou_a_tous
+feature0:toto
+feature0:tata
+feature0:titi
+conformite de:NONE , ancetre:A
+feature0:tata2
+feature0:titi0
+feature0:titi3
+feature0:titi4
+feature0:titi5
+feature0:infix "+"
+feature0:test0
+Les tables des symboles
+Table_Symbol de TEST1:{
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet make:{directe=make<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_affect:{directe=test_affect<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_appel:{directe=test_appel<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_tent_affect:{directe=test_tent_affect<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_creation:{directe=test_creation<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_if:{directe=test_if<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_loop:{directe=test_loop<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_inspect:{directe=test_inspect<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_rescue:{directe=test_rescue<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_retry:{directe=test_retry<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_check:{directe=test_check<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_debug:{directe=test_debug<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_pre:{directe=test_pre<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_post:{directe=test_post<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet coucou_a_tous:{directe=coucou_a_tous<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet k:{directe=k<TEST1>:INTEGER,no_reel=-1,deferred=null}
+}
+Table_Symbol de ANY:{
+Attribut_Complet Void:{directe=Void<ANY>:NONE,no_reel=-1,deferred=null}
+}
+Table_Symbol de NONE:{
+}
+Table_Symbol de A:{
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet toto:{directe=toto<A>:null,no_reel=-1,deferred=null}
+Attribut_Complet tata:{directe=tata<A>:null,no_reel=-1,deferred=null}
+Attribut_Complet titi:{directe=titi<A>:A,no_reel=-1,deferred=null}
+}
+Table_Symbol de B:{
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<A>:NONE)}
+Attribut_Complet toto:{directe=Aucun,no_reel=0,deferred=(toto<A>:null)}
+Attribut_Complet tata:{directe=Aucun,no_reel=0,deferred=(tata<A>:null)}
+Attribut_Complet titi:{directe=Aucun,no_reel=0,deferred=(titi<A>:A)}
+Attribut_Complet tata2:{directe=tata2<B>:null,no_reel=-1,deferred=null}
+Attribut_Complet titi0:{directe=titi0<B>:null,no_reel=-1,deferred=null}
+Attribut_Complet titi2:{directe=titi2<B>:ANY,no_reel=-1,deferred=null}
+Attribut_Complet titi3:{directe=titi3<B>:ANY,no_reel=-1,deferred=null}
+Attribut_Complet titi4:{directe=titi4<B>:ANY,no_reel=-1,deferred=null}
+Attribut_Complet titi5:{directe=titi5<B>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de INTEGER:{
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet infix "+":{directe=infix "+"<INTEGER>:C,no_reel=-1,deferred=null}
+Attribut_Complet test0:{directe=test0<INTEGER>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de C:{
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+}
+Fin des tables des symboles
+Compilation du fichier test\interm\test_instr1\test1.ace
+coucou
+Résultat:
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_affect"
+nom ="TEST1"
+nom ="a"
+nom ="ANY"
+nom ="b"
+nom ="ANY"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_appel"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="a2"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="tmp3"
+nom ="A"
+nom ="tmp6"
+nom ="A"
+nom ="tmp8"
+nom ="A"
+nom ="a"
+type ="var"
+type ="void"
+nom ="a2"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="tmp3"
+type ="var"
+type ="void"
+nom ="tmp6"
+type ="var"
+type ="void"
+nom ="tmp8"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="tmp0"
+type ="diff"
+type ="void"
+nom ="a"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp0"
+nom ="a"
+type ="var"
+nom ="toto"
+label ="tmp1"
+type ="diff"
+type ="void"
+nom ="a2"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp1"
+nom ="a2"
+type ="var"
+nom ="tata"
+nom ="a"
+type ="var"
+nom ="coucou_a_tous"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="tmp2"
+type ="diff"
+type ="void"
+nom ="a"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp2"
+nom ="tmp3"
+type ="var"
+nom ="a"
+type ="var"
+nom ="titi"
+nom ="Void"
+type ="var"
+label ="tmp4"
+type ="diff"
+type ="void"
+nom ="tmp3"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp4"
+nom ="tmp3"
+type ="var"
+nom ="toto"
+label ="tmp5"
+type ="diff"
+type ="void"
+nom ="a"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp5"
+nom ="tmp6"
+type ="var"
+nom ="a"
+type ="var"
+nom ="titi"
+nom ="a2"
+type ="var"
+label ="tmp7"
+type ="diff"
+type ="void"
+nom ="tmp6"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp7"
+nom ="tmp8"
+type ="var"
+nom ="tmp6"
+type ="var"
+nom ="titi"
+nom ="a"
+type ="var"
+label ="tmp9"
+type ="diff"
+type ="void"
+nom ="tmp8"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp9"
+nom ="tmp8"
+type ="var"
+nom ="toto"
+label ="tmp10"
+type ="diff"
+type ="void"
+nom ="k"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp10"
+nom ="k"
+type ="var"
+nom ="test0"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_tent_affect"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="label0"
+nom ="b"
+type ="var"
+nom ="A"
+nom ="b"
+type ="var"
+type ="void"
+label ="fin1"
+label ="label0"
+nom ="b"
+type ="var"
+nom ="a"
+type ="var"
+label ="fin1"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_creation"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="var0"
+nom ="A"
+nom ="var1"
+nom ="B"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="var0"
+type ="var"
+type ="void"
+nom ="var1"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="var0"
+type ="var"
+nom ="A"
+nom ="a"
+nom ="var1"
+type ="var"
+nom ="B"
+nom ="b"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_if"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="tmp2"
+nom ="BOOLEAN"
+nom ="tmp3"
+nom ="BOOLEAN"
+nom ="tmp6"
+nom ="BOOLEAN"
+nom ="tmp7"
+nom ="BOOLEAN"
+nom ="tmp10"
+nom ="BOOLEAN"
+nom ="tmp11"
+nom ="BOOLEAN"
+nom ="tmp13"
+nom ="BOOLEAN"
+nom ="tmp14"
+nom ="BOOLEAN"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="tmp2"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp3"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp6"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp7"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp10"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp11"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp13"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp14"
+type ="var"
+text ="false"
+type ="booleen"
+label ="debut_routine"
+nom ="tmp3"
+type ="var"
+type ="egal"
+nom ="a"
+type ="var"
+nom ="a"
+type ="var"
+nom ="tmp2"
+type ="var"
+type ="not"
+nom ="tmp3"
+type ="var"
+label ="label0"
+nom ="tmp2"
+type ="var"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin1"
+label ="label0"
+label ="fin1"
+nom ="tmp7"
+type ="var"
+type ="egal"
+nom ="b"
+type ="var"
+nom ="a"
+type ="var"
+nom ="tmp6"
+type ="var"
+type ="not"
+nom ="tmp7"
+type ="var"
+label ="label4"
+nom ="tmp6"
+type ="var"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin5"
+label ="label4"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin5"
+nom ="tmp11"
+type ="var"
+type ="egal"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+nom ="tmp10"
+type ="var"
+type ="not"
+nom ="tmp11"
+type ="var"
+label ="label8"
+nom ="tmp10"
+type ="var"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin9"
+label ="label8"
+nom ="tmp14"
+type ="var"
+type ="egal"
+nom ="b"
+type ="var"
+nom ="b"
+type ="var"
+nom ="tmp13"
+type ="var"
+type ="not"
+nom ="tmp14"
+type ="var"
+label ="label12"
+nom ="tmp13"
+type ="var"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="fin9"
+label ="label12"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin9"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_loop"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="test0"
+label ="debut_boucle2"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="test0"
+label ="debut_boucle2"
+type ="egal"
+nom ="b"
+type ="var"
+nom ="b"
+type ="var"
+label ="fin1"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_inspect"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="i"
+nom ="INTEGER"
+nom ="var_test1"
+nom ="INTEGER"
+nom ="var_test7"
+nom ="INTEGER"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+nom ="var_test1"
+type ="var"
+text ="0"
+type ="entier"
+nom ="var_test7"
+type ="var"
+text ="0"
+type ="entier"
+label ="debut_routine"
+nom ="var_test1"
+type ="var"
+nom ="i"
+type ="var"
+label ="suite3"
+type ="egal"
+nom ="var_test1"
+type ="var"
+text ="0"
+type ="entier"
+label ="suite3"
+type ="egal"
+nom ="var_test1"
+type ="var"
+text ="2"
+type ="entier"
+label ="label2"
+label ="suite3"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="label0"
+label ="label2"
+label ="label4"
+label ="label_else5"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="label0"
+label ="label4"
+text ="7"
+type ="entier"
+label ="label_else5"
+label ="label0"
+nom ="var_test7"
+type ="var"
+nom ="i"
+type ="var"
+label ="suite9"
+type ="egal"
+nom ="var_test7"
+type ="var"
+text ="0"
+type ="entier"
+label ="suite9"
+type ="egal"
+nom ="var_test7"
+type ="var"
+text ="2"
+type ="entier"
+label ="test_intervalle10"
+type ="sup"
+nom ="i"
+type ="var"
+text ="5"
+type ="entier"
+label ="fin_test_intervalle11"
+label ="test_intervalle10"
+label ="suite9"
+type ="inf"
+nom ="i"
+type ="var"
+text ="9"
+type ="entier"
+label ="fin_test_intervalle11"
+label ="label8"
+label ="suite9"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="label6"
+label ="label8"
+label ="label12"
+label ="label_else13"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="label6"
+label ="label12"
+text ="7"
+type ="entier"
+label ="label_else13"
+label ="label6"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_rescue"
+nom ="TEST1"
+nom ="a"
+nom ="ANY"
+nom ="b"
+nom ="ANY"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="debut_rescue"
+nom ="b"
+type ="var"
+nom ="a"
+type ="var"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_retry"
+nom ="TEST1"
+nom ="a"
+nom ="ANY"
+nom ="b"
+nom ="ANY"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="debut_rescue"
+nom ="b"
+type ="var"
+nom ="a"
+type ="var"
+label ="debut_routine"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_check"
+nom ="TEST1"
+nom ="i"
+nom ="INTEGER"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+label ="debut_routine"
+label ="suite_check0"
+nom ="$niveau_verif"
+text ="-1"
+type ="entier"
+type ="var_syst"
+label ="assert1"
+type ="egal"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+text ="4"
+type ="entier"
+label ="assert1"
+label ="suite_check0"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_debug"
+nom ="TEST1"
+nom ="i"
+nom ="INTEGER"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+label ="debut_routine"
+label ="suite_debug0"
+nom ="$niveau_verif_debug"
+type ="var_syst"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+label ="suite_debug0"
+label ="suite_debug1"
+nom ="$niveau_verif_debug"
+text ="a"
+type ="chaine"
+text ="b"
+type ="chaine"
+type ="var_syst"
+nom ="i"
+type ="var"
+text ="2"
+type ="entier"
+label ="suite_debug1"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_pre"
+nom ="TEST1"
+label ="assert0"
+type ="diff"
+nom ="k"
+type ="var"
+nom ="k"
+type ="var"
+text ="4"
+type ="entier"
+label ="assert0"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_post"
+nom ="TEST1"
+nom ="c"
+nom ="C"
+nom ="a"
+nom ="A"
+nom ="a"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tmp2"
+nom ="C"
+label ="tmp1"
+type ="diff"
+type ="void"
+nom ="k"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp1"
+nom ="tmp2"
+type ="var"
+nom ="k"
+type ="var"
+nom ="+"
+type ="infix"
+nom ="k"
+type ="var"
+label ="assert0"
+type ="diff"
+nom ="tmp2"
+type ="var"
+nom ="c"
+type ="var"
+text ="4"
+type ="entier"
+label ="assert0"
+label ="assert3"
+type ="egal"
+nom ="a"
+type ="var"
+nom ="a"
+type ="var"
+text ="4"
+type ="entier"
+label ="assert3"
+est_static ="non"
+nom ="coucou_a_tous"
+nom ="TEST1"
+nom ="i"
+nom ="ANY"
+nom ="j"
+nom ="ANY"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="k"
+nom ="TEST1"
+nom ="INTEGER"
+nom ="ANY"
+est_static ="non"
+nom ="Void"
+nom ="ANY"
+nom ="NONE"
+nom ="Void"
+nom ="TEST1"
+nom ="Void"
+nom ="A"
+nom ="Void"
+nom ="INTEGER"
+nom ="Void"
+nom ="C"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="INTEGER"
+nom ="C"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+nom ="Void"
+nom ="B"
+est_static ="non"
+nom ="toto"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="toto"
+nom ="B"
+est_static ="non"
+nom ="tata"
+nom ="A"
+nom ="a"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tata"
+nom ="B"
+est_static ="non"
+nom ="titi"
+nom ="A"
+nom ="A"
+nom ="a"
+nom ="A"
+nom ="Result"
+nom ="A"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="Result"
+type ="var"
+nom ="Void"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi"
+nom ="B"
+nom ="B"
+nom ="A"
+nom ="tata2"
+est_static ="non"
+nom ="Void"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="toto"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="tata"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="titi"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="tata2"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="titi0"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="titi2"
+nom ="B"
+nom ="ANY"
+est_static ="non"
+nom ="titi3"
+nom ="B"
+nom ="ANY"
+nom ="Result"
+nom ="ANY"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="titi4"
+nom ="B"
+nom ="ANY"
+nom ="a"
+nom ="B"
+nom ="b"
+nom ="B"
+nom ="Result"
+nom ="ANY"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="titi5"
+nom ="B"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="INTEGER"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+est_static ="non"
+nom ="+"
+type ="infix"
+nom ="INTEGER"
+nom ="C"
+nom ="a"
+nom ="ANY"
+nom ="Result"
+nom ="C"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test0"
+nom ="INTEGER"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_int"
+nom ="integer"
+nom ="$integer"
+nom ="C"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Fin de la compilation
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_affect"
+nom ="TEST1"
+nom ="a"
+nom ="ANY"
+nom ="b"
+nom ="ANY"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_appel"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="a2"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="tmp3"
+nom ="A"
+nom ="tmp6"
+nom ="A"
+nom ="tmp8"
+nom ="A"
+nom ="a"
+type ="var"
+type ="void"
+nom ="a2"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="tmp3"
+type ="var"
+type ="void"
+nom ="tmp6"
+type ="var"
+type ="void"
+nom ="tmp8"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="tmp0"
+type ="diff"
+type ="void"
+nom ="a"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp0"
+nom ="a"
+type ="var"
+nom ="toto"
+label ="tmp1"
+type ="diff"
+type ="void"
+nom ="a2"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp1"
+nom ="a2"
+type ="var"
+nom ="tata"
+nom ="a"
+type ="var"
+nom ="coucou_a_tous"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="tmp2"
+type ="diff"
+type ="void"
+nom ="a"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp2"
+nom ="tmp3"
+type ="var"
+nom ="a"
+type ="var"
+nom ="titi"
+nom ="Void"
+type ="var"
+label ="tmp4"
+type ="diff"
+type ="void"
+nom ="tmp3"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp4"
+nom ="tmp3"
+type ="var"
+nom ="toto"
+label ="tmp5"
+type ="diff"
+type ="void"
+nom ="a"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp5"
+nom ="tmp6"
+type ="var"
+nom ="a"
+type ="var"
+nom ="titi"
+nom ="a2"
+type ="var"
+label ="tmp7"
+type ="diff"
+type ="void"
+nom ="tmp6"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp7"
+nom ="tmp8"
+type ="var"
+nom ="tmp6"
+type ="var"
+nom ="titi"
+nom ="a"
+type ="var"
+label ="tmp9"
+type ="diff"
+type ="void"
+nom ="tmp8"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp9"
+nom ="tmp8"
+type ="var"
+nom ="toto"
+label ="tmp10"
+type ="diff"
+type ="void"
+nom ="k"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp10"
+nom ="k"
+type ="var"
+nom ="test0"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_tent_affect"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="label0"
+nom ="b"
+type ="var"
+nom ="A"
+nom ="b"
+type ="var"
+type ="void"
+label ="fin1"
+label ="label0"
+nom ="b"
+type ="var"
+nom ="a"
+type ="var"
+label ="fin1"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_creation"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="var0"
+nom ="A"
+nom ="var1"
+nom ="B"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="var0"
+type ="var"
+type ="void"
+nom ="var1"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="var0"
+type ="var"
+nom ="A"
+nom ="a"
+nom ="var1"
+type ="var"
+nom ="B"
+nom ="b"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_if"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="tmp2"
+nom ="BOOLEAN"
+nom ="tmp3"
+nom ="BOOLEAN"
+nom ="tmp6"
+nom ="BOOLEAN"
+nom ="tmp7"
+nom ="BOOLEAN"
+nom ="tmp10"
+nom ="BOOLEAN"
+nom ="tmp11"
+nom ="BOOLEAN"
+nom ="tmp13"
+nom ="BOOLEAN"
+nom ="tmp14"
+nom ="BOOLEAN"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="tmp2"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp3"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp6"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp7"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp10"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp11"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp13"
+type ="var"
+text ="false"
+type ="booleen"
+nom ="tmp14"
+type ="var"
+text ="false"
+type ="booleen"
+label ="debut_routine"
+nom ="tmp3"
+type ="var"
+type ="egal"
+nom ="a"
+type ="var"
+nom ="a"
+type ="var"
+nom ="tmp2"
+type ="var"
+type ="not"
+nom ="tmp3"
+type ="var"
+label ="label0"
+nom ="tmp2"
+type ="var"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin1"
+label ="label0"
+label ="fin1"
+nom ="tmp7"
+type ="var"
+type ="egal"
+nom ="b"
+type ="var"
+nom ="a"
+type ="var"
+nom ="tmp6"
+type ="var"
+type ="not"
+nom ="tmp7"
+type ="var"
+label ="label4"
+nom ="tmp6"
+type ="var"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin5"
+label ="label4"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin5"
+nom ="tmp11"
+type ="var"
+type ="egal"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+nom ="tmp10"
+type ="var"
+type ="not"
+nom ="tmp11"
+type ="var"
+label ="label8"
+nom ="tmp10"
+type ="var"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin9"
+label ="label8"
+nom ="tmp14"
+type ="var"
+type ="egal"
+nom ="b"
+type ="var"
+nom ="b"
+type ="var"
+nom ="tmp13"
+type ="var"
+type ="not"
+nom ="tmp14"
+type ="var"
+label ="label12"
+nom ="tmp13"
+type ="var"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="fin9"
+label ="label12"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="fin9"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_loop"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="test0"
+label ="debut_boucle2"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="test0"
+label ="debut_boucle2"
+type ="egal"
+nom ="b"
+type ="var"
+nom ="b"
+type ="var"
+label ="fin1"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_inspect"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="B"
+nom ="i"
+nom ="INTEGER"
+nom ="var_test1"
+nom ="INTEGER"
+nom ="var_test7"
+nom ="INTEGER"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+nom ="var_test1"
+type ="var"
+text ="0"
+type ="entier"
+nom ="var_test7"
+type ="var"
+text ="0"
+type ="entier"
+label ="debut_routine"
+nom ="var_test1"
+type ="var"
+nom ="i"
+type ="var"
+label ="suite3"
+type ="egal"
+nom ="var_test1"
+type ="var"
+text ="0"
+type ="entier"
+label ="suite3"
+type ="egal"
+nom ="var_test1"
+type ="var"
+text ="2"
+type ="entier"
+label ="label2"
+label ="suite3"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="label0"
+label ="label2"
+label ="label4"
+label ="label_else5"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="label0"
+label ="label4"
+text ="7"
+type ="entier"
+label ="label_else5"
+label ="label0"
+nom ="var_test7"
+type ="var"
+nom ="i"
+type ="var"
+label ="suite9"
+type ="egal"
+nom ="var_test7"
+type ="var"
+text ="0"
+type ="entier"
+label ="suite9"
+type ="egal"
+nom ="var_test7"
+type ="var"
+text ="2"
+type ="entier"
+label ="test_intervalle10"
+type ="sup"
+nom ="i"
+type ="var"
+text ="5"
+type ="entier"
+label ="fin_test_intervalle11"
+label ="test_intervalle10"
+label ="suite9"
+type ="inf"
+nom ="i"
+type ="var"
+text ="9"
+type ="entier"
+label ="fin_test_intervalle11"
+label ="label8"
+label ="suite9"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="label6"
+label ="label8"
+label ="label12"
+label ="label_else13"
+nom ="b"
+type ="var"
+nom ="Void"
+type ="var"
+label ="label6"
+label ="label12"
+text ="7"
+type ="entier"
+label ="label_else13"
+label ="label6"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_rescue"
+nom ="TEST1"
+nom ="a"
+nom ="ANY"
+nom ="b"
+nom ="ANY"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="debut_rescue"
+nom ="b"
+type ="var"
+nom ="a"
+type ="var"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_retry"
+nom ="TEST1"
+nom ="a"
+nom ="ANY"
+nom ="b"
+nom ="ANY"
+nom ="a"
+type ="var"
+type ="void"
+nom ="b"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="a"
+type ="var"
+nom ="b"
+type ="var"
+label ="debut_rescue"
+nom ="b"
+type ="var"
+nom ="a"
+type ="var"
+label ="debut_routine"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_check"
+nom ="TEST1"
+nom ="i"
+nom ="INTEGER"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+label ="debut_routine"
+label ="suite_check0"
+nom ="$niveau_verif"
+text ="-1"
+type ="entier"
+type ="var_syst"
+label ="assert1"
+type ="egal"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+text ="4"
+type ="entier"
+label ="assert1"
+label ="suite_check0"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_debug"
+nom ="TEST1"
+nom ="i"
+nom ="INTEGER"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+label ="debut_routine"
+label ="suite_debug0"
+nom ="$niveau_verif_debug"
+type ="var_syst"
+nom ="i"
+type ="var"
+text ="0"
+type ="entier"
+label ="suite_debug0"
+label ="suite_debug1"
+nom ="$niveau_verif_debug"
+text ="a"
+type ="chaine"
+text ="b"
+type ="chaine"
+type ="var_syst"
+nom ="i"
+type ="var"
+text ="2"
+type ="entier"
+label ="suite_debug1"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_pre"
+nom ="TEST1"
+label ="assert0"
+type ="diff"
+nom ="k"
+type ="var"
+nom ="k"
+type ="var"
+text ="4"
+type ="entier"
+label ="assert0"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test_post"
+nom ="TEST1"
+nom ="c"
+nom ="C"
+nom ="a"
+nom ="A"
+nom ="a"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tmp2"
+nom ="C"
+label ="tmp1"
+type ="diff"
+type ="void"
+nom ="k"
+type ="var"
+text ="6"
+type ="entier"
+label ="tmp1"
+nom ="tmp2"
+type ="var"
+nom ="k"
+type ="var"
+nom ="+"
+type ="infix"
+nom ="k"
+type ="var"
+label ="assert0"
+type ="diff"
+nom ="tmp2"
+type ="var"
+nom ="c"
+type ="var"
+text ="4"
+type ="entier"
+label ="assert0"
+label ="assert3"
+type ="egal"
+nom ="a"
+type ="var"
+nom ="a"
+type ="var"
+text ="4"
+type ="entier"
+label ="assert3"
+est_static ="non"
+nom ="coucou_a_tous"
+nom ="TEST1"
+nom ="i"
+nom ="ANY"
+nom ="j"
+nom ="ANY"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="k"
+nom ="TEST1"
+nom ="INTEGER"
+nom ="ANY"
+est_static ="non"
+nom ="Void"
+nom ="ANY"
+nom ="NONE"
+nom ="Void"
+nom ="TEST1"
+nom ="Void"
+nom ="A"
+nom ="Void"
+nom ="INTEGER"
+nom ="Void"
+nom ="C"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="INTEGER"
+nom ="C"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+nom ="Void"
+nom ="B"
+est_static ="non"
+nom ="toto"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="toto"
+nom ="B"
+est_static ="non"
+nom ="tata"
+nom ="A"
+nom ="a"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="tata"
+nom ="B"
+est_static ="non"
+nom ="titi"
+nom ="A"
+nom ="A"
+nom ="a"
+nom ="A"
+nom ="Result"
+nom ="A"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+nom ="Result"
+type ="var"
+nom ="Void"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="titi"
+nom ="B"
+nom ="B"
+nom ="A"
+nom ="tata2"
+est_static ="non"
+nom ="Void"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="toto"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="tata"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="titi"
+nom ="A"
+no ="0"
+est_static ="non"
+nom ="tata2"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="titi0"
+nom ="B"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="titi2"
+nom ="B"
+nom ="ANY"
+est_static ="non"
+nom ="titi3"
+nom ="B"
+nom ="ANY"
+nom ="Result"
+nom ="ANY"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="titi4"
+nom ="B"
+nom ="ANY"
+nom ="a"
+nom ="B"
+nom ="b"
+nom ="B"
+nom ="Result"
+nom ="ANY"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="titi5"
+nom ="B"
+nom ="a"
+nom ="A"
+nom ="b"
+nom ="A"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="INTEGER"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+est_static ="non"
+nom ="+"
+type ="infix"
+nom ="INTEGER"
+nom ="C"
+nom ="a"
+nom ="ANY"
+nom ="Result"
+nom ="C"
+nom ="Result"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="test0"
+nom ="INTEGER"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_int"
+nom ="integer"
+nom ="$integer"
+nom ="C"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Compilation de test\interm\test_attribut2\test1.ace
+++++++++++++++++++++++++
+classe racine:test1
+----------------------
+parse de test1.e
+Ok
+parse de any.e
+Ok
+parse de A.e
+Ok
+fin du parsing
+parse de B.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST1
+1:ANY
+2:NONE
+3:A
+4:B
+calcul de :TEST1(0)TEST1
+attributs0 de la classe TEST1
+herite de ANY
+attributs0 de la classe ANY
+i=0
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+Fin des attributs de la classe TEST1
+calcul de :ANY(1)TEST1
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :A(3)TEST1
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe A
+calcul de :B(4)TEST1
+attributs0 de la classe B
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe B
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+heritage directe:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B
+classe A herite de :ANY
+classe B herite de :ANY
+heritage complet:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,A,B
+classe A herite de :ANY
+classe B herite de :ANY
+feature0:make
+feature0:test_once
+conformite de:NONE , ancetre:A
+feature0:test_once2
+conformite de:NONE , ancetre:A
+conformite de:NONE , ancetre:B
+Les tables des symboles
+Table_Symbol de TEST1:{
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet make:{directe=make<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_once:{directe=test_once<TEST1>:null,no_reel=-1,deferred=null}
+Attribut_Complet test_once2:{directe=test_once2<TEST1>:B,no_reel=-1,deferred=null}
+}
+Table_Symbol de ANY:{
+Attribut_Complet Void:{directe=Void<ANY>:NONE,no_reel=-1,deferred=null}
+}
+Table_Symbol de NONE:{
+}
+Table_Symbol de A:{
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+}
+Table_Symbol de B:{
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+}
+Fin des tables des symboles
+Compilation du fichier test\interm\test_attribut2\test1.ace
+coucou
+Résultat:
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="oui"
+nom ="$once_traite_TEST1$test_once"
+nom ="TEST1"
+nom ="$boolean"
+est_static ="non"
+nom ="test_once"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="a"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="label_once0"
+nom ="$once_traite_TEST1$test_once"
+type ="var"
+label ="label_once0"
+nom ="$once_traite_TEST1$test_once"
+type ="var"
+text ="true"
+type ="booleen"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="oui"
+nom ="$once_traite_TEST1$test_once2"
+nom ="TEST1"
+nom ="$boolean"
+est_static ="oui"
+nom ="$once_result_TEST1$test_once2"
+nom ="TEST1"
+nom ="B"
+est_static ="non"
+nom ="test_once2"
+nom ="TEST1"
+nom ="B"
+nom ="Result"
+nom ="B"
+nom ="a"
+nom ="A"
+nom ="Result"
+type ="var"
+type ="void"
+nom ="a"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="label_once0"
+nom ="$once_traite_TEST1$test_once2"
+type ="var"
+nom ="result"
+type ="var"
+nom ="$once_result_TEST1$test_once2"
+type ="var"
+label ="label_once0"
+nom ="$once_traite_TEST1$test_once2"
+type ="var"
+text ="true"
+type ="booleen"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+nom ="Result"
+type ="var"
+nom ="Void"
+type ="var"
+nom ="$once_result_TEST1$test_once2"
+type ="var"
+nom ="result"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="ANY"
+est_static ="non"
+nom ="Void"
+nom ="ANY"
+nom ="NONE"
+nom ="Void"
+nom ="TEST1"
+nom ="Void"
+nom ="A"
+nom ="Void"
+nom ="B"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+nom ="B"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Fin de la compilation
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+nom ="make"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+est_static ="non"
+nom ="make"
+nom ="TEST1"
+label ="debut_routine"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="oui"
+nom ="$once_traite_TEST1$test_once"
+nom ="TEST1"
+nom ="$boolean"
+est_static ="non"
+nom ="test_once"
+nom ="TEST1"
+nom ="a"
+nom ="A"
+nom ="a"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="label_once0"
+nom ="$once_traite_TEST1$test_once"
+type ="var"
+label ="label_once0"
+nom ="$once_traite_TEST1$test_once"
+type ="var"
+text ="true"
+type ="booleen"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="oui"
+nom ="$once_traite_TEST1$test_once2"
+nom ="TEST1"
+nom ="$boolean"
+est_static ="oui"
+nom ="$once_result_TEST1$test_once2"
+nom ="TEST1"
+nom ="B"
+est_static ="non"
+nom ="test_once2"
+nom ="TEST1"
+nom ="B"
+nom ="Result"
+nom ="B"
+nom ="a"
+nom ="A"
+nom ="Result"
+type ="var"
+type ="void"
+nom ="a"
+type ="var"
+type ="void"
+label ="debut_routine"
+label ="label_once0"
+nom ="$once_traite_TEST1$test_once2"
+type ="var"
+nom ="result"
+type ="var"
+nom ="$once_result_TEST1$test_once2"
+type ="var"
+label ="label_once0"
+nom ="$once_traite_TEST1$test_once2"
+type ="var"
+text ="true"
+type ="booleen"
+nom ="a"
+type ="var"
+nom ="Void"
+type ="var"
+nom ="Result"
+type ="var"
+nom ="Void"
+type ="var"
+nom ="$once_result_TEST1$test_once2"
+type ="var"
+nom ="result"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+nom ="ANY"
+est_static ="non"
+nom ="Void"
+nom ="ANY"
+nom ="NONE"
+nom ="Void"
+nom ="TEST1"
+nom ="Void"
+nom ="A"
+nom ="Void"
+nom ="B"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="A"
+nom ="B"
+nom ="A"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+nom ="B"
+nom ="any"
+est_static ="non"
+nom ="Void"
+nom ="any"
+no ="0"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Compilation de test\interm\test_external\test1.ace
+++++++++++++++++++++++++
+classe racine:test1
+----------------------
+parse de test1.e
+Ok
+parse de any.e
+Ok
+parse de INTEGER.e
+Ok
+fin du parsing
+parse de REAL.e
+Ok
+fin du parsing
+parse de DOUBLE.e
+Ok
+fin du parsing
+parse de BOOLEAN.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST1
+1:ANY
+2:NONE
+3:INTEGER
+4:REAL
+5:DOUBLE
+6:BOOLEAN
+calcul de :TEST1(0)TEST1
+attributs0 de la classe TEST1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+Fin des attributs de la classe TEST1
+calcul de :ANY(1)TEST1
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :INTEGER(3)TEST1
+attributs0 de la classe INTEGER
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+Fin des attributs de la classe INTEGER
+calcul de :REAL(4)TEST1
+attributs0 de la classe REAL
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+Fin des attributs de la classe REAL
+calcul de :DOUBLE(5)TEST1
+attributs0 de la classe DOUBLE
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+Fin des attributs de la classe DOUBLE
+calcul de :BOOLEAN(6)TEST1
+attributs0 de la classe BOOLEAN
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+Fin des attributs de la classe BOOLEAN
+heritage directe:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,INTEGER,REAL,DOUBLE,BOOLEAN
+classe INTEGER herite de :ANY
+classe REAL herite de :ANY
+classe DOUBLE herite de :ANY
+classe BOOLEAN herite de :ANY
+heritage complet:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,INTEGER,REAL,DOUBLE,BOOLEAN
+classe INTEGER herite de :ANY
+classe REAL herite de :ANY
+classe DOUBLE herite de :ANY
+classe BOOLEAN herite de :ANY
+Les tables des symboles
+Table_Symbol de TEST1:{
+Attribut_Complet a:{directe=a<TEST1>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet b:{directe=b<TEST1>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet c:{directe=c<TEST1>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet d:{directe=d<TEST1>:BOOLEAN,no_reel=-1,deferred=null}
+}
+Table_Symbol de ANY:{
+}
+Table_Symbol de NONE:{
+}
+Table_Symbol de INTEGER:{
+Attribut_Complet infix "+":{directe=infix "+"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix "-":{directe=infix "-"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix "*":{directe=infix "*"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix "/":{directe=infix "/"<INTEGER>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix "//":{directe=infix "//"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix "^":{directe=infix "^"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix "\\":{directe=infix "\\"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix ">":{directe=infix ">"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix ">=":{directe=infix ">="<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix "<":{directe=infix "<"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix "<=":{directe=infix "<="<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet prefix "+":{directe=prefix "+"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet prefix "-":{directe=prefix "-"<INTEGER>:INTEGER,no_reel=-1,deferred=null}
+}
+Table_Symbol de REAL:{
+Attribut_Complet infix "+":{directe=infix "+"<REAL>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet infix "-":{directe=infix "-"<REAL>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet infix "*":{directe=infix "*"<REAL>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet infix "/":{directe=infix "/"<REAL>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix "^":{directe=infix "^"<REAL>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet infix ">":{directe=infix ">"<REAL>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet infix ">=":{directe=infix ">="<REAL>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet infix "<":{directe=infix "<"<REAL>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet infix "<=":{directe=infix "<="<REAL>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet prefix "+":{directe=prefix "+"<REAL>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet prefix "-":{directe=prefix "-"<REAL>:REAL,no_reel=-1,deferred=null}
+}
+Table_Symbol de DOUBLE:{
+Attribut_Complet infix "+":{directe=infix "+"<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix "-":{directe=infix "-"<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix "*":{directe=infix "*"<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix "/":{directe=infix "/"<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix "^":{directe=infix "^"<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix ">":{directe=infix ">"<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix ">=":{directe=infix ">="<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix "<":{directe=infix "<"<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet infix "<=":{directe=infix "<="<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet prefix "+":{directe=prefix "+"<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet prefix "-":{directe=prefix "-"<DOUBLE>:DOUBLE,no_reel=-1,deferred=null}
+}
+Table_Symbol de BOOLEAN:{
+Attribut_Complet infix "and":{directe=infix "and"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet infix "or":{directe=infix "or"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet infix "xor":{directe=infix "xor"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet infix "implies":{directe=infix "implies"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet prefix "not":{directe=prefix "not"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=null}
+}
+Fin des tables des symboles
+Compilation du fichier test\interm\test_external\test1.ace
+coucou
+Résultat:
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+est_static ="non"
+nom ="a"
+nom ="TEST1"
+nom ="INTEGER"
+est_static ="non"
+nom ="b"
+nom ="TEST1"
+nom ="REAL"
+est_static ="non"
+nom ="c"
+nom ="TEST1"
+nom ="DOUBLE"
+est_static ="non"
+nom ="d"
+nom ="TEST1"
+nom ="BOOLEAN"
+nom ="ANY"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="INTEGER"
+nom ="REAL"
+nom ="DOUBLE"
+nom ="BOOLEAN"
+nom ="INTEGER"
+nom ="any"
+est_static ="non"
+nom ="+"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="*"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="fois"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="/"
+type ="infix"
+nom ="INTEGER"
+nom ="DOUBLE"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="div_reel"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="//"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="div_entier"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="^"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="puiss"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="\\"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="mod"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="sups"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">="
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="sup"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="infs"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<="
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="inf"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="+"
+type ="prefix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_int"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="prefix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_int"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_int"
+nom ="integer"
+nom ="$integer"
+nom ="REAL"
+nom ="any"
+est_static ="non"
+nom ="+"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="*"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="fois"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="/"
+type ="infix"
+nom ="REAL"
+nom ="DOUBLE"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="div_reel"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="^"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="puiss"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="sups"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">="
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="sup"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="infs"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<="
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="inf"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="+"
+type ="prefix"
+nom ="REAL"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_real"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="prefix"
+nom ="REAL"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_real"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_real"
+nom ="real"
+nom ="$real"
+nom ="DOUBLE"
+nom ="any"
+est_static ="non"
+nom ="+"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="*"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="fois"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="/"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="div_reel"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="^"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="puiss"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="sups"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">="
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="sup"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="infs"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<="
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="inf"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="+"
+type ="prefix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_double"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="prefix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_double"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_double"
+nom ="double"
+nom ="$double"
+nom ="BOOLEAN"
+nom ="any"
+est_static ="non"
+nom ="and"
+type ="infix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="other"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="and"
+nom ="$val_bool"
+type ="var"
+nom ="$val_bool"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="or"
+type ="infix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="other"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="or"
+nom ="$val_bool"
+type ="var"
+nom ="$val_bool"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="xor"
+type ="infix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="other"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="xor"
+nom ="$val_bool"
+type ="var"
+nom ="$val_bool"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="implies"
+type ="infix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="other"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="implies"
+nom ="$val_bool"
+type ="var"
+nom ="$val_bool"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="not"
+type ="prefix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="not"
+nom ="$val_bool"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_bool"
+nom ="boolean"
+nom ="$boolean"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+Fin de la compilation
+Nombre d'element dans la racine : 0
+nom=programme
+nom=[system: null]
+code=1,2,4,8,11,9,10,6,5,12,7,3,
+nom ="TEST1"
+nom ="any"
+est_static ="non"
+nom ="a"
+nom ="TEST1"
+nom ="INTEGER"
+est_static ="non"
+nom ="b"
+nom ="TEST1"
+nom ="REAL"
+est_static ="non"
+nom ="c"
+nom ="TEST1"
+nom ="DOUBLE"
+est_static ="non"
+nom ="d"
+nom ="TEST1"
+nom ="BOOLEAN"
+nom ="ANY"
+nom ="NONE"
+nom ="TEST1"
+nom ="ANY"
+nom ="INTEGER"
+nom ="REAL"
+nom ="DOUBLE"
+nom ="BOOLEAN"
+nom ="INTEGER"
+nom ="any"
+est_static ="non"
+nom ="+"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="*"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="fois"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="/"
+type ="infix"
+nom ="INTEGER"
+nom ="DOUBLE"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="div_reel"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="//"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="div_entier"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="^"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="puiss"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="\\"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="mod"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="sups"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">="
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="sup"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<"
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="infs"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<="
+type ="infix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="other"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="inf"
+nom ="$val_int"
+type ="var"
+nom ="$val_int"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="+"
+type ="prefix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_int"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="prefix"
+nom ="INTEGER"
+nom ="INTEGER"
+nom ="Result"
+nom ="INTEGER"
+label ="debut_routine"
+nom ="$val_int"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_int"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_int"
+nom ="integer"
+nom ="$integer"
+nom ="REAL"
+nom ="any"
+est_static ="non"
+nom ="+"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="*"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="fois"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="/"
+type ="infix"
+nom ="REAL"
+nom ="DOUBLE"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="div_reel"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="^"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="puiss"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="sups"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">="
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="sup"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<"
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="infs"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<="
+type ="infix"
+nom ="REAL"
+nom ="REAL"
+nom ="other"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="inf"
+nom ="$val_real"
+type ="var"
+nom ="$val_real"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="+"
+type ="prefix"
+nom ="REAL"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_real"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="prefix"
+nom ="REAL"
+nom ="REAL"
+nom ="Result"
+nom ="REAL"
+label ="debut_routine"
+nom ="$val_real"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_real"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_real"
+nom ="real"
+nom ="$real"
+nom ="DOUBLE"
+nom ="any"
+est_static ="non"
+nom ="+"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="*"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="fois"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="/"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="div_reel"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="^"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="puiss"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="sups"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom =">="
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="sup"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<"
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="infs"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="<="
+type ="infix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="other"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="inf"
+nom ="$val_double"
+type ="var"
+nom ="$val_double"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="+"
+type ="prefix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="plus"
+nom ="$val_double"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="-"
+type ="prefix"
+nom ="DOUBLE"
+nom ="DOUBLE"
+nom ="Result"
+nom ="DOUBLE"
+label ="debut_routine"
+nom ="$val_double"
+src ="Result"
+type ="var"
+type ="moins"
+nom ="$val_double"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_double"
+nom ="double"
+nom ="$double"
+nom ="BOOLEAN"
+nom ="any"
+est_static ="non"
+nom ="and"
+type ="infix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="other"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="and"
+nom ="$val_bool"
+type ="var"
+nom ="$val_bool"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="or"
+type ="infix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="other"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="or"
+nom ="$val_bool"
+type ="var"
+nom ="$val_bool"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="xor"
+type ="infix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="other"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="xor"
+nom ="$val_bool"
+type ="var"
+nom ="$val_bool"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="implies"
+type ="infix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="other"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="implies"
+nom ="$val_bool"
+type ="var"
+nom ="$val_bool"
+src ="other"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="not"
+type ="prefix"
+nom ="BOOLEAN"
+nom ="BOOLEAN"
+nom ="Result"
+nom ="BOOLEAN"
+label ="debut_routine"
+nom ="$val_bool"
+src ="Result"
+type ="var"
+type ="not"
+nom ="$val_bool"
+type ="var"
+label ="debut_rescue"
+text ="4"
+type ="entier"
+est_static ="non"
+nom ="$val_bool"
+nom ="boolean"
+nom ="$boolean"
+Analyse 1 ...
+Analyse 2 ...
+Analyse 3 ...
+Analyse 4 ...
+nb testes:6
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+20 mars 2005 15:34:13 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:13 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\interm\test1\test1.ace
+20 mars 2005 15:34:13 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:14 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation du fichier test\interm\test1\test1.ace
+20 mars 2005 15:34:14 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Résultat:
+20 mars 2005 15:34:14 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Fin de la compilation
+20 mars 2005 15:34:14 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=1373632 ; total mem=2031616 ; max mem=66650112
+20 mars 2005 15:34:14 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: GC ...
+20 mars 2005 15:34:14 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=1510904 ; total mem=2031616 ; max mem=66650112
+20 mars 2005 15:34:14 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: diff free mem=137272 ; diff total mem=0 ; diff max mem=0
+20 mars 2005 15:34:14 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: duree total : 121 ms = 0 s
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\interm\test_heritage1\test1.ace
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation du fichier test\interm\test_heritage1\test1.ace
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Résultat:
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Fin de la compilation
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=720400 ; total mem=2031616 ; max mem=66650112
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: GC ...
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=1494080 ; total mem=2031616 ; max mem=66650112
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: diff free mem=773680 ; diff total mem=0 ; diff max mem=0
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: duree total : 121 ms = 0 s
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\interm\test_attribut1\test1.ace
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation du fichier test\interm\test_attribut1\test1.ace
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Résultat:
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Fin de la compilation
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=415672 ; total mem=2031616 ; max mem=66650112
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: GC ...
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=1467880 ; total mem=2031616 ; max mem=66650112
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: diff free mem=1052208 ; diff total mem=0 ; diff max mem=0
+20 mars 2005 15:34:15 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: duree total : 120 ms = 0 s
+20 mars 2005 15:34:16 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:16 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\interm\test_instr1\test1.ace
+20 mars 2005 15:34:16 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:16 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation du fichier test\interm\test_instr1\test1.ace
+20 mars 2005 15:34:16 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Résultat:
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Fin de la compilation
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=936040 ; total mem=2424832 ; max mem=66650112
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: GC ...
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=1799520 ; total mem=2424832 ; max mem=66650112
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: diff free mem=863480 ; diff total mem=0 ; diff max mem=0
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: duree total : 130 ms = 0 s
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\interm\test_attribut2\test1.ace
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation du fichier test\interm\test_attribut2\test1.ace
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Résultat:
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Fin de la compilation
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=769104 ; total mem=2424832 ; max mem=66650112
+20 mars 2005 15:34:17 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: GC ...
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=1874072 ; total mem=2424832 ; max mem=66650112
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: diff free mem=1104968 ; diff total mem=0 ; diff max mem=0
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: duree total : 130 ms = 0 s
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\interm\test_external\test1.ace
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation du fichier test\interm\test_external\test1.ace
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Résultat:
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Fin de la compilation
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=1338640 ; total mem=2555904 ; max mem=66650112
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: GC ...
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: free mem=1811760 ; total mem=2555904 ; max mem=66650112
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: diff free mem=473120 ; diff total mem=0 ; diff max mem=0
+20 mars 2005 15:34:18 tinyeiffel.compiler.Compiler_Eiffel test_gc
+INFO: duree total : 130 ms = 0 s
+------------- ---------------- ---------------
+
+Testcase: testAssert took 0,01 sec
+Testcase: testCorrect took 7,471 sec

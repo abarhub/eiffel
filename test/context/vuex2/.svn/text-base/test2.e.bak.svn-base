@@ -1,0 +1,51 @@
+class TEST2
+
+creation make
+
+feature
+
+	make is
+	do
+	toto.tyty1.fin;
+	fin;
+	toto.tyty.tyty2.tutu.tyty.fin;
+	toto.tyty.tyty.tutu.tyty.fin5;
+	toto.tyty.tyty.tutu0.tyty.fin;
+	toto.tyty.tyty.tutu.tyty0.fin;
+	end;
+
+	toto:A;
+
+	fin is
+	once
+	end;
+
+	test2 is
+	local
+	a:A;
+	i:INTEGER;
+	do
+	-- infix
+	i:=a and 5;
+	i:=a or 5;
+	--i:=a or else 5;
+	--i:=a and then 5;
+	i:=a xor 5;
+	i:=a implies 5;
+	-- prefix
+	i:=not a;
+	-- infix free op
+	i:=a @ 5;
+	i:=a | 5;
+	i:=a & 5;
+	i:=a # 5;
+	i:=a @azerty 5;
+	-- prefix free op
+	i:=@ a;
+	i:=| a;
+	i:=& a;
+	i:=# a;
+	i:=@azerty a;
+	end;
+
+end

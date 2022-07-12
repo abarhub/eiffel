@@ -1,0 +1,5 @@
+Initialisation
+prologue(1:TEST1.make)
+instr : s:=Sabc( loc=(12,9,'s','test\genc\str_basic\test1.e'))
+epilogue(1:TEST1.make)
+Terminaison

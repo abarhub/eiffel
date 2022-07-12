@@ -1,0 +1,399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 6 The inheritance relation</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><!-- $Id: chap6.htm,v 1.3 1995/07/09 13:52:07 neil Exp neil $ -->
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm"><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap7.htm"><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/next.gif"></A> 
+<P>
+<H1>6 The inheritance relation </H1>
+<H2>6.2 An Inheritance Part </H2>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name="multiple inheritance">multiple inheritance</A>, <A 
+name="single inheritance">single inheritance</A></H3>
+<P><B>Multiple inheritance</B> occurs as soon as there is more than one <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+clause (even if they all refer to the same <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#parent">parent</A> 
+class, a case called <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap11.htm#repeated inheritance">repeated 
+inheritance</A>). 
+<P><B>Single inheritance</B> occurs when there is one and only one <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+clause. 
+<H2>6.3 Form of the Inheritance Part</H2>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name="parent clause for a class">parent clause for a class</A> </H3>
+<P>The <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent_list">Parent_list</A> 
+names a number of <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+clauses. Each <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+clause is relative to a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_class_type">Restricted_class_type</A>, 
+that is to say a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_name">Class_name</A> 
+<I>B</I> possibly followed by <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_actual_generics">Restricted_actual_generic</A> 
+parameters (as in <I>B </I>[<I>T, U</I>]). <I>B</I> must be the name of a class 
+in the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#universe">universe</A> 
+to which the current class belongs. The clause is said to be a <B>Parent clause 
+for</B> <I>B</I>. 
+<P>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#restricted type">restricted 
+types</A> 
+<H2>6.4 Relations Induced by Inheritance </H2>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name=inherit>inherit</A>, <A name=heir>heir</A>, <A name=parent>parent</A></H3>
+<P>If class <I>C</I> has a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+clause for <I>B</I>, then <I>C</I> is said to <B>inherit</B> from <I>B</I>; 
+<I>B</I> is said to be a <B>parent</B> of <I>C</I>, and <I>C</I> is said to be 
+an <B>heir</B> of <I>B</I>. 
+<P>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#ancestor">ancestor</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#descendant">descendant</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#multiple inheritance">multiple 
+inheritance</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+name</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#inherited name">inherited 
+name</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#expansion semantics">inheritance 
+and expansion</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#rename semantics">semantics 
+of rename</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#none semantics">semantics 
+of <I>NONE</I></A> 
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name=ancestor>ancestor</A>, <A name=descendant>descendant</A> </H3>
+<P>Class <I>A</I> is an <B>ancestor</B> of class <I>B</I> if and only if 
+<I>A</I> is <I>B</I> itself or (recursively) an ancestor of one of <I>B</I>'s <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#parent">parents</A>. 
+
+<P>Class <I>B</I> is a <B>descendant</B> of class <I>A</I> if and only if 
+<I>A</I> is an ancestor of <I>B</I>, in other words if <I>B</I> is <I>A</I> or 
+(recursively) a descendant of one of its <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#heir">heirs</A>. 
+
+<P>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#proper ancestor">proper 
+ancestor</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#proper descendant">proper 
+descendant</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#VHPR">Parent 
+Rule (VHPR)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/any%20semantics">semantics 
+of <I>ANY</I></A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/none%20semantics">semantics 
+of <I>NONE</I></A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#obsolete class">obsolete 
+classes</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#obsolete feature">obsolete 
+features</A> 
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name="proper ancestor">proper ancestor</A>, <A name="proper descendant">proper 
+descendant</A> </H3>
+<P>The <B>proper ancestors</B> of a class <I>C</I> are its <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#ancestor">ancestors</A> 
+other than <I>C</I> itself. The <B>proper descendants</B> of a class <I>B</I> 
+are its <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#descendant">descendants</A> 
+other than <I>B</I> itself. 
+<P>
+<H2>6.6 The Inheritance Structure </H2>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/validity.gif"> 
+<A name=VHPR>(VHPR)</A> Parent Rule </H3>
+<P>
+<P>The <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance">Inheritance</A> 
+clause of a class <I>D</I> is valid if and only if it meets the following three 
+conditions: 
+<OL>
+  <LI>In every <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+  clause for a class <I>B</I>, <I>B</I> is not a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#descendant">descendant</A> 
+  of <I>D</I>. 
+  <LI>If two or more <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+  clauses are for classes which have a common <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#ancestor">ancestor</A> 
+  <I>A</I>, <I>D</I> meets the conditions of the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap11.htm#VMRC">Repeated 
+  Inheritance Consistency Constraint</A> for <I>A</I>. 
+  <LI>If the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+  clauses refer to <I>GENERAL</I> alone then <I>D</I> must be an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#ancestor">ancestor</A> 
+  of <I>ANY</I> </LI></OL>
+<H2>6.9 Renaming</H2>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/validity.gif"> 
+<A name=VHRC>(VHRC)</A> Rename Clause Rule </H3>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rename_pair">Rename_pair</A> 
+of the form <I>old_name</I> <B>as</B><I> new_name</I>, appearing in the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rename">Rename</A> 
+subclause of the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+clause for<I> B </I>in a class<I> C,</I> is valid if and only if it satisfies 
+the following five conditions: 
+<OL>
+  <LI><I>old_name</I> is the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+  name</A> of a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+  <I>f</I> of <I>B</I>. 
+  <LI><I>old_name</I> does not appear as the first <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+  of any other <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rename_pair">Rename_pair</A> 
+  in the same <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rename">Rename</A> 
+  subclause. 
+  <LI><I>new_name</I> satisfies the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap11#VMFN">Feature 
+  Name Rule</A> for <I>C</I>. 
+  <LI>If <I>new_name</I> is of the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix">Prefix</A> 
+  form, <I>f</I> is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#constant attribute">constant 
+  attribute</A> or a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#function">function</A> 
+  with no <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm#formal argument">formal 
+  arguments</A>. 
+  <LI>If <I>new_name</I> is of the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix">Infix</A> 
+  form, <I>f</I> is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#function">function</A> 
+  with a single <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm#formal argument">formal 
+  argument</A>. </LI></OL>
+<P><A name="rename semantics"><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/semantic.gif"></A> 
+
+<P>Renaming does not affect the semantics of an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#inherited feature">inherited 
+feature</A>, but simply gives it a new <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+name</A> in an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#heir">heir</A>. 
+
+<P>
+<H2>6.10 Features and their Names </H2>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name="name of feature in class">name of a feature in a class</A></H3>
+<P>Within the text of a class <I>C</I>, any <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+<I>f</I> of <I>C</I> is accessible through a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#feature name">feature 
+name</A>, known as the <B>name of </B><I>f</I> <B>in </B><I>C</I>. As this 
+expression suggests, the association between a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+and a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#feature name">feature 
+name</A> is not absolute but relative to a class. The same <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+may well be denoted by different names in different classes. 
+<P>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name="original name">original name</A> </H3>
+<P>The <B>original name</B> of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+is the name under which it is declared in its class of origin. 
+<P>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+name</A> 
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name="final name">final name</A> </H3>
+<P>Every <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+<I>f</I> of a class <I>C</I> has a <B>final name</B> in <I>C</I>, defined as 
+follows: 
+<P>
+<UL>
+  <LI>If <I>f</I> is <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#immediate feature">immediate</A> 
+  in <I>C</I>, its final name is its <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#original name">original 
+  name</A> 
+  <LI>If <I>f</I> is <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#inherited feature">inherited</A>, 
+  <I>f</I> is obtained from a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+  of a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#parent">parent</A> 
+  <I>B</I> of <I>C</I>. Let <I>parent_name</I> be (recursively) the final name 
+  of that <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+  in <I>B</I>. Then: 
+  <UL>
+    <LI>If the <A 
+    href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+    clause for <I>B</I> in <I>C</I> contains a <A 
+    href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rename_pair">Rename_pair</A> 
+    of the form <B>rename</B><I> parent_name </I><B>as</B><I> new_name</I>, the 
+    final name of <I>f</I> in <I>C</I> is <I>new_name</I>. 
+    <LI>Otherwise, the final name is <I>parent_name</I>. </LI></UL></LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name set">final 
+name set</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#inherited name">inherited 
+name</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#name">name</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#VFFD">Feature 
+Declaration Rule (VFFD)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#VHRC">Rename 
+Clause Rule (VHRC)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#rename semantics">semantics 
+of rename</A> 
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name="final name set">final name set</A></H3>
+<P>The <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+names</A> of all the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">features</A> 
+of a class constitute the <B>final name set</B> of a class. 
+<P>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name="inherited name">inherited name</A> </H3>
+<P>The <B>inherited name</B> of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+obtained from a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+<I>f</I> of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#parent">parent 
+</A><I>B</I> is the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+name</A> of <I>f</I> in <I>B</I>. 
+<P>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/definit.gif"> <A 
+name=name>name</A></H3>
+<P>In this book, references to the <B>name</B> of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A>, 
+if not further qualified, always denote the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+name</A>. 
+<P>
+<H2>6.11 Inheritance and Expansion </H2><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/semantic.gif"> 
+<P>The only consequence of the expansion status of a class is the semantics of 
+entities of the corresponding types. An expanded class may inherit from an 
+non-expanded one, and conversely. The expansion status is not transmitted under 
+inheritance; it is entirely determined by the presence or absence of the 
+<B>expanded</B> mark in the class's own <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_header">Class_header</A>, 
+not by any property of its <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#parent">parents</A>. 
+
+<P>
+<H2>6.12 ANY </H2>
+<H3><A name="any semantics"><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/semantic.gif"></A> 
+</H3>
+<P>A class other than <I>GENERAL</I> that does not have an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance">Inheritance</A> 
+clause is treated as having an implicit <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance">Inheritance</A> 
+clause with a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+clause defined as follows: 
+<UL>
+  <LI>Where a class is an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#ancestor">ancestor</A> 
+  of <I>ANY</I> the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+  clause shall be <I>GENERAL</I>. 
+  <LI>Otherwise the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+  clause shall be <I>ANY</I> </LI></UL>
+<H2>6.15 Providing Your Own Universal Class </H2>
+<H3><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/validity.gif"> 
+<A name=VHVU>(VHVU)</A> Valid Universe Rule </H3>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#universe">universe</A> 
+must contain class definitions for all the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#preclassname">predefined 
+class names</A> except <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#none semantics"><I>NONE</I></A> 
+satisfying the following conditions: 
+<OL>
+  <LI><I>ARRAY</I> must be a generic class with a single unconstrained generic 
+  parameter. 
+  <LI>The rest cannot be generic classes and only the basic types can be 
+  expanded. 
+  <LI>No class text for <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#none semantics"><I>NONE</I></A> 
+  can exist anywhere. </LI></OL>
+<H2>6.16 <A name="none semantics">NONE</A></H2><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/semantic.gif"> 
+<P>The class <I>NONE</I> is a convenient fiction to make the class structure and 
+type system complete. It is considered to be a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#descendant">descendant</A> 
+of all classes. Thus no class can legally <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#inherit">inherit</A> 
+from <I>NONE</I>. 
+<P>The class is considered to have a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creators">Creators</A> 
+part consisting of the keyword <B>creation</B> only. Thus no object of type 
+<I>NONE</I> can ever exist. 
+<P>The class text for <I>NONE</I> cannot be found in the library. <I>NONE</I> is 
+implemented entirely within the language. A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#universe">universe</A> 
+is deemed to contain the class <I>NONE</I> automatically. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#VHVU">Valid 
+Universe Rule (VHVU)</A> 
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm"><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap7.htm"><IMG 
+src="Eiffel The Reference - 6 The inheritance relation_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS>
+<P><!-- $Log: chap6.htm,v $
+# Revision 1.3  1995/07/09  13:52:07  neil
+# parent clause for class altered
+# cross referenced to 2, 3, 4, 5 and 6
+#
+# Revision 1.2  1995/07/08  12:12:14  neil
+# Chapter reformatted
+# 6.6 New clause 3 in VHPR
+# VHRC altered
+# 6.12 Semantics of ANY altered
+# VHAY removed. Replaced by VHVU
+# 6.16 NONE reinstated and altered
+#
+--></P></BODY></HTML>

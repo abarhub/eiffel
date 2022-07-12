@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://talkitover.com/Eiffel/users/FF/Y/MQ.html -->
+<HTML><HEAD><LINK href="passetl3_fichiers/bottom.css" rel=stylesheet>
+<META http-equiv=Content-Type content=text/html;CHARSET=iso-8859-1>
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY><A name=RQ></A>
+<H2>Topic start message from Bertrand Meyer &lt;<A 
+href="mailto:Bertrand_Meyer@eiffel.com">Bertrand_Meyer@eiffel.com</A>&gt;</H2>
+<P><SPAN class=title>Work in progress: ETL</SPAN> <BR><SPAN 
+class=received>Received Thursday, 30 September 1999 at 19:54</SPAN> <PRE>For some time now I have been regularly updating a version of the third
+edition of "Eiffel: The Language" on the Web. The URL is
+ 
+    <A target=new href="http://eiffel.com/private/meyer/etlnew">http://eiffel.com/private/meyer/etlnew</A>
+ 
+The page is password-protected:
+ 
+    User name: Talkitover
+    Password: etl3
+ 
+There is also an associated Talkitover group at <A target=new href="http://talkitover.com/etl">http://talkitover.com/etl</A>
+(same user name and password).
+ 
+The reason for the password is to avoid this getting too public and causing
+copyright problems. Eiffel users are, however, welcome to access the pages
+and comment on the language using the associated Talkitover group
+(but not, please, the present one -- many readers may be uninterested
+in fine language discussions).
+ 
+The language proposals represent my own views and do not commit ISE.
+Clearly I intend to submit the resulting language, after numerous revisions
+and comments, as the standard. The text as it stands is extremely partial
+(as you will see I have lots and lots of work to do -- there has already gone
+much effort even though that doesn't show). I am also not sure about a
+number of things, e.g. assignment procedures.
+ 
+A small group has been discussing some of the material already, but
+this may be the time for a broader discussion. Again it has no official status,
+it's just my work and commits no one else. I expect a lot of criticism.
+ 
+Thanks in advance,
+ 
+--
+Bertrand Meyer
+Interactive Software Engineering
+ISE Building, 270 Storke Road, 2nd floor, Goleta CA 93117 USA
+805-685-1006, fax 805-685-6869; Fax-to-email 209-315-9045
+&lt;Bertrand_Meyer@eiffel.com&gt; <A target=new href="http://eiffel.com/">http://eiffel.com/</A> -- <A target=new href="http://tools.com/">http://tools.com/</A>
+(Also: Professor (adjunct), Monash University, Melbourne, Australia.)
+</PRE>
+<P><A 
+href="mailto:tlkmes@talkitover.com?Subject=Re: Work in progress: ETL&amp;body=--- Leave this line unchanged MQYDILWZAFFBYAQ">Post 
+reply</A> &nbsp;&nbsp; <A target=middle 
+href="http://talkitover.com/Eiffel/users/middle.html#FFBY">Topic start</A> 
+&nbsp;&nbsp; <A target=top 
+href="http://talkitover.com/Eiffel/users/top.html">All topics</A> &nbsp; <SPAN 
+class=help>Code: <FONT color=#0000a0>MQYDILWZAFFBYAQ</FONT> (<I>see <A 
+href="http://talkitover.com/tips.html#replying">tips</A></I>) 
+</SPAN></P></BODY></HTML>

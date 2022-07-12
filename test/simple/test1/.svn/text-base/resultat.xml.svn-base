@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<programme ><system>
+</system>
+<classe>
+<type nom="TEST1"/>
+<hierarchie>
+<type nom="any"/>
+</hierarchie>
+<attribut>
+<nom_attribut nom="a"  />
+<type nom="TEST1"/>
+<type nom="ANY"/>
+</attribut>
+<attribut>
+<nom_attribut nom="b"  />
+<type nom="TEST1"/>
+<routine>
+<signature>
+</signature>
+<declare_var nom="i" >
+<type nom="ANY"/>
+</declare_var>
+<declare_var nom="j" >
+<type nom="ANY"/>
+</declare_var>
+<declare_var nom="a0" >
+<type nom="ANY"/>
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="j" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a0" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="j" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="j" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="f"  />
+<type nom="TEST1"/>
+<routine>
+<signature>
+</signature>
+<declare_var nom="i" >
+<type nom="ANY"/>
+</declare_var>
+<declare_var nom="j" >
+<type nom="ANY"/>
+</declare_var>
+<declare_var nom="a0" >
+<type nom="ANY"/>
+</declare_var>
+<instruction>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="j" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="a0" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="void" />
+</expression>
+</instr_affect>
+<instr_label label="debut_routine"  />
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="j" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_affect>
+<expression_scalaire type="var" >
+<var nom="j" >
+</var>
+</expression_scalaire>
+<expression>
+<expression_scalaire type="var" >
+<var nom="i" >
+</var>
+</expression_scalaire>
+</expression>
+</instr_affect>
+<instr_return  />
+<instr_label label="debut_rescue"  />
+<instr_raise>
+<expression>
+<expression_scalaire type="entier" text="4" />
+</expression>
+</instr_raise >
+</instruction>
+</routine>
+</attribut>
+<attribut>
+<nom_attribut nom="c"  />
+<type nom="TEST1"/>
+<type nom="TEST1"/>
+</attribut>
+</classe>
+<classe>
+<type nom="ANY"/>
+<hierarchie>
+</hierarchie>
+</classe>
+<classe>
+<type nom="NONE"/>
+<hierarchie>
+<type nom="TEST1"/>
+<type nom="ANY"/>
+</hierarchie>
+</classe>
+</programme>

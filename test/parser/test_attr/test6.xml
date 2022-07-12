@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST6"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<obsolete>
+				<chaine>
+					<chaine1>"coucou"</chaine1>
+				</chaine>
+			</obsolete>
+			<require>
+				<assert>
+					<expression>
+						<faux/>
+					</expression>
+				</assert>
+			</require>
+			<corps2>
+				<code/>
+			</corps2>
+			<ensure>
+				<assert>
+					<expression>
+						<vrai/>
+					</expression>
+				</assert>
+			</ensure>
+			<rescue>
+				<instruction>
+					<affect>
+						<variable nom="a"/>
+						<expression>
+							<entier valeur="2"/>
+						</expression>
+					</affect>
+				</instruction>
+			</rescue>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a1"/>
+		<corps>
+			<obsolete>
+				<chaine>
+					<chaine1>"coucou2"</chaine1>
+				</chaine>
+			</obsolete>
+			<require>
+				<assert>
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</assert>
+			</require>
+			<corps2>
+				<external>
+					<chaine>
+						<chaine1>"C"</chaine1>
+					</chaine>
+					<chaine>
+						<chaine1>"tata"</chaine1>
+					</chaine>
+				</external>
+			</corps2>
+			<ensure>
+				<assert>
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="a"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</assert>
+			</ensure>
+			<rescue>
+				<instruction>
+					<affect>
+						<variable nom="x"/>
+						<expression>
+							<variable nom="y"/>
+						</expression>
+					</affect>
+				</instruction>
+			</rescue>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d2"/>
+		<corps>
+			<obsolete>
+				<chaine>
+					<chaine1>"coucou3"</chaine1>
+				</chaine>
+			</obsolete>
+			<require>
+				<assert>
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<entier valeur="1"/>
+							</expression>
+							<expression>
+								<entier valeur="2"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</assert>
+			</require>
+			<corps2>
+				<deferred/>
+			</corps2>
+			<ensure>
+				<assert>
+					<expression>
+						<expression_binaire op="diff">
+							<expression>
+								<entier valeur="5"/>
+							</expression>
+							<expression>
+								<entier valeur="6"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</assert>
+			</ensure>
+		</corps>
+	</feature>
+</class>

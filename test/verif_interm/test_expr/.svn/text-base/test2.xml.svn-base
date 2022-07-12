@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- expressions simples valides real -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+		<attribut>
+			<nom_attribut nom="fonc_real"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="b">
+					<type nom="$boolean"/>
+				</declare_var>
+				<declare_var nom="i">
+					<type nom="$integer"/>
+				</declare_var>
+				<declare_var nom="d">
+					<type nom="$double"/>
+				</declare_var>
+				<declare_var nom="r">
+					<type nom="$real"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="r"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="plus">
+								<expression_scalaire type="reel" text="15"/>
+								<expression_scalaire type="reel" text="25.36"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="r"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="moins">
+								<expression_scalaire type="reel" text="10."/>
+								<expression_scalaire type="reel" text=".01"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="r"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="fois">
+								<expression_scalaire type="reel" text="0.23"/>
+								<expression_scalaire type="reel" text="0.46"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="r"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="div_reel">
+								<expression_scalaire type="reel" text="1.56"/>
+								<expression_scalaire type="reel" text="2.63"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="d"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="puiss">
+								<expression_scalaire type="reel" text="2.3"/>
+								<expression_scalaire type="reel" text="16.1"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="d"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="puiss">
+								<expression_scalaire type="entier" text="2"/>
+								<expression_scalaire type="reel" text="16.1"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="d"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="puiss">
+								<expression_scalaire type="reel" text="2.3"/>
+								<expression_scalaire type="entier" text="16"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sups">
+								<expression_scalaire type="reel" text="15.0"/>
+								<expression_scalaire type="reel" text="16.2"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sup">
+								<expression_scalaire type="reel" text="15.0"/>
+								<expression_scalaire type="reel" text="16.2"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="inf">
+								<expression_scalaire type="reel" text="15.0"/>
+								<expression_scalaire type="reel" text="16.2"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="infs">
+								<expression_scalaire type="reel" text="15.0"/>
+								<expression_scalaire type="reel" text="16.2"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="egal">
+								<expression_scalaire type="reel" text="15.0"/>
+								<expression_scalaire type="reel" text="16.2"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="diff">
+								<expression_scalaire type="reel" text="15.0"/>
+								<expression_scalaire type="reel" text="16.2"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="r"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="plus">
+								<expression_scalaire type="reel" text="6.459"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="r"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="moins">
+								<expression_scalaire type="reel" text="3.1415927"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="r"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_e2r">
+								<expression_scalaire type="entier" text="3"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="d"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_r2d">
+								<expression_scalaire type="reel" text="3.1415927"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_r2e">
+								<expression_scalaire type="reel" text="3.1415927"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+		<hierarchie/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+</programme>

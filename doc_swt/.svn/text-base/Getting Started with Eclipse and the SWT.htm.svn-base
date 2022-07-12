@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0036)http://www.cs.umanitoba.ca/~eclipse/ -->
+<HTML><HEAD><TITLE>Getting Started with Eclipse and the SWT</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY>
+<H1>
+<CENTER><FONT color=#0000ff>Getting Started with Eclipse and the 
+SWT</FONT></CENTER></H1>
+<DL>This site contains some tutorials and example programs that will help 
+  programmers who are new to Eclipse and the Standard Widget Toolkit (SWT) 
+  install Eclipse correctly and run some simple Java/SWT programs.&nbsp; The 
+  main focus of this site is illustrating the use of the SWT for developing 
+  Java-based desktop applications.&nbsp; We have included information on 
+  compiling Eclipse/SWT applications into executables with GCJ.&nbsp; We have 
+  also included a brief introduction to installing the CDT (C/C++) plug-in into 
+  Eclipse that supports the development of C and C++ programs and an 
+  introduction to the Java Native Interface that permits Java and C programs to 
+  communicate with each other.&nbsp; The majority of the tutorials focus on 
+  Windows (XP) but the examples that we have run on Linux also work 
+correctly.</DL>
+<P>1.&nbsp;&nbsp;&nbsp; Installing Eclipse and running a simple SWT program <A 
+href="http://www.cs.umanitoba.ca/~eclipse/1-Install.pdf">tutorial</A> (or in <A 
+href="http://www.cs.umanitoba.ca/~eclipse/1-Install.ps">postscript</A>) and 
+workspace <A href="http://www.cs.umanitoba.ca/~eclipse/HelloWorld.zip">zip 
+file</A>.</P>
+<P>2.&nbsp;&nbsp;&nbsp; Basic widgets <A 
+href="http://www.cs.umanitoba.ca/~eclipse/2-Basic.pdf">tutorial</A> (or in <A 
+href="http://www.cs.umanitoba.ca/~eclipse/2-Basic.ps">postscript</A>) and 
+workspace <A href="http://www.cs.umanitoba.ca/~eclipse/BasicWidgets.zip">zip 
+file</A>.</P>
+<P>3.&nbsp;&nbsp;&nbsp; Advanced widgets <A 
+href="http://www.cs.umanitoba.ca/~eclipse/3-Advanced.pdf">tutorial</A> (or in <A 
+href="http://www.cs.umanitoba.ca/~eclipse/3-Advanced.ps">postscript</A>) and 
+workspace <A href="http://www.cs.umanitoba.ca/~eclipse/AdvancedWidgets.zip">zip 
+file</A>.</P>
+<P>4.&nbsp;&nbsp;&nbsp; Layouts <A 
+href="http://www.cs.umanitoba.ca/~eclipse/4-Layouts.pdf">tutorial</A> (or in <A 
+href="http://www.cs.umanitoba.ca/~eclipse/4-Layouts.ps">postscript</A>) and 
+workspace <A href="http://www.cs.umanitoba.ca/~eclipse/Layouts.zip">zip 
+file</A>.</P>
+<P>5.&nbsp;&nbsp;&nbsp; Client billing application <A 
+href="http://www.cs.umanitoba.ca/~eclipse/5-ClientBilling.pdf">tutorial</A> (or 
+in <A 
+href="http://www.cs.umanitoba.ca/~eclipse/5-ClientBilling.ps">postscript</A>) 
+and workspace <A 
+href="http://www.cs.umanitoba.ca/~eclipse/ClientBilling.zip">zip file</A>. 
+(Still under development.)</P>
+<P>6.&nbsp;&nbsp;&nbsp; Compiling Eclipse applications for Windows with 
+GCJ/MinGW&nbsp; <A 
+href="http://www.cs.umanitoba.ca/~eclipse/6-Compiling.pdf">tutorial</A> (or in 
+<A href="http://www.cs.umanitoba.ca/~eclipse/6-Compiling.ps">postscript</A>) and 
+workspace <A href="http://www.cs.umanitoba.ca/~eclipse/EclipseExamples.zip">zip 
+file</A>. (The zip file is large, 17 MB.)&nbsp; (Still under development.)</P>
+<P style="MARGIN-LEFT: 5px">7.&nbsp;&nbsp;&nbsp; Using the CDT C/C++ plugin to 
+develop C/C++ programs in Eclipse <A 
+href="http://www.cs.umanitoba.ca/~eclipse/7-EclipseCDT.pdf">tutorial</A> (or in 
+<A href="http://www.cs.umanitoba.ca/~eclipse/7-EclipseCDT.ps">postscript</A>) 
+and workspace <A 
+href="http://www.cs.umanitoba.ca/~eclipse/HelloWorldCpp.zip">zip file</A>.</P>
+<P style="MARGIN-LEFT: 5px">8.&nbsp;&nbsp;&nbsp; Using the Java Native Interface 
+from the command prompt and from within Eclipse to link Java and C programs <A 
+href="http://www.cs.umanitoba.ca/~eclipse/8-JNI.pdf">tutorial</A> (or in <A 
+href="http://www.cs.umanitoba.ca/~eclipse/8-JNI.ps">postscript</A>) and 
+workspace <A href="http://www.cs.umanitoba.ca/~eclipse/JNI.zip">zip 
+file</A>.</P>
+<P style="MARGIN-LEFT: 5px">9.&nbsp;&nbsp;&nbsp; Creating custom SWT controls <A 
+href="http://www.cs.umanitoba.ca/~eclipse/9-Custom.pdf">tutorial</A> (or in <A 
+href="http://www.cs.umanitoba.ca/~eclipse/9-Custom.ps">postscript</A>) and 
+workspace <A href="http://www.cs.umanitoba.ca/~eclipse/CustomControls.zip">zip 
+file</A>.</P>
+<P style="MARGIN-LEFT: 5px">10.&nbsp;&nbsp;&nbsp; Test-Driven Development using 
+JUnit and Eclipse <A 
+href="http://www.cs.umanitoba.ca/~eclipse/10-JUnit.pdf">tutorial</A> (or in <A 
+href="http://www.cs.umanitoba.ca/~eclipse/10-JUnit.ps">postscript</A>) and 
+workspace <A href="http://www.cs.umanitoba.ca/~eclipse/JUnitDemo.zip">zip 
+file</A>.</P>
+<P style="MARGIN-LEFT: 5px">&nbsp;</P>
+<P style="MARGIN-LEFT: 5px">99.&nbsp;&nbsp;&nbsp; Installing the Amzi Prolog 
+Plugin <A href="http://www.cs.umanitoba.ca/~eclipse/99-Prolog.pdf">tutorial</A> 
+(or in <A 
+href="http://www.cs.umanitoba.ca/~eclipse/99-Prolog.ps">postscript</A>) and 
+workspace <A href="http://www.cs.umanitoba.ca/~eclipse/MyProlog.zip">zip 
+file</A>.</P>
+<P>&nbsp;</P>
+<P>Comments may be directed to: <A 
+href="mailto:eclipse@cs.umanitoba.ca">eclipse@cs.umanitoba.ca</A></P>
+<P>The main eclipse site is at <A 
+href="http://www.eclipse.org/">http://www.eclipse.org/</A></P>
+<P>Eclipse articles: <A 
+href="http://www.eclipse.org/articles/index.html">http://www.eclipse.org/articles/index.html</A></P>
+<P>IBM's Eclipse articles: <A 
+href="http://www-106.ibm.com/developerworks/views/opensource/articles.jsp?sort_order=desc&amp;expand=&amp;sort_by=Date&amp;show_abstract=false&amp;view_by=Eclipse&amp;search_by=">http://www-106.ibm.com/developerworks/views/opensource/articles.jsp?sort_order=desc&amp;expand=&amp;sort_by=Date&amp;show_abstract=false&amp;view_by=Eclipse&amp;search_by=</A></P>
+<P>Eclipse guides in PDF (version 2.0) <A 
+href="http://eclipsewiki.swiki.net/239">eclipsewiki.swiki.net/239</A></P>
+<P>Compilation of Eclipse/SWT with the MinGW (Windows) port of GCJ: <A 
+href="http://www.thisiscool.com/gcc_mingw.htm">http://www.thisiscool.com/gcc_mingw.htm</A></P>
+<P>&nbsp;</P>
+<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">David Scuse (<A 
+href="http://www.cs.umanitoba.ca/~scuse">www.cs.umanitoba.ca/~scuse</A>)</P>
+<P style="MARGIN-TOP: 6px; MARGIN-BOTTOM: 0px">Department of Computer 
+Science</P>
+<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">University of Manitoba</P>
+<P style="MARGIN-TOP: 0px; MARGIN-BOTTOM: 0px">Winnipeg, Manitoba, 
+Canada</P></BODY></HTML>

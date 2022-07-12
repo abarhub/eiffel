@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- type en heritage existe  -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+		<hierarchie/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+	<classe>
+		<type nom="TEST1"/>
+	</classe>
+</programme>

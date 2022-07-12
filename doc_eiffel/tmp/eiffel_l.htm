@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0051)http://www.gobosoft.com/eiffel/syntax/eiffel_l.html -->
+<HTML><HEAD><TITLE>eiffel.l</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<DIV align=left>
+<TABLE border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%"><FONT 
+  size=6><STRONG>eiffel.l</STRONG></FONT></TD></TR></TBODY></TABLE></DIV>
+<HR SIZE=1>
+
+<P>The <A 
+href="http://www.gobosoft.com/eiffel/gobo/gelex/index.html"><EM>gelex</EM></A> 
+scanner description provided here is a possible implementation for the <A 
+href="http://www.gobosoft.com/eiffel/syntax/index.html">Eiffel syntax</A>. It is 
+given as an example for a better understanding of the Eiffel syntax 
+specification but is not complete in the sense that it does not process the 
+semantic values of the tokens. The <A 
+href="http://www.gobosoft.com/eiffel/syntax/eiffel_y.html">parser</A> 
+description associated with this Eiffel scanner is also available.</P>
+<HR SIZE=1>
+<PRE>%{
+indexing
+
+	description:
+
+		"Scanners for Eiffel parsers"
+
+	author:     "Eric Bezault &lt;ericb@gobosoft.com&gt;"
+	copyright:  "Copyright (c) 1997, Eric Bezault"
+
+class EIFFEL_SCANNER
+
+inherit
+
+	YY_COMPRESSED_SCANNER_SKELETON
+
+	EIFFEL_TOKENS
+		export
+			{NONE} all
+		end
+
+creation
+
+	make
+%}
+
+%option nodefault outfile="eiffel_scanner.e"
+
+%%
+
+----------/** Separators **/----------------------------------------------------
+
+[ \t\r\n]+			-- Ignore separators
+
+
+----------/** Eiffel comments **/-----------------------------------------------
+
+"--".*(\n[ \t\r]*"--".*)*	-- Ignore comments
+
+
+----------/** Eiffel symbols **/------------------------------------------------
+
+[-+*/^=&gt;&lt;.;,:!(){}[\]$]		last_token := text_item (1).code
+"//"				last_token := E_DIV
+"\\\\"				last_token := E_MOD
+"/="				last_token := E_NE
+"&gt;="				last_token := E_GE
+"&lt;="				last_token := E_LE
+"!!"				last_token := E_BANGBANG
+"-&gt;"				last_token := E_ARROW
+".."				last_token := E_DOTDOT
+"&lt;&lt;"				last_token := E_LARRAY
+"&gt;&gt;"				last_token := E_RARRAY
+":="				last_token := E_ASSIGN
+"?="				last_token := E_REVERSE
+
+
+----------/** Reserved words **/------------------------------------------------
+
+[aA][lL][iI][aA][sS]			last_token := E_ALIAS
+[aA][lL][lL]				last_token := E_ALL
+[aA][nN][dD]				last_token := E_AND
+[aA][sS]				last_token := E_AS
+[bB][iI][tT]				last_token := E_BITTYPE
+[cC][hH][eE][cC][kK]			last_token := E_CHECK
+[cC][lL][aA][sS][sS]			last_token := E_CLASS
+[cC][rR][eE][aA][tT][iI][oO][nN]	last_token := E_CREATION
+[cC][uU][rR][rR][eE][nN][tT]		last_token := E_CURRENT
+[dD][eE][bB][uU][gG]			last_token := E_DEBUG
+[dD][eE][fF][eE][rR][rR][eE][dD]	last_token := E_DEFERRED
+[dD][oO]				last_token := E_DO
+[eE][lL][sS][eE]			last_token := E_ELSE
+[eE][lL][sS][eE][iI][fF]		last_token := E_ELSEIF
+[eE][nN][dD]				last_token := E_END
+[eE][nN][sS][uU][rR][eE]		last_token := E_ENSURE
+[eE][xX][pP][aA][nN][dD][eE][dD]	last_token := E_EXPANDED
+[eE][xX][pP][oO][rR][tT]		last_token := E_EXPORT
+[eE][xX][tT][eE][rR][nN][aA][lL]	last_token := E_EXTERNAL
+[fF][aA][lL][sS][eE]			last_token := E_FALSE
+[fF][eE][aA][tT][uU][rR][eE]		last_token := E_FEATURE
+[fF][rR][oO][mM]			last_token := E_FROM
+[fF][rR][oO][zZ][eE][nN]		last_token := E_FROZEN
+[iI][fF]				last_token := E_IF
+[iI][mM][pP][lL][iI][eE][sS]		last_token := E_IMPLIES
+[iI][nN][dD][eE][xX][iI][nN][gG]	last_token := E_INDEXING
+[iI][nN][fF][iI][xX]			last_token := E_INFIX
+[iI][nN][hH][eE][rR][iI][tT]		last_token := E_INHERIT
+[iI][nN][sS][pP][eE][cC][tT]		last_token := E_INSPECT
+[iI][nN][vV][aA][rR][iI][aA][nN][tT]	last_token := E_INVARIANT
+[iI][sS]				last_token := E_IS
+[lL][iI][kK][eE]			last_token := E_LIKE
+[lL][oO][cC][aA][lL]			last_token := E_LOCAL
+[lL][oO][oO][pP]			last_token := E_LOOP
+[nN][oO][tT]				last_token := E_NOT
+[oO][bB][sS][oO][lL][eE][tT][eE]	last_token := E_OBSOLETE
+[oO][lL][dD]				last_token := E_OLD
+[oO][nN][cC][eE]			last_token := E_ONCE
+[oO][rR]				last_token := E_OR
+[pP][rR][eE][cC][uU][rR][sS][oO][rR]	last_token := E_PRECURSOR
+[pP][rR][eE][fF][iI][xX]		last_token := E_PREFIX
+[rR][eE][dD][eE][fF][iI][nN][eE]	last_token := E_REDEFINE
+[rR][eE][nN][aA][mM][eE]		last_token := E_RENAME
+[rR][eE][qQ][uU][iI][rR][eE]		last_token := E_REQUIRE
+[rR][eE][sS][cC][uU][eE]		last_token := E_RESCUE
+[rR][eE][sS][uU][lL][tT]		last_token := E_RESULT
+[rR][eE][tT][rR][yY]			last_token := E_RETRY
+[sS][eE][lL][eE][cC][tT]		last_token := E_SELECT
+[sS][eE][pP][aA][rR][aA][tT][eE]	last_token := E_SEPARATE
+[sS][tT][rR][iI][pP]			last_token := E_STRIP
+[tT][hH][eE][nN]			last_token := E_THEN
+[tT][rR][uU][eE]			last_token := E_TRUE
+[uU][nN][dD][eE][fF][iI][nN][eE]	last_token := E_UNDEFINE
+[uU][nN][iI][qQ][uU][eE]		last_token := E_UNIQUE
+[uU][nN][tT][iI][lL]			last_token := E_UNTIL
+[vV][aA][rR][iI][aA][nN][tT]		last_token := E_VARIANT
+[wW][hH][eE][nN]			last_token := E_WHEN
+[xX][oO][rR]				last_token := E_XOR
+
+
+----------/** Eiffel identifiers **/--------------------------------------------
+
+[a-zA-Z][a-zA-Z0-9_]*	{
+				last_token := E_IDENTIFIER
+				last_value := text
+			}
+
+
+----------/** Eiffel free operators **/-----------------------------------------
+
+[@#|&amp;][^ \t\r\n]*	{
+				last_token := E_FREEOP
+				last_value := text
+			}
+
+		-- Note: Accepts non-printable characters as well,
+		-- provided that they are not break characters.
+
+
+----------/** Eiffel characters **/---------------------------------------------
+
+\'([^%\n']|(%[ABCDFHLNQRSTUV%'"()&lt;&gt;])|(%\/[0-9]+\/))*\' {
+				last_token := E_CHARACTER
+				last_value := text
+			}
+
+		-- Note: Accepts non-printable characters as well.
+
+
+----------/** Eiffel strings **/------------------------------------------------
+
+\"([^%\n"]|(%[ABCDFHLNQRSTUV%'"()&lt;&gt;])|(%\/[0-9]+\/)|(%\r?\n[ \t]*%))*\" {
+				last_token := E_STRING
+				last_value := text
+			}
+
+		-- Note: Accepts non-printable characters as well.
+
+
+----------/** Eiffel bits **/---------------------------------------------------
+
+[0-1]+[bB]			last_token := E_BIT; last_value := text
+
+
+----------/** Eiffel integers **/-----------------------------------------------
+
+[0-9]+			|
+[0-9]{1,3}(_[0-9]{3})+	{
+				last_token := E_INTEGER
+				last_value := text
+			}
+
+
+---------/** Eiffel reals **/---------------------------------------------------
+
+[0-9]+\./[^.0-9]			|
+[0-9]+\.[0-9]*[eE][+-]?[0-9]+		|
+[0-9]*\.[0-9]+([eE][+-]?[0-9]+)?	|
+[0-9]{1,3}(_[0-9]{3})+\./[^.0-9]	|
+[0-9]{1,3}(_[0-9]{3})*\.([0-9]{1,3}(_[0-9]{3})*)?[eE][+-]?[0-9]{1,3}(_[0-9]{3})*    |
+([0-9]{1,3}(_[0-9]{3})*)?\.[0-9]{1,3}(_[0-9]{3})*([eE][+-]?[0-9]{1,3}(_[0-9]{3})*)? {
+					last_token := E_REAL
+					last_value := text
+				}
+
+		-- The first and fourth expressions use a trailing context
+		-- to make sure that an integer followed by two dots is
+		-- not recognized as a real followed by a dot. See the note
+		-- for the <A href="http://www.gobosoft.com/eiffel/syntax/index.html#Interval">Interval</A> construct for details.
+
+
+--------------------------------------------------------------------------------
+
+&lt;&lt;EOF&gt;&gt;			terminate
+.			last_token := text_item (1).code
+
+--------------------------------------------------------------------------------
+%%
+
+feature -- Access
+
+	last_value: ANY
+			-- Semantic value to be passed to the parser
+
+end -- class EIFFEL_SCANNER</PRE>
+<HR SIZE=1>
+
+<TABLE width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <ADDRESS><FONT size=2><B>Copyright © 1997</B></FONT><FONT size=1><B>, 
+      </B></FONT><FONT size=2><STRONG>Eric Bezault</STRONG></FONT><STRONG> 
+      </STRONG><FONT size=2><BR><STRONG>mailto:</STRONG></FONT><A 
+      href="mailto:ericb@gobosoft.com"><FONT 
+      size=2>ericb@gobosoft.com</FONT></A><FONT 
+      size=2><BR><STRONG>http:</STRONG></FONT><A 
+      href="http://www.gobosoft.com/"><FONT 
+      size=2>//www.gobosoft.com</FONT></A><FONT size=2><BR><STRONG>Last 
+      Updated:</STRONG> 6 September 1997</FONT><BR><!--webbot bot="PurpleText"
+            preview="
+$Date: 1999/06/12 18:48:45 $ 
+$Revision: 1.6 $"
+            --></ADDRESS></TD>
+    <TD vAlign=top align=right><A href="http://www.gobosoft.com/"><IMG 
+      height=40 alt=Home src="eiffel_l_fichiers/home.gif" width=40 
+      border=0></A><A 
+      href="http://www.gobosoft.com/eiffel/syntax/index.html"><IMG height=40 
+      alt=Home src="eiffel_l_fichiers/toc.gif" width=40 
+  border=0></A></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,22 @@
+Compiled from TinyEiffel
+public class BOOLEAN_Imp extends ANY_Imp implements BOOLEAN{
+public boolean $val_bool_var;
+
+public BOOLEAN_Imp();
+  Code:
+   0:	aload_0
+   1:	invokespecial	#10; //Method ANY_Imp."<init>":()V
+   4:	return
+
+public boolean $val_bool();
+  Code:
+   0:	getfield	#18; //Field $val_bool_var:Z
+   3:	areturn
+
+public void $not();
+  Code:
+   0:	nop
+   1:	return
+
+}
+

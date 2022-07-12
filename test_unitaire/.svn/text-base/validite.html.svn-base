@@ -1,0 +1,1698 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/TR/REC-html40">
+   <head>
+      <link rel="stylesheet" href="valide.css"></link>
+      <!--
+			Document généré par validite.xsl
+		-->
+      <title>Liste des r&egrave;gles</title>
+   </head>
+   <body>
+      <h1>Liste des r&egrave;gles</h1>
+      <hr></hr><a href="#***">***</a><a href="#VAOL">VAOL</a><a href="#VAPE">VAPE</a><a href="#VAVE">VAVE</a><a href="#VBAR">VBAR</a><a href="#VBGV">VBGV</a><a href="#VCCH">VCCH</a><a href="#VCFG">VCFG</a><a href="#VCRN">VCRN</a><a href="#VDCN">VDCN</a><a href="#VDJR">VDJR</a><a href="#VDOC">VDOC</a><a href="#VDRD">VDRD</a><a href="#VDRS">VDRS</a><a href="#VDUC">VDUC</a><a href="#VDUS">VDUS</a><a href="#VEEN">VEEN</a><a href="#VFFD">VFFD</a><a href="#VGCC">VGCC</a><a href="#VGCI">VGCI</a><a href="#VGCP">VGCP</a><a href="#VGCS">VGCS</a><a href="#VHAY">VHAY</a><a href="#VHPR">VHPR</a><a href="#VHRC">VHRC</a><a href="#VIRW">VIRW</a><a href="#VJAR">VJAR</a><a href="#VJRV">VJRV</a><a href="#VKCN">VKCN</a><a href="#VLCP">VLCP</a><a href="#VLEC">VLEC</a><a href="#VLEL">VLEL</a><a href="#VMCN">VMCN</a><a href="#VMFN">VMFN</a><a href="#VMRC">VMRC</a><a href="#VMSS">VMSS</a><a href="#VNCB">VNCB</a><a href="#VNCC">VNCC</a><a href="#VNCE">VNCE</a><a href="#VNCF">VNCF</a><a href="#VNCG">VNCG</a><a href="#VNCH">VNCH</a><a href="#VNCN">VNCN</a><a href="#VNCS">VNCS</a><a href="#VNCX">VNCX</a><a href="#VOMB">VOMB</a><a href="#VQMC">VQMC</a><a href="#VQUI">VQUI</a><a href="#VREG">VREG</a><a href="#VRFA">VRFA</a><a href="#VRLE">VRLE</a><a href="#VRRR">VRRR</a><a href="#VSCN">VSCN</a><a href="#VSRC">VSRC</a><a href="#VTAT">VTAT</a><a href="#VTBT">VTBT</a><a href="#VTCG">VTCG</a><a href="#VTCT">VTCT</a><a href="#VTEC">VTEC</a><a href="#VTUG">VTUG</a><a href="#VUAR">VUAR</a><a href="#VUCS">VUCS</a><a href="#VUEX">VUEX</a><a href="#VUGV">VUGV</a><a href="#VWBE">VWBE</a><a href="#VWCA">VWCA</a><a href="#VWEQ">VWEQ</a><a href="#VWID">VWID</a><a href="#VWMA">VWMA</a><a href="#VWMS">VWMS</a><a href="#VWOE">VWOE</a><a href="#VWST">VWST</a><a href="#VXRC">VXRC</a><a href="#VXRT">VXRT</a>
+      		(74/74=
+      		100.0%)
+      		
+      <hr></hr><a name="VBAR">
+         			Regle <b>VBAR</b>
+         				(chapitre 2.6,
+         				page 27)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle d'Affectation:</u><dd></dd>
+         			Une affectation est valide si et seulement si
+         			l'expression source est conforme &agrave; l'entit&eacute;
+         			cible.
+         		<br></br></dl>
+      <hr></hr><a name="VBGV">
+         			Regle <b>VBGV</b>
+         				(chapitre 2.7,
+         				page 27)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle G&eacute;n&eacute;rale de Validit&eacute;:</u><dd></dd>
+         			Toute contrainte de validit&eacute; relative &agrave; une
+         			construction doit &ecirc;tre comprise comme
+         			incluant une condition suppl&eacute;mentaire
+         			implicite, stipulant que chaque composant
+         			de cette construction satisfait lui-m&ecirc;me
+         			la totalit&eacute; des contraintes de validit&eacute;
+         			qui lui sont impos&eacute;es.
+         		<br></br></dl>
+      <hr></hr><a name="VSRC">
+         			Regle <b>VSRC</b>
+         				(chapitre 3.4,
+         				page 36)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Choix de la Classe Racine:</u><dd></dd>
+         			Une classe C peut &ecirc;tre utilis&eacute;e comme classe
+         			racine d'un syst&egrave;me si et seulement si elle
+         			v&eacute;rifie les deux conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					C n'est pas g&eacute;n&eacute;rique.
+            				
+            <li></li>
+            					Toute proc&eacute;dure de cr&eacute;ation de C 
+            					requiert soit un argument formel
+            					unique et de type ARRAY[STRING],
+            					soit aucun.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VSCN">
+         			Regle <b>VSCN</b>
+         				(chapitre 3.5,
+         				page 37)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Deux classes dans une grappe donn&eacute;e ne 
+         			peuvent porter le m&ecirc;me nom.
+         		<br></br></dl>
+      <hr></hr><a name="VCCH">
+         			Regle <b>VCCH</b>
+         				(chapitre 4.8,
+         				page 49)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Un Entete_de_classe figurant dans le corps
+         			d'une classe C est valide si et seulement
+         			si il satisfait l'une ou l'autre des deux 
+         			conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Il ne contient aucun qualifieur de 
+            					la forme deferred, et C est concr&egrave;te.
+            				
+            <li></li>
+            					Il contient un Qualifieur_ent&ecirc;te de
+            					la forme deferred, et C est diff&eacute;r&eacute;e.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VCFG">
+         			Regle <b>VCFG</b>
+         				(chapitre 4.9,
+         				page 51)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une section G&eacute;n&eacute;rique_formels dans une 
+         			D&eacute;claration_de_classe est valide si et
+         			seulement si tout Nom_g&eacute;n&eacute;rique_formel
+         			G qu'elle contient v&eacute;rifie les deux
+         			conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					G est distinct de tout nom de classe
+            					dans l'univers d'appartenance.
+            				
+            <li></li>
+            					G est distinct de tout autre 
+            					Nom_g&eacute;n&eacute;rique_formel apparaissant
+            					dans la m&ecirc;me section 
+            					G&eacute;n&eacute;rique_formels.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VCRN">
+         			Regle <b>VCRN</b>
+         				(chapitre 4.11,
+         				page 52)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Lorsque figure un commentaire de type :
+         			-- class Nom_de_classe
+         			, il doit reprendre le Nom_de_classe
+         			mentionn&eacute; en t&ecirc;te de la classe.
+         		<br></br></dl>
+      <hr></hr><a name="VFFD">
+         			Regle <b>VFFD</b>
+         				(chapitre 5.14,
+         				page 65)
+         		</a><br></br><dl>
+         <dt></dt><u>Regle de D&eacute;claration de Primitive:</u><dd></dd>
+         		Dans une classe C, une D&eacute;claration_de_primitive
+         		dont la section Liste_nouvelles_primitives contient 
+         		un ou plusieurs noms de primitives f1, ... , fn
+         		est valide si et seulement si elle verifie les
+         		conditions suivantes :
+         		<br></br><ol>
+            <li></li>Son Coprs_de_declaration d&eacute;crit une primitive
+            		   qui, en vertu de la regle &eacute;nonc&eacute;e en 5.11, et :
+            		   un attribut variable, ou un attribut constant,
+            		   ou une proc&eacute;dure, ou une fonction.
+            		
+            <li></li>Aucune des fi ne porte le meme nom qu'une autre
+            		   des primitives introduites dans C (en 
+            		   particulier, fi est un nom distinct de fj d&egrave;s 
+            		   lors que i et j sont diff&eacute;rents).
+            		
+            <li></li>Si le nom de l'une des primitives fi est 
+            		   similaire au nom final d'une quelconque
+            		   primitive h&eacute;rit&eacute;e, le Coprs_de_d&eacute;claration
+            		   doit satisfaire la R&egrave;gle de Red&eacute;claration.
+            		
+            <li></li>Lorsque le Corps_de_d&eacute;claration s'applique &agrave;
+            		   une primitive diff&eacute;r&eacute;e, aucune des fi ne doit
+            		   &ecirc;tre pr&eacute;ced&eacute;e du mot clef frozen.
+            		
+            <li></li>Si l'une quelconque des fi porte un nom de type
+            		   pr&eacute;fix&eacute;, le Corp_de_d&eacute;claration d&eacute;crit un 
+            		   attribut ou une fonction sans argument.
+            		
+            <li></li>Si l'une quelconque des fi porte un nom de type
+            		   infix&eacute;, le Corp_de_d&eacute;claration d&eacute;crit une 
+            		   fonction acceptant un parametre et un seul.
+            		
+            <li></li>Lorsque le Corps_de_d&eacute;claration d&eacute;crit une 
+            		   fonction d'une fois (ou fonction &agrave; simple
+            		   d&eacute;tente), le type de son r&eacute;sultat ne peut &ecirc;tre
+            		   ni un Nom_g&eacute;n&eacute;rique, ni un type ancr&eacute;.
+            		
+         </ol><br></br>
+         		Salut a tous
+         		<br></br></dl>
+      <hr></hr><a name="VHPR">
+         			Regle <b>VHPR</b>
+         				(chapitre 6.6,
+         				page 74)
+         		</a><br></br><dl>
+         <dt></dt><u>R&eacute;gle de Parent&eacute;:</u><dd></dd>
+         			La clause H&eacute;ritage d'une classe D est valide
+         			si et seulement si elle v&eacute;rifie les deux
+         			conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Dans chacune des clauses Parent pour
+            					une classe B, B n'est pas descendante 
+            					de D.
+            				
+            <li></li>
+            					Si deux clauses Parent au moins font 
+            					r&eacute;f&eacute;rence &agrave; des classes ayant une
+            					anc&ecirc;tre commune A, D remplit les
+            					conditions de la Contrainte de
+            					Coh&eacute;rence sur H&eacute;ritage R&eacute;p&eacute;t&eacute;, 
+            					appliqu&eacute;e &agrave; A.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VHRC">
+         			Regle <b>VHRC</b>
+         				(chapitre 6.9,
+         				page 77)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'une Clause de 
+            		Renommage:</u><dd></dd>
+         			Comme premier &eacute;l&eacute;ment d'une Paire_renommage, 
+         			figurant au sein d'une classe C dans la 
+         			sous-clause Renomage d'une clause Parent
+         			pour B, l'utilisation d'ancien_nom est
+         			valide si et seulement si les deux
+         			conditions suivantes sont v&eacute;rifi&eacute;es :
+         			<br></br><ol>
+            <li></li>
+            					ancien_nom est le nom final d'une 
+            					primitive de B.
+            				
+            <li></li>
+            					ancien_nom n'appara&icirc;t comme premier 
+            					&eacute;l&eacute;ment dans aucune autre 
+            					Paire_renomage au sein de la 
+            					m&ecirc;me sous-clause Renomage.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VHAY">
+         			Regle <b>VHAY</b>
+         				(chapitre 6.15,
+         				page 83)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Que l'on utilise la classe ANY par defaut
+         			ou une autre, tout syst&egrave;me doit poss&eacute;der
+         			une classe portant ce nom. Cette contrainte
+         			s'applique &agrave; tout univers valide.
+         		<br></br></dl>
+      <hr></hr><a name="VLEC">
+         			Regle <b>VLEC</b>
+         				(chapitre 7.5,
+         				page 89)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'un Client 
+            		Expans&eacute;:</u><dd></dd>
+         			Une classe C peut &ecirc;tre un client expans&eacute; 
+         			d'une classe FC si et seulement si FC n'est
+         			ni directement ni indirectement client
+         			expans&eacute; de C.
+         		<br></br></dl>
+      <hr></hr><a name="VLCP">
+         			Regle <b>VLCP</b>
+         				(chapitre 7.13,
+         				page 95)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une section Clients est valide si et 
+         			seulement si tout Nom_de_classe figurant 
+         			dans sa section Liste_classes est le nom 
+         			d'une classe appartenant au m&ecirc;me univers.
+         		<br></br></dl>
+      <hr></hr><a name="VLEL">
+         			Regle <b>VLEL</b>
+         				(chapitre 7.13,
+         				page 96)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de S&eacute;lection de Visibilit&eacute;:</u><dd></dd>
+         			Soit une section Nouvelle_visibilit&eacute; 
+         			figurant dans une classe C, au sein d'une
+         			clause Parent relative &agrave; une classe B,
+         			sous la forme suivante :
+         			export
+         				{liste_classe1} liste_primitives1;
+         				...
+         				{liste_classen} liste_primitivesn;
+         			Un telle section est valide si et seulement
+         			si (pour tout i compris entre 1 et n):
+         			<br></br><ol>
+            <li></li>
+            					Pas plus d'une des liste_primitivesi
+            					n'est &eacute;gale au mot-cl&eacute; all;
+            				
+            <li></li>
+            					Toutes les autres liste_primitivesi
+            					sont des &eacute;num&eacute;rations de noms finals
+            					de primitives de C obtenues de B.
+            				
+            <li></li>
+            					Aucun nom final de primitive 
+            					n'appara&icirc;t plus d'une fois, ni dans
+            					une m&ecirc;me liste de ce type, ni dans 
+            					deux listes distinctes.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VRFA">
+         			Regle <b>VRFA</b>
+         				(chapitre 8.3,
+         				page 103)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Choix des Arguments 
+            		Formels:</u><dd></dd>
+         			Supposons que af soit la section 
+         			Arguments_formels d'une routine r dans une 
+         			classe C, et formels la concat&eacute;nation de 
+         			toutes les Listes_identificateurs de tous
+         			les Groupe_d&eacute;clarations_entit&eacute;s figurant 
+         			dans af. La section af est valide si et 
+         			seulement si aucun Identificateur e 
+         			apparaissant dans formels n'est le nom 
+         			final d'une primitive de C.
+         		<br></br></dl>
+      <hr></hr><a name="VREG">
+         			Regle <b>VREG</b>
+         				(chapitre 8.3,
+         				page 103)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Soit le une Liste_d&eacute;clarations_entit&eacute;s, et
+         			identificateurs la concat&eacute;nation de toutes
+         			les Liste_identificateurs de tous les 
+         			Groupe_d&eacute;clarations_entit&eacute;s figurant dans
+         			af. La section le est valide si et 
+         			seulement si aucun Identificateur ne figure
+         			plus d'une fois dans la liste 
+         			identificateurs.
+         		<br></br></dl>
+      <hr></hr><a name="VRRR">
+         			Regle <b>VRRR</b>
+         				(chapitre 8.5,
+         				page 106)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; des Routines:</u><dd></dd>
+         			Dans une d&eacute;claration de routine, une 
+         			section Routine est valide si et seulement
+         			si l'une des deux conditions suivantes 
+         			est v&eacute;rifi&eacute;e :
+         			<br></br><ol>
+            <li></li>
+            					Son Corps_de_routine est un corps
+            					Interne (d&eacute;butant par do ou once).
+            				
+            <li></li>
+            					Dans tout autre cas 
+            					(Corps_de_routine de cat&eacute;gorie 
+            					Externe ou Diff&eacute;r&eacute;), le corps de 
+            					routine ne contient ni section 
+            					D&eacute;clarations_locales ni section
+            					Sauvetage.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VRLE">
+         			Regle <b>VRLE</b>
+         				(chapitre 8.7,
+         				page 107)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de D&eacute;claration des Entit&eacute;s 
+            		Locales:</u><dd></dd>
+         			Soit dl une section D&eacute;clarations_locales
+         			d'une routine r dans une classe C, et 
+         			elocales la concat&eacute;nation de toutes les 
+         			Liste_itentificateurs de tous les 
+         			Groupe_d&eacute;clarations_entit&eacute;s figurant dans dl;
+         			dl est valide si et seulement si tout 
+         			identificateur e dans dl v&eacute;rifie les deux 
+         			conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Aucune des primitives de C ne porte 
+            					le nom final e.
+            				
+            <li></li>
+            					Aucun argument formel de la routine
+            					r n'a pour Identificateur e.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VAPE">
+         			Regle <b>VAPE</b>
+         				(chapitre 9.8,
+         				page 116)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une Pr&eacute;condition d'une routine r dans une
+         			classe C est valide si et seulement si
+         			toute primitive dont le nom final appara&icirc;t
+         			dans une Clause_d_assertion quelconque est 
+         			visible par les memes classes que la
+         			classe C.
+         		<br></br></dl>
+      <hr></hr><a name="VAOL">
+         			Regle <b>VAOL</b>
+         				(chapitre 9.9,
+         				page 118)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une expression Anterieur de la forme old e, 
+         			o&ugrave; e est une expression de type TE, est 
+         			valide si et seulement si elle v&eacute;rifie les
+         			deux conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Elle figure dans une clause de la 
+            					Postcondition d'une Routine r.
+            				
+            <li></li>
+            					La transformation de r en une 
+            					fonction dont le r&eacute;sultat est de
+            					type TE (ce qui se fait en ajoutant
+            					un r&eacute;sultat typ&eacute; si r est une 
+            					proc&eacute;dure, ou en modifivant le type
+            					initial du r&eacute;sultat si r est deja
+            					une fonction), suivie du remplacement 
+            					complet de sa section Routine par
+            					la s&eacute;quence:
+            					do
+            						Result:=e;
+            					end
+            					aboutit &agrave; une routine valide.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VAVE">
+         			Regle <b>VAVE</b>
+         				(chapitre 9.14,
+         				page 123)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Un Variant est valide si et seulement si
+         			l'Expression dont il est constitu&eacute; est de
+         			type INTEGER.
+         		<br></br></dl>
+      <hr></hr><a name="VDRS">
+         			Regle <b>VDRS</b>
+         				(chapitre 10.19,
+         				page 152)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de validit&eacute; d'une sous-clause 
+            		red&eacute;finition:</u><dd></dd>
+         			Soit une classe C h&eacute;ritant d'une parente B.
+         			Lorsqu'une section Parent pour B dans C
+         			contient une sous-clause Red&eacute;finition, cette
+         			derniere est valide si et seulement si, dans 
+         			la Liste_primitives, chacun des 
+         			Identificateur_de_primitive nom_prim &eacute;num&eacute;r&eacute;s 
+         			respecte les conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					<a href="abc">nom_prim
+               			(abc,grammaire)
+               		</a>
+            					est le nom final dans C 
+            					d'une primitive h&eacute;rit&eacute;e de B.
+            				
+            <li></li>
+            					Cette primitive n'&eacute;tait pas fig&eacute;e
+            					et n'&eacute;tait pas un attribut constant.
+            				
+            <li></li>
+            					nom_prim appara&icirc;t une fois et une
+            					seule dans la Liste_primitives.
+            				
+            <li></li>
+            					La section Primitives de C 
+            					comporte une d&eacute;claration_de_primitive
+            					relative &agrave; nom_prim, qui doit &ecirc;tre
+            					une red&eacute;claration valide de la 
+            					primitive d'origine mais ne peut pas
+            					en &ecirc;tre une concr&eacute;tisation.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VDUS">
+         			Regle <b>VDUS</b>
+         				(chapitre 10.19,
+         				page 153)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de validit&eacute; d'une sous-clause 
+            		A-d&eacute;finition:</u><dd></dd>
+         			Soit une classe C h&eacute;ritant d'une classe B.
+         			Lorsqu'une clause Parent pour B dans C 
+         			contient une sous-clause A-d&eacute;finition,
+         			cette clause est valide si et seulement si,
+         			pour tout Identificateur_de_primitive
+         			nom_prim &eacute;num&eacute;r&eacute; dans sa Liste_primitives :
+         			<br></br><ol>
+            <li></li>
+            					nom_prim est le nom final dans C 
+            					d'une primitive h&eacute;rit&eacute; de B.
+            				
+            <li></li>
+            					Cette primitive n'etait pas fig&eacute;e et 
+            					n'&eacute;tait pas un attribut.
+            				
+            <li></li>
+            					Cette primitive &eacute;tait contr&egrave;te dans B.
+            				
+            <li></li>
+            					nom_prim appara&icirc;t &agrave; une seule reprise
+            					dans la Liste_primitives.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VDRD">
+         			Regle <b>VDRD</b>
+         				(chapitre 10.22,
+         				page 156)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Red&eacute;claration:</u><dd></dd>
+         			Soit une classe C et q une primitive de C;
+         			q est une red&eacute;claration valide d'une
+         			primitive p h&eacute;rit&eacute;e d'une parente B de C
+         			si et seulement si les conditions suivantes
+         			sont satisfaites :
+         			<br></br><ol>
+            <li></li>
+            					Aucune primitive concr&egrave;te de C autre
+            					que p et q ne porte un nom final
+            					similaire &agrave; celui de p et q.
+            				
+            <li></li>
+            					La signature de q et conforme celle
+            					de p.
+            				
+            <li></li>
+            					Si q est une routine, sa Pr&eacute;condition,
+            					si elle existe, d&eacute;bute par require
+            					else (et non require simplement)
+            					et sa Postcondition, si elle existe,
+            					par ensure then (et non ensure
+            					seulement).
+            				
+            <li></li>
+            					Si la red&eacute;claration est une 
+            					red&eacute;finition (par opposition &agrave; une
+            					concr&eacute;tisation), la sous-clause
+            					Red&eacute;finition de la section Parent
+            					pour B comporte dans l'enumeration
+            					de sa section Liste_primitives le
+            					nom final de p.
+            				
+            <li></li>
+            					Si p est herit&eacute;e sous forme concr&egrave;te,
+            					alors q est egalement concr&egrave;te.
+            				
+            <li></li>
+            					Si p est un attribut, q est un 
+            					attribut, p et q sont tous deux
+            					variables et leurs types sont soit
+            					tous deux expans&eacute;s soit tous deux
+            					non expans&eacute;s.
+            				
+            <li></li>
+            					Si l'une ou l'autre de p et q est
+            					une routine Externe, alors la 
+            					seconde l'est &eacute;galement.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VDJR">
+         			Regle <b>VDJR</b>
+         				(chapitre 10.23,
+         				page 158)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Jointure:</u><dd></dd>
+         			Lorsqu'une classe C h&eacute;rite sous forme diff&eacute;r&eacute;e
+         			deux primitives distinctes sous un m&ecirc;me nom
+         			final, cette op&eacute;ration est valide si et 
+         			seulement si les signatures de ces primitives
+         			sont identiques, apr&egrave;s red&eacute;claration le 
+         			cas &eacute;ch&eacute;ant.
+         		<br></br></dl>
+      <hr></hr><a name="VMFN">
+         			Regle <b>VMFN</b>
+         				(chapitre 11.11,
+         				page 181)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de D&eacute;nomination des 
+            		Primitives:</u><dd></dd>
+         			Lorsque, dans une classe C, on introduit une
+         			primitive avec un Identificateur_de_primitive
+         			prim_f, ou lorsqu'une primitive est h&eacute;rit&eacute;e 
+         			sous ce nom prim_f, la validit&eacute; est garantie
+         			si et seulement si aucune autre primitive
+         			ne poss&egrave;de d&eacute;ja ce m&ecirc;me nom final.
+         		<br></br></dl>
+      <hr></hr><a name="VMCN">
+         			Regle <b>VMCN</b>
+         				(chapitre 11.11,
+         				page 182)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			<br></br><ol>
+            <li></li>
+            					Deux primitives, diff&eacute;rentes mais 
+            					soit toutes deux diff&eacute;r&eacute;es soit 
+            					toutes deux concr&egrave;tes, ne peuvent 
+            					&ecirc;tre introduites dans une classe 
+            					sous le m&ecirc;me nom.
+            				
+            <li></li>
+            					Lorsqu'une primitive est introduite
+            					dans une classe avec le m&ecirc;me nom 
+            					que l'une des primitives h&eacute;rit&eacute;e sous
+            					forme concr&egrave;te par cette classe, la 
+            					version h&eacute;rit&eacute;e doit etre renom&eacute;e.
+            				
+            <li></li>
+            					Lorsque deux primitives sont h&eacute;rit&eacute;es 
+            					sous forme concr&egrave;te de deux parentes
+            					diff&eacute;rentes et portent le m&ecirc;me nom 
+            					final, la classe qui les h&eacute;rite doit
+            					&eacute;galement r&eacute;soudre le conflit de noms
+            					en recourant au renommage (sauf s'il
+            					s'agit d'un partage sur h&eacute;ritage 
+            					r&eacute;p&eacute;t&eacute;).
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VMRC">
+         			Regle <b>VMRC</b>
+         				(chapitre 11.13,
+         				page 184)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Lorsqu'une classe D est descendante r&eacute;p&eacute;t&eacute;e 
+         			d'une classe A, elle est valide si et 
+         			seulement si, pour toute primitive p de A,
+         			D satisfait les deux conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Lorsque la R&egrave;gled'H&eacute;ritage &agrave; 
+            					R&eacute;p&eacute;tition conduit au partage de p 
+            					dans D, toutes les versions h&eacute;rit&eacute;es 
+            					de p ne sont qu'une m&ecirc;me primitive.
+            				
+            <li></li>
+            					Lorsque la R&egrave;gle d'H&eacute;ritage &agrave; 
+            					R&eacute;p&eacute;tition conduit &agrave; la duplication
+            					de p dans D, si p est potentiellement
+            					ambigu&euml;, alors la clause S&eacute;lection
+            					d'une et une seule section Parent de 
+            					D doit mentionner la version 
+            					correspondante de p, en utilisant 
+            					le nom final que porte cette derni&egrave;re
+            					dans D.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VMSS">
+         			Regle <b>VMSS</b>
+         				(chapitre 11.13,
+         				page 185)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'une Sous-clause 
+            		S&eacute;lection:</u><dd></dd>
+         			Une sous-clause S&eacute;lection figurant dans la
+         			section Parent pour B dans une classe D est 
+         			valide si et seulement si, pour tout 
+         			Identificateur_de_primitive nom_prim 
+         			figurant dans sa Liste_primitives, nom_prim 
+         			n'appara&icirc;t qu'une seule fois dans la 
+         			Liste_primitives, et il est le nom final 
+         			dans D d'une primitive ayant au moins 
+         			deux versions potentielles dans D.
+         		<br></br></dl>
+      <hr></hr><a name="VTCT">
+         			Regle <b>VTCT</b>
+         				(chapitre 12.5,
+         				page 192)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de D&eacute;nomination des Types-classes:</u><dd></dd>
+         			L'emploi d'un identificateur CC comme section 
+         			Nom_de_classe d'un Type_de_classe est valide 
+         			si et seulement si il d&eacute;signe une classe de 
+         			l'univers environnant.
+         		<br></br></dl>
+      <hr></hr><a name="VTUG">
+         			Regle <b>VTUG</b>
+         				(chapitre 12.7,
+         				page 195)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de g&eacute;n&eacute;ricit&eacute; Sans Contrainte:</u><dd></dd>
+         			Soit C une classe g&eacute;n&eacute;rique non contrainte.
+         			Un Type_classe TC dont la classe de base est
+         			C est valide si et seulement si les deux
+         			conditions suivantes sont satisfaites :
+         			<br></br><ol>
+            <li></li>
+            					C est une classe g&eacute;n&eacute;rique.
+            				
+            <li></li>
+            					Le nombre de types composant la liste
+            					des G&eacute;n&eacute;riques_r&eacute;&egrave;ls de TC est &eacute;gal
+            					au nombre de param&egrave;tres 
+            					G&eacute;n&eacute;riques_formels figurant dans la 
+            					Liste_g&eacute;n&eacute;riques_formels de la 
+            					d&eacute;claration de C.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VTCG">
+         			Regle <b>VTCG</b>
+         				(chapitre 12.8,
+         				page 196)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de G&eacute;n&eacute;ricit&eacute; Contrainte:</u><dd></dd>
+         			Soit C une classe g&eacute;n&eacute;rique contrainte. Un 
+         			Type_classe TC ayant pour classe de base C 
+         			est valide si et seulement si TC ob&eacute;it &agrave; 
+         			la R&egrave;gle de G&eacute;n&eacute;ricit&eacute; Sans Contrainte 
+         			(VTUG, paragraphe 12.7), ainsi qu'&agrave; une 
+         			condition suppl&eacute;mentaire :
+         			<br></br><ol>
+            <li></li>
+            					(3) Pour tout param&egrave;tre 
+            					G&eacute;n&eacute;rique_formel figurant dans la 
+            					d&eacute;claration de C et poss&eacute;dant une 
+            					contrainte de la forme --&gt;D, le 
+            					type correspondant dans la liste 
+            					G&eacute;n&eacute;rique_r&eacute;&egrave;ls de TC est conforme 
+            					&agrave; D.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VTEC">
+         			Regle <b>VTEC</b>
+         				(chapitre 12.12,
+         				page 202)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'un Type Expans&eacute;:</u><dd></dd>
+         			L'emploi dans une classe B d'un type expans&eacute; 
+         			dont la classe de base est C est valide si 
+         			et seulement si les deux conditions suivantes
+         			sont v&eacute;rifi&eacute;es :
+         			<br></br><ol>
+            <li></li>
+            					C n'est pas une classe diff&eacute;r&eacute;e.
+            				
+            <li></li>
+            					Ou bien C ne poss&egrave;de pas de section
+            					Cr&eacute;ateurs, ou bien celle-ci contient
+            					exactement une proc&eacute;dure de cr&eacute;ation,
+            					sans arguments, visible par B lors
+            					de la cr&eacute;ation.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VTBT">
+         			Regle <b>VTBT</b>
+         				(chapitre 12.14,
+         				page 203)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une d&eacute;claration de Type_binaire est valide 
+         			si et seulement si sa Constante est de type 
+         			INTEGER est a une valeur positive.
+         		<br></br></dl>
+      <hr></hr><a name="VTAT">
+         			Regle <b>VTAT</b>
+         				(chapitre 12.15,
+         				page 207)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Dans une classe C, un type ancr&eacute; de la forme
+         			like ancre est valide si et seulement si 
+         			l'une des conditions suivantes est 
+         			satisfaite :
+         			<br></br><ol>
+            <li></li>
+            					ancre est le nom final d'un attribut 
+            					ou d'une fonction de C, dont le type 
+            					d&eacute;clar&eacute; est un type de r&eacute;f&eacute;rence non 
+            					ancr&eacute;.
+            				
+            <li></li>
+            					Le type en question appara&icirc;t dans le 
+            					code d'une routine r de C, et ancre 
+            					est un argument formel de r, dont 
+            					le type d&eacute;clar&eacute; est un type de 
+            					r&eacute;f&eacute;rence non ancr&eacute;.
+            				
+            <li></li>
+            					ancre est le mot r&eacute;serv&eacute; Current.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VNCS">
+         			Regle <b>VNCS</b>
+         				(chapitre 13.3,
+         				page 210)
+         		</a><br></br><dl>
+         <dt></dt><u>Conformit&eacute; de signature:</u><dd></dd>
+         			Une signature t=(&lt;B1, ..., Bn&gt;,
+         			&lt;S&gt;) est conforme &agrave; une signature 
+         			s= (&lt;A1, ..., An&gt;,&lt;R&gt;) si et 
+         			seulement si elle v&eacute;rifie les deux conditions
+         			suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Les composants de chacune de ces 
+            					paires t et s ont deux &agrave; deux le m&ecirc;me
+            					nombre d'&eacute;l&eacute;ments.
+            				
+            <li></li>
+            					Au sein de chaque composant de la 
+            					signature t, chaque &eacute;l&eacute;ment Ti est 
+            					d'un type conforme &agrave; celui de 
+            					l'&eacute;l&eacute;ment Si correspondant dans s.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VNCC">
+         			Regle <b>VNCC</b>
+         				(chapitre 13.4,
+         				page 211)
+         		</a><br></br><dl>
+         <dt></dt><u>Conformit&eacute; g&eacute;n&eacute;rale:</u><dd></dd>
+         			Soient T et V deux types. V est conforme &agrave; T 
+         			si et seulement si l'on se trouve dans l'un 
+         			des cas suivants :
+         			<br></br><ol>
+            <li></li>
+            					V et T sont identiques.
+            				
+            <li></li>
+            					V est directement conforme &agrave; T.
+            				
+            <li></li>
+            					V est le type NONE et T est un type 
+            					de r&eacute;f&eacute;rence.
+            				
+            <li></li>
+            					V est de la forme B[Y1, ..., Yn], 
+            					B &eacute;tant une classe g&eacute;n&eacute;rique ; T 
+            					est de la forme B[X1, ..., Xn], et 
+            					chacun des types Y est conforme au 
+            					type X correspondant.
+            				
+            <li></li>
+            					T est un type de r&eacute;f&eacute;rence et, U 
+            					&eacute;tant un type quelconque, V est 
+            					directement conforme &agrave; U et U 
+            					lui-m&ecirc;me conforme (r&eacute;cursivement)
+            					&agrave; T.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VNCN">
+         			Regle <b>VNCN</b>
+         				(chapitre 13.5,
+         				page 212)
+         		</a><br></br><dl>
+         <dt></dt><u>Conformit&eacute; directe (non g&eacute;n&eacute;rique):</u><dd></dd>
+         			Soit CT un type de r&eacute;f&eacute;rence bas&eacute; sur la 
+         			classe C, et BT un type dont la classe de
+         			base B est non g&eacute;n&eacute;rique. CT est directement
+         			conforme &agrave; BT si et seulement si la clause
+         			H&eacute;ritage de C mentionne B dans l'une au 
+         			moins de ses sections Parents.
+         		<br></br></dl>
+      <hr></hr><a name="VNCG">
+         			Regle <b>VNCG</b>
+         				(chapitre 13.6,
+         				page 214)
+         		</a><br></br><dl>
+         <dt></dt><u>Conformit&eacute; Directe (Substitution 
+            		G&eacute;n&eacute;rique):</u><dd></dd>
+         			Soit BT un type g&eacute;n&eacute;rique d&eacute;riv&eacute; ayant pour
+         			type de base B[X1, ... ,Xn], n &eacute;tant 
+         			sup&eacute;rieur ou &eacute;gal &agrave; 1; soient G1, ..., Gn les
+         			param&egrave;tres g&eacute;n&eacute;riques formels de B. Soit CT 
+         			un type reposant sur la classe de base C, 
+         			distincte de B. Pour d&eacute;terminer si CT est 
+         			directement conforme &agrave; BT, on d&eacute;finit la 
+         			substitution rho de la fa&ccedil;on suivant :
+         			<br></br><ol>
+            <li></li>
+            					si CT est non g&eacute;n&eacute;rique, la 
+            					substitution rho est l'identit&eacute;.
+            				
+            <li></li>
+            					Si CT est un type g&eacute;n&eacute;riquement 
+            					d&eacute;riv&eacute;, de la forme C[Y1, ..., Ym],
+            					et si la classe C est d&eacute;clar&eacute;e avec
+            					les param&egrave;tres g&eacute;n&eacute;riques formels 
+            					H1, ..., Hm, alors rho associe &agrave; 
+            					chacun des Hi (1&lt;=i&lt;=m) le 
+            					param&egrave;tre Yi, tandis qu'elle 
+            					conserve tout autre &eacute;l&eacute;ment (&agrave; tout
+            					&eacute;l&eacute;ment autre que Hi, elle associe 
+            					cette &eacute;l&eacute;ment).
+            				
+         </ol><br></br>
+         			Sous ces hypoth&egrave;ses, CT est directement 
+         			conforme &agrave; BT si et seulement si B[Z1, ..., 
+         			Zn] compte parmi les sections Parents 
+         			figurant dans la clause H&eacute;ritage de C et,
+         			pour tout j compris entre 1 et n, 
+         			l'application &agrave; Zj de la substitution rho
+         			donne Xj.
+         		<br></br></dl>
+      <hr></hr><a name="VNCF">
+         			Regle <b>VNCF</b>
+         				(chapitre 13.7,
+         				page 215)
+         		</a><br></br><dl>
+         <dt></dt><u>Conformit&eacute; Directe (G&eacute;n&eacute;rique Formel):</u><dd></dd>
+         			Soit G, param&egrave;tre g&eacute;n&eacute;rique formel d'une 
+         			classe, utilisable dans cette classe comme 
+         			un type de cat&eacute;gorie Nom_g&eacute;n&eacute;rique_formel.
+         			Aucun type n'est directement conforme &agrave; G.
+         			Si G n'est pas contraint, il est directement
+         			conforme &agrave; ANY (bas&eacute; sur la classe 
+         			universelle correspondante) et &agrave; ce type 
+         			exclusivement. Si G est contraint par CT, 
+         			G est directement conforme &agrave; CT et &agrave; lui 
+         			seul.
+         		<br></br></dl>
+      <hr></hr><a name="VNCH">
+         			Regle <b>VNCH</b>
+         				(chapitre 13.8,
+         				page 216)
+         		</a><br></br><dl>
+         <dt></dt><u>Conformit&eacute; Directe (Ancrage):</u><dd></dd>
+         			Dans une classe C, le type like Current est 
+         			directement conforme &agrave; son type de base CT, 
+         			lui-m&ecirc;me form&eacute; de C suivi de sa 
+         			Liste_g&eacute;n&eacute;riques_formels s'il y a lieu, 
+         			expurg&eacute;e de toute contrainte.
+         			Le type like ancre, ancre &eacute;tant une 
+         			primitive de C ou un argument formel d'une 
+         			routine de C, est directement conforme au 
+         			type de ancre dans C. Un type ancr&eacute; n'est 
+         			directement conforme &agrave; aucun autre type que 
+         			ceux cit&eacute;s dans ces r&egrave;gles. Aucun type 
+         			n'est directement conforme &agrave; un type ancr&eacute;.
+         		<br></br></dl>
+      <hr></hr><a name="VNCX">
+         			Regle <b>VNCX</b>
+         				(chapitre 13.9,
+         				page 217)
+         		</a><br></br><dl>
+         <dt></dt><u>Conformit&eacute; (Expression):</u><dd></dd>
+         			Une expression v de type VT est conforme
+         			&agrave; une expression t de type TT si et seulement
+         			si elle v&eacute;rifie l'une au moins des quatre
+         			conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					VT est conforme &agrave; TT.
+            				
+            <li></li>
+            					VT est de type like v (v doit etre
+            					une entit&eacute;).
+            				
+            <li></li>
+            					VT et TT sont tous deux de type 
+            					like x par rapport &agrave; un m&ecirc;me x.
+            				
+            <li></li>
+            					TT &eacute;tant de type like x, et x un 
+            					param&egrave;tre formel d'une routine r,
+            					v est une argument r&eacute;el dans un 
+            					appel &agrave; r, et VT est conforme au 
+            					type de l'argument r&eacute;el 
+            					correspondant &agrave; x dans cet appel.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VNCE">
+         			Regle <b>VNCE</b>
+         				(chapitre 13.10,
+         				page 219)
+         		</a><br></br><dl>
+         <dt></dt><u>Conformit&eacute; Directe (Type Expans&eacute;s):</u><dd></dd>
+         			Soit T un type expans&eacute;, autre qu'un 
+         			Type_binaire. Un type U est directement 
+         			conforme &agrave; T si et seulement si tous deux 
+         			v&eacute;rifient l'une des trois conditions 
+         			suivantes :
+         			<br></br><ol>
+            <li></li>
+            					T est de la forme expanded BT et U 
+            					est de type BT
+            				
+            <li></li>
+            					T est le type REAL et U est le type
+            					INTEGER
+            				
+            <li></li>
+            					T est le type DOUBLE et U est le 
+            					type REAL ou INTEGER
+            				
+         </ol><br></br>
+         			Dans le cas 1, T est &eacute;galement directement 
+         			conforme &agrave; U.
+         			Un type expans&eacute; n'est directement conforme 
+         			&agrave; aucun autre type que ceux d&eacute;termin&eacute;s par 
+         			la pr&eacute;sente r&egrave;gle et celle &eacute;nonc&eacute;es en 
+         			13.5 et 13.6.
+         		<br></br></dl>
+      <hr></hr><a name="VNCB">
+         			Regle <b>VNCB</b>
+         				(chapitre 13.11,
+         				page 220)
+         		</a><br></br><dl>
+         <dt></dt><u>Conformit&eacute; Directe (Type_binaire):</u><dd></dd>
+         			Les cas possibles de conformit&eacute; mettant 
+         			en cause un Type_binaire sont les suivants 
+         			(N et P &eacute;tant deux entiers positifs 
+         			quelconques) :
+         			<br></br><ol>
+            <li></li>
+            					BIT N est directement conforme &agrave; ANY.
+            				
+            <li></li>
+            					BIT N est directement conforme &agrave;
+            					BIT P si N&lt;=P.
+            				
+         </ol><br></br>
+         			Aucun autre type que ceux mentionn&eacute;s ci-dessus
+         			n'est directement conforme &agrave; un Type_binaire,
+         			et un Type_binaire n'est directement conforme
+         			&agrave; aucun type.
+         		<br></br></dl>
+      <hr></hr><a name="VOMB">
+         			Regle <b>VOMB</b>
+         				(chapitre 14.5,
+         				page 229)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de S&eacute;lection &agrave; Choix Multiple:</u><dd></dd>
+         			Une instruction Choix_multiple est valide si
+         			et seulement si sa forme explicit&eacute;e v&eacute;rifie 
+         			les conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					L'expression d'inspection est de type
+            					INTEGER ou CHARACTER.
+            				
+            <li></li>
+            					Les constantes d'inspection (les 
+            					valeurs situ&eacute;es dans les diff&eacute;rentes 
+            					sections Choix) sont des attributs 
+            					constants du m&ecirc;me type que 
+            					l'expression d'inspection.
+            				
+            <li></li>
+            					Les &eacute;ventuelles constantes 
+            					d'inspection non uniques poss&egrave;dent 
+            					des valeurs deux &agrave; deux distinctes.
+            				
+            <li></li>
+            					Les &eacute;ventuelles constantes 
+            					d'inspection Unique portent 
+            					des noms deux &agrave; deux distinctes.
+            				
+            <li></li>
+            					D&egrave;s lors qu'il existe une constante 
+            					d'inspection Unique, toutes les
+            					autres constantes d'inspection 
+            					de la m&ecirc;me instruction sont soit
+            					Unique, soit de valeur n&eacute;gative ou
+            					nulle.
+            				
+            <li></li>
+            					Toutes les &eacute;ventuelles constantes
+            					d'inspection Unique poss&egrave;dent la 
+            					m&ecirc;me classe d'origine (la classe 
+            					contenant l'instruction 
+            					Choix_multiple ou une anc&ecirc;tre 
+            					propre).
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VXRC">
+         			Regle <b>VXRC</b>
+         				(chapitre 15.8,
+         				page 244)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une Routine comportant une clause Sauvetage 
+         			est valide si et seulement si son 
+         			Corps_de_routine est de forme Interne.
+         		<br></br></dl>
+      <hr></hr><a name="VXRT">
+         			Regle <b>VXRT</b>
+         				(chapitre 15.8,
+         				page 244)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une instruction R&eacute;essai est valide si et 
+         			seulement si elle figure dans une 
+         			clause Sauvetage.
+         		<br></br></dl>
+      <hr></hr><a name="VQMC">
+         			Regle <b>VQMC</b>
+         				(chapitre 16.5,
+         				page 251)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			La d&eacute;claration d'une primitive p, dans 
+         			laquelle est introduite une constante 
+         			manifeste, est valide si et seulement si 
+         			la Constante_manifeste m utilis&eacute;e dans la 
+         			d&eacute;claration correspond au type utilis&eacute; pour
+         			d&eacute;clarer p et v&eacute;rifie l'une des conditions 
+         			suivantes :
+         			<br></br><ol>
+            <li></li>
+            					m est une Constante_bool&eacute;enne et T 
+            					est le type BOOLEAN.
+            				
+            <li></li>
+            					m est une Constante_caract&egrave;re et T 
+            					est le type CHARACTER.
+            				
+            <li></li>
+            					m est une Constante_enti&egrave;re et T 
+            					est le type INTEGER.
+            				
+            <li></li>
+            					m est une Constante_r&eacute;elle et T 
+            					est le type REAL ou DOUBLE.
+            				
+            <li></li>
+            					m est une Chaine_manifeste et T 
+            					est le type STRING.
+            				
+            <li></li>
+            					m est une Constante_binaire et T 
+            					est le type Type_binaire.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VQUI">
+         			Regle <b>VQUI</b>
+         				(chapitre 16.6,
+         				page 253)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de D&eacute;claration d'une constante
+            		Unique:</u><dd></dd>
+         			La valeur d'un attribut d&eacute;clar&eacute; sous la 
+         			forme d'un unique est un entier positif. 
+         			Lorsque deux attributs uniques sont 
+         			introduits dans une m&ecirc;me classe, leurs 
+         			valeurs sont distinctes. Qui plus est, 
+         			ce mode de d&eacute;claration garantit que les 
+         			valeurs des attributs uniques d&eacute;clar&eacute;s dans 
+         			une m&ecirc;me D&eacute;claration_de_primitive sont 
+         			cons&eacute;cutives, par ordre d'apparition.
+         		<br></br></dl>
+      <hr></hr><a name="VEEN">
+         			Regle <b>VEEN</b>
+         				(chapitre 17.9,
+         				page 261)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'une Entit&eacute;:</u><dd></dd>
+         			Dans le code-source d'une classe C, une 
+         			occurence d'une entit&eacute; e (autre qu'une 
+         			primitive apparaissant dans un appel 
+         			qualifi&eacute;) est valide si et seulement si elle
+         			v&eacute;rifie l'une des conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					e est le nom final d'un attribut de 
+            					C.
+            				
+            <li></li>
+            					(A) L'occurence est situ&eacute;e dans une 
+            					section D&eacute;clarations_locales,
+            					Corps_de_routine, ou Postcondition,
+            					voire la section Sauvetage du code
+            					de la Routine dans le cas d'une 
+            					fonction, et e est l'entit&eacute; 
+            					pr&eacute;d&eacute;finie Result.
+            				
+            <li></li>
+            					(B) L'occurence est situ&eacute;e dans une 
+            					section D&eacute;clarations_locales,
+            					Corps_de_routine, voire, dans le 
+            					cas d'une routine r, la section 
+            					Sauvetage du code de la Routine ;
+            					en outre, e figure dans la 
+            					Liste_identificateurs d'une 
+            					Liste_d&eacute;claration_entit&eacute;s elle-m&ecirc;me
+            					incluse dans la section 
+            					D&eacute;clarations_locales de la routine r.
+            				
+            <li></li>
+            					L'occurence est situ&eacute;e dans une 
+            					section D&eacute;claration_de_primitive 
+            					d'une routine r, et la section 
+            					Arguments_formels de r contient 
+            					une Liste_d&eacute;clarations dont la 
+            					Liste_identificateurs contient e.
+            				
+            <li></li>
+            					e est l'entit&eacute; pr&eacute;d&eacute;finie Current.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VGCP">
+         			Regle <b>VGCP</b>
+         				(chapitre 18.8,
+         				page 270)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'une 
+            		Clause_cr&eacute;ation:</u><dd></dd>
+         			Une Clause_creation figurant dans la section
+         			Cr&eacute;ateurs d'une classe C est valide si et
+         			seulement si elle v&eacute;rifie les cinq 
+         			conditions suivantes (la seconde et la 
+         			troisi&egrave;me portant sur tout 
+         			Identificateur_de_primitive nom_prim 
+         			figurant dans la Liste_primitives de la 
+         			clause):
+         			<br></br><ol>
+            <li></li>
+            					C est une classe concr&egrave;te.
+            				
+            <li></li>
+            					nom_prim appara&icirc;t une fois et une
+            					seule dans la Liste_primitives.
+            				
+            <li></li>
+            					nom_prim est le nom final d'une
+            					proc&eacute;dure de C; soit pc cette 
+            					proc&eacute;dure.
+            				
+            <li></li>
+            					pc n'est pas une routine d'une fois.
+            				
+            <li></li>
+            					Si C est expans&eacute;e, pc n'a pas 
+            					d'arguments et la Liste_primitives
+            					ne contient aucun autre 
+            					Identificateur_de_primitive.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VGCC">
+         			Regle <b>VGCC</b>
+         				(chapitre 18.9,
+         				page 271)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'une Instruction
+            		de Cr&eacute;ation:</u><dd></dd>
+         			Soit une instruction Cr&eacute;ation figurant dans
+         			une classe X. Soit x la cible de cette 
+         			instruction, T son type de cr&eacute;ation et C la 
+         			classe de base de T.
+         			Cette instruction est C-valide si et 
+         			seulement si elle v&eacute;rifie les conditions
+         			suivantes :
+         			<br></br><ol>
+            <li></li>
+            					T n'est pas un Nom_g&eacute;n&eacute;rique_formel
+            					(autrement dit un param&egrave;tre 
+            					g&eacute;n&eacute;rique formel de la classe dans
+            					laquelle figure cette instruction).
+            				
+            <li></li>
+            					C est une classe concr&egrave;te.
+            				
+            <li></li>
+            					Si la section Type est pr&eacute;sente,
+            					le type qu'elle contient 
+            					(autrement dit T) est un type de 
+            					r&eacute;f&eacute;rence et il est conforme au type
+            					de x.
+            				
+            <li></li>
+            					Si C ne poss&egrave;de pas de section 
+            					Cr&eacute;ateurs, alors elle ne contient 
+            					pas de section Appel_cr&eacute;ation.
+            				
+            <li></li>
+            					Si C poss&egrave;de une section Cr&eacute;ateurs,
+            					il existe une section Appel_cr&eacute;ation
+            					et l'appel associ&eacute; doit &ecirc;tre 
+            					A-valide (validit&eacute; par rapport &agrave; ses
+            					arguments) d&egrave;s lors qu'il appara&icirc;t 
+            					dans le code de C.
+            				
+            <li></li>
+            					Dans les conditions du ca 5, et si
+            					p est une primitive de la section 
+            					Appel_cr&eacute;ation, alors p est une 
+            					proc&eacute;dure, son Corps_de_routine est
+            					d'une forme autre que once ... et
+            					p est visible en cr&eacute;ation par X.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VGCS">
+         			Regle <b>VGCS</b>
+         				(chapitre 18.10,
+         				page 272)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une instruction Cr&eacute;ation est S-valide 
+         			(valide &agrave; l'&eacute;chelle du syst&egrave;me) si et 
+         			seulement si elle satifait l'une des deux
+         			conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Le type &agrave; la cr&eacute;ation est explicite
+            					(autrement dit, l'instruction 
+            					d&eacute;bute sous la forme !T!..., T
+            					&eacute;tant un certain type).
+            				
+            <li></li>
+            					Le type &agrave; la cr&eacute;ation est implicite
+            					(autrement dit, l'instruction d&eacute;bute
+            					par !!...) et tout type dynamique
+            					potentiel T de x (bas&eacute; sur une
+            					classe C) v&eacute;rifie les conditions
+            					1 &agrave; 6 de la r&egrave;gle de Validit&eacute; d'une
+            					Instruction de Cr&eacute;ation (cf. 18.9).
+            					Pour appliquer les conditions 5 et
+            					6, la primitive de l'appel 
+            					consid&eacute;r&eacute;, p, doit &ecirc;tre remplac&eacute;e
+            					par sa version dans C.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VGCI">
+         			Regle <b>VGCI</b>
+         				(chapitre 18.10,
+         				page 273)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une instruction Cr&eacute;ation est valide si et 
+         			seulement si elle est &agrave; la fois C-valide et
+         			S-valide.
+         		<br></br></dl>
+      <hr></hr><a name="VJAR">
+         			Regle <b>VJAR</b>
+         				(chapitre 20.4,
+         				page 293)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle d'Affectation:</u><dd></dd>
+         			Une Affectation est valide si et seulement 
+         			si son expression source est conforme
+         			&agrave; son entit&eacute; cible.
+         		<br></br></dl>
+      <hr></hr><a name="VJRV">
+         			Regle <b>VJRV</b>
+         				(chapitre 20.14,
+         				page 311)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'une Tentative
+            		d'Affectation:</u><dd></dd>
+         			Une Tentative_d_affectation est valide si
+         			et seulement si le type de l'entit&eacute; cible
+         			est un type de r&eacute;f&eacute;rence.
+         		<br></br></dl>
+      <hr></hr><a name="VKCN">
+         			Regle <b>VKCN</b>
+         				(chapitre 21.3,
+         				page 318)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Le fait qu'un appel soit une instruction ou
+         			une expression d&eacute;pend de la nature de la 
+         			primitive de l'appel :
+         			<br></br><ol>
+            <li></li>
+            					Si la primitive est un attribut ou 
+            					une fonction, du point de vue 
+            					syntaxique, l'Appel est une 
+            					expression.
+            				
+            <li></li>
+            					Si l'Appel est une proc&eacute;dure, 
+            					l'Appel est une instruction.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VUGV">
+         			Regle <b>VUGV</b>
+         				(chapitre 22.9,
+         				page 342)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'un Appel:</u><dd></dd>
+         			Un appel est valide si et seulement si il 
+         			est &agrave; la fois C-valide et S-valide.
+         		<br></br></dl>
+      <hr></hr><a name="VUCS">
+         			Regle <b>VUCS</b>
+         				(chapitre 22.9,
+         				page 343)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Consid&eacute;rons un appel mono-point&eacute; portant 
+         			sur une cible x et figurant dans une classe
+         			C. Soit F le type de x. Sous ces hypoth&egrave;se :
+         			<br></br><ol>
+            <li></li>
+            					L'appel est C-valide lorsqu'il est 
+            					E-valide et A-valide par rapport 
+            					&agrave; F.
+            				
+            <li></li>
+            					L'appel est S-valide lorsque, pour
+            					tout &eacute;l&eacute;ment D du jeu de classes 
+            					dynamiques de x, il est E-valide et
+            					A-valide par rapport &agrave; D.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VUEX">
+         			Regle <b>VUEX</b>
+         				(chapitre 22.9,
+         				page 343)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Un Appel, apparaissant dans une classe C et 
+         			dont la primitive d'appel est nom_prim, 
+         			est E-valide pour une classe D si et 
+         			seulement si il v&eacute;rifie l'une des conditions
+         			suivantes :
+         			<br></br><ol>
+            <li></li>
+            					L'appel est un Appel_non_qualifi&eacute; 
+            					et nom_prim est le nom final d'une
+            					primitive de C.
+            				
+            <li></li>
+            					L'appel est qualifi&eacute; (il poss&egrave;de au 
+            					moins un point de notation), est
+            					accol&eacute; &agrave; une primitive portant 
+            					le nom nom_prim et visible par C,
+            					et sa cible est soit une entit&eacute; 
+            					valide de C, soit (r&eacute;cursivement)
+            					un appel lui-m&ecirc;me E-valide pour D.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VUAR">
+         			Regle <b>VUAR</b>
+         				(chapitre 22.9,
+         				page 344)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Soit un appel E-valide figurant dans une 
+         			classe C, accol&eacute; &agrave; une primitive nom_prim
+         			et portant sur une cible cible (dans le cas 
+         			d'un Appel_non_qualifi&eacute;, cible s'identifie 
+         			&agrave; Current). Soit TS le type de cible, S la 
+         			classe de base de TS et prim_s la primitive
+         			portant dans S le nom final nom_prim. Soit
+         			D une descendante de S, et prim_d la version
+         			dans D de prim_s. L'appel est A-valide pour
+         			D si et seulement si il satisfait les quatre
+         			conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Le nombre de ses arguments r&eacute;els est
+            					&eacute;gal au nombre d'arguments formels
+            					d&eacute;clar&eacute;s pour prim_d.
+            				
+            <li></li>
+            					Chaque argument r&eacute;el &eacute;ventuel est 
+            					conforme &agrave; l'argument formel 
+            					correspondant de prim_d.
+            				
+            <li></li>
+            					Lorsque cible est elle-m&ecirc;me un 
+            					appel, celui-ci est (r&eacute;cursivement)
+            					A-valide pour D.
+            				
+            <li></li>
+            					Si l'un quelconque des arguments 
+            					r&eacute;els se pr&eacute;sente sous forme Adresse
+            					("$np"), np est le nom final d'une
+            					primitive de C, autre qu'un attribut
+            					constant.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="***">
+         			Regle <b>***</b>
+         				(chapitre 22.9,
+         				page 348)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Typage des Tableaux:</u><dd></dd>
+         			Pour &eacute;tudier l'effet des manipulations de 
+         			tableaux sur les jeux de types dynamiques,
+         			il faut supposer que dans la classe ARRAY la
+         			primitive item est un attribut et que 
+         			put(v,i) sont toutes deux impl&eacute;ment&eacute;es de 
+         			la fa&ccedil;on suivante :
+         			item:=v
+         		<br></br></dl>
+      <hr></hr><a name="VWEQ">
+         			Regle <b>VWEQ</b>
+         				(chapitre 23.3,
+         				page 350)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une expression Egalit&eacute; est valide si et 
+         			seulement si chacun de ses op&eacute;randes est 
+         			conforme &agrave; l'autre.
+         		<br></br></dl>
+      <hr></hr><a name="VWBE">
+         			Regle <b>VWBE</b>
+         				(chapitre 23.2,
+         				page 350)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une Expression_bool&eacute;enne est valide si et 
+         			seulement si il s'agit d'une Expression 
+         			de type BOOLEAN.
+         		<br></br></dl>
+      <hr></hr><a name="VWOE">
+         			Regle <b>VWOE</b>
+         				(chapitre 23.6,
+         				page 354)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une Expression_op&eacute;rateur est valide si et
+         			seulement si sa forme point&eacute;e &eacute;quivalente 
+         			est un Appel valide.
+         		<br></br></dl>
+      <hr></hr><a name="VWID">
+         			Regle <b>VWID</b>
+         				(chapitre 23.12,
+         				page 360)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Choix d'un 
+            		Identificateur:</u><dd></dd>
+         			Soit un Identificateur apparaissant dans une
+         			expression servant de constituant du 
+         			code-source d'une routine r dans une classe 
+         			C, soit en tant que telle, soit en tant 
+         			que cible ou argument r&eacute;el d'un Appel;
+         			cet Identificateur est imp&eacute;rativement le
+         			nom d'une primitive de C, ou le nom
+         			d'une entit&eacute; locale de r, ou un argument
+         			formel de r.
+         		<br></br></dl>
+      <hr></hr><a name="VWCA">
+         			Regle <b>VWCA</b>
+         				(chapitre 23.13,
+         				page 361)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Un Attribut_constant figurant dans une 
+         			classe C est valide si et seulement si son 
+         			Entit&eacute; est le nom final d'un attribut
+         			constant de C
+         		<br></br></dl>
+      <hr></hr><a name="VWMS">
+         			Regle <b>VWMS</b>
+         				(chapitre 23.18,
+         				page 364)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une Chaine_manifeste est valide si et 
+         			seulement si elle v&eacute;rifie les deux 
+         			conditions suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Aucun des caract&egrave;res de la 
+            					Chaine_ordinaire &agrave; laquelle elle est
+            					associ&eacute;e n'est un guillemet anglais.
+            				
+            <li></li>
+            					Dans le format &eacute;tendu, aucun 
+            					caract&egrave;re autre que des blancs
+            					ou des tabulations ne peut 
+            					pr&eacute;ceder le symbole pourcentage
+            					sur la deuxi&egrave;me ligne et les 
+            					suivantes.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VWMA">
+         			Regle <b>VWMA</b>
+         				(chapitre 23.2,
+         				page 367)
+         		</a><br></br><dl>
+         <dt></dt><u>R&egrave;gle de Validit&eacute; d'un Tableau
+            		Manifeste:</u><dd></dd>
+         			Un Tableau_manifeste &lt;&lt;e1,e2, ...,
+         			en&gt;&gt; est une expression de type
+         			ARRAY[T] valide si et seulement si le type 
+         			de chacune des ei est conforme &agrave; T.
+         		<br></br></dl>
+      <hr></hr><a name="VWST">
+         			Regle <b>VWST</b>
+         				(chapitre 23.21,
+         				page 370)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une expression D&eacute;pouill&eacute; figurant dans une 
+         			classe C est valide si et seulement si sa 
+         			Liste_attributs v&eacute;rifie les deux conditions
+         			suivantes :
+         			<br></br><ol>
+            <li></li>
+            					Tout Itentificateur figurant 
+            					dans la liste est le nom final d'un
+            					attribut de C.
+            				
+            <li></li>
+            					Aucun Identificateur ne figure plus 
+            					d'une fois dans la liste.
+            				
+         </ol><br></br>
+         		<br></br></dl>
+      <hr></hr><a name="VIRW">
+         			Regle <b>VIRW</b>
+         				(chapitre 25.9,
+         				page 391)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Un identificateur est valide si et seulement
+         			si il est distinct de tous les mots r&eacute;serv&eacute;s
+         			du langage.
+         		<br></br></dl>
+      <hr></hr><a name="VDCN">
+         			Regle <b>VDCN</b>
+         				(chapitre D.5,
+         				page 490)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Les noms utilis&eacute;s dans un Ace sont soumis
+         			&agrave; une condition de coh&eacute;rence: le 
+         			Nom_de_grappe doit etre distinct pour
+         			chacune des grappes. L'emploi d'un m&ecirc;me
+         			identificateur est n&eacute;anmoins possible 
+         			lorsqu'on veut lui faire jouer des roles
+         			diff&eacute;rents : Nom_de_grappe, Nom_de_syst&egrave;me, 
+         			Nom_de_classe.
+         		<br></br></dl>
+      <hr></hr><a name="VDUC">
+         			Regle <b>VDUC</b>
+         				(chapitre D.8,
+         				page 493)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Pour que les choses restent simples, la
+         			section Propri&eacute;t&eacute;s_grappe contenue dans 
+         			un fichier d&eacute;sign&eacute; par une Mention ne doit 
+         			pas contenir elle-m&ecirc;me son propre 
+         			constituant Mention.
+         		<br></br></dl>
+      <hr></hr><a name="VDOC">
+         			Regle <b>VDOC</b>
+         				(chapitre D.11,
+         				page 497)
+         		</a><br></br><dl>
+         <dt></dt>
+         <dd></dd>
+         			Une Liste_cibles ne peut appara&icirc;tre que dans
+         			un constituant Options, et non au sein de 
+         			Valeurs_par_d&eacute;faut. Une construction 
+         			Etiquette_opt_syst&egrave;me ne peut appara&icirc;tre que 
+         			dans une clause Valeurs_par_d&eacute;faut applicable
+         			&agrave; un Ace.
+         		<br></br></dl>
+      <hr></hr>
+   </body>
+</html>

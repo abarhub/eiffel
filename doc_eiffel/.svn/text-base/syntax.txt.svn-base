@@ -1,0 +1,1483 @@
+===============================================================================
+
+                             Eiffel: The Syntax
+
+                              by Eric Bezault
+                           ( ericb@gobosoft.com )
+
+                            Available online from:
+                    http://www.gobosoft.com/eiffel/syntax/
+
+--------------------------------------------------------------------------
+
+The annotated Eiffel syntax described here is aimed at writers of Eiffel
+tools such as compilers, interpreters, syntax checkers, short and flat
+tools, pretty-printers, etc., who want to benefit from some tips and
+tricks. Although this is not the official Eiffel syntax specification
+provided by the Nonprofit International Consortium for Eiffel (NICE), it
+departs from it in only two or three well documented occassions. In
+particular, it explains where, and sometimes why, existing compilers have
+extended the Eiffel syntax.
+
+The Eiffel syntax constructs are listed into groups, starting with
+high-level constructs such as Class_declaration down to lexical components
+such as Identifier. Alternatively, these constructs are also given in
+alphabetical order. The notation used to describe the Eiffel syntax is
+specified elsewhere. A possible implementation of the Eiffel syntax in
+yacc- and lex-like format is also provided as an example.
+
+This page is also available in Japanese (translated by Iizuka Tomio).
+
+  ------------------------------------------------------------------------
+
+            A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+  ------------------------------------------------------------------------
+
+A
+     Actual
+     Actual_generics
+     Actual_list
+     Actuals
+     Address
+     Address_mark
+     Anchor
+     Anchored
+     Assertion
+     Assertion_clause
+     Assignment
+     Assignment_attempt
+     Attribute
+     Attribute_list
+B
+     Binary
+     Binary_expression
+     Bit_constant
+     Bit_length
+     Bit_type
+     Boolean_constant
+     Boolean_expression
+     Break
+C
+     Call
+     Call_chain
+     Call_qualifier
+     Call_target
+     Character_constant
+     Check
+     Choice
+     Choice_constant
+     Choices
+     Class_declaration
+     Class_header
+     Class_list
+     Class_name
+     Class_type
+     Class_type_expanded
+     Class_type_separate
+     Clients
+     Comment
+     Comparison
+     Compound
+     Conditional
+     Constant_or_routine
+     Constraint
+     Creation
+     Creation_call
+     Creation_clause
+     Creators
+D
+     Debug
+     Debug_key
+     Debug_key_list
+     Debug_keys
+     Declaration_body
+     Deferred
+E
+     Effective
+     Else_part
+     Entity_declaration_group
+     Entity_declaration_list
+     Equality
+     Exit
+     Expression
+     Expression_list
+     External
+     External_name
+F
+     Feature_adaptation
+     Feature_clause
+     Feature_declaration
+     Feature_declaration_list
+     Feature_list
+     Feature_name
+     Feature_set
+     Feature_value
+     Features
+     Formal_arguments
+     Formal_generic
+     Formal_generic_list
+     Formal_generic_name
+     Formal_generics
+     Free_operator
+G
+H
+     Header_comment
+     Header_mark
+     Hexadecimal_constant
+I
+     Identifier
+     Identifier_list
+     Index
+     Index_clause
+     Index_list
+     Index_terms
+     Index_value
+     Indexing
+     Infix
+     Infix_operator
+     Inheritance
+     Initialization
+     Instruction
+     Integer
+     Integer_constant
+     Internal
+     Interval
+     Invariant
+J
+K
+L
+     Language_name
+     Local_declarations
+     Loop
+     Loop_body
+M
+     Manifest_array
+     Manifest_constant
+     Manifest_string
+     Message
+     Multi_branch
+N
+     New_export_item
+     New_export_list
+     New_exports
+     New_feature
+     New_feature_list
+O
+     Obsolete
+     Old
+     Operator
+     Operator_expression
+P
+     Parent
+     Parent_list
+     Parent_qualification
+     Parenthesized
+     Postcondition
+     Precondition
+     Precursor
+     Prefix
+     Prefix_operator
+     Procedure_list
+     Procedure_name
+Q
+     Qualified_call
+R
+     Real
+     Real_constant
+     Redefine
+     Rename
+     Rename_list
+     Rename_pair
+     Rescue
+     Reserved_word
+     Retry
+     Routine
+     Routine_body
+     Routine_mark
+S
+     Select
+     Semicolon
+     Sign
+     Special_character
+     Strip
+T
+     Tag
+     Tag_mark
+     Then_part
+     Then_part_list
+     Type
+     Type_list
+     Type_mark
+U
+     Unary
+     Unary_expression
+     Undefine
+     Unique
+     Unlabeled_assertion_clause
+     Unqualified_call
+V
+     Variant
+W
+     When_part
+     When_part_list
+     Wide_character_constant
+     Wide_manifest_string
+     Writable
+X
+Y
+Z
+
+===============================================================================
+
+Class_declaration
+     [ Indexing ]
+     Class_header
+     [ Formal_generics ]
+     [ Obsolete ]
+     [ Inheritance ]
+     [ Creators ]
+     [ Features ]
+     [ Invariant ]
+     end [ -- class Class_name ]
+
+          Note: Most Eiffel compilers do not check the validity
+          of the optional comment after the keyword end.
+          SmallEiffel emits a warning though.
+
+          Note: A file may contain more than one class
+          declaration. However most Eiffel compilers have a
+          limitation of one class per file.
+
+  ------------------------------------------------------------------------
+
+Indexing
+     indexing Index_list
+Index_list
+     { Index_clause ; ... }
+Index_clause
+     [ Index ] Index_terms
+Index
+     Identifier :
+Index_terms
+     { Index_value , ... }+
+Index_value
+     Identifier | Manifest_constant
+
+  ------------------------------------------------------------------------
+
+Class_header
+     [ Header_mark ] class Class_name
+Header_mark
+     deferred | expanded | separate
+
+          Note: The keyword separate is not part of the Eiffel
+          standard. It has been introduced in ISE Eiffel to
+          support the SCOOP mechanism. Read Object-Oriented
+          Software Construction, second edition, for details.
+
+Class_name
+     Identifier
+
+  ------------------------------------------------------------------------
+
+Formal_generics
+     [ Formal_generic_list ]
+Formal_generic_list
+     { Formal_generic , ... }
+
+          Note: The list of formal generics may be empty. As a
+          consequence, FOO[] is valid and means the same as FOO.
+          However, this is not the recommended style.
+
+Formal_generic
+     Formal_generic_name [ Constraint ]
+Formal_generic_name
+     Identifier
+Constraint
+     -> Class_type
+
+  ------------------------------------------------------------------------
+
+Obsolete
+     obsolete Message
+Message
+     Manifest_string
+
+  ------------------------------------------------------------------------
+
+Inheritance
+     inherit Parent_list
+Parent_list
+     { Parent ; ... }
+Parent
+     Class_type [ Feature_adaptation ]
+Feature_adaptation
+     [ Rename ]
+     [ New_exports ]
+     [ Undefine ]
+     [ Redefine ]
+     [ Select ]
+     end
+
+          Note: Because of this construct, the Eiffel grammar is
+          not LR(1). This occurs in the following situation:
+
+               class FOO
+               inherit
+                   BAR
+               end
+
+          The keyword end will be considered as part of the
+          optional Feature_adaptation instead of as part of the
+          Class_declaration construct.
+
+          A way to solve this problem would be to allow the
+          keyword end in the Feature_adaptation only when at
+          least one of the optional constructs making up the
+          Feature_adaptation is present.
+
+  ------------------------------------------------------------------------
+
+Rename
+     rename Rename_list
+Rename_list
+     { Rename_pair , ... }
+Rename_pair
+     Feature_name as Feature_name
+
+  ------------------------------------------------------------------------
+
+New_exports
+     export New_export_list
+New_export_list
+     { New_export_item ; ... }
+New_export_item
+     Clients Feature_set
+Feature_set
+     Feature_list | all
+Feature_list
+     { Feature_name , ... }
+
+  ------------------------------------------------------------------------
+
+Clients
+     { Class_list }
+Class_list
+     { Class_name , ... }
+
+  ------------------------------------------------------------------------
+
+Redefine
+     redefine Feature_list
+Undefine
+     undefine Feature_list
+Select
+     select Feature_list
+
+  ------------------------------------------------------------------------
+
+Creators
+     creation { Creation_clause creation ... }+
+Creation_clause
+     [ Clients ] [ Header_comment ] Procedure_list
+
+          Note: The standard syntax requires a Feature_list
+          instead of a Procedure_list but the Creation_clause
+          actually lists creation procedure names (see validity
+          rule VGCP-2).
+
+Procedure_list
+     { Procedure_name , ... }
+Procedure_name
+     Identifier
+
+          Note: Prefix and Infix are function names, not
+          procedure names. It is not clear to me whether a Prefix
+          could be an attribute name, but it is definitely not a
+          procedure name (see validity rule VFFD-5).
+
+  ------------------------------------------------------------------------
+
+Features
+     feature { Feature_clause feature ... }+
+Feature_clause
+     [ Clients ] [ Header_comment ] Feature_declaration_list
+Feature_declaration_list
+     { Feature_declaration ; ... }
+
+  ------------------------------------------------------------------------
+
+Feature_declaration
+     New_feature_list Declaration_body
+Declaration_body
+     [ Formal_arguments ] [ Type_mark ] [ Constant_or_routine ]
+Constant_or_routine
+     is Feature_value
+Feature_value
+     Manifest_constant | Unique | Routine
+Unique
+     Unique
+
+  ------------------------------------------------------------------------
+
+New_feature_list
+     { New_feature , ... }+
+New_feature
+     [ frozen ] Feature_name
+
+  ------------------------------------------------------------------------
+
+Feature_name
+     Identifier | Prefix | Infix
+Prefix
+     prefix " Prefix_operator "
+Infix
+     infix " Infix_operator "
+Prefix_operator
+     Unary | Free_operator
+Infix_operator
+     Binary | Free_operator
+
+          Note: All Eiffel compilers accept the prefix and infix
+          operators regardless of the letter case, such as prefix
+          "NOT" or infix "AnD".
+
+          Note: No intervening character is allowed after the
+          first or before the last double quote. However it is
+          not clear what kind of break should be used between the
+          two keywords in and then or or else. SmallEiffel
+          accepts any number of blanks and tab characters,
+          whereas the other compilers require a single blank.
+
+  ------------------------------------------------------------------------
+
+Unary
+     not | + | -
+Binary
+     + | - | * | / | < | > | <= | >= | // | \\ | ^ |
+     and | or | xor | and then | or else | implies
+
+  ------------------------------------------------------------------------
+
+Formal_arguments
+     ( Entity_declaration_list )
+Entity_declaration_list
+     { Entity_declaration_group ; ... }
+Entity_declaration_group
+     Identifier_list Type_mark
+Identifier_list
+     { Identifier , ... }+
+Type_mark
+     : Type
+
+          Note: The list of entity declarations may be empty. As
+          a consequence, foo() is valid and means the same as
+          foo. However, this is not recommended style.
+
+  ------------------------------------------------------------------------
+
+Routine
+     [ Obsolete ]
+     [ Header_comment ]
+     [ Precondition ]
+     [ Local_declarations ]
+     Routine_body
+     [ Postcondition ]
+     [ Rescue ]
+     end [ -- Feature_name ]
+
+          Note: Most Eiffel compilers do not check the validity
+          of the optional comment after the keyword end. It is
+          not in the style guidelines to put this comment
+          anymore.
+
+  ------------------------------------------------------------------------
+
+Routine_body
+     Effective | Deferred
+Effective
+     Internal | External
+Internal
+     Routine_mark Compound
+Routine_mark
+     do | once
+Deferred
+     deferred
+
+  ------------------------------------------------------------------------
+
+External
+     external Language_name [ External_name ]
+Language_name
+     Manifest_string
+External_name
+     alias Manifest_string
+
+          Note: Each Eiffel compiler supports its own mini-syntax
+          in the language name and external name strings to
+          describe their interface with other programming
+          languages. See the documentation which comes with the
+          different compilers for details.
+
+  ------------------------------------------------------------------------
+
+Local_declarations
+     local Entity_declaration_list
+
+  ------------------------------------------------------------------------
+
+Precondition
+     require [ else ] Assertion
+Postcondition
+     ensure [ then ] Assertion
+Invariant
+     invariant Assertion
+Assertion
+     { Assertion_clause ; ... }
+Assertion_clause
+     [ Tag_mark ] Unlabeled_assertion_clause
+Unlabeled_assertion_clause
+     Boolean_expression | Comment
+Tag_mark
+     Tag :
+Tag
+     Identifier
+
+          Note: Although comments such as header comments are
+          expected in some constructs such as Routine or
+          Features, this is the only place where ignoring a
+          comment results in a syntax error or an incorrect
+          syntax tree. This occurs in the following situations:
+
+               require
+                   tag: -- Syntax error when ignored!
+               do
+
+          and
+
+               require
+                   tag: -- If this comment is ignored,
+                        -- tag will be erroneously
+                        -- associated with foo.is_valid!
+                   foo.is_valid
+
+          See the second note in Comment for more details.
+
+  ------------------------------------------------------------------------
+
+Rescue
+     rescue Compound
+
+          Note: The validity rule VXRT states that the Retry
+          instruction is only valid in a rescue clause. This
+          could eventually be enforced by the syntax.
+
+  ------------------------------------------------------------------------
+
+Type
+     Class_type |
+     Class_type_expanded |
+     Class_type_separate |
+     Anchored | Bit_type
+
+          Note: The standard Eiffel syntax also lists
+          Formal_generic_name as a possible alternative for Type.
+          However it introduced an ambiguity in the syntax since
+          an identifier could be recognized both as a
+          Formal_generic_name and a Class_type with no actual
+          generics.
+
+Class_type
+     Class_name [ Actual_generics ]
+Actual_generics
+     [ Type_list ]
+Type_list
+     { Type , ... }
+
+          Note: The list of types may be empty. As a consequence,
+          FOO[] is valid and means the same as FOO. However, this
+          is not the recommended style.
+
+Class_type_expanded
+     expanded Class_type
+Class_type_separate
+     separate Class_type
+
+          Note: Class_type_separate is not part of the Eiffel
+          standard. It has been introduced in ISE Eiffel to
+          support the SCOOP mechanism. Read Object-Oriented
+          Software Construction, second edition, for details.
+
+Bit_type
+     BIT Bit_length
+
+          Note: In the standard syntax, Constant appears instead
+          of Bit_length. However the validity rule VTBT states
+          that a Bit_type declaration is valid if and only if its
+          Constant is of type INTEGER, which means that the
+          constant is either a manifest integer constant or an
+          attribute constant.
+
+Bit_length
+     Integer_constant | Attribute
+Anchored
+     like Anchor
+Anchor
+     Identifier | Current
+
+  ------------------------------------------------------------------------
+
+Compound
+     { Instruction ; ... }
+Instruction
+     Creation | Call | Assignment |
+     Assignment_attempt | Conditional |
+     Multi_branch | Loop | Debug |
+     Check | Retry | Null_instruction
+
+  ------------------------------------------------------------------------
+
+Creation
+     ! [ Type ] ! Writable [ Creation_call ]
+
+          Note: If the type is absent, the two exclamation marks
+          may be written with or without intervening break. In
+          the style standard, the recommended form is the one
+          without breaks, which makes !! appear as a single
+          lexical symbol.
+
+Creation_call
+     . Procedure_name [ Actuals ]
+
+          Note: In the standard Eiffel syntax, the Creation_call
+          is made of an Unqualified_call. But the validity rule
+          VGCC-6 states that if f is the feature of the
+          Creation_call, the f is a procedure.
+
+  ------------------------------------------------------------------------
+
+Assignment
+     Writable := Expression
+Assignment_attempt
+     Writable ?= Expression
+
+  ------------------------------------------------------------------------
+
+Conditional
+     if Then_part_list [ Else_part ] end
+Then_part_list
+     { Then_part elseif ... }+
+Then_part
+     Boolean_expression then Compound
+Else_part
+     else Compound
+
+  ------------------------------------------------------------------------
+
+Multi_branch
+     inspect Expression
+     [ When_part_list ] [ Else_part ] end
+When_part_list
+     when { When_part when ... }+
+When_part
+     Choices then Compound
+Choices
+     { Choice , ... }
+
+          Note: The list of choices may be empty. As a
+          consequence,
+
+               inspect expr
+               when then
+                   do_something
+               ...
+
+          although meaningless, is syntactically correct. It can
+          be thought of as
+
+               if False then
+                   do_something
+               ...
+
+          However, this is not part of the recommended style.
+
+Choice
+     Choice_constant | Interval
+
+          Note: The standard syntax specifies Constant instead of
+          Choice_constant. However the validity rule VOMB-1-2
+          states that the Constant in Choice and Interval is only
+          of type INTEGER or CHARACTER.
+
+Interval
+     Choice_constant .. Choice_constant
+
+          Note: The lexical analyzer has to be smart enough in
+          the following example:
+
+               inspect expr
+               when 1..2 then
+               ...
+
+          Indeed, '1..2' should be recognized as the two integer
+          constants '1' and '2' separated by the Eiffel symbol
+          '..', instead of as two consecutive real constants '1.'
+          and '.2'. Visual Eiffel erroneously emits a syntax
+          error when parsing the example above.
+
+Choice_constant
+     Integer_constant | Character_constant | Attribute
+
+          Note: TowerEiffel accepts "remote constant" in Choice
+          and Interval, such as in:
+
+               foo: FOO
+               inspect i
+               when foo.const then
+                    do_something
+               end
+
+          where const is declared as constant in class FOO. This
+          is not standard Eiffel syntax.
+
+  ------------------------------------------------------------------------
+
+Loop
+     Initialization
+     [ Invariant ]
+     [ Variant ]
+     Loop_body
+     end
+Initialization
+     from Compound
+Variant
+     variant [ Tag_mark ] Expression
+
+          Note: The validity rule VAVE states that Expression
+          must be of type INTEGER. This could eventually be
+          partially enforced in the syntax by discarding
+          Equality, Manifest_array, Strip and all non-integer
+          Manifest_constants.
+
+Loop_body
+     Exit loop Compound
+Exit
+     until Boolean_expression
+
+  ------------------------------------------------------------------------
+
+Debug
+     debug [ Debug_keys ] Compound end
+Debug_keys
+     ( Debug_key_list )
+Debug_key_list
+     { Debug_key , ... }
+Debug_key
+     Manifest_string
+
+  ------------------------------------------------------------------------
+
+Check
+     check Assertion end
+
+  ------------------------------------------------------------------------
+
+Retry
+     retry
+
+          Note: The validity rule VXRT states that the Retry
+          instruction is only valid in a Rescue clause. This
+          could eventually be enforced by the syntax.
+
+  ------------------------------------------------------------------------
+
+Null_instruction
+     empty
+
+          Note: This instruction has a purely syntactical role:
+          making sure that extra semincolons added by oversight
+          to a Compound are harmless, as in
+
+               if c then ; i1;;; i2; else ;; end
+
+          TowerEiffel does not support extra semicolons other
+          than terminators. All other compilers work as expected.
+          SmallEiffel emits a warning when parsing extra
+          semicolons.
+
+  ------------------------------------------------------------------------
+
+Call
+     Qualified_call | Precursor
+Qualified_call
+     [ Call_qualifier ] Call_chain
+Call_qualifier
+     Call_target .
+Call_target
+     Parenthesized | Result | Current | Precursor
+Call_chain
+     { Unqualified_call . ... }+
+Unqualified_call
+     Identifier [ Actuals ]
+
+          Note: This specification of Call is slightly different
+          from the version supplied in the standard. However the
+          standard syntax accepts constructs which are not
+          correct Eiffel such as:
+
+               foo.Result
+               Current (5)
+
+          whereas the specification given above does not.
+
+          Note: In TowerEiffel, features may be called directly
+          on a Manifest_constant without placing parentheses
+          around the constant, such as in:
+
+               str := 'a'.out
+
+          which should be, using the standard syntax:
+
+               str := ('a').out
+
+          There is a slight lexical problem with Integer_constant
+          though, since
+
+               123.out
+
+          is recognized as
+
+               123. out
+
+          '123.' being a Real_constant. The programmer has to add
+          an extra Break between the integer constant and the dot
+          to work around this problem.
+
+  ------------------------------------------------------------------------
+
+Precursor
+     [ Parent_qualification ] Precursor [ Actuals ]
+Parent_qualification
+     { Class_name }
+
+          Note: The Precursor construct is not part of the
+          standard Eiffel syntax. It has been introduced in
+          Object-Oriented Software Construction, second edition,
+          and a proposal for its standardization has been
+          submitted to NICE. ISE Eiffel and Halstenbach will most
+          likely support this construct in their next release.
+
+          Note: In Object-Oriented Software Construction, second
+          edition, the class name in Parent_qualification is
+          enclosed between double braces: {{Class_name}}. However
+          the proposal submitted to NICE uses the syntax
+          specified above.
+
+  ------------------------------------------------------------------------
+
+Attribute
+     Identifier
+
+          Note: According to validity rule VFFD-5, an Attribute
+          can also be a Prefix.
+
+Writable
+     Identifier | Result
+
+          Note: The Entity syntax group from the standard syntax
+          specification has been very much simplified to resolved
+          many ambiguities. For example, should:
+
+               foo
+
+          be recognized as an Attribute, a Local or a Formal?
+          Only a semantic analysis can give the answer.
+
+  ------------------------------------------------------------------------
+
+Actuals
+     ( Actual_list )
+Actual_list
+     { Actual , ... }
+
+          Note: The list of actuals may be empty. As a
+          consequence, foo() is valid and means the same as foo.
+          However, this is not recommended style.
+
+Actual
+     Expression | Address
+
+          Note: TowerEiffel treats Address as a normal expression
+          (i.e. as an alternative in the Expression construct).
+          As a consequence, an address does not need to occur
+          only in actual lists.
+
+Address
+     $ Address_mark
+Address_mark
+     Feature_name | Current | Result
+
+  ------------------------------------------------------------------------
+
+Expression
+     Current | Result |
+     Call | Operator_expression |
+     Equality | Manifest_array |
+     Old | Strip | Boolean_constant |
+     Bit_constant | Integer | Real |
+     Manifest_string | Character_constant |
+     Wide_character_constant |
+     Wide_manifest_string |
+     Hexadecimal_constant
+
+          Note: This specification of Expression is slightly
+          different from the version supplied in the standard.
+          First, Current and Result have been added as a
+          consequence of new specification for Call. Then,
+          Manifest_constant has been replaced with the list of
+          its alternatives. This is to resolve an ambiguity in
+          the standard syntax. In the following piece of code:
+
+               foo := - 2
+
+          should the Expression on the right hand side of the
+          assignment be recognized as an Integer_constant or as
+          an Unary_expression whose Prefix_operator is '-' and
+          whose Expression is an (unsigned) Integer? Replacing
+          Integer_constant and Real_constant by Integer and Real
+          solves the problem.
+
+          Note: Wide_character_constant, Wide_manifest_string and
+          Hexadecimal_constant are not part of the standard. They
+          have been introduced in TowerEiffel to support wide
+          characters and string, and hexadecimal integers.
+
+Boolean_expression
+     Expression
+
+          Note: The validity rule VWBE states that a boolean
+          expression must be of type BOOLEAN. This could
+          eventually be partially enforced in the syntax by
+          discarding Manifest_array, Strip and all non-boolean
+          Manifest_constants.
+
+  ------------------------------------------------------------------------
+
+Operator_expression
+     Parenthesized | Unary_expression | Binary_expression
+Parenthesized
+     ( Expression )
+Unary_expression
+     Prefix_operator Expression
+Binary_expression
+     Expression Infix_operator Expression
+
+          Note: See Operator for operator precedence and
+          associativity.
+
+  ------------------------------------------------------------------------
+
+Equality
+     Expression Comparison Expression
+Comparison
+     = | /=
+
+          Note: See Operator for operator precedence and
+          associativity.
+
+  ------------------------------------------------------------------------
+
+Manifest_constant
+     Boolean_constant | Character_constant |
+     Integer_constant | Real_constant |
+     Manifest_string | Bit_constant |
+     Wide_character_constant |
+     Wide_manifest_string |
+     Hexadecimal_constant
+
+          Note: Wide_character_constant, Wide_manifest_string and
+          Hexadecimal_constant are not part of the standard. They
+          have been introduced in TowerEiffel to support wide
+          characters and string, and hexadecimal integers.
+
+Boolean_constant
+     True | False
+Integer_constant
+     [ Sign ] Integer
+
+          Note: There is an ambiguity in the standard syntax
+          here. In the following piece of code:
+
+               foo := - 2
+
+          should the Expression on the right hand side of the
+          assignment be recognized as an Integer_constant or as
+          an Unary_expression whose Prefix_operator is '-' and
+          whose Expression is an (unsigned) Integer? This has
+          been resolved in the current syntax description by
+          rewriting the specification for Expression.
+
+Real_constant
+     [ Sign ] Real
+
+          Note: Same ambiguity as for Integer_constant above.
+
+Sign
+     + | -
+Wide_character_constant
+     $ Character_constant
+
+          Note: Wide_character_constant is not part of the
+          standard. It has been introduced in TowerEiffel to
+          support wide characters.
+
+          Note: No intervening character is allowed between the
+          dollar sign and the Character_constant.
+
+Wide_manifest_string
+     $ Manifest_string
+
+          Note: Wide_manifest_string is not part of the standard.
+          It has been introduced in TowerEiffel to support wide
+          character in strings.
+
+          Note: No intervening character is allowed between the
+          dollar sign and the Manifest_string.
+
+  ------------------------------------------------------------------------
+
+Manifest_array
+     << Expression_list >>
+Expression_list
+     { Expression , ... }
+
+  ------------------------------------------------------------------------
+
+Old
+     old Expression
+
+          Note: The validity rule VAOL-1 states that the Old
+          expression is only valid in a Postcondition. This could
+          eventually be enforced by the syntax.
+
+  ------------------------------------------------------------------------
+
+Strip
+     Strip ( Attribute_list )
+Attribute_list
+     { Attribute , ... }
+
+  ------------------------------------------------------------------------
+
+Identifier
+     An identifier is a sequence of one or more characters, of which the
+     first is a letter (a to z and A to Z) and each of the subsequent ones,
+     if any, is a letter, a decimal digit (0 to 9) or an underscore
+     character (_).
+     Letter case is not significant for letters: the two identifiers
+     lInKeD_liST and LINKED_LIST are considered the same.
+
+          Note: Unfortunately, SmallEiffel is case-sensitive.
+          (Surprisingly, it is not case-sensitive for
+          Reserved_words.)
+
+          Note: An identifier is valid if and only if it is not
+          one of the Reserved_words.
+
+          Note: TowerEiffel cannot handle contiguous underscores
+          in feature names and class names.
+
+  ------------------------------------------------------------------------
+
+Integer
+     An integer is a sequence of characters, each of which must be either:
+       1. a decimal digit (0 to 9)
+       2. an underscore (_), which may not be the first character.
+     If any underscore is present, then there must be three digits to the
+     right of every underscore, and there must not be any consecutive group
+     of four digits.
+
+          Note: The last two constraints concerning underscores
+          might be removed in the future, allowing groups of any
+          number of digits.
+
+          Note: Contrary to Integer_constant, Integer has no
+          sign.
+
+          Note: Be aware of the minimum integer value problem!
+          For example, on platforms where integers are stored on
+          32 bits, the following Eiffel code is valid:
+
+               Minimum_integer: INTEGER is - 2_147_483_648
+                       -- Smallest supported value of type INTEGER
+
+          but the parser should be smart enough otherwise it will
+          read an unary minus followed by the integer 2147483648,
+          which does not fit in 32 bits and hence triggers an
+          overflow.
+
+  ------------------------------------------------------------------------
+
+Hexadecimal_constant
+     An hexadecimal constant is a sequence of two or more characters, whose
+     first character is a decimal digit (0 to 9), whose subsequent
+     characters but the last are decimal digits or letters a to f or A to
+     F, and followed by x or X, with no other intervening characters.
+
+          Note: Hexadecimal_constant is not part of the standard.
+          It has been introduced in TowerEiffel to support
+          hexadecimal integers.
+
+          Note: It is not clear whether underscores are allowed
+          in hexadecimal constants.
+
+  ------------------------------------------------------------------------
+
+Real
+     A real number is made of the following elements:
+       1. an optional Integer, giving the integral part (If this is absent,
+          the integral part is 0.)
+       2. a required dot (.)
+       3. an optional Integer written backwards, which gives the fractional
+          part (if this is absent, the fractional part is 0.)
+       4. an optional exponent, which is the letter e or E followed by an
+          optional Sign (+ or -) and an Integer. The integer is required if
+          the e or E is present. This indicates that the value appearing
+          before the e or E must be scaled by 10^n, where n is the given
+          integer.
+     No intervening character (blank or otherwise) is permitted between
+     these elements. The integral and fractional parts may not both be
+     absent. If underscores are used in the integral or the fractional
+     part, they must also appear in the other part, unless it has three
+     digits or less.
+
+          Note: The recommended style is to use E rather than e.
+
+          Note: Contrary to Real_constant, Real has no sign.
+
+          Note: The constraint stating that the integral and
+          fractional parts may not both be absent is lexically
+          important. Otherwise the following piece of code
+
+               a.e1
+
+          could be scanned as
+
+               a  .e1
+
+          instead of
+
+               a  .  e1
+
+          '.e1' being recognized as a real.
+
+  ------------------------------------------------------------------------
+
+Character_constant
+     A character constant is either:
+       1. a printable character except percent (%) and single quote (')
+       2. a Special_character
+     enclosed in single quotes (').
+
+          Note: Printable characters include, in this case,
+          blanks and tab characters, but not new lines. Compare
+          that to Free_operator.
+
+  ------------------------------------------------------------------------
+
+Manifest_string
+     A manifest string is an arbitrary sequence of:
+       1. printable characters except percent (%) and double quote (")
+       2. Special_characters
+     enclosed in double quotes (").
+     An extended form allows one to write a manifest string on two or more
+     lines. Every line but the last must end with a percent (%) and every
+     line but the first must begin with a percent (%) possibly preceded by
+     blanks ( ) and tab characters.
+
+          Note: Printable characters include, in this case,
+          blanks and tab characters, but not new lines. Compare
+          that to Free_operator.
+
+  ------------------------------------------------------------------------
+
+Bit_constant
+     A bit constant is a sequence of digits 0 or 1, followed by b or B,
+     with no other intervening characters.
+
+          Note: The recommended style is to use B rather than b.
+
+  ------------------------------------------------------------------------
+
+Free_operator
+     A free operator is a sequence of one or more characters, whose first
+     character is any one of @ # | & and whose subsequent characters, if
+     any, may be any printable characters. Letter case is not significant
+     for letters in free operators.
+
+          Note: Printable characters do not include, in this
+          case, characters allowed in Breaks. Compare that to
+          Character_constant.
+
+          Note: The following code
+
+               a@1
+
+          is scanned as
+
+               a  @1
+
+          which is not syntactically correct. See Eiffel gotchas
+          for details.
+
+          Note: Eiffel: The Language, second printing, allows
+          Special_characters (although printable) in free
+          operators. No Eiffel compiler supports that.
+
+          Note: SmallEiffel and Visual Eiffel are case-sensitive
+          for free operators.
+
+  ------------------------------------------------------------------------
+
+Comment
+     A comment begins with two dash characters (--) and extends to the end
+     of the line.
+     An extended form allows one to write a comment on two or more lines.
+     Every line but the first must begin with two dash characters possibly
+     preceded by blanks and tab characters.
+Header_comment
+     Comment
+
+          Note: This is not the official description of Comment.
+          However I couldn't see why the percent character (%)
+          was not allowed in its bare form (i.e. not part of a
+          Special_character) in a comment.
+
+          Note: There is two kinds of comments: free comments and
+          expected comments. Free comments can be discared by
+          some tools. However expected comments appear as part of
+          four constructs: Routine, Assertion_clause,
+          Creation_clause and Feature_clause, and should be
+          processed by tools such as the short utility. Although,
+          in Routine, Creation_clause and Feature_clause, the
+          header comment is optional and may be ignored without
+          too much harm, it is compulsory in Assertion_clause and
+          ignoring it would be a syntax error. A solution to
+          implement these expected comments could be to use
+          lexical tie-ins.
+
+          Note: TowerEiffel erroneously emits a syntax error when
+          a comment appears between the feature keyword and the
+          optional Clients in the Features construct. This is
+          probably a secondary effect of the use of lexical
+          tie-ins suggested above.
+
+          Note: In the following Routine declaration:
+
+               foo is
+                       -- This is the first comment.
+
+                       -- This is the second comment.
+
+                       -- This is the third comment.
+                   do
+                       ...
+                   end
+
+          it is not clear which one of the three comments is the
+          expected Header_comment and what are the two other free
+          comments. TowerEiffel chose the first comment to be the
+          header comment. Some other compilers, such as ISE
+          Eiffel, Halstenbach and Visual Eiffel, actually merge
+          the three comments into one which becomes the header
+          comment.
+
+          Note: Some Eiffel compilers ignore any line starting
+          with '--|' instead of just '--' in header comments.
+
+  ------------------------------------------------------------------------
+
+Break
+     A break is made of a sequence of one or more of the following
+     characters:
+       1. blank
+       2. tab
+       3. new line
+     A break can be inserted between two adjacent elements without
+     affecting the semantics.
+
+          Note: Some platforms such as Windows put a carriage
+          return character before the new line. In such cases, it
+          is easier to consider the carriage return as a fourth
+          possible character making up a break.
+
+  ------------------------------------------------------------------------
+
+Special_character
+     A special character has one of the following forms:
+       1. a sequence %/code/ where code is an unsigned integer representing
+          the character of ASCII code code in decimal value
+       2. a sequence %K used to represent the following special characters:
+
+                Character Code Mnemonic name
+                @         %A   At-sign
+                BS        %B   Backspace
+                ^         %C   Circumflex
+                $         %D   Dollar
+                FF        %F   Form feed
+                \         %H   backslasH
+                ~         %L   tiLda
+                NL (LF)   %N   Newline
+                `         %Q   back Quote
+                CR        %R   carriage Return
+                #         %S   Sharp
+                HT        %T   horizontal Tab
+                NUL       %U   nUll character
+                |         %V   Vertical bar
+                %         %%   percent
+                '         %'   single quote
+                "         %"   double quote
+                [         %(   opening bracket
+                ]         %)   closing bracket
+                {         %<   opening brace
+                }         %>   closing brace
+
+          Note: Most Eiffel compilers emit a syntax error when
+          the sequence %K is not listed in the table above.
+          However, Visual Eiffel considers that the sequence %K
+          represents the character K when the sequence is not
+          listed in the table above. As a consequence %P stands
+          for character P and %D stands for character $.
+
+          Note: All Eiffel compilers that I have tested (i.e. ISE
+          Eiffel, Halstenbach, SmallEiffel, Visual Eiffel,
+          TowerEiffel) expect the letter K in %K to be in upper
+          case to be recognized as a special character from the
+          table above. As a consequence %d and %D are not
+          considered the same.
+
+          Note: It is not clear to me whether underscores are
+          allowed in the code integer (specially when it is the
+          code of a wide character).
+
+  ------------------------------------------------------------------------
+
+Reserved_word
+     A reserved word is either:
+       1. a keyword, which serves to introduce and delimit the variant
+          components of constructs. The Eiffel keywords are: alias, all,
+          and, as, check, class, creation, debug, deferred, do, else,
+          elseif, end, ensure, expanded, export, external, feature, from,
+          frozen, if, implies, indexing, infix, inherit, inspect,
+          invariant, is, like, local, loop, not, obsolete, old, once, or,
+          prefix, redefine, rename, require, rescue, retry, select,
+          separate, then, undefine, until, variant, when, xor.
+       2. a predefined name, which comes at positions where variable tokens
+          would also be permissible. The Eiffel predefined names are: BIT,
+          Current, False, Precursor, Result, Strip, True, Unique.
+     The letter case is not significant for reserved words: the two words
+     Result and rEsUlT are considered the same.
+
+          Note: The official syntax specification lists the
+          following class names as reserved words: BOOLEAN,
+          CHARACTER, DOUBLE, INTEGER, NONE, POINTER, REAL,
+          STRING. I understand that these classes have to be
+          known by Eiffel compilers, but I don't see why they
+          should be reserved words. Note that ANY, GENERAL,
+          PLATFORM and many other class names from the Kernel
+          Library Standard are not listed either! Moreover, these
+          class names appear nowhere in the syntax constructs.
+          Finally, only Visual Eiffel considers these class names
+          as reserved words.
+
+          Note: In Eiffel: The Language, second printing, False,
+          Strip, True and Unique are considered to be keywords. I
+          do not share this point of view.
+
+          Note: Although SmallEiffel is case-sensitive with
+          respect to Identifier, it considers letter case not
+          being significant for reserved words!
+
+          Note: Precursor is not part of the standard syntax. It
+          has been introduced to support the Precursor mechanism.
+
+  ------------------------------------------------------------------------
+
+Operator
+     The operators in the following table are grouped by precedence level,
+     starting with the highest precedence group. Operators within each
+     group have the same precedence. For two or more consecutive
+     occurrences of binary operators with the same precedence level, the
+     associativity column specifies the order of evaluation.
+
+      Symbol                    Associativity
+      .                         left
+      old
+      not
+      unary +
+      unary -
+      All free unary operators
+      All free binary operators
+      ^                         right
+      *                         left
+      /                         left
+      //                        left
+      \\                        left
+      binary +                  left
+      binay -                   left
+      =                         left
+      /=                        left
+      <                         left
+      >                         left
+      <=                        left
+      >=                        left
+      and                       left
+      and then                  left
+      or                        left
+      or else                   left
+      xor                       left
+      implies                   left
+
+          Note: The reason why Eiffel compilers reject the
+          following piece of code:
+
+               foo := 1 < 2 < 3
+
+          is not because the comparison operators are
+          non-associative. These operators really are left
+          associative. The above code is syntactically correct
+          but is simply rejected because '1 < 2' is of type
+          BOOLEAN and there is no feature such as:
+
+               infix "<" (i: INTEGER): SOME_TYPE
+
+          in class BOOLEAN.
+
+  ------------------------------------------------------------------------
+
+Semicolon
+     Semicolons are used as separators in lists such as Index_list or
+     Compound. Semicolons are optional in most places. However they are
+     required in some cases to remove ambiguities in Assertion and
+     Compound. The ambiguity appears in the following piece of code:
+
+          foo (expr).bar
+
+     where this could be recognized as "bar applied to the result of
+     function foo with argument expr" or as "a call to foo followed by bar
+     applied to expr". The rule to resolve this ambiguity is to put a
+     semicolon between 'foo' and '(expr).bar' to get the second
+     interpretation, or to leave it as it is to get the first one.
+
+          Note: For some constructs, some Eiffel compilers will
+          consider semicolons as terminators, consider them
+          compulsory, or just emit a warning if they are missing.
+
+  ------------------------------------------------------------------------
+Copyright © 1999, Eric Bezault                                 [Home][Home]
+mailto:ericb@gobosoft.com
+http://www.gobosoft.com
+Last Updated: 2 February 1999
+
+

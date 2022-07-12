@@ -1,0 +1,11 @@
+system test4
+
+root test4
+
+cluster
+
+	"test\context\conformite\generique\";
+	--".\std_classe\";
+	".\";
+
+end

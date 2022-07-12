@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO8859-1" ?>
+<!DOCTYPE liste_classe SYSTEM "..\..\test_unitaire\context.dtd">
+<liste_classe>
+<classe nom="test8.e">
+<erreur nom="ErreurVFFD3">Erreur dans la classe TEST8 : L'attribut Void est deja declaré dans la classe ancetre GENERAL</erreur>
+</classe>
+</liste_classe>

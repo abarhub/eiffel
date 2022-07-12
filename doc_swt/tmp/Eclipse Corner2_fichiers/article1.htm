@@ -1,0 +1,703 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0060)http://www.eclipse.org/articles/StyledText%201/article1.html -->
+<HTML><HEAD><TITLE>Getting Your Feet Wet with the SWT StyledText Widget</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+href="article1_fichiers/default_style.css" rel=stylesheet>
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY>
+<DIV align=right>&nbsp; <FONT face="Times New Roman, Times, serif" 
+size=2>Copyright © 2001, 2002 Object Technology International, Inc.</FONT> 
+</DIV>
+<TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica><FONT color=#ffffff>&nbsp;Eclipse Corner 
+      Article</FONT></FONT></B></TD></TR></TBODY></TABLE>
+<H1><IMG height=86 src="article1_fichiers/Idea.jpg" width=120></H1>
+<H1 align=center>Getting Your Feet Wet with the SWT<BR>StyledText Widget 
+</H1><B>
+<BLOCKQUOTE>
+  <P>Summary</P></BLOCKQUOTE></B>
+<BLOCKQUOTE>
+  <P>The<I> StyledText</I> widget is a customizable widget that can be used to 
+  display and edit text with different colors and font styles. This article 
+  presents an overview of the concepts, issues, and rules that you should be 
+  aware of when using the <I>StyledText</I> widget.</P>
+  <P><B>By Lynne Kues and Knut Radloff, OTI</B> <BR>May 7, 2001; updated 
+  September 18, 2002 for Eclipse 2.0</P></BLOCKQUOTE>
+<HR width="100%">
+
+<H2>Overview</H2>
+<P>The<I> StyledText</I> widget provides a fast and easy to use means to display 
+and edit text. Within the StyledText widget, the following attributes can be 
+specified:</P>
+<BLOCKQUOTE>
+  <BLOCKQUOTE>
+    <UL>
+      <LI>text foreground color 
+      <LI>text background color 
+      <LI>text font style (i.e., normal or bold) 
+      <LI>line background color </LI></UL></BLOCKQUOTE></BLOCKQUOTE>
+<P>These attributes are referred to as "styles". In addition, the 
+<I>StyledText</I> widget provides standard navigation/editing keyboard behavior 
+and allows user-defined key bindings. Word wrapping is also supported; however, 
+this feature was not added until Eclipse 2.0 The<I> StyledText</I> widget does 
+not support mixing multiple fonts or italic fonts. 
+<P>The <I>StyledText</I> widget can be customized using pluggable objects to 
+manage text content and styles. You can provide your own implementation of these 
+objects in order to tailor the widget to your needs. Or if you have no need to 
+customize the widget, easy to use API for managing styles and text content is 
+available, making the pluggable nature of the widget completely transparent. How 
+to customize the <EM>StyledText</EM> widget and why you might want to do so will 
+be discussed in our other article, <A 
+href="http://www.eclipse.org/articles/StyledText%202/article2.html">Into the 
+Deep End of the StyledText Widget</A>.</P>
+<P>The <I>StyledText</I> widget is used by the JFace Text Framework, which is 
+part of the Eclipse Platform. The JFace Text Framework provides a layer of 
+abstraction on top of the <I>StyledText</I> widget. The layer is pluggable and 
+supports text formatting, content code assist capabilities, and a source viewer. 
+</P>
+<H3>A Simple Example </H3>
+<P>The following is a simple example that shows how to create a 
+<I>StyledText</I> widget and set text. This example will be built upon in 
+subsequent sections of this article.</P>
+<P align=center><IMG height=100 src="article1_fichiers/Image0.gif" width=200 
+border=0></P><PRE><FONT color=#000084>import</FONT><FONT color=#000000> org.eclipse.swt.*;</FONT><FONT color=#000084>
+import</FONT><FONT color=#000000> org.eclipse.swt.custom.*;
+</FONT><FONT color=#000084>import<FONT color=#000000> org.eclipse.swt.graphics.*;
+</FONT>import</FONT><FONT color=#000000> org.eclipse.swt.widgets.*;</FONT><FONT color=#000084>
+import</FONT><FONT color=#000000> org.eclipse.swt.layout.*;
+</FONT><FONT color=#000084>
+public</FONT><FONT color=#000000> </FONT><FONT color=#000084>class</FONT><FONT color=#000000> StyledTextExample {
+	</FONT><FONT color=#000084>public</FONT><FONT color=#000000> </FONT><FONT color=#000084>static</FONT><FONT color=#000000> </FONT><FONT color=#000084>void</FONT><FONT color=#000000> main(String [] args) {
+		</FONT><FONT color=#840000>// create the widget's shell</FONT><FONT color=#000000>
+		Shell shell = </FONT><FONT color=#000084>new</FONT><FONT color=#000000> Shell();
+		shell.setLayout(</FONT><FONT color=#000084>new</FONT><FONT color=#000000> FillLayout());
+		shell.setSize(200, 100);
+		Display display = shell.getDisplay();
+		</FONT><FONT color=#840000>// create the styled text widget</FONT><FONT color=#000000>
+		StyledText widget = </FONT><FONT color=#000084>new</FONT><FONT color=#000000> StyledText(shell, SWT.BORDER);
+		widget.setText(</FONT><FONT color=#008484>"This is the StyledText widget."</FONT><FONT color=#000000>);
+
+		shell.open();
+		</FONT><FONT color=#000084>while</FONT><FONT color=#000000> (!shell.isDisposed())
+		</FONT><FONT color=#000084>if</FONT><FONT color=#000000> (!display.readAndDispatch()) display.sleep();
+	}
+}</FONT></PRE>
+<H3>Character, Line and Caret Offsets</H3>
+<P>Within the <I>StyledText</I> widget, both character offsets and line indexes 
+are zero based. For example, in the StyledText widget below, the line at index 0 
+is "abcde" and the character at offset 0 is "a".</P>
+<DIV align=center>
+<CENTER><PRE>widget.setText(<FONT color=#008080>"abcde\r\nfghij"</FONT>);
+</PRE></CENTER></DIV>
+<DIV align=center>
+<CENTER><PRE><IMG height=100 src="article1_fichiers/Image2.gif" width=200 border=0></PRE></CENTER></DIV>
+<P>When specifying offsets within the <EM>StyledText</EM> widget, line delimiter 
+characters are included.&nbsp; In the above example, the line delimiter is CR/LF 
+(i.e., "\r\n").&nbsp; Therefore, the character at offset five is CR and the 
+character at offset six is LF.&nbsp; Similarly, 
+<STRONG>getLineAtOffset(6)</STRONG> returns 0 and 
+<STRONG>getLineAtOffset(7)</STRONG> returns 1. If there was another CR/LF line 
+break at the end of the second line, <STRONG>getLineAtOffset(14)</STRONG> would 
+return 2. </P>
+<P>Caret offsets are also zero based.&nbsp; Calling <STRONG>setCaretOffset(4) 
+</STRONG>for the above widget places the caret between 'd' and 'e'.&nbsp; And, 
+like character offsets, caret offsets take line delimiters into account.&nbsp; 
+In order to place the caret at the beginning of the second line (i.e., in front 
+of the 'f') you would call <STRONG>setCaretOffset(7)</STRONG>. Also note that 
+<STRONG>setCaretOffset(12)</STRONG> is a valid call and places the caret at the 
+end of the text, after the 'j'.&nbsp; The range of valid caret offset values is 
+one more than the range of valid character offset values.</P>
+<H3>Text Ranges</H3>
+<P>Generally, the <I>StyledText</I> widget uses the start offset and the length 
+to specify a text range. Specifying the length of a text range, instead of the 
+end offset, is less error prone because there is no doubt as to whether or not 
+the end offset is included in the range. For example, a start offset of "0" and 
+an end offset of "2" may or may not include the character at offset 2 (in SWT it 
+doesn’t). Expressing the equivalent using a start offset and a length (i.e., 0 
+and 2 respectively) is unambiguous. It is clear that this describes the 
+characters at offsets 0 and 1. </P>
+<P>To maintain consistency with other SWT widgets, API methods that use the 
+start offset and end offset semantics are also provided. For example, SWT uses 
+"start" and "end" when selecting items in a <I>List</I>, <I>Tree</I> or 
+<I>Table</I>. The table below shows the API that uses start offset and end 
+offset (non-range based) and the equivalent API with start offset and length 
+semantics (range based). </P>
+<DIV align=center>
+<CENTER>
+<TABLE cellSpacing=2 cellPadding=7 width=560 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=middle width=235><B><FONT face="Courier New" 
+      size=2>Start Offset, End Offset</FONT></B></TD>
+    <TD vAlign=top align=middle width=285><B><FONT face="Courier New" 
+      size=2>Start Offset, Length</FONT></B></TD></TR>
+  <TR>
+    <TD vAlign=top width=235><FONT face="Courier New" 
+      size=2>getSelection()</FONT></TD>
+    <TD vAlign=top width=285><FONT face="Courier New" 
+      size=2>getSelectionRange()</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width=235><FONT face="Courier New" size=2>getText(int, 
+      int)</FONT></TD>
+    <TD vAlign=top width=285><FONT face="Courier New" size=2>getTextRange(int, 
+      int)</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width=235><FONT face="Courier New" size=2>n/a</FONT></TD>
+    <TD vAlign=top width=285><FONT face="Courier New" size=2>redrawRange(int, 
+      int)</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width=235><FONT face="Courier New" size=2>n/a</FONT></TD>
+    <TD vAlign=top width=285><FONT face="Courier New" 
+      size=2>replaceTextRange(int, int, String)</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width=235><FONT face="Courier New" size=2>setSelection(int, 
+      int)</FONT></TD>
+    <TD vAlign=top width=285><FONT face="Courier New" 
+      size=2>setSelectionRange(int, 
+int)</FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P align=left><I>StyledText</I> API that uses a start offset and a length will 
+always end with "Range". For example, <B>getSelectionRange </B>will return the 
+selection as a start offset and a length. </P>
+<P align=left>You can mix non-range based and range based <I>StyledText</I> API, 
+as demonstrated by the code below.&nbsp; The behavior is the same. However, for 
+the sake of clarity you should decide which kind of API to use and then use it 
+consistently. </P><PRE><FONT color=#000000>	widget.setText(</FONT><FONT color=#008484>"This is the StyledText widget."</FONT><FONT color=#000000>);
+
+	widget.getText(</FONT>5, 7<FONT color=#000000>);		</FONT><FONT color=#800000>// returns "is"</FONT><FONT color=#000000>
+	widget.getTextRange(</FONT>5, 2<FONT color=#000000>);	</FONT><FONT color=#800000>// returns "is"
+</FONT><FONT color=#000000>
+	widget.setSelection(</FONT>8, 11<FONT color=#000000>);		</FONT><FONT color=#800000>// selects  "the"</FONT><FONT color=#000000>
+	Point sel = widget.getSelectionRange(); </FONT><FONT color=#800000>// returns Point with x=8, y=3</FONT><FONT color=#000000>
+	widget.setSelectionRange(</FONT>8, 3<FONT color=#000000>);		</FONT><FONT color=#800000>// selects  "the"</FONT><FONT color=#000000>
+	Point sel = widget.getSelection();	</FONT><FONT color=#800000>// returns Point with x=8, y=11</FONT><FONT color=#000000>
+</FONT><FONT color=#000000 size=2>				</FONT></PRE>
+<H3>Style Specification</H3>
+<P>The <I>StyledText</I> widget uses <I>StyleRanges</I> to specify text styles. 
+The fields of the <I>StyleRange</I> class are defined as follows:</P><PRE>	<FONT color=#00007f>public</FONT> <FONT color=#00007f>int</FONT> start; 		<FONT color=#7f0000>// start offset of the style, zero-based
+</FONT>	<FONT color=#00007f>public</FONT> <FONT color=#00007f>int</FONT> length; 		<FONT color=#7f0000>// length of the style
+</FONT>	<FONT color=#00007f>public</FONT> Color foreground;	<FONT color=#7f0000>// text foreground color
+</FONT>	<FONT color=#00007f>public</FONT> Color background;	<FONT color=#7f0000>// test background color
+</FONT>	<FONT color=#00007f>public int</FONT> fontStyle = SWT.NORMAL; <FONT color=#7f0000>// may be SWT.NORMAL or SWT.BOLD</FONT></PRE>
+<P>If the <B>foreground</B> and <B>background</B> fields for a <I>StyleRange</I> 
+are null, the <I>StyledText</I> widget will use the default widget colors for 
+these fields.</P>
+<P>The <I>StyleRange</I> class also includes helper methods for managing and 
+manipulating style ranges. For example, the <B>similarTo(StyleRange)</B> method 
+will return whether or not two style ranges have the same style attributes and 
+only differ in the start and length values.</P>
+<P>You define style ranges for the <I>StyledText</I> widget by using the 
+following methods:</P><PRE>	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> setStyleRange(StyleRange range)
+	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> setStyleRanges(StyleRange[] ranges)
+	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> replaceStyleRanges(<FONT color=#00007f>int</FONT> start, <FONT color=#00007f>int</FONT> length, StyleRange[] ranges) (since Eclipse 2.0)
+  </PRE>
+<P>The <B>setStyleRange</B> API applies the specified style to the text range 
+specified in the <B>StyleRange</B>. If the new style overlaps existing styles, 
+the text outside the new style range will keep its existing style 
+information.</P>
+<P>The <B>setStyleRanges</B> API simply replaces all styles in the widget with 
+the new ones. </P>
+<P>The <B>replaceStyleRanges</B> API was added in Eclipse 2.0 to improve 
+performance. It replaces any styles in the given range with the specified new 
+styles. All existing styles in the range will be deleted, so the new styles need 
+not cover the entire replaced range. Note that <B>replaceStyleRanges</B> could 
+be implemented by calling <B>setStyleRange</B> multiple times to cover the 
+entire replace range. StyleRanges with null colors would delete existing styles 
+that have no replacement. However, the new API makes this task a lot easier and 
+more efficient. </P>
+<P>When text changes occur in the <I>StyledText</I> widget, styles that are set 
+using any of the above API are updated to reflect the text changes. Styles are 
+always maintained relative to the text to which they are assigned and not to a 
+fixed position. If text is inserted in front of a style, the style ranges after 
+the inserted text are updated to move with their associated text. If text is 
+inserted at a location that is within a style range, the style range is split to 
+accommodate the new text. If new text replaces existing text and some or all of 
+the existing text has a style assigned to it, only the non-replaced text will 
+maintain its styles. In short, new text will never be automatically styled. </P>
+<P>The following is a simple example of how to use style ranges in the 
+StyledText widget.</P>
+<BLOCKQUOTE>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <BLOCKQUOTE>
+            <BLOCKQUOTE>
+              <BLOCKQUOTE><FONT size=2>
+                <DL>
+                  <DIV align=center>
+                  <CENTER>
+                  <DT><IMG height=100 src="article1_fichiers/Image1.gif" 
+                  width=200> </CENTER></DT></DIV>
+                  <DD> 
+        </DD></DL></FONT></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE></BLOCKQUOTE><PRE><FONT color=#000000>	widget.setText(</FONT><FONT color=#008484>"This is the StyledText widget."</FONT><FONT color=#000000>);
+</FONT>	StyleRange styleRange = <FONT color=#00007f>new</FONT> StyleRange();
+	styleRange.start = 0;
+	styleRange.length = text.length();
+	styleRange.fontStyle = SWT.BOLD;
+	styleRange.foreground = display.getSystemColor(SWT.COLOR_BLUE);
+	widget.setStyleRange(styleRange);</PRE>
+<P>In addition to styles, the <B>setLineBackground (int,int,Color)</B> API can 
+be used to customize the display of the text in the <I>StyledText</I> widget. 
+The color specified when using this API will be applied to the display area of 
+the given lines (e.g., line background colors extend the width of the StyledText 
+widget). If line background colors and styles with background colors are used in 
+conjunction with each other, the style background colors will be displayed after 
+the line background colors are displayed (i.e., the style background color will 
+take precedence for its given text range).</P>
+<P>When text changes occur in the <I>StyledText</I> widget, line background 
+colors that are specified via the <B>setLineBackground</B> API are maintained 
+relative to the text lines to which they are assigned and not to a fixed 
+position. Line background colors are updated in a fashion similar to style 
+ranges. New lines of text will never be assigned line background colors and if 
+an existing text line has an associated line background color, the association 
+will be maintained. </P>
+<H3>Resource Life Cycle</H3>
+<P>SWT <I>Color</I> objects are used to specify styles for the <I>StyledText</I> 
+widget. It is your responsibility to manage the life cycle of these objects. The 
+colors must be disposed when they are no longer used by the widget. </P>
+<P>The <I>StyledText</I> widget references colors that are set using the 
+<B>replaceStyleRanges</B> (since Eclipse 2.0), <B>setLineBackground</B>, 
+<B>setStyleRange</B> and <B>setStyleRanges</B> API methods.&nbsp; Since the 
+widget does not copy <EM>Color</EM> objects, a color set using these API methods 
+can only be considered unused when all the character ranges and line ranges that 
+use the color have been reset to use the default widget colors. The same is true 
+for the <B>setBackground</B> and <B>setForeground</B> API that was added in 
+Eclipse 2.0. Colors set using this API are referenced by StyledText and can only 
+be disposed when no longer set in the widget or when the widget has been 
+disposed. </P>
+<P>The following code example illustrates the correct way to manage 
+<EM>Color</EM> objects.&nbsp; Two <EM>Colors</EM>, lime and orange, are created 
+and used by the widget.. </P>
+<P align=center><IMG height=100 src="article1_fichiers/Image3.gif" width=200 
+border=0> </P><PRE><FONT color=#000000>	widget.setText(</FONT><FONT color=#008484>"This is the StyledText widget."</FONT><FONT color=#000000>);
+</FONT><FONT color=#800000>	// create the Colors</FONT><FONT color=#000000>
+</FONT>	<FONT color=#000000>Color orange = </FONT><FONT color=#000084>new</FONT><FONT color=#000000> Color(display, 255, 127, 0);
+</FONT>	<FONT color=#000000>Color lime = </FONT><FONT color=#000084>new</FONT><FONT color=#000000> Color(display, 127, 255, 127);
+
+</FONT><FONT color=#800000>	// make "This" bold and orange</FONT><FONT color=#000000>
+</FONT>	<FONT color=#000000>StyleRange styleRange = </FONT><FONT color=#000084>new</FONT><FONT color=#000000> StyleRange();
+</FONT>	<FONT color=#000000>styleRange.start = 0
+	styleRange.length = 4;
+</FONT>	<FONT color=#000000>styleRange.fontStyle = SWT.BOLD;
+</FONT>	<FONT color=#000000>styleRange.foreground = orange;
+	widget.setStyleRange(styleRange);
+
+</FONT><FONT color=#800000>	// make "StyledText" bold and lime
+</FONT><FONT color=#000000>	styleRange = </FONT><FONT color=#000084>new</FONT><FONT color=#000000> StyleRange();
+	styleRange.start = 12;
+</FONT>	<FONT color=#000000>styleRange.length = 10;
+	styleRange.fontStyle = SWT.BOLD;
+</FONT>	<FONT color=#000000>styleRange.foreground = lime;
+</FONT>	<FONT color=#000000>widget.setStyleRange(styleRange);
+
+</FONT><FONT color=#800000>//	styleRange = new StyleRange(12, 10, null, null, SWT.NORMAL);		
+//	widget.setStyleRange(styleRange);	// set the bold, lime colored text back to normal
+//	lime.dispose();				// lime is no longer used by the widget so it can be disposed
+</FONT><FONT color=#000000>
+	shell.open();
+	</FONT><FONT color=#000084>while</FONT><FONT color=#000000> (!shell.isDisposed())
+	</FONT><FONT color=#000084>if</FONT><FONT color=#000000> (!display.readAndDispatch()) display.sleep();
+
+	orange.dispose();
+	lime.dispose();				</FONT><FONT color=#800000>// make sure you comment out this line if you dispose lime above</FONT><FONT color=#000000>
+</FONT></PRE>
+<P><FONT color=#000000>If you decide that the lime colored text looks ugly, you 
+can use the code that is commented out to reset that text to the widget's 
+default foreground color. The example would then look like this:</FONT></P>
+<P align=center><IMG height=100 src="article1_fichiers/Image4.gif" width=200 
+border=0></P>
+<P><FONT color=#000000>Since you reset the only style range that uses the lime 
+color, the lime <I>Color</I> object can be disposed. The orange color can only 
+be disposed when the application terminates because it is still used by the 
+first style range that was set. Note that we use a different <I>StyleRange</I> 
+constructor for resetting the lime style to simplify the style range 
+creation.</FONT></P>
+<P><FONT color=#000000>The following code resets all style ranges to the 
+widget's default colors.</FONT></P><PRE>	<FONT color=#000000>widget.setStyleRange(</FONT><FONT color=#000080>null</FONT><FONT color=#000000>);
+	orange.dispose();
+	lime.dispose();</FONT></PRE>
+<P><FONT color=#000000>Once you have called <B>setStyleRange(null)</B> all 
+colors can be disposed of safely.</FONT></P>
+<P><FONT color=#000000>The <B>setLineBackground</B> API works exactly like the 
+<B>setStyleRange</B> API. You can only dispose <I>Color</I> objects after you 
+have reset the line backgrounds that use the colors or after you dispose the 
+<I>StyledText</I> widget. For example:</FONT></P>
+<P align=center><IMG height=100 src="article1_fichiers/Image5.gif" width=200 
+border=0></P><PRE><FONT color=#000000>	widget.setText(</FONT><FONT color=#008484>"This is the StyledText widget."</FONT><FONT color=#000000>);
+</FONT>	<FONT color=#000000>Color orange = </FONT><FONT color=#000084>new</FONT><FONT color=#000000> Color(display, 255, 127, 0);
+	widget.</FONT>setLineBackground<FONT color=#000000>(0, 1, orange);</FONT></PRE>
+<P><FONT color=#000000>You can dispose the orange color only after you have 
+reset the line background color of the first line by calling:</FONT></P><PRE><FONT color=#000000>	widget.</FONT>setLineBackground<FONT color=#000000>(0, 1, </FONT><FONT color=#000080>null</FONT><FONT color=#000000>);
+	orange.dispose();</FONT></PRE>
+<P>It is advisable for you to cache <I>Color</I> objects and dispose them when 
+you dispose the <I>StyledText</I> widget. Caching colors will improve 
+performance and minimize the number of allocated resources. An in-depth 
+discussion of SWT color resources can be found in the <A 
+href="http://www.eclipse.org/articles/SWT%20Color%20Model/swt-color-model.htm">SWT 
+Color Model</A> article.</P>
+<H3><A name=TextChange></A>Text Change Notification</H3>
+<P>Text changes within the <I>StyledText</I> widget can occur via user input or 
+programmatically. User input changes occur when keyboard input is received. 
+Programmatic changes occur when the <I>StyledText</I> API is executed. Four API 
+methods exist for performing programmatic changes:</P><PRE>	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> append(String text)
+	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> insert(String text)
+	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> replaceTextRange(<FONT color=#00007f>int</FONT> start, <FONT color=#00007f>int</FONT> length, String text)
+	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> setText(String text)</PRE>
+<P>When text changes occur, the <I>StyledText</I> widget generates four kinds of 
+notification events:<DFN> 
+<DL>
+  <DD>verify key event 
+  <DD>verify event 
+  <DD>modify event 
+  <DD>extended modify event </DD></DL></DFN>
+<H4><A name=VerifyKeyEvent></A>Verify Key Event</H4>
+<P>The <B>verify key event </B>is sent immediately after a key has been 
+pressed.&nbsp; The fields of the <I>VerifyEvent</I> that are used when sending 
+the <STRONG>verify key event</STRONG> are defined as follows: </P><PRE><FONT color=#000084>	public boolean</FONT> doit;	<FONT color=#800000>// flag indicating whether the keystroke should be processed</FONT><FONT color=#000084>
+	public</FONT> <FONT color=#000084>char</FONT> character;	<FONT color=#800000>// characte</FONT><FONT color=#840000>r represented by the key that was typed
+	</FONT><FONT color=#000084>public</FONT> <FONT color=#000084>int</FONT> keyCode;	<FONT color=#800000>// key code</FONT><FONT color=#840000> of the key that was typed. Used for special keys (e.g., CTRL).
+</FONT>	<FONT color=#000084>public</FONT> <FONT color=#000084>int</FONT> stateMask;	<FONT color=#800000>// sta</FONT><FONT color=#840000>te of the keyboard modifier keys (e.g., SHIFT) </FONT><FONT color=#800000>at the tim</FONT><FONT color=#840000>e the
+</FONT>				<FONT color=#800000>// </FONT><FONT color=#840000>event was generated</FONT></PRE>
+<P>You can use the <STRONG>verify key event </STRONG>to filter out a key stroke 
+before it is processed by the <I>StyledText</I> widget. To do so, you would set 
+the <B>doit </B>field of the <I>VerifyEvent</I> to false. </P>
+<P>To listen to verify key events add a <I>VerifyKeyListener</I> to the 
+<I>StyledText</I> widget and implement the <B>verifyKey(VerifyEvent) </B>method 
+in the listener. Following is an example of a <I>VerifyKeyListener</I> that 
+prevents the user from deleting text by filtering out the backspace and delete 
+keystrokes.</P><PRE><FONT color=#7f0000>	// This handler will filter out the backspace and delete keys to prevent deleting characters.
+</FONT>	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> verifyKey(VerifyEvent event) {
+		<FONT color=#00007f>if</FONT> ((event.character == <FONT color=#007f7f>'\u0008'</FONT>) || (event.character == <FONT color=#007f7f>'\u007F'</FONT>)) {
+			event.doit = <FONT color=#00007f>false</FONT>;
+		}
+	}</PRE>
+<H4>Verify Event</H4>
+<P>The<B> verify event<FONT color=#00007f> </FONT></B>is sent when a text change 
+is about to occur because of user input. It is sent before the text content 
+change is made and before the change is reflected in the widget.&nbsp; The 
+fields of the <I>VerifyEvent</I> that are used when sending the <STRONG>verify 
+event</STRONG> are defined as follows: </P><PRE><FONT color=#000084>
+public int</FONT> start, end;	<FONT color=#800000>// range of text being modified</FONT><FONT color=#000084>
+   public</FONT> String text;	<FONT color=#800000>// new text that will be inserted or empty string</FONT><FONT color=#000084>
+   public boolean</FONT> doit;  <FONT color=#800000>// flag indicating whether the text change should be processed</FONT></PRE>
+<P>The <I>VerifyEvent </I>contains the start offset and end offset of the 
+replaced text as well as the new text. You should register a 
+<I>VerifyListener</I> when you want to make changes to the replace range or to 
+the new text before the widget is updated. You can force the widget to ignore 
+the text change altogether by setting the <B>doit </B>field of the 
+<I>VerifyEvent</I> to false. </P>
+<P>You can use the <B>verify event</B> to perform operations such as automatic 
+word completion. Following is an example of a <I>VerifyListener</I> that 
+performs word completion. When you listen for <B>verify events</B>, you must 
+implement the <B>verifyText(VerifyEvent)</B> method.</P><PRE>	<FONT color=#7f0000>// This handler will automatically expand the character "S" to "StyledText".</FONT>
+	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> verifyText(VerifyEvent event) {
+<FONT color=#7f0000>		// Only expand when text is inserted.
+</FONT>		<FONT color=#00007f>if</FONT> (event.end - event.start == 0) {
+			<FONT color=#00007f>if</FONT> (event.text.equals(<FONT color=#007f7f>"S"</FONT>)) {
+				event.text = <FONT color=#007f7f>"StyledText"</FONT>;
+			}
+		}
+	}</PRE>
+<P>Note that the <B>verify event</B> that is sent by the <I>StyledText</I> 
+widget is the same event that is sent by the SWT <I>Text</I> and <I>Combo</I> 
+widgets.</P>
+<H4>Modify Event</H4>
+<P>The <B>modify event</B><FONT color=#00007f> </FONT>is sent after the widget's 
+text content has been updated. It does not contain any information about the 
+text change. It serves as a light weight notification that a text change of some 
+sort has occurred. Use it if all you want to know is if the widget text has been 
+modified. For example, to determine whether or not to display a "Save Changes?" 
+prompter when an edited file is closed. To listen to modify events add a 
+<I>ModifyListener</I> to the <I>StyledText</I> widget.</P>
+<P>The <B>modify event</B> that is sent by the <I>StyledText</I> widget is the 
+same event that is sent by the SWT <I>Text</I> and <I>Combo</I> widgets.</P>
+<H4>Extended Modify Event</H4>
+<P>The <B>extended modify event</B>, which is sent after the modify event, 
+contains the start offset and length of the new text as well as the replaced 
+text. It is the mirror image of the <B>verify event</B>.&nbsp; The <B>extended 
+modify event</B> is sent after the widget has changed and when the text model 
+reflects the actual text change. It, therefore, does not have a <B>doit</B> 
+field like the <B>verify key event</B> and <B>verify event</B> do.<B> </B></P>
+<P>Register an <I>ExtendedModifyListener</I> if you need to update data after a 
+text change occurred and when you need to know the actual text change. For 
+example, if you are developing an editor for word processing that supports text 
+styles, when a user types a character you will probably want that character to 
+take on the styles of the characters around it. In order to implement this 
+behavior, you will need to know where the text change occurred, so that you can: 
+
+<OL>
+  <LI>query the styles of the characters around the new character 
+  <LI>change the style of the new character </LI></OL>
+<P>The <B>extended modify event</B> will give you this information. Note that 
+you cannot use the <B>verify event</B> to implement the above scenario since the 
+text content change has not occurred yet when the <B>verify event</B> event is 
+sent, so changing the style of the new character will be impossible. Similarly, 
+you cannot use the <B>modify event</B> to implement the above scenario because 
+it does not contain information about the text change (e.g., where the text 
+change occurred). </P>
+<P>Note that a new event was introduced instead of enhancing the existing<B> 
+modify event </B>in order to maintain compatibility with SWT. Not all SWT 
+widgets that send a <B>modify event</B> can get the data that is necessary to 
+send an <B>extended modify event</B>. </P>
+<H4>Flow of Text Change Notifications&nbsp; </H4>
+<P>The following diagram depicts when the events described above occur within 
+the <I>StyledText</I> widget. The "Process Input?" and "Process Change?" 
+decisions are determined by the value of the boolean <B>VerifyEvent.doit</B> 
+field as described above. The key binding processing shown in gray in the 
+diagram is described in more detail <A 
+href="http://www.eclipse.org/articles/StyledText%201/article1.html#KeyBindings">below</A>. 
+</P>
+<P>As shown in the diagram by the "Key Bound?" decision, if a key action is 
+defined for user input, text change processing will stop and the key action will 
+be processed instead. In the <STRONG>verify key event</STRONG> example above, 
+the backspace and delete keys are editing actions.&nbsp; So you must use a 
+<EM>VerifyKeyListener</EM> vs. a <EM>VerifyListener</EM> to filter out these 
+keystrokes.&nbsp; <EM>VerifyListeners</EM> are only notified about content 
+changes, not editing actions.</P>
+<P>The Text Content/Styles Update process is also shown in gray.&nbsp; This 
+portion of the diagram will be discussed in depth in our second article, <B>Into 
+the Deep End of the StyledText Widget</B>. For this article, knowing that the 
+widget applies the text change and updates its styles during this step is 
+sufficient. </P>
+<P align=center><IMG height=995 src="article1_fichiers/TextChanges.gif" 
+width=519 border=0> </P>
+<H4>Text Notification Examples for User Input </H4>
+<P>The following table shows the event data that is sent when you type a 
+character, when you delete a character and when you replace two characters with 
+another character. &nbsp; There is one column for each event object that is 
+sent. The column header shows the event object class and the Step number shown 
+in the flow chart above. </P>
+<P>When text changes occur, the <I>VerifyEvent</I> will contain the location of 
+the replaced text (as a start and end offset) and the new text, while the 
+<I>ExtendedModifyEvent</I> will contain the location of the new text (as start 
+and length) and the replaced text. The <I>ModifyEvent</I> is not shown since it 
+does not have any data. </P>
+<P>Note that when the <STRONG>verify key event</STRONG> is sent in Step 1, the 
+<B>start</B>, <B>end</B> and <B>text </B>fields of its <I>VerifyEvent</I> are 
+not used and are, therefore, not shown in the table. Likewise the 
+<B>character</B>, <B>keyCode</B> and <B>stateMask</B> fields are not used in the 
+<EM>VerifyEvent</EM> that is created for Step 3. </P>
+<P>The second scenario demonstrates that the <I>VerifyKeyListener</I> receives 
+raw keyboard input in the <I>VerifyEvent</I>. The <B>VerifyEvent.character</B> 
+field is set to \u0008, which is the Unicode value of the backspace key. </P>
+<TABLE cellSpacing=2 cellPadding=7 width=801 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=149>
+      <P align=center><FONT 
+      face="Courier New, Courier, mono"><B>Scenario</B></FONT></P></TD>
+    <TD vAlign=top width=267>
+      <P align=center><FONT face="Courier New, Courier, mono"><B>VerifyEvent 
+      Data (1)<BR>sent to VerifyKeyListener</B></FONT></P></TD>
+    <TD vAlign=top width=247>
+      <P align=center><FONT face="Courier New, Courier, mono"><B>VerifyEvent 
+      Data (3)<BR>sent to VerifyListener</B></FONT></P></TD>
+    <TD vAlign=top width=311>
+      <P align=center><FONT 
+      face="Courier New, Courier, mono"><B>ExtendedModifyEvent Data 
+      (6)</B></FONT></P></TD></TR>
+  <TR>
+    <TD vAlign=top width=149><FONT face="Courier New, Courier, mono">User 
+      types&nbsp;<BR>character 'A'&nbsp;</FONT> </TD>
+    <TD vAlign=top width=267><FONT face="Courier New, Courier, mono">doit = 
+      true<BR>character = 'A'<BR>keyCode = 0<BR>stateMask = 0</FONT> </TD>
+    <TD vAlign=top width=247><FONT face="Courier New, Courier, mono">start = 
+      0<BR>end = 0<BR>text = "A"<BR>doit = true</FONT></TD>
+    <TD vAlign=top width=311><FONT face="Courier New, Courier, mono">start = 
+      0<BR>length = 1<BR>replacedText = ""</FONT> </TD></TR>
+  <TR>
+    <TD vAlign=top width=149><FONT face="Courier New, Courier, mono">User 
+      deletes&nbsp;<BR>character 'A'&nbsp;</FONT> </TD>
+    <TD vAlign=top width=267><FONT face="Courier New, Courier, mono">doit = 
+      true<BR>character = \u0008 (backspace)<BR>keyCode = 0<BR>stateMask = 
+      0</FONT> </TD>
+    <TD vAlign=top width=247><FONT face="Courier New, Courier, mono">start = 
+      0<BR>end = 1<BR>text = ""<BR>doit = true</FONT></TD>
+    <TD vAlign=top width=311><FONT face="Courier New, Courier, mono">start = 
+      0<BR>length = 0<BR>replacedText = "A"</FONT> </TD></TR>
+  <TR>
+    <TD vAlign=top width=149><FONT face="Courier New, Courier, mono">User 
+      replaces&nbsp;<BR>"AA"<BR>with 'B'&nbsp;<BR></FONT></TD>
+    <TD vAlign=top width=267><FONT face="Courier New, Courier, mono">doit = 
+      true<BR>character = 'B'<BR>keyCode = 0<BR>stateMask = 0</FONT> </TD>
+    <TD vAlign=top width=247><FONT face="Courier New, Courier, mono">start = 
+      0<BR>end = 2<BR>text = "B"<BR>doit = true</FONT></TD>
+    <TD vAlign=top width=311><FONT face="Courier New, Courier, mono">start = 
+      0<BR>length = 1<BR>replacedText = "AA"</FONT> </TD></TR></TBODY></TABLE>
+<H4><A name=TextRendering></A>Text Notification Examples for API Text 
+Changes</H4>
+<P>The following table illustrates the data for the change notification events 
+under various API text change scenarios. The Initial Text column shows the text 
+before the change is made. The initial text of one scenario is the changed text 
+of the previous scenario. There is one column for each event object that is 
+sent. The column header for these columns shows the event object class and the 
+Step number shown in the flow chart above. &nbsp; A ^ character shows the insert 
+point for new text, if any. The text replace range, if any, is highlighted using 
+white text on a blue background.</P>
+<P>When text changes occur, the <I>VerifyEvent</I> will contain the location of 
+the replaced text (as a start and end offset) and the new text, while the 
+<I>ExtendedModifyEvent</I> will contain the location of the new text (as start 
+and length) and the replaced text. The <I>ModifyEvent</I> is not shown since it 
+does not have any data.</P>
+<DIV align=center>
+<CENTER>
+<TABLE cellSpacing=2 cellPadding=7 width=856 border=1>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width=192>
+      <P align=center><B><FONT face="Courier New">Scenario</FONT></B></P></TD>
+    <TD vAlign=top width=243>
+      <P align=center><B><FONT face="Courier New">Initial Text</FONT></B></P></TD>
+    <TD vAlign=top width=202>
+      <P align=center><B><FONT face="Courier New">VerifyEvent Data 
+      (3)</FONT></B></P></TD>
+    <TD vAlign=top width=272>
+      <P align=center><B><FONT face="Courier New">ExtendedModifyEvent Data 
+      (6)</FONT></B></P></TD></TR>
+  <TR>
+    <TD vAlign=top width=192><FONT face="Courier New">Insert "sopping 
+      "&nbsp;<BR>before "wet"&nbsp;</FONT> </TD>
+    <TD vAlign=top width=243><PRE><FONT face="Courier New">Getting your feet wet
+		  ^</FONT></PRE></TD>
+    <TD vAlign=top width=202><FONT face="Courier New">start = 18<BR>end = 
+      18<BR>text = "sopping "</FONT></TD>
+    <TD vAlign=top width=272><FONT face="Courier New">start = 18<BR>length = 
+      8<BR>replacedText = ""</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width=192><FONT face="Courier New">Delete "y"</FONT></TD>
+    <TD vAlign=top width=243><FONT face="Courier New">Getting <SPAN 
+      style="BACKGROUND-COLOR: #000080"><FONT color=#ffffff>y</FONT></SPAN>our 
+      feet sopping wet<BR></FONT></TD>
+    <TD vAlign=top width=202><FONT face="Courier New">start = 8<BR>end = 
+      9<BR>text = ""</FONT></TD>
+    <TD vAlign=top width=272><FONT face="Courier New">start = 8<BR>length = 
+      0<BR>replacedText = "y"</FONT></TD></TR>
+  <TR>
+    <TD vAlign=top width=192><FONT face="Courier New">Replace 
+      "our"&nbsp;<BR>with "my"</FONT></TD>
+    <TD vAlign=top width=243><PRE><FONT face="Courier New">Getting <FONT color=#ffffff><SPAN style="BACKGROUND-COLOR: #000080">our</SPAN></FONT> feet sopping wet
+	^</FONT></PRE></TD>
+    <TD vAlign=top width=202><FONT face="Courier New">start = 8<BR>end = 
+      11<BR>text = "my"</FONT></TD>
+    <TD vAlign=top width=272><FONT face="Courier New">start = 8<BR>length = 
+      2<BR>replacedText = "our"</FONT></TD></TR></TBODY></TABLE></CENTER></DIV>
+<P>Note that, as discussed above, you could change the replace range and the new 
+text that are passed in the <I>Veri</I><EM>fyE</EM><I>vent</I>. For example, in 
+the first scenario you could change the end offset of the replace range to 21 in 
+order to replace the word "wet" and change the new text to "damp". The result 
+would be "Getting your feet damp".&nbsp;</P><PRE><FONT color=#7f0000>	// This handler will change feet that are about to get "sopping" wet to "damp" feet.
+</FONT>	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> verifyText(VerifyEvent event) {
+		<FONT color=#00007f>if</FONT> ((event.start == 18) &amp;&amp; (event.end == 18) &amp;&amp; (event.text.equals(<FONT color=#007f7f>"sopping")</FONT>)) {
+			event.end = 21;
+			event.text = <FONT color=#008080>"damp"</FONT>;
+		}
+	}</PRE>
+<P>You could also set the <B>VerifyEvent.doit</B> field to false if you don't 
+want to get sopping feet at all.</P><PRE>	// This handler will prevent attempts to insert the word "sopping".
+	<FONT color=#00007f>public</FONT> <FONT color=#00007f>void</FONT> verifyText(VerifyEvent event) {
+		<FONT color=#00007f>if</FONT> (event.text.equals(<FONT color=#007f7f>"sopping"</FONT>)) {
+			event.doit = <FONT color=#000080>false</FONT>;
+		}
+	}</PRE>
+<H3>Text Refresh</H3>
+<P>Whenever the same text is redrawn at the same location in the 
+<I>StyledText</I> widget, you will see flashing. Flash occurs because the 
+<I>StyledText</I> widget first clears the area to be drawn and then draws the 
+text and its styles. Since nothing has changed, the redraw operation is 
+perceived as a flash.</P>
+<P>In order to avoid flash, you should minimize the amount of redrawing that 
+occurs in the widget. Unnecessary redrawing can occur when you use the 
+<B>setStyleRange</B> API if the style you specify overlaps existing styles with 
+the same colors and font style. The <EM>StyledText</EM> widget does not check 
+for duplicate styles, so the entire style range will be redrawn and unchanged 
+text will be refreshed. For the same reason you should also avoid replacing 
+existing styles with the same styles when using the <B>replaceStyleRanges</B> 
+API.</P>
+<P>For efficiency reasons, the <I>StyledText</I> widget does not perform 
+duplicate style optimizations.&nbsp; Users of the <EM>StyledText</EM> widget 
+will most likely set styles in the <I>ExtendedModifyListener</I>.&nbsp; Since 
+this listener is time-sensitive (i.e., it is called every time a keystroke is 
+entered), the <EM>StyledText</EM> widget avoids superfluous processing when 
+styles are specified. Duplicate style optimizations could also mask application 
+problems.&nbsp; If an application is creating duplicate styles, this could be a 
+symptom of a larger problem with the application’s logic. </P>
+<P>Similar refresh rules apply to the <B>setLineBackground</B> API. If you 
+specify line background colors that already exist, you will see flash when 
+unnecessary redrawing occurs. Besides reducing flash, avoiding unnecessary 
+redrawing will also improve performance since less text will be rendered.</P>
+<H3><A name=KeyBindings></A>Key Bindings</H3>
+<P>You can change and query the default key bindings using the 
+<B>setKeyBinding</B>(<B>int key, int action) </B>and<B> getKeyBinding(int 
+key)</B> methods. The <B>setKeyBinding</B> method takes a key code or character 
+ORed with one or more of the modifiers <B>SWT.CTRL</B>, <B>SWT.SHIFT</B> or 
+<B>SWT.ALT</B> as the first argument. SWT.java defines constants for some of the 
+frequently used key codes (e.g., <B>SWT.BS</B> for the backspace key). The 
+second argument is one of the actions defined in ST.java (e.g.,&nbsp;<DFN><B>ST. 
+DELETE_PREVIOUS</B></DFN>). Thus, to map &lt;CTRL&gt;+&lt;b&gt; to work like the 
+backspace key and delete the character in front of the caret you would use </P><PRE>	widget.setKeyBinding(SWT.CTRL | <FONT color=#008080>‘b’</FONT>, ST.DELETE_PREVIOUS)</PRE>
+<P>You can map more than one&nbsp; key to a single action, but one key can never 
+trigger more than one action. If you use an already bound key combination to 
+trigger a different action, the existing binding will be removed. </P>
+<P>To remove a key binding you specify <B>SWT.NULL</B> as the action. For 
+example, if you want to remove the default key binding for &lt;CTRL&gt;+&lt;PAGE 
+UP&gt;, which by default moves the caret in front of the first character of the 
+current page, you would use </P><PRE>	widget.setKeyBinding(SWT.CTRL | SWT.PAGE_UP, SWT.NULL)</PRE>
+<P>To find out which action is triggered by default when 
+&lt;CTRL&gt;+&lt;HOME&gt; is pressed you would use </P><PRE>	widget.getKeyBinding(SWT.CTRL | SWT.HOME)</PRE>
+<P>which returns ST.TEXT_START (sets the caret in front of the first character 
+of the text). </P>
+<P>In addition to the <B>setKeyBinding</B> API, you can use the <B>invokeAction 
+</B>method with one of the actions defined in <EM>ST.java</EM> to invoke an 
+action independent of keyboard input or to handle multi-key actions. For 
+example, to implement Emacs style multi-key actions you could use a 
+<I>VerifyKeyListener</I> to listen for a key sequence and call 
+<B>invokeAction</B> to perform the desired action. Multi-key actions are actions 
+that require two separate keystrokes, where the first keystroke establishes the 
+context for the second keystroke. The following code snippet demonstrates how to 
+implement a multi-key action. We assume that there is a boolean class variable 
+called<STRONG> previousCtrlX</STRONG> that we use to store whether the most 
+recent keystroke was a &lt;CTRL&gt;+&lt;X&gt;.</P><PRE><FONT color=#840000>	// </FONT><FONT color=#7f0000>This </FONT><FONT color=#800000>VerifyKeyListener </FONT><FONT color=#7f0000>implements multi-keystrokes using &lt;CTRL&gt;+&lt;X&gt; as the
+</FONT><FONT color=#840000>	// first keystroke and &lt;P&gt; as the second</FONT><FONT color=#7f0000> keystroke. These keystroke are ignore
+</FONT><FONT color=#840000>	<FONT color=#7f0000>// by the StyledText widget</FONT> since we set the VerifyEvent.doit field to false.
+	</FONT><FONT color=#7f0000><FONT color=#000000>widget.addVerifyKeyListener(</FONT><FONT color=#000084>new</FONT> VerifyKeyListener() {
+</FONT><FONT color=#000000>		</FONT><FONT color=#7f0000><FONT color=#000084>public</FONT> <FONT color=#000084>void</FONT> </FONT>verifyKey(VerifyEvent event) {
+<FONT color=#800000>			// check whether the current keystroke is a &lt;CTRL&gt;+&lt;X&gt;</FONT>
+			<FONT color=#000084>boolean</FONT><FONT color=#000000> isCtrlX = (event.stateMask == SWT.CTRL) &amp;&amp; (event.character == </FONT><FONT color=#008484>'\u0018'</FONT>)<FONT color=#000000>;
+</FONT>
+<FONT color=#7f0000>   </FONT>     		<FONT color=#840000>// select one page if the previous keystroke was &lt;CTRL&gt;+&lt;X&gt; and 
+			// the current keystroke is 'P'
+			</FONT><FONT color=#7f0000><FONT color=#000084>if</FONT><FONT color=#000000> (</FONT></FONT>previousCtrlX<FONT color=#7f0000><FONT color=#000000> &amp;&amp; Character.toUpperCase(event.character) == </FONT><FONT color=#008484>'P'</FONT>) {
+</FONT><FONT color=#000000>				widget.invokeAction(ST.SELECT_PAGE_DOWN);
+				</FONT><FONT color=#7f0000>// ignore the second key of a multi-keystroke</FONT><FONT color=#000000>
+</FONT><FONT color=#7f0000>				<FONT color=#000000>event.doit = </FONT><FONT color=#000084>false</FONT>;</FONT>
+<FONT color=#7f0000>			</FONT>} <FONT color=#000080>else</FONT><FONT color=#000084> if</FONT><FONT color=#7f0000> (</FONT><FONT color=#000000>isCtrlX) {
+				</FONT><FONT color=#840000><FONT color=#7f0000>// ignore </FONT>&lt;CTRL&gt;+&lt;X&gt; <FONT color=#7f0000>key stroke</FONT>s</FONT><FONT color=#000000>
+	<FONT color=#7f0000>   </FONT></FONT>     		<FONT color=#7f0000><FONT color=#000000>event.doit = </FONT><FONT color=#000084>false</FONT>; </FONT><FONT color=#000000>		</FONT><FONT color=#7f0000><FONT color=#840000>
+</FONT><FONT color=#000000>   </FONT></FONT>     		<FONT color=#000000>}
+			previousCtrlX = isCtrlX;
+</FONT>		}
+	});</PRE>
+<P>When pressing &lt;CTRL&gt;+&lt;X&gt; followed by hitting &lt;P&gt; the 
+example application looks like this</P>
+<P align=center><IMG height=100 src="article1_fichiers/Image6.gif" width=200 
+border=0></P>
+<P align=left>Any other &lt;CTRL&gt;+&lt;X&gt; multi-keystroke will result in 
+the second key being inserted in the widget since we only filter out the 
+&lt;P&gt; key combination.</P>
+<H3><A name=KeyBindings></A>Conclusion</H3>
+<P>In this article we've covered how to do the following within the 
+<EM>StyledText</EM> widget: 
+<UL>
+  <LI>create the widget 
+  <LI>define and set text styles 
+  <LI>handle text changes 
+  <LI>manage <EM>Color</EM> objects 
+  <LI>define key bindings </LI></UL>
+<P>These functions cover basic text editing and rendering behavior.&nbsp; 
+However, if your application has specialized editing or rendering needs, the 
+<EM>StyledText</EM> widget can be customized.&nbsp; In our next article, we will 
+go into depth about why you may want to customize the <EM>StyledText</EM> widget 
+and how you would do this.</P></BODY></HTML>

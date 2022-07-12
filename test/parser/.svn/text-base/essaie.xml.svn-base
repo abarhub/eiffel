@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+
+<toto>
+	<xyz a="salkut" b="&amp;">
+		abc def
+		&amp;alors
+	</xyz>
+</toto>

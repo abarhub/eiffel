@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST12"/>
+	<creation>
+		<nom_classe nom="A"/>
+		<nom_classe nom="B"/>
+		<nom_feature nom="make"/>
+		<nom_feature nom="make2"/>
+	</creation>
+	<creation>
+		<nom_classe nom="A"/>
+		<nom_feature nom="make3"/>
+	</creation>
+	<creation export_none="true">
+		<nom_feature nom="make4"/>
+	</creation>
+	<creation>
+		<nom_feature nom="make5"/>
+	</creation>
+</class>

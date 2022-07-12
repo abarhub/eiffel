@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap10.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 10 Feature adaptation</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 10 Feature adaptation_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap9.htm"><IMG 
+src="Eiffel The Reference - 10 Feature adaptation_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap11.htm"><IMG 
+src="Eiffel The Reference - 10 Feature adaptation_fichiers/next.gif"></A> 
+<P>
+<H1>10 Feature adaptation </H1>
+<H2>10.6 THE REDEFINITION CLAUSE </H2>
+<H3>Definition: precursor </H3>
+<P>If a class inherits a feature from a parent, either keeping the feature 
+unchanged or redefining it, the parent's version of the feature is called the 
+precursor of the feature. 
+<P>
+<H2>10.15 REDECLARATION AND ASSERTIONS </H2>
+<P>Consider a routine redeclaration and let <I>pre</I><I>1</I>, ... 
+<I>pre</I><I>n</I> be the precursors' preconditions and <I>post</I><I>1</I>, 
+..., <I>post</I><I>n</I> be the precursors' postconditions. Assume that new 
+assertion clauses are present, of the form: 
+<P>
+<P><B>require else</B> alternative_precondition
+<P>
+<P><B>ensure then</B><I> extra_postcondition</I> 
+<P>
+<P>Then the redeclared routine will be considered to have the precondition and 
+postcondition 
+<P>
+<P><I>alternative_precondition </I><B>or else</B><I> pre</I><I>1</I><I> 
+</I><B>or else</B><I> </I>...<I> </I><B>or else</B><I> pre</I><I>n</I>
+<P>
+<P><I>extra_postcondition </I><B>and then</B><I> post</I><I>1</I><I> </I><B>and 
+then</B><I> </I>...<I> </I><B>and then</B><I> post</I><I>n</I> 
+<P>
+<P>If, in a routine redeclaration, the Precondition part is absent, the 
+redeclared routine is considered to have <B>false</B> as its 
+<I>alternative_precondition</I>; if the Postcondition part is absent, the 
+redeclared routine is considered to have <B>true</B> as its 
+<I>extra_postcondition</I>. Because of the rules of boolean algebra, the absence 
+of one of these assertions means that the corresponding precursor assertion is 
+kept as it was. (Or-ing a boolean value with <B>false</B>, or and-ing it with 
+<B>true</B>, does not change the condition.) 
+<P>
+<P>For a declaration of an immediate feature of a class, the <B>require else</B> 
+form of Precondition clause has the same meaning as if it were introduced by 
+just <B>require</B>, and the <B>ensure then</B> form of Postcondition clause has 
+the same meaning as if it were introduced by just <B>ensure</B>. 
+<P>
+<H2>10.16 UNDEFINING A FEATURE </H2>
+<H3>Definition: inherited as effective, as deferred</H3>
+<P>In the rest of this discussion, an inherited feature is said to be inherited 
+as effective if it has at least one effective precursor and the corresponding 
+Parent part does not undefine it. Otherwise the feature is inherited as 
+deferred. 
+<P>
+<H2>10.17 THE JOIN MECHANISM </H2>
+<P>If <I>C</I> inherits and joins two or more deferred features, the net result 
+for <I>C</I> is as if it had inherited a single deferred feature. In the absence 
+of further action from <I>C</I>, that feature remains deferred. Of course, 
+<I>C</I> may also provide an effective declaration for the feature, killing 
+several abstract birds with one concrete stone by using a single redeclaration 
+to effect several features inherited as deferred. 
+<P>
+<H2>10.19 REDEFINITION AND UNDEFINITION RULES</H2>
+<P><B>Redefine Subclause rule</B> <B></B>
+<P>
+<P>Consider a class <I>C</I> with a parent <I>B</I>. If a Parent part for 
+<I>B</I> in <I>C</I> contains a Redefine subclause, that clause is valid if and 
+only if every Feature_identifier <I>fname</I> that it lists (in its 
+Feature_list) satisfies the following conditions:
+<P>
+<OL>
+  <LI><I>fname</I> is the final name in <I>C</I> of a feature inherited from 
+  <I>B</I>. 
+  <LI>That feature was not frozen, and was not a constant attribute. 
+  <LI><I>fname</I> appears only once in the Feature_list. 
+  <LI>The Features part of <I>C</I> contains oneFeature_declaration for 
+  <I>fname</I>, which is a valid redeclaration, but not an effecting, of the 
+  original feature. </LI></OL>
+<P>The effect of redefining a feature in a class is that any use of the feature 
+in the class, its clients or (barring further redefinitions) its proper 
+descendants will refer to the redefined version rather than the original.
+<P>
+<P><B>Undefine Subclause rule</B> 
+<P>
+<P>Consider a class <I>C</I> that inherits from a class <I>B</I>. If a Parent 
+part for <I>B</I> in <I>C</I> contains an Undefine subclause, that clause is 
+valid if and only if, for every Feature_identifier <I>fname</I> that it lists 
+(in its Feature_list): 
+<OL>
+  <LI><I>fname</I> is the final name in <I>C</I> of a feature inherited from 
+  <I>B</I>. 
+  <LI>That feature was not frozen, and was not an attribute. 
+  <LI>That feature was effective in <I>B</I>. 
+  <LI><I>fname</I> appears only once in the Feature_list. </LI></OL>
+<H2>10.20 DEFERRED AND EFFECTIVE FEATURES AND CLASSES </H2>
+<H3>Definition: effective feature, deferred feature, effecting</H3>
+<P>A feature <I>f</I> of a class <I>C</I> is said to be an <B>effective 
+feature</B> of <I>C</I> if and only if any of the following conditions holds. 
+<OL>
+  <LI><I>f</I> is introduced in <I>C</I> as an attribute or a routine whose 
+  Routine_body is of the Effective form (that is to say, not the keyword 
+  <B>deferred</B> but beginning with <B>do</B>, <B>once</B> or <B>external</B>). 
+
+  <LI><I>f</I> is an inherited feature, coming from a parent <I>B</I> of 
+  <I>C</I> where it is (recursively) effective, and <I>C</I> does not undefine 
+  it. 
+  <LI>Another feature of <I>C</I> with the same final name is (recursively) 
+  effective. That feature is then said to <B>effect</B> <I>f</I> in <I>C</I>. 
+  </LI></OL>
+<P>A feature of <I>C</I> is a <B>deferred feature</B> of <I>C</I> if and only if 
+it is not an effective feature of <I>C</I>. 
+<P>
+<P>Condition 3 defines the effecting case: an effective feature, which has the 
+same final name as one or more deferred features, serves as effecting for all of 
+them.
+<P>
+<H3>Definition: deferred, effective class </H3>
+<P>A class is <B>deferred</B> if it has at least one deferred feature. It is 
+<B>effective</B> otherwise. 
+<P>
+<H2>10.21 ORIGIN AND SEED </H2>
+<H3>Definition: origin, seed </H3>
+<P>Every feature of a class <I>C</I> has a seed, which is a feature, and an 
+origin, which is a class, defined as follows. 
+<OL>
+  <LI>Any immediate feature of <I>C</I> (in other words, any feature introduced 
+  in <I>C</I> rather than inherited) is its own seed, and has <I>C</I> as its 
+  origin. 
+  <LI>An inherited feature of <I>C</I> with two or more precursors, all of which 
+  have (recursively) the same seed <I>s</I>, also has <I>s</I> as its seed. 
+  (This is the case of sharing under repeated inheritance.) 
+  <LI>If <I>C</I> joins a set of inherited deferred features, yielding (as 
+  explained above) a single feature of <I>C</I> to which case 2 does not apply, 
+  that feature is its own seed and its origin is <I>C</I>. 
+  <LI>Any feature of <I>C</I> to which none of the previous cases applies is 
+  inherited, and has exactly one precursor; then its seed and origin are 
+  (recursively) the seed and origin of that precursor. </LI></OL>
+<H2>10.22 REDECLARATION RULES </H2>
+<H3>Definition: redeclaration, redefinition </H3>
+<P>A class <I>C</I> <B>redeclares</B> an inherited feature <I>f</I> if and only 
+if one of the following two conditions holds: 
+<P>
+<UL>
+  <LI><I>C</I> contains a Feature_declaration for a feature <I>g</I> with the 
+  same final name as <I>f</I>. 
+  <LI><I>C</I> inherits <I>f</I> as deferred, and inherits as effective another 
+  feature <I>g</I> with the same final name as <I>f</I>. </LI></UL>
+<P>A <B>redefinition</B> is a redeclaration which is not an effecting. 
+<P>
+<P><B>Redeclaration rule</B> 
+<P>
+<P>Let <I>C</I> be a class and <I>g</I> a feature of <I>C</I>. It is valid for 
+<I>g</I> to be a redeclaration of a feature <I>f</I> inherited from a parent 
+<I>B</I> of <I>C</I> if and only if the following conditions are satisfied. 
+<OL>
+  <LI>No effective feature of <I>C</I> other than <I>f</I> and <I>g</I> has the 
+  same final name. 
+  <LI>The signature of <I>g</I> conforms to the signature of <I>f</I>. 
+  <LI>If <I>g</I> is a routine, its Precondition, if any, begins with <B>require 
+  else</B> (not just <B>require</B>), and its Postcondition, if any, begins with 
+  <B>ensure then</B> (not just <B>ensure</B>). 
+  <LI>If the redeclaration is a redefinition (rather than an effecting) the 
+  Redefine subclause of the Parent part for <I>B</I> lists the final name of 
+  <I>f</I> in its Feature_list. 
+  <LI>If <I>f</I> is inherited as effective, then <I>g</I> is also effective. 
+  <LI>If <I>f</I> is an attribute, <I>g</I> is an attribute, <I>f</I> and 
+  <I>g</I> are both variable, and their types are either both expanded or both 
+  non-expanded. 
+  <LI>If either one of <I>f</I> and <I>g</I> is an External routine, so is the 
+  other. </LI></OL>
+<H3>Definition: declared type </H3>
+<P>Any feature or entity of a class <I>C</I> has a <B>declared type</B>, 
+<I>dt</I> as follows: 
+<P>
+<UL>
+  <LI>For a feature which is immediate in <I>C</I> or redeclared in <I>C</I>, 
+  <I>dt</I> is the type given by the declaration or redeclaration. 
+  <LI>For an inherited feature which is not redeclared in <I>C</I>, <I>dt</I> is 
+  (recursively) the declared type of its precursors in the corresponding 
+  parents. 
+  <LI>For the predefined entity <I>Current</I>, <I>dt</I> is <I>C</I> with its 
+  formal generic parameters if any. 
+  <LI>For the predefined entity <I>Result</I>, appearing in a function, 
+  <I>dt</I> is the return type declared for the function. 
+  <LI>For any other entity <I>e</I>, <I>dt</I> is the type used in the 
+  declaration of <I>e</I>. </LI></UL>
+<H3>Definition: type</H3>
+<P>In this book, the ''type'' of a feature or entity, without further 
+qualification, always means its declared type (rather than its base type). 
+<P>
+<H2>10.23 RULES ON JOINING FEATURES </H2>
+<H3>Definition: precursor (joined features)</H3>
+<P>A precursor of an inherited feature is a version of the feature in the parent 
+from which it is inherited. Without the join mechanism there was just one 
+precursor; but a feature which results from the join of two or more deferred 
+features will have all of them as precursors. 
+<P>
+<P><B>Join rule</B> 
+<P>
+<P>It is valid for a class <I>C</I> to inherit two different features as 
+deferred under the same final name if and only if, after possible redeclaration 
+in <I>C</I>, they have identical signatures. 
+<P>
+<P><B>Join Semantics rule</B> 
+<P>
+<P>Joining deferred features with the same final name yields a non-obsolete 
+deferred feature defined as follows: 
+<OL>
+  <LI>Its name is the final name of all its precursors. 
+  <LI>Its signature is the precursors' signature, which the Join rule indicates 
+  must be the same for all precursors after possible redeclaration. 
+  <LI>Its precondition is the <B>or</B> of all the precursors' preconditions. 
+  <LI>Its postcondition is the <B>and</B> of all the precursors' postconditions. 
+
+  <LI>Its Header_comment is the concatenation of those of all precursors. 
+  <LI>It is not obsolete (even if some of the precursors are obsolete). </LI></OL>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 10 Feature adaptation_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap9.htm"><IMG 
+src="Eiffel The Reference - 10 Feature adaptation_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap11.htm"><IMG 
+src="Eiffel The Reference - 10 Feature adaptation_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

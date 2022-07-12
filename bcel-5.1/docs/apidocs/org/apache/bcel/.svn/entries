@@ -1,0 +1,127 @@
+10
+
+dir
+58
+https://twist/svn/eiffel/eiffel/trunk/bcel-5.1/docs/apidocs/org/apache/bcel
+https://twist/svn/eiffel
+
+
+
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67c01f0b-0d27-6e44-be05-7f44c70b15d8
+
+Constants.html
+file
+
+
+
+
+2006-09-17T13:46:18.828125Z
+84172568dbdaa79de87d7bf904595994
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+ExceptionConstants.html
+file
+
+
+
+
+2006-09-17T13:46:18.906250Z
+9c1035dfb117b9ff83c0424a1fcfa9e0
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+Repository.html
+file
+
+
+
+
+2006-09-17T13:46:18.859375Z
+5bd21fdeb38691a92093ec1dceeddf15
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+class-use
+dir
+
+classfile
+dir
+
+generic
+dir
+
+package-frame.html
+file
+
+
+
+
+2006-09-17T13:46:18.875000Z
+f0ae761fd8f08b1c0beef86a239fd2e9
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+package-summary.html
+file
+
+
+
+
+2006-09-17T13:46:18.890625Z
+7bb26ad5bddc21cef4670438dfd1c85c
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+package-tree.html
+file
+
+
+
+
+2006-09-17T13:46:18.906250Z
+807c5090b4e34092922cd0a61c601a2e
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+package-use.html
+file
+
+
+
+
+2006-09-17T13:46:18.890625Z
+1240b220f80e9007014579410d315610
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+util
+dir
+
+verifier
+dir
+

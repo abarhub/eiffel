@@ -1,0 +1,75 @@
+10
+
+dir
+58
+https://twist/svn/eiffel/eiffel/trunk/.dependency-info
+https://twist/svn/eiffel
+
+
+
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67c01f0b-0d27-6e44-be05-7f44c70b15d8
+
+-outtosrc-.i
+file
+
+
+
+
+2006-09-17T13:46:59.687500Z
+7a9895f9381244adb25a483884a5ee78
+2006-09-17T13:29:14.703125Z
+1
+Barret
+has-props
+
+-timestamp-.i
+file
+
+
+
+
+2006-09-17T13:46:59.687500Z
+c295f40c0740050919212e2d12772caa
+2006-09-17T13:29:14.703125Z
+1
+Barret
+has-props
+
+ast
+dir
+
+compiler
+dir
+
+erreur
+dir
+
+intermediaire
+dir
+
+lace
+dir
+
+outils.compare_xml
+dir
+
+test_unitaire
+dir
+

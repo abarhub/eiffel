@@ -1,0 +1,45 @@
+true
+false
+Test and
+true
+false
+false
+false
+Test or
+true
+true
+true
+false
+Test xor
+false
+true
+true
+false
+Test implies
+true
+false
+true
+true
+Test and_then
+true
+false
+false
+false
+Test or_else
+true
+true
+true
+false
+Test egal
+true
+false
+false
+true
+Test diff
+false
+true
+true
+false
+Test not
+false
+true

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- test appel avec parametres incorrectes  -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+		<attribut>
+			<nom_attribut nom="make"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="a1">
+					<type nom="ANY"/>
+				</declare_var>
+				<declare_var nom="a">
+					<type nom="TEST2"/>
+				</declare_var>
+				<instruction>
+					<instr_appel>
+						<expression_scalaire type="var">
+							<var nom="a"/>
+						</expression_scalaire>
+						<nom_attribut nom="test"/>
+						<expression_scalaire type="var">
+							<var nom="a1"/>
+						</expression_scalaire>
+						<expression_scalaire type="var">
+							<var nom="a1"/>
+						</expression_scalaire>
+					</instr_appel>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="TEST2"/>
+		<attribut>
+			<nom_attribut nom="test"/>
+			<type nom="NONE"/>
+			<routine>
+				<signature>
+					<declare_var nom="a">
+						<type nom="NONE"/>
+					</declare_var>
+					<declare_var nom="b">
+						<type nom="NONE"/>
+					</declare_var>
+				</signature>
+				<instruction/>
+			</routine>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+</programme>
+

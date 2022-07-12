@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- attribut herité inexistant dans l'ancetre  -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+		<hierarchie>
+			<type nom="TEST0"/>
+		</hierarchie>
+		<attribut>
+			<nom_attribut nom="test2"/>
+			<type nom="TEST1"/>
+			<ascendant no="0"/>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="TEST0"/>
+		<hierarchie>
+			<type nom="TEST0"/>
+		</hierarchie>
+		<attribut>
+			<nom_attribut nom="test"/>
+			<type nom="TEST0"/>
+			<type nom="ANY"/>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+		<hierarchie/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+</programme>

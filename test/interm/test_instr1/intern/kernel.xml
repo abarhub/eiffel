@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\..\test_unitaire\programme.dtd">
+<programme>
+	<system/>
+	<classe>
+		<type nom="INTEGER"/>
+		<attribut est_defaut="oui">
+			<nom_attribut nom="$val_int"/>
+			<type nom="integer"/>
+			<type nom="$integer"/>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="BOOLEAN"/>
+		<attribut est_defaut="oui">
+			<nom_attribut nom="$val_bool"/>
+			<type nom="boolean"/>
+			<type nom="$boolean"/>
+		</attribut>
+	</classe>
+</programme>

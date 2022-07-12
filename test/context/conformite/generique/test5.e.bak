@@ -1,0 +1,15 @@
+class TEST5
+
+creation make
+
+feature
+
+	make is
+	local
+	tab1:ARRAY[ANY];
+	tab2:ARRAY[INTEGER];
+	do
+	tab1:=<<1,2,3>>;
+	end;
+
+end

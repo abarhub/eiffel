@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap14.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 14 Control structures</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 14 Control structures_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap13.htm"><IMG 
+src="Eiffel The Reference - 14 Control structures_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap15.htm"><IMG 
+src="Eiffel The Reference - 14 Control structures_fichiers/next.gif"></A> 
+<P>
+<H1>14 Control structures </H1>
+<H2>14.2 COMPOUND</H2>
+<P>The effect of executing a Compound may be defined as follows. 
+<P>
+<UL>
+  <LI>If the Compound has zero instructions, the effect is to leave the state of 
+  the computation unchanged. 
+  <LI>If the Compound has one or more instructions, its effect is that of 
+  executing the first instruction of the Compound and then (recursively) to 
+  execute the Compound obtained by removing the first instruction. </LI></UL>
+<H2>14.3 NULL INSTRUCTION </H2>
+<P>Specimens of the null instruction are empty.
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>The effect of the null instruction is to leave the state of the computation 
+unchanged. 
+<P>
+<H2>14.4 CONDITIONAL </H2>
+<P>To define precisely the semantics of this construct, a few auxiliary notions 
+are useful. As the syntactical specification shows, a Conditional begins with 
+<P>
+<P><B>if</B> condition1 <B>then</B> compound1 
+<P>
+<P>where <I>condition</I><I>1</I> is a boolean expression and 
+<I>compound</I><I>1</I> is a Compound. 
+<P>
+<H3>Definition: secondary part </H3>
+<P>The remaining part may optionally begin with <B>elseif</B>. If so, replacing 
+the first <B>elseif</B> by <B>if</B> would transform the remaining part into a 
+new, syntactically correct, Conditional; such an instruction is called the 
+secondary part of the enclosing Conditional. 
+<P>
+<P>The final part, also optional, is of the form <B>else</B><I> 
+compound</I><I>n</I><I>. </I>
+<P>
+<H3>Definition: prevail immediately </H3>
+<P>If the value of <I>condition</I><I>1</I> is true when the instruction is 
+executed, then the Conditional is said to prevail immediately. 
+<P>
+<P>Finally, we may consider that every Conditional has an Else_part if we 
+understand an empty Else_part to stand for one with an empty Compound. 
+<P>
+<P>With these conventions, the effect of a Conditional may be defined as 
+follows. If the Conditional prevails immediately, then its effect is that of its 
+compound1 part, as defined above. Otherwise: 
+<P>
+<UL>
+  <LI>If it has a secondary part, the effect of the entire Conditional is 
+  (recursively) the effect of the secondary part. 
+  <LI>If it has no secondary part, its effect is that of the (possibly empty) 
+  Compound in its Else part. </LI></UL>
+<H2>14.5 MULTI-BRANCH CHOICE </H2>
+<H3>Definition: inspect expression</H3>
+<P>A Multi_branch instruction contains a Expression, called the inspect 
+expression, appearing after the keyword <I>inspect</I>. The inspect expression, 
+<I>last_input</I> in the example, may only be of type <I>INTEGER</I> or, as 
+here, <I>CHARACTER</I>. It includes one or more When_part, each of which 
+indicates a list of one or more Choice, separated by commas, and a Compound to 
+be executed when the value of the Expression is one of the given Choice values.
+<P>
+<H3>Definition: inspect constant</H3>
+<P>Every Choice specifies one or more values, called inspect constants. More 
+precisely, a Choice is either a single constant (Manifest_constant or constant 
+attribute) or an interval of consecutive constants yielding all the interval's 
+elements as inspect constants. If present, the instruction's optional Else_part 
+is executed when the inspect expression is not equal to any of the inspect 
+constants. 
+<P>
+<H3>Definition: unfolded form </H3>
+<P>To discuss the constraints and the semantics, it is convenient to consider 
+the unfolded form of a Multi_branch. To obtain it, just replace any integer or 
+character Interval, in the Choices of a When_part, by a Choices list made up of 
+all constants between the interval's bounds, or empty if the second bound is 
+smaller than the first. Integer order is used for an integer interval, and 
+character code order for a character interval. 
+<P>There is no ambiguity in determining whether the interval is integer or 
+character, since the validity constraint given below will imply that the two 
+bounds specified for an Interval will always be of the same type: both INTEGER 
+or both CHARACTER. 
+<P>
+<P>
+<H3>Validity: (VOMB)Multi_branch rule </H3>
+<BLOCKQUOTE>A Multi_branch instruction is valid if and only if its unfolded 
+  form satisfies the following conditions. 
+  <OL>
+    <LI>The inspect expression is of type <I>INTEGER</I> or <I>CHARACTER</I>. 
+    <LI>In every Choices part, all the Constant values (for every Choice of the 
+    Constant form) and all the Interval bounds (for every Choice of the Interval 
+    form) are constants of the same type as the inspect expression. 
+    <LI>Any two non-Unique inspect constants have different values. 
+    <LI>Any two Unique inspect constants have different names. 
+    <LI>If any inspect constant is Unique, then every other inspect constant in 
+    the instruction is either Unique or has a negative or zero value. 
+    <LI>All Unique inspect constants, if any, have the same class of origin (the 
+    enclosing class or a proper ancestor). </LI></OL></BLOCKQUOTE>
+<P>The effect of executing a Multi_branch instruction is defined as the effect 
+of executing its unfolded form, as follows. The value of the inspect expression 
+is computed. Because of the above validity constraint, that value may be equal 
+to at most one of the inspect constants. If there is indeed one such constant, 
+the effect of the Multi_branch is that of the Compound appearing after the 
+<B>then</B> in the When_part of the matching inspect constant. If there is no 
+such constant: 
+<OL>
+  <LI>If the Else_part is present, the effect of the Compound is that of the 
+  Compound appearing in the Else_part. 
+  <LI>Otherwise an exception is triggered and the current routine execution 
+  fails. </LI></OL>
+<H2>14.7 LOOP</H2>
+<P>The effect of a Loop is the effect of executing its Initialization followed 
+by the effect of executing its Loop_body. The effect of executing an 
+Initialization clause is the effect of executing its Compound. The effect of 
+executing a Loop_body is to leave the state of the computation unchanged if the 
+Boolean_expression of its Exit clause evaluates to false; otherwise, it is the 
+effect of executing the Compound clause, followed (recursively) by the effect of 
+executing the Loop_body again in the resulting state. 
+<P>
+<H2>14.8 THE DEBUG INSTRUCTION</H2>
+<P>
+<P>
+<P>The effect of a Debug instruction depends on the mode that has been chosen 
+for the enclosing class: 
+<P>
+<UL>
+  <LI>If the <I>debug</I> option is on generally, or if the instruction includes 
+  a Debug_key_list and the option is on for at least one Debug_key in the list, 
+  the effect of the Debug instruction is the same as that of its Compound. 
+  <LI>Otherwise the effect is that of a Null instruction. </LI></UL>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 14 Control structures_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap13.htm"><IMG 
+src="Eiffel The Reference - 14 Control structures_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap15.htm"><IMG 
+src="Eiffel The Reference - 14 Control structures_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

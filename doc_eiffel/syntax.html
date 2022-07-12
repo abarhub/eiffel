@@ -1,0 +1,2721 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage 2.0">
+<title>Eiffel: The Syntax</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+<div align="left">
+
+<table border="0">
+    <tr>
+        <td width="100%"><font size="6"><strong>Eiffel: The
+        Syntax</strong></font></td>
+    </tr>
+</table>
+</div>
+
+<hr size="1">
+
+<center>
+This document is avialable from:<br>
+<a href="http://www.gobosoft.com/eiffel/syntax/">
+http://www.gobosoft.com/eiffel/syntax/</a><p>
+
+<a href="http://www.deja.com/=dnc/[ST_rn=ps]/getdoc.xp?AN=489608637">More Eiffel Documentation</a>
+</center><p>
+
+<p>The annotated Eiffel syntax described here is aimed at writers
+of Eiffel tools such as compilers, interpreters, syntax checkers,
+short and flat tools, pretty-printers, etc., who want to benefit
+from some tips and tricks. Although this is not the official
+Eiffel syntax specification provided by the Nonprofit
+International Consortium for Eiffel (<font size="2">NICE</font>),
+it departs from it in only two or three well documented
+occassions. In particular, it explains where, and sometimes why,
+existing compilers have extended the Eiffel syntax.</p>
+
+<p>The Eiffel syntax constructs are listed into groups, starting
+with high-level constructs such as <a href="#Class_declaration"><tt>Class_declaration</tt></a>
+down to lexical components such as <a href="#Identifier"><tt>Identifier</tt></a>.
+Alternatively, these constructs are also given in <a
+href="alphabetical.html">alphabetical order</a>. The <a
+href="notation.html">notation</a> used to describe the Eiffel
+syntax is specified elsewhere. A possible implementation of the
+Eiffel syntax in <a href="eiffel_y.html">yacc</a>- and <a
+href="eiffel_l.html">lex</a>-like format is also provided as an
+example.</p>
+
+<p>This page is also available in <a
+href="http://www.geocities.co.jp/SiliconValley/8632/syntax.html">Japanese</a>
+(translated by <a href="mailto:iizuka@zzz.or.jp">Iizuka Tomio</a>).</p>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Class_declaration"><tt>Class_declaration</tt></a><tt>
+        </tt></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Indexing"><tt>Indexing</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><a href="#Class_header"><tt>Class_header</tt></a><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Formal_generics"><tt>Formal_generics</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Obsolete"><tt>Obsolete</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Inheritance"><tt>Inheritance</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Creators"><tt>Creators</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Features"><tt>Features</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Invariant"><tt>Invariant</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><strong><tt>end</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><strong><tt>--
+        class</tt></strong><tt> </tt><a href="#Class_name"><tt>Class_name</tt></a><tt>
+        </tt><font color="#FF0000"><tt>]</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Most Eiffel compilers do not check the validity of the
+        optional comment after the keyword </font><font
+        color="#008000"><strong><tt>end</tt></strong></font><font
+        color="#008000" size="3">. SmallEiffel emits a warning
+        though.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        A file may contain more than one class declaration.
+        However most Eiffel compilers have a limitation of one
+        class per file.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Indexing"><tt>Indexing</tt></a></dt>
+    <dd><strong><tt>indexing</tt></strong><tt> </tt><a
+        href="#Index_list"><tt>Index_list</tt></a></dd>
+    <dt><a name="Index_list"><tt>Index_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Index_clause"><tt>Index_clause</tt></a><tt> </tt><strong><tt>;</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+    <dt><a name="Index_clause"><tt>Index_clause</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Index"><tt>Index</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Index_terms"><tt>Index_terms</tt></a></dd>
+    <dt><a name="Index"><tt>Index</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a><tt> </tt><strong><tt>:</tt></strong></dd>
+    <dt><a name="Index_terms"><tt>Index_terms</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Index_value"><tt>Index_value</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }+</tt></font></dd>
+    <dt><a name="Index_value"><tt>Index_value</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Manifest_constant"><tt>Manifest_constant</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Class_header"><tt>Class_header</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Header_mark"><tt>Header_mark</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><strong><tt>class</tt></strong><tt>
+        </tt><a href="#Class_name"><tt>Class_name</tt></a></dd>
+    <dt><a name="Header_mark"><tt>Header_mark</tt></a></dt>
+    <dd><strong><tt>deferred</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>expanded</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>separate</tt></strong></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        The keyword <strong><tt>separate</tt></strong> is not
+        part of the Eiffel standard. It has been introduced in
+        ISE Eiffel to support the </font><a
+        href="http://www.eiffel.com/doc/manuals/technology/concurrency/CONCURRENCY.html"><font
+        color="#008000" size="2">SCOOP</font></a><font
+        color="#008000"> mechanism. Read </font><a
+        href="http://www.prenhall.com/books/ptr_0136291554.html"><font
+        color="#008000">Object-Oriented Software Construction</font></a><font
+        color="#008000">, second edition, for details.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Class_name"><tt>Class_name</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Formal_generics"><tt>Formal_generics</tt></a></dt>
+    <dd><strong><tt>[</tt></strong><tt> </tt><a
+        href="#Formal_generic_list"><tt>Formal_generic_list</tt></a><tt>
+        </tt><strong><tt>]</tt></strong></dd>
+    <dt><a name="Formal_generic_list"><tt>Formal_generic_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Formal_generic"><tt>Formal_generic</tt></a><tt> </tt><strong><tt>,</tt></strong><font
+        color="#FF0000"><tt> ... }</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The list of formal generics may be empty. As a
+        consequence,</font><font color="#008000" size="2"
+        face="Courier New"><em> </em></font><font color="#008000"><em><tt>FOO</tt></em><tt>[]</tt></font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000" size="3">is valid and means the same as </font><font
+        color="#008000"><em><tt>FOO</tt></em></font><font
+        color="#008000" size="3">. However, this is not the
+        recommended style.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Formal_generic"><tt>Formal_generic</tt></a></dt>
+    <dd><a href="#Formal_generic_name"><tt>Formal_generic_name</tt></a><tt>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Constraint"><tt>Constraint</tt></a><strong><tt> </tt></strong><font
+        color="#FF0000"><tt>]</tt></font></dd>
+    <dt><a name="Formal_generic_name"><tt>Formal_generic_name</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a></dd>
+    <dt><a name="Constraint"><tt>Constraint</tt></a></dt>
+    <dd><strong><tt>-&gt;</tt></strong><tt> </tt><a
+        href="#Class_type"><tt>Class_type</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Obsolete"><tt>Obsolete</tt></a></dt>
+    <dd><strong><tt>obsolete</tt></strong><tt> </tt><a
+        href="#Message"><tt>Message</tt></a></dd>
+    <dt><a name="Message"><tt>Message</tt></a></dt>
+    <dd><a href="#Manifest_string"><tt>Manifest_string</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Inheritance"><tt>Inheritance</tt></a></dt>
+    <dd><strong><tt>inherit</tt></strong><tt> </tt><a
+        href="#Parent_list"><tt>Parent_list</tt></a></dd>
+    <dt><a name="Parent_list"><tt>Parent_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Parent"><tt>Parent</tt></a><tt> </tt><strong><tt>;</tt></strong><font
+        color="#FF0000"><tt> ... }</tt></font></dd>
+    <dt><a name="Parent"><tt>Parent</tt></a></dt>
+    <dd><a href="#Class_type"><tt>Class_type</tt></a><tt> </tt><font
+        color="#FF0000"><tt>[ </tt></font><a
+        href="#Feature_adaptation"><tt>Feature_adaptation</tt></a><tt>
+        </tt><font color="#FF0000"><tt>]</tt></font></dd>
+    <dt><a name="Feature_adaptation"><tt>Feature_adaptation</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[ </tt></font><a href="#Rename"><tt>Rename</tt></a><tt>
+        </tt><font color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#New_exports"><tt>New_exports</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Undefine"><tt>Undefine</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Redefine"><tt>Redefine</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[ </tt></font><a
+        href="#Select"><tt>Select</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><strong><tt>end</tt></strong></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Because of this construct, the Eiffel grammar is not </font><font
+        color="#008000" size="2">LR(1)</font><font
+        color="#008000" size="3">. This occurs in the following
+        situation:</font></p>
+        <blockquote>
+            <pre><font color="#008000"><em><strong>class</strong></em><em> FOO
+</em><em><strong>inherit</strong></em><em>
+    BAR
+</em><em><strong>end</strong></em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">The keyword </font><font
+        color="#008000"><strong><tt>end</tt></strong></font><font
+        color="#008000" size="3"> will be considered as part of
+        the optional </font><font color="#008000"><tt>Feature_adaptation</tt></font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000" size="3">instead of as part of the </font><a
+        href="#Class_declaration"><font color="#008000"><tt>Class_declaration</tt></font></a><font
+        color="#008000" size="3"> construct.</font></p>
+        <p><font color="#008000" size="3">A way to solve this
+        problem would be to allow the keyword </font><font
+        color="#008000"><strong><tt>end</tt></strong></font><font
+        color="#008000" size="3"> in the </font><font
+        color="#008000"><tt>Feature_adaptation</tt></font><font
+        color="#008000" size="3"> only when at least one of the
+        optional constructs making up the </font><font
+        color="#008000"><tt>Feature_adaptation</tt></font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000" size="3">is present.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Rename"><tt>Rename</tt></a></dt>
+    <dd><strong><tt>rename</tt></strong><tt> </tt><a
+        href="#Rename_list"><tt>Rename_list</tt></a></dd>
+    <dt><a name="Rename_list"><tt>Rename_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Rename_pair"><tt>Rename_pair</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+    <dt><a name="Rename_pair"><tt>Rename_pair</tt></a></dt>
+    <dd><a href="#Feature_name"><tt>Feature_name</tt></a><tt> </tt><strong><tt>as</tt></strong><tt>
+        </tt><a href="#Feature_name"><tt>Feature_name</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="New_exports"><tt>New_exports</tt></a></dt>
+    <dd><strong><tt>export</tt></strong><tt> </tt><a
+        href="#New_export_list"><tt>New_export_list</tt></a></dd>
+    <dt><a name="New_export_list"><tt>New_export_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#New_export_item"><tt>New_export_item</tt></a><tt> </tt><strong><tt>;</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+    <dt><a name="New_export_item"><tt>New_export_item</tt></a></dt>
+    <dd><a href="#Clients"><tt>Clients</tt></a><tt> </tt><a
+        href="#Feature_set"><tt>Feature_set</tt></a></dd>
+    <dt><a name="Feature_set"><tt>Feature_set</tt></a></dt>
+    <dd><a href="#Feature_list"><tt>Feature_list</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>all</tt></strong></dd>
+    <dt><a name="Feature_list"><tt>Feature_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Feature_name"><tt>Feature_name</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Clients"><tt>Clients</tt></a></dt>
+    <dd><strong><tt>{</tt></strong><tt> </tt><a
+        href="#Class_list"><tt>Class_list</tt></a><tt> </tt><strong><tt>}</tt></strong></dd>
+    <dt><a name="Class_list"><tt>Class_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Class_name"><tt>Class_name</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Redefine"><tt>Redefine</tt></a></dt>
+    <dd><strong><tt>redefine</tt></strong><tt> </tt><a
+        href="#Feature_list"><tt>Feature_list</tt></a></dd>
+    <dt><a name="Undefine"><tt>Undefine</tt></a></dt>
+    <dd><strong><tt>undefine</tt></strong><tt> </tt><a
+        href="#Feature_list"><tt>Feature_list</tt></a></dd>
+    <dt><a name="Select"><tt>Select</tt></a></dt>
+    <dd><strong><tt>select</tt></strong><tt> </tt><a
+        href="#Feature_list"><tt>Feature_list</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Creators"><tt>Creators</tt></a></dt>
+    <dd><strong><tt>creation</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>{ </tt></font><a
+        href="#Creation_clause"><tt>Creation_clause</tt></a><tt> </tt><strong><tt>creation</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }+</tt></font></dd>
+    <dt><a name="Creation_clause"><tt>Creation_clause</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Clients"><tt>Clients</tt></a><tt> </tt><font
+        color="#FF0000"><tt>] [</tt></font><tt> </tt><a
+        href="#Header_comment"><tt>Header_comment</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Procedure_list"><tt>Procedure_list</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The standard syntax requires a </font><a
+        href="#Feature_list"><font color="#008000"><tt>Feature_list</tt></font></a><font
+        color="#008000" size="3"> instead of a </font><font
+        color="#008000"><tt>Procedure_list</tt></font><font
+        color="#008000" size="3"> but the </font><font
+        color="#008000"><tt>Creation_clause</tt></font><font
+        color="#008000" size="3"> actually lists creation
+        procedure names (see validity rule </font><font
+        color="#008000" size="2">VGCP-2</font><font
+        color="#008000" size="3">).</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Procedure_list"><tt>Procedure_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Procedure_name"><tt>Procedure_name</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+    <dt><a name="Procedure_name"><tt>Procedure_name</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        </font><a href="#Prefix"><font color="#008000"><tt>Prefix</tt></font></a><font
+        color="#008000" size="3"> and </font><a href="#Infix"><font
+        color="#008000"><tt>Infix</tt></font></a><font
+        color="#008000" size="3"> are function names, not
+        procedure names. It is not clear to me whether a </font><font
+        color="#008000"><tt>Prefix</tt></font><font
+        color="#008000" size="3"> could be an attribute name, but
+        it is definitely not a procedure name (see validity rule </font><font
+        color="#008000" size="2">VFFD-5</font><font
+        color="#008000" size="3">).</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Features"><tt>Features</tt></a></dt>
+    <dd><strong><tt>feature</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Feature_clause"><tt>Feature_clause</tt></a><tt> </tt><strong><tt>feature</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }+</tt></font></dd>
+    <dt><a name="Feature_clause"><tt>Feature_clause</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[ </tt></font><a
+        href="#Clients"><tt>Clients</tt></a><tt> </tt><font
+        color="#FF0000"><tt>] [</tt></font><tt> </tt><a
+        href="#Header_comment"><tt>Header_comment</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Feature_declaration_list"><tt>Feature_declaration_list</tt></a></dd>
+    <dt><a name="Feature_declaration_list"><tt>Feature_declaration_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Feature_declaration"><tt>Feature_declaration</tt></a><tt>
+        </tt><strong><tt>;</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>... }</tt></font></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Feature_declaration"><tt>Feature_declaration</tt></a></dt>
+    <dd><a href="#New_feature_list"><tt>New_feature_list</tt></a><tt>
+        </tt><a href="#Declaration_body"><tt>Declaration_body</tt></a></dd>
+    <dt><a name="Declaration_body"><tt>Declaration_body</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Formal_arguments"><tt>Formal_arguments</tt></a><tt>
+        </tt><font color="#FF0000"><tt>] [</tt></font><tt> </tt><a
+        href="#Type_mark"><tt>Type_mark</tt></a><tt> </tt><font
+        color="#FF0000"><tt>] [</tt></font><tt> </tt><a
+        href="#Constant_or_routine"><tt>Constant_or_routine</tt></a><font
+        color="#FF0000"><tt> ]</tt></font></dd>
+    <dt><a name="Constant_or_routine"><tt>Constant_or_routine</tt></a></dt>
+    <dd><strong><tt>is</tt></strong><tt> </tt><a
+        href="#Feature_value"><tt>Feature_value</tt></a></dd>
+    <dt><a name="Feature_value"><tt>Feature_value</tt></a></dt>
+    <dd><a href="#Manifest_constant"><tt>Manifest_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Unique"><tt>Unique</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Routine"><tt>Routine</tt></a></dd>
+    <dt><a name="Unique"><tt>Unique</tt></a></dt>
+    <dd><strong><tt>Unique</tt></strong></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="New_feature_list"><tt>New_feature_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#New_feature"><tt>New_feature</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }+</tt></font></dd>
+    <dt><a name="New_feature"><tt>New_feature</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><strong><tt>frozen</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Feature_name"><tt>Feature_name</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Feature_name"><tt>Feature_name</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Prefix"><tt>Prefix</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Infix"><tt>Infix</tt></a></dd>
+    <dt><a name="Prefix"><tt>Prefix</tt></a></dt>
+    <dd><strong><tt>prefix</tt></strong><tt> </tt><font size="4"><strong><tt>&quot;</tt></strong></font><tt>
+        </tt><a href="#Prefix_operator"><tt>Prefix_operator</tt></a><tt>
+        </tt><font size="4"><strong><tt>&quot;</tt></strong></font></dd>
+    <dt><a name="Infix"><tt>Infix</tt></a></dt>
+    <dd><strong><tt>infix</tt></strong><tt> </tt><font size="4"><strong><tt>&quot;</tt></strong></font><tt>
+        </tt><a href="#Infix_operator"><tt>Infix_operator</tt></a><tt>
+        </tt><font size="4"><strong><tt>&quot;</tt></strong></font></dd>
+    <dt><a name="Prefix_operator"><tt>Prefix_operator</tt></a></dt>
+    <dd><a href="#Unary"><tt>Unary</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Free_operator"><tt>Free_operator</tt></a></dd>
+    <dt><a name="Infix_operator"><tt>Infix_operator</tt></a></dt>
+    <dd><a href="#Binary"><tt>Binary</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Free_operator"><tt>Free_operator</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        All Eiffel compilers accept the prefix and infix
+        operators regardless of the letter case, such as</font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000"><strong><tt>prefix</tt></strong><tt>
+        &quot;NOT&quot;</tt></font><font color="#008000" size="2"
+        face="Courier New"> </font><font color="#008000" size="3">or</font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000"><strong><tt>infix</tt></strong><tt>
+        &quot;AnD&quot;</tt></font><font color="#008000" size="3">.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        No intervening character is allowed after the first or
+        before the last double quote. However it is not clear
+        what kind of break should be used between the two
+        keywords in</font><font color="#008000" size="2"
+        face="Courier New"><strong> </strong></font><font
+        color="#008000"><strong><tt>and then</tt></strong></font><font
+        color="#008000" size="2" face="Courier New"><strong> </strong></font><font
+        color="#008000" size="3">or</font><font color="#008000"
+        size="2" face="Courier New"><strong> </strong></font><font
+        color="#008000"><strong><tt>or else</tt></strong></font><font
+        color="#008000" size="3">. SmallEiffel accepts any number
+        of blanks and tab characters, whereas the other compilers
+        require a single blank.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Unary"><tt>Unary</tt></a></dt>
+    <dd><strong><tt>not</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>+</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>-</tt></strong></dd>
+    <dt><a name="Binary"><tt>Binary</tt></a></dt>
+    <dd><strong><tt>+</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>-</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>*</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>/</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>&lt;</tt></strong><font
+        color="#FF0000"><tt> |</tt></font><tt> </tt><strong><tt>&gt;</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>&lt;=</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>&gt;=</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>//</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>\\</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>^</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><strong><tt>and</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>or</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>xor</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>and
+        then</tt></strong><tt> </tt><font color="#FF0000"><tt>|</tt></font><tt>
+        </tt><strong><tt>or else</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>implies</tt></strong></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Formal_arguments"><tt>Formal_arguments</tt></a></dt>
+    <dd><strong><tt>(</tt></strong><tt> </tt><a
+        href="#Entity_declaration_list"><tt>Entity_declaration_list</tt></a><tt>
+        </tt><strong><tt>)</tt></strong></dd>
+    <dt><a name="Entity_declaration_list"><tt>Entity_declaration_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Entity_declaration_group"><tt>Entity_declaration_group</tt></a><tt>
+        </tt><strong><tt>;</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>... }</tt></font></dd>
+    <dt><a name="Entity_declaration_group"><tt>Entity_declaration_group</tt></a></dt>
+    <dd><a href="#Identifier_list"><tt>Identifier_list</tt></a><tt>
+        </tt><a href="#Type_mark"><tt>Type_mark</tt></a></dd>
+    <dt><a name="Identifier_list"><tt>Identifier_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Identifier"><tt>Identifier</tt></a><strong><tt> ,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }+</tt></font></dd>
+    <dt><a name="Type_mark"><tt>Type_mark</tt></a></dt>
+    <dd><strong><tt>:</tt></strong><tt> </tt><a href="#Type"><tt>Type</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The list of entity declarations may be empty. As a
+        consequence, </font><font color="#008000"><em><tt>foo</tt></em><tt>()</tt></font><font
+        color="#008000" size="3"> is valid and means the same as </font><font
+        color="#008000"><em><tt>foo</tt></em></font><font
+        color="#008000" size="3">. However, this is not
+        recommended style.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Routine"><tt>Routine</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[ </tt></font><a
+        href="#Obsolete"><tt>Obsolete</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]<br>
+        [</tt></font><tt> </tt><a href="#Header_comment"><tt>Header_comment</tt></a><tt>
+        </tt><font color="#FF0000"><tt>]<br>
+        [</tt></font><tt> </tt><a href="#Precondition"><tt>Precondition</tt></a><tt>
+        </tt><font color="#FF0000"><tt>]<br>
+        [ </tt></font><a href="#Local_declarations"><tt>Local_declarations</tt></a><tt>
+        </tt><font color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><a href="#Routine_body"><tt>Routine_body</tt></a><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Postcondition"><tt>Postcondition</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]<br>
+        [ </tt></font><a href="#Rescue"><tt>Rescue</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><strong><tt>end </tt></strong><font color="#FF0000"><tt>[</tt></font><tt>
+        </tt><strong><tt>--</tt></strong><tt> </tt><a
+        href="#Feature_name"><tt>Feature_name</tt></a><font
+        color="#FF0000"><tt> ]</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Most Eiffel compilers do not check the validity of the
+        optional comment after the keyword </font><font
+        color="#008000"><strong><tt>end</tt></strong></font><font
+        color="#008000" size="3">. It is not in the style
+        guidelines to put this comment anymore.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Routine_body"><tt>Routine_body</tt></a></dt>
+    <dd><a href="#Effective"><tt>Effective</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Deferred"><tt>Deferred</tt></a></dd>
+    <dt><a name="Effective"><tt>Effective</tt></a></dt>
+    <dd><a href="#Internal"><tt>Internal</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#External"><tt>External</tt></a></dd>
+    <dt><a name="Internal"><tt>Internal</tt></a></dt>
+    <dd><a href="#Routine_mark"><tt>Routine_mark</tt></a><tt> </tt><a
+        href="#Compound"><tt>Compound</tt></a></dd>
+    <dt><a name="Routine_mark"><tt>Routine_mark</tt></a></dt>
+    <dd><strong><tt>do</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>once</tt></strong></dd>
+    <dt><a name="Deferred"><tt>Deferred</tt></a></dt>
+    <dd><strong><tt>deferred</tt></strong></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="External"><tt>External</tt></a></dt>
+    <dd><strong><tt>external</tt></strong><tt> </tt><a
+        href="#Language_name"><tt>Language_name</tt></a><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#External_name"><tt>External_name</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font></dd>
+    <dt><a name="Language_name"><tt>Language_name</tt></a></dt>
+    <dd><a href="#Manifest_string"><tt>Manifest_string</tt></a></dd>
+    <dt><a name="External_name"><tt>External_name</tt></a></dt>
+    <dd><strong><tt>alias</tt></strong><tt> </tt><a
+        href="#Manifest_string"><tt>Manifest_string</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Each Eiffel compiler supports its own mini-syntax in the
+        language name and external name strings to describe their
+        interface with other programming languages. See the
+        documentation which comes with the different compilers
+        for details.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Local_declarations"><tt>Local_declarations</tt></a></dt>
+    <dd><strong><tt>local</tt></strong><tt> </tt><a
+        href="#Entity_declaration_list"><tt>Entity_declaration_list</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Precondition"><tt>Precondition</tt></a></dt>
+    <dd><strong><tt>require</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><strong><tt>else</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Assertion"><tt>Assertion</tt></a></dd>
+    <dt><a name="Postcondition"><tt>Postcondition</tt></a></dt>
+    <dd><strong><tt>ensure</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><strong><tt>then</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Assertion"><tt>Assertion</tt></a></dd>
+    <dt><a name="Invariant"><tt>Invariant</tt></a></dt>
+    <dd><strong><tt>invariant</tt></strong><tt> </tt><a
+        href="#Assertion"><tt>Assertion</tt></a></dd>
+    <dt><a name="Assertion"><tt>Assertion</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Assertion_clause"><tt>Assertion_clause</tt></a><tt>
+        </tt><strong><tt>;</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>... }</tt></font></dd>
+    <dt><a name="Assertion_clause"><tt>Assertion_clause</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Tag_mark"><tt>Tag_mark</tt></a><font
+        color="#FF0000"><tt> ]</tt></font><tt> </tt><a
+        href="#Unlabeled_assertion_clause"><tt>Unlabeled_assertion_clause</tt></a></dd>
+    <dt><a name="Unlabeled_assertion_clause"><tt>Unlabeled_assertion_clause</tt></a></dt>
+    <dd><a href="#Boolean_expression"><tt>Boolean_expression</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Comment"><tt>Comment</tt></a></dd>
+    <dt><a name="Tag_mark"><tt>Tag_mark</tt></a></dt>
+    <dd><a href="#Tag"><tt>Tag</tt></a><tt> </tt><strong><tt>:</tt></strong></dd>
+    <dt><a name="Tag"><tt>Tag</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Although comments such as header comments are expected in
+        some constructs such as </font><a href="#Routine"><font
+        color="#008000"><tt>Routine</tt></font></a><font
+        color="#008000" size="3"> or </font><a href="#Features"><font
+        color="#008000"><tt>Features</tt></font></a><font
+        color="#008000" size="3">, this is the only place where
+        ignoring a comment results in a syntax error or an
+        incorrect syntax tree. This occurs in the following
+        situations:</font></p>
+        <blockquote>
+            <pre><font color="#008000"><em><strong>require</strong></em><em>
+    tag</em>: -- Syntax error when ignored!
+<em><strong>do</strong></em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">and</font></p>
+        <blockquote>
+            <pre><font color="#008000"><em><strong>require</strong></em><em>
+    tag</em>: -- If this comment is ignored, 
+         -- <em>tag</em> will be erroneously
+         -- associated with <em>foo</em>.<em>is_valid</em>!
+    <em>foo</em>.<em>is_valid</em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">See the second note in </font><a
+        href="#Comment"><font color="#008000"><tt>Comment</tt></font></a><font
+        color="#008000" size="3"> for more details.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Rescue"><tt>Rescue</tt></a></dt>
+    <dd><strong><tt>rescue</tt></strong><tt> </tt><a
+        href="#Compound"><tt>Compound</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The validity rule </font><font color="#008000" size="2">VXRT</font><font
+        color="#008000" size="3"> states that the </font><a
+        href="#Retry"><font color="#008000"><tt>Retry</tt></font></a><font
+        color="#008000" size="3"> instruction is only valid in a
+        rescue clause. This could eventually be enforced by the
+        syntax.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Type"><tt>Type</tt></a></dt>
+    <dd><a href="#Class_type"><tt>Class_type</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Class_type_expanded"><tt>Class_type_expanded</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Class_type_separate"><tt>Class_type_separate</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Anchored"><tt>Anchored</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Bit_type"><tt>Bit_type</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The standard Eiffel syntax also lists </font><a
+        href="#Formal_generic_name"><font color="#008000"><tt>Formal_generic_name</tt></font></a><font
+        color="#008000" size="3"> as a possible alternative for </font><font
+        color="#008000"><tt>Type</tt></font><font color="#008000"
+        size="3">. However it introduced an ambiguity in the
+        syntax since an identifier could be recognized both as a </font><font
+        color="#008000"><tt>Formal_generic_name</tt></font><font
+        color="#008000" size="3"> and a </font><font
+        color="#008000"><tt>Class_type</tt></font><font
+        color="#008000" size="3"> with no actual generics.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Class_type"><tt>Class_type</tt></a></dt>
+    <dd><a href="#Class_name"><tt>Class_name</tt></a><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Actual_generics"><tt>Actual_generics</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font></dd>
+    <dt><a name="Actual_generics"><tt>Actual_generics</tt></a></dt>
+    <dd><strong><tt>[</tt></strong><tt> </tt><a href="#Type_list"><tt>Type_list</tt></a><tt>
+        </tt><strong><tt>]</tt></strong></dd>
+    <dt><a name="Type_list"><tt>Type_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Type"><tt>Type</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The list of types may be empty. As a consequence,</font><font
+        color="#008000" size="2" face="Courier New"><em> </em></font><font
+        color="#008000"><em><tt>FOO</tt></em><tt>[]</tt></font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000" size="3">is valid and means the same as </font><font
+        color="#008000"><em><tt>FOO</tt></em></font><font
+        color="#008000" size="3">. However, this is not the
+        recommended style.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Class_type_expanded"><tt>Class_type_expanded</tt></a></dt>
+    <dd><strong><tt>expanded</tt></strong><tt> </tt><a
+        href="#Class_type"><tt>Class_type</tt></a></dd>
+    <dt><a name="Class_type_separate"><tt>Class_type_separate</tt></a></dt>
+    <dd><strong><tt>separate</tt></strong><tt> </tt><a
+        href="#Class_type"><tt>Class_type</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        <tt>Class_type_separate</tt> is not part of the Eiffel
+        standard. It has been introduced in ISE Eiffel to support
+        the </font><a
+        href="http://www.eiffel.com/doc/manuals/technology/concurrency/CONCURRENCY.html"><font
+        color="#008000" size="2">SCOOP</font></a><font
+        color="#008000"> mechanism. Read </font><a
+        href="http://www.prenhall.com/books/ptr_0136291554.html"><font
+        color="#008000">Object-Oriented Software Construction</font></a><font
+        color="#008000">, second edition, for details.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Bit_type"><tt>Bit_type</tt></a></dt>
+    <dd><strong><tt>BIT</tt></strong><tt> </tt><a
+        href="#Bit_length"><tt>Bit_length</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        In the standard syntax, <tt>Constant</tt> appears instead
+        of <tt>Bit_length</tt>. However the validity rule </font><font
+        color="#008000" size="2">VTBT</font><font color="#008000">
+        states that a <tt>Bit_type</tt> declaration is valid if
+        and only if its <tt>Constant</tt> is of type <em><tt>INTEGER</tt></em>,
+        which means that the constant is either a manifest
+        integer constant or an attribute constant.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Bit_length"><tt>Bit_length</tt></a></dt>
+    <dd><a href="#Integer_constant"><tt>Integer_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Attribute"><tt>Attribute</tt></a></dd>
+    <dt><a name="Anchored"><tt>Anchored</tt></a></dt>
+    <dd><strong><tt>like</tt></strong><tt> </tt><a href="#Anchor"><tt>Anchor</tt></a></dd>
+    <dt><a name="Anchor"><tt>Anchor</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>Current</tt></strong></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Compound"><tt>Compound</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Instruction"><tt>Instruction</tt></a><tt> </tt><strong><tt>;</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+    <dt><a name="Instruction"><tt>Instruction</tt></a></dt>
+    <dd><a href="#Creation"><tt>Creation</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Call"><tt>Call</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Assignment"><tt>Assignment</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Assignment_attempt"><tt>Assignment_attempt</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Conditional"><tt>Conditional</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Multi_branch"><tt>Multi_branch</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Loop"><tt>Loop</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Debug"><tt>Debug</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Check"><tt>Check</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Retry"><tt>Retry</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Null_instruction"><tt>Null_instruction</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Creation"><tt>Creation</tt></a></dt>
+    <dd><strong><tt>!</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> Type </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><strong><tt>!</tt></strong><tt>
+        </tt><a href="#Writable"><tt>Writable</tt></a><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Creation_call"><tt>Creation_call</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        If the type is absent, the two exclamation marks may be
+        written with or without intervening break. In the style
+        standard, the recommended form is the one without breaks,
+        which makes </font><font color="#008000" face="Terminal"><strong><tt>!!</tt></strong></font><font
+        color="#008000"> appear as a single lexical symbol.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Creation_call"><tt>Creation_call</tt></a></dt>
+    <dd><strong><tt>.</tt></strong><tt> </tt><a
+        href="#Procedure_name"><tt>Procedure_name</tt></a><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Actuals"><tt>Actuals</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        In the standard Eiffel syntax, the <tt>Creation_call</tt>
+        is made of an <tt>Unqualified_call</tt>. But the validity
+        rule </font><font color="#008000" size="2">VGCC-6</font><font
+        color="#008000"> states that if</font><font
+        color="#008000" size="2" face="Courier New"><em> </em></font><font
+        color="#008000"><em><tt>f</tt></em></font><font
+        color="#008000" size="2" face="Courier New"><em> </em></font><font
+        color="#008000">is the feature of the <tt>Creation_call</tt>,
+        the</font><font color="#008000" size="2"
+        face="Courier New"><em> </em></font><font color="#008000"><em><tt>f</tt></em></font><font
+        color="#008000" size="2" face="Courier New"><em> </em></font><font
+        color="#008000">is a procedure.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Assignment"><tt>Assignment</tt></a></dt>
+    <dd><a href="#Writable"><tt>Writable</tt></a><tt> </tt><strong><tt>:=</tt></strong><tt>
+        </tt><a href="#Expression"><tt>Expression</tt></a></dd>
+    <dt><a name="Assignment_attempt"><tt>Assignment_attempt</tt></a></dt>
+    <dd><a href="#Writable"><tt>Writable</tt></a><tt> </tt><strong><tt>?=</tt></strong><tt>
+        </tt><a href="#Expression"><tt>Expression</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Conditional"><tt>Conditional</tt></a></dt>
+    <dd><strong><tt>if</tt></strong><tt> </tt><a
+        href="#Then_part_list"><tt>Then_part_list</tt></a><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Else_part"><tt>Else_part</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><strong><tt>end</tt></strong></dd>
+    <dt><a name="Then_part_list"><tt>Then_part_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Then_part"><tt>Then_part</tt></a><tt> </tt><strong><tt>elseif</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }+</tt></font></dd>
+    <dt><a name="Then_part"><tt>Then_part</tt></a></dt>
+    <dd><a href="#Boolean_expression"><tt>Boolean_expression</tt></a><tt>
+        </tt><strong><tt>then</tt></strong><tt> </tt><a
+        href="#Compound"><tt>Compound</tt></a></dd>
+    <dt><a name="Else_part"><tt>Else_part</tt></a></dt>
+    <dd><strong><tt>else</tt></strong><tt> </tt><a
+        href="#Compound"><tt>Compound</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Multi_branch"><tt>Multi_branch</tt></a></dt>
+    <dd><strong><tt>inspect</tt></strong><tt> </tt><a
+        href="#Expression"><tt>Expression</tt></a><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#When_part_list"><tt>When_part_list</tt></a><tt> </tt><font
+        color="#FF0000"><tt>] [</tt></font><tt> </tt><a
+        href="#Else_part"><tt>Else_part</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><strong><tt>end</tt></strong></dd>
+    <dt><a name="When_part_list"><tt>When_part_list</tt></a></dt>
+    <dd><strong><tt>when</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#When_part"><tt>When_part</tt></a><tt> </tt><strong><tt>when</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }+</tt></font></dd>
+    <dt><a name="When_part"><tt>When_part</tt></a></dt>
+    <dd><a href="#Choices"><tt>Choices</tt></a><tt> </tt><strong><tt>then</tt></strong><tt>
+        </tt><a href="#Compound"><tt>Compound</tt></a></dd>
+    <dt><a name="Choices"><tt>Choices</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Choice"><tt>Choice</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        </font><font color="#008000" size="3">The list of choices
+        may be empty. As a consequence,</font></p>
+    </blockquote>
+    <blockquote>
+        <blockquote>
+            <pre><font color="#008000"><em><strong>inspect</strong></em><em> expr
+</em><em><strong>when then
+    </strong></em><em>do_something
+...</em></font></pre>
+        </blockquote>
+    </blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3">although meaningless,
+        is syntactically correct. It can be thought of as</font></p>
+    </blockquote>
+    <blockquote>
+        <blockquote>
+            <pre><font color="#008000"><em><strong>if</strong></em><em> False </em><em><strong>then</strong></em><em>
+    do_something
+...</em></font></pre>
+        </blockquote>
+    </blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3">However, this is not
+        part of the recommended style.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Choice"><tt>Choice</tt></a></dt>
+    <dd><a href="#Choice_constant"><tt>Choice_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Interval"><tt>Interval</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        The standard syntax specifies </font><font
+        color="#008000" size="2" face="Courier New">Constant</font><font
+        color="#008000"> instead of <tt>Choice_constant</tt>.
+        However the validity rule </font><font color="#008000"
+        size="2">VOMB-1-2</font><font color="#008000"> states
+        that the </font><font color="#008000" size="2"
+        face="Courier New">Constant</font><font color="#008000">
+        in <tt>Choice</tt> and <tt>Interval</tt> is only of type <em><tt>INTEGER</tt></em>
+        or <em><tt>CHARACTER</tt></em>.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Interval"><tt>Interval</tt></a></dt>
+    <dd><a href="#Choice_constant"><tt>Choice_constant</tt></a><tt>
+        </tt><strong><tt>..</tt></strong><tt> </tt><a
+        href="#Choice_constant"><tt>Choice_constant</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        The lexical analyzer has to be smart enough in the
+        following example:</font></p>
+        <blockquote>
+            <pre><font color="#008000"><em><strong>inspect</strong></em><em> expr
+</em><em><strong>when</strong></em><em> 1..2 </em><em><strong>then</strong></em><em>
+...</em></font></pre>
+        </blockquote>
+        <p><font color="#008000">Indeed, '<tt>1..2</tt>' should
+        be recognized as the two integer constants '<tt>1</tt>'
+        and '<tt>2</tt>' separated by the Eiffel symbol '<tt>..</tt>',
+        instead of as two consecutive real constants '<tt>1.</tt>'
+        and '<tt>.2</tt>'. Visual Eiffel erroneously emits a
+        syntax error when parsing the example above.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Choice_constant"><tt>Choice_constant</tt></a></dt>
+    <dd><a href="#Integer_constant"><tt>Integer_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Character_constant"><tt>Character_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Attribute"><tt>Attribute</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        TowerEiffel accepts &quot;remote constant&quot; in <tt>Choice</tt>
+        and <tt>Interval</tt>, such as in:</font></p>
+        <blockquote>
+            <pre><font color="#008000"><em>foo</em>: <em>FOO</em><em><strong>
+inspect</strong></em> i
+<em><strong>when</strong></em> <em>foo</em>.<em>const</em> <em><strong>then</strong></em>
+     <em>do_something</em>
+<em><strong>end</strong></em></font></pre>
+        </blockquote>
+        <p><font color="#008000">where <em><tt>const</tt></em> is
+        declared as constant in class <em><tt>FOO</tt></em>. This
+        is not standard Eiffel syntax.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Loop"><tt>Loop</tt></a></dt>
+    <dd><a href="#Initialization"><tt>Initialization</tt></a><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Invariant"><tt>Invariant</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Variant"><tt>Variant</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt><br>
+        </tt><a href="#Loop_body"><tt>Loop_body</tt></a><tt><br>
+        </tt><strong><tt>end</tt></strong></dd>
+    <dt><a name="Initialization"><tt>Initialization</tt></a></dt>
+    <dd><strong><tt>from</tt></strong><tt> </tt><a
+        href="#Compound"><tt>Compound</tt></a></dd>
+    <dt><a name="Variant"><tt>Variant</tt></a></dt>
+    <dd><strong><tt>variant</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Tag_mark"><tt>Tag_mark</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Expression"><tt>Expression</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The validity rule </font><font color="#008000" size="2">VAVE</font><font
+        color="#008000" size="3"> states that </font><font
+        color="#008000"><tt>Expression</tt></font><font
+        color="#008000" size="3"> must be of type </font><font
+        color="#008000"><em><tt>INTEGER</tt></em></font><font
+        color="#008000" size="3">. This could eventually be
+        partially enforced in the syntax by discarding </font><font
+        color="#008000"><tt>Equality</tt></font><font
+        color="#008000" size="3">, </font><font color="#008000"><tt>Manifest_array</tt></font><font
+        color="#008000" size="3">, </font><font color="#008000"><tt>Strip</tt></font><font
+        color="#008000" size="3"> and all non-integer </font><font
+        color="#008000"><tt>Manifest_constant</tt></font><font
+        color="#008000" size="3">s.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Loop_body"><tt>Loop_body</tt></a></dt>
+    <dd><a href="#Exit"><tt>Exit</tt></a><tt> </tt><strong><tt>loop</tt></strong><tt>
+        </tt><a href="#Compound"><tt>Compound</tt></a></dd>
+    <dt><a name="Exit"><tt>Exit</tt></a></dt>
+    <dd><strong><tt>until</tt></strong><tt> </tt><a
+        href="#Boolean_expression"><tt>Boolean_expression</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Debug"><tt>Debug</tt></a></dt>
+    <dd><strong><tt>debug</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Debug_keys"><tt>Debug_keys</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Compound"><tt>Compound</tt></a><tt> </tt><strong><tt>end</tt></strong></dd>
+    <dt><a name="Debug_keys"><tt>Debug_keys</tt></a></dt>
+    <dd><strong><tt>(</tt></strong><tt> </tt><a
+        href="#Debug_key_list"><tt>Debug_key_list</tt></a><tt> </tt><strong><tt>)</tt></strong></dd>
+    <dt><a name="Debug_key_list"><tt>Debug_key_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Debug_key"><tt>Debug_key</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+    <dt><a name="Debug_key"><tt>Debug_key</tt></a></dt>
+    <dd><a href="#Manifest_string"><tt>Manifest_string</tt></a></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Check"><tt>Check</tt></a></dt>
+    <dd><strong><tt>check</tt></strong><tt> </tt><a
+        href="#Assertion"><tt>Assertion</tt></a><tt> </tt><strong><tt>end</tt></strong></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Retry"><tt>Retry</tt></a></dt>
+    <dd><strong><tt>retry</tt></strong></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The validity rule </font><font color="#008000" size="2">VXRT</font><font
+        color="#008000" size="3"> states that the </font><font
+        color="#008000"><tt>Retry</tt></font><font
+        color="#008000" size="3"> instruction is only valid in a </font><a
+        href="#Rescue"><font color="#008000"><tt>Rescue</tt></font></a><font
+        color="#008000" size="3"> clause. This could eventually
+        be enforced by the syntax.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Null_instruction"><tt>Null_instruction</tt></a></dt>
+    <dd><font color="#FF0000"><tt>empty</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        This instruction has a purely syntactical role: making
+        sure that extra semincolons added by oversight to a </font><a
+        href="#Compound"><font color="#008000"><tt>Compound</tt></font></a><font
+        color="#008000" size="3"> are harmless, as in</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><em><strong>if</strong></em> <em>c</em> <em><strong>then</strong></em> ; <em>i1</em>;;; <em>i2</em>; <em><strong>else</strong></em> ;; <em><strong>end</strong></em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">TowerEiffel does not
+        support extra semicolons other than terminators. All
+        other compilers work as expected. SmallEiffel emits a
+        warning when parsing extra semicolons.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Call"><tt>Call</tt></a></dt>
+    <dd><a href="#Qualified_call"><tt>Qualified_call</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Precursor"><tt>Precursor</tt></a></dd>
+    <dt><a name="Qualified_call"><tt>Qualified_call</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Call_qualifier"><tt>Call_qualifier</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Call_chain"><tt>Call_chain</tt></a></dd>
+    <dt><a name="Call_qualifier"><tt>Call_qualifier</tt></a></dt>
+    <dd><a href="#Call_target"><tt>Call_target</tt></a><tt> </tt><strong><tt>.</tt></strong></dd>
+    <dt><a name="Call_target"><tt>Call_target</tt></a></dt>
+    <dd><a href="#Parenthesized"><tt>Parenthesized</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>Result</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>Current</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Precursor"><tt>Precursor</tt></a></dd>
+    <dt><a name="Call_chain"><tt>Call_chain</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Unqualified_call"><tt>Unqualified_call</tt></a><tt>
+        </tt><strong><tt>.</tt></strong><font color="#FF0000"><tt>
+        ... }+</tt></font></dd>
+    <dt><a name="Unqualified_call"><tt>Unqualified_call</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a><tt> </tt><font
+        color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Actuals"><tt>Actuals</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        This specification of </font><font color="#008000"><tt>Call</tt></font><font
+        color="#008000" size="3"> is slightly different from the
+        version supplied in the standard. However the standard
+        syntax accepts constructs which are not correct Eiffel
+        such as:</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><em>foo</em>.<em>Result</em>
+<em>Current</em> (<em>5</em>)</font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">whereas the
+        specification given above does not.</font></p>
+    </blockquote>
+</blockquote>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        In TowerEiffel, features may be called directly on a </font><a
+        href="#Manifest_constant"><font color="#008000"><tt>Manifest_constant</tt></font></a><font
+        color="#008000" size="3"> without placing parentheses
+        around the constant, such as in:</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><em>str</em> := <em>'a'</em>.<em>out</em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">which should be, using
+        the standard syntax:</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><em>str</em> := (<em>'a'</em>).<em>out</em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">There is a slight
+        lexical problem with </font><a href="#Integer_constant"><font
+        color="#008000"><tt>Integer_constant</tt></font></a><font
+        color="#008000" size="3"> though, since</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3">123.out</font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">is recognized as</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><u>123.</u> <u>out</u></font></pre>
+        </blockquote>
+        <p><font color="#008000"><tt>'123.'</tt></font><font
+        color="#008000" size="3"> being a </font><a
+        href="#Real_constant"><font color="#008000"><tt>Real_constant</tt></font></a><font
+        color="#008000" size="3">. The programmer has to add an
+        extra </font><a href="#Break"><font color="#008000"><tt>Break</tt></font></a><font
+        color="#008000" size="3"> between the integer constant
+        and the dot to work around this problem.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Precursor"><tt>Precursor</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Parent_qualification"><tt>Parent_qualification</tt></a><tt>
+        </tt><font color="#FF0000"><tt>]</tt></font><tt> </tt><strong><tt>Precursor
+        </tt></strong><font color="#FF0000"><tt>[</tt></font><tt>
+        </tt><a href="#Actuals"><tt>Actuals</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font></dd>
+    <dt><a name="Parent_qualification"><tt>Parent_qualification</tt></a></dt>
+    <dd><strong><tt>{</tt></strong><tt> </tt><a
+        href="#Class_name"><tt>Class_name</tt></a><tt> </tt><strong><tt>}</tt></strong></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The </font><font color="#008000"><tt>Precursor</tt></font><font
+        color="#008000" size="3"> construct is not part of the
+        standard Eiffel syntax. It has been introduced in </font><a
+        href="http://www.prenhall.com/books/ptr_0136291554.html"><font
+        color="#008000">Object-Oriented Software Construction</font></a><font
+        color="#008000">, second edition, and a proposal for its
+        standardization has been submitted to </font><font
+        color="#008000" size="2">NICE</font><font color="#008000">.
+        ISE Eiffel and Halstenbach will most likely support this
+        construct in their next release.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        In </font><a
+        href="http://www.prenhall.com/books/ptr_0136291554.html"><font
+        color="#008000">Object-Oriented Software Construction</font></a><font
+        color="#008000">, second edition, the class name in <tt>Parent_qualification</tt>
+        is enclosed between double braces: <strong><tt>{{</tt></strong><tt>Class_name</tt><strong><tt>}}</tt></strong>.
+        However the proposal submitted to </font><font
+        color="#008000" size="2">NICE</font><font color="#008000">
+        uses the syntax specified above.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Attribute"><tt>Attribute</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        According to validity rule </font><font color="#008000"
+        size="2">VFFD-5</font><font color="#008000" size="3">, an
+        </font><font color="#008000"><tt>Attribute</tt></font><font
+        color="#008000" size="3"> can also be a </font><a
+        href="#Prefix"><font color="#008000"><tt>Prefix</tt></font></a><font
+        color="#008000" size="3">.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Writable"><tt>Writable</tt></a></dt>
+    <dd><a href="#Identifier"><tt>Identifier</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>Result</tt></strong></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The </font><font color="#008000"><tt>Entity</tt></font><font
+        color="#008000" size="3"> syntax group from the standard
+        syntax specification has been very much simplified to
+        resolved many ambiguities. For example, should:</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><em>foo</em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">be recognized as an </font><font
+        color="#008000"><tt>Attribute</tt></font><font
+        color="#008000" size="3">, a </font><font color="#008000"><tt>Local</tt></font><font
+        color="#008000" size="3"> or a </font><font
+        color="#008000"><tt>Formal</tt></font><font
+        color="#008000" size="3">? Only a semantic analysis can
+        give the answer.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Actuals"><tt>Actuals</tt></a></dt>
+    <dd><strong><tt>(</tt></strong><tt> </tt><a
+        href="#Actual_list"><tt>Actual_list</tt></a><tt> </tt><strong><tt>)</tt></strong></dd>
+    <dt><a name="Actual_list"><tt>Actual_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Actual"><tt>Actual</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The list of actuals may be empty. As a consequence, </font><font
+        color="#008000"><em><tt>foo</tt></em><tt>()</tt></font><font
+        color="#008000" size="3"> is valid and means the same as </font><font
+        color="#008000"><em><tt>foo</tt></em></font><font
+        color="#008000" size="3">. However, this is not
+        recommended style.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Actual"><tt>Actual</tt></a></dt>
+    <dd><a href="#Expression"><tt>Expression</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Address"><tt>Address</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        TowerEiffel treats </font><font color="#008000"><tt>Address</tt></font><font
+        color="#008000" size="3"> as a normal expression (i.e. as
+        an alternative in the </font><a href="#Expression"><font
+        color="#008000"><tt>Expression</tt></font></a><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000" size="3">construct). As a consequence, an
+        address does not need to occur only in actual lists.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Address"><tt>Address</tt></a></dt>
+    <dd><strong><tt>$</tt></strong><tt> </tt><a
+        href="#Address_mark"><tt>Address_mark</tt></a></dd>
+    <dt><a name="Address_mark"><tt>Address_mark</tt></a></dt>
+    <dd><a href="#Feature_name"><tt>Feature_name</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>Current</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>Result</tt></strong></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Expression"><tt>Expression</tt></a></dt>
+    <dd><strong><tt>Current</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>Result
+        </tt></strong><font color="#FF0000"><tt>|</tt></font></dd>
+    <dd><a href="#Call"><tt>Call</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Operator_expression"><tt>Operator_expression</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Equality"><tt>Equality</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Manifest_array"><tt>Manifest_array</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Old"><tt>Old</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Strip"><tt>Strip</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Boolean_constant"><tt>Boolean_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Bit_constant"><tt>Bit_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Integer"><tt>Integer</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Real"><tt>Real</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Manifest_string"><tt>Manifest_string</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Character_constant"><tt>Character_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Wide_character_constant"><tt>Wide_character_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Wide_manifest_string"><tt>Wide_manifest_string</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Hexadecimal_constant"><tt>Hexadecimal_constant</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        This specification of </font><font color="#008000"><tt>Expression</tt></font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000" size="3">is slightly different from the
+        version supplied in the standard. First, </font><font
+        color="#008000"><strong><tt>Current</tt></strong></font><font
+        color="#008000" size="3"> and </font><font
+        color="#008000"><strong><tt>Result</tt></strong></font><font
+        color="#008000" size="3"> have been added as a
+        consequence of new specification for </font><a
+        href="#Call"><font color="#008000"><tt>Call</tt></font></a><font
+        color="#008000" size="3">. Then, </font><a
+        href="#Manifest_constant"><font color="#008000"><tt>Manifest_constant</tt></font></a><font
+        color="#008000" size="3"> has been replaced with the list
+        of its alternatives. This is to resolve an ambiguity in
+        the standard syntax. In the following piece of code:</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><em>foo</em> := - <em>2</em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">should the </font><font
+        color="#008000"><tt>Expression</tt></font><font
+        color="#008000" size="3"> on the right hand side of the
+        assignment be recognized as an </font><a
+        href="#Integer_constant"><font color="#008000"><tt>Integer_constant</tt></font></a><font
+        color="#008000" size="3"> or as an </font><a
+        href="#Unary_expression"><font color="#008000"><tt>Unary_expression</tt></font></a><font
+        color="#008000" size="3"> whose </font><a
+        href="#Prefix_operator"><font color="#008000"
+        face="Courier"><tt>Prefix_operator</tt></font></a><font
+        color="#008000" size="1" face="Courier"> </font><font
+        color="#008000" size="3">is '</font><font color="#008000"><strong><tt>-</tt></strong></font><font
+        color="#008000" size="3">' and whose </font><font
+        color="#008000"><tt>Expression</tt></font><font
+        color="#008000" size="3"> is an (unsigned) </font><font
+        color="#008000"><tt>Integer</tt></font><font
+        color="#008000" size="3">? Replacing </font><font
+        color="#008000"><tt>Integer_constant</tt></font><font
+        color="#008000" size="3"> and </font><font
+        color="#008000"><tt>Real_constant</tt></font><font
+        color="#008000" size="3"> by </font><font color="#008000"><tt>Integer</tt></font><font
+        color="#008000" size="3"> and </font><font
+        color="#008000"><tt>Real</tt></font><font color="#008000"
+        size="3"> solves the problem.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        </font><font color="#008000"><tt>Wide_character_constant</tt></font><font
+        color="#008000" size="3">, </font><font color="#008000"><tt>Wide_manifest_string</tt></font><font
+        color="#008000" size="3"> and </font><font
+        color="#008000"><tt>Hexadecimal_constant</tt></font><font
+        color="#008000" size="3"> are not part of the standard.
+        They have been introduced in TowerEiffel to support wide
+        characters and string, and hexadecimal integers.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Boolean_expression"><tt>Boolean_expression</tt></a></dt>
+    <dd><a href="#Expression"><tt>Expression</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The validity rule </font><font color="#008000" size="2">VWBE</font><font
+        color="#008000" size="3"> states that a boolean
+        expression must be of type </font><font color="#008000"><em><tt>BOOLEAN</tt></em></font><font
+        color="#008000" size="3">. This could eventually be
+        partially enforced in the syntax by discarding </font><font
+        color="#008000"><tt>Manifest_array</tt></font><font
+        color="#008000" size="3">, </font><font color="#008000"><tt>Strip</tt></font><font
+        color="#008000" size="3"> and all non-boolean </font><font
+        color="#008000"><tt>Manifest_constant</tt></font><font
+        color="#008000" size="3">s.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Operator_expression"><tt>Operator_expression</tt></a></dt>
+    <dd><a href="#Parenthesized"><tt>Parenthesized</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Unary_expression"><tt>Unary_expression</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Binary_expression"><tt>Binary_expression</tt></a></dd>
+    <dt><a name="Parenthesized"><tt>Parenthesized</tt></a></dt>
+    <dd><strong><tt>(</tt></strong><tt> </tt><a
+        href="#Expression"><tt>Expression</tt></a><tt> </tt><strong><tt>)</tt></strong></dd>
+    <dt><a name="Unary_expression"><tt>Unary_expression</tt></a></dt>
+    <dd><a href="#Prefix_operator"><tt>Prefix_operator</tt></a><tt>
+        </tt><a href="#Expression"><tt>Expression</tt></a></dd>
+    <dt><a name="Binary_expression"><tt>Binary_expression</tt></a></dt>
+    <dd><a href="#Expression"><tt>Expression</tt></a><tt> </tt><a
+        href="#Infix_operator"><tt>Infix_operator</tt></a><tt> </tt><a
+        href="#Expression"><tt>Expression</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        See </font><a href="#Operator"><font color="#008000"><tt>Operator</tt></font></a><font
+        color="#008000" size="3"> for operator precedence and
+        associativity.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Equality"><tt>Equality</tt></a></dt>
+    <dd><a href="#Expression"><tt>Expression</tt></a><tt> </tt><a
+        href="#Comparison"><tt>Comparison</tt></a><tt> </tt><a
+        href="#Expression"><tt>Expression</tt></a></dd>
+    <dt><a name="Comparison"><tt>Comparison</tt></a></dt>
+    <dd><strong><tt>=</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>/=</tt></strong></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        See </font><a href="#Operator"><font color="#008000"><tt>Operator</tt></font></a><font
+        color="#008000" size="3"> for operator precedence and
+        associativity.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Manifest_constant"><tt>Manifest_constant</tt></a></dt>
+    <dd><a href="#Boolean_constant"><tt>Boolean_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Character_constant"><tt>Character_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Integer_constant"><tt>Integer_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Real_constant"><tt>Real_constant</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Manifest_string"><tt>Manifest_string</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt> </tt><a
+        href="#Bit_constant"><tt>Bit_constant</tt></a><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Wide_character_constant"><tt>Wide_character_constant</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Wide_manifest_string"><tt>Wide_manifest_string</tt></a><tt>
+        </tt><font color="#FF0000"><tt>|</tt></font><tt><br>
+        </tt><a href="#Hexadecimal_constant"><tt>Hexadecimal_constant</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        </font><font color="#008000"><tt>Wide_character_constant</tt></font><font
+        color="#008000" size="3">, </font><font color="#008000"><tt>Wide_manifest_string</tt></font><font
+        color="#008000" size="3"> and </font><font
+        color="#008000"><tt>Hexadecimal_constant</tt></font><font
+        color="#008000" size="3"> are not part of the standard.
+        They have been introduced in TowerEiffel to support wide
+        characters and string, and hexadecimal integers.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Boolean_constant"><tt>Boolean_constant</tt></a></dt>
+    <dd><strong><tt>True</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>False</tt></strong></dd>
+    <dt><a name="Integer_constant"><tt>Integer_constant</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Sign"><tt>Sign</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Integer"><tt>Integer</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        There is an ambiguity in the standard syntax here. In the
+        following piece of code:</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><em>foo</em> := - <em>2</em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">should the </font><a
+        href="#Expression"><font color="#008000"><tt>Expression</tt></font></a><font
+        color="#008000" size="3"> on the right hand side of the
+        assignment be recognized as an </font><font
+        color="#008000"><tt>Integer_constant</tt></font><font
+        color="#008000" size="3"> or as an </font><a
+        href="#Unary_expression"><font color="#008000"><tt>Unary_expression</tt></font></a><font
+        color="#008000" size="3"> whose </font><a
+        href="#Prefix_operator"><font color="#008000"><tt>Prefix_operator</tt></font></a><font
+        color="#008000" size="1" face="Courier"> </font><font
+        color="#008000" size="3">is '</font><font color="#008000"><strong><tt>-</tt></strong></font><font
+        color="#008000" size="3">' and whose </font><font
+        color="#008000"><tt>Expression</tt></font><font
+        color="#008000" size="3"> is an (unsigned) </font><a
+        href="#Integer"><font color="#008000"><tt>Integer</tt></font></a><font
+        color="#008000" size="3">? This has been resolved in the
+        current syntax description by rewriting the specification
+        for </font><a href="#Expression"><font color="#008000"><tt>Expression</tt></font></a><font
+        color="#008000" size="2" face="Courier New">.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Real_constant"><tt>Real_constant</tt></a></dt>
+    <dd><font color="#FF0000"><tt>[</tt></font><tt> </tt><a
+        href="#Sign"><tt>Sign</tt></a><tt> </tt><font
+        color="#FF0000"><tt>]</tt></font><tt> </tt><a
+        href="#Real"><tt>Real</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Same ambiguity as for </font><font color="#008000"><tt>Integer_constant</tt></font><font
+        color="#008000" size="3"> above.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Sign"><tt>Sign</tt></a></dt>
+    <dd><strong><tt>+</tt></strong><tt> </tt><font
+        color="#FF0000"><tt>|</tt></font><tt> </tt><strong><tt>-</tt></strong></dd>
+    <dt><a name="Wide_character_constant"><tt>Wide_character_constant</tt></a></dt>
+    <dd><strong><tt>$ </tt></strong><a href="#Character_constant"><tt>Character_constant</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        </font><font color="#008000"><tt>Wide_character_constant</tt></font><font
+        color="#008000" size="3"> is not part of the standard. It
+        has been introduced in TowerEiffel to support wide
+        characters.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:
+        </strong>No intervening character is allowed between the
+        dollar sign and the </font><font color="#008000"><tt>Character_constant</tt></font><font
+        color="#008000" size="3">.</font></p>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dt><a name="Wide_manifest_string"><tt>Wide_manifest_string</tt></a></dt>
+    <dd><strong><tt>$</tt></strong><tt> </tt><a
+        href="#Manifest_string"><tt>Manifest_string</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        </font><font color="#008000"><tt>Wide_manifest_string</tt></font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000" size="3">is not part of the standard. It
+        has been introduced in TowerEiffel to support wide
+        character in strings.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:
+        </strong>No intervening character is allowed between the
+        dollar sign and the </font><font color="#008000"><tt>Manifest_string</tt></font><font
+        color="#008000" size="3">.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Manifest_array"><tt>Manifest_array</tt></a></dt>
+    <dd><strong><tt>&lt;&lt;</tt></strong><tt> </tt><a
+        href="#Expression_list"><tt>Expression_list</tt></a><tt> </tt><strong><tt>&gt;&gt;</tt></strong></dd>
+    <dt><a name="Expression_list"><tt>Expression_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Expression"><tt>Expression</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Old"><tt>Old</tt></a></dt>
+    <dd><strong><tt>old</tt></strong><tt> </tt><a
+        href="#Expression"><tt>Expression</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The validity rule </font><font color="#008000" size="2">VAOL-1</font><font
+        color="#008000" size="3"> states that the </font><font
+        color="#008000" size="2" face="Courier New">Old</font><font
+        color="#008000" size="3"> expression is only valid in a </font><a
+        href="#Postcondition"><font color="#008000"><tt>Postcondition</tt></font></a><font
+        color="#008000" size="3">. This could eventually be
+        enforced by the syntax.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Strip"><tt>Strip</tt></a></dt>
+    <dd><strong><tt>Strip</tt></strong><tt> </tt><strong><tt>(</tt></strong><tt>
+        </tt><a href="#Attribute_list"><tt>Attribute_list</tt></a><tt>
+        </tt><strong><tt>)</tt></strong></dd>
+    <dt><a name="Attribute_list"><tt>Attribute_list</tt></a></dt>
+    <dd><font color="#FF0000"><tt>{</tt></font><tt> </tt><a
+        href="#Attribute"><tt>Attribute</tt></a><tt> </tt><strong><tt>,</tt></strong><tt>
+        </tt><font color="#FF0000"><tt>... }</tt></font></dd>
+</dl>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Identifier"><tt>Identifier</tt></a></dt>
+    <dd>An identifier is a sequence of one or more characters, of
+        which the first is a letter (<strong><tt>a</tt></strong>
+        to <strong><tt>z</tt></strong> and <strong><tt>A</tt></strong>
+        to <strong><tt>Z</tt></strong>) and each of the
+        subsequent ones, if any, is a letter, a decimal digit (<strong><tt>0</tt></strong>
+        to <strong><tt>9</tt></strong>) or an underscore
+        character (<strong><tt>_</tt></strong>).<br>
+        Letter case is not significant for letters: the two
+        identifiers <em><tt>lInKeD_liST</tt></em> and <em><tt>LINKED_LIST</tt></em>
+        are considered the same.</dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        Unfortunately, SmallEiffel is case-sensitive.
+        (Surprisingly, it is not case-sensitive for </font><a
+        href="#Reserved_word"><font color="#008000"><tt>Reserved_word</tt></font></a><font
+        color="#008000">s.)</font></p>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        An identifier is valid if and only if it is not one of
+        the </font><a href="#Reserved_word"><font color="#008000"><tt>Reserved_word</tt></font></a><font
+        color="#008000">s.</font></p>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        TowerEiffel cannot handle contiguous underscores in
+        feature names and class names.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Integer"><tt>Integer</tt></a></dt>
+    <dd>An integer is a sequence of characters, each of which
+        must be either:<ol>
+            <li>a decimal digit (<strong><tt>0</tt></strong> to <strong><tt>9</tt></strong>)</li>
+            <li>an underscore (<strong><tt>_</tt></strong>),
+                which may not be the first character.</li>
+        </ol>
+    </dd>
+    <dd>If any underscore is present, then there must be three
+        digits to the right of every underscore, and there must
+        not be any consecutive group of four digits.</dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        The last two constraints concerning underscores might be
+        removed in the future, allowing groups of any number of
+        digits.</font></p>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        Contrary to </font><a href="#Integer_constant"><font
+        color="#008000"><tt>Integer_constant</tt></font></a><font
+        color="#008000">, <tt>Integer</tt> has no sign.</font></p>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        Be aware of the minimum integer value problem! For
+        example, on platforms where integers are stored on 32
+        bits, the following Eiffel code is valid:</font></p>
+        <blockquote>
+            <pre><font color="#008000"><em>Minimum_integer</em>: <em>INTEGER</em> <em><strong>is</strong></em> - <em>2_147_483_648</em> 
+        -- Smallest supported value of type <em>INTEGER</em></font></pre>
+        </blockquote>
+        <p><font color="#008000">but the parser should be smart
+        enough otherwise it will read an unary minus followed by
+        the integer 2147483648, which does not fit in 32 bits and
+        hence triggers an overflow.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Hexadecimal_constant"><tt>Hexadecimal_constant</tt></a></dt>
+    <dd>An hexadecimal constant is a sequence of <font size="3">two
+        or more characters, whose first character is a decimal
+        digit </font>(<strong><tt>0</tt></strong> to <strong><tt>9</tt></strong>),
+        whose subsequent characters but the last are decimal
+        digits or letters <strong><tt>a</tt></strong> to <strong><tt>f</tt></strong>
+        or <strong><tt>A</tt></strong> to <strong><tt>F</tt></strong>,
+        and followed by <strong><tt>x</tt></strong> or <strong><tt>X</tt></strong>,
+        with no other intervening characters.</dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong></font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000"><tt>Hexadecimal_constant</tt></font><font
+        color="#008000" size="3"> is not part of the standard. It
+        has been introduced in TowerEiffel to support hexadecimal
+        integers.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong></font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000" size="3">It is not clear whether
+        underscores are allowed in hexadecimal constants.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Real"><tt>Real</tt></a></dt>
+    <dd>A real number is made of the following elements:<ol>
+            <li>an optional <a href="#Integer"><tt>Integer</tt></a>,
+                giving the integral part (If this is absent, the
+                integral part is 0.)</li>
+            <li>a required dot (<strong><tt>.</tt></strong>) </li>
+            <li>an optional <a href="#Integer"><tt>Integer</tt></a>
+                written backwards, which gives the fractional
+                part (if this is absent, the fractional part is
+                0.)</li>
+            <li>an optional exponent, which is the letter <strong><tt>e</tt></strong>
+                or <strong><tt>E</tt></strong> followed by an
+                optional <a href="#Sign"><tt>Sign</tt></a> (<strong><tt>+</tt></strong>
+                or <strong><tt>-</tt></strong>) and an <a
+                href="#Integer"><tt>Integer</tt></a>. The integer
+                is required if the <strong><tt>e</tt></strong> or
+                <strong><tt>E</tt></strong> is present. This
+                indicates that the value appearing before the <strong><tt>e</tt></strong>
+                or <strong><tt>E</tt></strong> must be scaled by
+                10^n, where n is the given integer. </li>
+        </ol>
+    </dd>
+    <dd>No intervening character (blank or otherwise) is
+        permitted between these elements. The integral and
+        fractional parts may not both be absent. If underscores
+        are used in the integral or the fractional part, they
+        must also appear in the other part, unless it has three
+        digits or less.</dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        The recommended style is to use <strong><tt>E</tt></strong>
+        rather than <strong><tt>e</tt></strong>.</font></p>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        Contrary to </font><a href="#Real_constant"><font
+        color="#008000"><tt>Real_constant</tt></font></a><font
+        color="#008000">, <tt>Real</tt> has no sign.</font></p>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        The constraint stating that the integral and fractional
+        parts may not both be absent is lexically important.
+        Otherwise the following piece of code</font></p>
+        <blockquote>
+            <pre><font color="#008000">a.e1</font></pre>
+        </blockquote>
+        <p><font color="#008000">could be scanned as</font></p>
+        <blockquote>
+            <pre><font color="#008000"><u>a</u>  <u>.e1</u></font></pre>
+        </blockquote>
+        <p><font color="#008000">instead of</font></p>
+        <blockquote>
+            <pre><font color="#008000"><u>a</u>  <u>.</u>  <u>e1</u></font></pre>
+        </blockquote>
+        <p><font color="#008000"><tt>'.e1'</tt></font><font
+        color="#008000" size="2" face="Courier New"> </font><font
+        color="#008000" size="3">being recognized as a real.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Character_constant"><tt>Character_constant</tt></a></dt>
+    <dd>A character constant is either:<ol>
+            <li>a printable character except percent (<font
+                size="4"><strong><tt>%</tt></strong></font>) and
+                single quote (<font size="4"><strong><tt>'</tt></strong></font>)</li>
+            <li>a <a href="#Special_character"><tt>Special_character</tt></a></li>
+        </ol>
+    </dd>
+    <dd>enclosed in single quotes (<font size="4"><strong><tt>'</tt></strong></font>).</dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Printable characters include, in this case, blanks and
+        tab characters, but not new lines. Compare that to </font><a
+        href="#Free_operator"><font color="#008000"><tt>Free_operator</tt></font></a><font
+        color="#008000" size="3">.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Manifest_string"><tt>Manifest_string</tt></a></dt>
+    <dd>A manifest string is an arbitrary sequence of:<ol>
+            <li>printable characters except percent (<font
+                size="4"><strong><tt>%</tt></strong></font>) and
+                double quote (<font size="4"><strong><tt>&quot;</tt></strong></font>)</li>
+            <li><a href="#Special_character"><tt>Special_character</tt></a>s</li>
+        </ol>
+    </dd>
+    <dd>enclosed in double quotes (<font size="4"><strong><tt>&quot;</tt></strong></font>).</dd>
+    <dd>An extended form allows one to write a manifest string on
+        two or more lines. Every line but the last must end with
+        a percent (<font size="4"><strong><tt>%</tt></strong></font>)
+        and every line but the first must begin with a percent (<font
+        size="4"><strong><tt>%</tt></strong></font>) possibly
+        preceded by blanks (<tt> </tt>) and tab characters.</dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Printable characters include, in this case, blanks and
+        tab characters, but not new lines. Compare that to </font><a
+        href="#Free_operator"><font color="#008000"><tt>Free_operator</tt></font></a><font
+        color="#008000" size="3">.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Bit_constant"><tt>Bit_constant</tt></a></dt>
+    <dd>A bit constant is a sequence of digits <strong><tt>0</tt></strong>
+        or <strong><tt>1</tt></strong>, followed by <strong><tt>b</tt></strong>
+        or <strong><tt>B</tt></strong>, with no other intervening
+        characters.</dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        The recommended style is to use <strong><tt>B</tt></strong>
+        rather than <strong><tt>b</tt></strong>.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Free_operator"><tt>Free_operator</tt></a></dt>
+    <dd><font size="3">A free operator is a sequence of one or
+        more characters, whose first character is any one of</font><font
+        size="2" face="Courier New"> </font><font size="2"><strong>@
+        # | &amp;</strong></font><font size="3"> and whose
+        subsequent characters, if any, may be any printable
+        characters. Letter case is not significant for letters in
+        free operators.</font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Printable characters do not include, in this case,
+        characters allowed in </font><a href="#Break"><font
+        color="#008000"><tt>Break</tt></font></a><font
+        color="#008000" size="3">s. Compare that to </font><a
+        href="#Character_constant"><font color="#008000"><tt>Character_constant</tt></font></a><font
+        color="#008000" size="3">.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The following code</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3">a@1</font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">is scanned as</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><u>a</u>  <u>@1</u></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">which is not
+        syntactically correct. See Eiffel </font><a
+        href="http://www.eiffel.tm/gustave/gotcha/gotcha4.htm"><font
+        color="#008000" size="3">gotchas</font></a><font
+        color="#008000" size="3"> for details.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        </font><a
+        href="http://www.prenhall.com/books/ptr_0132479257.html"><font
+        color="#008000" size="3">Eiffel: The Language</font></a><font
+        color="#008000" size="3">, second printing, allows </font><a
+        href="#Special_character"><font color="#008000"><tt>Special_character</tt></font></a><font
+        color="#008000" size="3">s (although printable) in free
+        operators. No Eiffel compiler supports that.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        SmallEiffel and Visual Eiffel are case-sensitive for free
+        operators.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Comment"><tt>Comment</tt></a></dt>
+    <dd><font size="3">A comment begins with two dash characters
+        (</font><strong><tt>--</tt></strong><font size="3">) and
+        extends to the end of the line.</font></dd>
+    <dd><font size="3">An extended form allows one to write a
+        comment on two or more lines. Every line but the first
+        must begin with two dash characters possibly preceded by
+        blanks and tab characters.</font></dd>
+    <dt><a name="Header_comment"><tt>Header_comment</tt></a></dt>
+    <dd><a href="#Comment"><tt>Comment</tt></a></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        This is not the official description of </font><font
+        color="#008000"><tt>Comment</tt></font><font
+        color="#008000" size="3">. However I couldn't see why the
+        percent character (</font><font color="#008000" size="4"><strong><tt>%</tt></strong></font><font
+        color="#008000" size="3">) was not allowed in its bare
+        form (i.e. not part of a </font><a
+        href="#Special_character"><font color="#008000"><tt>Special_character</tt></font></a><font
+        color="#008000" size="3">) in a comment.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        There is two kinds of comments: free comments and
+        expected comments. Free comments can be discared by some
+        tools. However expected comments appear as part of four
+        constructs: </font><a href="#Routine"><font
+        color="#008000"><tt>Routine</tt></font></a><font
+        color="#008000" size="3">, </font><a
+        href="#Assertion_clause"><font color="#008000"><tt>Assertion_clause</tt></font></a><font
+        color="#008000" size="3">, </font><a
+        href="#Creation_clause"><font color="#008000"><tt>Creation_clause</tt></font></a><font
+        color="#008000" size="3"> and </font><a
+        href="#Feature_clause"><font color="#008000"><tt>Feature_clause</tt></font></a><font
+        color="#008000" size="3">, and should be processed by
+        tools such as the <em>short</em> utility. Although, in </font><font
+        color="#008000"><tt>Routine</tt></font><font
+        color="#008000" size="3">, </font><font color="#008000"><tt>Creation_clause</tt></font><font
+        color="#008000" size="2" face="Courier New"> and </font><font
+        color="#008000"><tt>Feature_clause</tt></font><font
+        color="#008000" size="3">, the header comment is optional
+        and may be ignored without too much harm, it is
+        compulsory in </font><font color="#008000"><tt>Assertion_clause</tt></font><font
+        color="#008000" size="3"> and ignoring it would be a
+        syntax error. A solution to implement these expected
+        comments could be to use lexical tie-ins.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        TowerEiffel erroneously emits a syntax error when a
+        comment appears between the </font><font color="#008000"><strong><tt>feature</tt></strong></font><font
+        color="#008000" size="3"> keyword and the optional </font><font
+        color="#008000"><tt>Clients</tt></font><font
+        color="#008000" size="3"> in the </font><a
+        href="#Features"><font color="#008000"><tt>Features</tt></font></a><font
+        color="#008000" size="3"> construct. This is probably a
+        secondary effect of the use of lexical tie-ins suggested
+        above.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        In the following </font><a href="#Routine"><font
+        color="#008000"><tt>Routine</tt></font></a><font
+        color="#008000" size="3"> declaration:</font></p>
+        <blockquote>
+            <pre><font color="#008000" size="3"><em>foo</em> <em><strong>is</strong></em>
+        -- This is the first comment.
+
+        -- This is the second comment.
+
+        -- This is the third comment.
+    <em><strong>do</strong></em>
+        ...
+    <em><strong>end</strong></em></font></pre>
+        </blockquote>
+        <p><font color="#008000" size="3">it is not clear which
+        one of the three comments is the expected </font><font
+        color="#008000"><tt>Header_comment</tt></font><font
+        color="#008000" size="3"> and what are the two other free
+        comments. TowerEiffel chose the first comment to be the
+        header comment. Some other compilers, such as ISE Eiffel,
+        Halstenbach and Visual Eiffel, actually merge the three
+        comments into one which becomes the header comment.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Some Eiffel compilers ignore any line starting with '</font><font
+        color="#008000"><strong><tt>--</tt></strong></font><font
+        color="#008000" size="3">|' instead of just '</font><font
+        color="#008000"><strong><tt>--</tt></strong></font><font
+        color="#008000" size="3">' in header comments.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Break"><tt>Break</tt></a></dt>
+    <dd>A break is made of a sequence of one or more of the
+        following characters:<ol>
+            <li>blank</li>
+            <li>tab </li>
+            <li>new line</li>
+        </ol>
+    </dd>
+    <dd>A break can be inserted between two adjacent elements
+        without affecting the semantics. </dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        Some platforms such as Windows put a carriage return
+        character before the new line. In such cases, it is
+        easier to consider the carriage return as a fourth
+        possible character making up a break.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Special_character"><tt>Special_character</tt></a></dt>
+    <dd><font size="3">A special character has one of the
+        following forms:</font><ol>
+            <li>a sequence <strong><tt>%/code/</tt></strong>
+                where <strong><tt>code</tt></strong> is an
+                unsigned integer representing the character of <font
+                size="2">ASCII</font> code <strong><tt>code</tt></strong>
+                in decimal value</li>
+            <li><dl>
+                    <dt>a sequence <strong><tt>%K</tt></strong>
+                        used to represent the following special
+                        characters:</dt>
+                    <dd>&nbsp;<table border="1" cellpadding="3"
+                        cellspacing="0" bordercolor="#000000"
+                        bordercolordark="#000000"
+                        bordercolorlight="#FFFFFF">
+                            <tr>
+                                <td><strong>Character</strong></td>
+                                <td><strong>Code</strong></td>
+                                <td><strong>Mnemonic name</strong></td>
+                            </tr>
+                            <tr>
+                                <td>@</td>
+                                <td><font size="4"><tt>%A</tt></font></td>
+                                <td><strong>A</strong>t-sign</td>
+                            </tr>
+                            <tr>
+                                <td>BS</td>
+                                <td><font size="4"><tt>%B</tt></font></td>
+                                <td><strong>B</strong>ackspace</td>
+                            </tr>
+                            <tr>
+                                <td>^</td>
+                                <td><font size="4"><tt>%C</tt></font></td>
+                                <td><strong>C</strong>ircumflex</td>
+                            </tr>
+                            <tr>
+                                <td>$</td>
+                                <td><font size="4"><tt>%D</tt></font></td>
+                                <td><strong>D</strong>ollar</td>
+                            </tr>
+                            <tr>
+                                <td>FF</td>
+                                <td><font size="4"><tt>%F</tt></font></td>
+                                <td><strong>F</strong>orm feed</td>
+                            </tr>
+                            <tr>
+                                <td>\</td>
+                                <td><font size="4"><tt>%H</tt></font></td>
+                                <td>backslas<strong>H</strong></td>
+                            </tr>
+                            <tr>
+                                <td>~</td>
+                                <td><font size="4"><tt>%L</tt></font></td>
+                                <td>ti<strong>L</strong>da</td>
+                            </tr>
+                            <tr>
+                                <td>NL (LF)</td>
+                                <td><font size="4"><tt>%N</tt></font></td>
+                                <td><strong>N</strong>ewline</td>
+                            </tr>
+                            <tr>
+                                <td>`</td>
+                                <td><font size="4"><tt>%Q</tt></font></td>
+                                <td>back <strong>Q</strong>uote</td>
+                            </tr>
+                            <tr>
+                                <td>CR</td>
+                                <td><font size="4"><tt>%R</tt></font></td>
+                                <td>carriage <strong>R</strong>eturn</td>
+                            </tr>
+                            <tr>
+                                <td>#</td>
+                                <td><font size="4"><tt>%S</tt></font></td>
+                                <td><strong>S</strong>harp</td>
+                            </tr>
+                            <tr>
+                                <td>HT</td>
+                                <td><font size="4"><tt>%T</tt></font></td>
+                                <td>horizontal <strong>T</strong>ab</td>
+                            </tr>
+                            <tr>
+                                <td>NUL</td>
+                                <td><font size="4"><tt>%U</tt></font></td>
+                                <td>n<strong>U</strong>ll
+                                character</td>
+                            </tr>
+                            <tr>
+                                <td>|</td>
+                                <td><font size="4"><tt>%V</tt></font></td>
+                                <td><strong>V</strong>ertical bar</td>
+                            </tr>
+                            <tr>
+                                <td>%</td>
+                                <td><font size="4"><tt>%%</tt></font></td>
+                                <td>percent</td>
+                            </tr>
+                            <tr>
+                                <td>'</td>
+                                <td><font size="4"><tt>%'</tt></font></td>
+                                <td>single quote</td>
+                            </tr>
+                            <tr>
+                                <td>&quot;</td>
+                                <td><font size="4"><tt>%&quot;</tt></font></td>
+                                <td>double quote</td>
+                            </tr>
+                            <tr>
+                                <td>[</td>
+                                <td><font size="4"><tt>%(</tt></font></td>
+                                <td>opening bracket</td>
+                            </tr>
+                            <tr>
+                                <td>]</td>
+                                <td><font size="4"><tt>%)</tt></font></td>
+                                <td>closing bracket</td>
+                            </tr>
+                            <tr>
+                                <td>{</td>
+                                <td><font size="4"><tt>%&lt;</tt></font></td>
+                                <td>opening brace</td>
+                            </tr>
+                            <tr>
+                                <td>}</td>
+                                <td><font size="4"><tt>%&gt;</tt></font></td>
+                                <td>closing brace</td>
+                            </tr>
+                        </table>
+                    </dd>
+                </dl>
+            </li>
+        </ol>
+    </dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        Most Eiffel compilers emit a syntax error when the
+        sequence <strong><tt>%K</tt></strong> is not listed in
+        the table above. However, Visual Eiffel considers that
+        the sequence <strong><tt>%K</tt></strong></font><font
+        color="#008000" size="3"> represents the character </font><font
+        color="#008000"><strong><tt>K</tt></strong></font><font
+        color="#008000" size="3"> when the sequence is not listed
+        in the table above. As a consequence </font><font
+        color="#008000"><strong><tt>%P</tt></strong></font><font
+        color="#008000" size="3"> stands for character </font><font
+        color="#008000"><strong><tt>P</tt></strong></font><font
+        color="#008000" size="3"> and </font><font
+        color="#008000"><strong><tt>%D</tt></strong></font><font
+        color="#008000" size="3"> stands for character </font><font
+        color="#008000"><strong><tt>$</tt></strong></font><font
+        color="#008000" size="3">.</font></p>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        All Eiffel compilers that I have tested (i.e. ISE Eiffel,
+        Halstenbach, SmallEiffel, Visual Eiffel, TowerEiffel)
+        expect the letter <strong><tt>K</tt></strong> in <strong><tt>%K</tt></strong>
+        to be in upper case to be recognized as a special
+        character from the table above. As a consequence <strong><tt>%d</tt></strong>
+        and <strong><tt>%D</tt></strong> are not considered the
+        same.</font></p>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        It is not clear to me whether underscores are allowed in
+        the <strong><tt>code</tt></strong> integer (specially
+        when it is the code of a wide character).</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Reserved_word"><tt>Reserved_word</tt></a></dt>
+    <dd><font size="3">A reserved word is either:</font><ol>
+            <li><font size="3">a keyword, which serves to
+                introduce and delimit the variant components of
+                constructs. The Eiffel keywords are: </font><strong><tt>alias</tt></strong><font
+                size="3">, </font><strong><tt>all</tt></strong><font
+                size="3">, </font><strong><tt>and</tt></strong><font
+                size="3">, </font><strong><tt>as</tt></strong><font
+                size="3">, </font><strong><tt>check</tt></strong><font
+                size="3">, </font><strong><tt>class</tt></strong><font
+                size="3">, </font><strong><tt>creation</tt></strong><font
+                size="3">, </font><strong><tt>debug</tt></strong><font
+                size="3">, </font><strong><tt>deferred</tt></strong><font
+                size="3">, </font><strong><tt>do</tt></strong><font
+                size="3">, </font><strong><tt>else</tt></strong><font
+                size="3">, </font><strong><tt>elseif</tt></strong><font
+                size="3">, </font><strong><tt>end</tt></strong><font
+                size="3">, </font><strong><tt>ensure</tt></strong><font
+                size="3">, </font><strong><tt>expanded</tt></strong><font
+                size="3">, </font><strong><tt>export</tt></strong><font
+                size="3">, </font><strong><tt>external</tt></strong><font
+                size="3">, </font><strong><tt>feature</tt></strong><font
+                size="3">, </font><strong><tt>from</tt></strong><font
+                size="3">, </font><strong><tt>frozen</tt></strong><font
+                size="3">, </font><strong><tt>if</tt></strong><font
+                size="3">, </font><strong><tt>implies</tt></strong><font
+                size="3">, </font><strong><tt>indexing</tt></strong><font
+                size="3">, </font><strong><tt>infix</tt></strong><font
+                size="3">, </font><strong><tt>inherit</tt></strong><font
+                size="3">, </font><strong><tt>inspect</tt></strong><font
+                size="3">, </font><strong><tt>invariant</tt></strong><font
+                size="3">, </font><strong><tt>is</tt></strong><font
+                size="3">, </font><strong><tt>like</tt></strong><font
+                size="3">, </font><strong><tt>local</tt></strong><font
+                size="3">, </font><strong><tt>loop</tt></strong><font
+                size="3">, </font><strong><tt>not</tt></strong><font
+                size="3">, </font><strong><tt>obsolete</tt></strong><font
+                size="3">, </font><strong><tt>old</tt></strong><font
+                size="3">, </font><strong><tt>once</tt></strong><font
+                size="3">, </font><strong><tt>or</tt></strong><font
+                size="3">, </font><strong><tt>prefix</tt></strong><font
+                size="3">, </font><strong><tt>redefine</tt></strong><font
+                size="3">, </font><strong><tt>rename</tt></strong><font
+                size="3">, </font><strong><tt>require</tt></strong><font
+                size="3">, </font><strong><tt>rescue</tt></strong><font
+                size="3">, </font><strong><tt>retry</tt></strong><font
+                size="3">, </font><strong><tt>select</tt></strong><font
+                size="3">, </font><strong><tt>separate</tt></strong><font
+                size="3">, </font><strong><tt>then</tt></strong><font
+                size="3">, </font><strong><tt>undefine</tt></strong><font
+                size="3">, </font><strong><tt>until</tt></strong><font
+                size="3">, </font><strong><tt>variant</tt></strong><font
+                size="3">, </font><strong><tt>when</tt></strong><font
+                size="3">, </font><strong><tt>xor</tt></strong><font
+                size="3">.</font></li>
+            <li><font size="3">a predefined name, which comes at
+                positions where variable tokens would also be
+                permissible. The Eiffel predefined names are: </font><strong><tt>BIT</tt></strong><font
+                size="3">, </font><strong><tt>Current</tt></strong><font
+                size="3">, </font><strong><tt>False</tt></strong><font
+                size="3">, </font><strong><tt>Precursor</tt></strong><font
+                size="2">, </font><strong><tt>Result</tt></strong><font
+                size="3">, </font><strong><tt>Strip</tt></strong><font
+                size="3">, </font><strong><tt>True</tt></strong><font
+                size="3">, </font><strong><tt>Unique</tt></strong><font
+                size="3">.</font> </li>
+        </ol>
+    </dd>
+    <dd><font size="3">The letter case is not significant for
+        reserved words: the two words </font><em><tt>Result</tt></em><font
+        size="3"> and </font><em><tt>rEsUlT</tt></em><font
+        size="3"> are considered the same.</font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        The official syntax specification lists the following
+        class names as reserved words: </font><font
+        color="#008000"><em><tt>BOOLEAN</tt></em></font><font
+        color="#008000" size="3">, </font><font color="#008000"><em><tt>CHARACTER</tt></em></font><font
+        color="#008000" size="3">, </font><font color="#008000"><em><tt>DOUBLE</tt></em></font><font
+        color="#008000" size="3">, </font><font color="#008000"><em><tt>INTEGER</tt></em></font><font
+        color="#008000" size="3">, </font><font color="#008000"><em><tt>NONE</tt></em></font><font
+        color="#008000" size="3">, </font><font color="#008000"><em><tt>POINTER</tt></em></font><font
+        color="#008000" size="3">, </font><font color="#008000"><em><tt>REAL</tt></em></font><font
+        color="#008000" size="3">, </font><font color="#008000"><em><tt>STRING</tt></em></font><font
+        color="#008000" size="3">. I understand that these
+        classes have to be known by Eiffel compilers, but I don't
+        see why they should be reserved words. Note that </font><font
+        color="#008000"><em><tt>ANY</tt></em></font><font
+        color="#008000" size="3">, </font><font color="#008000"><em><tt>GENERAL</tt></em></font><font
+        color="#008000" size="3">, </font><font color="#008000"><em><tt>PLATFORM</tt></em></font><font
+        color="#008000" size="3"> and many other class names from
+        the Kernel Library Standard are not listed either!
+        Moreover, these class names appear nowhere in the syntax
+        constructs. Finally, only Visual Eiffel considers these
+        class names as reserved words.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        In </font><a
+        href="http://www.prenhall.com/books/ptr_0132479257.html"><font
+        color="#008000" size="3">Eiffel: The Language</font></a><font
+        color="#008000" size="3">, second printing, </font><font
+        color="#008000"><strong><tt>False</tt></strong></font><font
+        color="#008000" size="3">, </font><font color="#008000"><strong><tt>Strip</tt></strong></font><font
+        color="#008000" size="3">, </font><font color="#008000"><strong><tt>True</tt></strong></font><font
+        color="#008000" size="3"> and </font><font
+        color="#008000"><strong><tt>Unique</tt></strong></font><font
+        color="#008000" size="3"> are considered to be keywords.
+        I do not share this point of view.</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:</strong>
+        Although SmallEiffel is case-sensitive with respect to </font><a
+        href="#Identifier"><font color="#008000"><tt>Identifier</tt></font></a><font
+        color="#008000" size="3">, it considers letter case not
+        being significant for reserved words!</font></p>
+        <p><font color="#008000" size="3"><strong><u>Note</u></strong><strong>:
+        </strong></font><font color="#008000"><strong><tt>Precursor</tt></strong></font><font
+        color="#008000" size="3"> is not part of the standard
+        syntax. It has been introduced to support the </font><a
+        href="#Precursor"><font color="#008000"><tt>Precursor</tt></font></a><font
+        color="#008000" size="3"> mechanism.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Operator"><tt>Operator</tt></a></dt>
+    <dd><font size="3">The operators in the following table are
+        grouped by precedence level, starting with the highest
+        precedence group. Operators within each group have the
+        same precedence. For two or more consecutive occurrences
+        of binary operators with the same precedence level, the
+        associativity column specifies the order of evaluation.</font></dd>
+</dl>
+
+<dl>
+    <dd><table border="1" cellpadding="3" cellspacing="0"
+        bordercolor="#000000" bordercolordark="#000000"
+        bordercolorlight="#FFFFFF">
+            <tr>
+                <td><strong>Symbol</strong></td>
+                <td><strong>Associativity</strong></td>
+            </tr>
+            <tr>
+                <td><font face="Courier New"><strong>.</strong></font></td>
+                <td>left</td>
+            </tr>
+            <tr>
+                <td><strong><tt>old</tt></strong><br>
+                <strong><tt>not</tt></strong><br>
+                unary <strong><tt>+</tt></strong><br>
+                unary <strong><tt>-</tt></strong><br>
+                All free unary operators</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>All free binary operators</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td><strong><tt>^</tt></strong></td>
+                <td>right</td>
+            </tr>
+            <tr>
+                <td><font size="3"><strong>*<br>
+                /<br>
+                //<br>
+                \\</strong></font></td>
+                <td>left<br>
+                left<br>
+                left<br>
+                left</td>
+            </tr>
+            <tr>
+                <td>binary <strong><tt>+</tt></strong><br>
+                binay <strong><tt>-</tt></strong></td>
+                <td>left<br>
+                left</td>
+            </tr>
+            <tr>
+                <td><font size="3"><strong>=<br>
+                /=<br>
+                &lt;<br>
+                &gt;<br>
+                &lt;=<br>
+                &gt;=</strong></font></td>
+                <td>left<br>
+                left<br>
+                left<br>
+                left<br>
+                left<br>
+                left</td>
+            </tr>
+            <tr>
+                <td><strong><tt>and</tt></strong><font size="2"
+                face="Courier New"><strong><br>
+                </strong></font><strong><tt>and then</tt></strong></td>
+                <td>left<br>
+                left</td>
+            </tr>
+            <tr>
+                <td><strong><tt>or</tt></strong><font size="2"
+                face="Courier New"><strong><br>
+                </strong></font><strong><tt>or else</tt></strong><font
+                size="2" face="Courier New"><strong><br>
+                </strong></font><strong><tt>xor</tt></strong></td>
+                <td>left<br>
+                left<br>
+                left</td>
+            </tr>
+            <tr>
+                <td><strong><tt>implies</tt></strong></td>
+                <td>left</td>
+            </tr>
+        </table>
+    </dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        The reason why Eiffel compilers reject the following
+        piece of code:</font></p>
+        <blockquote>
+            <pre><font color="#008000"><em>foo</em> := <em>1</em> &lt; <em>2</em> &lt; <em>3</em></font></pre>
+        </blockquote>
+        <p><font color="#008000">is not because the comparison
+        operators are non-associative. These operators really are
+        left associative. The above code is syntactically correct
+        but is simply rejected because '<tt>1 &lt; 2</tt>' is of
+        type <em><tt>BOOLEAN</tt></em> and there is no feature
+        such as:</font></p>
+        <blockquote>
+            <pre><font color="#008000"><em><strong>infix</strong></em> &quot;&lt;&quot; (<em>i</em>: <em>INTEGER</em>): <em>SOME_TYPE</em></font></pre>
+        </blockquote>
+    </blockquote>
+    <blockquote>
+        <p><font color="#008000">in class <em><tt>BOOLEAN</tt></em>.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<dl>
+    <dt><a name="Semicolon"><tt>Semicolon</tt></a></dt>
+    <dd>Semicolons are used as separators in lists such as <a
+        href="#Index_list"><tt>Index_list</tt></a> or <a
+        href="#Compound"><tt>Compound</tt></a>. Semicolons are
+        optional in most places. However they are required in
+        some cases to remove ambiguities in <a href="#Assertion"><tt>Assertion</tt></a>
+        and <a href="#Compound"><tt>Compound</tt></a><font
+        size="3">. The ambiguity appears in the following piece
+        of code:</font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <pre><font size="3"><em>foo</em> (<em>expr</em>).<em>bar</em></font></pre>
+    </blockquote>
+</blockquote>
+
+<dl>
+    <dd><font size="3">where this could be recognized as &quot;</font><em><tt>bar</tt></em><font
+        size="3"> applied to the result of function </font><em><tt>foo</tt></em><font
+        size="3"> with argument </font><em><tt>expr</tt></em><font
+        size="3">&quot; or as &quot;a call to </font><em><tt>foo</tt></em><font
+        size="3"> followed by </font><em><tt>bar</tt></em><font
+        size="3"> applied to </font><em><tt>expr</tt></em><font
+        size="3">&quot;. The rule to resolve this ambiguity is to
+        put a semicolon between '</font><em><tt>foo</tt></em><font
+        size="3">' and '</font><tt>(</tt><em><tt>expr</tt></em><tt>).</tt><em><tt>bar</tt></em><font
+        size="3">' to get the second interpretation, or to leave
+        it as it is to get the first one.</font></dd>
+</dl>
+
+<blockquote>
+    <blockquote>
+        <p><font color="#008000"><strong><u>Note</u></strong><strong>:</strong>
+        For some constructs, some Eiffel compilers will consider
+        semicolons as terminators, consider them compulsory, or
+        just emit a warning if they are missing.</font></p>
+    </blockquote>
+</blockquote>
+
+<hr size="1">
+
+<table border="0" width="100%">
+    <tr>
+        <td><address>
+            <font size="2"><b>Copyright © 1999</b></font><font
+            size="1"><b>, </b></font><font size="2"><strong>Eric
+            Bezault</strong></font><strong> </strong><font
+            size="2"><br>
+            <strong>mailto:</strong></font><a
+            href="mailto:ericb@gobosoft.com"><font size="2">ericb@gobosoft.com</font></a><font
+            size="2"><br>
+            <strong>http:</strong></font><a
+            href="http://www.gobosoft.com"><font size="2">//www.gobosoft.com</font></a><font
+            size="2"><br>
+            <strong>Last Updated:</strong> 2 February 1999</font><br>
+            <!--webbot bot="PurpleText"
+            preview="
+$Date: 1999/06/12 18:49:03 $ 
+$Revision: 1.9 $"
+            --> 
+        </address>
+        </td>
+<!--        <td align="right" valign="top"><a
+        href="http://www.gobosoft.com"><img
+        src="../../image/home.gif" alt="Home" border="0"
+        width="40" height="40"></a><a href="alphabetical.html"><img
+        src="../../image/toc.gif" alt="Home" border="0"
+        width="40" height="40"></a></td> -->
+    </tr>
+</table>
+
+<p align="left">&nbsp;</p>
+</body>
+</html>

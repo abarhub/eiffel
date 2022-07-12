@@ -1,0 +1,8 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+   <link rel="stylesheet" href="..\..\..\test_unitaire\programme.css"></link>
+   <body><SPAN CLASS="toto">Programme :</SPAN><br></br>
+      		var_global:<br></br><span class="classe">classe</span><span class="type">INTEGER</span><br></br>$val_int
+      		[<span class="type">INTEGER</span>]
+      		<br></br>
+      				:<span class="type">$integer</span><br></br></body>
+</html>

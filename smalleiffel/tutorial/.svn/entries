@@ -1,0 +1,314 @@
+10
+
+dir
+58
+https://twist/svn/eiffel/eiffel/trunk/smalleiffel/tutorial
+https://twist/svn/eiffel
+
+
+
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+67c01f0b-0d27-6e44-be05-7f44c70b15d8
+
+ace
+dir
+
+agent
+dir
+
+basic_directory
+dir
+
+cecil
+dir
+
+directory
+dir
+
+external
+dir
+
+fibonacci.ace
+file
+
+
+
+
+2006-09-17T13:46:50.156250Z
+59119d311d2dea987258214d6d70875f
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+fibonacci.ace.bak
+file
+
+
+
+
+2006-09-17T13:46:50.140625Z
+1ef6f4d83eb4d2077d36fea78b6a162a
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+fibonacci.e
+file
+
+
+
+
+2006-09-17T13:46:50.234375Z
+f7f5f960404800c26f5ad0e37dd8e012
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+gcd
+dir
+
+hanoi
+dir
+
+hbcc.exe
+file
+
+
+
+
+2006-09-17T13:46:50.171875Z
+bd6f766669f6cbf8c46a5f86c23e4a52
+2006-09-17T13:29:14.703125Z
+1
+Barret
+has-props
+
+hbcc.tds
+file
+
+
+
+
+2006-09-17T13:46:50.203125Z
+8cd21522637d8868aa752eb8925d5fe4
+2006-09-17T13:29:14.703125Z
+1
+Barret
+has-props
+
+hello_world.e
+file
+
+
+
+
+2006-09-17T13:46:50.140625Z
+ce7ae3a528de9ba78ff19aef0d37fcb0
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+hello_world.exe
+file
+
+
+
+
+2006-09-17T13:46:50.218750Z
+f09b65a086559d0895cb3c29b31c3093
+2006-09-17T13:29:14.703125Z
+1
+Barret
+has-props
+
+hello_world.tds
+file
+
+
+
+
+2006-09-17T13:46:50.234375Z
+8cd21522637d8868aa752eb8925d5fe4
+2006-09-17T13:29:14.703125Z
+1
+Barret
+has-props
+
+hlcc.exe
+file
+
+
+
+
+2006-09-17T13:46:50.203125Z
+6a7dbcc8bb4f910e63480566030782f4
+2006-09-17T13:29:14.703125Z
+1
+Barret
+has-props
+
+iterator
+dir
+
+knight.e
+file
+
+
+
+
+2006-09-17T13:46:50.156250Z
+7acdbfe140f13b498f0b48c334ae7110
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+memory
+dir
+
+number
+dir
+
+parking
+dir
+
+print_arguments.e
+file
+
+
+
+
+2006-09-17T13:46:50.156250Z
+4bded619e61d9ec2d413f851f3da8807
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+pyramid.e
+file
+
+
+
+
+2006-09-17T13:46:50.187500Z
+35fab555de9af8319f30423f4cf9e13b
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+pyramid2.e
+file
+
+
+
+
+2006-09-17T13:46:50.156250Z
+41025fdf423f08956096b8a2513c8168
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+random
+dir
+
+sorting
+dir
+
+spread_illness.e
+file
+
+
+
+
+2006-09-17T13:46:50.203125Z
+62839d6446b3469650733183a92c923c
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+test1.e
+file
+
+
+
+
+2006-09-17T13:46:50.187500Z
+5416e40ddc064c63e96f6c3dae619bd0
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+test1.e.bak
+file
+
+
+
+
+2006-09-17T13:46:50.171875Z
+4bdf1be61336a2626d6b8bb65861bd28
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+test1.exe
+file
+
+
+
+
+2006-09-17T13:46:50.109375Z
+98a1fe1c87b715577e520120ade33572
+2006-09-17T13:29:14.703125Z
+1
+Barret
+has-props
+
+test1.tds
+file
+
+
+
+
+2006-09-17T13:46:50.125000Z
+2ad48c54f756f358365585bfc0427678
+2006-09-17T13:29:14.703125Z
+1
+Barret
+has-props
+
+time
+dir
+
+toto.txt
+file
+
+
+
+
+2006-09-17T13:46:50.140625Z
+665f212ae6f1b4f47a1d7d6e10ebc12c
+2006-09-17T13:29:14.703125Z
+1
+Barret
+
+triangle
+dir
+
+tuple
+dir
+

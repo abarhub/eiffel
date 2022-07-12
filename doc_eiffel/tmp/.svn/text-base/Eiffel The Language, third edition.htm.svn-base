@@ -1,0 +1,929 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0042)http://www.inf.ethz.ch/~meyer/ongoing/etl/ -->
+<HTML><HEAD><TITLE>Eiffel: The Language, third edition</TITLE>
+<META http-equiv=content-type content=text/html;charset=iso-8859-1><LINK 
+href="Eiffel The Language, third edition_fichiers/index.css" rel=stylesheet><!----------- Start of body ----------------------------------->
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<TABLE cellSpacing=2 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD width=85><A href="http://se.inf.ethz.ch/"><IMG 
+      src="Eiffel The Language, third edition_fichiers/o_logo.gif" 
+    border=0></A></TD>
+    <TD align=left width="65%">
+      <P><A href="http://se.inf.ethz.ch/"><FONT color=black><I>Chair of Software 
+      Engineering</I></FONT></A></P></TD>
+    <TD align=right width=*><A href="http://www.ethz.ch/"><IMG height=36 
+      src="Eiffel The Language, third edition_fichiers/logo-140.gif" width=140 
+      border=0></A></TD></TR>
+  <TR height=auto></TD></TR></TBODY></TABLE><!----------- Start of specific stuff -------------------------->
+<H1><I>Eiffel: The Language</I> -- Work In Progress <BR>Bertrand Meyer </H1>
+<P><B>This revision: 4.82-00-00, 21 September 2002</B> 
+<UL>
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  To <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/#latest">Latest news and 
+  changes</A> 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  To <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/#table">Short table of 
+  contents and links to chapters</A> <BR><IMG alt=+ 
+  src="Eiffel The Language, third edition_fichiers/greenball.gif"> To <A 
+  target=_top href="http://talkitover.com/etl">Talkitover group</A> intended for 
+  discussions of the book and the language. </P></UL>
+<P>
+<TABLE width="66%" align=center bgColor=#ffff55 border=3>
+  <TBODY>
+  <TR>
+    <TD>
+      <P><B>Use Internet Explorer</B> to read the PDF files. Under Netscape the 
+      inter-document links won't work. I am still trying to find a way around 
+      this. (Involves FrameMaker, PDF and Netscape.) </P></TD></TR></TBODY></TABLE>
+<P>
+<H2><IMG height=10 
+src="Eiffel The Language, third edition_fichiers/square_small.gif" width=10 
+border=0>&nbsp;<IMG height=10 
+src="Eiffel The Language, third edition_fichiers/square_small.gif" width=10 
+border=0>&nbsp;Overview and restrictions</H2>
+<P>This private set of pages contains the current state of the book "<I>Eiffel: 
+The Language</I>", third edition. All the material is copyright 1988-2002, 
+Bertrand Meyer. (As you will see in the text, the copyright for the language 
+reference and ELKS parts is meant to be released for free use once the book is 
+in final form.) These pages are meant for consultation by colleagues and 
+friends, especially members of the ECMA Eiffel standardization committee. To 
+avoid lots of potential trouble, in particular with the publisher: 
+<UL>
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  Do not link to individual chapters, or to anything in this directory other 
+  than the present page at <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/">http://www.inf.ethz.ch/~meyer/ongoing/etl/</A>. 
+
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  Do not make any publicly accessible copies of any files. (Private copies for 
+  the purpose of evaluating this work are OK -- obviously the very act of 
+  downloading creates a local copy -- but you must not forward them to others, 
+  and you must discard them when the book gets published.) </P></UL>
+<P>
+<P>A Talkitover group was available for discussions of the book and the 
+language. The existing discussions are still available at <A target=_top 
+href="http://talkitover.com/etl">http://talkitover.com/etl</A> but posting is no 
+longer possible; the group's role has been taken over by the ECMA-TC39-TG4, the 
+technical committee that is standardizing the Eiffel language at ECMA. To 
+participate in the committee you may <A href="http://www.ecma.ch/">join 
+ECMA</A>. The present pages serve as working material for the ECMA committee but 
+have no official ECMA status. 
+<P>
+<H2><IMG height=10 
+src="Eiffel The Language, third edition_fichiers/square_small.gif" width=10 
+border=0>&nbsp;Status indications</H2>
+<P>The chapters are marked as being in one of the following three states: 
+<UL>
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  "<I>Not done</I>": the chapter is a bare mechanical translation of the 
+  original troff text of the first edition. It usually has many inconsistencies, 
+  errors, missing elements and bizarre properties (even if some extracts appear 
+  reasonable). Do not trust anything in this chapter. In a few cases the chapter 
+  is just a placeholder. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  "<I>In progress</I>": some work has been done on this chapter, but it is far 
+  from complete. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <B>No particular mention</B>: the chapter is in reasonably clean form, 
+  although in most cases it hasn't been seriously proofread. </P></UL>
+<P>Of particular interest is the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">"<I>changes</I>" 
+appendix</A> which lists the changes with previous versions. I try to keep it as 
+up to date as possible. 
+<P><A name=latest></A>
+<H2><IMG height=10 
+src="Eiffel The Language, third edition_fichiers/square_small.gif" width=10 
+border=0>&nbsp;Latest news and changes: year 2002</H2>
+<P><I>21 Sept 2002</I>: <B>Version 4.82-00-00</B> Following an informal meeting 
+on 16 September and a suggestion by Éric Bezault, added rule that if there is an 
+inheritance part at least one of the Parent clauses must specify conforming 
+(non-expanded) inheritance. This ensures the property that every type conforms 
+to ANY, which otherwise would disappear as a result of the introduction of 
+non-conforming inheritance. That property is now stated as a rule, the Universal 
+Conformance rule, which is not a new validity constraint but a theorem ensured 
+by the other conformance rules. The affected sections are 6.6 and 6.9, both in 
+the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/inheritance.pdf">inheritance 
+chapter</A>. 
+<P>I might rename "non-conforming inheritance" as "expanded inheritance" since 
+this is what people tend to use. 
+<P>I started some time ago updating the text to take into account the changes 
+decided at the Santa Barbara meeting in August (contracts on attributes etc.). 
+It's actually rather delicate since it affects many parts of the text and puts 
+into question the very structure of the exposition, so it's going to take 
+considerablee time. 
+<P><I>11 June 2002</I>: <B>Version 4.80-00-11</B> (Updated here 10 August 2002, 
+sorry for the delay). Although not reflected on this page, there has been much 
+activity recently with the start of the ECMA standards group for Eiffel (ECMA 
+TC39-TG4). Contact <A href="http://www.ecma.ch/">ECMA</A> about participation. 
+The version updated here corresponds to the initial text discussed in the June 
+TG4 meeting. 
+<P>
+<H2><IMG height=10 
+src="Eiffel The Language, third edition_fichiers/square_small.gif" width=10 
+border=0>&nbsp;Latest news and changes: year 2001</H2>
+<P><I>31 December 2001</I>: <B>Version 4.80-00-00</B> Two significant language 
+changes (hence the top-level version increment): 
+<UL>
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  Added considerable generality to the once mechanism, allowing once keys. This 
+  is in the <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/routine.pdf">routine 
+  chapter</A> and, mostly, in a section of the <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/call.pdf">call semantics 
+  chapter</A> (that's the only part of the chapter worked on so far). This has 
+  also meant changing the syntax of Debug since there is now no more notion of 
+  Debug_key and Debug_key_list, simply Key_list used for both Once and Debug. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  Removed the assignment attribute mechanism altogether. This turned out to be 
+  too messy for its sake. </P></UL>
+<P>Other changes: chapter on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/older.pdf">older changes</A> 
+released; moved the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/tutorial.pdf">long tutorial</A> 
+to the end of the book. Corrected and updated the recently done <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/copy.pdf">chapter on copying and 
+equality</A> and <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/control.pdf">chapter on control 
+structures</A> to integrate comments by Marcel Satchell. 
+<P>Finally, I updated the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">change 
+appendix</A>, the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">ELKS appendix</A> and 
+the <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/tutorial.pdf">long 
+tutorial</A> to reflect all the recent changes. 
+<P>
+<P><I>29 December 2001</I>: <B>Version 4.79-00-00</B>: New pass on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/control.pdf">chapter on control 
+structures</A> (see also the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/v4_51_0">changes made one year 
+ago</A>). Worked on multi-branch to add the possibility of discriminating on 
+strings and on types. Forward references to the planned change in exception 
+mechanism, to be added soon. Cleanup and style improvements on the whole 
+chapter. There will be another update today or tomorrow as I have since then 
+updated the tutorial and "Eiffel in a Nutshell". 
+<P>Lengthened the version number convention to give myself more opportunities of 
+self-pats in the back for minute improvements. The convention (only slightly 
+adjusted, and remaining compatible with previous version number) is: 
+<UL>
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  Version number is 4.AA-BB-CC 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  When 4 turns to 5 the book is ready for publication. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  AA (currently 79) is incremented for any major language change or addition. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  BB is incremented for any small language change or addition. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  CC is incremented for changes and additions to the text without significant 
+  language change. </P></UL>
+<P>
+<P><I>8 December 2001</I>: <B>Version 4.78-1</B>: Finished <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/copy.pdf">chapter on copying and 
+equality</A>. Changes include making equality symmetric and correspondingly 
+requiring <I>copy</I> to take an argument of type identical to its target, and 
+introducing <B>infix</B> "}={" as a synonym to <I>equal</I>. As usual, many 
+improvements (I hope they are improvements) to the explanations and the 
+examples. I didn't touch the semantics of deep equality, although Michael 
+Schweitzer tried to convince me a few years ago that it was brain-damaged; I 
+will ask him if he remembers what the problem was. 
+<UL>
+  <UL>
+    <UL>
+      <UL>
+        <P><IMG alt=+ 
+        src="Eiffel The Language, third edition_fichiers/greenball.gif"> 18 
+        October 2001: Version 4.77-3: Files copied to ETH Zürich, everything is 
+        ready to start working on the text again. Checking some issues with the 
+        creation mechanism (on expanded) based on comments by Emmanuel Stapf. 
+        <P><IMG alt=+ 
+        src="Eiffel The Language, third edition_fichiers/greenball.gif"> To <A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/#2000">list of changes 
+        for 2000</A>. 
+        <P><IMG alt=+ 
+        src="Eiffel The Language, third edition_fichiers/greenball.gif"> To <A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/#1999">list of changes 
+        for 1999</A>. </P></UL></UL></UL></UL><A name=2000></A>
+<H2><IMG height=10 
+src="Eiffel The Language, third edition_fichiers/square_small.gif" width=10 
+border=0>&nbsp;Changes in year 2000</H2>
+<P><I>26 December 2000</I>: <B>Version 4.77-1</B>: I am working on the Lace 
+chapter. This will take a while, so there will be a number of 4.77-x. Until 
+further notice don't bother to look at it, it's still in a mess with text 
+processing problems. 
+<P><I>25 December 2000</I>: <B>Version 4.76-3</B>: Revision and improvement of 
+the class naming mechanism, following comments by Éric Bezault, Roger Browne, 
+Alexander Kogtenkov and James McKim. 
+<P><I>19 December 2000</I>: <B>Version 4.76-0</B>: Addition of a mechanism to 
+remove class names conflicts through qualification by cluster names. The chapter 
+principally affected is the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/structure.pdf">architecture 
+chapter</A>. Here is the message to the Talkitover group explaining this change: 
+
+<UL>
+  <UL>
+    <P>This version adds a simple mechanism for removing name clashes between 
+    classes. ISE Eiffel (I don't know about others) had previously used, since 
+    4.0 or so, a Lace renaming mechanism, but this has proved to be 
+    unsatisfactory. The policy that has been adopted now results from careful 
+    evaluation of those in other languages, in particular namespaces as present 
+    in recent versions of C++ and Smalltalk, as well as the .NET model and C# 
+    (requiring, in the latter case, the use of a keyword `using' similar to 
+    Ada's `with'). We found that this was overkill and adopted a much simpler 
+    solution. Within a cluster, no two classes may have the same name. A 
+    conflict arises if and only if you try to use a class name <I><FONT 
+    color=blue>C</FONT></I> such that no class of that name exists in the 
+    current cluster (if one does, it will be the one selected), but two or more 
+    classes are called <I><FONT color=blue>C</FONT></I> in other clusters. Then, 
+    to refer to that class, you must qualify it by its cluster name: <I><FONT 
+    color=blue>cluster1</FONT></I>::<I><FONT color=blue>C</FONT></I> or <I><FONT 
+    color=blue>cluster2</FONT></I>::<I><FONT color=blue>C</FONT></I>. Even when 
+    not required through this rule, such a fully qualified name is now a valid 
+    form of Class_name, valid anywhere we need a class name (e.g. in a type 
+    name, or in a selective exports clause), with the exception of a class 
+    definition itself, 
+    <P>
+    <UL>
+      <P><B><FONT color=navy>class</FONT></B> <I><FONT color=blue>C</FONT></I> 
+      </P></UL>
+    <P>where <I><FONT color=blue>C</FONT></I> must be unqualified. 
+    <P>The cluster name comes from the outside, typically an Ace file or 
+    equivalent. It is thus local to every system, although a library may come 
+    with a mini-Ace, to be included as is, and specifying a cluster name, so 
+    that systems using the library don't have to define their own cluster names 
+    from the library. 
+    <P>We haven't implemented this mechanism but feel that it's the right way to 
+    go -- simple, not overkill, and safe. I am not too keen on the :: symbol, 
+    but don't have a better suggestion now. (I'd originally used a single :, but 
+    a declaration of the form <I><FONT color=blue>x</FONT></I>: <I><FONT 
+    color=blue>cluster_name</FONT></I>:<I><FONT color=blue>CLASS_NAME</FONT></I> 
+    seems a bit strange.) </P></UL></UL>
+<P>The changes are mostly in the last section of the Architecture chapter 
+(currently chapter 3). 
+<P><I>19 December 2000</I>: <B>Version 4.75-3</B>: Typographical improvements 
+and more corrections on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">agent chapter</A>. 
+following comments by Marcel Satchell and Sam O'Connor (on the EiffelVision 
+example). (There was a 4.75-2 earlier today.) 
+<P><I>14 December 2000</I>: <B>Version 4.75-1</B>: A few corrections on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">agent chapter</A> 
+following comments by Marcel Satchell. 
+<P><I>13 December 2000</I>: <B>Version 4.75-0</B>: New version of the Agent 
+mechanism and the corresponding <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">agent chapter</A>. 
+<P>I have integrated a new syntax and various simplifications for agents. Other 
+than errors (which probably remain, since I haven't reviewed the text 
+extensively) I hope this is a final version of the mechanism. It uses a keyword 
+syntax and has a simple, general notation for inline agents. 
+<P>(Note: I find no record here of version 4.74-0, so I must have forgotten to 
+update the Web page back in September. It was the first step towards this update 
+of the agent mechanism.) 
+<P><I>25 August 2000</I>: <B>Version 4.73-1</B>: Fixed a few typos in the just 
+revised section on Verbatim_string in the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/expression.pdf">expression 
+chapter</A>. 
+<P>Updated the appendix on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/reserved.pdf">reserved words and 
+special symbols</A> to reflect recent changes, in particular by adding the 
+keyword <B><FONT color=#0000a0>agent</FONT></B>. 
+<P><I>25 August 2000</I>: <B>Version 4.73-0</B>: <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">Agent chapter</A>: 
+the agent mechanism has been resyntaxed and slightly revaliditied and 
+resemantiqued. Full chapter up to date. Keyword-based syntax (no more tilde ~ 
+and vertical bar |); complete unification between feature-based agents and 
+inline agents; full power of anonymous routines. The possibilities are quite 
+interesting. Before starting PDF regeneration I forgot to update the keyword and 
+operator lists at the end of the book (~ and | are out, `agent' is in) but have 
+done it on my working copy, so the PDF version will be OK the next time around. 
+<P>Also: in the discussion of Verbatim_string in the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/expression.pdf">expression 
+chapter</A>, refined the notion further (see <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/#verbatim_jul2000">earlier 
+change</A>) to allow for left-justified verbatim strings. As before the 
+expression chapter is still not ready, but some parts are, including the 
+relevant one for this change: the section on manifest strings, currently 26.18. 
+<P><I>13 August 2000</I>: <B>Version 4.72-0</B>: <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">Agent chapter</A>: 
+New syntax proposal. Chapter is not complete (stopped on page 677, mark should 
+be clear) but there is enough for discussion. Unifies routine agents with inline 
+agents. <A name=verbatim_jul2000>
+<P><I>21 July 2000</I>: <B>Version 4.71-0</B>: <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/expression.pdf">Expression 
+chapter</A>: Refined the notion of Verbatim_string to allow for a way of 
+escaping the end-of-string marker. This takes care of a very extreme and rare 
+case, and for that case adds 1.5 pages of text, two syntax constructs, and a 
+validity constraint, so it's not attractive, but someone finally convinced me 
+that any marker has to have an escape convention. 
+<P>Note that the expression chapter is still not ready, but some parts are, 
+including the relevant one for this change: the section on manifest strings, 
+currently 26.18. </A>
+<P><I>4 May 2000</I>: <B>Version 4.70-0</B>: Chapter on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/repeated.pdf">Repeated 
+inheritance</A> now ready. I have incremented the third-level version number 
+since this introduces a major language change, discussed in the past couple of 
+months: simplifying the semantics of repeated inheritance by removing the Select 
+clause and relying instead on non-conforming inheritance. Although I didn't 
+expect to do any more chapter-moving at this stage, I have shifted the repeated 
+inheritance chapter to after the chapters on type and conformance because the 
+rules rely extensively on conformance. It's actually better that way since types 
+and generics are more basic concepts than repeated inheritance. 
+<P>As a consequence I have also had to make fairly extensive changes to <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/redeclaration.pdf">Feature 
+adaptation</A> chapter released two weeks ago. To make them easier to spot I am 
+also releasing a <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/redec-changes.pdf">change bar 
+version of the Feature Adaptation chapter</A> (which will be removed in a couple 
+of weeks). The most significant changes start on page 328. 
+<P>A minor addition has also been brought to the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/conform.pdf">conformance/convertibility</A> 
+chapter (definition of "conformance path"). Several other chapters have been 
+touched as well. 
+<P>As usual, the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+appendix</A> has been brought up to date. 
+<P><I>4 May 2000</I>: <B>Version 4.64-0</B>: Chapter on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/redeclaration.pdf">Feature 
+adaptation</A> now ready. I have incremented the second-level version number 
+since this is the first time ETL officially integrates the Precursor mechanism, 
+even though it has of course been available in practice for quite some time. 
+Other than Precursor, the only significant language change is the removal of the 
+prohibition on redefining an External routine into an Internal one, or 
+conversely. This used to have a justification with early conventions on external 
+routines, but became no more than an implementation restriction with no 
+conceptual justification. 
+<P><I>21 February 2000</I>: <B>Version 4.63-1</B>: Revised chapter on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/others.pdf">interfaces to 
+external languages</A> to support new, clearer, more regular syntax (see 
+4.63-0). Considerably simplified syntax for C, C++ and DLL sublanguages. Better 
+conventions; there is hardly any need for a % any more. No more brackets in 
+sublanguage specifications. This was essentially the work of Emmanuel Stapf. 
+(The trend was started Pierre Métras some time ago.) 
+<P><I>21 February 2000</I>: <B>Version 4.63-0</B>: Revised chapter on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/others.pdf">interfaces to 
+external languages</A> to support new, clearer syntax. See 4.63-1. 
+<P><I>17 February 2000</I>: <B>Version 4.62-0</B>: non-conforming inheritance 
+<P>Perhaps incautiously, I have gone ahead and introduced the notion of 
+non-polymorphic inheritance in all the previously written chapters. (The main 
+affected ones are <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/inheritance.pdf">features</A> 
+and <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/conform.pdf">conformance/convertibility</A>. 
+
+<P>The bad news is that I feel pretty happy with myself; the impact on the 
+presentation has been remarkably simple. None of the conformance or 
+convertibility rules need to be changed! All I have had to do is include a new 
+optional component in the syntax, and a number of explanations and extra 
+examples. This is bad news because when I feel that happy it's usually a sign 
+that I should have waited the proverbial night and that there is probably 
+something rotten in the kingdom, which one of the distinguished members of this 
+group will undoubtedly discover right away. Well, I am foolish enough to publish 
+the material as is tonight. We'll see (after the usual 90 minutes or so, only 
+about 75 when this message reaches you). 
+<P>Note that the simplicity of the change comes in part from the use of the 
+keyword <B><FONT color=#0000a0>expanded</FONT></B> for what Jim Nelson called 
+flat inheritance. Although the purpose of a language design is not primarily to 
+make the scribe's task easier, I -- being the self-appointed scribe -- am 
+finding the appeal of self-convenience hard to resist in this case. 
+<P>Before I move to anything else I have to revisit the conformance rules on 
+tuples, which I don't think are right although I don't yet know the proper fix. 
+<P><I>February 2000</I>: <B>Version 4.61-0</B>: (A minor release, 4.60-5, a few 
+days ago, was not documented.) This new version on or before 23:41 tonight PDT, 
+i.e. 08:41 Paris meridian time) includes two language changes: 
+<UL>
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  Following a comment by Marcel Satchell I have updated the validity constraint 
+  for convertibility (CNCP, section 15.13, subsection "Conversion rules", 
+  currently page 449) to account for a case that I had missed regarding generic 
+  types. This was a serious mistake and I am grateful he found it. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  - In the agent chapter I have added a notion of inline procedure agent 
+  parenthesized by `do'...`end'. Previously inline agents described functions. 
+  This change arose of discussions with participants in the "Advanced Software 
+  Development Using Eiffel" taught last week, particularly Michael Gacsaly. I 
+  found I couldn't really justify the lack of consistency in the handling of 
+  procedures/functions (instructions/expressions). The addition doesn't 
+  complicate things too much. I even managed to keep the chapter's page count 
+  unchanged at the price of some cheating. See sections 25.17 and 25.18 in the 
+  agent chapter. </P></UL>
+<P>Other changes: I fixed a number of typos (thanks to Marcel, Ian Joyner, 
+Pierre Metras, Joachim Durchholz and others) and removed references to the 
+"Balancing rule" (some may remain. 
+<P><I>1 February 2000</I>: <B>Version 4.60-4</B>: A fairly major new release, 
+integrating the recently discussed conversion mechanism. (There have already 
+been 4.60-0 to 4.60-3 in the past couple of weeks.) Several chapters updated, in 
+particular <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/feature.pdf">features</A> (see 
+section on target conversion) and <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/conform.pdf">conformance</A>, 
+the latter renamed "conformance and convertibility" and now almost 50% longer 
+than before, which is of course subject to criticism. Chapter on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/reattach.pdf">reattachment and 
+equality</A> is complete. Also, corrections on a number of other chapters, 
+thanks to comments by Ian Joyner. 
+<P><I>January 9, 2000</I>: <B>Version 4.51-3</B>: Chapter on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/entity.pdf">objects, values and 
+entities</A> now ready. I have also used the opportunity to simplify and improve 
+the <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/type.pdf">type 
+chapter</A> and fill in some forgotten elements in the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+appendix</A>. No new language changes. 
+<P><I>January 6, 2000</I>: <B>Version 4.51-2</B>: <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/attribute.pdf">attribute 
+chapter</A> now ready. 
+<P>There is no language change in this release, except that I have included (in 
+the semantics rule) the change indicated previously (see the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/#v4_51_0">entry on 4.51-0 just 
+below</A>) that guarantees uniqueness of Unique values even across classes. This 
+change raises potential implementation problems so it might be rescinded later 
+on. 
+<P>Otherwise this is just a cleanup of the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/attribute.pdf">attribute 
+chapter</A>. 
+<P><I>January 3, 2000</I>: <B>Version 4.51-1</B>: Corrections on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/type.pdf">type chapter</A> 
+(typos and inconsistencies) thanks again to Marcel Satchell. <A 
+name=v4_51_0></A>
+<P><I>January 2, 2000</I>: <B>Version 4.51-0</B>: <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/control.pdf">Control Structures 
+chapter</A> now ready. Only one language change: the last clause of COMB, the 
+constraint on Multi_branch instructions (clause 6 in ETL 1/2) has been removed. 
+It required all Unique constants of a given Multi_branch to come from the same 
+class. It is now felt that this is unfairly passing an implementation issue on 
+to programmers. If there is too much complaining from implementers, however, the 
+clause will be reinstated. 
+<P>This version also includes numerous corrections on earlier chapters, courtesy 
+Marcel Satchell's careful reading. 
+<P><I>January 2, 2000</I>: <B>Version renumbering for consistency.</B> The last 
+few versions should have been called 4.50-x. They now are. The record (below and 
+in the Talkitover archive) has been corrected. Sorry for any confusion. <A 
+name=1999></A>
+<H2><IMG height=10 
+src="Eiffel The Language, third edition_fichiers/square_small.gif" width=10 
+border=0>&nbsp;Changes in year 1999</H2>
+<P><I>December 30, 1999</I>: <B>Version 4.50-3.</B> This version corrects a 
+number of errors in the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">agent chapter</A> as 
+a result of comments by Marcel Satchell (many thanks). Some of these had 
+consequences on the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">ELKS chapter</A>. 
+<P>I have sneakily added two words at the bottom of page 630 which permit ~a 
+where `a' is an attribute, the agent being of type FUNCTION (there was a 
+reference to a class ATTRIBUTE but I have removed it -- too complicated). This 
+possibility may be removed later, however, if it is found that the 
+implementation hardship is not worth the extra benefit. (This would contradict 
+the Uniform Access principle, but only for one specific language construct.) 
+<P><I>December 29, 1999</I>: <B>Version 4.50-2.</B> (There was an intermediate, 
+undocumented 4.50-1 a few days ago.) This is a fairly major release. Here is 
+some of what's in it: 
+<UL>
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">Changes 
+  appendix</A>: Updated to reflect essential changes, including those below. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">Agent 
+  chapter</A>: many small changes and improvements. Added creation agent example 
+  (application of inline agents). Changed feature name: value --&gt; item 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">Agent 
+  chapter</A>: introduced class PREDICATE (see also next entry) with convention 
+  that BOOLEAN-returning FUNCTION agents are instances of this class. Very 
+  important for work on trusted components (neither space nor time to explain 
+  here, but believe me). 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">Agent 
+  chapter</A> and <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">ELKS appendix</A>: 
+  completed specification of ROUTINE, PROCEDURE, FUNCTION and PREDICATE. I hope 
+  it's close to final. Very close to current ISE version (this is essential: no 
+  mechanism should be definitively accepted until there is a working 
+  implementation); only major difference is that I have changed `argument-' 
+  feature names to `operand-' (have to check this with experts next week). I 
+  haven't done anything on class TYPE yet. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">ELKS appendix</A> 
+  and elsewhere: removed class GENERAL. ANY is the sole common ancestor of 
+  everything. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">ELKS 
+  appendix</A>: Added feature `twin' in ANY. Same effect as `clone' (and, like 
+  `clone', frozen), but works on target. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">ELKS 
+  appendix</A>: Changed terminology for `equal', `clone', `copy' and `twin' 
+  variants: `identical' instead of `standard_is_equal', `identical_clone' 
+  instead of `standard_clone' etc. In actual libraries the old ones should of 
+  course be kept as obsolete. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">ELKS appendix</A> 
+  and elsewhere: INTEGER, REAL types. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">ELKS 
+  appendix</A>: Removed BIT types. See boolean operations on integers. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/expression.pdf">Expression 
+  chapter</A>: Defined the notion of type of an expression (wasn't there 
+  before!). Please read that section (currently 26.21 -- number will almost 
+  certainly change). 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/type.pdf">Type chapter</A> 
+  and <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/conform.pdf">conformance 
+  chapter</A>: Anchoring to formal generics and tuples now officially supported. 
+
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/expression.pdf">Expression 
+  chapter</A>: String semantics: notion of `once' string, section (currently) 
+  26.18. See Talkitover message explaining this in detail. 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/conform.pdf">Conformance 
+  chapter</A>: chapter complete. See in particular the new notion of 
+  Class_type_reference, conformance for multiply constrained generics etc. 
+  (Note: multiple constraints have not been implemented yet.) 
+  <P><IMG alt=+ src="Eiffel The Language, third edition_fichiers/greenball.gif"> 
+  <A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/generic.pdf">Genericity 
+  chapter</A>: Chapter complete. Many new definitions. Current type, etc. 
+</P></UL>
+<P><I>December 17, 1999</I>: <B>Version 4.50-0.</B> Intermediate version -- 
+conformance chapter is in progress, a few corrections elsewhere. The significant 
+revision will come in the next few days. Working on several things (integer 
+classes, conformance, anchored declarations). 
+<P><I>December 12, 1999</I>: <B>Version 4.47-1.</B> Same as 4.47-0 but 
+everything put back together on Unix; links should work normally. 
+<P><I>December 4, 1999</I>: <B>Version 4.47-0.</B> New version of <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">agent chapter</A> 
+integrating the new inline agent mechanism, and new examples (once per object, 
+controlled execution). Also, class TYPE now has a generic parameter (this seems 
+surprising at first but I think it's right -- see the text). <B>Important 
+caveat</B>: the text has been prepared on Windows rather than Unix and will show 
+a few glitches. In particular links to other chapters probably won't work. Page 
+numbers are wrong (book has not been regenerated). This will only be fixed 
+around Dec. 15. <A name=creationexp2></A>
+<P><I>November 5, 1999</I>: <B>Version 4.46-4.</B> Changed creation expression 
+syntax again in <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/creation.pdf">creation 
+chapter</A>. This is basically to undo the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/#creationexp1">previous change 
+(September 2)</A> after some people convinced me it was a bad idea. So the 
+previous syntax with the <FONT color=#0000a0><B>create</B></FONT> keyword is 
+back. I may have forgotten to update some of the examples; if you notice any 
+please <A href="mailto:Bertrand_Meyer@eiffel.com">tell me</A>. Also did some 
+minor cleanup on the rest of the chapter. 
+<P><I>November 3, 1999</I>: <B>Version 4.46-3.</B> Cleaned up <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/structure.pdf">system 
+architecture chapter</A>. The new "root procedure rule" (CSRP, page 165) was 
+included some time ago together with the revised Root Class rule (CSRC, page 
+164), but I added the clause (obvious, but missed until now) that the root 
+procedure must be a creation procedure of the root class. Updated <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+appendix</A> accordingly. Otherwise, no major change. 
+<P><I>November 3, 1999</I>: <B>Version 4.46-2.</B> Cleaned up <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/class.pdf">classes chapter</A>. 
+Nothing earth-shattering. Next is architecture chapter, so that the beginning of 
+the book (except tutorials) will be all in a clean state. 
+<P><I>November 1, 1999</I>: <B>Version 4.46-1.</B> Revised <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/generic.pdf">genericity 
+chapter</A> in line of conventions adopted for <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/type.pdf">type chapter</A> (see 
+4.46-1). Made small adaptations to type chapter to mention that for 
+Formal_generic_name expanded/reference status is known only for a specific 
+generic derivation. 
+<P><I>October 31, 1999</I>: <B>Version 4.46-0.</B> Finished <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/type.pdf">type chapter</A>. 
+Relaxed VTAT rule on anchored types so that it is permitted to use an anchored 
+entity as anchor; this requires a rule on the absence of cycles. (See Michael 
+Schweitzer's note on the topic in the <A target=new 
+href="http://eiffel.com/nice/language/vip">VIP discussions</A>; note that I have 
+not found necessary to follow his suggestion for a similar no-cycle rule on 
+generic constraints.) A small point of semantics has been left unaddressed 
+(reference/expanded status is not known if base type is Formal_generic_name). I 
+will take care of this at the same time I clean up the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/type.pdf">genericity chapter</A> 
+to make sure that type semantics is uniformly in the same style: specify 
+reference or expanded status; specify base type. 
+<UL>
+  <P>Updated <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+  appendix</A> to reflect language update. </P></UL>
+<P><I>October 23, 1999</I>: <B>Version 4.45-1.</B> Worked on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/type.pdf">type chapter</A>. 
+Systematized the presentation, especially for semantics. Defined the semantics 
+of the `reference TYPE_NAME' types (by symmetry with `expanded TYPE_NAME') as 
+proposed by Franck Arnaud. Stopped after page 390; anything after that is in an 
+unsuitable state. For the "finished" part up to page 390, the usual caveats 
+apply. In terms of work of substance rather than form, the serious piece of work 
+that remains to be done on this chapter is to allow anchoring a type, as in 
+`like t', on an expanded `t'. 
+<P><I>October 22, 1999</I>: <B>Version 4.45-0.</B> Simplified syntax for 
+multi-line strings, now called "verbatim strings": "[ and ]" rather than "[% and 
+%]". Updated corresponding section in <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/expression.pdf">expression 
+chapter</A> (but rest of chapter still unfit for human consumption). Updated 
+examples in <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/others.pdf">externals 
+chapter</A> accordingly. Started work on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/type.pdf">type chapter</A>. (I 
+know, this is not the one I was supposed to handle now, but it shouldn't take 
+long and it felt natural.) Usual caveats apply. 
+<UL>
+  <P>Updated <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+  appendix</A> to reflect language update. </P></UL>
+<P><I>October 17, 1999</I>: <B>Version 4.44-5.</B> Improved syntax of assignment 
+procedures in <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/feature.pdf">feature 
+chapter</A>, following a suggestion of Roger Browne. Finished <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/conventions.pdf">Syntax, 
+validity and semantics</A> chapter. Usual caveats apply. 
+<P><I>October 10, 1999</I>: <B>Version 4.44-4.</B> Implemented new version 
+numbering system. Updated DLL syntax to allow for names as well as indexes. 
+Touched a few other chapters (structure, basic conventions, regarding letter 
+case). 
+<P><I>October 9, 1999</I> For the first time, brought the appendix on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/reserved.pdf">reserved words and 
+special symbols</A> to a clean state, although I don't claim completeness and 
+haven't introduced the cross-references yet. 
+<P><I>October 9, 1999</I> Made a change in the C interface sublanguage following 
+another of Pierre Métras's suggestions: using a $ sign (rather than quotes) to 
+denote Eiffel entities in C inline text. 
+<P><I>October 8, 1999</I> Some important changes (important not for practical 
+programming but for theoretical consistency) to the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">ELKS appendix</A>: 
+GENERAL now deferred; ceases to be a useful practical type, replaced in this 
+role by ANY; `as_any' introduced in GENERAL to avoid typing problems. This 
+follows discussions with Marcel Satchell; see the Talkitover group. 
+<P><I>October 8, 1999</I> Finalized (for the moment) the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/others.pdf">externals</A> 
+chapter by updating the Cecil part (which is now consistent with the current 
+Cecil, see the <A 
+href="http://www.eiffel.com/doc/manuals/technology/library/cecil/page.html">online 
+manual</A>) and integrating some of the suggestions from Pierre Métras on the 
+Talkitover group. 
+<P><I>October 5, 1999</I> Fixed a mistake in the syntax for <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/creation.pdf">creation</A> 
+expressions (the <B><FONT="#0000A0">create</FONT></B> keyword, absent from 
+informal explanations, was still present in the formal syntax). Note comment on 
+Talkitover group about possible "gotcha". 
+<P>Cleaned up the <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/others.pdf">externals</A> 
+chapter by fixing all cross-references ... and then messed it up again by adding 
+at the end the text of the online CECIL documentation from the ISE Web pages. I 
+had to do that because the CECIL text in the book, straight out of the first 
+edition, was woefully out of date. The text I added is just the plain 
+de-htmlized form of the online manual; in the next few days I will clean it up 
+and merge it with the rest of the chapter. So much for previously announced 
+plans to which, however, I will return as soon as this tedious but necessary 
+task has been completed. 
+<P><I>October 3, 1999</I> Minor fixes to <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/others.pdf">external 
+interfaces</A> chapter following comments by Marcel Satchell. Moved PDF files 
+back from Monash to eiffel.com. 
+<P><I>September 26, 1999</I> Revised chapter on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/others.pdf">Interfaces to other 
+languages</A>. Note that <B>the cross-references are wrong</B> (and incomplete) 
+since I had to finish the writing under Windows and I manage cross-references 
+under Unix. They should be fixed within a week. The files are still physically 
+at Monash. 
+<UL>
+  <P>Updated <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+  appendix</A> to reflect language update. </P></UL>
+<P><I>September 5, 1999</I> Updated <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/client.pdf">Clients and 
+Exports</A> chapter to account for a suggestion from Marcel Satchell to add 
+optional header comments to a New_export_item. 
+<UL>
+  <P>Updated <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+  appendix</A> to reflect language update. </P></UL>
+<P>
+<P><I>September 3, 1999</I> Updated appendix on <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/evolution.pdf">language 
+evolution</A>. I know there are far more urgent things, but I had to write a 
+paper on the topic, which I based on the original version of this appendix, so 
+it was a trivial matter to convert this article back into a revised version of 
+the appendix itself. <A name=creationexp1></A>
+<P><I>September 2, 1999</I> Changed section on creation expressions in <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/creation.pdf">creation 
+chapter</A> to support revised syntax specification: creation expression can now 
+be written just {TYPE} or {TYPE .make (...), without `create' keyword (which 
+remains legal but becomes optional). This actually makes creation expressions 
+much nicer to use. 
+<P><I>August 31, 1999</I> <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/routine.pdf">Chapter 8 on 
+routines</A> ready (usual caveats). Includes notion of pure routines. <I>August 
+30, 1999</I> In the next two weeks the PDF versions of reference will be 
+physically stored at Monash. I have updated the links on this page so you don't 
+have anything to do unless you kept links to the PDF files at eiffel.com. I will 
+not endeavor to keep the eiffel.com versions up-to-date at all times. 
+<P><I>August 14, 1999</I> <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/client.pdf">Chapter 7 on clients 
+and exports</A> ready (usual caveats). 
+<UL>
+  <P>Updated <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+  appendix</A> to reflect language update. </P></UL>
+<P><I>July 25, 1999</I> <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/feature.pdf">Chapter 5 on 
+features</A> ready (usual caveats); includes description of assignment 
+procedures and assignable attributes. Did text processing cleanup for <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/index.pdf">index</A> to make 
+sure that it uses all the proper fonts and colors. 
+<UL>
+  <P>Updated <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+  appendix</A> to reflect language update. </P></UL>
+<P><I>July 18, 1999</I>: Cleaned up "Eiffel in a nutshell" and tutorial chapters 
+to use new creation syntax (<B><FONT color=#0000a0>create</FONT></B>) keyword 
+and big periods for calls. Didn't touch the actual contents of the chapters. 
+There are still some uses of !! in later chapters. 
+<P><I>July 18, 1999</I>: Redid most of the book's figures. I only ignored a few 
+that can easily be copy-and-pasted from others. I focused on the cosmetics of 
+the figure, not on their semantics, so many are probably wrong. 
+<P><I>July 17, 1999</I>: I have started working on the figures. The class 
+bubbles are still too big. So far, covered only the first few chapters. (Stopped 
+in the middle of "Feature adaptation", page 300). 
+<P><I>July 17, 1999</I>: Found a way to make inter-document links work, but 
+under Internet Explorer only. Too many bugs in too many products. 
+<P><I>July 16, 1999</I>: <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/inheritance.pdf">Inheritance 
+chapter</A> released. 
+<UL>
+  <P>Significant updates to <A 
+  href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">changes 
+  appendix</A>. </P></UL>
+<P><I>July 16, 1999</I>: I am still unable to make the inter-document links 
+work. This is a real nuisance. We have posted two queries to two different 
+FrameMaker groups, with no result so far. I hope we find a solution. 
+<P><A name=table></A>
+<H2><IMG height=10 
+src="Eiffel The Language, third edition_fichiers/square_small.gif" width=10 
+border=0>&nbsp;Short table of contents and links to chapters</H2>
+<P>(See also <A 
+href="http://www.inf.ethz.ch/~meyer/ongoing/etl/LANGUAGE-TABLE.pdf">Full table 
+of contents</A>.) 
+<TABLE cols=2 border=3>
+  <TBODY>
+  <TR>
+    <TD vAlign=top>
+      <P><A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/title.pdf">EIFFEL: 
+      THE LANGUAGE, THIRD EDITION</A> <BR>
+      <UL>
+        <P><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/preface.pdf">Preface: 
+        Meeting the challenge of software quality </A><I>(in progress)</I> 
+        <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/preface.pdf">Preface to 
+        the third edition</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/preface.pdf">About the 
+        status of Eiffel</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/preface.pdf">About the 
+        language description</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/LANGUAGE-TABLE.pdf">Contents</A> 
+        <BR></P></UL>
+      <P><A 
+      href="http://www.inf.ethz.ch/~meyer/ongoing/etl/intro+++++++++++++++.pdf">PART 
+      I: INVITATION TO EIFFEL</A> 
+      <UL>
+        <P><A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/nutshell.pdf">1 
+        Eiffel in a nutshell </A><I>(in progress)</I> <BR></P></UL>
+      <P><A 
+      href="http://www.inf.ethz.ch/~meyer/ongoing/etl/description+++++++++.pdf">PART 
+      II: LANGUAGE DESCRIPTION</A> 
+      <UL>
+        <P><A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/conventions.pdf">2 
+        Syntax, validity and semantics </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/structure.pdf">3 The 
+        architecture of Eiffel software </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/class.pdf">4 
+        Classes</A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/feature.pdf">5 Features 
+        </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/inheritance.pdf">6 The 
+        inheritance relation</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/client.pdf">7 Clients 
+        and exports </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/routine.pdf">8 Routines 
+        </A><I></I><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/assertion.pdf">9 
+        Correctness </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/redeclaration.pdf">10 
+        Feature adaptation </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/type.pdf">11 Types 
+        </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/generic.pdf">12 
+        Genericity</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/tuple.pdf">13 Anonymous 
+        classes and tuple types</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/conform.pdf">14 
+        Conformance </A><I></I><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/repeated.pdf">15 
+        Repeated inheritance </A><I></I><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/control.pdf">16 Control 
+        structures </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/exception.pdf">17 
+        Exception handling </A><I>(in progress)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/attribute.pdf">18 
+        Attributes </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/entity.pdf">19 Objects, 
+        values and entities </A><I></I><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/creation.pdf">20 
+        Creating objects</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/copy.pdf">21 Duplicating 
+        and comparing objects </A><I></I><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/reattach.pdf">22 
+        Reattaching entities </A><I></I><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/call.pdf">23 Feature 
+        call </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/checking.pdf">24 Type 
+        checking </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/agent.pdf">25 Agents, 
+        iteration and introspection</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/expression.pdf">26 
+        Expressions and constants </A><I>(in progress)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/others.pdf">27 
+        Interfacing with C, C++, Java and other languages </A><I></I><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/lexical.pdf">28 Lexical 
+        components </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/concur.pdf">29 
+        Concurrency </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/style.pdf">30 Style 
+        guidelines </A><I>(not done)</I> <BR></P></UL></TD>
+    <TD vAlign=top>
+      <P>
+      <P><A 
+      href="http://www.inf.ethz.ch/~meyer/ongoing/etl/facilities++++++++++.pdf">PART 
+      III: KERNEL LIBRARY</A> 
+      <UL>
+        <P><A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/universal.pdf">31 
+        Universal features </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/array.pdf">32 Arrays and 
+        strings </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/handler.pdf">33 
+        Exception facilities </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/persistence.pdf">34 
+        Persistence </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/io.pdf">35 Input and 
+        output </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/basic.pdf">36 Basic 
+        types</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/elks.pdf">A The Eiffel 
+        Library Kernel (ELKS)</A> <BR></P></UL>
+      <P><A 
+      href="http://www.inf.ethz.ch/~meyer/ongoing/etl/lace++++++++++++++++.pdf">PART 
+      IV: THE LACE CONTROL LANGUAGE </A>
+      <UL>
+        <P><A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/lace.pdf">B 
+        Specifying systems in Lace </A><I>(in progress)</I> <BR></P></UL>
+      <P><A 
+      href="http://www.inf.ethz.ch/~meyer/ongoing/etl/supp++++++++++++++++.pdf">PART 
+      V: COMPLEMENTS</A> 
+      <UL>
+        <P><A href="http://www.inf.ethz.ch/~meyer/ongoing/etl/evolution.pdf">C 
+        On language design and evolution </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/history.pdf">D A brief 
+        history of Eiffel </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/credits.pdf">E Credits 
+        </A><I>(in progress)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/changes.pdf">F Language 
+        changes from the previous edition </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/older.pdf">G Changes 
+        from early versions </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/tutorial.pdf">H An 
+        Eiffel tutorial </A><I>(in progress)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/biblio.pdf">I Eiffel 
+        bibliography </A><I>(not done)</I> <BR></P></UL>
+      <P><A 
+      href="http://www.inf.ethz.ch/~meyer/ongoing/etl/formal++++++++++++++.pdf">PART 
+      VI: REFERENCE</A> 
+      <UL>
+        <P><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/LANGUAGE-REFERENCE.pdf">I 
+        The language reference</A><I> (in progress)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/reserved.pdf">J Reserved 
+        words, special symbols, operator precedence </A><BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/LANGUAGE-SYNTAX.pdf">K 
+        Syntax in alphabetical order</A> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/diagrams.pdf">L Syntax 
+        diagrams </A><I>(not done)</I> <BR><A 
+        href="http://www.inf.ethz.ch/~meyer/ongoing/etl/LANGUAGE-INDEX.pdf">Index</A> 
+        </P></UL></TD></TR></TBODY></TABLE><!-- ****************************** END MENU ********************************************* --><!--------------- Start bottom links --------------------------------------->
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <P>
+      <HR>
+      <NOBR><A href="http://www.inf.ethz.ch/~meyer">Meyer 
+      home</A>&nbsp;&nbsp;-&nbsp;&nbsp; <A 
+      href="http://www.inf.ethz.ch/~meyer/publications/">Publications</A>&nbsp;&nbsp;-&nbsp;&nbsp;<A 
+      href="http://www.inf.ethz.ch/~meyer/events/">Events</A>&nbsp;&nbsp;-&nbsp;&nbsp;<A 
+      href="http://se.inf.ethz.ch/">Chair of Software 
+      Engineering</A>&nbsp;&nbsp;-&nbsp;&nbsp;<A 
+      href="http://www.inf.ethz.ch/">CS Department</A> </NOBR>
+      <HR>
+    </TD>
+    <TD width="30%">&nbsp;</TD></TR></TBODY></TABLE></CENTER><!--------------- End bottom links -----------------------------------------></BODY></HTML>

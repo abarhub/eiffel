@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2004-02-04T19:03:45</date>
+  <millis>1075917825940</millis>
+  <sequence>0</sequence>
+  <logger>compiler</logger>
+  <level>INFO</level>
+  <class>compiler.Compiler_Eiffel</class>
+  <method>init</method>
+  <thread>10</thread>
+  <message>doing stuff</message>
+</record>
+<record>
+  <date>2004-02-04T19:03:46</date>
+  <millis>1075917826600</millis>
+  <sequence>1</sequence>
+  <logger>compiler</logger>
+  <level>INFO</level>
+  <class>compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Compilation de .\test\test12.e</message>
+</record>
+</log>

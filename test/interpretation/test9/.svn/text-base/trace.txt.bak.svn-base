@@ -1,0 +1,10 @@
+Debut de la trace
+Entre methode TEST1.make
+0:Label label1
+1:Goto label2
+3:Label label2
+4:Call extern  lang("JVM:Test1:static") print()
+5:Call extern  lang("JVM:Test1:static") print2(Appel externe Java)
+6:Return
+Sort methode TEST1.make
+Fin de la trace

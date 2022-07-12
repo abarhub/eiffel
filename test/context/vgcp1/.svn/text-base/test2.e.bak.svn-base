@@ -1,0 +1,13 @@
+class TEST2
+
+creation toto
+
+feature
+
+	toto is
+	do
+	end;
+
+	tata is deferred end;
+
+end

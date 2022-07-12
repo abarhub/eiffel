@@ -1,0 +1,2106 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST5"/>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="not">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="point">
+					<expression>
+						<expression_unaire op="not">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="not">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="not">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="plus">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="moins">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="@">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="@">
+					<expression>
+						<expression_unaire op="not">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="@">
+					<expression>
+						<expression_unaire op="plus">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="@">
+					<expression>
+						<expression_unaire op="moins">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="@">
+					<expression>
+						<expression_unaire op="free_op" nom="@">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="puiss">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="free_op" nom="@">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="puiss">
+					<expression>
+						<expression_binaire op="free_op" nom="@">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="fois">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="puiss">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="div">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="puiss">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="div_entier">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="puiss">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="mod">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="puiss">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="fois">
+					<expression>
+						<expression_binaire op="puiss">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="div">
+					<expression>
+						<expression_binaire op="puiss">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="div_entier">
+					<expression>
+						<expression_binaire op="puiss">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="mod">
+					<expression>
+						<expression_binaire op="puiss">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="fois">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="div">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="div_entier">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="mod">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="fois">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="div">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="div_entier">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="mod">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<expression_binaire op="fois">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<expression_binaire op="div">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<expression_binaire op="div_entier">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<expression_binaire op="mod">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<expression_binaire op="fois">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<expression_binaire op="div">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<expression_binaire op="div_entier">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<expression_binaire op="mod">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="diff">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="infs">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sups">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="inf">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sup">
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="diff">
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="infs">
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sups">
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="inf">
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sup">
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="diff">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="infs">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sups">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="inf">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sup">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="plus">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="diff">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="infs">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sups">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="inf">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sup">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="moins">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="diff">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="infs">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="sups">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="inf">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="sup">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="diff">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="infs">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="sups">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="inf">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="sup">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<expression_binaire op="diff">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<expression_binaire op="infs">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<expression_binaire op="sups">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<expression_binaire op="inf">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<expression_binaire op="sup">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<expression_binaire op="egal">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<expression_binaire op="diff">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<expression_binaire op="infs">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<expression_binaire op="sups">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<expression_binaire op="inf">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<expression_binaire op="sup">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or">
+					<expression>
+						<expression_binaire op="and">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or_else">
+					<expression>
+						<expression_binaire op="and">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or">
+					<expression>
+						<expression_binaire op="and_then">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or_else">
+					<expression>
+						<expression_binaire op="and_then">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="and">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or_else">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="and">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="and_then">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or_else">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="and_then">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="implies">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="or">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="implies">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="or_else">
+							<expression>
+								<variable nom="b"/>
+							</expression>
+							<expression>
+								<variable nom="c"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="implies">
+					<expression>
+						<expression_binaire op="or">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="tata"/>
+		<corps>
+			<expression>
+				<expression_binaire op="implies">
+					<expression>
+						<expression_binaire op="or_else">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<variable nom="b"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+</class>

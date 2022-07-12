@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="file://D:\projet\eiffel\test_unitaire\liste_a_faire.xsl"?>
+<!DOCTYPE liste_afaire SYSTEM "afaire.dtd">
+<?xml-stylesheet type="text/xsl" href="liste_a_faire.xsl"?>
+<!-- Document cree le 17 octobre 2003 -->
+<!-- Les dates sont en YYYY-MM-JJ -->
+
+<liste_afaire>
+	<herarchie nom="titre1">
+		<afaire debut="2003-10-17">coucou 1</afaire>
+		<afaire debut="2003-10-17">coucou 2</afaire>
+	</herarchie>
+	<herarchie nom="titre2">
+		<afaire debut="2003-10-17">coucou 3</afaire>
+		<afaire debut="2003-10-17" fait="oui" fin="2003-10-17">coucou 4</afaire>
+	</herarchie>
+	<herarchie nom="titre4">
+		<herarchie nom="titre3">
+			<afaire debut="2003-10-17">salut 1</afaire>
+		</herarchie>
+		<herarchie nom="titre5">
+			<afaire debut="2003-10-17">salut 2</afaire>
+		</herarchie>
+	</herarchie>
+</liste_afaire>

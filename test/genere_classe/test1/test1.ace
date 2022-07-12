@@ -1,0 +1,10 @@
+system test1
+
+root test1
+
+cluster
+
+	"test\genere_classe\test1\";
+	".\";
+
+end

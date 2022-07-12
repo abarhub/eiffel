@@ -1,0 +1,11 @@
+system test2
+
+root test2
+
+cluster
+
+	"test\context\conformite\pgene\";
+	--".\std_classe\";
+	".\";
+
+end

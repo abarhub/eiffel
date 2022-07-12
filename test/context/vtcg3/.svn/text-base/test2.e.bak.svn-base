@@ -1,0 +1,7 @@
+class TEST2
+
+	inherit A[INTEGER,DOUBLE_REF,INTEGER_REF];
+
+feature
+
+end

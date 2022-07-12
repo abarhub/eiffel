@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- expressions simples valides string -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+		<attribut>
+			<nom_attribut nom="fonc_string"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="b">
+					<type nom="$string"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="and">
+								<expression_scalaire type="booleen" text="true"/>
+								<expression_scalaire type="booleen" text="false"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+				</instruction>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="or">
+								<expression_scalaire type="booleen" text="true"/>
+								<expression_scalaire type="booleen" text="false"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+				</instruction>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="egal">
+								<expression_scalaire type="booleen" text="true"/>
+								<expression_scalaire type="booleen" text="false"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+				</instruction>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="diff">
+								<expression_scalaire type="booleen" text="true"/>
+								<expression_scalaire type="booleen" text="false"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+				</instruction>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="and_then">
+								<expression_scalaire type="booleen" text="true"/>
+								<expression_scalaire type="booleen" text="false"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+				</instruction>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="or_else">
+								<expression_scalaire type="booleen" text="true"/>
+								<expression_scalaire type="booleen" text="false"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+				</instruction>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="implies">
+								<expression_scalaire type="booleen" text="true"/>
+								<expression_scalaire type="booleen" text="false"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+				</instruction>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="not">
+								<expression_scalaire type="booleen" text="true"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+				</instruction>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="old">
+								<expression_scalaire type="var">
+									<var nom="b"/>
+								</expression_scalaire>
+							</expression_un>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+		<hierarchie/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+</programme>

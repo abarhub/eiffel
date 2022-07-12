@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- expressions simples valides character -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+		<attribut>
+			<nom_attribut nom="fonc_character"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="c">
+					<type nom="$character"/>
+				</declare_var>
+				<declare_var nom="b">
+					<type nom="$boolean"/>
+				</declare_var>
+				<declare_var nom="i">
+					<type nom="$integer"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="egal">
+								<expression_scalaire type="car" text="a"/>
+								<expression_scalaire type="car" text="b"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="diff">
+								<expression_scalaire type="car" text="a"/>
+								<expression_scalaire type="car" text="f"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sups">
+								<expression_scalaire type="car" text="Z"/>
+								<expression_scalaire type="car" text="z"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="sup">
+								<expression_scalaire type="car" text="Z"/>
+								<expression_scalaire type="car" text="z"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="inf">
+								<expression_scalaire type="car" text="Z"/>
+								<expression_scalaire type="car" text="z"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="b"/>
+						</expression_scalaire>
+						<expression>
+							<expression_bin type="infs">
+								<expression_scalaire type="car" text="Z"/>
+								<expression_scalaire type="car" text="z"/>
+							</expression_bin>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="i"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_c2e">
+								<expression_scalaire type="car" text="P"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="c"/>
+						</expression_scalaire>
+						<expression>
+							<expression_un type="conv_e2c">
+								<expression_scalaire type="entier" text="63"/>
+							</expression_un>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+		<hierarchie/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+</programme>

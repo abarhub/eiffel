@@ -1,0 +1,7 @@
+class A
+
+feature
+
+	affiche is deferred end;
+
+end

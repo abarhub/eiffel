@@ -1,0 +1,7 @@
+class TOTO1
+
+feature
+
+	a,b:INTEGER;
+
+end

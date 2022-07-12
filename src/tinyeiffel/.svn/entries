@@ -1,0 +1,58 @@
+10
+
+dir
+58
+https://twist/svn/eiffel/eiffel/trunk/src/tinyeiffel
+https://twist/svn/eiffel
+
+
+
+2008-10-19T16:00:46.066587Z
+56
+abarret
+
+ast
+dir
+
+compiler
+dir
+
+eiffelviewer
+dir
+
+erreur
+dir
+
+extern
+dir
+
+genere_c
+dir
+
+genere_java
+dir
+
+intermediaire
+dir
+
+interpreteur
+dir
+
+interpreteur2
+dir
+
+lace
+dir
+
+middle
+dir
+
+outils
+dir
+
+test_unitaire
+dir
+
+verification
+dir
+

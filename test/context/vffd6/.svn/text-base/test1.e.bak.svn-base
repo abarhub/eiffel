@@ -1,0 +1,9 @@
+class TEST1
+
+feature
+
+	toto, infix "not" (a:INTEGER):INTEGER is
+	do
+	end;
+
+end

@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST12"/>
+	<invariant>
+		<assert>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<entier valeur="5"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<appel nom="a">
+					<parametre_reel>
+						<expression>
+							<entier valeur="5"/>
+						</expression>
+					</parametre_reel>
+				</appel>
+			</expression>
+		</assert>
+		<assert tag="b">
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<variable nom="x"/>
+					</expression>
+					<expression>
+						<entier valeur="9"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="diff">
+					<expression>
+						<variable nom="u"/>
+					</expression>
+					<expression>
+						<variable nom="v"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<variable nom="x"/>
+					</expression>
+					<expression>
+						<variable nom="y"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<appel nom="b">
+					<parametre_reel>
+						<expression>
+							<entier valeur="10"/>
+						</expression>
+					</parametre_reel>
+				</appel>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<appel nom="c">
+					<parametre_reel>
+						<expression>
+							<chaine>
+								<chaine1>"src"</chaine1>
+							</chaine>
+						</expression>
+					</parametre_reel>
+				</appel>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="point">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<appel nom="a">
+									<parametre_reel>
+										<expression>
+											<entier valeur="5"/>
+										</expression>
+									</parametre_reel>
+								</appel>
+							</expression>
+							<expression>
+								<variable nom="x"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="y"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<reel valeur="9."/>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<appel nom="r">
+					<parametre_reel>
+						<expression>
+							<entier valeur="45"/>
+						</expression>
+					</parametre_reel>
+					<parametre_reel>
+						<expression>
+							<entier valeur="75"/>
+						</expression>
+					</parametre_reel>
+					<parametre_reel>
+						<expression>
+							<car>'c'</car>
+						</expression>
+					</parametre_reel>
+				</appel>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="sups">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<car>'c'</car>
+							</expression>
+							<expression>
+								<variable nom="length"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="0"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="sups">
+					<expression>
+						<expression_binaire op="point">
+							<expression>
+								<chaine>
+									<chaine1>"abc"</chaine1>
+								</chaine>
+							</expression>
+							<expression>
+								<variable nom="length"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<entier valeur="8"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="point">
+					<expression>
+						<reel valeur="4.56"/>
+					</expression>
+					<expression>
+						<variable nom="t"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<expression_binaire op="fois">
+							<expression>
+								<entier valeur="5"/>
+							</expression>
+							<expression>
+								<entier valeur="8"/>
+							</expression>
+						</expression_binaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<variable nom="b"/>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="fois">
+					<expression>
+						<expression_unaire op="plus">
+							<expression>
+								<entier valeur="5"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+					<expression>
+						<entier valeur="8"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<variable nom="x"/>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="free_op" nom="@ghi">
+					<expression>
+						<expression_binaire op="free_op" nom="#abc">
+							<expression>
+								<variable nom="a"/>
+							</expression>
+							<expression>
+								<expression_unaire op="free_op" nom="@def">
+									<expression>
+										<variable nom="b"/>
+									</expression>
+								</expression_unaire>
+							</expression>
+						</expression_binaire>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="free_op" nom="#_abc">
+					<expression>
+						<variable nom="a2"/>
+					</expression>
+					<expression>
+						<expression_unaire op="free_op" nom="@_def">
+							<expression>
+								<variable nom="b2"/>
+							</expression>
+						</expression_unaire>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_unaire op="free_op" nom="@_ghi">
+					<expression>
+						<variable nom="c2"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</assert>
+	</invariant>
+</class>

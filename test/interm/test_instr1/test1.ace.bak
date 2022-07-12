@@ -1,0 +1,15 @@
+system test1
+
+root test1
+
+cluster
+
+	"test\interm\test_instr1\";
+	--".\std_classe\";
+	".\";
+
+external
+
+	external_kernel_path:"E:\projet\eiffel\test\interm\test_instr1\intern\kernel.xml";
+
+end

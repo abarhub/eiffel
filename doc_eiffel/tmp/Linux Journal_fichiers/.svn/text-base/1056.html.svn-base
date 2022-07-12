@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0056)http://www2.linuxjournal.com/lj-issues/issue17/1056.html -->
+<HTML><HEAD><TITLE>LJ 17: Two Eiffel Implementations</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY text=#000000 bgColor=#ffffff><!-- yahoo bar begins --><FONT 
+face="verdana, arial, helvetica, sans-serif" color=#000000 size=2><A target=_top 
+href="http://www2.linuxjournal.com/index.html"><I>Linux Journal</I> Home</A> 
+&nbsp;&gt;&nbsp; <A 
+href="http://www2.linuxjournal.com/lj-issues/mags.html">Magazine</A> 
+&nbsp;&gt;&nbsp; <A 
+href="http://www2.linuxjournal.com/lj-issues/issue17/index.html">#17 September 
+1995</A> &nbsp;&gt;&nbsp; <B>Two Eiffel Implementations </B><BR><B>Thursday, 
+November 11, 1999 | Last Updated 10:59:53 AM</B> </FONT>
+<P><!-- yahoo bar ends --><!-- BEGIN banner ad -->
+<CENTER><BR><IMG height=60 alt=&nbsp;&nbsp; src="1056_fichiers/redblock.gif" 
+width=9 border=0><A 
+href="http://www2.linuxjournal.com/cgi-bin/click-through.pl?id=202"><IMG 
+height=60 alt=www.e-dbms.com src="1056_fichiers/intersys07-27.gif" width=468 
+border=0></A><BR></CENTER><BR clear=all><!-- THIS ASSUMES THE SIZE OF THE AD ITSELF IS width="468" height="60" border="0" !!! --><!-- END banner ad -->
+<H1>Two Eiffel Implementations</H1>
+<P><I>Dan's last article (<I>Linux Journal</I> #14) explains why Eiffel is a 
+language of great interest. In this article Dan reviews two Linux 
+implementations of Eiffel-3. </I>
+<P><I>by Dan Wilder</I> 
+<P>The two packages reviewed, ISE Eiffel-3 from Interactive Software Engineering 
+(ISE), of Santa Barbara, California, and TowerEiffel from Tower Technology, of 
+Austin, Texas, have much in common, including: 
+<UL>
+  <LI>A short "Ace" file that describes the makeup of a system of classes 
+  comprising a program and that contains options to the compiler, most 
+  critically, the name of the root class and its creation procedure, and the 
+  class directories. Based on the Ace file, the compiler handles all dependency 
+  analysis itself. 
+  <LI>A command line interface (not evaluated in this review). The graphical 
+  interfaces are nice, but not absolutely needed, and you can get around them if 
+  you find they are getting in your way. 
+  <LI>Between 50KB and 100KB of static runtime binary libraries. Both ISE and 
+  Tower Technology plan to offer shared libraries in the ELF binary format when 
+  ELF stabilizes. </LI></UL>
+<P>
+<H4>Class Libraries</H4>
+<P>Eiffel class libraries are delivered in source or sometimes encrypted source 
+form, with one file per class. Lots of classes are present in such a library, 
+offering things such as linked lists, trees, file I/O, iterators, classes for 
+object persistence and transmission, and much more. 
+<P>Except for the kernel library, which furnishes hooks to the operating system 
+and the runtime binary library, class libraries are planned to be portable 
+across compilers. With the adoption of PELKS, the Proposed Eiffel Kernel Library 
+Standard, all vendors now move toward a common kernel library interface 
+supporting their other class libraries. 
+<P>
+<H4>TowerEiffel</H4>
+<P>The Tower development environment is tailored to lemacs or its successor, 
+xemacs. Neither is included in the distribution, but these editors are are 
+commonly available from ftp sites and CD-ROMs. Look for lemacs-19.10 or 
+xemacs-19.11. You can also use emacs, though the fit is less precise. 
+<P>Tower is working on a non-emacs integrated development environment, to be in 
+beta test by press time. 
+<P>Installation was smooth, except for a little difficulty in the license setup. 
+After some exchange of e-mail, a working license code was installed and 
+TowerEiffel was up and running. 
+<P>
+<H4>Running TowerEiffel</H4>
+<P>Program edit, class browsing, compilation, and debug are initiated from 
+lemacs pull-down menu selections. A nice touch is the "Send performance report 
+to Tower" menu item which e-mails a bug report. I mailed some, and got immediate 
+responses. 
+<P>The "Browse" menu item gives you library browsing capability, as well as 
+allowing you to work with your own classes. Some very useful views were missing 
+from the menu. Tower agreed, and had already implemented the most difficult of 
+these. More choices will soon be available. 
+<P>With all optimizations enabled, a small test application compiled from 
+scratch in about one minute. The resulting binary used about 77KB of code space. 
+A rough breakdown of this showed most of the code coming from the runtime 
+library. 
+<P>With all assertion checking on and no compiler optimizations, the binary file 
+from compiling this application occupied about a megabyte. It still took one 
+minute to compile from scratch. 
+<P>Compiler errors list to a window, with explanations and references to 
+<I>Eiffel: The Language</I>. If you click on the errors, the related program 
+text appears in another window. 
+<P>The Tower debugger, egdb, adapted from GNU gdb, is a command-line symbolic 
+debugger. <TT>Xemacs</TT> or <TT>xegdb</TT> provide graphical front ends. 
+Breakpoints may be set at any reasonable line of the Eiffel source code. When 
+execution encounters a breakpoint the corresponding program text appears in a 
+window. You can single-step one Eiffel statement at a time, and the cursor in 
+the display window steps to the statement executed. When execution enters C code 
+functions, egdb becomes a C source code debugger. All the other amenities 
+familiar to gdb users are present. 
+<P>There were a few mysteries about how to display the contents of some objects. 
+Setting some breakpoints was also obscure. Other than that, egdb was 
+straightforward. Source code awareness was good, and the ability to switch over 
+to C mode was also nice, as time-critical or platform dependent parts of Eiffel 
+systems are often implemented in C. 
+<P>The TowerEiffel tools are rich in run-time options, not all accommodated in 
+the menus. In particular, report generating tools, such as eshort, can produce 
+output in text, LaTeX, plain roff, manpage roff, or LaTeX, or Rich Text Format 
+for use in Word or NeXT. The options are well documented in <TT>man</TT> pages. 
+<P>
+<H4>Tower Class Libraries</H4>
+<P>The Tower class library has 102 classes, including the 47 kernel classes, 
+providing the standard Eiffel language hooks into the underlying runtime library 
+and operating system, as well as certain basic amenities, such as <B>ANY</B>, 
+the ancestor of all user classes. Also present here are classes for strings, 
+numbers, arrays, and so on. 
+<P>Another 22 encrypted classes comprise a subset of the Booch components from 
+Rational (Santa Clara, CA). These provide data structure and support classes 
+giving you containers, lists, searching and sorting, pattern matching, and so 
+on. Tower sells the full set of Booch components in unencrypted form. 
+<P>Finally, 16 classes provide for storage and transmission of objects, and 10 
+more provide support functions. 
+<P>
+<H4>Customer Service</H4>
+<P>Tower staff were consistently prompt in responding to e-mail, even when the 
+answer to a question was not immediately available. The longest delay between 
+sending mail and receiving a response was about four days, for a non-urgent 
+matter. Most e-mail responses were within 24 hours. I phoned Tower only twice, 
+about matters unrelated to any preceding e-mail. The person I wished to speak 
+with answered the phone himself the first time, and the second, returned my call 
+within a couple of hours. 
+<P>
+<H4>Interactive Software Engineering</H4>
+<P>Interactive Software Engineering is the company of Bertrand Meyer, Eiffel's 
+designer. 
+<P>Included with the pre-release document set I read were <I>Eiffel: The 
+Language,</I> <I>Eiffel: The Reference,</I> <I>Eiffel: The Libraries,</I> and 
+<I>Eiffel: The Environment,</I> all by Bertrand Meyer. 
+<P><I>The Language</I> is the definitive work on Eiffel, required reading for 
+every Eiffel developer. Best read after obtaining some initial familiarity with 
+the language, it is the language standard, and the place where all discussions 
+of the fine points turn for answers. 
+<P>The remaining books are necessary if you plan to use the ISE package, and are 
+worthwhile reading in their own right. Bertrand Meyer's writing is often 
+entertaining, always very insightful. 
+<P>
+<H4>Installation</H4>
+<P>Interactive Software Engineering Eiffel-3 version 3.3.4 for Linux arrived on 
+a DAT tape. I took it over to the <I>Linux Journal</I> offices to read it onto 
+disk, then compressed it to six floppies for <TT>klister</TT> to read. Unpacking 
+was easy, and I filled out the registration form and sent it off by e-mail. In 
+due time the license codes arrived by return e-mail, I installed them and fired 
+up the license manager daemon, and ISE Eiffel-3 was up and running. 
+<P>
+<H4>Running ISE Eiffel-3</H4>
+<P>Program edit, class browsing, compilation, and debug are performed from 
+<TT>ebench</TT> or the tools it launches. These static linked Motif applications 
+require no Motif shared libraries. 
+<P>The user interface is thoughtful and innovative. Many of the things you need 
+to do are initiated by pushbuttons or drag and drop. Dragging is performed 
+without holding down a button, by clicking button three once to drag and again 
+to drop, reducing the carpal tunnel wear and tear. Drag is easily aborted by 
+clicking button 1. Pushbuttons have distinctive icons, and a phrase describing 
+each pushbutton appears in the tool frame when the cursor is over the button. 
+Those who have worked with graphical tools will appreciate that multiple level 
+menus, pop-ups, and pull-downs are few. Instead, most of the controls needed at 
+any point are immediately available on the frames of the tools present on the 
+desktop. 
+<P>You can edit program text using the native Motif capabilities, or you can 
+click on a button that launches your favorite editor in a subshell. vi is the 
+default editor. If you prefer emacs, you might run it in its own window to avoid 
+starting it every time you want to edit a file. 
+<P>ISE includes the following tools: 
+<UL>
+  <LI>Project tool: Launch other tools, debug programs. 
+  <LI>System tool: Edit Ace file; look at system statistics. Provide class 
+  names, for launching or targeting class tools. 
+  <LI>Class tool: Edit and browse classes. 
+  <LI>Feature tool: Closer look at features, including ancestry. 
+  <LI>Object tool: Examine objects at debug time. 
+  <LI>Explanation tool: Help on compilation errors </LI></UL>
+<P>The class, one of the more interesting tools, gives you alternate views of a 
+class at the push of a button. Views include: 
+<UL>
+  <LI>Text: Editable class text. 
+  <LI>Short: Feature definitions and feature header comments. 
+  <LI>Short flat: Short, with all ancestors rolled in. 
+  <LI>Ancestors: Indented list of all ancestors. 
+  <LI>Descendents: Indented list of descendents. 
+  <LI>Clients: List of all class clients in system. 
+  <LI>Suppliers: List of classes whose client the target class is. </LI></UL>
+<P>And more. Within each of these views, many things can be clicked and dragged 
+to various tools. The effect is a very good hypertext view of a system, 
+including the supporting classes from the libraries. Users of ctags may know 
+what I mean if I call this "ctags on steroids". 
+<P>My small test application took sixteen minutes to compile from scratch with 
+full optimizations and no assertions. The resulting binary file was about 130KB. 
+
+<P>With assertions enabled and optimizations off, full compile time from scratch 
+was about six minutes, and the binary file was about 1.7MB. 
+<P>ISE ebench uses "melting ice technology", which allows incremental changes to 
+run in an interpreted mode. Only modified classes are recompiled. Changing one 
+class and clicking the Melt button caused only a few seconds of compilation. The 
+entire application can be run in this mode, which runs slower but compiles 
+faster. My test application took 20 seconds to compile from scratch in "melt" 
+mode. 
+<P>Compiler errors are shown in the project tool, whence you can drag and drop 
+class and feature names into class tools, letting you find the affected program 
+code quickly. For more information, drag and drop the error code itself into an 
+explanation tool, and very likely you'll see a paragraph and page number from 
+<I>The Language</I>. 
+<P>Debug uses the same drag and drop technique used elsewhere. Breakpoints can 
+be set regardless of whether the system is executing, in any class whose text is 
+accessible to the tools. At each breakpoint the stack frame is shown, and 
+features may be displayed by dragging from the stack frame to an object tool. 
+Once displayed, further references may be followed by dragging from the object 
+tool to itself. For example, to traverse a linked list, drag its root object to 
+an object tool, then repeatedly drag the forward link to the same tool. 
+<P>A breakpoint can be set only at a routine's entry point. As most Eiffel 
+routines are short, this gives better granularity than a C source debugger able 
+to break only at function entry points, but can sometimes require insertion of 
+feature calls and recompilation. Single stepping is available, but I was unable 
+to discover any indication of which source statement had been reached at a step. 
+
+<P>The EiffelBench environment is a very nice piece of work. If you are 
+interested in integrated development environments, ISE Eiffel-3 is worth the 
+purchase price just to get a good look at what they've done here. While not 
+perfect, this environment gives a stable, quick, and user friendly, but not 
+confining, basis for doing projects in Eiffel. 
+<P>
+<H4>ISE Class Libraries</H4>
+<P>The ISE class library is large, with 752 classes, all in source form. Of 
+these, the ones of most general interest will be the 157 classes in the base 
+hierarchy, comprising the kernel classes, support classes, and containers and 
+data structures. Beyond that there are libraries for building parsers, GUIs 
+under X, Motif, or MS Windows, or for use in EiffelBuild, their Motif GUI 
+builder. 
+<P>
+<H4>Customer Service</H4>
+<P>ISE gave a satisfactory response to every significant question I have raised 
+to date. Sometimes this required persistence on my part, and once or twice it 
+required a phone call to follow up the e-mail. 
+<P>
+<BLOCKQUOTE><I>Dan Wilder has been employed as a software engineer since 1975. 
+  Dan resides in Seattle, where he divides his time between work, family, and a 
+  home Linux system. Any time left is spent ignoring his moss collection, which 
+  his neighbors think he calls a lawn. He can be reached via e-mail as <A 
+  href="mailto:dan@gasboy.com">dan@gasboy.com</A>.</I> </BLOCKQUOTE>
+<P><A 
+href="http://www2.linuxjournal.com/lj-issues/issue17/1056s1.html">Resources</A> 
+<P><A 
+href="http://www2.linuxjournal.com/lj-issues/issue17/1056s2.html">Summary</A> 
+<P><A href="http://www2.linuxjournal.com/lj-issues/issue17/1056s3.html">Book 
+Review: Object Oriented Program Construction In Eiffel</A> 
+<P><A href="http://www2.linuxjournal.com/lj-issues/issue17/1138.html"><IMG 
+alt="  Previous  " src="1056_fichiers/nav_prev.gif" border=0></A><A 
+href="http://www2.linuxjournal.com/lj-issues/issue17/1088.html"><IMG 
+alt="  Next  " src="1056_fichiers/nav_next.gif" border=0></A> </P></BODY></HTML>

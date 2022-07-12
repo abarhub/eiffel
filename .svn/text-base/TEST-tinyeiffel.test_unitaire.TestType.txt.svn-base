@@ -1,0 +1,1942 @@
+Testsuite: tinyeiffel.test_unitaire.TestType
+Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 3,194 sec
+------------- Standard Output ---------------
+element=#text======================================================
+element=conformite======================================================
+Compilation de test\context\conformite\generique\test1.ace
+++++++++++++++++++++++++
+classe racine:test1
+----------------------
+parse de test1.e
+Ok
+parse de any.e
+Ok
+parse de C.e
+Ok
+fin du parsing
+parse de A.e
+Ok
+fin du parsing
+parse de B.e
+Ok
+fin du parsing
+parse de TK.e
+Ok
+fin du parsing
+parse de TL.e
+Ok
+fin du parsing
+parse de TM.e
+Ok
+fin du parsing
+parse de TN.e
+Ok
+fin du parsing
+parse de C1.e
+Ok
+fin du parsing
+parse de E.e
+Ok
+fin du parsing
+parse de B1.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST1
+1:ANY
+2:NONE
+3:C
+4:A
+5:B
+6:TK
+7:TL
+8:TM
+9:TN
+10:C1
+11:E
+12:B1
+calcul de :TEST1(0)TEST1
+attributs0 de la classe TEST1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe TEST1
+calcul de :ANY(1)TEST1
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :C(3)TEST1
+attributs0 de la classe C
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe C
+calcul de :A(4)TEST1
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe A
+calcul de :B(5)TEST1
+attributs0 de la classe B
+herit(5,4)
+herite de A
+attributs0 de la classe A
+Fin des attributs de la classe A
+Fin des attributs de la classe B
+calcul de :TK(6)TEST1
+attributs0 de la classe TK
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TK
+calcul de :TL(7)TEST1
+attributs0 de la classe TL
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TL
+calcul de :TM(8)TEST1
+attributs0 de la classe TM
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TM
+calcul de :TN(9)TEST1
+attributs0 de la classe TN
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TN
+calcul de :C1(10)TEST1
+attributs0 de la classe C1
+herit(10,12)
+herite de B1
+attributs0 de la classe B1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe B1
+Fin des attributs de la classe C1
+calcul de :E(11)TEST1
+attributs0 de la classe E
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe E
+calcul de :B1(12)TEST1
+attributs0 de la classe B1
+Fin des attributs de la classe B1
+heritage directe:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,C,A,B,TK,TL,TM,TN,C1,E,B1
+classe C herite de :ANY
+classe A herite de :ANY
+classe B herite de :A
+classe TK herite de :ANY
+classe TL herite de :ANY
+classe TM herite de :ANY
+classe TN herite de :ANY
+classe C1 herite de :B1
+classe E herite de :ANY
+classe B1 herite de :ANY
+heritage complet:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,C,A,B,TK,TL,TM,TN,C1,E,B1
+classe C herite de :ANY
+classe A herite de :ANY
+classe B herite de :ANY,A
+classe TK herite de :ANY
+classe TL herite de :ANY
+classe TM herite de :ANY
+classe TN herite de :ANY
+classe C1 herite de :ANY,B1
+classe E herite de :ANY
+classe B1 herite de :ANY
+Verif:TEST1->TEST1=true (test\context\conformite\generique\test1.ace)
+classe:[TEST1]
+type_de1=TEST1
+classe:[TEST1]
+classe:[TEST1]
+type_de2=TEST1
+conformite de:TEST1 , ancetre:TEST1
+ref
+Parametre type:TEST1->TEST1
+Fin parametre type:TEST1->TEST1:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:A[C]->A[C]=true (test\context\conformite\generique\test1.ace)
+classe:[C, A]
+type_de1=A[C]
+classe:[C, A]
+classe:[C, A]
+type_de2=A[C]
+conformite de:A[C] , ancetre:A[C]
+ref
+Parametre type:A[C]->A[C]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[C];ancetre=A[C]
+0={A(null,null)}
+conversion de A[C]
+resultat=
+0={A[C]}
+conformite de:C , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[C]->A[C]:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:A[C]->C=false (test\context\conformite\generique\test1.ace)
+classe:[C, A]
+type_de1=A[C]
+classe:[C]
+classe:[C, A]
+type_de2=A[C]
+conformite de:A[C] , ancetre:C
+ref
+type de=A[C]
+coucou2=A[C]?=C!4:3
+Ref:=* : false
+Fin Verif types (false)
+Verif:A[C]->B[C]=false (test\context\conformite\generique\test1.ace)
+classe:[C, A]
+type_de1=A[C]
+classe:[C, B]
+classe:[C, A]
+type_de2=A[C]
+conformite de:A[C] , ancetre:B[C]
+ref
+type de=A[C]
+coucou2=A[C]?=B[C]!4:5
+Ref:=* : false
+Fin Verif types (false)
+Verif:B[C]->A[C]=true (test\context\conformite\generique\test1.ace)
+classe:[C, B]
+type_de1=B[C]
+classe:[C, A]
+classe:[C, B]
+type_de2=B[C]
+conformite de:B[C] , ancetre:A[C]
+ref
+type de=B[C]
+coucou2=B[C]?=A[C]!5:4
+coucou
+Parametre type:B[C]->A[C]
+iteration 0
+B
+--------------------
+:::::1
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=B[C];ancetre=A[C]
+0={B(null,A),A({Y->Y}-A,null)}
+conversion de B[C]
+j=1
+res avant conv parametres=A[Y]
+0)Y->C
+res apres conv parametres=A[C]
+->A[C]({Y->Y})
+resultat=
+0={A[C]}
+conformite de:C , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:B[C]->A[C]:true
+res=true
+Ref:=* : true
+Fin Verif types (true)
+Verif:A[A[C]]->A[A[C]]=true (test\context\conformite\generique\test1.ace)
+classe:[C, A]
+type_de1=A[A[C]]
+classe:[C, A]
+classe:[C, A]
+type_de2=A[A[C]]
+conformite de:A[A[C]] , ancetre:A[A[C]]
+ref
+Parametre type:A[A[C]]->A[A[C]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[A[C]];ancetre=A[A[C]]
+0={A(null,null)}
+conversion de A[A[C]]
+resultat=
+0={A[A[C]]}
+conformite de:A[C] , ancetre:A[C]
+ref
+Parametre type:A[C]->A[C]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[C];ancetre=A[C]
+0={A(null,null)}
+conversion de A[C]
+resultat=
+0={A[C]}
+conformite de:C , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[C]->A[C]:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[A[C]]->A[A[C]]:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:A[A[A[C]]]->A[A[A[C]]]=true (test\context\conformite\generique\test1.ace)
+classe:[C, A]
+type_de1=A[A[A[C]]]
+classe:[C, A]
+classe:[C, A]
+type_de2=A[A[A[C]]]
+conformite de:A[A[A[C]]] , ancetre:A[A[A[C]]]
+ref
+Parametre type:A[A[A[C]]]->A[A[A[C]]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[A[A[C]]];ancetre=A[A[A[C]]]
+0={A(null,null)}
+conversion de A[A[A[C]]]
+resultat=
+0={A[A[A[C]]]}
+conformite de:A[A[C]] , ancetre:A[A[C]]
+ref
+Parametre type:A[A[C]]->A[A[C]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[A[C]];ancetre=A[A[C]]
+0={A(null,null)}
+conversion de A[A[C]]
+resultat=
+0={A[A[C]]}
+conformite de:A[C] , ancetre:A[C]
+ref
+Parametre type:A[C]->A[C]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[C];ancetre=A[C]
+0={A(null,null)}
+conversion de A[C]
+resultat=
+0={A[C]}
+conformite de:C , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[C]->A[C]:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[A[C]]->A[A[C]]:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[A[A[C]]]->A[A[A[C]]]:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:B[A[A[C]]]->A[A[A[C]]]=true (test\context\conformite\generique\test1.ace)
+classe:[C, A, B]
+type_de1=B[A[A[C]]]
+classe:[C, A]
+classe:[C, A, B]
+type_de2=B[A[A[C]]]
+conformite de:B[A[A[C]]] , ancetre:A[A[A[C]]]
+ref
+type de=B[A[A[C]]]
+coucou2=B[A[A[C]]]?=A[A[A[C]]]!5:4
+coucou
+Parametre type:B[A[A[C]]]->A[A[A[C]]]
+iteration 0
+B
+--------------------
+:::::1
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=B[A[A[C]]];ancetre=A[A[A[C]]]
+0={B(null,A),A({Y->Y}-A,null)}
+conversion de B[A[A[C]]]
+j=1
+res avant conv parametres=A[Y]
+0)Y->A
+res apres conv parametres=A[A[A[C]]]
+->A[A[A[C]]]({Y->Y})
+resultat=
+0={A[A[A[C]]]}
+conformite de:A[A[C]] , ancetre:A[A[C]]
+ref
+Parametre type:A[A[C]]->A[A[C]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[A[C]];ancetre=A[A[C]]
+0={A(null,null)}
+conversion de A[A[C]]
+resultat=
+0={A[A[C]]}
+conformite de:A[C] , ancetre:A[C]
+ref
+Parametre type:A[C]->A[C]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[C];ancetre=A[C]
+0={A(null,null)}
+conversion de A[C]
+resultat=
+0={A[C]}
+conformite de:C , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[C]->A[C]:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[A[C]]->A[A[C]]:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:B[A[A[C]]]->A[A[A[C]]]:true
+res=true
+Ref:=* : true
+Fin Verif types (true)
+Verif:A[B[A[C]]]->A[A[A[C]]]=true (test\context\conformite\generique\test1.ace)
+classe:[C, A, B]
+type_de1=A[B[A[C]]]
+classe:[C, A]
+classe:[C, A, B]
+type_de2=A[B[A[C]]]
+conformite de:A[B[A[C]]] , ancetre:A[A[A[C]]]
+ref
+Parametre type:A[B[A[C]]]->A[A[A[C]]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[B[A[C]]];ancetre=A[A[A[C]]]
+0={A(null,null)}
+conversion de A[B[A[C]]]
+resultat=
+0={A[B[A[C]]]}
+conformite de:B[A[C]] , ancetre:A[A[C]]
+ref
+type de=B[A[C]]
+coucou2=B[A[C]]?=A[A[C]]!5:4
+coucou
+Parametre type:B[A[C]]->A[A[C]]
+iteration 0
+B
+--------------------
+:::::1
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=B[A[C]];ancetre=A[A[C]]
+0={B(null,A),A({Y->Y}-A,null)}
+conversion de B[A[C]]
+j=1
+res avant conv parametres=A[Y]
+0)Y->A
+res apres conv parametres=A[A[C]]
+->A[A[C]]({Y->Y})
+resultat=
+0={A[A[C]]}
+conformite de:A[C] , ancetre:A[C]
+ref
+Parametre type:A[C]->A[C]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[C];ancetre=A[C]
+0={A(null,null)}
+conversion de A[C]
+resultat=
+0={A[C]}
+conformite de:C , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[C]->A[C]:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:B[A[C]]->A[A[C]]:true
+res=true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[B[A[C]]]->A[A[A[C]]]:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:A[A[B[C]]]->A[A[A[C]]]=true (test\context\conformite\generique\test1.ace)
+classe:[C, B, A]
+type_de1=A[A[B[C]]]
+classe:[C, A]
+classe:[C, B, A]
+type_de2=A[A[B[C]]]
+conformite de:A[A[B[C]]] , ancetre:A[A[A[C]]]
+ref
+Parametre type:A[A[B[C]]]->A[A[A[C]]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[A[B[C]]];ancetre=A[A[A[C]]]
+0={A(null,null)}
+conversion de A[A[B[C]]]
+resultat=
+0={A[A[B[C]]]}
+conformite de:A[B[C]] , ancetre:A[A[C]]
+ref
+Parametre type:A[B[C]]->A[A[C]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[B[C]];ancetre=A[A[C]]
+0={A(null,null)}
+conversion de A[B[C]]
+resultat=
+0={A[B[C]]}
+conformite de:B[C] , ancetre:A[C]
+ref
+type de=B[C]
+coucou2=B[C]?=A[C]!5:4
+coucou
+Parametre type:B[C]->A[C]
+iteration 0
+B
+--------------------
+:::::1
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=B[C];ancetre=A[C]
+0={B(null,A),A({Y->Y}-A,null)}
+conversion de B[C]
+j=1
+res avant conv parametres=A[Y]
+0)Y->C
+res apres conv parametres=A[C]
+->A[C]({Y->Y})
+resultat=
+0={A[C]}
+conformite de:C , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:B[C]->A[C]:true
+res=true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[B[C]]->A[A[C]]:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:A[A[B[C]]]->A[A[A[C]]]:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:A[A[A[C]]]->B[A[A[C]]]=false (test\context\conformite\generique\test1.ace)
+classe:[C, A]
+type_de1=A[A[A[C]]]
+classe:[C, A, B]
+classe:[C, A]
+type_de2=A[A[A[C]]]
+conformite de:A[A[A[C]]] , ancetre:B[A[A[C]]]
+ref
+type de=A[A[A[C]]]
+coucou2=A[A[A[C]]]?=B[A[A[C]]]!4:5
+Ref:=* : false
+Fin Verif types (false)
+Verif:A[D]->A[C]=false (test\context\conformite\generique\test1.ace)
+classe:[D, A]
+type_de1=A[D]
+classe:[C, A]
+classe:[D, A]
+type_de2=A[D]
+conformite de:A[D] , ancetre:A[C]
+ref
+Parametre type:A[D]->A[C]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[D];ancetre=A[C]
+0={A(null,null)}
+conversion de A[D]
+resultat=
+0={A[D]}
+conformite de:D , ancetre:C
+ref
+type de=D
+coucou2=D?=C!-1:3
+Ref:=* : false
+Type parametre:false:false
+Fin parametre type:A[D]->A[C]:false
+type de=A[D]
+coucou2=A[D]?=A[C]!4:4
+Ref:=* : false
+Fin Verif types (false)
+Verif:A[C]->A[D]=false (test\context\conformite\generique\test1.ace)
+classe:[C, A]
+type_de1=A[C]
+classe:[D, A]
+classe:[C, A]
+type_de2=A[C]
+conformite de:A[C] , ancetre:A[D]
+ref
+Parametre type:A[C]->A[D]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[C];ancetre=A[D]
+0={A(null,null)}
+conversion de A[C]
+resultat=
+0={A[C]}
+conformite de:C , ancetre:D
+ref
+type de=C
+coucou2=C?=D!3:-1
+Ref:=* : false
+Type parametre:false:false
+Fin parametre type:A[C]->A[D]:false
+type de=A[C]
+coucou2=A[C]?=A[D]!4:4
+Ref:=* : false
+Fin Verif types (false)
+Verif:A[A[A[C]]]->A[B[A[C]]]=false (test\context\conformite\generique\test1.ace)
+classe:[C, A]
+type_de1=A[A[A[C]]]
+classe:[C, A, B]
+classe:[C, A]
+type_de2=A[A[A[C]]]
+conformite de:A[A[A[C]]] , ancetre:A[B[A[C]]]
+ref
+Parametre type:A[A[A[C]]]->A[B[A[C]]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[A[A[C]]];ancetre=A[B[A[C]]]
+0={A(null,null)}
+conversion de A[A[A[C]]]
+resultat=
+0={A[A[A[C]]]}
+conformite de:A[A[C]] , ancetre:B[A[C]]
+ref
+type de=A[A[C]]
+coucou2=A[A[C]]?=B[A[C]]!4:5
+Ref:=* : false
+Type parametre:false:false
+Fin parametre type:A[A[A[C]]]->A[B[A[C]]]:false
+type de=A[A[A[C]]]
+coucou2=A[A[A[C]]]?=A[B[A[C]]]!4:4
+Ref:=* : false
+Fin Verif types (false)
+Verif:A[A[A[C]]]->A[A[B[C]]]=false (test\context\conformite\generique\test1.ace)
+classe:[C, A]
+type_de1=A[A[A[C]]]
+classe:[C, B, A]
+classe:[C, A]
+type_de2=A[A[A[C]]]
+conformite de:A[A[A[C]]] , ancetre:A[A[B[C]]]
+ref
+Parametre type:A[A[A[C]]]->A[A[B[C]]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[A[A[C]]];ancetre=A[A[B[C]]]
+0={A(null,null)}
+conversion de A[A[A[C]]]
+resultat=
+0={A[A[A[C]]]}
+conformite de:A[A[C]] , ancetre:A[B[C]]
+ref
+Parametre type:A[A[C]]->A[B[C]]
+iteration 0
+A
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=A[A[C]];ancetre=A[B[C]]
+0={A(null,null)}
+conversion de A[A[C]]
+resultat=
+0={A[A[C]]}
+conformite de:A[C] , ancetre:B[C]
+ref
+type de=A[C]
+coucou2=A[C]?=B[C]!4:5
+Ref:=* : false
+Type parametre:false:false
+Fin parametre type:A[A[C]]->A[B[C]]:false
+type de=A[A[C]]
+coucou2=A[A[C]]?=A[B[C]]!4:4
+Ref:=* : false
+Type parametre:false:false
+Fin parametre type:A[A[A[C]]]->A[A[B[C]]]:false
+type de=A[A[A[C]]]
+coucou2=A[A[A[C]]]?=A[A[B[C]]]!4:4
+Ref:=* : false
+Fin Verif types (false)
+Verif:C1[TL,TN]->B1[TK,TL,TM]=true (test\context\conformite\generique\test1.ace)
+classe:[TL, TN, C1]
+type_de1=C1[TL,TN]
+classe:[TK, TL, TM, B1]
+classe:[TL, TN, C1]
+type_de2=C1[TL,TN]
+conformite de:C1[TL,TN] , ancetre:B1[TK,TL,TM]
+ref
+type de=C1[TL,TN]
+coucou2=C1[TL,TN]?=B1[TK,TL,TM]!10:12
+coucou
+Parametre type:C1[TL,TN]->B1[TK,TL,TM]
+iteration 0
+C1
+--------------------
+:::::1
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=C1[TL,TN];ancetre=B1[TK,TL,TM]
+0={C1(null,B1),B1({}-B1,null)}
+conversion de C1[TL,TN]
+j=1
+res avant conv parametres=B1[TK,P,TM]
+0)TK->TK
+1)P->TL
+2)TM->TM
+res apres conv parametres=B1[TK,TL,TM]
+->B1[TK,TL,TM]({})
+resultat=
+0={B1[TK,TL,TM]}
+conformite de:TK , ancetre:TK
+ref
+Parametre type:TK->TK
+Fin parametre type:TK->TK:true
+Ref:=* : true
+conformite de:TL , ancetre:TL
+ref
+Parametre type:TL->TL
+Fin parametre type:TL->TL:true
+Ref:=* : true
+conformite de:TM , ancetre:TM
+ref
+Parametre type:TM->TM
+Fin parametre type:TM->TM:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:C1[TL,TN]->B1[TK,TL,TM]:true
+res=true
+Ref:=* : true
+Fin Verif types (true)
+element=#text======================================================
+element=conformite======================================================
+Compilation de test\context\conformite\generique\test2.ace
+++++++++++++++++++++++++
+classe racine:test2
+----------------------
+parse de test2.e
+Ok
+parse de any.e
+Ok
+parse de C.e
+Ok
+fin du parsing
+parse de A.e
+Ok
+fin du parsing
+parse de D.e
+Ok
+fin du parsing
+parse de E.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST2
+1:ANY
+2:NONE
+3:C
+4:A
+5:D
+6:E
+calcul de :TEST2(0)TEST2
+attributs0 de la classe TEST2
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe TEST2
+calcul de :ANY(1)TEST2
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :C(3)TEST2
+attributs0 de la classe C
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe C
+calcul de :A(4)TEST2
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe A
+calcul de :D(5)TEST2
+attributs0 de la classe D
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe D
+calcul de :E(6)TEST2
+attributs0 de la classe E
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe E
+heritage directe:
+classe TEST2 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST2,ANY,C,A,D,E
+classe C herite de :ANY
+classe A herite de :ANY
+classe D herite de :ANY
+classe E herite de :ANY
+heritage complet:
+classe TEST2 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST2,ANY,C,A,D,E
+classe C herite de :ANY
+classe A herite de :ANY
+classe D herite de :ANY
+classe E herite de :ANY
+Verif:X->ANY=true (test\context\conformite\generique\test2.ace)
+classe:[X]
+type_de1=X
+classe:[ANY]
+classe:[E]
+type_de2=X
+conformite de:X , ancetre:ANY
+ref
+type de=X
+Parametre type:any->ANY
+Fin parametre type:any->ANY:true
+Ref:=* : true
+Fin Verif types (true)
+element=#text======================================================
+element=conformite======================================================
+Compilation de test\context\conformite\generique\test3.ace
+++++++++++++++++++++++++
+classe racine:test3
+----------------------
+parse de test3.e
+Ok
+parse de any.e
+Ok
+parse de C.e
+Ok
+fin du parsing
+parse de A.e
+Ok
+fin du parsing
+parse de B.e
+Ok
+fin du parsing
+parse de TK.e
+Ok
+fin du parsing
+parse de TL.e
+Ok
+fin du parsing
+parse de TM.e
+Ok
+fin du parsing
+parse de TN.e
+Ok
+fin du parsing
+parse de C1.e
+Ok
+fin du parsing
+parse de E.e
+Ok
+fin du parsing
+parse de IE.e
+Ok
+fin du parsing
+parse de DE.e
+Ok
+fin du parsing
+parse de C2.e
+Ok
+fin du parsing
+parse de D2.e
+Ok
+fin du parsing
+parse de B1.e
+Ok
+fin du parsing
+parse de IR.e
+Ok
+fin du parsing
+parse de DR.e
+Ok
+fin du parsing
+parse de B2.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST3
+1:ANY
+2:NONE
+3:C
+4:A
+5:B
+6:TK
+7:TL
+8:TM
+9:TN
+10:C1
+11:E
+12:IE
+13:DE
+14:C2
+15:D2
+16:B1
+17:IR
+18:DR
+19:B2
+calcul de :TEST3(0)TEST3
+attributs0 de la classe TEST3
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe TEST3
+calcul de :ANY(1)TEST3
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :C(3)TEST3
+attributs0 de la classe C
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe C
+calcul de :A(4)TEST3
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe A
+calcul de :B(5)TEST3
+attributs0 de la classe B
+herit(5,4)
+herite de A
+attributs0 de la classe A
+Fin des attributs de la classe A
+Fin des attributs de la classe B
+calcul de :TK(6)TEST3
+attributs0 de la classe TK
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TK
+calcul de :TL(7)TEST3
+attributs0 de la classe TL
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TL
+calcul de :TM(8)TEST3
+attributs0 de la classe TM
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TM
+calcul de :TN(9)TEST3
+attributs0 de la classe TN
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TN
+calcul de :C1(10)TEST3
+attributs0 de la classe C1
+herit(10,16)
+herite de B1
+attributs0 de la classe B1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe B1
+Fin des attributs de la classe C1
+calcul de :E(11)TEST3
+attributs0 de la classe E
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe E
+calcul de :IE(12)TEST3
+attributs0 de la classe IE
+herit(12,17)
+herite de IR
+attributs0 de la classe IR
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe IR
+Fin des attributs de la classe IE
+calcul de :DE(13)TEST3
+attributs0 de la classe DE
+herit(13,18)
+herite de DR
+attributs0 de la classe DR
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe DR
+Fin des attributs de la classe DE
+calcul de :C2(14)TEST3
+attributs0 de la classe C2
+herit(14,19)
+herite de B2
+attributs0 de la classe B2
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe B2
+Fin des attributs de la classe C2
+calcul de :D2(15)TEST3
+attributs0 de la classe D2
+herit(15,19)
+herite de B2
+attributs0 de la classe B2
+Fin des attributs de la classe B2
+Fin des attributs de la classe D2
+calcul de :B1(16)TEST3
+attributs0 de la classe B1
+Fin des attributs de la classe B1
+calcul de :IR(17)TEST3
+attributs0 de la classe IR
+Fin des attributs de la classe IR
+calcul de :DR(18)TEST3
+attributs0 de la classe DR
+Fin des attributs de la classe DR
+calcul de :B2(19)TEST3
+attributs0 de la classe B2
+Fin des attributs de la classe B2
+conformite de:X , ancetre:IR
+ref
+type de=X
+coucou2=any?=IR!1:17
+Ref:=* : false
+conformite de:X , ancetre:IR
+ref
+type de=X
+Parametre type:IR->IR
+Fin parametre type:IR->IR:true
+Ref:=* : true
+conformite de:Y , ancetre:DE
+expanded
+Parametre type:DE->DE
+Fin parametre type:DE->DE:true
+Exp:=Exp : true
+conformite de:X , ancetre:IR
+ref
+type de=X
+Parametre type:IR->IR
+Fin parametre type:IR->IR:true
+Ref:=* : true
+heritage directe:
+classe TEST3 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST3,ANY,C,A,B,TK,TL,TM,TN,C1,E,IE,DE,C2,D2,B1,IR,DR,B2
+classe C herite de :ANY
+classe A herite de :ANY
+classe B herite de :A
+classe TK herite de :ANY
+classe TL herite de :ANY
+classe TM herite de :ANY
+classe TN herite de :ANY
+classe C1 herite de :B1
+classe E herite de :ANY
+classe IE herite de :IR
+classe DE herite de :DR
+classe C2 herite de :B2
+classe D2 herite de :B2
+classe B1 herite de :ANY
+classe IR herite de :ANY
+classe DR herite de :ANY
+classe B2 herite de :ANY
+heritage complet:
+classe TEST3 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST3,ANY,C,A,B,TK,TL,TM,TN,C1,E,IE,DE,C2,D2,B1,IR,DR,B2
+classe C herite de :ANY
+classe A herite de :ANY
+classe B herite de :ANY,A
+classe TK herite de :ANY
+classe TL herite de :ANY
+classe TM herite de :ANY
+classe TN herite de :ANY
+classe C1 herite de :ANY,B1
+classe E herite de :ANY
+classe IE herite de :ANY,IR
+classe DE herite de :ANY,DR
+classe C2 herite de :ANY,B2
+classe D2 herite de :ANY,B2
+classe B1 herite de :ANY
+classe IR herite de :ANY
+classe DR herite de :ANY
+classe B2 herite de :ANY
+Verif:C2[IE,DE]->B2[IR,DE,IR]=true (test\context\conformite\generique\test3.ace)
+classe:[IE, DE, C2]
+type_de1=C2[IE,DE]
+classe:[IR, DE, B2]
+classe:[IE, DE, C2]
+type_de2=C2[IE,DE]
+conformite de:C2[IE,DE] , ancetre:B2[IR,DE,IR]
+ref
+type de=C2[IE,DE]
+coucou2=C2[IE,DE]?=B2[IR,DE,IR]!14:19
+coucou
+Parametre type:C2[IE,DE]->B2[IR,DE,IR]
+iteration 0
+C2
+--------------------
+:::::1
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=C2[IE,DE];ancetre=B2[IR,DE,IR]
+0={C2(null,B2),B2({}-B2,null)}
+conversion de C2[IE,DE]
+j=1
+res avant conv parametres=B2[X,Y,X]
+0)X->IE
+1)Y->DE
+2)X->IE
+res apres conv parametres=B2[IE,DE,IE]
+->B2[IE,DE,IE]({})
+resultat=
+0={B2[IE,DE,IE]}
+conformite de:IE , ancetre:IR
+ref
+type de=IE
+coucou2=IE?=IR!12:17
+coucou
+Parametre type:IE->IR
+Fin parametre type:IE->IR:true
+res=true
+Ref:=* : true
+conformite de:DE , ancetre:DE
+expanded
+Parametre type:DE->DE
+Fin parametre type:DE->DE:true
+Exp:=Exp : true
+conformite de:IE , ancetre:IR
+ref
+type de=IE
+coucou2=IE?=IR!12:17
+coucou
+Parametre type:IE->IR
+Fin parametre type:IE->IR:true
+res=true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:C2[IE,DE]->B2[IR,DE,IR]:true
+res=true
+Ref:=* : true
+Fin Verif types (true)
+Verif:B2[X,Y,X]->B2[IR,DE,IR]=false (test\context\conformite\generique\test3.ace)
+classe:[X, Y, B2]
+type_de1=B2[X,Y,X]
+classe:[IR, DE, B2]
+classe:[C2]
+type_de2=B2[X,Y,X]
+conformite de:B2[X,Y,X] , ancetre:B2[IR,DE,IR]
+ref
+Parametre type:B2[X,Y,X]->B2[IR,DE,IR]
+iteration 0
+B2
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=B2[X,Y,X];ancetre=B2[IR,DE,IR]
+0={B2(null,null)}
+conversion de B2[X,Y,X]
+resultat=
+0={B2[X,Y,X]}
+conformite de:X , ancetre:IR
+ref
+type de=X
+coucou2=any?=IR!1:17
+Ref:=* : false
+Type parametre:false:false
+Fin parametre type:B2[X,Y,X]->B2[IR,DE,IR]:false
+type de=B2[X,Y,X]
+coucou2=B2[X,Y,X]?=B2[IR,DE,IR]!19:19
+Ref:=* : false
+Fin Verif types (false)
+Verif:X->IR=true (test\context\conformite\generique\test3.ace)
+classe:[X]
+type_de1=X
+classe:[IR]
+classe:[D2]
+type_de2=X
+conformite de:X , ancetre:IR
+ref
+type de=X
+Parametre type:IR->IR
+Fin parametre type:IR->IR:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:X->X=true (test\context\conformite\generique\test3.ace)
+classe:[X]
+type_de1=X
+classe:[X]
+classe:[D2]
+type_de2=X
+conformite de:X , ancetre:X
+generique
+Fin Verif types (true)
+Verif:Y->DE=true (test\context\conformite\generique\test3.ace)
+classe:[Y]
+type_de1=Y
+classe:[DE]
+classe:[D2]
+type_de2=Y
+conformite de:Y , ancetre:DE
+expanded
+Parametre type:DE->DE
+Fin parametre type:DE->DE:true
+Exp:=Exp : true
+Fin Verif types (true)
+Verif:B2[X,Y,X]->B2[IR,DE,IR]=true (test\context\conformite\generique\test3.ace)
+classe:[X, Y, B2]
+type_de1=B2[X,Y,X]
+classe:[IR, DE, B2]
+classe:[D2]
+type_de2=B2[X,Y,X]
+conformite de:B2[X,Y,X] , ancetre:B2[IR,DE,IR]
+ref
+Parametre type:B2[X,Y,X]->B2[IR,DE,IR]
+iteration 0
+B2
+--------------------
+##################
+!!!!!!!!!!!!!!!!
+**************
+de=B2[X,Y,X];ancetre=B2[IR,DE,IR]
+0={B2(null,null)}
+conversion de B2[X,Y,X]
+resultat=
+0={B2[X,Y,X]}
+conformite de:X , ancetre:IR
+ref
+type de=X
+Parametre type:IR->IR
+Fin parametre type:IR->IR:true
+Ref:=* : true
+conformite de:Y , ancetre:DE
+expanded
+Parametre type:DE->DE
+Fin parametre type:DE->DE:true
+Exp:=Exp : true
+conformite de:X , ancetre:IR
+ref
+type de=X
+Parametre type:IR->IR
+Fin parametre type:IR->IR:true
+Ref:=* : true
+Type parametre:false:true
+Fin parametre type:B2[X,Y,X]->B2[IR,DE,IR]:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:IR->IR=true (test\context\conformite\generique\test3.ace)
+classe:[IR]
+type_de1=IR
+classe:[IR]
+classe:[IR]
+type_de2=IR
+conformite de:IR , ancetre:IR
+ref
+Parametre type:IR->IR
+Fin parametre type:IR->IR:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:IE->IE=true (test\context\conformite\generique\test3.ace)
+classe:[IE]
+type_de1=IE
+classe:[IE]
+classe:[IE]
+type_de2=IE
+conformite de:IE , ancetre:IE
+expanded
+Parametre type:IE->IE
+Fin parametre type:IE->IE:true
+Exp:=Exp : true
+Fin Verif types (true)
+Verif:DR->DR=true (test\context\conformite\generique\test3.ace)
+classe:[DR]
+type_de1=DR
+classe:[DR]
+classe:[DR]
+type_de2=DR
+conformite de:DR , ancetre:DR
+ref
+Parametre type:DR->DR
+Fin parametre type:DR->DR:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:DE->DE=true (test\context\conformite\generique\test3.ace)
+classe:[DE]
+type_de1=DE
+classe:[DE]
+classe:[DE]
+type_de2=DE
+conformite de:DE , ancetre:DE
+expanded
+Parametre type:DE->DE
+Fin parametre type:DE->DE:true
+Exp:=Exp : true
+Fin Verif types (true)
+Verif:IE->IR=true (test\context\conformite\generique\test3.ace)
+classe:[IE]
+type_de1=IE
+classe:[IR]
+classe:[IE]
+type_de2=IE
+conformite de:IE , ancetre:IR
+ref
+type de=IE
+coucou2=IE?=IR!12:17
+coucou
+Parametre type:IE->IR
+Fin parametre type:IE->IR:true
+res=true
+Ref:=* : true
+Fin Verif types (true)
+Verif:DE->DR=true (test\context\conformite\generique\test3.ace)
+classe:[DE]
+type_de1=DE
+classe:[DR]
+classe:[DE]
+type_de2=DE
+conformite de:DE , ancetre:DR
+ref
+type de=DE
+coucou2=DE?=DR!13:18
+coucou
+Parametre type:DE->DR
+Fin parametre type:DE->DR:true
+res=true
+Ref:=* : true
+Fin Verif types (true)
+Verif:IR->IE=false (test\context\conformite\generique\test3.ace)
+classe:[IR]
+type_de1=IR
+classe:[IE]
+classe:[IR]
+type_de2=IR
+conformite de:IR , ancetre:IE
+expanded
+Exp:=Ref : false
+Fin Verif types (false)
+Verif:DR->DE=false (test\context\conformite\generique\test3.ace)
+classe:[DR]
+type_de1=DR
+classe:[DE]
+classe:[DR]
+type_de2=DR
+conformite de:DR , ancetre:DE
+expanded
+Exp:=Ref : false
+Fin Verif types (false)
+element=#text======================================================
+element=conformite======================================================
+Compilation de test\context\conformite\generique\test4.ace
+++++++++++++++++++++++++
+classe racine:test4
+----------------------
+parse de test4.e
+Ok
+parse de any.e
+Ok
+parse de C.e
+Ok
+fin du parsing
+parse de A.e
+Ok
+fin du parsing
+parse de B.e
+Ok
+fin du parsing
+parse de TK.e
+Ok
+fin du parsing
+parse de TL.e
+Ok
+fin du parsing
+parse de TM.e
+Ok
+fin du parsing
+parse de TN.e
+Ok
+fin du parsing
+parse de C1.e
+Ok
+fin du parsing
+parse de E.e
+Ok
+fin du parsing
+parse de IE.e
+Ok
+fin du parsing
+parse de DE.e
+Ok
+fin du parsing
+parse de C2.e
+Ok
+fin du parsing
+parse de D2.e
+Ok
+fin du parsing
+parse de B1.e
+Ok
+fin du parsing
+parse de IR.e
+Ok
+fin du parsing
+parse de DR.e
+Ok
+fin du parsing
+parse de B2.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST4
+1:ANY
+2:NONE
+3:C
+4:A
+5:B
+6:TK
+7:TL
+8:TM
+9:TN
+10:C1
+11:E
+12:IE
+13:DE
+14:C2
+15:D2
+16:B1
+17:IR
+18:DR
+19:B2
+calcul de :TEST4(0)TEST4
+attributs0 de la classe TEST4
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+Fin des attributs de la classe TEST4
+calcul de :ANY(1)TEST4
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :C(3)TEST4
+attributs0 de la classe C
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe C
+calcul de :A(4)TEST4
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe A
+calcul de :B(5)TEST4
+attributs0 de la classe B
+herit(5,4)
+herite de A
+attributs0 de la classe A
+Fin des attributs de la classe A
+Fin des attributs de la classe B
+calcul de :TK(6)TEST4
+attributs0 de la classe TK
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TK
+calcul de :TL(7)TEST4
+attributs0 de la classe TL
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TL
+calcul de :TM(8)TEST4
+attributs0 de la classe TM
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TM
+calcul de :TN(9)TEST4
+attributs0 de la classe TN
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TN
+calcul de :C1(10)TEST4
+attributs0 de la classe C1
+herit(10,16)
+herite de B1
+attributs0 de la classe B1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe B1
+Fin des attributs de la classe C1
+calcul de :E(11)TEST4
+attributs0 de la classe E
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe E
+calcul de :IE(12)TEST4
+attributs0 de la classe IE
+herit(12,17)
+herite de IR
+attributs0 de la classe IR
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe IR
+Fin des attributs de la classe IE
+calcul de :DE(13)TEST4
+attributs0 de la classe DE
+herit(13,18)
+herite de DR
+attributs0 de la classe DR
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe DR
+Fin des attributs de la classe DE
+calcul de :C2(14)TEST4
+attributs0 de la classe C2
+herit(14,19)
+herite de B2
+attributs0 de la classe B2
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe B2
+Fin des attributs de la classe C2
+calcul de :D2(15)TEST4
+attributs0 de la classe D2
+herit(15,19)
+herite de B2
+attributs0 de la classe B2
+Fin des attributs de la classe B2
+Fin des attributs de la classe D2
+calcul de :B1(16)TEST4
+attributs0 de la classe B1
+Fin des attributs de la classe B1
+calcul de :IR(17)TEST4
+attributs0 de la classe IR
+Fin des attributs de la classe IR
+calcul de :DR(18)TEST4
+attributs0 de la classe DR
+Fin des attributs de la classe DR
+calcul de :B2(19)TEST4
+attributs0 de la classe B2
+Fin des attributs de la classe B2
+conformite de:X , ancetre:IR
+ref
+type de=X
+coucou2=any?=IR!1:17
+Ref:=* : false
+conformite de:X , ancetre:IR
+ref
+type de=X
+Parametre type:IR->IR
+Fin parametre type:IR->IR:true
+Ref:=* : true
+conformite de:Y , ancetre:DE
+expanded
+Parametre type:DE->DE
+Fin parametre type:DE->DE:true
+Exp:=Exp : true
+conformite de:X , ancetre:IR
+ref
+type de=X
+Parametre type:IR->IR
+Fin parametre type:IR->IR:true
+Ref:=* : true
+heritage directe:
+classe TEST4 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST4,ANY,C,A,B,TK,TL,TM,TN,C1,E,IE,DE,C2,D2,B1,IR,DR,B2
+classe C herite de :ANY
+classe A herite de :ANY
+classe B herite de :A
+classe TK herite de :ANY
+classe TL herite de :ANY
+classe TM herite de :ANY
+classe TN herite de :ANY
+classe C1 herite de :B1
+classe E herite de :ANY
+classe IE herite de :IR
+classe DE herite de :DR
+classe C2 herite de :B2
+classe D2 herite de :B2
+classe B1 herite de :ANY
+classe IR herite de :ANY
+classe DR herite de :ANY
+classe B2 herite de :ANY
+heritage complet:
+classe TEST4 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST4,ANY,C,A,B,TK,TL,TM,TN,C1,E,IE,DE,C2,D2,B1,IR,DR,B2
+classe C herite de :ANY
+classe A herite de :ANY
+classe B herite de :ANY,A
+classe TK herite de :ANY
+classe TL herite de :ANY
+classe TM herite de :ANY
+classe TN herite de :ANY
+classe C1 herite de :ANY,B1
+classe E herite de :ANY
+classe IE herite de :ANY,IR
+classe DE herite de :ANY,DR
+classe C2 herite de :ANY,B2
+classe D2 herite de :ANY,B2
+classe B1 herite de :ANY
+classe IR herite de :ANY
+classe DR herite de :ANY
+classe B2 herite de :ANY
+Verif:IR->IR=true (test\context\conformite\generique\test4.ace)
+classe:[IR]
+type_de1=IR
+classe:[IR]
+classe:[IR]
+type_de2=IR
+conformite de:IR , ancetre:IR
+ref
+Parametre type:IR->IR
+Fin parametre type:IR->IR:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:var2->var1:C=true (test\context\conformite\generique\test4.ace)
+classe:[]
+type_de1=var2
+classe:[C]
+classe:[TEST4]
+classe:[]
+type_de2=var2
+conformite de:like var1 , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+Fin Verif types (true)
+Verif:var1->var2:like var1=true (test\context\conformite\generique\test4.ace)
+classe:[]
+type_de1=var1
+classe:[]
+classe:[TEST4]
+classe:[]
+type_de2=var1
+Fin Verif types (true)
+Verif:var3->var2:like var1=false (test\context\conformite\generique\test4.ace)
+classe:[]
+type_de1=var3
+classe:[]
+classe:[TEST4]
+classe:[]
+type_de2=var3
+Fin Verif types (false)
+Verif:var2->var3:C=true (test\context\conformite\generique\test4.ace)
+classe:[]
+type_de1=var2
+classe:[C]
+classe:[TEST4]
+classe:[]
+type_de2=var2
+conformite de:like var1 , ancetre:C
+ref
+Parametre type:C->C
+Fin parametre type:C->C:true
+Ref:=* : true
+Fin Verif types (true)
+element=#text======================================================
+element=#comment======================================================
+element=#text======================================================
+Test des conversions
+Compilation de test\context\conformite\generique\test1.ace
+++++++++++++++++++++++++
+classe racine:test1
+----------------------
+parse de test1.e
+Ok
+parse de any.e
+Ok
+parse de C.e
+Ok
+fin du parsing
+parse de A.e
+Ok
+fin du parsing
+parse de B.e
+Ok
+fin du parsing
+parse de TK.e
+Ok
+fin du parsing
+parse de TL.e
+Ok
+fin du parsing
+parse de TM.e
+Ok
+fin du parsing
+parse de TN.e
+Ok
+fin du parsing
+parse de C1.e
+Ok
+fin du parsing
+parse de E.e
+Ok
+fin du parsing
+parse de B1.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST1
+1:ANY
+2:NONE
+3:C
+4:A
+5:B
+6:TK
+7:TL
+8:TM
+9:TN
+10:C1
+11:E
+12:B1
+calcul de :TEST1(0)TEST1
+attributs0 de la classe TEST1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe TEST1
+calcul de :ANY(1)TEST1
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :C(3)TEST1
+attributs0 de la classe C
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe C
+calcul de :A(4)TEST1
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe A
+calcul de :B(5)TEST1
+attributs0 de la classe B
+herit(5,4)
+herite de A
+attributs0 de la classe A
+Fin des attributs de la classe A
+Fin des attributs de la classe B
+calcul de :TK(6)TEST1
+attributs0 de la classe TK
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TK
+calcul de :TL(7)TEST1
+attributs0 de la classe TL
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TL
+calcul de :TM(8)TEST1
+attributs0 de la classe TM
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TM
+calcul de :TN(9)TEST1
+attributs0 de la classe TN
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe TN
+calcul de :C1(10)TEST1
+attributs0 de la classe C1
+herit(10,12)
+herite de B1
+attributs0 de la classe B1
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe B1
+Fin des attributs de la classe C1
+calcul de :E(11)TEST1
+attributs0 de la classe E
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+Fin des attributs de la classe E
+calcul de :B1(12)TEST1
+attributs0 de la classe B1
+Fin des attributs de la classe B1
+heritage directe:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,C,A,B,TK,TL,TM,TN,C1,E,B1
+classe C herite de :ANY
+classe A herite de :ANY
+classe B herite de :A
+classe TK herite de :ANY
+classe TL herite de :ANY
+classe TM herite de :ANY
+classe TN herite de :ANY
+classe C1 herite de :B1
+classe E herite de :ANY
+classe B1 herite de :ANY
+heritage complet:
+classe TEST1 herite de :ANY
+classe ANY herite de :
+classe NONE herite de :TEST1,ANY,C,A,B,TK,TL,TM,TN,C1,E,B1
+classe C herite de :ANY
+classe A herite de :ANY
+classe B herite de :ANY,A
+classe TK herite de :ANY
+classe TL herite de :ANY
+classe TM herite de :ANY
+classe TN herite de :ANY
+classe C1 herite de :ANY,B1
+classe E herite de :ANY
+classe B1 herite de :ANY
+classe:[TL, TN, C1]
+res avant conv parametres=B1[TK,P,TM]
+0)TK->TK
+1)P->TL
+2)TM->TM
+res apres conv parametres=B1[TK,TL,TM]
+type C1[TL,TN]->B1[TK,TL,TM]
+Fin de test des conversions
+------------- ---------------- ---------------
+------------- Standard Error -----------------
+20 mars 2005 15:34:09 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:09 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\context\conformite\generique\test1.ace
+20 mars 2005 15:34:10 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:10 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\context\conformite\generique\test2.ace
+20 mars 2005 15:34:10 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:10 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:10 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\context\conformite\generique\test3.ace
+20 mars 2005 15:34:10 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:11 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\context\conformite\generique\test4.ace
+20 mars 2005 15:34:11 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+20 mars 2005 15:34:11 tinyeiffel.compiler.Compiler_Eiffel init
+INFO: Logger initialisé
+20 mars 2005 15:34:11 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Compilation de test\context\conformite\generique\test1.ace
+20 mars 2005 15:34:11 tinyeiffel.compiler.Compiler_Eiffel compile
+INFO: Classes chargees:
+------------- ---------------- ---------------
+
+Testcase: testType2 took 3,154 sec
+Testcase: testConversion took 0,04 sec

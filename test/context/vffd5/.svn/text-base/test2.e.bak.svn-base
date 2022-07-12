@@ -1,0 +1,9 @@
+class TEST2
+
+feature
+
+	toto, prefix "not",tata is
+	do
+	end;
+
+end

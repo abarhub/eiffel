@@ -1,0 +1,29 @@
+class TEST1
+
+creation make
+
+feature
+
+	make is
+	local
+	a,b:INTEGER;
+	t:TEST1;
+	do
+	a:=n;
+	b:=q;
+	a:=not t;
+	b:=t and a;
+	end;
+
+	n:INTEGER;
+	q:INTEGER;
+
+	not:INTEGER is
+	do
+	end;
+
+	and (a:INTEGER):INTEGER is
+	do
+	end;
+
+end

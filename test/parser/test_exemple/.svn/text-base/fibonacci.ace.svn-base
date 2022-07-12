@@ -1,0 +1,20 @@
+system test1
+
+root fibonacci
+
+cluster
+
+	"E:\SmallEiffel0\tutorial";
+	"E:\SmallEiffel0\lib\kernel";
+	"E:\SmallEiffel0\lib\base";
+	"E:\SmallEiffel0\lib\io";
+	"E:\SmallEiffel0\lib\iterator";
+	"E:\SmallEiffel0\lib\number";
+	"E:\SmallEiffel0\lib\random";
+	"E:\SmallEiffel0\lib\sorting";
+	"E:\SmallEiffel0\lib\time";
+	--"test\interm\test_attribut1\";
+	--".\std_classe\";
+	".\";
+
+end

@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE liste_classe SYSTEM "..\..\test_unitaire\context.dtd">
+<liste_classe>
+<classe nom=".\test\test8.e">
+<erreur nom="ErreurVEEN">L'attribut j n'est pas declare dans la classe TEST8 a la ligne (16,15,.\test\test8.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut f n'est pas declaré dans la classe TEST8 à la ligne (17,12,.\test\test8.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut j n'est pas declare dans la classe TEST8 a la ligne (18,17,.\test\test8.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "and" n'est pas declaré dans la classe INTEGER à la ligne (19,14,.\test\test8.e)</erreur>
+<erreur nom="ErreurVJAR">Dans la classe TEST8, l'affectation a la ligne (32,9,.\test\test8.e) est incorrecte, car BOOLEAN n'est pas conforme a INTEGER</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 1 de type BOOLEAN n'est pas conforme avec le parametre formel de type INTEGER pour l'appel  a la ligne (33,24,.\test\test8.e) de la classe TEST8 et la declaration a la ligne (13,27,.\std_classe_test\INTEGER.e) de la classe INTEGER pour la fonction infix "+"</erreur>
+</classe>
+<classe nom=".\test\test9.e">
+</classe>
+<classe nom=".\test\test10.e">
+<erreur nom="ErreurSource">Erreur .\test\test10.e(11,11) : Erreur dans l'instruction</erreur>
+<erreur nom="ErreurSource">Erreur .\test\test10.e(11,11) : Erreur dans le corps de l'attribut</erreur>
+<erreur nom="ErreurSource">Erreur .\test\test10.e(11,11) : Erreur dans l'attribut</erreur>
+<erreur nom="ErreurSource">Erreur .\test\test10.e(11,11) : Erreur dans l'attribut</erreur>
+<erreur nom="ErreurSource">Erreur .\test\test10.e(11,11) : Erreur dans l'attribut</erreur>
+<erreur nom="ErreurSource">Erreur .\test\test10.e(11,11) : Erreur dans le nom d'attribut</erreur>
+<erreur nom="ErreurSource">Erreur .\test\test10.e(11,11) : Erreur dans la classe</erreur>
+<erreur nom="ErreurSource">Erreur .\test\test10.e(11,11) : Erreur de parsing:Erreur Parse (11,15):Il faut !</erreur>
+</classe>
+<classe nom="test\context\vdrs2\test1.e">
+<erreur nom="ErreurVDRS2">Dans la classe TEST1 l'attribut a herite de TOTO1 est redefinie a la ligne (3,9,test\context\vdrs2\test1.e) alors qu'il est frozen a la ligne (5,9,test\context\vdrs2\TOTO1.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs2\test2.e">
+</classe>
+<classe nom="test\context\vmcn2\test1.e">
+<erreur nom="ErreurVMCN2">conflit pour l'attribut Void dans la classe TEST1 entre l'héritage ANY à la ligne (3,9,test\context\vmcn2\test1.e) et l'attribut à la ligne (7,9,test\context\vmcn2\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vmcn3\test1.e">
+<erreur nom="ErreurVMCN3">conflit pour l'attribut hello dans la classe TEST1entre les heritages B et A aux lignes (3,9,test\context\vmcn3\test1.e) et (3,9,test\context\vmcn3\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vmcn3\test2.e">
+</classe>
+<classe nom="test\context\vmcn3\test3.e">
+<erreur nom="ErreurVMCN3">conflit pour l'attribut hello dans la classe TEST3entre les heritages B et D aux lignes (3,9,test\context\vmcn3\test3.e) et (3,9,test\context\vmcn3\test3.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs4\test1.e">
+</classe>
+<classe nom="test\context\vdrs4\test2.e">
+<erreur nom="ErreurVDRS4">Dans la classe TEST2 l'attribut a hérité de A est déclaré redéfinie à la ligne (3,9,test\context\vdrs4\test2.e) mais ne l'est pas effectivement</erreur>
+</classe>
+<classe nom="test\context\vhpr\test1.e">
+<erreur nom="ErreurVHPR">Erreur: il y a un cycle d'heritage (TEST1->...->A->TEST1)</erreur>
+</classe>
+<classe nom="test\context\vhpr\test2.e">
+</classe>
+<classe nom="test\context\vffd2\test1.e">
+</classe>
+<classe nom="test\context\vffd2\test2.e">
+<erreur nom="ErreurVFFD2">Dans la classe TEST2, l'attribut val2 est defini plusieurs fois ((5,14,test\context\vffd2\test2.e) et (9,9,test\context\vffd2\test2.e))</erreur>
+</classe>
+<classe nom="test\context\vffd4\test1.e">
+<erreur nom="ErreurVFFD4">L'attribut d est deferred, et frozen dans la classe TEST1((8,9,test\context\vffd4\test1.e))</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete TEST1 a des attributs deferred a la ligne (8,9,test\context\vffd4\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vffd4\test2.e">
+<erreur nom="ErreurVFFD4">L'attribut i est deferred, et frozen dans la classe A((5,9,test\context\vffd4\A.e))</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete TEST2 a des attributs deferred a la ligne (5,9,test\context\vffd4\A.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete A a des attributs deferred a la ligne (5,9,test\context\vffd4\A.e)</erreur>
+</classe>
+<classe nom="test\context\vdrd5\test1.e">
+<erreur nom="ErreurVDRD5">Impossible de redefinir l'attribut effectif toto a la ligne (3,9,test\context\vdrd5\test1.e) en un attribut deferred a la ligne (9,9,test\context\vdrd5\test1.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete TEST1 a des attributs deferred a la ligne (9,9,test\context\vdrd5\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vmcn2\test2.e">
+<erreur nom="ErreurVMCN2">conflit pour l'attribut tata dans la classe TEST2 entre l'héritage A à la ligne (3,9,test\context\vmcn2\test2.e) et l'attribut à la ligne (7,9,test\context\vmcn2\test2.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete TEST2 a des attributs deferred a la ligne (7,9,test\context\vmcn2\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs4\test6.e">
+<erreur nom="ErreurVDRS4">Dans la classe TEST6 l'attribut affiche hérité de C est déclaré redefini à la ligne (3,9,test\context\vdrs4\test6.e) alors que c'est une concrétisation</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete C a des attributs deferred a la ligne (5,9,test\context\vdrs4\C.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs4\test7.e">
+<erreur nom="ErreurVCCH1">La classe concrete C a des attributs deferred a la ligne (5,9,test\context\vdrs4\C.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs4\test3.e">
+<erreur nom="ErreurVDRS4">Dans la classe TEST3 l'attribut a hérité de B est déclaré redéfinie à la ligne (3,9,test\context\vdrs4\test3.e) mais ne l'est pas effectivement</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete TEST3 a des attributs deferred a la ligne (5,9,test\context\vdrs4\B.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete B a des attributs deferred a la ligne (5,9,test\context\vdrs4\B.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs4\test4.e">
+<erreur nom="ErreurVDRS4">Dans la classe TEST4 l'attribut a hérité de B n'est pas redéclaré à la ligne (3,9,test\context\vdrs4\test4.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete TEST4 a des attributs deferred a la ligne (7,9,test\context\vdrs4\test4.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete B a des attributs deferred a la ligne (5,9,test\context\vdrs4\B.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs4\test5.e">
+<erreur nom="ErreurVDRS4">Dans la classe TEST5 l'attribut a hérité de B est déclaré redefini à la ligne (3,9,test\context\vdrs4\test5.e) alors que c'est une concrétisation</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete B a des attributs deferred a la ligne (5,9,test\context\vdrs4\B.e)</erreur>
+</classe>
+<classe nom="test\context\vdus3\test1.e">
+</classe>
+<classe nom="test\context\vdus3\test2.e">
+<erreur nom="ErreurVDUS3">Erreur dans la classe TEST2 a la ligne (3,9,test\context\vdus3\test2.e) : l'attribut undefine donne n'est pas concret dans la classe B a la ligne (5,9,test\context\vdus3\B.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete B a des attributs deferred a la ligne (5,9,test\context\vdus3\B.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs2\test3.e">
+<erreur nom="ErreurVDRS2">Dans la classe TEST3 l'attribut var1 herite de A est redefinie a la ligne (3,9,test\context\vdrs2\test3.e) alors qu'il est constant a la ligne (5,9,test\context\vdrs2\A.e)</erreur>
+<erreur nom="ErreurVDRS2">Dans la classe TEST3 l'attribut cst2 herite de A est redefinie a la ligne (3,9,test\context\vdrs2\test3.e) alors qu'il est constant a la ligne (6,9,test\context\vdrs2\A.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs4\test8.e">
+<erreur nom="ErreurVDRS4">Dans la classe TEST8 l'attribut affiche hérité de C n'est pas redéclaré à la ligne (3,9,test\context\vdrs4\test8.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete TEST8 a des attributs deferred a la ligne (8,9,test\context\vdrs4\test8.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete C a des attributs deferred a la ligne (5,9,test\context\vdrs4\C.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete D a des attributs deferred a la ligne (5,9,test\context\vdrs4\D.e)</erreur>
+</classe>
+<classe nom="test\context\vmcn1\test1.e">
+<erreur nom="ErreurVMCN1">conflit pour l'attribut deferred toto dans la classe TEST1entre les heritages B et A aux lignes (3,9,test\context\vmcn1\test1.e) et (3,9,test\context\vmcn1\test1.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete A a des attributs deferred a la ligne (5,9,test\context\vmcn1\A.e)</erreur>
+<erreur nom="ErreurVCCH1">La classe concrete B a des attributs deferred a la ligne (5,9,test\context\vmcn1\B.e)</erreur>
+</classe>
+<classe nom="test\context\vncs1\test1.e">
+<erreur nom="ErreurVNCS1">Le nombre de parametre de toto dans la classe TEST1 ne correspond pas a celui de l'ancetre A aux lignes (9,9,test\context\vncs1\test1.e) et (6,9,test\context\vncs1\A.e)</erreur>
+</classe>
+<classe nom="test\context\vncs1\test2.e">
+</classe>
+<classe nom="test\context\vncs2\test1.e">
+<erreur nom="ErreurVNCS2">Le parametre numero 1 de l'attribut hello dans la classe TEST1 de type REAL n'est pas conforme a DOUBLE_REF de l'ancetre A aux lignes (9,9,test\context\vncs2\test1.e) et (5,9,test\context\vncs2\A.e)</erreur>
+</classe>
+<classe nom="test\context\vncs2\test2.e">
+</classe>
+<classe nom="test\context\vncs2\test3.e">
+<erreur nom="ErreurVNCS2">Le type de retour de l'attribut hello dans la classe TEST3 de type INTEGER n'est pas conforme a null de l'ancetre A aux lignes (9,9,test\context\vncs2\test3.e) et (5,9,test\context\vncs2\A.e)</erreur>
+</classe>
+<classe nom="test\context\vncs2\test4.e">
+<erreur nom="ErreurVNCS2">Le type de retour de l'attribut hello dans la classe TEST4 de type null n'est pas conforme a INTEGER_REF de l'ancetre B aux lignes (9,9,test\context\vncs2\test4.e) et (5,9,test\context\vncs2\B.e)</erreur>
+</classe>
+<classe nom="test\context\vncs2\test5.e">
+</classe>
+<classe nom="test\context\vncs2\test6.e">
+<erreur nom="ErreurVNCS2">Le type de retour de l'attribut hello dans la classe TEST6 de type REAL n'est pas conforme a INTEGER_REF de l'ancetre B aux lignes (9,9,test\context\vncs2\test6.e) et (5,9,test\context\vncs2\B.e)</erreur>
+</classe>
+<classe nom="test\context\vdrs3\test1.e">
+<erreur nom="ErreurVDRS3">Dans la classe TEST1, la primitive toto de l'ancetre A est declaré  plusieurs fois redefine ((4,36,test\context\vdrs3\test1.e) et (4,26,test\context\vdrs3\test1.e))</erreur>
+</classe>
+<classe nom="test\context\vdus4\test1.e">
+<erreur nom="ErreurVDUS4">Dans la classe TEST1, la primitive toto de l'ancetre A est declaré  plusieurs fois undefine ((4,36,test\context\vdus4\test1.e) et (4,26,test\context\vdus4\test1.e))</erreur>
+</classe>
+<classe nom="test\context\vdrs1\test1.e">
+<erreur nom="ErreurVDRS1">Dans la classe TEST1, l'attribut toto1 herité de A n'existe pas a la ligne (4,26,test\context\vdrs1\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vdus1\test1.e">
+<erreur nom="ErreurVDUS1">Dans la classe TEST1, l'attribut toto1 herité de A n'existe pas a la ligne (4,26,test\context\vdus1\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vdus2\test1.e">
+<erreur nom="ErreurVDUS2">Dans la classe TEST1 l'attribut toto herite de A est undefine a la ligne (3,9,test\context\vdus2\test1.e) alors qu'il est une variable a la ligne (5,9,test\context\vdus2\A.e)</erreur>
+<erreur nom="ErreurVDRD6">Impossible de redefinir l'attribut variable toto a la ligne (3,9,test\context\vdus2\test1.e) en un attribut non variable a la ligne (9,9,test\context\vdus2\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vdus2\test2.e">
+<erreur nom="ErreurVDUS2">Dans la classe TEST2 l'attribut toto herite de B est undefine a la ligne (3,9,test\context\vdus2\test2.e) alors qu'il est frozen a la ligne (5,9,test\context\vdus2\B.e)</erreur>
+</classe>
+<classe nom="test\context\vdus2\test3.e">
+<erreur nom="ErreurVDUS2">Dans la classe TEST3 l'attribut toto herite de A est undefine a la ligne (3,9,test\context\vdus2\test3.e) alors qu'il est une variable a la ligne (5,9,test\context\vdus2\A.e)</erreur>
+</classe>
+<classe nom="test\context\vdrd6\test1.e">
+</classe>
+<classe nom="test\context\vdrd6\test2.e">
+<erreur nom="ErreurVDRD6">Impossible de redefinir l'attribut variable toto a la ligne (3,9,test\context\vdrd6\test2.e) en un attribut non variable a la ligne (9,9,test\context\vdrd6\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vdrd6\test3.e">
+</classe>
+<classe nom="test\context\vdrd6\test4.e">
+</classe>
+<classe nom="test\context\vdrd6\test5.e">
+</classe>
+<classe nom="test\context\vdrd6\test6.e">
+<erreur nom="ErreurVDRD6">Impossible de redefinir l'attribut non expanded toto a la ligne (3,9,test\context\vdrd6\test6.e) en un attribut expanded a la ligne (9,9,test\context\vdrd6\test6.e)</erreur>
+</classe>
+<classe nom="test\context\vdrd6\test7.e">
+<erreur nom="ErreurVDRD6">Impossible de redefinir l'attribut de type expanded toto a la ligne (3,9,test\context\vdrd6\test7.e) en un attribut non expanded a la ligne (9,9,test\context\vdrd6\test7.e)</erreur>
+</classe>
+<classe nom="test\context\vdrd6\test8.e">
+</classe>
+<classe nom="test\context\vdrd7\test1.e">
+<erreur nom="ErreurVDRD7">Impossible de redefinir l'attribut external toto a la ligne (3,9,test\context\vdrd7\test1.e) en un attribut non external a la ligne (9,9,test\context\vdrd7\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vdrd7\test2.e">
+</classe>
+<classe nom="test\context\vdrd7\test3.e">
+<erreur nom="ErreurVDRD7">Impossible de redefinir l'attribut non external toto a la ligne (3,9,test\context\vdrd7\test3.e) en un attribut external a la ligne (9,9,test\context\vdrd7\test3.e)</erreur>
+</classe>
+<classe nom="test\context\vdrd7\test4.e">
+</classe>
+<classe nom="test\context\vcfg1\test1.e">
+<erreur nom="ErreurVSRC1">La classe racine TEST1 est generique a la ligne (1,7,test\context\vcfg1\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vcfg1\test2.e">
+<erreur nom="ErreurVCFG1">Le type générique INTEGER a la ligne (1,15,test\context\vcfg1\test2.e) dans la classe TEST2 est deja présent dans l'univers</erreur>
+<erreur nom="ErreurVCFG1">Le type générique ARRAY a la ligne (1,23,test\context\vcfg1\test2.e) dans la classe TEST2 est deja présent dans l'univers</erreur>
+<erreur nom="ErreurVSRC1">La classe racine TEST2 est generique a la ligne (1,7,test\context\vcfg1\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vcfg2\test1.e">
+<erreur nom="ErreurVCFG2">Le type generique A a la ligne (1,17,test\context\vcfg2\test1.e) dans la classe TEST1 est deja présent dans la liste de générique  a la ligne (1,13,test\context\vcfg2\test1.e)</erreur>
+<erreur nom="ErreurVSRC1">La classe racine TEST1 est generique a la ligne (1,7,test\context\vcfg2\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vtug2\test1.e">
+</classe>
+<classe nom="test\context\vtug2\test2.e">
+<erreur nom="ErreurVTUG2">Le nombre de parametres generiques de A a la ligne (3,17,test\context\vtug2\test2.e) ne correspond pas a sa classe de base a la ligne (1,7,test\context\vtug2\A.e)</erreur>
+</classe>
+<classe nom="test\context\vtug1\test1.e">
+<erreur nom="ErreurVTUG1">Le A a la ligne (3,17,test\context\vtug1\test1.e) ne correspond pas a sa classe de base a la ligne (1,7,test\context\vtug1\A.e) qui n'est pas générique</erreur>
+</classe>
+<classe nom="test\context\vtug1\test2.e">
+</classe>
+<classe nom="test\context\vtcg3\test1.e">
+</classe>
+<classe nom="test\context\vtcg3\test2.e">
+<erreur nom="ErreurVTCG3">Le DOUBLE_REF a la ligne (3,27,test\context\vtcg3\test2.e) n'est pas conforme a sa classe de base a la ligne (1,27,test\context\vtcg3\B.e)</erreur>
+</classe>
+<classe nom="test\context\vtcg3\test3.e">
+</classe>
+<classe nom="test\context\vtcg3\test4.e">
+<erreur nom="ErreurVTCG3">Le X a la ligne (3,19,test\context\vtcg3\C.e) n'est pas conforme a sa classe de base a la ligne (1,12,test\context\vtcg3\B.e)</erreur>
+</classe>
+<classe nom="test\context\vtcg3\test5.e">
+</classe>
+<classe nom="test\context\vcch1\test1.e">
+<erreur nom="ErreurVCCH1">La classe concrete A a des attributs deferred a la ligne (5,9,test\context\vcch1\A.e)</erreur>
+</classe>
+<classe nom="test\context\vcch1\test2.e">
+</classe>
+<classe nom="test\context\vcch2\test1.e">
+<erreur nom="ErreurVCCH2">La classe abstraite A n'a pas d'attributs deferred</erreur>
+</classe>
+<classe nom="test\context\vcch2\test2.e">
+</classe>
+<classe nom="test\context\vffd5\test1.e">
+<erreur nom="ErreurVFFD5">Dans la classe TEST1, l'attribut prefix "not" ne doit pas avoir d'argument a la ligne (5,9,test\context\vffd5\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vffd5\test2.e">
+</classe>
+<classe nom="test\context\vffd5\test3.e">
+<erreur nom="ErreurVFFD5">Dans la classe TEST3, l'attribut prefix "not" doit avoir un type de retour a la ligne (5,9,test\context\vffd5\test3.e)</erreur>
+</classe>
+<classe nom="test\context\vffd6\test1.e">
+<erreur nom="ErreurVFFD6">Dans la classe TEST1, l'attribut infix "not" doit avoir un seul argument a la ligne (5,9,test\context\vffd6\test1.e)</erreur>
+<erreur nom="ErreurVFFD6">Dans la classe TEST1, l'attribut infix "-" doit avoir un seul argument a la ligne (9,9,test\context\vffd6\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vffd6\test2.e">
+</classe>
+<classe nom="test\context\vffd6\test3.e">
+<erreur nom="ErreurVFFD6">Dans la classe TEST3, l'attribut infix "not" doit avoir un type de retour a la ligne (5,9,test\context\vffd6\test3.e)</erreur>
+</classe>
+<classe nom="test\context\vffd7\test1.e">
+<erreur nom="ErreurVFFD7">Dans la classe A, l'attribut toto doit avoir un type de retour non générique a la ligne (5,9,test\context\vffd7\A.e)</erreur>
+<erreur nom="ErreurVFFD7">Dans la classe A, l'attribut tata doit avoir un type de retour non ancré a la ligne (9,9,test\context\vffd7\A.e)</erreur>
+</classe>
+<classe nom="test\context\vreg\test1.e">
+<erreur nom="ErreurVREG">Dans la classe TEST1, le nom du parametre formel i est declaré plusieurs fois  aux lignes (9,14,test\context\vreg\test1.e) et (9,26,test\context\vreg\test1.e)</erreur>
+<erreur nom="ErreurVREG">Dans la classe TEST1, le nom du parametre formel x est declaré plusieurs fois  aux lignes (13,16,test\context\vreg\test1.e) et (13,20,test\context\vreg\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vreg\test2.e">
+</classe>
+<classe nom="test\context\vreg\test3.e">
+<erreur nom="ErreurVREG">Dans la classe TEST3, le nom de la variable locale i est declaré plusieurs fois  aux lignes (7,9,test\context\vreg\test3.e) et (8,11,test\context\vreg\test3.e)</erreur>
+<erreur nom="ErreurVREG">Dans la classe TEST3, le nom de la variable locale z est declaré plusieurs fois  aux lignes (14,9,test\context\vreg\test3.e) et (14,13,test\context\vreg\test3.e)</erreur>
+</classe>
+<classe nom="test\context\vreg\test4.e">
+</classe>
+<classe nom="test\context\vrfa\test1.e">
+<erreur nom="ErreurVRFA">Dans la classe TEST1, le nom du parametre formel i a la ligne (5,14,test\context\vrfa\test1.e) est en conflit avec l'attribut i a la ligne (9,9,test\context\vrfa\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vrfa\test2.e">
+</classe>
+<classe nom="test\context\vrle\test1.e">
+<erreur nom="ErreurVRLE1">Dans la classe TEST1, le nom de la variable locale i a la ligne (7,9,test\context\vrle\test1.e) est en conflit avec l'attribut i a la ligne (11,9,test\context\vrle\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vrle\test2.e">
+<erreur nom="ErreurVRLE2">Dans la classe TEST2, le nom de la variable locale y a la ligne (7,11,test\context\vrle\test2.e) est en conflit avec le parametre y a la ligne (5,16,test\context\vrle\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vrle\test3.e">
+</classe>
+<classe nom="test\context\vqui\test1.e">
+<erreur nom="ErreurVQUI">Dans la classe TEST1, un attribut unique doit avoir un type de retour integer, a la ligne (5,14,test\context\vqui\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vqui\test2.e">
+</classe>
+<classe nom="test\context\vqmc1\test1.e">
+<erreur nom="ErreurVQMC1">Dans la classe TEST1, l'attribut constant est une constante booléen mais n'est pas déclaré BOOLEAN a la ligne (5,9,test\context\vqmc1\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vqmc1\test2.e">
+</classe>
+<classe nom="test\context\vqmc2\test1.e">
+<erreur nom="ErreurVQMC2">Dans la classe TEST1, l'attribut constant est une constante caractere mais n'est pas déclaré CHARACTER a la ligne (5,9,test\context\vqmc2\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vqmc2\test2.e">
+</classe>
+<classe nom="test\context\vqmc3\test1.e">
+<erreur nom="ErreurVQMC3">Dans la classe TEST1, l'attribut constant est une constante entiere mais n'est pas déclaré INTEGER a la ligne (5,9,test\context\vqmc3\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vqmc3\test2.e">
+</classe>
+<classe nom="test\context\vqmc4\test1.e">
+<erreur nom="ErreurVQMC4">Dans la classe TEST1, l'attribut constant est une constante réelle mais n'est pas déclaré REAL ou DOUBLE a la ligne (5,9,test\context\vqmc4\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vqmc4\test2.e">
+</classe>
+<classe nom="test\context\vqmc5\test1.e">
+<erreur nom="ErreurVQMC5">Dans la classe TEST1, l'attribut constant est une constante chaine mais n'est pas déclaré STRING a la ligne (5,9,test\context\vqmc5\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vqmc5\test2.e">
+</classe>
+<classe nom="test\context\vqmc\test1.e">
+<erreur nom="ErreurVQMC">Dans la classe TEST1, l'attribut constant n'est pas une constante a la ligne (5,9,test\context\vqmc\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vqmc\test2.e">
+</classe>
+<classe nom="test\context\vgcp1\test1.e">
+<erreur nom="ErreurVGCP1">La classe abstraite TEST1 a une section création a la ligne (3,1,test\context\vgcp1\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vgcp1\test2.e">
+</classe>
+<classe nom="test\context\vgcp2\test1.e">
+<erreur nom="ErreurVGCP2">Dans la classe TEST1, l'attribut toto est déclaré plusieurs fois dans la section création aux lignes (3,10,test\context\vgcp2\test1.e) et (3,20,test\context\vgcp2\test1.e)</erreur>
+<erreur nom="ErreurVGCP2">Dans la classe TEST1, l'attribut tata est déclaré plusieurs fois dans la section création aux lignes (3,15,test\context\vgcp2\test1.e) et (5,15,test\context\vgcp2\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vgcp2\test2.e">
+</classe>
+<classe nom="test\context\vgcp3\test1.e">
+<erreur nom="ErreurVGCP3">Dans la classe TEST1, la routine de création tata a la ligne (3,15,test\context\vgcp3\test1.e) n'existe pas</erreur>
+</classe>
+<classe nom="test\context\vgcp3\test2.e">
+</classe>
+<classe nom="test\context\vgcp4\test1.e">
+<erreur nom="ErreurVGCP4">Dans la classe TEST1, la routine de creation toto est déclaré once a la ligne (7,9,test\context\vgcp4\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vgcp4\test2.e">
+</classe>
+<classe nom="test\context\vgcp5\test1.e">
+<erreur nom="ErreurVGCP5">Dans la classe expended TEST1, il y a plus de une procedure de création a la ligne (3,1,test\context\vgcp5\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vgcp5\test2.e">
+<erreur nom="ErreurVGCP5">Dans la classe expended TEST2, la procedure de création toto a des parametres a la ligne (7,9,test\context\vgcp5\test2.e)</erreur>
+<erreur nom="ErreurVSRC2">La classe racine a l'attribut de création toto qui n'a pas le bon format de parametre a la ligne (7,9,test\context\vgcp5\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vgcp5\test3.e">
+</classe>
+<classe nom="test\context\vsrc1\test1.e">
+<erreur nom="ErreurVSRC1">La classe racine TEST1 est generique a la ligne (1,7,test\context\vsrc1\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vsrc1\test2.e">
+</classe>
+<classe nom="test\context\vsrc2\test1.e">
+<erreur nom="ErreurVSRC2">La classe racine a l'attribut de création toto qui n'a pas le bon format de parametre a la ligne (11,9,test\context\vsrc2\test1.e)</erreur>
+<erreur nom="ErreurVSRC2">La classe racine a l'attribut de création tata qui n'a pas le bon format de parametre a la ligne (15,9,test\context\vsrc2\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vsrc2\test2.e">
+</classe>
+<classe nom="test\context\vtat1\test1.e">
+<erreur nom="ErreurVTAT1">Dans la classe TEST1, le type ancré like tata a la ligne (8,14,test\context\vtat1\test1.e) pointe vers le type expanse expanded STRING a la ligne (6,23,test\context\vtat1\test1.e)</erreur>
+<erreur nom="ErreurVTAT1">Dans la classe TEST1, le type ancré like tyty a la ligne (9,14,test\context\vtat1\test1.e) pointe vers le type générique A a la ligne (10,14,test\context\vtat1\test1.e)</erreur>
+<erreur nom="ErreurVSRC1">La classe racine TEST1 est generique a la ligne (1,7,test\context\vtat1\test1.e)</erreur>
+<erreur nom="ErreurVTAT1">Dans la classe TEST1, le type ancré like abc a la ligne (11,16,test\context\vtat1\test1.e) pointe vers rien</erreur>
+<erreur nom="ErreurVTAT2">Dans la classe TEST1, le type ancré like 86 a la ligne (12,14,test\context\vtat1\test1.e) pointe vers rien</erreur>
+<erreur nom="ErreurVTAT1">Dans la classe TEST1, le type ancré like tete a la ligne (13,11,test\context\vtat1\test1.e) pointe vers le type ancré like tyty a la ligne (9,14,test\context\vtat1\test1.e)</erreur>
+<erreur nom="ErreurVTEC2">Dans la classe TEST1, le type expanded STRING a la ligne (6,23,test\context\vtat1\test1.e) est invalide car la classe STRING a une procedure de creation avec des parametres a la ligne (6,1,.\std_classe_test\STRING.e)</erreur>
+</classe>
+<classe nom="test\context\vtat1\test2.e">
+</classe>
+<classe nom="test\context\vtat2\test1.e">
+<erreur nom="ErreurVTAT2">Dans la classe TEST1, le type ancré like titi a la ligne (8,33,test\context\vtat2\test1.e) pointe vers le type ancré like toto a la ligne (7,22,test\context\vtat2\test1.e)</erreur>
+<erreur nom="ErreurVTAT2">Dans la classe TEST1, le type ancré like tata a la ligne (8,22,test\context\vtat2\test1.e) pointe vers le type expanse expanded STRING a la ligne (6,31,test\context\vtat2\test1.e)</erreur>
+<erreur nom="ErreurVSRC1">La classe racine TEST1 est generique a la ligne (1,7,test\context\vtat2\test1.e)</erreur>
+<erreur nom="ErreurVTAT2">Dans la classe TEST1, le type ancré like tyty a la ligne (10,14,test\context\vtat2\test1.e) pointe vers le type générique A a la ligne (11,14,test\context\vtat2\test1.e)</erreur>
+<erreur nom="ErreurVTAT1">Dans la classe TEST1, le type ancré like abc a la ligne (12,16,test\context\vtat2\test1.e) pointe vers rien</erreur>
+<erreur nom="ErreurVTAT2">Dans la classe TEST1, le type ancré like 86 a la ligne (13,14,test\context\vtat2\test1.e) pointe vers rien</erreur>
+<erreur nom="ErreurVTAT2">Dans la classe TEST1, le type ancré like titi a la ligne (14,11,test\context\vtat2\test1.e) pointe vers le type ancré like toto a la ligne (7,22,test\context\vtat2\test1.e)</erreur>
+<erreur nom="ErreurVTAT2">Dans la classe TEST1, le type ancré like tyty a la ligne (15,12,test\context\vtat2\test1.e) pointe vers le type générique A a la ligne (11,14,test\context\vtat2\test1.e)</erreur>
+<erreur nom="ErreurVTEC2">Dans la classe TEST1, le type expanded STRING a la ligne (6,31,test\context\vtat2\test1.e) est invalide car la classe STRING a une procedure de creation avec des parametres a la ligne (6,1,.\std_classe_test\STRING.e)</erreur>
+</classe>
+<classe nom="test\context\vtat2\test2.e">
+</classe>
+<classe nom="test\context\vtec1\test1.e">
+<erreur nom="ErreurVTEC1">Dans la classe TEST1, le type expanded A a la ligne (5,23,test\context\vtec1\test1.e) est invalide car la classe A est generique a la ligne (1,16,test\context\vtec1\A.e)</erreur>
+</classe>
+<classe nom="test\context\vtec1\test2.e">
+</classe>
+<classe nom="test\context\vtec2\test1.e">
+<erreur nom="ErreurVTEC2">Dans la classe TEST1, le type expanded A a la ligne (5,23,test\context\vtec2\test1.e) est invalide car la classe A a plus d'une procedure de creation a la ligne (3,1,test\context\vtec2\A.e)</erreur>
+</classe>
+<classe nom="test\context\vtec2\test2.e">
+<erreur nom="ErreurVTEC2">Dans la classe TEST2, le type expanded B a la ligne (5,23,test\context\vtec2\test2.e) est invalide car la classe B a une procedure de creation avec des parametres a la ligne (3,1,test\context\vtec2\B.e)</erreur>
+</classe>
+<classe nom="test\context\vtec2\test3.e">
+</classe>
+<classe nom="test\context\vtec2\test4.e">
+</classe>
+<classe nom="test\context\vwbe\test1.e">
+<erreur nom="ErreurVWBE">Dans la classe TEST1, l'expression a la ligne (9,12,test\context\vwbe\test1.e) doit etre de type BOOLEAN pour le if</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST1, l'expression a la ligne (11,16,test\context\vwbe\test1.e) doit etre de type BOOLEAN pour le elseif</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST1, l'expression a la ligne (18,15,test\context\vwbe\test1.e) doit etre de type BOOLEAN pour la boucle</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST1, l'expression a la ligne (17,19,test\context\vwbe\test1.e) doit etre de type BOOLEAN pour l'invariant de boucle</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST1, l'expression a la ligne (23,17,test\context\vwbe\test1.e) doit etre de type BOOLEAN pour le check</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST1, l'expression a la ligne (24,17,test\context\vwbe\test1.e) doit etre de type BOOLEAN pour le check</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST1, l'expression a la ligne (27,17,test\context\vwbe\test1.e) doit etre de type BOOLEAN pour la postcondition</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST1, l'expression a la ligne (7,17,test\context\vwbe\test1.e) doit etre de type BOOLEAN pour la précondition</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST1, l'expression a la ligne (35,9,test\context\vwbe\test1.e) doit etre de type BOOLEAN pour l'invariant</erreur>
+</classe>
+<classe nom="test\context\vwbe\test2.e">
+</classe>
+<classe nom="test\context\vave\test1.e">
+<erreur nom="ErreurVAVE">Dans la classe TEST1, le variant a la ligne (8,17,test\context\vave\test1.e) n'est pas un entier</erreur>
+</classe>
+<classe nom="test\context\vave\test2.e">
+</classe>
+<classe nom="test\context\vjar\test1.e">
+<erreur nom="ErreurVJAR">Dans la classe TEST1, l'affectation a la ligne (11,9,test\context\vjar\test1.e) est incorrecte, car BOOLEAN n'est pas conforme a INTEGER</erreur>
+<erreur nom="ErreurVJAR">Dans la classe TEST1, l'affectation a la ligne (12,9,test\context\vjar\test1.e) est incorrecte, car INTEGER_REF n'est pas conforme a INTEGER</erreur>
+<erreur nom="ErreurVJAR">Dans la classe TEST1, l'affectation a la ligne (13,9,test\context\vjar\test1.e) est incorrecte, car ANY n'est pas conforme a INTEGER</erreur>
+</classe>
+<classe nom="test\context\vjar\test2.e">
+</classe>
+<classe nom="test\context\vjrv\test1.e">
+<erreur nom="ErreurVJRV">Dans la classe TEST1, la tentative d'affectation a la ligne (11,9,test\context\vjrv\test1.e) est incorrecte, car INTEGER n'est pas de type référence</erreur>
+<erreur nom="ErreurVJRV">Dans la classe TEST1, la tentative d'affectation a la ligne (12,9,test\context\vjrv\test1.e) est incorrecte, car INTEGER n'est pas de type référence</erreur>
+<erreur nom="ErreurVJRV">Dans la classe TEST1, la tentative d'affectation a la ligne (13,9,test\context\vjrv\test1.e) est incorrecte, car expanded ANY n'est pas de type référence</erreur>
+</classe>
+<classe nom="test\context\vjrv\test2.e">
+</classe>
+<classe nom="test\context\vomb1\test1.e">
+<erreur nom="ErreurVOMB1">Dans la classe TEST1, l'expression d'inspection n'est ni de type INTEGER, ni CHARACTER, a la ligne (9,17,test\context\vomb1\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vomb1\test2.e">
+</classe>
+<classe nom="test\context\vomb2\test1.e">
+<erreur nom="ErreurVOMB2">Dans la classe TEST1, la constante d'inspection n'est pas un INTEGER a la ligne (10,14,test\context\vomb2\test1.e)</erreur>
+<erreur nom="ErreurVOMB2">Dans la classe TEST1, la constante d'inspection n'est pas un INTEGER a la ligne (10,19,test\context\vomb2\test1.e)</erreur>
+<erreur nom="ErreurVOMB2">Dans la classe TEST1, la constante d'inspection n'est pas un INTEGER a la ligne (12,14,test\context\vomb2\test1.e)</erreur>
+<erreur nom="ErreurVOMB2">Dans la classe TEST1, la constante d'inspection n'est pas un INTEGER a la ligne (14,14,test\context\vomb2\test1.e)</erreur>
+<erreur nom="ErreurVOMB2">Dans la classe TEST1, la constante d'inspection n'est pas un INTEGER a la ligne (14,19,test\context\vomb2\test1.e)</erreur>
+<erreur nom="ErreurVOMB2">Dans la classe TEST1, la constante d'inspection n'est pas un INTEGER a la ligne (14,23,test\context\vomb2\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vomb2\test2.e">
+</classe>
+<classe nom="test\context\vomb2\test3.e">
+<erreur nom="ErreurVOMB2">Dans la classe TEST3, la constante d'inspection n'est pas constante a la ligne (10,14,test\context\vomb2\test3.e)</erreur>
+<erreur nom="ErreurVOMB2">Dans la classe TEST3, la constante d'inspection n'est pas constante a la ligne (10,18,test\context\vomb2\test3.e)</erreur>
+<erreur nom="ErreurVOMB2">Dans la classe TEST3, la constante d'inspection n'est pas constante a la ligne (12,14,test\context\vomb2\test3.e)</erreur>
+<erreur nom="ErreurVOMB2">Dans la classe TEST3, la constante d'inspection n'est pas constante a la ligne (14,14,test\context\vomb2\test3.e)</erreur>
+</classe>
+<classe nom="test\context\vomb2\test4.e">
+</classe>
+<classe nom="test\context\vomb3\test1.e">
+<erreur nom="ErreurVOMB3">Dans la classe TEST1, il y a conflit entre la valeur 'a' qui est présente a la ligne (18,22,test\context\vomb3\test1.e) et a la ligne (18,14,test\context\vomb3\test1.e)</erreur>
+<erreur nom="ErreurVOMB3">Dans la classe TEST1, il y a conflit entre la valeur 'b' qui est présente a la ligne (20,14,test\context\vomb3\test1.e) et a la ligne (18,18,test\context\vomb3\test1.e)</erreur>
+<erreur nom="ErreurVOMB3">Dans la classe TEST1, il y a conflit entre la valeur 'm' a la ligne (26,18,test\context\vomb3\test1.e) et l'intervalle 'm'..'p' a la ligne (28,14,test\context\vomb3\test1.e)</erreur>
+<erreur nom="ErreurVOMB3">Dans la classe TEST1, il y a conflit entre les intervalles 'n'..'z' a la ligne (36,14,test\context\vomb3\test1.e) et 'l'..'q' a la ligne (34,14,test\context\vomb3\test1.e)</erreur>
+<erreur nom="ErreurVOMB3">Dans la classe TEST1, il y a conflit entre la valeur t1 a la ligne (44,14,test\context\vomb3\test1.e) et l'intervalle 'a'..'m' a la ligne (42,14,test\context\vomb3\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vomb3\test2.e">
+</classe>
+<classe nom="test\context\vomb3\test3.e">
+<erreur nom="ErreurVOMB3">Dans la classe TEST3, il y a conflit entre la valeur 1 qui est présente a la ligne (18,18,test\context\vomb3\test3.e) et a la ligne (18,14,test\context\vomb3\test3.e)</erreur>
+<erreur nom="ErreurVOMB3">Dans la classe TEST3, il y a conflit entre la valeur 2 qui est présente a la ligne (20,14,test\context\vomb3\test3.e) et a la ligne (18,16,test\context\vomb3\test3.e)</erreur>
+<erreur nom="ErreurVOMB3">Dans la classe TEST3, il y a conflit entre la valeur 5 a la ligne (26,16,test\context\vomb3\test3.e) et l'intervalle 5..8 a la ligne (28,14,test\context\vomb3\test3.e)</erreur>
+<erreur nom="ErreurVOMB3">Dans la classe TEST3, il y a conflit entre les intervalles 10..43 a la ligne (36,14,test\context\vomb3\test3.e) et 9..13 a la ligne (34,14,test\context\vomb3\test3.e)</erreur>
+<erreur nom="ErreurVOMB3">Dans la classe TEST3, il y a conflit entre la valeur t1 a la ligne (44,14,test\context\vomb3\test3.e) et l'intervalle 1..20 a la ligne (42,14,test\context\vomb3\test3.e)</erreur>
+</classe>
+<classe nom="test\context\vomb3\test4.e">
+</classe>
+<classe nom="test\context\vomb4\test1.e">
+</classe>
+<classe nom="test\context\vomb4\test2.e">
+<erreur nom="ErreurVOMB4">Dans la classe TEST2, il y a conflit entre la valeur t2 qui est présente a la ligne (14,14,test\context\vomb4\test2.e) et a la ligne (12,17,test\context\vomb4\test2.e)</erreur>
+<erreur nom="ErreurVOMB4">Dans la classe TEST2, il y a conflit entre la valeur t2 a la ligne (22,14,test\context\vomb4\test2.e) et l'intervalle t1..t3 a la ligne (20,14,test\context\vomb4\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vomb5\test1.e">
+<erreur nom="ErreurVOMB5">Dans la classe TEST1, l'instruction d'inspection a au moins une constante d'inspection unique et une constante positive a la ligne (12,16,test\context\vomb5\test1.e)</erreur>
+<erreur nom="ErreurVOMB5">Dans la classe TEST1, l'instruction d'inspection a au moins une constante d'inspection unique et une constante positive a la ligne (12,16,test\context\vomb5\test1.e)</erreur>
+<erreur nom="ErreurVOMB5">Dans la classe TEST1, l'instruction d'inspection a au moins une constante d'inspection unique et une constante positive a la ligne (18,19,test\context\vomb5\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vomb5\test2.e">
+</classe>
+<classe nom="test\context\affect\test1.e">
+</classe>
+<classe nom="test\context\affect\test2.e">
+<erreur nom="ErreurAffect">Dans la classe TEST2, l'affectation n'a pas pour cible une variable a la ligne (11,9,test\context\affect\test2.e)</erreur>
+<erreur nom="ErreurAffect">Dans la classe TEST2, l'affectation n'a pas pour cible une variable a la ligne (12,9,test\context\affect\test2.e)</erreur>
+<erreur nom="ErreurAffect">Dans la classe TEST2, l'affectation n'a pas pour cible une variable a la ligne (13,9,test\context\affect\test2.e)</erreur>
+<erreur nom="ErreurAffect">Dans la classe TEST2, l'affectation n'a pas pour cible une variable a la ligne (14,9,test\context\affect\test2.e)</erreur>
+<erreur nom="ErreurAffect">Dans la classe TEST2, l'affectation n'a pas pour cible une variable a la ligne (27,9,test\context\affect\test2.e)</erreur>
+</classe>
+<classe nom="test\context\affect\test3.e">
+</classe>
+<classe nom="test\context\affect\test4.e">
+<erreur nom="ErreurAffect">Dans la classe TEST4, la tentative d'affectation n'a pas pour cible une variable a la ligne (11,9,test\context\affect\test4.e)</erreur>
+<erreur nom="ErreurAffect">Dans la classe TEST4, la tentative d'affectation n'a pas pour cible une variable a la ligne (13,9,test\context\affect\test4.e)</erreur>
+<erreur nom="ErreurAffect">Dans la classe TEST4, la tentative d'affectation n'a pas pour cible une variable a la ligne (14,9,test\context\affect\test4.e)</erreur>
+<erreur nom="ErreurAffect">Dans la classe TEST4, la tentative d'affectation n'a pas pour cible une variable a la ligne (29,9,test\context\affect\test4.e)</erreur>
+</classe>
+<classe nom="test\context\vuex1\test1.e">
+</classe>
+<classe nom="test\context\vuex1\test2.e">
+<erreur nom="ErreurVUEX1">L'attribut fin1 n'est pas declaré dans la classe TEST2 à la ligne (10,9,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut toto2 n'est pas declaré dans la classe TEST2 à la ligne (11,9,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "and" n'est pas declaré dans la classe A à la ligne (28,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "or" n'est pas declaré dans la classe A à la ligne (29,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "xor" n'est pas declaré dans la classe A à la ligne (32,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "implies" n'est pas declaré dans la classe A à la ligne (33,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut prefix "not" n'est pas declaré dans la classe A à la ligne (46,12,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix @ n'est pas declaré dans la classe A à la ligne (50,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix | n'est pas declaré dans la classe A à la ligne (51,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix & n'est pas declaré dans la classe A à la ligne (52,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix # n'est pas declaré dans la classe A à la ligne (53,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix @azerty n'est pas declaré dans la classe A à la ligne (54,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut prefix @ n'est pas declaré dans la classe A à la ligne (56,12,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut prefix | n'est pas declaré dans la classe A à la ligne (57,12,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut prefix & n'est pas declaré dans la classe A à la ligne (58,12,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut prefix # n'est pas declaré dans la classe A à la ligne (59,12,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut prefix @azerty n'est pas declaré dans la classe A à la ligne (60,12,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "+" n'est pas declaré dans la classe A à la ligne (34,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "-" n'est pas declaré dans la classe A à la ligne (35,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "*" n'est pas declaré dans la classe A à la ligne (36,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "/" n'est pas declaré dans la classe A à la ligne (37,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "//" n'est pas declaré dans la classe A à la ligne (38,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "\\" n'est pas declaré dans la classe A à la ligne (39,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix ">" n'est pas declaré dans la classe A à la ligne (40,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix ">=" n'est pas declaré dans la classe A à la ligne (41,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "<" n'est pas declaré dans la classe A à la ligne (42,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "<=" n'est pas declaré dans la classe A à la ligne (43,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "^" n'est pas declaré dans la classe A à la ligne (44,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut prefix "+" n'est pas declaré dans la classe A à la ligne (47,12,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut prefix "-" n'est pas declaré dans la classe A à la ligne (48,12,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "or else" n'est pas declaré dans la classe A à la ligne (30,14,test\context\vuex1\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "and then" n'est pas declaré dans la classe A à la ligne (31,14,test\context\vuex1\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vuex2\test1.e">
+</classe>
+<classe nom="test\context\vuex2\test2.e">
+<erreur nom="ErreurVUEX2">L'attribut tyty1 n'est pas declaré dans la classe A à la ligne (9,14,test\context\vuex2\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut tyty2 n'est pas declaré dans la classe A à la ligne (11,19,test\context\vuex2\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut fin5 n'est pas declaré dans la classe B à la ligne (12,34,test\context\vuex2\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut tutu0 n'est pas declaré dans la classe A à la ligne (13,24,test\context\vuex2\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut tyty0 n'est pas declaré dans la classe B à la ligne (14,29,test\context\vuex2\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vuar1\test1.e">
+</classe>
+<classe nom="test\context\vuar1\test2.e">
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (10,9,test\context\vuar1\test2.e) de la classe TEST2 et la declaration a la ligne (23,9,test\context\vuar1\test2.e) de la classe TEST2 pour la fonction tata</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (11,9,test\context\vuar1\test2.e) de la classe TEST2 et la declaration a la ligne (28,9,test\context\vuar1\test2.e) de la classe TEST2 pour la fonction test</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (12,9,test\context\vuar1\test2.e) de la classe TEST2 et la declaration a la ligne (33,9,test\context\vuar1\test2.e) de la classe TEST2 pour la fonction test2</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (13,9,test\context\vuar1\test2.e) de la classe TEST2 et la declaration a la ligne (38,9,test\context\vuar1\test2.e) de la classe TEST2 pour la fonction rien</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (14,9,test\context\vuar1\test2.e) de la classe TEST2 et la declaration a la ligne (23,9,test\context\vuar1\test2.e) de la classe TEST2 pour la fonction tata</erreur>
+</classe>
+<classe nom="test\context\vuar2\test1.e">
+</classe>
+<classe nom="test\context\vuar2\test2.e">
+<erreur nom="ErreurVUAR2">Le parametre numero 1 de type CHARACTER n'est pas conforme avec le parametre formel de type INTEGER pour l'appel  a la ligne (9,14,test\context\vuar2\test2.e) de la classe TEST2 et la declaration a la ligne (17,16,test\context\vuar2\test2.e) de la classe TEST2 pour la fonction tata</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 2 de type INTEGER n'est pas conforme avec le parametre formel de type CHARACTER pour l'appel  a la ligne (9,18,test\context\vuar2\test2.e) de la classe TEST2 et la declaration a la ligne (17,26,test\context\vuar2\test2.e) de la classe TEST2 pour la fonction tata</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 1 de type BOOLEAN n'est pas conforme avec le parametre formel de type STRING pour l'appel  a la ligne (10,14,test\context\vuar2\test2.e) de la classe TEST2 et la declaration a la ligne (22,16,test\context\vuar2\test2.e) de la classe TEST2 pour la fonction test</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 1 de type STRING n'est pas conforme avec le parametre formel de type REAL pour l'appel  a la ligne (11,15,test\context\vuar2\test2.e) de la classe TEST2 et la declaration a la ligne (27,17,test\context\vuar2\test2.e) de la classe TEST2 pour la fonction test2</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 2 de type INTEGER n'est pas conforme avec le parametre formel de type CHARACTER pour l'appel  a la ligne (12,17,test\context\vuar2\test2.e) de la classe TEST2 et la declaration a la ligne (17,26,test\context\vuar2\test2.e) de la classe TEST2 pour la fonction tata</erreur>
+</classe>
+<classe nom="test\context\vkcn2\test1.e">
+</classe>
+<classe nom="test\context\vkcn2\test2.e">
+<erreur nom="ErreurVKCN2">Dans la classe TEST2, l'appel n'est pas une instruction a la ligne (9,9,test\context\vkcn2\test2.e)</erreur>
+<erreur nom="ErreurVKCN2">Dans la classe TEST2, l'appel n'est pas une instruction a la ligne (10,9,test\context\vkcn2\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vgcc1\test1.e">
+<erreur nom="ErreurVSRC1">La classe racine TEST1 est generique a la ligne (1,7,test\context\vgcc1\test1.e)</erreur>
+<erreur nom="ErreurVGCC1">Dans la classe TEST1, l'instruction de création utilise le type générique A a la ligne (11,9,test\context\vgcc1\test1.e)</erreur>
+<erreur nom="ErreurVGCC1">Dans la classe TEST1, l'instruction de création utilise le type générique A a la ligne (12,9,test\context\vgcc1\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vgcc1\test2.e">
+</classe>
+<classe nom="test\context\vgcc2\test1.e">
+<erreur nom="ErreurVGCC2">Dans la classe TEST1, l'instruction de création utilise le type abstrait A a la ligne (11,9,test\context\vgcc2\test1.e)</erreur>
+<erreur nom="ErreurVGCC2">Dans la classe TEST1, l'instruction de création utilise le type abstrait A a la ligne (12,9,test\context\vgcc2\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vgcc2\test2.e">
+</classe>
+<classe nom="test\context\vgcc3\test1.e">
+<erreur nom="ErreurVGCC3">Dans la classe TEST1, l'instruction de création utilise le type expended A a la ligne (15,9,test\context\vgcc3\test1.e)</erreur>
+<erreur nom="ErreurVGCC3">Dans la classe TEST1, l'instruction de création utilise le type expended A a la ligne (16,9,test\context\vgcc3\test1.e)</erreur>
+<erreur nom="ErreurVGCC3">Dans la classe TEST1, l'instruction de création utilise le type expended expanded B a la ligne (17,9,test\context\vgcc3\test1.e)</erreur>
+<erreur nom="ErreurVGCC3">Dans la classe TEST1, l'instruction de création utilise le type ANY qui n'est pas conforme a B a la ligne (20,9,test\context\vgcc3\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vgcc3\test2.e">
+</classe>
+<classe nom="test\context\vgcc4\test1.e">
+<erreur nom="ErreurVGCC4">Dans la classe TEST1, l'instruction de création a un appel, mais la classe A n'a pas de section de création  a la ligne (11,9,test\context\vgcc4\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vgcc4\test2.e">
+</classe>
+<classe nom="test\context\vgcc5\test1.e">
+<erreur nom="ErreurVGCC5">Dans la classe TEST1, l'instruction de création n'a pas d'appel, mais la classe A a une section de création  a la ligne (11,9,test\context\vgcc5\test1.e)</erreur>
+<erreur nom="ErreurVGCC5">Dans la classe TEST1, l'instruction de création a un appel vers make0, mais la classe A n'a pas déclaré cette routine dans la section de création a la ligne (12,9,test\context\vgcc5\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vgcc5\test2.e">
+</classe>
+<classe nom="test\context\vgcc5\test3.e">
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (12,9,test\context\vgcc5\test3.e) de la classe TEST3 et la declaration a la ligne (7,9,test\context\vgcc5\A.e) de la classe A pour la fonction make</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (13,9,test\context\vgcc5\test3.e) de la classe TEST3 et la declaration a la ligne (7,9,test\context\vgcc5\B.e) de la classe B pour la fonction make</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (14,9,test\context\vgcc5\test3.e) de la classe TEST3 et la declaration a la ligne (7,9,test\context\vgcc5\B.e) de la classe B pour la fonction make</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 1 de type BOOLEAN n'est pas conforme avec le parametre formel de type INTEGER pour l'appel  a la ligne (15,18,test\context\vgcc5\test3.e) de la classe TEST3 et la declaration a la ligne (7,16,test\context\vgcc5\B.e) de la classe B pour la fonction make</erreur>
+</classe>
+<classe nom="test\context\vgcc5\test4.e">
+</classe>
+<classe nom="test\context\vgcc6\test1.e">
+<erreur nom="ErreurVGCC6">Dans la classe TEST1, l'instruction de création appelle une routine avec un type de retour a la ligne (11,9,test\context\vgcc6\test1.e)</erreur>
+<erreur nom="ErreurVGCC6">Dans la classe TEST1, l'instruction de création appelle une routine once a la ligne (12,9,test\context\vgcc6\test1.e)</erreur>
+<erreur nom="ErreurVGCC6">Dans la classe TEST1, l'instruction de création appelle une routine non visible a la ligne (13,9,test\context\vgcc6\test1.e)</erreur>
+<erreur nom="ErreurVGCC6">Dans la classe TEST1, l'instruction de création appelle une routine non visible a la ligne (14,9,test\context\vgcc6\test1.e)</erreur>
+<erreur nom="ErreurVGCP4">Dans la classe A, la routine de creation make2 est déclaré once a la ligne (15,9,test\context\vgcc6\A.e)</erreur>
+</classe>
+<classe nom="test\context\vgcc6\test2.e">
+</classe>
+<classe nom="test\context\affect\test5.e">
+</classe>
+<classe nom="test\context\affect\test6.e">
+<erreur nom="ErreurVEEN">L'attribut a n'est pas declare dans la classe TEST6 a la ligne (9,11,test\context\affect\test6.e)</erreur>
+<erreur nom="ErreurAffect">Dans la classe TEST6, la creation n'a pas pour cible une variable a la ligne (16,11,test\context\affect\test6.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut Result n'est pas declare dans la classe TEST6 a la ligne (15,11,test\context\affect\test6.e)</erreur>
+</classe>
+<classe nom="test\context\vxrt\test1.e">
+</classe>
+<classe nom="test\context\vxrt\test2.e">
+<erreur nom="ErreurVXRT">Dans la classe TEST2, l'instruction retry n'est pas dans la section rescue a la ligne (14,9,test\context\vxrt\test2.e)</erreur>
+</classe>
+<classe nom="test\context\instr\test1.e">
+</classe>
+<classe nom="test\context\instr\test2.e">
+<erreur nom="ErreurVUEX1">L'attribut f0 n'est pas declaré dans la classe TEST2 à la ligne (12,9,test\context\instr\test2.e)</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (13,9,test\context\instr\test2.e) de la classe TEST2 et la declaration a la ligne (36,9,test\context\instr\test2.e) de la classe TEST2 pour la fonction f</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (14,9,test\context\instr\test2.e) de la classe TEST2 et la declaration a la ligne (36,9,test\context\instr\test2.e) de la classe TEST2 pour la fonction f</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 2 de type CHARACTER n'est pas conforme avec le parametre formel de type INTEGER pour l'appel  a la ligne (15,13,test\context\instr\test2.e) de la classe TEST2 et la declaration a la ligne (36,15,test\context\instr\test2.e) de la classe TEST2 pour la fonction f</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST2, l'expression a la ligne (19,12,test\context\instr\test2.e) doit etre de type BOOLEAN pour le if</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST2, l'expression a la ligne (25,15,test\context\instr\test2.e) doit etre de type BOOLEAN pour la boucle</erreur>
+<erreur nom="ErreurVUEX1">L'attribut f0 n'est pas declaré dans la classe TEST2 à la ligne (27,17,test\context\instr\test2.e)</erreur>
+<erreur nom="ErreurVWBE">Dans la classe TEST2, l'expression a la ligne (31,17,test\context\instr\test2.e) doit etre de type BOOLEAN pour le check</erreur>
+<erreur nom="ErreurVEEN">L'attribut Result n'est pas declare dans la classe TEST2 a la ligne (38,9,test\context\instr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut a0 n'est pas declare dans la classe TEST2 a la ligne (11,9,test\context\instr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut i0 n'est pas declare dans la classe TEST2 a la ligne (17,17,test\context\instr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut a0 n'est pas declare dans la classe TEST2 a la ligne (20,17,test\context\instr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut a1 n'est pas declare dans la classe TEST2 a la ligne (22,17,test\context\instr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut i0 n'est pas declare dans la classe TEST2 a la ligne (24,14,test\context\instr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut i0 n'est pas declare dans la classe TEST2 a la ligne (28,17,test\context\instr\test2.e)</erreur>
+</classe>
+<classe nom="test\context\expr\test1.e">
+</classe>
+<classe nom="test\context\expr\test2.e">
+<erreur nom="ErreurVUEX1">L'attribut infix "and" n'est pas declaré dans la classe INTEGER à la ligne (19,14,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "or" n'est pas declaré dans la classe INTEGER à la ligne (20,14,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "xor" n'est pas declaré dans la classe INTEGER à la ligne (21,14,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX1">L'attribut infix "implies" n'est pas declaré dans la classe INTEGER à la ligne (22,15,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut a0 n'est pas declare dans la classe TEST2 a la ligne (25,12,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut b0 n'est pas declare dans la classe TEST2 a la ligne (26,14,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut a0 n'est pas declare dans la classe TEST2 a la ligne (29,14,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut b0 n'est pas declare dans la classe TEST2 a la ligne (30,16,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (31,12,test\context\expr\test2.e) de la classe TEST2 et la declaration a la ligne (46,9,test\context\expr\test2.e) de la classe TEST2 pour la fonction f</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (32,12,test\context\expr\test2.e) de la classe TEST2 et la declaration a la ligne (46,9,test\context\expr\test2.e) de la classe TEST2 pour la fonction f</erreur>
+<erreur nom="ErreurVWEQ">Erreur dans la comparaison dans la classe TEST2 : les types INTEGER et CHARACTER ne sont pas compatibles  a la ligne (36,15,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVWEQ">Erreur dans la comparaison dans la classe TEST2 : les types INTEGER et CHARACTER ne sont pas compatibles  a la ligne (37,15,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (38,12,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (39,14,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (40,12,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (41,12,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (42,14,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (43,12,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (27,12,test\context\expr\test2.e) de la classe TEST2 et la declaration a la ligne (46,9,test\context\expr\test2.e) de la classe TEST2 pour la fonction f</erreur>
+<erreur nom="ErreurVUEX2">L'attribut x n'est pas declaré dans la classe TEST1 à la ligne (73,15,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut a n'est pas declaré dans la classe TEST1 à la ligne (74,15,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut i n'est pas declaré dans la classe A à la ligne (75,15,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut n0 n'est pas declaré dans la classe A à la ligne (77,20,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut i0 n'est pas declaré dans la classe B à la ligne (79,20,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut test n'est pas declaré dans la classe B à la ligne (80,25,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut a0 n'est pas declaré dans la classe B à la ligne (81,31,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut test1a n'est pas declaré dans la classe B à la ligne (82,20,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (83,15,test\context\expr\test2.e) de la classe TEST2 et la declaration a la ligne (10,9,test\context\expr\A.e) de la classe A pour la fonction f</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (84,15,test\context\expr\test2.e) de la classe TEST2 et la declaration a la ligne (10,9,test\context\expr\A.e) de la classe A pour la fonction f</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (85,15,test\context\expr\test2.e) de la classe TEST2 et la declaration a la ligne (10,9,test\context\expr\A.e) de la classe A pour la fonction f</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (86,15,test\context\expr\test2.e) de la classe TEST2 et la declaration a la ligne (10,9,test\context\expr\B.e) de la classe B pour la fonction g</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 2 de type CHARACTER n'est pas conforme avec le parametre formel de type INTEGER pour l'appel  a la ligne (87,26,test\context\expr\test2.e) de la classe TEST2 et la declaration a la ligne (10,15,test\context\expr\A.e) de la classe A pour la fonction f</erreur>
+<erreur nom="ErreurVUAR1">Nombre de parametre different entre l'appel a la ligne (88,15,test\context\expr\test2.e) de la classe TEST2 et la declaration a la ligne (10,9,test\context\expr\B.e) de la classe B pour la fonction g</erreur>
+<erreur nom="ErreurVEEN">L'attribut q n'est pas declare dans la classe TEST2 a la ligne (89,17,test\context\expr\test2.e)</erreur>
+<erreur nom="ErreurVUEX2">L'attribut f0 n'est pas declaré dans la classe A à la ligne (90,15,test\context\expr\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vkcn1\test1.e">
+</classe>
+<classe nom="test\context\vkcn1\test2.e">
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (12,12,test\context\vkcn1\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (13,12,test\context\vkcn1\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (14,14,test\context\vkcn1\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (15,12,test\context\vkcn1\test2.e)</erreur>
+<erreur nom="ErreurVFFD5">Dans la classe TEST2, l'attribut prefix "not" doit avoir un type de retour a la ligne (28,9,test\context\vkcn1\test2.e)</erreur>
+<erreur nom="ErreurVFFD6">Dans la classe TEST2, l'attribut infix "and" doit avoir un type de retour a la ligne (32,9,test\context\vkcn1\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (16,12,test\context\vkcn1\test2.e)</erreur>
+<erreur nom="ErreurVKCN1">Dans la classe TEST2, l'appel n'est pas une expression a la ligne (17,12,test\context\vkcn1\test2.e)</erreur>
+</classe>
+<classe nom="test\context\vaol1\test1.e">
+</classe>
+<classe nom="test\context\vaol1\test2.e">
+<erreur nom="ErreurVAOL1">Dans la classe TEST2, l'expression old i n'est pas utilisé dans une section ensure a la ligne (9,12,test\context\vaol1\test2.e)</erreur>
+<erreur nom="ErreurVAOL1">Dans la classe TEST2, l'expression old i n'est pas utilisé dans une section ensure a la ligne (14,17,test\context\vaol1\test2.e)</erreur>
+<erreur nom="ErreurVAOL1">Dans la classe TEST2, l'expression old i n'est pas utilisé dans une section ensure a la ligne (29,9,test\context\vaol1\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut a n'est pas declare dans la classe TEST2 a la ligne (23,22,test\context\vaol1\test2.e)</erreur>
+<erreur nom="ErreurVEEN">L'attribut b n'est pas declare dans la classe TEST2 a la ligne (25,22,test\context\vaol1\test2.e)</erreur>
+</classe>
+<classe nom="test\context\conformite\ref\test1.ace">
+</classe>
+<classe nom="test\context\conformite\ref\test2.ace">
+<erreur nom="ErreurVJAR">Dans la classe TEST2, l'affectation a la ligne (15,9,test\context\conformite\ref\test2.e) est incorrecte, car A n'est pas conforme a B</erreur>
+</classe>
+<classe nom="test\context\conformite\expand\test1.ace">
+</classe>
+<classe nom="test\context\conformite\expand\test2.ace">
+<erreur nom="ErreurVJAR">Dans la classe TEST2, l'affectation a la ligne (22,9,test\context\conformite\expand\test2.e) est incorrecte, car B n'est pas conforme a expanded A</erreur>
+</classe>
+<classe nom="test\context\conformite\pgene\test1.ace">
+</classe>
+<classe nom="test\context\conformite\pgene\test2.ace">
+<erreur nom="ErreurVJAR">Dans la classe B, l'affectation a la ligne (13,9,test\context\conformite\pgene\B.e) est incorrecte, car Y n'est pas conforme a X</erreur>
+<erreur nom="ErreurVJAR">Dans la classe B, l'affectation a la ligne (14,9,test\context\conformite\pgene\B.e) est incorrecte, car X n'est pas conforme a Y</erreur>
+<erreur nom="ErreurVJAR">Dans la classe B, l'affectation a la ligne (15,9,test\context\conformite\pgene\B.e) est incorrecte, car ANY n'est pas conforme a Y</erreur>
+<erreur nom="ErreurVJAR">Dans la classe B, l'affectation a la ligne (16,9,test\context\conformite\pgene\B.e) est incorrecte, car ANY n'est pas conforme a X</erreur>
+</classe>
+<classe nom="test\context\conformite\ancre\test1.ace">
+</classe>
+<classe nom="test\context\conformite\ancre\test2.ace">
+<erreur nom="ErreurVJAR">Dans la classe TEST2, l'affectation a la ligne (20,9,test\context\conformite\ancre\test2.e) est incorrecte, car A n'est pas conforme a like a</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 2 de type A n'est pas conforme avec le parametre formel de type B pour l'appel  a la ligne (28,14,test\context\conformite\ancre\test2.e) de la classe TEST2 et la declaration a la ligne (28,11,test\context\conformite\ancre\test2.e) de la classe TEST2 pour la fonction g</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 2 de type A n'est pas conforme avec le parametre formel de type B pour l'appel  a la ligne (33,14,test\context\conformite\ancre\test2.e) de la classe TEST2 et la declaration a la ligne (33,11,test\context\conformite\ancre\test2.e) de la classe TEST2 pour la fonction h</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 2 de type A n'est pas conforme avec le parametre formel de type C pour l'appel  a la ligne (34,14,test\context\conformite\ancre\test2.e) de la classe TEST2 et la declaration a la ligne (34,11,test\context\conformite\ancre\test2.e) de la classe TEST2 pour la fonction h</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 2 de type B n'est pas conforme avec le parametre formel de type C pour l'appel  a la ligne (35,14,test\context\conformite\ancre\test2.e) de la classe TEST2 et la declaration a la ligne (35,11,test\context\conformite\ancre\test2.e) de la classe TEST2 pour la fonction h</erreur>
+<erreur nom="ErreurVJAR">Dans la classe TEST2, l'affectation a la ligne (36,9,test\context\conformite\ancre\test2.e) est incorrecte, car like c1 n'est pas conforme a B</erreur>
+<erreur nom="ErreurVJAR">Dans la classe TEST2, l'affectation a la ligne (37,9,test\context\conformite\ancre\test2.e) est incorrecte, car B n'est pas conforme a C</erreur>
+<erreur nom="ErreurVJAR">Dans la classe TEST2, l'affectation a la ligne (38,9,test\context\conformite\ancre\test2.e) est incorrecte, car B n'est pas conforme a C</erreur>
+<erreur nom="ErreurVJAR">Dans la classe TEST2, l'affectation a la ligne (39,9,test\context\conformite\ancre\test2.e) est incorrecte, car B n'est pas conforme a C</erreur>
+</classe>
+<classe nom="test\context\vuex2-2\test1.ace">
+<erreur nom="ErreurVUEX2">L'attribut tata2 n'est pas declaré dans la classe A à la ligne (24,12,test\context\vuex2-2\test1.e)</erreur>
+</classe>
+<classe nom="test\context\vuar4\test1.e">
+<erreur nom="ErreurVUAR4">Tentative de prendre l'adresse d'une expression qui n'est pas un attribut a la ligne (13,12,test\context\vuar4\test1.e) dans la classe TEST1</erreur>
+<erreur nom="ErreurVJAR">Dans la classe TEST1, l'affectation a la ligne (16,9,test\context\vuar4\test1.e) est incorrecte, car POINTER n'est pas conforme a INTEGER</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 1 de type POINTER n'est pas conforme avec le parametre formel de type INTEGER pour l'appel  a la ligne (17,14,test\context\vuar4\test1.e) de la classe TEST1 et la declaration a la ligne (23,16,test\context\vuar4\test1.e) de la classe TEST1 pour la fonction tata</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 1 de type POINTER n'est pas conforme avec le parametre formel de type INTEGER pour l'appel  a la ligne (18,14,test\context\vuar4\test1.e) de la classe TEST1 et la declaration a la ligne (23,16,test\context\vuar4\test1.e) de la classe TEST1 pour la fonction tata</erreur>
+<erreur nom="ErreurVUAR2">Le parametre numero 2 de type POINTER n'est pas conforme avec le parametre formel de type CHARACTER pour l'appel  a la ligne (19,16,test\context\vuar4\test1.e) de la classe TEST1 et la declaration a la ligne (23,26,test\context\vuar4\test1.e) de la classe TEST1 pour la fonction tata</erreur>
+</classe>
+<classe nom="test\context\vuar4\test2.e">
+</classe>
+</liste_classe>

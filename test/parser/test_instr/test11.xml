@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST11"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<debug>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+						</debug>
+					</instruction>
+					<instruction>
+						<debug/>
+					</instruction>
+					<instruction>
+						<debug>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+							<instruction>
+								<affect>
+									<variable nom="y"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+						</debug>
+					</instruction>
+					<instruction>
+						<debug>
+							<chaine>
+								<chaine1>"a"</chaine1>
+							</chaine>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+						</debug>
+					</instruction>
+					<instruction>
+						<debug>
+							<chaine>
+								<chaine1>"b"</chaine1>
+							</chaine>
+						</debug>
+					</instruction>
+					<instruction>
+						<debug>
+							<chaine>
+								<chaine1>"c"</chaine1>
+							</chaine>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+							<instruction>
+								<affect>
+									<variable nom="y"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+						</debug>
+					</instruction>
+					<instruction>
+						<debug>
+							<chaine>
+								<chaine1>"a"</chaine1>
+							</chaine>
+							<chaine>
+								<chaine1>"b"</chaine1>
+							</chaine>
+							<chaine>
+								<chaine1>"c"</chaine1>
+							</chaine>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+						</debug>
+					</instruction>
+					<instruction>
+						<debug>
+							<chaine>
+								<chaine1>"x"</chaine1>
+							</chaine>
+							<chaine>
+								<chaine1>"y"</chaine1>
+							</chaine>
+							<chaine>
+								<chaine1>"z"</chaine1>
+							</chaine>
+						</debug>
+					</instruction>
+					<instruction>
+						<debug>
+							<chaine>
+								<chaine1>"u"</chaine1>
+							</chaine>
+							<chaine>
+								<chaine1>"v"</chaine1>
+							</chaine>
+							<chaine>
+								<chaine1>"t"</chaine1>
+							</chaine>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="6"/>
+									</expression>
+								</affect>
+							</instruction>
+							<instruction>
+								<affect>
+									<variable nom="y"/>
+									<expression>
+										<entier valeur="0"/>
+									</expression>
+								</affect>
+							</instruction>
+						</debug>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

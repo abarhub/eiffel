@@ -1,0 +1,44 @@
+9.8
+3.13999995E10
+Test supS
+true
+false
+false
+Test sup
+true
+true
+false
+Test egal
+false
+true
+false
+Test inf
+false
+true
+true
+Test infS
+false
+false
+true
+Test diff
+true
+false
+true
+Test plus
+28.900002
+Test moins
+-6.2000003
+Test fois
+56.279995
+Test div reel
+0.4054054
+Test puissance
+3.2710855
+Test moins unaire
+-10.7
+Test plus unaire
+10.7
+Test conv entier
+10
+Test conv double
+10.699999809265137

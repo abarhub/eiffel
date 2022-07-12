@@ -1,0 +1,12 @@
+class A
+
+feature
+
+	make is
+	local
+	i:INTEGER;
+	do
+	i:=3;
+	end
+
+end

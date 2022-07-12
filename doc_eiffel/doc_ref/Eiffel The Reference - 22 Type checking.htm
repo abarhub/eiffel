@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap22.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 22 Type checking</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 22 Type checking_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap21.htm"><IMG 
+src="Eiffel The Reference - 22 Type checking_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm"><IMG 
+src="Eiffel The Reference - 22 Type checking_fichiers/next.gif"></A> 
+<P>
+<H1>22 Type checking </H1>
+<H2>22.9 THE CALL VALIDITY RULE </H2>
+<P><B>Call rule </B>
+<P>
+<P>A call is valid if and only if it is both class-valid and system-valid. 
+<P>
+<P>Consider a single-dot call with target <I>x</I>, appearing in a class 
+<I>C</I>. Let <I>S</I> be the type of <I>x</I>. Then: 
+<OL>
+  <LI>The call is <B>class-valid</B> if it is export-valid and argument-valid 
+  for <I>S</I>. 
+  <LI>The call is <B>system-valid</B> if for any element <I>D</I> of the dynamic 
+  class set of <I>x </I>it is export-valid and argument-valid for <I>D</I>. 
+</LI></OL>
+<P>A call appearing in a class <I>C</I>, having <I>fname</I> as the feature name 
+of the call, is export-valid for a class <I>D</I> if and only if it satisfies 
+either of the following two conditions. 
+<OL>
+  <LI>The call is an Unqualified_call and <I>fname</I> is the final name of a 
+  feature of <I>C</I>. 
+  <LI>The call has at least one dot, <I>D</I> has a feature of name <I>fname</I> 
+  which is available to <I>C</I>, and the call's target is either a valid entity 
+  of <I>C</I> or (recursively) a call which is export-valid for <I>D</I>. 
+</LI></OL>
+<P>Consider an export-valid call of target <I>target</I> and feature name 
+<I>fname</I> appearing in a class <I>C</I>. (For an Unqualified_call take 
+<I>target</I> to be <I>Current</I>.) Let <I>ST</I> be the type of <I>target</I>, 
+<I>S</I> the base class of <I>ST</I>, and <I>sf</I> the feature of final name 
+<I>fname</I> in <I>S</I>. Let <I>D</I> be a descendant of <I>S</I>, and 
+<I>df</I> the version of <I>sf</I> in <I>D</I>. The call is argument-valid for 
+<I>D</I> if and only if it satisfies the following four conditions: 
+<OL>
+  <LI>The number of actual arguments is the same as the number of formal 
+  arguments declared for <I>df</I>. 
+  <LI>Every actual argument, if any, conforms to the the corresponding formal 
+  argument of <I>df</I>. 
+  <LI>If <I>target</I> is itself a Call, it is (recursively) argument-valid for 
+  <I>D</I>. 
+  <LI>If any of the actual arguments is of the Address form $<I>fn</I>, 
+  <I>fn</I> is an entity other than a constant attribute, or the final name of a 
+  routine of the class. </LI></OL>
+<P>The dynamic type sets of the expressions, entities and functions of a system 
+result from performing all possible applications of the following rules to every 
+Class_type <I>T</I>, of base class <I>C</I>, used in the system. 
+<OL>
+  <LI>If a routine of <I>C</I> contains a creation instruction, with target 
+  <I>x</I> and creation type <I>U</I>, the dynamic type set of <I>x</I> for 
+  <I>T</I> is {UT}. 
+  <LI>The dynamic type set for <I>T</I> of an occurrence of <I>Current</I> in 
+  the text of a routine of <I>C</I> is {<I>T</I>}. 
+  <LI>For any entity or expression <I>e</I> of expanded type appearing in the 
+  text of <I>C</I>, if the type <I>ET</I> of <I>e</I> is expanded, the dynamic 
+  type set of <I>e</I> for <I>T</I> is {ETT}. (Rules 4 to 7, when used to 
+  determine elements of the dynamic type set of some <I>e</I>, assume that 
+  <I>e</I>'s type is not expanded.) 
+  <LI>If a routine of <I>C</I> contains an Assignment of target <I>x</I> and 
+  source <I>e</I>, the dynamic type set of <I>x </I>for <I>T</I> includes 
+  (recursively) every member of the dynamic type set of <I>e</I> for <I>T</I>. 
+  <LI>If a routine of <I>C</I> contains an Assignment_attempt of target 
+  <I>x</I>, with type <I>U</I>, and source <I>e</I>, the dynamic type set of 
+  <I>x </I>for <I>T</I> includes (recursively) every type conforming to UT which 
+  is also a member of the dynamic type set of <I>e</I> for <I>T</I>. 
+  <LI>If a routine of <I>C</I> contains a call <I>h</I> of target <I>ta</I>, 
+  <I>U</I> is (recursively) a member of the dynamic type set of <I>ta</I> for 
+  <I>T</I>, and <I>tf</I> is the version of the call's feature in the base class 
+  of <I>U</I>, then the dynamic type set for <I>U</I> of any formal argument of 
+  <I>tf</I> includes every member of the dynamic type set for UT of the 
+  corresponding actual argument in <I>h</I>. 
+  <LI>If <I>h</I>, <I>tf</I> and <I>U</I> are as in case 6 and <I>tf</I> is an 
+  attribute or function, the dynamic type set of <I>h </I>for <I>T</I> includes 
+  (recursively) every member of the dynamic type set for UT of the <I>Result</I> 
+  entity in <I>tf</I>. </LI></OL>
+<P>Array type rule 
+<P>
+<P>To study the effect of array manipulations on dynamic type sets, assume that 
+in class <I>ARRAY</I> feature <I>item</I> is an attribute, and that <I>put 
+</I>(<I>v, i</I>) and <I>force </I>(<I>v, i</I>) are both implemented as 
+<P>
+<P><I>item </I>:=<I> v </I>
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 22 Type checking_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap21.htm"><IMG 
+src="Eiffel The Reference - 22 Type checking_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm"><IMG 
+src="Eiffel The Reference - 22 Type checking_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

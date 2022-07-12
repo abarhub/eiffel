@@ -1,0 +1,14 @@
+class A[X,Y]
+
+feature
+
+	make is
+	local
+	x:X;
+	y:Y;
+	do
+	x:=x;
+	y:=y;
+	end;
+
+end

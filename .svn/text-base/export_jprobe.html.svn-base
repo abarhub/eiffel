@@ -1,0 +1,176 @@
+<h3><u>Call Graph: snapshot_1_1</u></h3>
+<h4><u>Method List</u></h4>
+<TABLE border=1><TR>
+<th width="126" align=center>Package
+<th width="501" align=center>Name
+<th width="69" align=center>Calls
+<th width="118" align=center>Cumulative
+Time
+<th width="111" align=center>Method
+Time
+<th width="74" align=center>Cumulative
+Objects
+<th width="54" align=center>Method
+Objects
+<TR>
+<td><font color=000000>tinyeiffel.ast</font>
+<td><font color=000000>Position.&lt;init&gt;(String,&nbsp;int,&nbsp;int)</font>
+<td align=right><font color=000000>18 210</font>
+<td align=right><font color=000000>99&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>63&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.intermediaire</font>
+<td><font color=000000>CIAssertion.&lt;clinit&gt;()</font>
+<td align=right><font color=000000>1</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.intermediaire</font>
+<td><font color=000000>CIExpr.&lt;init&gt;()</font>
+<td align=right><font color=000000>27 315</font>
+<td align=right><font color=000000>131&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>86&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.ast</font>
+<td><font color=000000>Token.debut()</font>
+<td align=right><font color=000000>18 210</font>
+<td align=right><font color=000000>166&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>66&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.ast</font>
+<td><font color=000000>Token.set_type_token(int)</font>
+<td align=right><font color=000000>142 458</font>
+<td align=right><font color=000000>231&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>231&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.intermediaire</font>
+<td><font color=000000>CIAssertion.&lt;init&gt;(CISource)</font>
+<td align=right><font color=000000>18 210</font>
+<td align=right><font color=000000>292&nbsp;&nbsp;&nbsp;(0,2%)</font>
+<td align=right><font color=000000>96&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.intermediaire</font>
+<td><font color=000000>CIExpr_Entier.toXML(PrintStream)</font>
+<td align=right><font color=000000>9 105</font>
+<td align=right><font color=000000>540&nbsp;&nbsp;&nbsp;(0,3%)</font>
+<td align=right><font color=000000>119&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.compiler</font>
+<td><font color=000000>Lexer.test_prochain3(int[])</font>
+<td align=right><font color=000000>9 105</font>
+<td align=right><font color=000000>1 265&nbsp;&nbsp;&nbsp;(0,8%)</font>
+<td align=right><font color=000000>260&nbsp;&nbsp;&nbsp;(0,2%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.ast</font>
+<td><font color=000000>NomFeature.meme_nom(NomFeature)</font>
+<td align=right><font color=000000>557 988</font>
+<td align=right><font color=000000>28 099&nbsp;&nbsp;(17,5%)</font>
+<td align=right><font color=000000>1 885&nbsp;&nbsp;&nbsp;(1,2%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.ast</font>
+<td><font color=000000>FeatureRoutine.&lt;clinit&gt;()</font>
+<td align=right><font color=000000>1</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.intermediaire</font>
+<td><font color=000000>CIExpr_Entier.&lt;clinit&gt;()</font>
+<td align=right><font color=000000>1</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.compiler</font>
+<td><font color=000000>Signature.&lt;clinit&gt;()</font>
+<td align=right><font color=000000>1</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.ast</font>
+<td><font color=000000>Position.&lt;clinit&gt;()</font>
+<td align=right><font color=000000>1</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.compiler</font>
+<td><font color=000000>Attribut_Complet.&lt;clinit&gt;()</font>
+<td align=right><font color=000000>1</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.compiler</font>
+<td><font color=000000>Conversion.construit_table(Type,&nbsp;Type)</font>
+<td align=right><font color=000000>301</font>
+<td align=right><font color=000000>1&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>1&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.intermediaire</font>
+<td><font color=000000>CINom_Attribut.toString()</font>
+<td align=right><font color=000000>15 566</font>
+<td align=right><font color=000000>35&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>35&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>java.lang</font>
+<td><font color=000000>Integer.intValue()</font>
+<td align=right><font color=000000>28 221</font>
+<td align=right><font color=000000>47&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>47&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.compiler</font>
+<td><font color=000000>Signature.&lt;init&gt;(DeclareVar[],&nbsp;Type)</font>
+<td align=right><font color=000000>15 566</font>
+<td align=right><font color=000000>80&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>54&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.ast</font>
+<td><font color=000000>Attribut.toString()</font>
+<td align=right><font color=000000>15 566</font>
+<td align=right><font color=000000>85&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>52&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+<TR>
+<td><font color=000000>tinyeiffel.compiler</font>
+<td><font color=000000>Attribut_Complet.&lt;init&gt;(NomFeature,&nbsp;Table_Symbol)</font>
+<td align=right><font color=000000>15 566</font>
+<td align=right><font color=000000>135&nbsp;&nbsp;&nbsp;(0,1%)</font>
+<td align=right><font color=000000>57&nbsp;&nbsp;&nbsp;(0,0%)</font>
+<td align=right><font color=000000>0</font>
+<td align=right><font color=000000>0</font>
+</TABLE>
+<h4>Report Date: 10 avr. 2005 15:14:46</h4>

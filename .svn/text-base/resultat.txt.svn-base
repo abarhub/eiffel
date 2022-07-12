@@ -1,0 +1,86 @@
+Programme:
+Liste des classes:
+0)TEST1
+1)ANY
+2)NONE
+3)A
+4)B
+Heritage directe:
+TEST1->ANY
+ANY->
+NONE->TEST1,ANY,A,B
+A->ANY
+B->ANY
+Heritage:
+TEST1->ANY
+ANY->
+NONE->TEST1,ANY,A,B
+A->ANY
+B->ANY
+Liste detaillé des classes:
+ * Classe TEST1 :
+Void{any}:
+type retour:NONE
+make{TEST1}:
+
+local
+do
+Label debut_routine
+Return
+Label debut_rescue
+raise 4
+end
+$once_traite_TEST1$test_once{TEST1}:
+type retour:$boolean
+test_once{TEST1}:
+
+local
+a:A
+do
+a:=Void
+Label debut_routine
+If_not $once_traite_TEST1$test_once then label_once0
+Return
+Label label_once0
+$once_traite_TEST1$test_once:=true
+a:=Void
+Return
+Label debut_rescue
+raise 4
+end
+$once_traite_TEST1$test_once2{TEST1}:
+type retour:$boolean
+$once_result_TEST1$test_once2{TEST1}:
+type retour:B
+test_once2{TEST1}:
+type retour:B
+:Result:B
+local
+a:A
+do
+Result:=Void
+a:=Void
+Label debut_routine
+If_not $once_traite_TEST1$test_once2 then label_once0
+result:=$once_result_TEST1$test_once2
+Return
+Label label_once0
+$once_traite_TEST1$test_once2:=true
+a:=Void
+Result:=Void
+$once_result_TEST1$test_once2:=result
+Return
+Label debut_rescue
+raise 4
+end
+ * Classe ANY :
+Void{ANY}:tinyeiffel.intermediaire.CIAttribut_Descendant@5995ba,tinyeiffel.intermediaire.CIAttribut_Descendant@174e78a,tinyeiffel.intermediaire.CIAttribut_Descendant@d39ac
+type retour:NONE
+ * Classe NONE :
+ * Classe A :
+Void{any}:
+type retour:NONE
+ * Classe B :
+Void{any}:
+type retour:NONE
+Fin du programme

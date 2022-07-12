@@ -1,0 +1,11 @@
+system test3
+
+root test3
+
+cluster
+
+	"test\simple\test3\";
+	--".\std_classe\";
+	--".\";
+
+end

@@ -1,0 +1,11 @@
+class STD_FILE
+
+creation make
+
+feature
+
+	put_string(s:STRING) is
+	external "tinyeiffel"
+	end;
+
+end

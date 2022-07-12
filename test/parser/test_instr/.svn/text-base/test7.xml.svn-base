@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST7"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</affect>
+							</instruction>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<else/>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</affect>
+							</instruction>
+							<else>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="2"/>
+										</expression>
+									</affect>
+								</instruction>
+							</else>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<elseif>
+								<expression>
+									<faux/>
+								</expression>
+							</elseif>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</affect>
+							</instruction>
+							<elseif>
+								<expression>
+									<faux/>
+								</expression>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="6"/>
+										</expression>
+									</affect>
+								</instruction>
+							</elseif>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<elseif>
+								<expression>
+									<faux/>
+								</expression>
+							</elseif>
+							<else/>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<vrai/>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</affect>
+							</instruction>
+							<elseif>
+								<expression>
+									<faux/>
+								</expression>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="0"/>
+										</expression>
+									</affect>
+								</instruction>
+							</elseif>
+							<else>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="2"/>
+										</expression>
+									</affect>
+								</instruction>
+							</else>
+						</if>
+					</instruction>
+					<instruction>
+						<if>
+							<expression>
+								<expression_binaire op="egal">
+									<expression>
+										<variable nom="a"/>
+									</expression>
+									<expression>
+										<variable nom="b"/>
+									</expression>
+								</expression_binaire>
+							</expression>
+							<instruction>
+								<affect>
+									<variable nom="x"/>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</affect>
+							</instruction>
+							<elseif>
+								<expression>
+									<expression_binaire op="egal">
+										<expression>
+											<variable nom="a"/>
+										</expression>
+										<expression>
+											<entier valeur="5"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="0"/>
+										</expression>
+									</affect>
+								</instruction>
+							</elseif>
+							<elseif>
+								<expression>
+									<expression_binaire op="diff">
+										<expression>
+											<variable nom="a"/>
+										</expression>
+										<expression>
+											<variable nom="b"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="3"/>
+										</expression>
+									</affect>
+								</instruction>
+							</elseif>
+							<else>
+								<instruction>
+									<affect>
+										<variable nom="x"/>
+										<expression>
+											<entier valeur="2"/>
+										</expression>
+									</affect>
+								</instruction>
+							</else>
+						</if>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

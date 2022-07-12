@@ -1,0 +1,8 @@
+Initialisation
+prologue(1:TEST1.make)
+instr : c:=CA( loc=(13,9,'c','test\genc\char_basic\test1.e'))
+prologue(4:character."<")
+epilogue(4:character."<")
+instr : b:=Btrue( loc=(14,9,'b','test\genc\char_basic\test1.e'))
+epilogue(1:TEST1.make)
+Terminaison

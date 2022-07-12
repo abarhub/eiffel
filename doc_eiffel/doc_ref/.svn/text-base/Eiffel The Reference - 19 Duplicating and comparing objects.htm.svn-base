@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap19.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 19 Duplicating and comparing objects</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 19 Duplicating and comparing objects_fichiers/toc.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap18.htm"><IMG 
+src="Eiffel The Reference - 19 Duplicating and comparing objects_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap20.htm"><IMG 
+src="Eiffel The Reference - 19 Duplicating and comparing objects_fichiers/next.gif"></A> 
+
+<P>
+<H1>19 Duplicating and comparing objects </H1>
+<H2>19.2 COPYING AN OBJECT </H2>
+<P>Assume <I>copy</I> has not been redefined and consider a call 
+<I>x</I>.<I>copy</I> (<I>y</I>). As with any call, the target <I>x</I> must be 
+non-void; the first precondition clause of <I>copy</I> states that <I>y</I> must 
+also be non-void. Let OX and OY be the attached objects at the time of the call. 
+
+<P>
+<OL>
+  <LI>If OX and OY are bit sequences, the conformance rule on Bit_type requires 
+  OX to be at least as long as OY. The call then copies onto OX the contents of 
+  OY, extended with zeros on the left if OY is shorter than OX. Cases 2 to 4 
+  assume that OX and OY are not bit sequences. 
+  <LI>If the types of OX and OY are basic types (<I>BOOLEAN</I>, 
+  <I>CHARACTER</I>, <I>INTEGER</I>, <I>REAL</I>, <I>DOUBLE</I> or 
+  <I>POINTER</I>), then OX is identical to OY or is a heavier type. Then the 
+  call copies the value of OY onto OX, after conversion to the heavier type if 
+  necessary. 
+  <LI>If OX and OY are special objects, that is to say sequences of values 
+  (strings or arrays), the call copies the value of OY onto OX. The 
+  implementation must ensure that whenever this occurs the size of OX is at 
+  least as large as the size of OY. 
+  <LI>In the remaining cases OX and OY are standard objects, made of zero or 
+  more fields, and the second precondition clause implies that the type of OY is 
+  a descendant of the type of OX; as a result, for every field of OX there is a 
+  corresponding field in OY. Then the call copies onto every field of OX the 
+  corresponding field of OY. </LI></OL>
+<H2>19.3 CLONING AN OBJECT </H2>
+<P>Here is the definition of the semantics of a call <I>clone</I> (<I>y</I>): 
+<OL>
+  <LI>If the value of <I>y</I> is void, the call returns a void value. 
+  <LI>If the value of <I>y</I> is attached to an object OY, the call returns a 
+  newly created object of the same type as OY, initialized by applying 
+  <I>copy</I> to that object with OY as source. </LI></OL>
+<H2>19.7 OBJECT EQUALITY </H2>
+<P>Here is the precise result that the standard version of <I>equal</I> must 
+return when applied to two values <I>x</I> and <I>y</I>. 
+<OL>
+  <LI>If any one of <I>x</I> and <I>y</I> is void, the result is true if the 
+  other is also void too, and false otherwise. Cases 2 to 6 assume that both 
+  arguments are attached to respective objects OX and OY of types <I>TX</I> and 
+  <I>TY</I>. 
+  <LI>If OX and OY are bit sequences, the result is true if and only if the two 
+  sequences, with the shorter one being extended with zeros on the left to match 
+  the length of the longer one if necessary, are bit-by-bit identical. Cases 3 
+  to 6 assume that OX and OY are not bit sequences. 
+  <LI>.If <I>TY</I> does not conform to <I>TX</I>, the result is false. Cases 4 
+  to 6 assume that <I>TY</I> conforms to <I>TX</I>. 
+  <LI>If <I>TX</I> is <I>BOOLEAN</I>, <I>CHARACTER</I>, <I>INTEGER</I>, 
+  <I>REAL</I>, <I>DOUBLE</I> or <I>POINTER</I>, the result is true if and only 
+  if OX and OY are the same value, after possible conversion to the heavier type 
+  if OX and OY are different arithmetic types. 
+  <LI>If OX and OY are special objects (strings or arrays), that is to say, 
+  sequences of values, the result is true if and only if the sequences have the 
+  same length, and every field in one is (recursively) equal to the field at the 
+  same position in the other. 
+  <LI>Otherwise OX and OY are standard complex objects, and conformance of 
+  <I>TY</I> to <I>TX</I> implies that for every field of OX there is a 
+  corresponding field in OY. Then the result is true if and only if every 
+  reference field of OX is attached to the same object as the corresponding 
+  field in OY, and every object field of OX, coming from an expanded attribute 
+  in <I>TX</I>'s base class, is (recursively) equal to the corresponding field 
+  in OY.</LI></OL>
+<H2>19.8 DEEP EQUALITY </H2>
+<P>Two references <I>x</I> and <I>y</I> are deep-equal if and only if they are 
+either both void or attached to deep-equal objects.
+<P>
+<P>Two objects OX and OY are deep-equal and only if they satisfy the following 
+four conditions: 
+<OL>
+  <LI>OX and OY have the same exact type. 
+  <LI>The objects obtained by setting all the reference fields of OX and OY (if 
+  any) to void references are equal. 
+  <LI>For every void reference field of OX, the corresponding field of OY is 
+  void. 
+  <LI>For every non-void reference field of OX, attached to an object PX, the 
+  corresponding field of OY is attached to an object PY, and it is possible 
+  (recursively) to show, under the assumption that OX is deep-equal to OY, that 
+  PX is deep-equal to PY. </LI></OL>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 19 Duplicating and comparing objects_fichiers/toc.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap18.htm"><IMG 
+src="Eiffel The Reference - 19 Duplicating and comparing objects_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap20.htm"><IMG 
+src="Eiffel The Reference - 19 Duplicating and comparing objects_fichiers/next.gif"></A> 
+
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0070)http://www.eclipse.org/articles/Article-SWT-Design-1/SWT-Design-1.html -->
+<HTML><HEAD><TITLE>SWT: The Standard Widget Toolkit</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1"><LINK 
+href="SWT The Standard Widget Toolkit2_fichiers/default_style.css" 
+rel=stylesheet>
+<META content="MSHTML 6.00.2800.1141" name=GENERATOR></HEAD>
+<BODY>
+<DIV align=right><FONT face="Times New Roman, Times, serif" size=2>Copyright © 
+2001 Object Technology International, Inc.</FONT> &nbsp; 
+<TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica><FONT color=#ffffff>&nbsp;Eclipse Corner 
+      Article</FONT></FONT></B></TD></TR></TBODY></TABLE></DIV>
+<H1><IMG height=86 src="SWT The Standard Widget Toolkit2_fichiers/idea.jpg" 
+width=120 align=center></H1>
+<CENTER>
+<H1>SWT: The Standard Widget Toolkit</H1></CENTER>
+<CENTER>
+<H3>PART 1: Implementation Strategy for Java™ Natives</H3></CENTER>
+<CENTER><I>The first in a series of articles about the design ideas behind 
+SWT.</I></CENTER>
+<BLOCKQUOTE><B>Summary</B> <BR>SWT is the software component that delivers 
+  native widget functionality for the Eclipse platform in an operating system 
+  independent manner.&nbsp; It is analogous to AWT/Swing in Java with a 
+  difference - SWT uses a rich set of native widgets.&nbsp; Even in an ideal 
+  situation, industrial strength cross platform widget libraries are very 
+  difficult to write and maintain.&nbsp; This is due to the inherent complexity 
+  of widget systems and the many subtle differences between platforms.&nbsp; 
+  There are several basic approaches that have helped significantly to reduce 
+  the complexity of the problem and deliver high quality libraries.&nbsp; This 
+  article discusses one of them, the low level implementation techniques used to 
+  implement SWT on different platforms.&nbsp; Examples are drawn from the 
+  Windows® and Motif implementations. 
+  <P><B>By Steve Northover, OTI</B> <BR><FONT size=-1>March 22, 2001</FONT> 
+</P></BLOCKQUOTE>
+<P>
+<HR width="100%">
+
+<H3>Portable and Native - It Can't Be Done!</H3>Developers demand portable 
+graphics and widgets to allow them to build user interfaces that are competitive 
+with shrink-wrapped applications built using platform specific tools.&nbsp; They 
+need access to platform specific features, with well defined API boundaries. SWT 
+delivers this functionality using a small and consistent API.&nbsp; This API is 
+implemented on different platforms using a combination of Java code and JNI 
+natives specific to each platform. 
+<P>SWT is implemented entirely in one language: Java.&nbsp; How can this be true 
+when SWT uses native widgets that provide an API in C?&nbsp; The answer is that 
+Java provides a native interface to C (JNI) that is used by SWT to invoke the 
+operating system from Java code.&nbsp; JNI is the standard mechanism used by all 
+Java programs to invoke code written in C. SWT goes one step further by 
+enforcing a<I> one-to-one mapping</I> between Java native methods and operating 
+system calls.&nbsp; The fact that this mapping is strictly enforced is one of 
+the most critical factors in the success of SWT. 
+<H3>A Tale of Two Implementations</H3>Let's take a look at the implementation of 
+SWT <I>Text</I> widget on two different platforms.&nbsp; The <I>Text</I> widget 
+provides the ability to set the selection.&nbsp; SWT application code that uses 
+this API might look something like this: 
+<P><TT>&nbsp;&nbsp;&nbsp; /* Select positions 2 to 5 */</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp; text.setText ("0123456780");</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp; text.setSelection (2, 5);</TT> 
+<P>The method signature for <B>setSelection</B> in class <I>Text</I> looks like 
+this: 
+<P><TT>&nbsp;&nbsp;&nbsp; /**</TT> <BR><TT>&nbsp;&nbsp;&nbsp; * Sets the 
+selection.</TT> <BR><TT>&nbsp;&nbsp;&nbsp; * &lt;p&gt;</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp; * Indexing is zero based.&nbsp; The range of a 
+selection is from 0..N</TT> <BR><TT>&nbsp;&nbsp;&nbsp; * where N is the number 
+of characters in the widget.</TT> <BR><TT>&nbsp;&nbsp;&nbsp; */</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp; public void setSelection (int start, int end)</TT> 
+<P>Here is the Windows implementation of <B>setSelection</B>: 
+<P><TT>&nbsp;&nbsp;&nbsp; public void setSelection (int start, int end) {</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; OS.SendMessage (handle, 
+OS.EM_SETSEL, start, end);</TT> <BR><TT>&nbsp;&nbsp;&nbsp; }</TT> 
+<P>What are <B>SendMessage</B> and <B>EM_SETSEL</B>?&nbsp; Windows programmers 
+recognize this right away.&nbsp; It's <B>SendMessage</B>, the mechanism that is 
+used to talk to Windows controls. <B>EM_SETSEL</B> is the message that tells the 
+text control to set the selection.&nbsp; It's not easy reading, but it is 
+familiar to a Windows programmer.&nbsp; The rest of us get to read the 
+Microsoft® Developer Network (MSDN) Library! 
+<P>Here is the Java code for the SWT class <I>OS</I> on Windows: 
+<P><TT>&nbsp;&nbsp;&nbsp; class OS {</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static final int 
+EM_SETSEL = 0xB1;</TT> <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+static final native int SendMessage (int hWnd, int Msg, int wParam, int 
+lParam);</TT> <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp; }</TT> 
+<P>How is the <B>SendMessage</B> native implemented?&nbsp; Here is the C code on 
+Windows: 
+<P><TT>&nbsp;&nbsp;&nbsp; JNIEXPORT jint JNICALL 
+Java_org_eclipse_swt_internal_win32_OS_SendMessage__IIII</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (JNIEnv *env, jclass that, jint hWnd, 
+jint Msg, jint wParam, jint lParam)</TT> <BR><TT>&nbsp;&nbsp;&nbsp; {</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return (jint) 
+SendMessage((HWND)hWnd, Msg, wParam, lParam);</TT> <BR><TT>&nbsp;&nbsp;&nbsp; 
+}</TT> 
+<P>Notice that <I>the only thing this native does</I> is pass the Java call 
+straight on through to the Windows API. But what about other operating 
+systems?&nbsp; Does the fact that <B>setSelection</B> is implemented in terms of 
+the Windows API mean that SWT is not portable?&nbsp; While it is true that the 
+Windows implementation of <I>Text</I> is not portable, application code that 
+uses <I>Text</I> is.&nbsp; How is this achieved?&nbsp; SWT provides a different 
+<I>Text</I> class for each platform, but the signature of every public method is 
+the same.&nbsp; Java code that calls SWT does not know or care which <I>Text</I> 
+class is referenced at run time. <B>SendMessage</B> is not SWT API. 
+<P>Here is the implementation of <B>setSelection</B> on Motif (Java and JNI C): 
+<P><TT>&nbsp;&nbsp;&nbsp; public void setSelection (int start, int end) {</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int xDisplay = OS.XtDisplay 
+(handle);</TT> <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (xDisplay 
+== 0) return;</TT> <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+OS.XmTextSetSelection (handle, start, end, OS.XtLastTimestampProcessed 
+(xDisplay));</TT> <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+OS.XmTextSetInsertionPosition (handle, end);</TT> <BR><TT>&nbsp;&nbsp;&nbsp; 
+}</TT> 
+<P><TT>&nbsp;&nbsp;&nbsp; class OS {</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static final native 
+void XmTextSetSelection (int widget, int first, int last, int time);</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static final native 
+int XtLastTimestampProcessed (int display);</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static final native 
+void XmTextSetInsertionPosition (int widget, int position);</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static final native 
+int XtDisplay (int widget);</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp; }</TT> 
+<P><TT>&nbsp;&nbsp;&nbsp; JNIEXPORT void JNICALL 
+Java_org_eclipse_swt_internal_motif_OS_XmTextSetSelection</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (JNIEnv *env, jclass that, jint widget, 
+jint first, jint last, jint time)</TT> <BR><TT>&nbsp;&nbsp;&nbsp; {</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+XmTextSetSelection((Widget)widget, first, last, time);</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp; }</TT> 
+<P><TT>&nbsp;&nbsp;&nbsp; ...</TT> 
+<P>What are <B>XtDisplay</B>, <B>XmTextSetSelection</B>, 
+<B>XtLastTimestampProcessed</B> and <B>XmTextSetInsertionPosition</B>?&nbsp; 
+They don't mean much to a Windows programmer, but they are familiar to anyone 
+who has ever programmed Motif.&nbsp; Now it's the Windows programmer's turn to 
+consult the Motif man pages! 
+<P>The example code above was taken directly from SWT but has been simplified by 
+removing range and error checking code for the sake of the example.&nbsp; 
+However, the code that is doing the real work - setting the selection - is 
+identical to that found in the product. 
+<H3>One to One Mapping - No Custom Natives</H3>Take a moment to review the Java 
+and C code for <B>setSelection</B> in the previous section.&nbsp; Wouldn't it be 
+easier to implement one <I>Text</I> class for all SWT platforms and hide the 
+platform differences in the natives?&nbsp; Such an implementation might look 
+like this: 
+<P><TT>&nbsp;&nbsp;&nbsp; public void setSelection (int start, int end) {</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nativeSetSelection (start, 
+end)</TT> <BR><TT>&nbsp;&nbsp;&nbsp; }</TT> <BR><TT>&nbsp;&nbsp;&nbsp; static 
+final native void nativeSetSelection (int start, int end);</TT> 
+<P><TT>&nbsp;&nbsp;&nbsp; JNIEXPORT void JNICALL 
+Java_org_eclipse_swt_widgets_text_nativeSetSelection</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (JNIEnv *env, jclass that, jobject 
+widget, jint first, jint last)</TT> <BR><TT>&nbsp;&nbsp;&nbsp; {</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp; #ifdef WINDOWS</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HWND hWnd = 
+SWTGetHandleFromJavaWidget (widget);</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SendMessage(hWnd, Msg, 
+wParam, lParam);</TT> <BR><TT>&nbsp;&nbsp;&nbsp; #endif</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp; #ifdef MOTIF</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Widget *w = 
+SWTGetHandleFromJavaWidget (widget);</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Display xDisplay = XtDisplay 
+(w);</TT> <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (xDisplay == 
+NULL) return;</TT> <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+XmTextSetSelection (w, start, end, XtLastTimestampProcessed (xDisplay));</TT> 
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmTextSetInsertionPosition 
+(w, end);</TT> <BR><TT>&nbsp;&nbsp;&nbsp; #endif</TT> <BR><TT>&nbsp;&nbsp;&nbsp; 
+}</TT> 
+<P>Isn't this easier than having a different <I>Text</I> class on each 
+platform?&nbsp; The answer is a resounding "<I>No</I>".&nbsp; Why?&nbsp; In the 
+case of the <I>Text</I> widget, the code to set the selection is pretty simple 
+but even this causes problems.&nbsp; Before we get into the discussion, consider 
+this: 
+<UL>
+  <LI>The non-public native interface must be identical on all platforms.&nbsp; 
+  This means there needs to be an implementation of <B>nativeSetSelection</B> 
+  everywhere.&nbsp; We also still need to provide the public SWT API.&nbsp; So 
+  we need to implement <B>setSelection</B> everywhere. Why would we want to 
+  write two portable APIs instead of just one?&nbsp; One API is hard enough to 
+  specify and maintain! 
+  <LI>Java is a powerful high level language with features that promote robust 
+  code and program stability.&nbsp; It contains reusable class libraries for 
+  high level data types such as hash tables and vectors as well as efficient 
+  primitive types. Why use C? </LI></UL>Calling the operating system directly from 
+Java helps with debugging. The following problem occurred in an early version of 
+SWT for Windows:&nbsp; when the selection was set in the text widget, sometimes 
+the widget did not scroll to show the i-beam.&nbsp; Where was the problem?&nbsp; 
+The code that demonstrated the problem was complicated, but it was clear from 
+stepping through the Java code and consulting the MSDN Library that the Java 
+implementation of <B>setSelection</B> was correct.&nbsp; In fact, because of the 
+<I>one-to-one mapping</I> between our Java natives and C, it was possible to 
+write a simple C example to help isolate the problem and submit a bug report to 
+Microsoft.&nbsp; Why was this so easy?&nbsp; Because, as we have said before, 
+nothing extra ever happens in an SWT native. The Java call is passed right on 
+through to the operating system.&nbsp; This means that C code is guaranteed to 
+exhibit the same behavior.&nbsp; This is great news for debugging and 
+maintenance. 
+<P>Performance problems are legendary in widget toolkits and finding them is a 
+black art.&nbsp; Where is the performance problem?&nbsp; Is it in the Java code 
+or the natives?&nbsp; Fortunately, SWT natives can't be the problem. We are 
+guaranteed that once we are in a native, the limiting factor is the speed of the 
+operating system - something beyond our control.&nbsp; This is great news for 
+performance tuning: look at the Java code.&nbsp; In fact, one quickly develops a 
+sense of which operating system operations are expensive and which are cheap. 
+Best of all, this knowledge is accurate.&nbsp; A C program that makes the same 
+sequence of operating system calls will exhibit the same performance 
+characteristics.&nbsp; This is a feature of the one-to-one mapping. 
+<P>What happens when you try to debug a segment fault (or GP)?&nbsp; It's easy 
+enough to step into a Java method and examine arguments but not possible to step 
+into a native.&nbsp; Fortunately, nothing special happens in SWT natives so it's 
+easy enough to isolate the code that is causing the problem.&nbsp; While on the 
+subject of GPs, wouldn't it make sense for SWT natives to check their parameters 
+before making the operating system call?&nbsp; It's tempting to check for NULL 
+or -1 to avoid the crash.&nbsp; On the surface, this seems to make sense - after 
+all, who wants to GP?&nbsp; The answer, of course, is that this would violate 
+the one-to-one mapping and would mean that an equivalent C program would not 
+crash in the same place.&nbsp; That's bad news for debugging and isolating a 
+problem. 
+<P>For someone implementing and maintaining SWT, the one-to-one mapping is 
+extremely valuable.&nbsp; For example, a Windows programmer knows right away how 
+<B>setSelection</B> works, just by looking at the Java code.&nbsp; Everyone else 
+needs to read the MSDN Library.&nbsp; It's not light reading, but the 
+information is there.&nbsp; The same thing is true for a Motif programmer for 
+SWT on Motif, and for the other supported operating systems.&nbsp; In fact, it's 
+clear exactly how existing features work and new features are to be 
+implemented.&nbsp; The critial point here is that the documentation for the 
+operating system applies to all SWT natives because they are a one-to-one 
+mapping. 
+<P>Adding new native features to SWT is a straightforward and well defined 
+process. For example, implementing drag and drop and integrating it with the 
+widgets was not difficult, despite the fact that these are two independent 
+services.&nbsp; Why was this so easy?&nbsp; Nothing is hidden in the C 
+code.&nbsp; All of the operating system resources needed to implement SWT are 
+manifested as simple Java objects making it easy to understand how SWT works and 
+to make changes.&nbsp; This allows SWT to be customized to support new platform 
+dependent widgets and operating system services as they become available. 
+<P>One last point: JNI is rich and powerful.&nbsp; It allows you to allocate 
+Java objects in C, get and set Java fields, invoke new VMs and throw 
+exceptions.&nbsp; The operating system, on the other hand, is typically more 
+primitive.&nbsp; For example, most operating system calls that access memory 
+require you to allocate the buffer and pass in the size.&nbsp; Java arrays know 
+their size, so why do we need to pass it in?&nbsp; JNI allows us to allocate 
+objects in C, so why not allocate buffers in the C code?&nbsp; Wouldn't it be 
+better to try and "fix" the operating system API to make it more Java 
+friendly?&nbsp; The answer again is "<I>No</I>".&nbsp; Any deviation from the 
+one-to-one rule means that our Java code no longer behaves the same as the 
+equivalent C code.&nbsp; For example, allocating objects in JNI could introduce 
+a hidden performance problem for Java code inside a tight loop.&nbsp; Also, it 
+may make sense to allocate one large buffer and pass in a smaller size, or reuse 
+a buffer.&nbsp; It's tempting to use JNI features to attempt to "fix" the 
+operating system API but this is a huge mistake. 
+<H3>Conclusion</H3>All of the natives in SWT are implemented using this simple 
+and consistent strategy.&nbsp; There is no C code to hide the low level details 
+of the operating system such as the event loop, callbacks or the thread 
+model.&nbsp; No code reaches back into Java from C to get a field or invoke a 
+method.&nbsp; Nothing is magic - everything is coded in Java using the 
+terminology and documentation of the operating system.&nbsp; Why is this such a 
+big deal?&nbsp; Some might claim that all SWT&nbsp;does is use JNI to invoke the 
+operating system - nothing fancy. But that's the whole point.&nbsp; Without a 
+simple set of rules and a sense of restraint - a characteristic of SWT - it's 
+just too easy for a widget toolkit to collapse under its own weight.<BR>&nbsp; 
+<P><SMALL>Java and all Java-based trademarks and logos are trademarks or 
+registered trademarks of Sun Microsystems, Inc. in the United States, other 
+countries, or both.</SMALL></P>
+<P><SMALL>Microsoft, Windows, Windows NT, and the Windows logo are trademarks of 
+Microsoft Corporation in the United States, other countries, or 
+both.</SMALL></P></BODY></HTML>

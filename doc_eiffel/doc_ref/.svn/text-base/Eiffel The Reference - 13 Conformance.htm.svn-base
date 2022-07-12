@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap13.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 13 Conformance</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 13 Conformance_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap12.htm"><IMG 
+src="Eiffel The Reference - 13 Conformance_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap14.htm"><IMG 
+src="Eiffel The Reference - 13 Conformance_fichiers/next.gif"></A> 
+<P>
+<H1>13 Conformance </H1>
+<H2>13.3 SIGNATURE CONFORMANCE </H2>
+<P>A signature <I>t</I> = (&lt;<I>B</I><I>1</I>, ..., <I>B</I><I>n</I>&gt;, 
+&lt;<I>S</I>&gt;) conforms to a signature <I>s</I> = (&lt;<I>A</I><I>1</I>, ..., 
+<I>A</I><I>n</I>&gt;, &lt;<I>R</I>&gt;) if and only if it satisfies the 
+following conditions: 
+<OL>
+  <LI>Each of the two sequence components of <I>t</I> has the same number of 
+  elements as the corresponding component of <I>s</I>. 
+  <LI>Every type <I>T</I><I>i</I> in each of the two sequence components of 
+  <I>t</I> conforms to the corresponding type <I>S</I><I>i</I> in the 
+  corresponding component of <I>s</I>. </LI></OL>
+<H2>13.4 DIRECT AND INDIRECT CONFORMANCE </H2>
+<P>Let <I>T</I> and <I>V</I> be two types. <I>V</I> <B>conforms to</B> <I>T</I> 
+if and only if one of the following holds: 
+<OL>
+  <LI><I>V</I> and <I>T</I> are identical. 
+  <LI><I>V</I> conforms directly to <I>T</I>. 
+  <LI><I>V</I> is <I>NONE</I> and <I>T</I> is a reference type. 
+  <LI><I>V</I> is <I>B </I>[<I>Y</I><I>1</I><I>,</I>...<I> Y</I><I>n</I>] for 
+  some generic class <I>B</I>, <I>T</I> is <I>B 
+  </I>[<I>X</I><I>1</I><I>,</I>...<I> X</I><I>n</I>], and every one of the Yi 
+  conforms (recursively) to the corresponding Xi. 
+  <LI><I>T</I> is a reference type and, for some type <I>U</I>, <I>V</I> 
+  conforms to <I>U</I> and <I>U</I> conforms (recursively) to <I>T</I>. </LI></OL>
+<H2>13.5 <A 
+name="70421: Sec2: 13.5 CONFORMANCE TO A NON-GENERIC REFERENCE TYPE">CONFORMANCE 
+TO A NON-GENERIC REFERENCE TYPE </H2>
+<P>Let <I>CT</I> be a Class_type of base class <I>C</I>, and <I>BT</I> be a 
+reference type whose base class <I>B</I> is not generic. <I>CT</I> conforms 
+directly to <I>BT</I> if and only if the Inheritance clause of <I>C</I> lists 
+<I>B</I> in one or more of its Parent items. 
+<P>
+<H2>13.6 <A 
+name="34605: Sec2: 13.6 GENERICALLY DERIVED REFERENCE TYPES">GENERICALLY DERIVED 
+REFERENCE TYPES </H2>
+<P>Let <I>BT</I> be a generically derived reference type of base type <I>B 
+</I>[<I>X</I><I>1</I><I>,</I>...<I> X</I><I>n</I>] for some n &gt;= 1, where the 
+formal generic parameters of <I>B</I> are <I>G</I><I>1</I>,... 
+<I>G</I><I>n</I><I>.</I> Let<I> CT </I>be a Class_type of base class<I> C 
+</I>different from<I> B.</I> To determine whether<I> CT </I>conforms directly 
+to<I> BT</I>, define the substitution sas follows: 
+<P>
+<UL>
+  <LI>If <I>CT</I> is non-generic, s is the identity substitution. 
+  <LI>If <I>CT</I> is a a generically derived type, of the form <I>C 
+  </I>[<I>Y</I><I>1</I><I>,</I>...<I> Y</I><I>m</I>], and class <I>C</I> is 
+  declared with formal generic parameters H1,... <I>H</I><I>m</I><I>, </I>then 
+  s<I> </I>applied to any of the <I>H</I><I>i</I><I> </I>(for<I> 1 </I><I>i 
+  </I><I>m</I>)<I> </I>is <I>Y</I><I>i</I>, and s applied to any other element 
+  is the element itself. </LI></UL>
+<P>Then <I>CT</I> conforms directly to <I>BT</I> if and only if the Inheritance 
+clause of <I>C</I> lists <I>B&nbsp;</I>[<I>Z</I><I>1</I><I>,</I>...<I> 
+Z</I><I>n</I>] as one of its Parent items and, for every <I>j</I> such that 1 
+<I>j</I> <I>n</I>, applying substitution s to <I>Z</I><I>j</I> yields 
+<I>X</I><I>j</I>. 
+<P>
+<H2>13.7 FORMAL GENERIC PARAMETERS </H2>
+<P>Let <I>G</I> be a formal generic parameter of a class, which in the class may 
+be used as a type of the Formal_generic_name category. No type conforms directly 
+to <I>G</I>. If <I>G</I> is not constrained, it conforms directly to the type 
+<I>ANY</I> (based on the corresponding universal class) and to no other type. If 
+<I>G</I> is constrained by <I>CT</I>, <I>G</I> conforms directly to <I>CT</I> 
+and to no other type. 
+<P>
+<H2>13.8 ANCHORED TYPES </H2>
+<P>In a class <I>C</I>, type <B>like</B><I> Current</I> conforms directly to its 
+base type <I>CT</I>, where <I>CT</I> is <I>C</I> followed by its 
+Formal_generic_list, if any, with any Constraint removed. 
+<P>
+<P>Type <B>like</B><I> anchor</I>, where <I>anchor</I> is a feature of <I>C</I> 
+or a formal argument of a routine of <I>C</I>, conforms directly to the type of 
+<I>anchor</I> in <I>C</I>. 
+<P>
+<P>An anchored type conforms directly to no type other than implied by these 
+rules. No type conforms directly to an anchored type. 
+<P>
+<H2>13.9 EXPRESSION CONFORMANCE </H2>
+<P>An expression <I>v</I> of type <I>VT</I> conforms to an expression <I>t</I> 
+of type <I>TT</I> if and only if they satisfy any one of the following four 
+conditions. 
+<OL>
+  <LI><I>VT</I> conforms to <I>TT</I>. 
+  <LI><I>TT</I> is <B>like</B><I> v</I> (<I>v</I> in this case must be an 
+  entity). 
+  <LI><I>VT</I> and <I>TT</I> are both of the form <B>like</B><I> x</I> for the 
+  same <I>x</I>. 
+  <LI><I>TT</I> is <B>like</B><I> x</I> where <I>x</I> is a formal argument to a 
+  routine <I>r</I>, <I>v</I> is an actual argument in a call to <I>r</I>, and 
+  <I>VT</I> conforms to the type of the actual argument corresponding to 
+  <I>x</I> in the call. 
+  <LI><I>v</I> is a call to some function <I>f</I> of type <B>like</B><I> x</I> 
+  where <I>x</I> is a formal argument of <I>f</I>, and the type of the actual 
+  argument corresponding to <I>x</I> in the call conforms to <I>TT</I>. </LI></OL>
+<H2>13.10 EXPANDED TYPES </H2>
+<H3>Definition: heavier arithmetic type</H3>
+<P>Any arithmetic type conforms to heavier ones, where <I>DOUBLE</I> is heavier 
+than <I>REAL</I> and <I>INTEGER</I>, and <I>REAL</I> is heavier than 
+<I>INTEGER</I>. 
+<P>
+<P>Let <I>T</I> be an expanded type other than a Bit_type. A type <I>U</I> 
+conforms directly to <I>T</I> if and only if they satisfy any one of the 
+following three conditions: 
+<OL>
+  <LI><I>T</I> is of the form <B>expanded</B><I> BT</I>, and <I>U</I> is 
+  <I>BT</I>. 
+  <LI><I>T</I> is <I>REAL</I> and <I>U</I> is <I>INTEGER</I>. 
+  <LI><I>T</I> is <I>DOUBLE</I> and <I>U</I> is <I>REAL</I> or <I>INTEGER</I>. 
+  </LI></OL>
+<P>In case 1 <I>T</I> also conforms directly to <I>U</I>. 
+<P>
+<P>An expanded type conforms directly to no type other than implied by this rule 
+and the rules of <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap13.htm#70421: Sec2: 13.5 CONFORMANCE TO A NON-GENERIC REFERENCE TYPE">13.5</A> 
+and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap13.htm#34605: Sec2: 13.6 GENERICALLY DERIVED REFERENCE TYPES">13.6</A>. 
+
+<P>
+<H2>13.11 BIT TYPES </H2>
+<P>The possible direct conformance cases involving a Bit_type are the following 
+for any positive integers <I>N</I> and <I>P</I>: 
+<OL>
+  <LI><I>BIT N</I> conforms directly to <I>ANY</I>. 
+  <LI><I>BIT N</I> conforms directly to <I>BIT P</I> for <I>N </I>P. </LI></OL>
+<P>Other than implied by these rules, no type conforms directly to a Bit_type, 
+and a Bit_type conforms directly to no type. 
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 13 Conformance_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap12.htm"><IMG 
+src="Eiffel The Reference - 13 Conformance_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap14.htm"><IMG 
+src="Eiffel The Reference - 13 Conformance_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

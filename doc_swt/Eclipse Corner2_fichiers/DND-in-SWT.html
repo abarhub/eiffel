@@ -1,0 +1,2099 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html -->
+<HTML><HEAD><TITLE>DND in SWT</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Veronika Irvine" name=Author>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId><LINK 
+href="images/filelist.xml" rel=File-List><LINK 
+href="DND-in-SWT_fichiers/default_style.css" rel=stylesheet></HEAD>
+<BODY lang=EN-US style="tab-interval: .5in" vLink=purple link=blue 
+bgColor=white>
+<DIV align=right><FONT size=-2>Copyright © 2003 International Business Machines 
+Corp.</FONT> 
+<TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica color=#ffffff>&nbsp;Eclipse Corner 
+    Article</FONT></B></TD></TR></TBODY></TABLE></DIV>
+<H1><IMG src="DND-in-SWT_fichiers/idea.jpg" align=center></H1>
+<H1 align=center>Drag and Drop</H1>
+<H3 align=center>Adding Drag and Drop to an SWT Application</H3>
+<P align=justify><B>Summary</B><BR>Drag and drop provides a quick and easy 
+mechanism for users to re-order and transfer data within an application and 
+between applications. This article is an overview of how to implement Drag and 
+Drop and Clipboard data transfers within an SWT application.</P>
+<P><B>By Veronika Irvine, IBM OTI Labs</B><BR><SPAN 
+style="FONT-SIZE: 10pt">August 25, 2003</SPAN></P>
+<DIV style="TEXT-ALIGN: center" align=center>
+<HR align=center width="100%" SIZE=2>
+</DIV>
+<H2>Drag and Drop Overview</H2>
+<P>Consider the simple example of dragging an item from one table to another as 
+shown in Figure 1:</P>
+<P align=center><IMG src="DND-in-SWT_fichiers/image002.jpg" border=0><BR>Figure 
+1: Shopping Cart example</P>
+<P align=justify>On the right there is a list of items that I can purchase and 
+on the left is my shopping cart. To buy something, I select it from the list on 
+the right (I have selected “Truffle Assortment” in Figure 1), drag it over to my 
+shopping cart and drop it. When I let go of the mouse over my shopping cart, the 
+item will be added to the list of items I wish to purchase. In this data 
+transfer, the list of assorted chocolates on the right is the drag source and my 
+shopping cart is the drop target. A drag source is the source of the data being 
+transferred and a drop target is the receiver. As I drag the mouse over a drop 
+target, I get feedback in various forms. First, the cursor changes to let me 
+know that I am over a valid drop target by changing from a “do not enter” sign 
+to an arrow (this is called a “drag over effect”). The cursor also tells me what 
+kind of operation will be performed when the data is transferred – the data may 
+be copied or moved or a link may be made to the data. Secondly, if I am dragging 
+over a widget that has sub-items like a tree or table, the sub-item may be 
+highlighted to indicate that the data will be dropped on a specific sub-item 
+(this is called a “drag under effect”). This is useful when you are organizing 
+data into folders or rearranging items. In this article, I will explain in more 
+detail the terms I have introduced above and explain how SWT allows an 
+application to define and manipulate these components.</P>
+<UL>
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_Drag_Source">DragSource</A> 
+
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_Drop_Target">DropTarget</A> 
+
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_Using_the_Clipboard">Clipboard</A> 
+
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_Transfer">Transfer</A> 
+  </LI></UL>
+<H2><A name=_Drag_Source></A>Drag Source</H2>
+<P align=justify>A drag source is the provider of data in a Drag and Drop data 
+transfer as well as the originator of the Drag and Drop operation. The data 
+provided by the drag source may be transferred to another location in the same 
+widget, to a different widget within the same application, or to a different 
+application altogether. For example, you can drag text from your application and 
+drop it on an email application, or you could drag an item in a tree and drop it 
+below a different node in the same tree.</P>
+<P align=justify>Let us walk through a simple example showing how to define a 
+drag source. The example in Listing 1 shows how to drag text from a label 
+widget.</P>
+<TABLE style="WIDTH: 650px" cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds1D" 
+      name=_ds1C>1</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>import org.eclipse.swt.dnd.*;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43>2</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE></CODE>&nbsp;</TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds4D" 
+      name=_ds4C>3</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE><FONT color=#0080c0>// Enable a label as a Drag 
+      Source</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds4D">4</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>final Label dragLabel = new Label(shell, 
+      SWT.BORDER);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds4D">5</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>dragLabel.setText("text to be transferred");</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43>6</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE></CODE>&nbsp;</TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds8D" 
+      name=_ds8C>7</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE><FONT color=#0080c0>// Allow data to be copied or moved 
+      from the drag source</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds8D">8</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>int operations = DND.DROP_MOVE | 
+  DND.DROP_COPY;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds8D">9</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>DragSource source = new DragSource(dragLabel, 
+      operations);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43>10</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE></CODE>&nbsp;</TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds12D" 
+      name=_ds12C>11</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE><FONT color=#0080c0>// Provide data in Text 
+      format</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds12D">12</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>Transfer[] types = new Transfer[] 
+      {TextTransfer.getInstance()};</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds12D">13</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>source.setTransfer(types);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43>14</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE></CODE>&nbsp;</TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds15D" 
+      name=_ds15C>15</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>source.addDragListener(new DragSourceListener() 
+    {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds16D" 
+      name=_ds16C>16</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp; public void dragStart(DragSourceEvent event) 
+      {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds16D">17</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp; <FONT color=#0080c0>// Only 
+      start the drag if there is actually text in the</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds16D">18</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+      color=#0080c0>// label - this text will be what is dropped on the 
+      target.</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds16D">19</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+      (dragLabel.getText().length() == 0) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds16D">20</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event.doit 
+      = false;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds16D">21</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds16D">22</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds23D" 
+      name=_ds23C>23</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp; public void dragSetData(DragSourceEvent 
+      event) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds23D">24</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE><FONT color=#0080c0>&nbsp;&nbsp;&nbsp;&nbsp; // Provide 
+      the data of the requested type.</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds23D">25</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+      (TextTransfer.getInstance().isSupportedType(event.dataType)) 
+{</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds23D">26</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event.data 
+      = dragLabel.getText();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds23D">27</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds23D">28</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds29D" 
+      name=_ds29C>29</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp; public void dragFinished(DragSourceEvent 
+      event) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds29D">30</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color=#0080c0>// If a 
+      move operation has been performed, remove the data</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds29D">31</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color=#0080c0>// from 
+      the source</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds29D">32</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (event.detail == 
+      DND.DROP_MOVE)</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds29D">33</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dragLabel.setText("");</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds29D">34</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=43>35</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 0.45in; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt solid" 
+    vAlign=top width=43>36</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 788px; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt solid" 
+    vAlign=top><CODE>});</CODE></TD></TR></TBODY></TABLE>
+<P align=left>Listing 1: Dragging text from a Label widget. 
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds1C" 
+name=_ds1D><B>Line 1:</B></A><BR>All the SWT drag and drop classes are defined 
+in the package org.eclipse.swt.dnd.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds4C" 
+name=_ds4D><B>Lines 3 to 5:</B></A><BR>Create a widget. In order to start a 
+drag, the user holds the mouse button down in a widget and drags the mouse. In 
+our example, the user starts the drag in the label. Note that you cannot have 
+multiple drag sources on one widget. If you try to create a second drag source, 
+an SWTError will be thrown.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds8C" 
+name=_ds8D><B>Lines 7 to 9:</B></A><BR>To make a widget into a drag source, we 
+must create an org.eclipse.swt.dnd.DragSource object. The DragSource constructor 
+takes two arguments, the widget that will be the location of the drag source and 
+the operations that are allowed. The allowed operations determine what kind of 
+actions the drop target can do with the data being transferred. The allowed 
+values are any bitwise OR combination of DND.DROP_COPY, DND.DROP_MOVE or 
+DND.DROP_LINK. In the example, we are allowing the data to be copied or 
+moved.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds12C" 
+name=_ds12D><B>Lines 11 to 13:</B></A><BR>To complete the definition of a drag 
+source, you must specify the types of data that can be transferred. A data type 
+is defined by a subclass org.eclipse.swt.dnd.Transfer such as TextTransfer or 
+FileTransfer. For a detailed description of Transfer types see <A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_Transfer">Transfer</A>. 
+A drag source can provide more than one format of the data, however, it is 
+required to provide the data in any of the specified formats when requested. In 
+this example, the user can drag text from the label.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds15C" 
+name=_ds15D><B>Line 15:</B></A><BR>Once the drag source is defined, a mechanism 
+is required for it to interact with the Drag and Drop operation. Adding a 
+DragSourceListener does this.</P>
+<P align=justify>The following event sequences may occur:</P>
+<OL>
+  <LI>dragStart 
+  <LI>dragStart, one or more dragSetData, dragFinished 
+  <LI>dragStart, dragFinished </LI></OL>
+<P align=justify>Note: If an exception is thrown from a drag and drop event 
+handler, on some platforms this will cause the entire windowing system to hang. 
+Since this is extremely undesirable, SWT DND wraps all event listener code in an 
+exception block. If your event handler throws an exception, no error will be 
+reported and the DND operation will default to DND.DROP_NONE. This “silent” 
+exception handling is a common reason why developers think that DND is not 
+behaving correctly. It is recommended that you wrap your event handler code and 
+catch any possible exceptions yourself and handle them appropriately. In future 
+releases, we will try to come up with a better way to indicate that a failure 
+has occurred.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds16C" 
+name=_ds16D><B>Lines 16 to 22:</B></A><BR>The dragStart event signals that the 
+user has performed the action that initiates a Drag and Drop operation. The 
+exact action taken by the user depends on the platform – on Windows for example, 
+the user presses down with the left mouse button and drags for a certain number 
+of pixels (the exact distance is configurable by the user in the Mouse control 
+panel). On Motif, the user presses down the middle mouse button. The application 
+does not need to be concerned about the exact conditions that started the 
+operation because SWT handles these platform differences. When the dragStart 
+event is received, the application has the choice to start a Drag and Drop 
+operation or not. For example, if no valid items are currently selected in the 
+drag source widget, the application may choose to cancel the operation. The 
+operation is cancelled by setting the event.doit field to ‘false’.</P>
+<P align=justify>Note: the application is not required to specify the type of 
+data that will be transferred until the dragStart event has been received. That 
+is, the application can defer the call to DragSource.setTransfer until the 
+dragStart event. However, once the dragStart event has been processed, if no 
+transfer types have been specified for the drag source, the Drag and Drop 
+operation will be cancelled.</P>
+<P align=justify>By allowing the Drag and Drop operation, the application is 
+making a promise to provide data of the specified type when requested. Failure 
+to do so is a violation of the DND contract and could result in unexpected 
+behavior.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds23C" 
+name=_ds23D><B>Lines 23 to 28:</B></A><BR>The dragSetData event is a request for 
+the data promised in the dragStart event. This event may be called multiple 
+times either repeatedly for the same data type or for any of the data types 
+promised. On some platforms, a potential drop target can request data when the 
+mouse is moving over the drop target (e.g. Windows) and on some platforms the 
+data may only be requested when a drop is performed (the mouse is released over 
+a valid drop site) (e.g. Motif). Therefore, do not make any assumptions that the 
+drag and drop operation is completed when receiving this event. There is no way 
+to know where the data is being dropped – it could be dropped on the same 
+application, even on the same widget or on another application.</P>
+<P align=justify>The type of data being requested is specified in the 
+event.dataType field. The event.dataType field contains a TransferData object. 
+While the fields of the TransferData object are public, they are platform 
+dependant. Therefore, you should not access the fields directly but rather pass 
+the TransferData to a Transfer object to determine the type of data. This is 
+done in the example by calling TextTransfer.getInstance().isSupportedType (line 
+25).</P>
+<P align=justify>The drag source must fill in the event.data field. The exact 
+form of the data depends on the Transfer type. For example, TextTransfer expects 
+a String object containing the entire text whereas a FileTransfer expects a 
+String array where each entry in the array is the absolute path of a File. The 
+javadoc for each transfer type should describe the expected value for the Java 
+object being transferred. More information on Transfer and TransferData is 
+available in the <A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_Transfer">Transfer</A> 
+section of this document.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_ds29C" 
+name=_ds29D><B>Lines 29 to 34:</B></A><BR>The dragFinished event indicates that 
+the drag and drop operation is complete. The user may have dropped the data on a 
+valid location, dropped the data on an invalid location or hit Escape. If the 
+user dropped the data on an invalid location or hit Escape, the event.doit field 
+will be false and the event.detail field will be DND.DROP_NONE. If the user 
+dropped the data on a valid location, the event.doit field will be true and the 
+event.detail field will indicate the kind of operation performed by the drop 
+target. This will be one of values specified in table 1.</P>
+<TABLE cellSpacing=0 cellPadding=2 width="90%" border=1>
+  <TBODY>
+  <TR>
+    <TH vAlign=top width="30%" height=19>dragFinished event.detail value</TH>
+    <TH vAlign=top width="70%" height=19>Description</TH></TR>
+  <TR>
+    <TD vAlign=top width="30%" height=19>DND.DROP_COPY</TD>
+    <TD vAlign=top width="70%" height=19>The drop target made a copy of the 
+      data.</TD></TR>
+  <TR>
+    <TD vAlign=top width="30%" height=20>DND.DROP_LINK</TD>
+    <TD vAlign=top width="70%" height=20>The drop target made a link to the 
+      data – usually only used for files.</TD></TR>
+  <TR>
+    <TD vAlign=top width="30%" height=38>DND.DROP_MOVE</TD>
+    <TD vAlign=top width="70%" height=38>The drop target made a copy of the 
+      data and the drag source should now delete the original and update its 
+      display.</TD></TR>
+  <TR>
+    <TD vAlign=top width="30%" height=57>DND.DROP_TARGET_MOVE</TD>
+    <TD vAlign=top width="70%" height=57>The drop target moved the data from 
+      its original location to a new location. This is usually only used with 
+      files. In this case, the drag source does not need to delete the original; 
+      it just needs to update its display information.</TD></TR></TBODY></TABLE>
+<P align=left>Table 1: Valid dragFinished event.detail values 
+<H2><A name=_Drop_Target></A>Drop Target</H2>
+<P align=justify>A drop target receives data in a Drag and Drop operation. The 
+data received by the drop target may have come from the same widget, from a 
+different widget within the same application, or from a different application 
+altogether. For example, you can drag text from an email application and drop it 
+on your application, or you could drag an item in a tree and drop it below a 
+different node in the same tree.</P>
+<P align=justify>Let us walk through a simple example showing how to define a 
+drop target. The example in Listing 2 shows how to drop files or text on a table 
+widget.</P>
+<TABLE 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; WIDTH: 680px; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=0 border=1>
+  <TBODY>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt1D" 
+      name=_dt1C>1</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>import org.eclipse.swt.dnd.*;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>2</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top>&nbsp;</TD><CODE></CODE></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt3D" 
+      name=_dt3C>3</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE><FONT color=#0080c0>// Enable a table as a Drop 
+      Target</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt3D">4</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>final Table dropTable = new Table(shell, 
+      SWT.BORDER);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt3D">5</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>for (int i = 0; i &lt; 10; i++) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt3D">6</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; TableItem item = new 
+      TableItem(dropTable, SWT.NONE);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt3D">7</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; item.setText("item" + I);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt3D">8</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>9</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE></CODE>&nbsp;</TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt10D" 
+      name=_dt10C>10</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE><FONT color=#0080c0>// Allow data to be copied or moved 
+      to the drop target</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt10D">11</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>operations = DND.DROP_MOVE | DND.DROP_COPY | 
+      DND.DROP_DEFAULT;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt10D">12</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>DropTarget target = new DropTarget(dropTable, 
+      operations);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>13</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE></CODE>&nbsp;</TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt14D" 
+      name=_dt14C>14</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE><FONT color=#0080c0>// Receive data in Text or File 
+      format</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt14D">15</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>final TextTransfer textTransfer = 
+      TextTransfer.getInstance();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt14D">16</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>final FileTransfer fileTransfer = 
+      FileTransfer.getInstance();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt14D">17</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>types = new Transfer[] {fileTransfer, 
+      textTransfer};</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt14D">18</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>target.setTransfer(types);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>19</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE></CODE>&nbsp;</TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt20D" 
+      name=_dt20C>20</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>target.addDropListener(new DropTargetListener() 
+    {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt21D" 
+      name=_dt21C>21</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp; public void dragEnter(DropTargetEvent event) 
+      {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt22D" 
+      name=_dt22C>22</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp; if (event.detail == 
+      DND.DROP_DEFAULT) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt22D">23</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if 
+      ((event.operations &amp; DND.DROP_COPY) != 0) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt22D">24</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      event.detail = DND.DROP_COPY;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt22D">25</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else 
+      {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt22D">26</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      event.detail = DND.DROP_NONE;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt22D">27</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    &nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt22D">28</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D" 
+      name=_dt29C>29</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE><FONT color=#0080c0>&nbsp;&nbsp;&nbsp;&nbsp; // will 
+      accept text but prefer to have files dropped</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">30</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;for (int i = 0; i &lt; 
+      event.dataTypes.length; i++) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">31</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;if 
+      (fileTransfer.isSupportedType(event.dataTypes[i])){</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">32</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;event.currentDataType = event.dataTypes[i];</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">33</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;<FONT color=#0080c0>// files should only be 
+  copied</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">34</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      if (event.detail != DND.DROP_COPY) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">35</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      event.detail = DND.DROP_NONE;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">36</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      &nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">37</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      break;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">38</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29D">39</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>40</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt41D" 
+      name=_dt41C>41</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp; public void dragOver(DropTargetEvent event) 
+      {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt42D" 
+      name=_dt42C>42</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; event.feedback 
+      = DND.FEEDBACK_SELECT | DND.FEEDBACK_SCROLL;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt43D" 
+      name=_dt43C>43</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;if 
+      (textTransfer.isSupportedType(event.currentDataType)) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt43D">44</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color=#0080c0>// 
+      NOTE: on unsupported platforms this will return null</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt43D">45</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String t 
+      =(String)(textTransfer.nativeToJava(event.currentDataType));</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt43D">46</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (t != null) 
+  {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt43D">47</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(t);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt43D">48</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt43D">49</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>50</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D" 
+      name=_dt51C>51</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; public void 
+      dragOperationChanged(DropTargetEvent event) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">52</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if 
+      (event.detail == DND.DROP_DEFAULT) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">53</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      event.detail = (event.operations &amp; DND.DROP_COPY) != 0) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">54</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      event.detail = DND.DROP_COPY;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">55</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      } else {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">56</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      event.detail = DND.DROP_NONE;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">57</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">58</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">59</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+      color=#0080c0>// allow text to be moved but files should only be 
+      copied</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">60</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;if 
+      (fileTransfer.isSupportedType(event.currentDataType)){</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">61</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (event.detail != 
+      DND.DROP_COPY) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">62</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event.detail 
+      = DND.DROP_NONE;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">63</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">64</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51D">65</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt66D" 
+      name=_dt66C>66</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; public void dragLeave(DropTargetEvent 
+      event) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt66D">67</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt68D" 
+      name=_dt68C>68</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; public void dropAccept(DropTargetEvent 
+      event) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt68D">69</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D" 
+      name=_dt70C>70</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; public void drop(DropTargetEvent 
+      event) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">71</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;if 
+      (textTransfer.isSupportedType(event.currentDataType)) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">72</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String text = 
+      (String)event.data;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">73</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TableItem item = new 
+      TableItem(dropTable, SWT.NONE);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">74</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item.setText(text);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">75</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">76</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;if 
+      (fileTransfer.isSupportedType(event.currentDataType)){</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">77</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String[] files = 
+      (String[])event.data;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">78</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; 
+      files.length; i++) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">79</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TableItem 
+      item = new TableItem(dropTable, SWT.NONE);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">80</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item.setText(files[i]);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">81</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">82</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70D">83</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt solid" 
+    vAlign=top width=31>84</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 1060px; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt solid" 
+    vAlign=top><CODE>});</CODE></TD></TR></TBODY></TABLE>
+<P align=left>Listing 2: Drop text or files on a table widget 
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt1C" 
+name=_dt1D><B>Line 1:</B></A><BR>All the related drag and drop classes are 
+defined in the package org.eclipse.swt.dnd.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt3C" 
+name=_dt3D><B>Lines 3 to 8:</B></A><BR>Create a widget. The user drags the data 
+over a target, which in user interface terms is some visible widget. In our 
+example, the user can drop the data on a table. Note that you cannot have 
+multiple drop targets on one widget. If you try to create a second drop target, 
+an SWTError will be thrown.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt10C" 
+name=_dt10D><B>Lines 10 to 12:</B></A><BR>Define the types of operations that 
+this drop target is likely to perform on any data dropped on it. This is a 
+bitwise OR combination of any of DND.DROP_COPY, DND.DROP_MOVE, or DND.DROP_LINK. 
+By default, if no operations are defined, the DND.DROP_MOVE operation is 
+assumed.</P>
+<P align=justify>The operation may also include DND.DROP_DEFAULT (Note: the 
+DND.DROP_DEFAULT style must be combined with one or more of the other DND.DROP_* 
+styles). The DND.DROP_DEFAULT style allows the drop target to determine the 
+default operation – the default operation is what happens when no modifier keys 
+are pressed. If the DND.DROP_DEFAULT style is NOT specified, the default 
+operation will be DND.DROP_MOVE. See also dragEnter and dragOperationChanged 
+below.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt14C" 
+name=_dt14D><B>Lines 14 to 18:</B></A><BR>Define the types of data that this 
+drop target will accept. A data type is defined by a subclass 
+org.eclipse.swt.dnd.Transfer such as TextTransfer or FileTransfer. For a 
+detailed description of Transfer types see <A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_Transfer">Transfer</A>. 
+A drop target can be receptive to more than one type of data. The current 2.1 
+implementation will, however, only allow one format to be retrieved in the final 
+drop. That is to say, the drop target can indicate that it is interested in both 
+text and RTF text, but only one of these is provided in the drop event – either 
+text or RTF text. The advantage of registering for both formats is that some 
+applications may only provide text and some may only provide RTF text. If an 
+application provides both, you can choose which format you would prefer to 
+receive. See dragEnter below.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt20C" 
+name=_dt20D><B>Line 20:</B></A><BR>Once the drop target is defined, a mechanism 
+is required for it to interact with the Drag and Drop operation. Adding a 
+DropTargetListener does this.</P>
+<P align=justify>Note: If an exception is thrown from a drag and drop event 
+handler, on some platforms this will cause the entire windowing system to hang. 
+Since this is extremely undesirable, SWT DND wraps all event listener code in an 
+exception block. If your event handler throws an exception, no error will be 
+reported and the DND operation will default to DND.DROP_NONE. This “silent” 
+exception handling is a common reason why developers think that DND is not 
+behaving correctly. It is recommended that you wrap your event handler code and 
+catch any possible exceptions yourself and handle them appropriately. In future 
+releases, we will try to come up with a better way to indicate that a failure 
+has occurred.</P>
+<P align=justify>The following event sequences may occur:</P>
+<UL>
+  <LI>dragEnter, dragLeave 
+  <LI>dragEnter, one or more dragOver *, dragLeave 
+  <LI>dragEnter, one or more dragOver *, dragLeave, dropAccept 
+  <LI>dragEnter, one or more dragOver *, dragLeave, dropAccept, drop </LI></UL>
+<P>*may be a mixture of dragOver and dragOperationChanged</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt21C" 
+name=_dt21D><B>Line 21 to 40:</B></A><BR>The dragEnter event occurs when a drag 
+and drop operation is in progress and the cursor enters the bounds of the drop 
+target widget. If the cursor leaves the bounds of the widget and re-enters, 
+another dragEnter is issued.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt22C" 
+name=_dt22D><B>Lines 22 to 28:</B></A><BR>A drag over effect is a visual cue to 
+the user about what kind of operation will be performed when the drop occurs. 
+The exact appearance of the visual cue is platform dependant – some examples are 
+shown in Figure 2. The drop target can update this drag over effect by setting 
+the event.detail field to one of DND.DROP_COPY, DND.DROP_MOVE, DND.DROP_LINK or 
+DND.DROP_NONE. The value set in the event.detail field must be one of the values 
+defined in the event.operations field, which is a bitwise OR of the operations 
+supported by the DragSource. If a value is chosen that is not allowed by the 
+DragSource, the operation would be set to DND.DROP_NONE. The event.detail field 
+can also be updated in the dragOver, dragOperationChanged, dropAccept and drop 
+events.</P>
+<P align=justify>In dragEnter, the application can define the default operation. 
+As discussed above, if the drop target is created with the style 
+DND.DROP_DEFAULT, it will be notified when there are no user modifier keys 
+pressed. In this case, the event.detail field in the dragEnter event is set to 
+DND.DROP_DEFAULT. The application can specify the default operation by changing 
+the event.detail field to the desired operation. If the application does not 
+change the event.detail field from DND.DROP_DEFAULT to some operation, it will 
+by default be changed to DND.DROP_MOVE. The DND.DROP_DEFAULT value is also set 
+in the dragOperationChanged event.</P>
+<P align=justify>In our example, we make Copy the default operation if it is 
+allowed by the drag source.</P>
+<TABLE 
+style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse" 
+cellSpacing=0 cellPadding=2 width="30%" border=1>
+  <TBODY>
+  <TR>
+    <TH vAlign=top width="50%">
+      <P>Operation</P></TH>
+    <TH vAlign=top width="50%">Win32 cursor</TH></TR>
+  <TR>
+    <TD vAlign=top align=middle width="50%">Move</TD>
+    <TD vAlign=top align=middle width="50%"><IMG height=31 
+      src="DND-in-SWT_fichiers/image004.jpg" width=21 border=0></TD></TR>
+  <TR>
+    <TD vAlign=top align=middle width="50%">Copy</TD>
+    <TD vAlign=top align=middle width="50%"><IMG height=38 
+      src="DND-in-SWT_fichiers/image006.jpg" width=26 border=0></TD></TR>
+  <TR>
+    <TD vAlign=top align=middle width="50%">Link</TD>
+    <TD vAlign=top align=middle width="50%"><IMG height=38 
+      src="DND-in-SWT_fichiers/image008.jpg" width=27 border=0></TD></TR>
+  <TR>
+    <TD vAlign=top align=middle width="50%">None</TD>
+    <TD vAlign=top align=middle width="50%"><IMG height=22 
+      src="DND-in-SWT_fichiers/image010.jpg" width=22 
+border=0></TD></TR></TBODY></TABLE>
+<P align=left>Figure 2: Cursors for the allowed transfer operations 
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt29C" 
+name=_dt29D><B>Lines 29 to 39:</B></A><BR>The drop target can choose what type 
+of data it would prefer to receive. The dragEnter event has two fields for this, 
+event.currentType, which is the type of data preferred by the application 
+(represented by a TransferData object), and event.dataTypes, which is the list 
+of types provided by the drag source (represented by an array of TransferData 
+objects). You can set the event.currentType to any value in the event.dataTypes. 
+These fields can also be modified in the dragOver, dragOperationChanged, and 
+dropAccept events.</P>
+<P align=justify>In the example, we are allowing Text or Files to be dropped on 
+the table, but if both are available, we prefer to get the Files. If a file is 
+being transferred, we also have restricted the operation to allow only copy (we 
+don’t want you to delete files from your operating system when you play with 
+this example:)).</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt41C" 
+name=_dt41D><B>Lines 41 to 50:</B></A><BR>The dragOver event occurs repeatedly 
+as the user drags the cursor over the drop target widget. If the cursor is 
+motionless, the dragOver event will continue to be received at regular 
+intervals. In addition to what is shown in the example, you can modify the 
+event.detail or event.currentType fields. This is most often done with a table 
+or tree when the operation changes based on what item you are over. For example, 
+you may have a tree representing the file system and you may allow files to be 
+dropped on folders but not on other files. The event.item field will indicate 
+what item you are over in a table or tree.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt42C" 
+name=_dt42D><B>Line 42:</B></A><BR>A drag under effect is some visual cue or 
+action in the drop target widget that gives the user more detailed feedback 
+about where the drop may occur. The application can control the drag under 
+effect by setting the event.feedback field as shown in Table 2.</P>
+<TABLE cellSpacing=0 cellPadding=2 width="90%" border=1>
+  <TBODY>
+  <TR>
+    <TH vAlign=top align=middle>dragOver event.feedback values</TH>
+    <TH vAlign=top align=middle>Description</TH></TR>
+  <TR>
+    <TD vAlign=top align=left height=24>DND.FEEDBACK_SELECT</TD>
+    <TD vAlign=top align=left>The item under the cursor is selected; applies 
+      to table and trees.</TD></TR>
+  <TR>
+    <TD vAlign=top align=left>DND.FEEDBACK_SCROLL</TD>
+    <TD vAlign=top align=left>The widget is scrolled up or down to allow the 
+      user to drop on items that are not currently visible; applies to tables 
+      and trees.</TD></TR>
+  <TR>
+    <TD vAlign=top align=left>DND.FEEDBACK_EXPAND</TD>
+    <TD vAlign=top align=left>The item currently under the cursor is expanded 
+      to allow the user to select a drop target from a sub item; applies to 
+      trees.</TD></TR>
+  <TR>
+    <TD vAlign=top align=left>DND.FEEDBACK_INSERT_BEFORE</TD>
+    <TD vAlign=top align=left>An insertion mark is shown before the item under 
+      the cursor; applies to tables and trees.</TD></TR>
+  <TR>
+    <TD vAlign=top align=left>DND.FEEDBACK_INSERT_AFTER</TD>
+    <TD vAlign=top align=left>An insertion mark is shown after the item under 
+      the cursor; applies to tables and trees.</TD></TR>
+  <TR>
+    <TD vAlign=top align=left>DND.FEEDBACK_NONE</TD>
+    <TD vAlign=top align=left>No effect is shown.</TD></TR></TBODY></TABLE>
+<P align=left>Table 2: drag under effect types 
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt43C" 
+name=_dt43D><B>Lines 43 to 49:</B></A><BR>When dragging data over the target, 
+the information provided in the event tells you what type of data is being 
+dragged but does not give the content of the data. For example, the 
+event.currentType may indicate that a file is being dragged but the event does 
+not indicate the name of the file or the extension of the file. If your 
+application will perform a different operation for a Java file versus a text 
+file, then you might want to get the data in the dragOver event. Unfortunately 
+this is not supported on all platforms. As of 2.1, it is only possible to access 
+the data in the dragOver event on Windows. The data can be accessed by passing 
+the event.currentType TransferData object to the nativeToJava method of the 
+corresponding Transfer object. On all platforms except Windows, this will return 
+null. In the future, this capability may be extended to other platforms where 
+supported.</P>
+<P align=justify>(Note: in 1.0 through 2.1, you can only get the data for 
+event.currentType but in 3.0, you can get the data for any type in 
+event.dataTypes).</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt51C" 
+name=_dt51D><B>Lines 51 to 65:</B></A><BR>The dragOperationChanged event occurs 
+when the user presses or releases a modifier key (such as Ctrl, Shift, Command, 
+Option). The modifier keys are used to switch the operation to be performed. For 
+example, on Windows when just the Ctrl key is down, a copy is requested, when 
+the Ctrl and Shift keys are both down, a link is requested and when just the 
+Shift key is down, a move is requested. When no modifier keys are pressed, the 
+default operation is requested. See the dragEnter event for more details.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt66C" 
+name=_dt66D><B>Lines 66 to 67:</B></A><BR>The dragLeave event occurs when the 
+cursor moves outside of the drop target widget. If you allocated any resources 
+in dragEnter, you should free them in dragLeave. The dragLeave event also occurs 
+if the user cancels the Drag and Drop operation by hitting Escape, and just 
+before a drop is performed.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt68C" 
+name=_dt68D><B>Lines 68 to 69:</B></A><BR>The dropAccept event provides the 
+application with one last chance to define the type of data that will be 
+returned in the drop event. This is done by setting the event.currentDataType to 
+one of the values defined in event.dataTypes.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_dt70C" 
+name=_dt70D><B>Lines 70 to 83:</B></A><BR>The drop event occurs when the user 
+releases the mouse over the drop target if a valid operation and currentDataType 
+were requested in the previous events. The event.data field contains the data 
+requested. The object type contained in the event.data field depends on what 
+Transfer type was requested. The data is of the type defined in the 
+event.currentDataType field.</P>
+<P align=justify>When the drop operation is completed, update the event.detail 
+field with the operation performed.</P>
+<H2><A name=_Using_the_Clipboard></A>Clipboard</H2>
+<P align=justify>Drag and drop allows the simultaneous transfer of data between 
+a source and a target but sometimes the user may wish to copy data to be 
+transferred at a later point in time. The Clipboard acts like a temporary holder 
+for the data. In addition, the same data may be copied to multiple targets using 
+the clipboard.</P>
+<P align=justify>In the following example, we will copy data in two different 
+formats onto the clipboard and retrieve one of the formats from the 
+clipboard.</P>
+<TABLE style="WIDTH: 650px" cellSpacing=0 cellPadding=0 width=650 border=1>
+  <TBODY>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb1D" 
+      name=_cb1C>1</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>import org.eclipse.swt.dnd.*;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>2</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>. . .</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>3</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>public static void main(String[] args) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>4</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; Display display = new 
+    Display();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb5D" 
+      name=_cb5C>5</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; final Clipboard cb = new 
+      Clipboard(display);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>6</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; Shell shell = new 
+      Shell(display);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>7</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; final Text text = new Text(shell, 
+      SWT.BORDER | SWT.MULTI);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>8</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; text.setBounds(10, 10, 300, 
+      300);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>9</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; Button button = new Button(shell, 
+      SWT.PUSH);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>10</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;button.setText("Copy");</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>11</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;button.setBounds(320, 10, 100, 
+  40);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>12</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;button.addListener(SWT.Selection, new 
+      Listener() {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>13</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;public void 
+      handleEvent(Event e) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb14D" 
+      name=_cb14C>14</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String textData = 
+      text.getSelectionText();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb14D">15</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if 
+      (textData == null) return;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb14D">16</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT color=#0080c0>// to show the rtf 
+      formatting, make the text bold and italic</FONT></CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb14D">17</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String rtfData = "{\\rtf1 \\b\\i " + 
+      textData + "}";</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb14D">18</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextTransfer textTransfer = 
+      TextTransfer.getInstance();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb14D">19</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RTFTransfer rtfTransfer = 
+      RTFTransfer.getInstance();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb14D">20</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transfer[] types = new Transfer[] 
+      {textTransfer, rtfTransfer};</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb14D">21</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cb.setContents(new Object[] {textData, 
+      rtfData}, types);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>22</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>23</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;});</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>24</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;button = new Button(shell, 
+    SWT.PUSH);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>25</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;button.setText("Paste");</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>26</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;button.setBounds(320, 60, 100, 
+  40);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>27</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;button.addListener(SWT.Selection, new 
+      Listener() {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>28</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;public void 
+      handleEvent(Event e) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb29D" 
+      name=_cb29C>29</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TextTransfer transfer = 
+      TextTransfer.getInstance();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb29D">30</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String data = 
+      (String)cb.getContents(transfer);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb29D">31</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (data == 
+      null)return;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb29D">32</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text.insert(data);</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>33</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>34</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;});</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>35</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;shell.open();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>36</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;while (!shell.isDisposed()) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>37</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;if 
+      (!display.readAndDispatch())</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>38</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;&nbsp; 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display.sleep();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>39</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE></CODE>&nbsp;</TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>40</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31><A 
+      href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb41D" 
+      name=_cb41C>41</A></TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;cb.dispose();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top width=31>42</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top><CODE>&nbsp;&nbsp;display.dispose();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt solid" 
+    vAlign=top width=31>43</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 850px; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt solid" 
+    vAlign=top><CODE>}</CODE></TD></TR></TBODY></TABLE>
+<P align=left>Listing 3: Using the clipboard to copy text 
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb1C" 
+name=_cb1D><B>Line 1:</B></A><BR>All the related drag and drop classes are 
+defined in the package org.eclipse.swt.dnd.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb5C" 
+name=_cb5D><B>Line 5:</B></A><BR>Create a clipboard object. A Clipboard object 
+gives you access to the operating system clipboard. It will allow you to 
+exchange data within your application or with other applications. Note: A 
+Clipboard object uses system resources and must be released when you are 
+finished (see line 41). You can choose to create a new clipboard object each 
+time you want to access the data on the clipboard or you can keep an instance 
+around for your application.</P>
+<P align=justify><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb14C" 
+name=_cb14D><B>Lines 14 to 21:</B></A><BR>Copy the text selected in the Text 
+widget onto the clipboard. If no text is selected, do nothing.</P>
+<P>When placing data on the clipboard, it is possible to make the data available 
+in more than one format. In our example, we are using both Text and RTF Text 
+formats. This makes it possible for our application to interact with a larger 
+variety of applications. That is, if we only place RTF text on the clipboard, 
+then we cannot interact with an application such as Notepad that does not 
+understand RTF text. To better integrate your application into the environment, 
+make your data available in as many useful forms as possible.</P>
+<P>Each successful call to Clipboard.setContents will clear any previous content 
+from the clipboard. This applies not only to the data formats you are placing on 
+the clipboard but to all data formats. For example, if the clipboard contains 
+File data placed there by some other application and you call 
+Clipboard.setContents with Text data, the File data will no longer be available. 
+If you want to have multiple kinds of data available on the clipboard at the 
+same time, you must pass them to the clipboard in the same Clipboard.setContents 
+call. The Clipboard.setContents API takes an array of data objects and an array 
+of data types. The values for the data objects must be in the same order as the 
+data types and must be valid for the corresponding data type (that is, a 
+TextTransfer expects a String, a File Transfer expects a String[] - the javadoc 
+for each type should specify the expected format of the data).</P>
+<P>The data that you place on the clipboard will be available even after your 
+application is closed. (Note: GTK is an exception to this. Currently, there is 
+no mechanism in GTK to persist the data beyond the life time of the 
+application.)</P>
+<P>On some platforms, there are actually multiple clipboards available. On 
+Unix/Linux there is a PRIMARY clipboard which is supposed to contain the data 
+that was most recently selected (implicitly set by the act of selection) and 
+there is a CLIPBOARD clipboard which is supposed to contain data that was 
+explicitly set through a keyboard accelerator (such as CTRL+Insert) or through a 
+menu item (there are also other clipboards but these are used infrequently). In 
+Motif, only the CLIPBOARD Clipboard is supported by SWT. In GTK, SWT has 
+rudimentary support for both clipboards; when you call Clipboard.setContents, 
+the data will be placed on both the PRIMARY and the CLIPBOARD clipboards. In the 
+future, this support should be expanded to Motif and to support the implicit 
+style . On the Mac, SWT supports the default Scrap.</P>
+<P><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb29C" 
+name=_cb29D><B>Lines 29 to 32:</B></A><BR>If there is Text available on the 
+clipboard, insert it into the text widget.</P>
+<P>To request data of a certain type, call Clipboard.getContents with a Transfer 
+subclass of the appropriate type. In our example, we are pasting Text and have 
+used the TextTransfer class. If there is no data of this type available, null 
+will be returned. The type of object returned by Clipboard.getContents will 
+depend on the Transfer class used. The javadoc for the Transfer subclass should 
+specify the Java object type.</P>
+<P>On GTK, the SWT implementation looks for a matching data value first in the 
+CLIPBOARD clipboard and then in the PRIMARY clipboard. On Motif, the SWT 
+implementation only looks for a match in the CLIPBOARD clipboard.</P>
+<P><A 
+href="http://www.eclipse.org/articles/Article-SWT-DND/DND-in-SWT.html#_cb41C" 
+name=_cb41D><B>Line 41:</B></A><BR>Dispose of the clipboard. As mentioned above, 
+failure to dispose the clipboard will result system resources being leaked.</P>
+<H3>NEW for 3.0 – How to query data types on the Clipboard</H3>
+<P>In 2.1 and earlier releases of SWT, the only mechanism available to determine 
+if a specific data type is available on the clipboard is to use 
+Clipboard.getContents and actually transfer the data. In addition to being slow, 
+this mechanism can cause problems when a "Cut" operation is being performed. In 
+a "Cut" operation, one application puts data on the clipboard and when that data 
+is transferred from the clipboard, the original copy of the data is deleted. In 
+3.0, there will be new API to query what types of data are on the clipboard 
+without actually transferring the data to your application. An example of how to 
+use it is shown in Listing 4.</P>
+<TABLE cellSpacing=0 cellPadding=0 width=650 border=1>
+  <TBODY>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt" 
+    vAlign=top width=31 height=17>1</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 658px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top height=17><CODE>TransferData[] available = 
+      cb.getAvailableTypes();</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt" 
+    vAlign=top width=31 height=17>2</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 658px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top height=17><CODE>boolean enabled = false;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt" 
+    vAlign=top width=31 height=17>3</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 658px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top height=17><CODE>for (int i = 0; i &lt; available.length; i++) 
+      {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt" 
+    vAlign=top width=31 height=17>4</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 658px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top height=17><CODE>&nbsp;&nbsp;&nbsp; if 
+      (TextTransfer.getInstance().isSupportedType(available[i])) {</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt" 
+    vAlign=top width=31 height=17>5</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 658px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top height=17><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      enabled = true;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt" 
+    vAlign=top width=31 height=17>6</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 658px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top height=17><CODE>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      break;</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt" 
+    vAlign=top width=31 height=17>7</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 658px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top height=17><CODE>&nbsp;&nbsp;&nbsp; }</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt" 
+    vAlign=top width=31 height=17>8</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 658px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top height=17><CODE>}</CODE></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: medium none; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 23.4pt; PADDING-TOP: 0in; BORDER-BOTTOM: windowtext 0.5pt solid" 
+    vAlign=top width=31 height=18>9</TD>
+    <TD 
+    style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: medium none; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0in; BORDER-LEFT: medium none; WIDTH: 658px; PADDING-TOP: 0in; BORDER-BOTTOM: medium none" 
+    vAlign=top 
+  height=18><CODE>pasteMenuItem.setEnabled(enabled);</CODE></TD></TR></TBODY></TABLE>
+<P align=left>Listing 4: Query the data types available on the clipboard. 
+<P>Clipboard.getAvailableTypes returns an array of TransferData objects. A 
+TransferData object contains platform specific information that represents a 
+data type. While the fields of the TransferData object are public, do not 
+attempt to interpret them directly. Instead use the "isSupportedType" method of 
+any subclass of Transfer as shown in line 4.</P>
+<H2><A name=_Transfer></A>Transfer</H2>
+<P>Transfer is an abstract class that provides a mechanism for converting 
+between a Java representation of data and a platform specific representation of 
+data and vice versa. The Java representation of the data is the currency the 
+application uses. For example, text is represented by a String object. The 
+platform specific representation is the currency of the operating system and is 
+represented in SWT by the TransferData object. Table 3 shows the subclasses of 
+Transfer provided in org.eclipse.swt.dnd.</P>
+<TABLE cellSpacing=0 cellPadding=2 width="90%" border=1>
+  <TBODY>
+  <TR>
+    <TH align=middle width="15%">Transfer</TH>
+    <TH align=middle width="20%">Java format</TH>
+    <TH align=middle width="60%">Example</TH></TR>
+  <TR>
+    <TD width="15%"><CODE>TextTransfer</CODE></TD>
+    <TD width="20%"><CODE>String</CODE></TD>
+    <TD width="60%"><CODE>"hello world"</CODE></TD></TR>
+  <TR>
+    <TD width="15%"><CODE>RTFTransfer</CODE></TD>
+    <TD width="20%"><CODE>String</CODE></TD>
+    <TD width="60%"><CODE>"{\\rtf1\\b\\i hello world}"</CODE></TD></TR>
+  <TR>
+    <TD width="15%"><CODE>FileTransfer</CODE></TD>
+    <TD width="20%"><CODE>String[]</CODE></TD>
+    <TD width="60%"><CODE>new String[] {file1.getAbsolutePath(), 
+      file2.getAbsolutePath()}</CODE></TD></TR></TBODY></TABLE>
+<P align=left>Table 3: Transfer types provided by SWT 
+<P>The TransferData class contains public fields that are platform-specific. 
+Because the fields in TransferData vary from platform to platform, applications 
+should not access them. The purpose of making the fields public is to allow 
+developers to extend the Transfer class and provide additional platform specific 
+types for data transfer (e.g., bitmap images or wave files).</P>
+<H2>Summary</H2>
+<P>This article describes the SWT mechanism for transferring data either via 
+Drag and Drop or using the Clipboard. SWT uses the underlying operating system 
+mechanism which allows data transfer across applications for maximum system 
+integration. SWT provides standard data transfer types as well as an 
+infrastructure for defining your own transfer types or supporting additional 
+platform-defined data types.</P>
+<P><SMALL>Java and all Java-based trademarks and logos are trademarks or 
+registered trademarks of Sun Microsystems, Inc. in the United States, other 
+countries, or both.</SMALL></P></BODY></HTML>

@@ -1,0 +1,17 @@
+Debut de la trace
+Entre methode TEST1.make
+0:i:=9
+1:c:='P'
+2:b:=true
+3:r:=9.563
+4:d:=76500.0
+5:s:=un test simple
+6:Call extern  lang("JVM:Test1:static") printi(i)
+7:Call extern  lang("JVM:Test1:static") printc(c)
+8:Call extern  lang("JVM:Test1:static") printb(b)
+9:Call extern  lang("JVM:Test1:static") printr(r)
+10:Call extern  lang("JVM:Test1:static") printd(d)
+11:Call extern  lang("JVM:Test1:static") prints(s)
+12:Return
+Sort methode TEST1.make
+Fin de la trace

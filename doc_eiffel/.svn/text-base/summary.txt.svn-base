@@ -1,0 +1,307 @@
+ Eiffel Liberty [->] Eiffel [->] Syntax [->] Summary by Graham Perkins
+
+                          Eiffel: A Syntax Summary
+
+                               Graham Perkins
+                     http://www.mk.dmu.ac.uk/~gperkins/
+                             gperkins@dmu.ac.uk
+                          De Montfort University
+
+--------------------------------------------------------------------------
+
+Conditional Statements
+
+if cond                            if a<10
+   then stmt                          then b := 35
+   end                                end
+
+------------------------------------------------------------------------
+if cond                            if n<=0
+   then stmt                          then res := 0
+   else stmt                          else res := sum / n
+   end                                end
+
+------------------------------------------------------------------------
+if cond                            if m.empty
+   then stmt                          then p := m.cons(x)
+   elsif cond                         elsif x
+     then stmt
+     elsif ...
+       else stmt
+   end
+
+------------------------------------------------------------------------
+inspect [int-expr | char-expr]     inspect percent // 10
+  when value,value                   when 1,2,3 then grade := 'F'
+       then stmt                     when 4..6  then grade := 'P'
+  when value..value                  else grade := 'D'
+       then stmt                     end
+  else stmt
+  end
+
+------------------------------------------------------------------------
+
+Loop Statements
+
+from stmt                          from i:=1
+  until cond                         until i>n
+  loop stmt                          loop sum := sum + i
+  end                                     i   := i + 1
+                                     end
+
+------------------------------------------------------------------------
+from stmt                          from log := 0
+  invariant cond                        exp := 1
+  until cond                         invariant power2(log)=exp
+  loop stmt                          until exp >= n
+  end                                loop
+                                       log := log + 1
+                                       exp := exp * 2
+                                     end
+
+------------------------------------------------------------------------
+
+Routines (procedures and functions)
+
+name [parameters] is               deposit( sum:INTEGER ) is
+  do stmt                            do
+  end                                  balance := balance + sum
+                                     end
+
+------------------------------------------------------------------------
+name [parameters] : type is        available(sum:INTEGER):BOOLEAN is
+  do stmt                            do
+  end                                  Result := (balance-sum)>=min
+                                     end
+
+------------------------------------------------------------------------
+name [parameters] is               withdraw( sum:INTEGER ) is
+  require cond                       require available(sum)
+  do stmt                            do balance := balance - sum
+  ensure cond                        ensure balance = old balance - sum
+  end                                end
+
+------------------------------------------------------------------------
+
+Attributes (variables and constants)
+
+name ,... : type                   count,n : INTEGER
+
+------------------------------------------------------------------------
+name ,... : like name              costs : like prices
+
+------------------------------------------------------------------------
+name ,... : type is value          pi : REAL is 3.1415
+
+------------------------------------------------------------------------
+name ,... : type is unique         yes,no,any : INTEGER is unique
+
+------------------------------------------------------------------------
+name ,... : generic-type[type]     prices : LIST[ INTEGER ]
+
+------------------------------------------------------------------------
+name ,... : expanded type          names : expanded ARRAY[ STRING ]
+
+------------------------------------------------------------------------
+
+Simple Class
+
+class name                         class HELLO
+creation routine-name,...          creation make
+
+feature                            feature
+  [attribute | routine]...           m1 : STRING is "hello%N"
+
+invariant cond                       make is
+end                                    do print(m1)
+                                       end
+
+                                   invariant m1.count = 5
+                                   end
+
+------------------------------------------------------------------------
+
+Class with Nominated Clients
+
+class name                         class MARBLES
+
+creation {class-name,...}          creation {PLAYER} make
+  routine-name,...
+                                   feature {NONE}
+feature (class-name,...}             make is
+  [attribute | routine]...             do count := 100
+                                       end
+feature (class-name,...}
+  [attribute | routine]...         feature {ANY}
+                                     count : INTEGER
+invariant cond
+end                                feature {PLAYER}
+                                     lose( n:INTEGER ) is
+                                       require n<=count
+                                       do count := count - n
+                                       end
+
+                                     win( n:INTEGER ) is
+                                       do count := count + n
+                                       end
+
+                                   invariant count >= 0
+                                   end
+
+------------------------------------------------------------------------
+
+Object Creation Statements
+
+!!var                              !!bookset
+
+------------------------------------------------------------------------
+!!var.creation[ parameters ]       !!myvector.make(1,100)
+
+------------------------------------------------------------------------
+!class!var                         !BST_SET!bookset
+
+------------------------------------------------------------------------
+
+Abstract Classes
+
+deferred class name                deferred class SHAPE
+
+feature {class-name,...}           feature {ANY}
+  [attribute                         visible : BOOLEAN
+   | routine                         pos     : COORD
+   | deferred-routine]
+                                   feature {PICTURE,DRAWER}
+invariant cond                       shift(dist:COORD) is
+end                                    deferred
+                                       end
+
+                                     scale(x:REAL)is
+                                       require x>0
+                                       deferred
+                                       end
+                                   end
+
+------------------------------------------------------------------------
+
+Derived Classes
+
+class name                         class LINE
+inherit class-name                 inherit SHAPE
+
+feature {class-name}               creation {ANY} make
+  [attribute | routine],...
+end                                feature
+                                     other : COORD
+
+                                     shift(dist:COORD) is
+                                       do pos.add(dist)
+                                          other.add(dist)
+                                       end;
+
+                                     scale(factor:REAL) is
+                                       local p : COORD
+                                       do pos.mul(factor)
+                                          other.mul(factor)
+                                       end
+                                   end
+
+------------------------------------------------------------------------
+class name                         class VECTOR[T]
+inherit                            inherit
+   class                             ARRAY[T] rename enter as store,
+      rename name as name,...                 end
+      redefine name,...              ARRAY[T] redefine enter
+      end                                     end
+   class
+      rename name as name,...      creation make
+      redefine name,...
+      end                          feature
+                                   enter( x:T; pos:INTEGER ) is
+feature                              do grow( 1 )
+  [attribute | routine]                 from i := count until i=pos
+end                                        loop store( item(i-1), i )
+                                                i := i - 1
+                                           end
+                                        store( x, pos )
+                                     end
+                                   end
+
+------------------------------------------------------------------------
+
+Programming by Contract
+
+name [parameters] is               add( name:STRING; room:INTEGER ) is
+  require cond                       require name /= Void
+  do stmt                                    room > 0
+  ensure cond                        do staff.put( room, name )
+  rescue stmt                        ensure location(name) = room
+  end                                rescue -- maybe table full
+                                       purge_staff
+                                       if staff.capacity > staff.count
+                                          then retry
+                                     end
+
+------------------------------------------------------------------------
+require failure leads to fail in client routine
+ensure failure leads to fail in supplier routine
+fail is caught by closest enclosing rescue
+rescue may fail, or retry its containing routine
+------------------------------------------------------------------------
+
+Documentation
+
+indexing                           indexing
+  key: value value ...;              description: "Store items by key";
+  key: value value ...;              keys: table, indexed, hash;
+  ...                                date: 23, July, 1994
+class name
+ ...                               class HASH_TABLE[ H, H->HASHABLE ]...
+end                                end
+
+------------------------------------------------------------------------
+Indexing clauses define a useful format for header comments, and can be
+used in the creation of source code processing tools.
+------------------------------------------------------------------------
+name [parameters] is               store( pos:INTEGER; val:T ) is
+  obsolete "message"                 obsolete "use put(val,pos)"
+  require cond                       require pos <= count
+  do stmt                            do area.put(val,pos-lower)
+  ensure cond                        end
+  end
+
+------------------------------------------------------------------------
+Obsolete clause is triggered at compile time if a client uses the
+obsolete routine. Thus routines can be deleted in two stages.
+------------------------------------------------------------------------
+
+ Special names
+
+ Current   Refers to current object.       class LIST[T]
+           Useful for anchoring types to   ... tail : like Current
+           each other.
+                                           class QUEUE[T] inherit LIST[T]
+                                           -- now tail is a QUEUE[T]
+
+  ------------------------------------------------------------------------
+ Result    Specifies the result of a       interest : INTEGER is
+           function. But execution           do
+           continues to the end of the         Result := bal * 115 div 100
+           function body.                      notify := true
+                                             end
+
+  ------------------------------------------------------------------------
+ GENERAL,  GENERAL is the overall root class, and ANY is its immediate
+ ANY,      descendant. All classes inherit from ANY by default. NONE is
+ NONE      the notional bottom class, inheriting from all classes in the
+           system
+  ------------------------------------------------------------------------
+ Void      Used as null reference value.   if mylist = Void
+           Actually is the sole value of      then !!mylist.make
+           class NONE.                        else n := mylist.length
+                                              end
+
+  ------------------------------------------------------------------------
+
+Page is http://www.elj.com/eiffel/syntax/summary/
+Last Modified: 25 Jun 1998 (Created: 25 Jun 1998)
+  ------------------------------------------------------------------------

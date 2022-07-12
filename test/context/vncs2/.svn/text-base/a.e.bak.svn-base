@@ -1,0 +1,10 @@
+class A
+
+feature
+
+	hello(a:COLLECTION) is
+	do
+
+	end;
+
+end

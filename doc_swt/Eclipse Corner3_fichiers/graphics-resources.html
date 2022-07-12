@@ -1,0 +1,1110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0074)http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html -->
+<HTML <head><HEAD><TITLE>Taking a look at SWT Images</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="Joe Winchester" name=Author>
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR>
+<META content=FrontPage.Editor.Document name=ProgId><LINK 
+href="graphics-resources_fichiers/default_style.css" rel=stylesheet></HEAD>
+<BODY>
+<DIV align=right><FONT face="Times New Roman, Times, serif"><FONT 
+size=-1>Copyright © 2003 International Business Machines Corp.</FONT></FONT> 
+</DIV>
+<DIV align=right>
+<TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=left bgColor=#0080c0 colSpan=2><B><FONT 
+      face=Arial,Helvetica><FONT color=#ffffff>Eclipse Corner 
+      Article</FONT></FONT></B></TD></TR></TBODY></TABLE></DIV>
+<H1><IMG height=86 src="graphics-resources_fichiers/Idea.jpg" width=120 
+align=center></H1>
+<CENTER>
+<H1>Taking a look at SWT Images</H1></CENTER>
+<BLOCKQUOTE><B>Summary</B><BR>SWT's Image class can be used to display images 
+  in a GUI. The most common source of images is to load from a standard file 
+  format such as GIF, JPEG, PNG, or BMP. Some controls, including Buttons and 
+  TreeItems, are able to display an Image directly through the setImage(Image) 
+  method, but any control's paint event allows images to be drawn through the 
+  callback's graphic context. SWT's ImageData class represents the raw data 
+  making up an SWT Image and determines the color for each pixel coordinate. 
+  This article shows the correct uses of ImageData and Image, shows how to load 
+  images from files, and how to achieve graphic effects such as transparency, 
+  alpha blending, animation, scaling, and custom cursors. 
+  <P><B>By Joe Winchester, IBM</B><BR><FONT size=-1>September 10th, 
+  2003</FONT></P></BLOCKQUOTE>
+<HR width="100%">
+
+<P>This first section of this article gives an introduction to colors and shows 
+how an image records the color value of each pixel. 
+<UL>
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Introduction">Introduction</A> 
+
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Image lifecycle">Image 
+  lifecycle</A> 
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#ImageData">ImageData</A> 
+
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Colors">Color</A> 
+
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#PaletteData">PaletteData</A> 
+
+  <UL>
+    <LI><A 
+    href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Indexed palette">Indexed 
+    palette</A> 
+    <LI><A 
+    href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Direct palette">Direct 
+    palette</A> </LI></UL></LI></UL>The next section describes image transparency, 
+alpha blending, animation, and how to scale images. 
+<UL>
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Transparency">Transparency</A> 
+
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Manipulating Image Data">Manipulating 
+  ImageData</A> 
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Saving Images">Saving 
+  Images</A> 
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Blending">Blending</A> 
+
+  <UL>
+    <LI><A 
+    href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Single alpha value">Single 
+    alpha value</A> 
+    <LI><A 
+    href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Different alpha value per pixel">Different 
+    alpha value per pixel</A> </LI></UL>
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Image Effects">Image 
+  effects</A> 
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Animation">GIF 
+  animation</A> 
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Scaling">Scaling</A> 
+  </LI></UL>Finally, the article shows how to create cursors from images, by using 
+a source image together with a mask. 
+<UL>
+  <LI><A 
+  href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Cursor">Cursors</A> 
+
+  <UL>
+    <LI><A 
+    href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Platform cursors">Platform 
+    cursors</A> 
+    <LI><A 
+    href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Custom cursors">Custom 
+    cursors</A> </LI></UL></LI></UL>
+<H1><A name=Introduction></A>Introduction</H1>The simplest way to create an SWT 
+Image is to load it from a recognized graphic file format. This includes GIF, 
+BMP (Windows format bitmap), JPG, and PNG. The TIFF format is also supported in 
+more recent Eclipse releases. Images can be loaded from a known location in the 
+file system using the constructor <TT>Image(Display display, String 
+fileLocation)</TT>: 
+<P><TT>Image image = new Image(display,<BR>&nbsp;&nbsp; 
+"C:/eclipse/eclipse/plugins/org.eclipse.platform_2.0.2/eclipse_lg.gif");</TT> 
+<P>Instead of hard-coding the location of the image, it's more common to load 
+the Image from a folder location relative to a given class. This is done by 
+creating an InputStream pointing to the file with the method 
+<TT>Class.getResourceAsStream(String name)</TT>, and using the result as the 
+argument to the constructor <TT>Image(Display display, InputStream 
+inputStream)</TT>. 
+<P>The Eclipse package explorer below shows the class 
+<TT>com.foo.ShellWithButtonShowingEclipseLogo </TT>and the 
+<TT>eclipse_lg.gif</TT> in the same folder. To following code would load the 
+graphic from its location relative to the class. 
+<P><TT>Image image = new Image(display, <BR>&nbsp;&nbsp;&nbsp; 
+ShellWithButtonShowingEclipseLogo.class.getResourceAsStream(<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"eclipse_lg.gif"));</TT> 
+
+<P><IMG height=184 
+src="graphics-resources_fichiers/IntroductionRelativeIcon.gif" width=298> 
+<P>Once the image has been created it can be used as part of a control such as a 
+Button or Label that is able to render the graphic as part of their 
+<TT>setImage(Image image)</TT> methods. 
+<P><TT>Button button = new 
+Button(shell,SWT.PUSH);</TT><BR><TT>button.setImage(image);</TT> 
+<P><IMG height=220 src="graphics-resources_fichiers/ButonLogo.gif" width=278> 
+<P>Images can be drawn onto using a graphics context that is created with the 
+constructor <TT>GC(Drawable drawable)</TT> with the Image as the argument. 
+<P><TT>GC gc = new 
+GC(image);</TT><BR><TT>gc.setForeground(display.getSystemColor(SWT.COLOR_WHITE));</TT><BR><TT>gc.drawText("I've 
+been drawn on",0,0,true);</TT><BR><TT>gc.dispose();</TT> 
+<P><IMG height=218 src="graphics-resources_fichiers/IveBeenDrawnOn.gif" 
+width=276> 
+<P>Using a GC to draw onto an Image permanently alters the graphic. More 
+information on how to use a GC is covered in the article <A 
+href="http://www.eclipse.org/articles/Article-SWT-graphics/SWT_graphics.html">Graphics 
+Context - Quick on the draw.</A> 
+<H1><A name="Image lifecycle"></A>Image lifecycle</H1>When an image is loaded, 
+the first step is to create device independent ImageData represented by the 
+class <TT>org.eclipse.swt.graphics.ImageData</TT>. Following this, the data is 
+prepared for a specific device by creating an actual Image instance. 
+<P>As well as loading an Image directly from a file, you can separately create 
+the ImageData object and then construct the Image using <TT>Image(Device device, 
+ImageData imageData)</TT>. The data for an existing Image can be retrieved using 
+<TT>getImageData()</TT>, although this will not be the same object that was used 
+to create the image. This is because when preparing an image to be drawn onto a 
+screen, properties such as its color depth might be different from the initial 
+image data. 
+<P>Instances of Image represent an underlying resource that has been prepared 
+for a specific device and they must be disposed when they are no longer required 
+to free up the allocated resource. There is no finalization of resources in SWT 
+when an object is garbage collected. For more information see <A 
+href="http://www.eclipse.org/articles/swt-design-2/swt-design-2.html">SWT: The 
+Standard Widget Toolkit: Managing Operating System Resources.</A> 
+<H2><A name=ImageData></A>ImageData</H2>ImageData can be thought of as the model 
+for an image, whereas the Image is the view that's been prepared for output onto 
+a specific device. The ImageData has a width and height, and a pixel value for 
+each coordinate. The raw data of the image is a byte[], and the depth of the 
+image specifies the number of bits that are used for each coordinate. An image 
+depth of 1 can store two possible values for each pixel (0 and 1), a depth of 4 
+can store 2^4=16, a depth of 8 can store 2^8=256 values and a depth of 24 can 
+represent 2^24=16 million different values per pixel. The larger the depth of an 
+image the more bytes are required for its pixels, and some formats such as GIF 
+that were initially designed for download across internet connections only 
+support a maximum depth of 8. How the value of each pixel value translates into 
+an actual color depends on its palette represented by the class 
+<TT>org.eclipse.swt.graphics.PaletteData.</TT> 
+<P>The next section describes how <A 
+href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Colors">colors</A> 
+are represented by their RGB values, and how <A 
+href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#PaletteData">PaletteData</A> 
+maps a map pixel value to a particular color. 
+<H2><A name=Colors></A>Color</H2>The class <TT>org.eclipse.swt.graphics.Color 
+</TT>is used to manage resources that implement the RGB color model. Each color 
+is described in terms of its red, green and blue component (each expressed as an 
+integer value from 0 for no color to 255 for full color). 
+<P><TT>Color cyanColor = new Color(display,0,255,255);</TT><BR><TT><FONT 
+color=#00cc00>// ... Code to use the 
+Color</FONT></TT><BR><TT>cyanColor.dispose();</TT> 
+<P>The convenience class <TT>org.eclipse.swt.graphics.RGB </TT>exists in SWT 
+that combines a color's red, green and blue values into a single object. 
+<P><TT>RGB cyanRGB = new RGB(0,255,255);</TT><BR><TT>Color cyanColor = new 
+Color(display,cyanRGB);</TT><BR><TT><FONT color=#009900>// ... Code to use the 
+Color</FONT></TT><BR><TT>cyanColor.dispose();</TT> 
+<P>The Color instance should be disposed when it is no longer required, whereas 
+the RGB has no need to be disposed. This is similar to the relationship between 
+an Image and its ImageData, where Color and Image are device specific objects 
+using underlying native resources, while RGB and ImageData are the underlying 
+model data. 
+<P>To avoid having to create and manage instances of the commonly used colors, 
+the Display class allow these to be retrieved using the method 
+<TT>Display.getSystemColor(int id)</TT>. 
+<P><TT>Color cyanColor = display.getSystemColor(SWT.COLOR_CYAN)</TT> 
+<P>When a Color is obtained by an SWT program using the method 
+<TT>Display.getSystemColor(int id) </TT>method, it must not be disposed. The 
+rule of thumb that works for any SWT resource is <I>"If you created it, you are 
+responsible for disposing it</I>". Because the statement above retrieved the 
+cyan color instance, and didn't explicitly construct it, it should not be 
+disposed. 
+<P>How a Color is actually represented on the display depends on factors such as 
+the resolution and depth of the display. For more information on this and the 
+SWT color model see <A 
+href="http://www.eclipse.org/articles/SWT%20Color%20Model/swt-color-model.htm">SWT 
+Color Model.</A> 
+<H2><A name=PaletteData></A>PaletteData</H2>There are two kinds of PaletteData, 
+an <A 
+href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Indexed palette">indexed 
+palette </A>and a <A 
+href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Direct palette">direct 
+palette</A>. PaletteData is a model of how pixel values map to RGB values, and 
+because they do not represent an underlying resource, they do not require 
+disposing. 
+<H3><A name="Indexed palette"></A>Indexed palette</H3>With an indexed palette 
+each pixel value represents a number that is then cross indexed with the palette 
+to determine the actual color. The range of allowable pixel values is the depth 
+of the image. 
+<P>The example below is a 48 by 48 square image created with a depth of 1, and 
+an indexed color palette. The indexed palette assigns <IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24> 0 to be red and 1 to be 
+green (by virtue of their order in the RGB[] in the constructor). The 
+ImageData's un-initialized pixel values will initially be 0 (red), and two for 
+loops <IMG height=13 src="graphics-resources_fichiers/tag_2.gif" width=24> set a 
+34 by 34 square in the center of the ImageData to be 1 (green). 
+<P><IMG height=13 src="graphics-resources_fichiers/tag_1.gif" width=24><TT> 
+PaletteData paletteData = new 
+PaletteData(<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; new RGB[] {new 
+RGB(255,0,0), new RGB(0,255,0)});</TT><BR><TT>&nbsp;&nbsp;&nbsp; ImageData 
+imageData = new ImageData(48,48,1,paletteData);</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" width=24><TT> for(int 
+x=11;x&lt;35;x++){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+for(int 
+y=11;y&lt;35;y++){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+imageData.setPixel(x,y,1);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; }</TT><BR><TT>&nbsp;&nbsp;&nbsp; Image image = 
+new Image(display,imageData);</TT> 
+<P><IMG height=48 src="graphics-resources_fichiers/RedGreenImage.gif" width=48> 
+<P>The above example has a depth of 1 so it can store 2 colors, but as the color 
+depth of the ImageData increases then so can the number of colors in the 
+palette.&nbsp; An indexed palette can have a 1, 2, 4, or 8 bit depths, and an 8 
+bit depth provides 2^8 = 256 possible colors.&nbsp; To have a higher color depth 
+(such as 16, 24, or 32) a direct palette must be used. 
+<H3><A name="Direct palette"></A>Direct palette</H3>Instead of having each pixel 
+value represent an index in the palette corresponding to its color, a direct 
+palette allows each pixel value to directly record its red, green and blue 
+component.&nbsp; A direct <TT>PaletteData</TT> defines red, green and blue 
+masks.&nbsp; These masks are number of bits required to shift a pixel value to 
+the left so the high bit of the mask aligns with the high bit of the first byte 
+of color.&nbsp; For example, a 24 bit direct palette can divide itself into 3 
+portions, storing red in the lowest 8 bits, green in the central 8 bits and blue 
+in the highest 8 bits.&nbsp; The red shift mask would be 0xFF, green 0xFF00 and 
+blue 0xFF0000. 
+<P><IMG height=250 src="graphics-resources_fichiers/DirectPalette_02.gif" 
+width=596> 
+<P>The value for each pixel represents a combination of the red, green and blue 
+components into a single 24 bit integer. To construct an indexed palette the 
+constructor used <IMG height=13 src="graphics-resources_fichiers/tag_1.gif" 
+width=24> allows the red, green and blue color masks to be specified. 
+<P><IMG height=13 src="graphics-resources_fichiers/tag_1.gif" width=24><TT> 
+PaletteData palette = new PaletteData(0xFF , 0xFF00 , 
+0xFF0000);</TT><BR><TT>&nbsp;&nbsp;&nbsp; ImageData imageData = new 
+ImageData(48,48,24,palette);</TT> 
+<P>Using the same technique as earlier, the code iterates over every pixel 
+coordinate setting it to either <IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" width=24> 0xFF (for red) or <IMG 
+height=13 src="graphics-resources_fichiers/tag_3.gif" width=24> 0xFF00 (for 
+green). 
+<P><TT>&nbsp;&nbsp;&nbsp; for (int 
+x=0;x&lt;48;x++){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(int 
+y=0;y&lt;48;y++){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(y &gt; 11 &amp;&amp; y &lt; 35 &amp;&amp; x &gt; 11 &amp;&amp; x &lt; 
+35){</TT><BR><IMG height=13 src="graphics-resources_fichiers/tag_2.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+imageData.setPixel(x,y,0xFF00);&nbsp;&nbsp; <FONT color=#009900>// Set the 
+center to 
+green</FONT></TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} else 
+{</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+imageData.setPixel(x,y,0xFF);&nbsp;&nbsp; <FONT color=#009900>// and everything 
+else to red</FONT></TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; };</TT><BR><TT>&nbsp;&nbsp;&nbsp; Image image = 
+new Image(display,imageData);</TT> 
+<P>This creates the result below where the image is red with a green center. 
+<P><IMG height=48 src="graphics-resources_fichiers/RedGreenImage.gif" width=48> 
+<P>Because you can use color depths of 16, 24 and 32 bits with direct palettes, 
+you can represent more colors than are available with an indexed palette whose 
+maximum depth is 8. A color depth of 24 allows you to represent 16 million 
+colors (2^24). The tradeoff however is size, because an indexed palette with a 
+depth of 8 requires one byte per image coordinate whereas a direct palette with 
+a depth of 24 requires three bytes per image coordinate. 
+<P>With both direct and indexed palettes you can go from an RGB to a pixel value 
+and vice-versa using the public methods <TT>int getPixel(RGB rgb)</TT> and 
+<TT>RGB getRGB(int pixelValue)</TT>. 
+<H2><A name=Transparency></A>Transparency</H2>The purpose of transparency is to 
+make a portion of the image non-opaque, so when it is drawn on a GUI surface the 
+original background shows through. This is done by specifying that one of the 
+image colors is transparent. Whenever a pixel with the transparent color value 
+is drawn, instead of using the RGB value defined in the palette the original 
+destination background pixel color is used instead. The effect to the user is 
+that the areas of the image that equal the transparent pixel show the background 
+of whatever the image is being drawn over, thus achieving transparency. 
+Persisted image file formats such as GIF or BMP allow you to specify a 
+transparent pixel value, although only if the palette is indexed and the color 
+depth is 8 or less. 
+<P>When Images are used directly on controls such as Button or Label the native 
+behavior may be that transparent pixels are ignored and drawn in the pixel color 
+specified by the source. Native image transparency however is supported in SWT 
+for operations involving a GC. To illustrate this the following file Idea.gif 
+has a color depth of 8, and the white pixel (index 255 in the palette) set to be 
+the transparent pixel. 
+<P><IMG height=86 src="graphics-resources_fichiers/Idea.gif" width=120 border=0> 
+
+<P>The shell below has a Label on the left with a Canvas next to it. The 
+Idea.gif is used <IMG height=13 src="graphics-resources_fichiers/tag_1.gif" 
+width=24> as the label's image, and also in the paint event <IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" width=24> of the Canvas. Because the 
+Label does not support native transparency the original white color of the 
+transparent pixel is used as the background, however the GC in the paint event 
+respects the transparent pixel and the grey background shows through. 
+<P><TT>&nbsp;&nbsp;&nbsp; Image ideaImage = new 
+ImageData(getClass().getResourceAsStream("Idea.gif"));</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+Label label = new Label(shell,SWT.NONE);</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24><TT> 
+label.setImage(ideaImage);</TT><BR><TT>&nbsp;&nbsp;&nbsp; Canvas canvas = new 
+Canvas(shell,SWT.NO_REDRAW_RESIZE);</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+canvas.addPaintListener(new PaintListener() 
+{</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void 
+paintControl(PaintEvent e) {</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(ideaImage,0,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; });</TT> 
+<P><IMG height=146 src="graphics-resources_fichiers/TransparentIdea.gif" 
+width=270> 
+<P>For the above example I stacked the deck in my favor, because I didn't 
+actually use the idea graphic that is included with eclipse articles in their 
+banner. The reason is that the original graphic is a JPG file which doesn't 
+support transparency, so I used a graphics tool to convert it to a GIF and set 
+the value of the white pixel in the palette to be the transparency pixel. The 
+original Idea.jpg is shown below, and although it looks the same as the 
+Idea.gif, this is because it is on the white background of the HTML browser. 
+<P><IMG height=86 src="graphics-resources_fichiers/Idea.jpg" width=120 border=0> 
+
+<P>By using the original JPG file this offers a good example of how we to 
+achieve a transparency effect progrmatically by manpulating its ImageData. The 
+ImageData class has a public field <TT>transparentPixel</TT> to specify which 
+pixel is transparent that can be set once a persisted image file is loaded into 
+an ImageData instance, irrespective of whether the persisted file format 
+supports transparency. 
+<P>The code below loads the Idea.jpg file in an ImageData object and <IMG 
+height=13 src="graphics-resources_fichiers/tag_1.gif" width=24> sets the 
+transparent pixel for the ImageData to be the pixel value of the color white in 
+the palette. The pixel value in the indexed palette that represents white is 
+retrieved <IMG height=13 src="graphics-resources_fichiers/tag_2.gif" width=24> 
+by using getPixel(RGB). The manipulated ImageData is used to create an Image 
+transparentIdeaImage that now has the white pixel value specified to be 
+transparent. 
+<P><TT>&nbsp;&nbsp;&nbsp; ImageData ideaData = new 
+ImageData(<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+getClass().getResourceAsStream("Idea.jpg"));</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" width=24><TT> int whitePixel = 
+ideaData.palette.getPixel(new RGB(255,255,255));</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24><TT> 
+ideaData.transparentPixel = whitePixel;</TT><BR><TT>&nbsp;&nbsp;&nbsp; Image 
+transparentIdeaImage = new Image(display,ideaData);</TT> 
+<P>Next a Shell uses the newly created image <IMG height=13 
+src="graphics-resources_fichiers/tag_3.gif" width=24> in a native Label and also 
+in the paint event <IMG height=13 src="graphics-resources_fichiers/tag_4.gif" 
+width=24> of a Canvas. A Windows Label does not support native transparency so 
+it still appears with a white background, however the GC for the Canvas uses the 
+existing background color whenever a white pixel is encountered in the source 
+image, so the image appears as transparent. 
+<P><TT>&nbsp;&nbsp;&nbsp; Label transparentIdeaLabel = new 
+Label(shell,SWT.NONE);</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_3.gif" width=24><TT> 
+transparentIdeaLabel.setImage(transparentIdeaImage);</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+Canvas canvas = new Canvas(shell,SWT.NONE);</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+canvas.addPaintListener(new PaintListener() 
+{</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void 
+paintControl(PaintEvent e) {</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_4.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(transparentIdeaImage,0,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; });</TT> 
+<P><IMG height=146 src="graphics-resources_fichiers/IdeaTransparency.gif" 
+width=280> 
+<P>As can be seen from the second of the two images (drawn on the Canvas with 
+the white pixel set to transparent), there are still some patches of white. 
+Closer analysis reveals that this is not a bug, but that these regions are not 
+pure white (255,255,255), but are slighly off-white (such as 255,254,254). The 
+transparent pixel of an ImageData can only be used for a single value. This now 
+presents the next problem to be solved - locate all of the off-white pixels in 
+the ImageData and convert them to pure-white. To do this we will iterate over 
+each pixel in the image data and modify those that are close to white to be pure 
+white. 
+<H2><A name="Manipulating Image Data"></A>Manipulating ImageData</H2>Because the 
+graphic Idea.jpg isn't as white as we'd like it, we'll iterate over its 
+imageData and convert the off-white pixels to pure white and then we'll save 
+this into a new file Idea_white.jpg. In practice it's unlikely that you'd ever 
+do this kind of programming in SWT, however it's a good example to use showing 
+how ImageData can be analyzed and manipulated. 
+<P>The first step is to load the image and then iterate over each pixel 
+individually looking at its color. Because Idea.jpg is using a direct palette, 
+the pixel value is an int that contains the red, green and blue component as 
+masked bit areas. These mask value can be obtained from the palette. 
+<P><TT>ImageData ideaImageData = new ImageData(<BR>&nbsp;&nbsp;&nbsp; 
+getClass().getResourceAsStream("Idea.jpg"));</TT><BR><TT>int redMask = 
+ideaImageData.palette.redMask;</TT><BR><TT>int blueMask = 
+ideaImageData.palette.blueMask;</TT><BR><TT>int greenMask = 
+ideaImageData.palette.greenMask;</TT> 
+<P>For any pixel value we can bitwise AND it with the mask to see what the color 
+component is. The red component is the low order bits so this will be the actual 
+value (from 0 to 255), however the green and blue values need adjusting as they 
+are the high order bits in the pixel value. To make this adjustment the color 
+component can be bit shifted to the right using the &gt;&gt; operator. If you 
+are writing generic code to do this kind of manipulating, take care that direct 
+palettes for color depths of 24 or 32 store their color components with red 
+being the low order bits, however for color depth of 16 the colors are reversed 
+and red is high order with blue being low order. The reason for this is to be 
+the same as how Windows stores images internally so there is less conversion 
+when creating the image. 
+<P>Two for loops will iterate over the imageData. The first is traversing the 
+image from top to bottom a line at a time, and <IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24> creates an int[] to hold 
+each line of data. The method<TT> ImageData.getPixels(int x, int y, int 
+getWidth, int[] pixels, int startIndex)</TT> is used <IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" width=24> to extract a line at a 
+time from the imageData's bytes. The API for this method is slightly irregular, 
+because rather than returning the resulting data it instead is declared as 
+<TT>void</TT>, and the resulting pixel data is injected into the int[] that is 
+passed in as a method argument. The int[] of pixels is then iterated over and 
+each value has its <IMG height=13 src="graphics-resources_fichiers/tag_3.gif" 
+width=24> red, <IMG height=13 src="graphics-resources_fichiers/tag_4.gif" 
+width=24> green and <IMG height=13 src="graphics-resources_fichiers/tag_5.gif" 
+width=24> blue component extracted. The desired effect we want is to determine 
+whether the pixel is off-white and if so to make it pure white - a rule that 
+works well is to assume that anything whose red and green component are higher 
+than 230 <IMG height=13 src="graphics-resources_fichiers/tag_6.gif" width=24> 
+and blue component higher than 150 is an off-white. 
+<P><IMG height=13 src="graphics-resources_fichiers/tag_1.gif" width=24><TT> 
+int[] lineData = new int[ideaImageData.width];</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+for (int y = 0; y &lt; ideaImageData.height; y++) {</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+ideaImageData.getPixels(0,y,width,lineData,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+color=#009900>&nbsp; // Analyze each pixel value in the 
+line</FONT></TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int x=0; 
+x&lt;lineData.length; 
+x++){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<FONT color=#009900>// Extract the red, green and blue 
+component</FONT></TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+int pixelValue = lineData[x];</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_3.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int r = pixelValue 
+&amp; redShift;</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_4.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int g = 
+(pixelValue &amp; greenShift) &gt;&gt; 8;</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_5.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int b = 
+(pixelValue &amp; blueShift) &gt;&gt; 16;</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_6.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (r &gt; 230 
+&amp;&amp; g &gt; 230 &amp;&amp; b &gt; 
+150){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ideaImageData.setPixel(x,y,0xFFFFFF);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; };</TT> 
+<P>Having manipulated the raw bytes making up the ImageData we have now 
+successfully changed the off-white values to pure white. 
+<H2><A name="Saving Images"></A>Saving Images</H2>Now that we have the ImageData 
+where all of the whitish pixels have been converted to white, and the 
+transparency pixel of the palette has been set to be the color white, we'll save 
+this image so that next time an SWT program needs the pure white JPF it can just 
+load the file and use it as is. To save ImageData into a file use the class 
+<TT>org.eclipse.swt.graphics.ImageLoader</TT>. The image loader has a public 
+field data typed to ImageData[]. The reason the data field is an array of 
+ImageData is to support image file formats with more than one frame such as 
+animated GIFs or interlaced JPEG files. These are covered more in the <A 
+href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Animation">Animation</A> 
+section later. 
+<P><TT>ImageLoader imageLoader = new ImageLoader();</TT><BR><TT>imageLoader.data 
+= new ImageData[] 
+{ideaImageData};</TT><BR><TT>imageLoader.save("C:/temp/Idea_PureWhite.jpg",SWT.IMAGE_JPEG);</TT> 
+
+<P>The finished result is shown below. 
+<P><IMG height=86 src="graphics-resources_fichiers/Idea_transparent.jpg" 
+width=120> 
+<P>It doesn't look much different to the original Idea.jpg because it is drawn 
+on a white background, but when it is drawn on a Canvas with the white pixel set 
+to be the transparent pixel the background shows through achieving the desired 
+effect. 
+<P><TT>&nbsp;&nbsp;&nbsp; ImageData pureWhiteIdeaImageData 
+=<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new 
+ImageData("C:/temp/Idea_PureWhite.jpg");</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24><TT> 
+pureWhiteIdeaImageData.transparentPixel 
+=<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+pureWhiteIdeaImageData.palette.getPixel(new 
+RGB(255,255,255));</TT><BR><TT>&nbsp;&nbsp;&nbsp; final Image 
+transparentIdeaImage = new 
+Image(display,pureWhiteIdeaImageData);</TT><BR><TT>&nbsp;&nbsp;&nbsp; Canvas 
+canvas = new Canvas(shell,SWT.NONE);</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+canvas.addPaintListener(new PaintListener() 
+{</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void 
+paintControl(PaintEvent e) 
+{</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(transparentIdeaImage,0,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; });</TT> 
+<P><IMG height=150 
+src="graphics-resources_fichiers/Idea_Transparent_DrawnOnCanvas.gif" width=173> 
+<P><IMG height=13 src="graphics-resources_fichiers/Note.gif" width=62> It might 
+seem odd that in the above code that after loading the Idea_PureWhite.jpg file 
+<IMG height=13 src="graphics-resources_fichiers/tag_1.gif" width=24> the 
+transparent pixel was set to be white. Why not set the transparent pixel before 
+we used the ImageLoader to create the persisted Idea_PureWhite.jpg file? The 
+reason is that the JPEG image file format does not support transparency. A GIF 
+file supports native transparency, however changing the file type to 
+SWT.IMAGE_GIF on the ImageLoader would not have worked, because GIF supports a 
+maximum image depth of 8 and uses an indexed palette, whereas the JPEG has an 
+image depth of 24 and a direct palette. To convert between the two formats would 
+require analyzing the colours used by the JPEG to create the best fit 256 color 
+palette, before iterating over each JPEG pixel value and creating the GIF image 
+data by finding the closest color. Doing this conversion is outside the scope of 
+this article, although it can be done by most commercial graphics tools. To 
+match pixel values as the color depth decreases from 24 to 8 involves algorithms 
+that find the right color match for a block of pixels rather than a single pixel 
+value, and is why image quality can sometimes be reduced when switching between 
+different formats. 
+<P>We have shown how an ImageData is an array of int values representing each 
+pixel coordinate, and how each pixel value is mapped to a color through the 
+palette. This allowed us to iterate over the image data for the Idea.jpg, query 
+pixel values that were close to white, and convert these to a pure white RGB 
+value. The end result of this was that we were able to create the 
+Idea_PureWhite.jpg file that can be used as a transparent JPG by setting the 
+white pixel to be transparent. Transparency works by having a source pixel value 
+(the image being drawn), a destination pixel value (the image being drawn onto) 
+and a rule by which the resulting destination pixel value is determined. For 
+transparency the rule is that the source pixel value is used unless it's 
+transparent in which case the destination pixel is used. Another technique is to 
+use alpha values that specify the weight applied to the source relative to the 
+destination to create the final pixel value. This allows the blending between 
+the source image and the existing background it is being drawn onto. 
+<H2><A name=Blending></A>Blending</H2>Alpha blending is a technique used to 
+merge two pixel values, where the source and destination pixel each specify an 
+alpha value that weights how much they will affect the final destination pixel. 
+An alpha value of 255 is full weight, and 0 is no weight. SWT supports a <A 
+href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Single alpha value">single 
+alpha value</A> for the entire ImageData, or else each pixel can have its <A 
+href="http://www.eclipse.org/articles/Article-SWT-images/graphics-resources.html#Different alpha value per pixel">own 
+alpha value.</A> 
+<H3><A name="Single alpha value"></A>Single alpha value</H3>The <TT>int</TT> 
+field <TT>alphaValue</TT> of ImageData is used to specify a single value that 
+weights how the source pixels are combined with the destination input to create 
+the destination output. The listing below shows how the same ImageData for the 
+Idea_PureWhite.jpg is used for three separate images. The first <IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24> is the original, then <IMG 
+height=13 src="graphics-resources_fichiers/tag_2.gif" width=24> an alpha of 128 
+is used, and finally <IMG height=13 src="graphics-resources_fichiers/tag_3.gif" 
+width=24> an alpha of 64. Note that the same ImageData is continually 
+manipulated by having its alpha changed before creating each Image, and changing 
+the ImageData has no affect on Images already constructed using it. This is 
+because the Image is prepared for display on the device from the ImageData at 
+construction time. 
+<P><TT>&nbsp;&nbsp;&nbsp; Shell shell = new 
+Shell(display);</TT><BR><TT>&nbsp;&nbsp;&nbsp; shell.setLayout(new 
+FillLayout());</TT><BR><TT>&nbsp;&nbsp;&nbsp; ImageData imageData = new 
+ImageData("C:/temp/Idea_PureWhite.jpg");</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24><TT> final Image fullImage 
+= new Image(display,imageData);</TT><BR><TT>&nbsp;&nbsp;&nbsp; imageData.alpha = 
+128;</TT><BR><IMG height=13 src="graphics-resources_fichiers/tag_2.gif" 
+width=24><TT> final Image halfImage = new 
+Image(display,imageData);</TT><BR><TT>&nbsp;&nbsp;&nbsp; imageData.alpha = 
+64;</TT><BR><IMG height=13 src="graphics-resources_fichiers/tag_3.gif" 
+width=24><TT> final Image quarterImage = new Image(display,imageData);</TT> 
+<P><TT>&nbsp;&nbsp;&nbsp; Canvas canvas = new 
+Canvas(shell,SWT.NO_REDRAW_RESIZE);</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+canvas.addPaintListener(new PaintListener() 
+{</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void 
+paintControl(PaintEvent e) 
+{</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(fullImage,0,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(halfImage,140,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(quarterImage,280,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; });</TT> 
+<P><IMG height=137 src="graphics-resources_fichiers/SingleAlphaChannel.gif" 
+width=417> 
+<H3><A name="Different alpha value per pixel"></A>Different alpha value per 
+pixel</H3>As well as having a single alpha value that applied to all pixels in 
+the source image, ImageData allows each pixel to have its own individual alpha 
+value. This is done with the <TT>byte[]</TT> field <TT>alphaData</TT>. This 
+allows effects to be achieved, such as having an image fade from its top to 
+bottom. 
+<P>The following code creates <IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24> an alphaData 
+<TT>byte[]</TT>, and then has two loops. The outer loop y <IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" width=24> is from 0 to the 
+imageData's height, and the inner loop <IMG height=13 
+src="graphics-resources_fichiers/tag_3.gif" width=24> creates a <TT>byte[]</TT> 
+for the width of the imageData and initializes it with a value that increases 
+from 0 for the top row through to 255 for the bottom row. A System.arrayCopy 
+<IMG height=13 src="graphics-resources_fichiers/tag_4.gif" width=24> then builds 
+up the alphaData <TT>byte[]</TT> with each row. 
+<P><TT>&nbsp;&nbsp;&nbsp; ImageData fullImageData = new 
+ImageData("C:/temp/Idea_PureWhite.jpg");</TT><BR><TT>&nbsp;&nbsp;&nbsp; int 
+width = fullImageData.width;</TT><BR><TT>&nbsp;&nbsp;&nbsp; int height = 
+fullImageData.height;</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24><TT> byte[] alphaData = new 
+byte[height * width];</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" width=24><TT> for(int 
+y=0;y&lt;height;y++){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte[] alphaRow = new byte[width];</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_3.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp; for(int 
+x=0;x&lt;width;x++){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+alphaRow[x] = (byte) ((255 * y) 
+/height);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT><BR><IMG 
+height=13 src="graphics-resources_fichiers/tag_4.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+System.arraycopy(alphaRow,0,alphaData,y*width,width);</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; fullImageData.alphaData = 
+alphaData;</TT><BR><TT>&nbsp;&nbsp;&nbsp; Image fullImage = new 
+Image(display,fullImageData);</TT> 
+<P>The resulting image is shown below, and the alphaData <TT>byte[]</TT> makes 
+the top of the image transparent and the bottom opaque, with a gradual fading 
+between the two. 
+<P><IMG height=144 src="graphics-resources_fichiers/ImageBlended.gif" width=186> 
+
+<H2><A name="Image Effects"></A>Image effects</H2>As well as arbitrary image 
+effects that can be achieved by manipulating image data, SWT provides a number 
+of pre-defined ways of creating new images based on existing images combined 
+with certain styles. This is used if, for example, you have an image being used 
+on a toolbar button and you wish to create a version that can be used to 
+indicate that the button is disabled or that it is inactive. 
+<P>To create an effect based on an existing image and a style flag use the 
+constructor <TT>Image(Display display, Image image, int flag)</TT>. The flag 
+argument is a static constant of either SWT.IMAGE_COPY, SWT.IMAGE_DISABLE or 
+SWT.IMAGE_GRAY. Copy creates a new image based on the original but with a copy 
+of its imageData, whereas Disable and Gray create a new image applying platform 
+specific effects. The following code shows the Idea.jpg, together with three 
+more images that we created using the style bits <IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24> IMAGE_DISABLE, <IMG 
+height=13 src="graphics-resources_fichiers/tag_2.gif" width=24> IMAGE_GRAY and 
+<IMG height=13 src="graphics-resources_fichiers/tag_3.gif" width=24> IMAGE_COPY. 
+To show that IMAGE_COPY creates a new image <IMG height=13 
+src="graphics-resources_fichiers/tag_4.gif" width=24> a GC is used to draw onto 
+it that affects only the copied image, not the original. 
+<P><TT>&nbsp;&nbsp;&nbsp; Image ideaImage = new 
+Image(display,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getClass().getResourceAsStream("/icons/Idea.jpg");</TT><BR><IMG 
+height=13 src="graphics-resources_fichiers/tag_1.gif" width=24><TT> Image 
+disabledImage&nbsp; = new Image(display,image,SWT.IMAGE_DISABLE);</TT><BR><IMG 
+height=13 src="graphics-resources_fichiers/tag_2.gif" width=24><TT> Image 
+grayImage = new Image(display,image,SWT.IMAGE_GRAY);</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_3.gif" width=24><TT> Image copyImage = new 
+Image(display,ideaImage,SWT.IMAGE_COPY);</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_4.gif" width=24><TT> GC gc = new 
+GC(copyImage);</TT><BR><TT>&nbsp;&nbsp;&nbsp; gc.drawText("This is a 
+copy",0,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp; gc.dispose();</TT> 
+<H1><IMG height=136 src="graphics-resources_fichiers/GraphicsEffects_01.jpg" 
+width=517></H1>
+<H1><A name=Animation></A>GIF Animation</H1>Another important topic for images 
+is understanding animation where an image can contain a number of frames that 
+are animated in sequence. Image animation is supported by GIF images, where a 
+single image file can contain multiple sets of ImageData. Web browsers support 
+native animation, and the following image is made up of 15 frames showing the 
+pen rotating and writing the words SWT beneath the Idea logo. 
+<P><IMG height=120 src="graphics-resources_fichiers/Idea_SWT_Animation.gif" 
+width=120> 
+<P>While the web browser you're using to read this article should show the 
+Idea_SWT_Animation.gif file as a sequence with the moving pen, this is not true 
+of native SWT controls displaying the graphic. The animation must be done 
+programmatically, and the class <TT>org.eclipse.swt.examples.ImageAnalyzer</TT> 
+shows how this can be achieved. The ImageAnalyzer class can be obtained from the 
+<A href="http://dev.eclipse.org/viewcvs/index.cgi/org.eclipse.swt.examples/">SWT 
+examples project</A> in the Eclipse CVS repository. 
+<P>When an animated GIF is loaded by the ImageLoader class, each individual 
+frame is a separate element in the data field array typed to ImageData[].&nbsp; 
+In the animation sequence each ImageData records how many milliseconds it should 
+be displayed for in the int field delayTime. The number of times the sequence 
+should repeat can be retrieved from the field loader.repeatCount, a value of -1 
+indicates that the animation should repeat indefinitely and 
+Idea_SWT_Animation.gif has this value. When switching from one frame to the next 
+there are three ways that the new frame can replace the previous one, specified 
+by the int field <TT>ImageData.disposalMethod</TT>. This can take the following 
+values defined in the constant class <TT>org.eclipse.swt.SWT</TT>.<BR>&nbsp; 
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TD>DM_FILL_NONE</TD>
+    <TD>Leave the previous image in place and just draw the image on 
+      top.&nbsp; Each frame adds to the previous one.</TD></TR>
+  <TR>
+    <TD>DM_FILL_BACKGROUND</TD>
+    <TD>Fill with the background color before painting each frame. The pixel 
+      value for this is defined in the field loader.backgroundPixel</TD></TR>
+  <TR>
+    <TD>DM_FILL_PREVIOUS</TD>
+    <TD>Restore the previous picture&nbsp;</TD></TR>
+  <TR>
+    <TD>DM_FILL_UNSPECIFIED</TD>
+    <TD>No disposal method has been defined</TD></TR></TBODY></TABLE>
+<P>To conserve on space, animated GIFs are generally optimized to just store the 
+delta that needs to be applied to the previous image. In the 
+Idea_SWT_Animation.gif above the 15 frames are shown below. Each frame stores a 
+delta against the previous image, and this was automatically generated by the 
+tool I create the animated GIF with. The disposal method for each frame is 
+DM_NONE so the each image should be drawn on top of the previous one. Each 
+individual ImageData element has the x and y for its top left corner, as well as 
+its width and height. The overall size to use can be obtained from the 
+fields<TT> loader.logicalScreenWidth</TT> and 
+<TT>loader.logicalScreenHeight.</TT> 
+<P><IMG height=481 src="graphics-resources_fichiers/AnimationFrames.gif" 
+width=481> 
+<P>To illustrate how to display an animated GIF in SWT we'll create an <IMG 
+height=13 src="graphics-resources_fichiers/tag_1.gif" width=24> initial Image 
+from the first frame and a counter to store which frame is being displayed. The 
+image is drawn <IMG height=13 src="graphics-resources_fichiers/tag_2.gif" 
+width=24> a paint event on a Canvas, and a GC is created <IMG height=13 
+src="graphics-resources_fichiers/tag_3.gif" width=24> that will be used to draw 
+the subsequent frames onto the image. 
+<P><TT>&nbsp;&nbsp;&nbsp; ImageLoader loader = new 
+ImageLoader();</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+loader.load(getClass().getResourceAsStream("Idea_SWT_Animation.gif"));</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+Canvas canvas = new Canvas(shell,SWT.NONE);</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24><TT> image = new 
+Image(display,loader.data[0]);</TT><BR><TT>&nbsp;&nbsp;&nbsp; int 
+imageNumber;</TT><BR><IMG height=13 src="graphics-resources_fichiers/tag_3.gif" 
+width=24><TT> final GC gc = new GC(image);</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+canvas.addPaintListener(new 
+PaintListener(){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void 
+paintControl(PaintEvent event){</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+event.gc.drawImage(image,0,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; });</TT> 
+<P>The body of the example will create a thread that iterates through each 
+frame, waiting until the <IMG height=13 
+src="graphics-resources_fichiers/tag_4.gif" width=24>delayTime has passed. For 
+each frame the <IMG height=13 src="graphics-resources_fichiers/tag_5.gif" 
+width=24> ImageData is retrieved from the loader and a temporary Image created. 
+This is then drawn onto the image being displayed on the canvas, at the x and y 
+position specified by the frame's ImageData. Because we created the temporary 
+frameImage <IMG height=13 src="graphics-resources_fichiers/tag_7.gif" width=24> 
+we must dispose it when it's no longer being used to free up the underlying 
+resource. 
+<P><TT>&nbsp;&nbsp;&nbsp; Thread thread = new 
+Thread(){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void 
+run(){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; long currentTime = 
+System.currentTimeMillis();</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+int delayTime = loader.data[imageNumber].delayTime;</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_4.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp; while(currentTime + delayTime * 10 &gt; 
+System.currentTimeMillis()){</TT><BR><TT><FONT 
+color=#009900>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Wait 
+till the delay time has 
+passed</FONT></TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display.asyncExec(new 
+Runnable(){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+public void run(){</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+color=#009900>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Increase the 
+variable holding the frame 
+number</FONT></TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+imageNumber = imageNumber == loader.data.length-1 ? 0 : 
+imageNumber+1;</TT><BR><TT><FONT 
+color=#009900>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+// Draw the new data onto the image</FONT></TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_5.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ImageData 
+nextFrameData = 
+loader.data[imageNumber];</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Image frameImage = new Image(display,nextFrameData);</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_6.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+gc.drawImage(frameImage,nextFrameData.x,nextFrameData.y);</TT><BR><IMG height=13 
+src="graphics-resources_fichiers/tag_7.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+frameImage.dispose();</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+canvas.redraw();</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+});</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+};</TT><BR><TT>&nbsp;&nbsp;&nbsp; shell.open();</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+thread.start();</TT> 
+<H1><A name=Scaling></A>Scaling</H1>In the examples so far we have loaded an 
+image from a file and drawn it on the GUI at its original size. There are times 
+when this will not always be the case and you need to stretch or shrink the 
+image, and there are two ways to do achieve this. The first is to use the GC to 
+stretch and clip it, using <TT><FONT color=#000000>GC.drawImage(Image image, int 
+srcX, int srcY, int srcWidth, int srcHeight, int dstX, int dstY, int dstWidth, 
+int dstHeight)</FONT></TT>, and the second is to use <TT>ImageData.scaledTo(int 
+width, int height) </TT>to create a new ImageData object based on scaling the 
+receiver. 
+<P>The following code loads the Idea.jpg image <IMG height=13 
+src="graphics-resources_fichiers/tag_1.gif" width=24>, and scales this to 1/2 
+and 2 times its original size <IMG height=13 
+src="graphics-resources_fichiers/tag_2.gif" width=24> using the<TT> 
+ImageData.scaledTo(int width, int height)</TT>. The image is also resized using 
+<TT>GC.drawImage(...)</TT>, and the example shows two ways to achieve this. The 
+first technique<IMG height=13 src="graphics-resources_fichiers/tag_3.gif" 
+width=24> is to specify the new width and height as part the paint event. This 
+is potentially inefficient because the scaling must be done each time the canvas 
+repaints itself. A more optimized technique is to create an image at the final 
+desired size, <IMG height=13 src="graphics-resources_fichiers/tag_4.gif" 
+width=24> construct a GC over the this and then paint onto it so a permanent 
+scaled image exists in the program. 
+<P><FONT color=#000000>The end result is shown below, and both techniques 
+produce almost identical results.</FONT> 
+<P><IMG height=13 src="graphics-resources_fichiers/tag_1.gif" width=24><TT> 
+final Image image = new 
+Image(display,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+getClass(),getResourceAsStream("Idea.jpg"));</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+final int width = image.getBounds().width;</TT><BR><TT>&nbsp;&nbsp;&nbsp; final 
+int height = image.getBounds().height;</TT> 
+<P><IMG height=13 src="graphics-resources_fichiers/tag_2.gif" width=24><TT> 
+final Image scaled050 = new 
+Image(display,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+image.getImageData().scaledTo((int)(width*0.5),(int)(height*0.5)));</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+final Image scaled200 = new 
+Image(display,<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+image.getImageData().scaledTo((int)(width*2),(int)(height*2)));</TT> 
+<P><IMG height=13 src="graphics-resources_fichiers/tag_4.gif" width=24><TT> 
+final Image scaledGC200 = new 
+Image(display,(int)(width*2),(int)(height*2));</TT><BR><TT>&nbsp;&nbsp;&nbsp; GC 
+gc = new GC(scaledGC200);</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+gc.drawImage(image,0,0,width,height,0,0,width*2,height*2);</TT><BR><TT>&nbsp;&nbsp;&nbsp; 
+gc.dispose();</TT> 
+<P><TT>&nbsp;&nbsp;&nbsp; canvas.addPaintListener(new PaintListener() 
+{</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public void paintControl(PaintEvent 
+e) {</TT><BR><IMG height=13 src="graphics-resources_fichiers/tag_3.gif" 
+width=24><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(image,0,0,width,height,0,0,(int)(width*0.5),(int)(height*0.5));</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(scaled050,100,0);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(scaledGC200,0,75);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+e.gc.drawImage(scaled200,225,175);</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}</TT><BR><TT>&nbsp;&nbsp;&nbsp; });</TT> 
+<P><IMG height=300 src="graphics-resources_fichiers/ScaledImages_01.gif" 
+width=425> 
+<P>When to use GC scaling, and when to use <TT>ImageData.scaledTo(...)</TT>, 
+depends on the particular scenario. The GC scaling is faster because it is 
+native, however it does assume that you have a GC and an Image to work with. 
+Using just the ImageData means that you don't need to have prepared an Image 
+(that requires a native resource and requires disposing), and an ImageData can 
+be loaded directly from a graphic file (using the constructor 
+<TT>ImageData(String fileName)</TT> or <TT>ImageData(InputStream stream)</TT>). 
+By using raw ImageData you are delaying the point at which you will need native 
+display resources, however you will eventually need to create an Image from the 
+scaled ImageData before it can be rendered onto a device. 
+<H1><A name=Cursor></A>Cursor</H1>The final section of this article covers the 
+class <TT>org.eclipse.swt.graphics.Cursor</TT> responsible for managing the 
+operating system resource associated with the mouse pointer. The reason cursors 
+are covered in an article on images is because you can create arbitrary cursors 
+from images, and they illustrate how image masks work. 
+<P>Cursors can be created in two ways, either from a pre-defined style or using 
+source and mask images. 
+<H2><A name="Platform cursors"></A>Platform cursors</H2>The list of pre-defined 
+styles are SWT constants shown below, together with sample images although these 
+will vary depending on the operating system and platform settings.<BR>&nbsp; 
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TD>CURSOR_APPSTARTING</TD>
+    <TD><IMG height=28 
+      src="graphics-resources_fichiers/Image_cursor_appstarting.gif" 
+width=28></TD>
+    <TD>CURSOR_IBEAM</TD>
+    <TD><IMG height=32 
+      src="graphics-resources_fichiers/Image_cursor_ibeam.gif" width=32></TD>
+    <TD>CURSOR_SIZENE</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_NESW.gif" 
+      width=32></TD></TR>
+  <TR>
+    <TD>CURSOR_ARROW</TD>
+    <TD><IMG height=32 
+      src="graphics-resources_fichiers/Image_cursor_arrow.gif" width=32></TD>
+    <TD>CURSOR_NO</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_not.gif" 
+      width=32></TD>
+    <TD>CURSOR_SIZENESW</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_NESW.gif" 
+      width=32></TD></TR>
+  <TR>
+    <TD>CURSOR_CROSS</TD>
+    <TD><IMG height=32 
+      src="graphics-resources_fichiers/Image_cursor_cross.gif" width=32></TD>
+    <TD>CURSOR_SIZEALL</TD>
+    <TD><IMG height=27 
+      src="graphics-resources_fichiers/Image_cursor_sizeall.gif" width=26></TD>
+    <TD>CURSOR_SIZENS</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_NS.gif" 
+    width=32></TD></TR>
+  <TR>
+    <TD>CURSOR_HAND</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_hand.gif" 
+      width=32></TD>
+    <TD>CURSOR_SIZEE</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_E.gif" 
+      width=32></TD>
+    <TD>CURSOR_SIZENW</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_NW.gif" 
+      width=32></TD></TR>
+  <TR>
+    <TD>CURSOR_HELP</TD>
+    <TD><IMG height=31 src="graphics-resources_fichiers/Image_cursor_help.gif" 
+      width=32></TD>
+    <TD>CURSOR_SIZEN</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_N.gif" 
+      width=32></TD>
+    <TD>CURSOR_SIZESNWSE</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_NW.gif" 
+      width=32></TD></TR>
+  <TR>
+    <TD>CURSOR_SIZES</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_S.gif" 
+      width=32></TD>
+    <TD>CURSOR_SIZESE</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_SE.gif" 
+      width=32></TD>
+    <TD>CURSOR_SIZESW</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_SW.gif" 
+      width=33></TD></TR>
+  <TR>
+    <TD>CURSOR_SIZEWE</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_W.gif" 
+      width=32></TD>
+    <TD>CURSOR_UPARROW</TD>
+    <TD><IMG height=40 
+      src="graphics-resources_fichiers/Imagecursor_uparrow.gif" width=40></TD>
+    <TD>CURSOR_WAIT</TD>
+    <TD><IMG height=32 src="graphics-resources_fichiers/Image_cursor_busy.gif" 
+      width=32></TD></TR></TBODY></TABLE>
+<P>Every Control can have a cursor associated with it, and when the mouse 
+pointer moves over the control it changes to the specified cursor.&nbsp; 
+Changing a cursor also affects any child controls, so if you update the cursor 
+on a Shell this affects the mouse pointer for anywhere on the shell, although if 
+the child control itself has an explicit cursor, or uses its own cursor such as 
+an I bean for Text or Combo, this takes precedence over the parent's defined 
+cursor. The following code illustrates this, by changing the shell's cursor to 
+be hand cursor, and the list's cursor to a cross. When the mouse is over the 
+shell (or its childButton that has no explicit cursor) it is a hand, and when it 
+is over the list it is a cross. 
+<P><TT>List list = new List(shell,SWT.BORDER);</TT><BR><TT>Button button = new 
+Button(shell,SWT.NONE);</TT><BR><TT>button.setText("Button");</TT><BR><TT>Cursor 
+handCursor = new 
+Cursor(display,SWT.CURSOR_HAND);</TT><BR><TT>shell.setCursor(handCursor);</TT><BR><TT>Cursor 
+crossCursor = new 
+Cursor(display,SWT.CURSOR_CROSS);</TT><BR><TT>list.setCursor(crossCursor);</TT> 
+<P><IMG height=110 src="graphics-resources_fichiers/ShellCursors.gif" width=548> 
+
+<P>Cursors use underlying native resources and should be disposed when they are 
+no longer required. In the above code this would be when the shell has been 
+disposed and there are no remaining controls using either the handCursor or 
+crossCursor fields. 
+<H2><A name="Custom cursors"></A>Custom cursors</H2>As well as using a 
+pre-defined style, a cursor can be created from images&nbsp; using the 
+constructor <TT>Cursor(Device device, ImageData source, ImageData mask, int 
+hotspotx, int hotspoty). </TT>The source imagedata argument is the graphic for 
+the cursor shape, and the mask is used to specify transparency. The following 
+example shows how to create a monochrome custom cursor, where the the source and 
+mask image data have a color depth of 1 and indexed palettes with two colors. 
+The ImageData’s height and width should be no larger than 32 and it does not 
+necessarily have to be square, although the mask and source should be the same 
+size. The hotspot is the point on the cursor that represents the precise 
+location of the mouse pointer. 
+<P>The source and mask image data pixels are combined to determine whether the 
+cursor pixel should be white, black or transparent.<BR>&nbsp; 
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TD>Image</TD>
+    <TD>Mask</TD>
+    <TD>Cursor color</TD></TR>
+  <TR>
+    <TD>1</TD>
+    <TD>0</TD>
+    <TD>Transparent</TD></TR>
+  <TR>
+    <TD>0</TD>
+    <TD>0</TD>
+    <TD>Black</TD></TR>
+  <TR>
+    <TD>1</TD>
+    <TD>1</TD>
+    <TD>Black</TD></TR>
+  <TR>
+    <TD>0</TD>
+    <TD>1</TD>
+    <TD>White</TD></TR></TBODY></TABLE>
+<P>The ImageData can be loaded from files, and Eclipse itself does this for some 
+of its drag and drop cursors defined in <TT>org.eclipse.ui/icons/full/dnd. 
+</TT>You can also directly create and manipulate the image data within your 
+program. The code sample below creates an indexed palette with two colors. The 
+source and mask ImageData are 32 by 32 with a color depth of 1. The int[] for 
+the source and mask define an up arrow, the 0s for the source and 1s for the 
+mask are shown in bold to show how the arrow is defined with the arrays. 0 and 1 
+makes white which is the center of the arrow, 1 and 1 is black for the edge of 
+the arrow, and 1 and 0 transparent for the remainder. The tip of the arrow is 
+16,3 so this is made the cursor hotspot when it is created. 
+<P><TT>PaletteData paletteData = new PaletteData(new RGB[] 
+{</TT><BR><TT>&nbsp;new RGB(0,0,0) , new 
+RGB(255,255,255)</TT><BR><TT>});</TT><BR><TT>ImageData sourceData = new 
+ImageData(32,32,1,paletteData);</TT><BR><TT>ImageData maskData = new 
+ImageData(32,32,1,paletteData);</TT> 
+<P><TT>int[] cursorSource = new int[] {</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0,0,0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0,0,0,0,0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0,0,0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,<B>0</B>,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 };</TT> 
+<P><TT>int[] cursorMask = new int[] {</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1,1,1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,<B>1,1,1</B>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, };</TT> 
+<P><TT>sourceData.setPixels(0,0,1024,cursorSource,0);</TT><BR><TT>maskData.setPixels(0,0,1024,cursorMask,0);</TT><BR><TT>Cursor 
+cursor = new 
+Cursor(display,sourceData,maskData,16,3);</TT><BR><TT>shell.setCursor(cursor);</TT> 
+
+<P><IMG height=107 src="graphics-resources_fichiers/CustomCursor.gif" width=157> 
+
+<P>To keep the code listings narrow the above sample used an <CODE>int[]</CODE> 
+to define the source and mask imageData. A byte uses less memory than an 
+unsigned int, so when creating custom cursors it is more efficient to use a 
+byte[] instead, such as: 
+<P><TT>byte[] cursorSource = new byte[] {</TT><BR><TT>&nbsp;&nbsp;&nbsp;&nbsp; 
+(byte)0x00, (byte)0x00, (byte)0x01, (byte)0x01, (byte)0x00, // etc...</TT> 
+<P>Custom cursors need to be disposed in just the same way as pre-defined system 
+cursors, so when there is no remaining control using the cursor is must be send 
+the method <TT>dispose()</TT> to free up the underlying native resource. 
+<P>Although the above example is for a monochrome cursor, Eclipse 3.0 supports 
+color cursors on platforms that allow it (such as Windows). Two SWT code 
+snippets showing how to do this are here: <A 
+href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet118.html">snippet 
+1</A>, <A 
+href="http://dev.eclipse.org/viewcvs/index.cgi/~checkout~/platform-swt-home/snippits/snippet119.html">snippet 
+2</A>. 
+<H1><A name=Conclusion></A>Conclusion</H1>This article has showed how to create 
+and manipulate SWT images. Underlying each Image is its ImageData that records 
+the pixel value for each coordinate, and the palette that maps this to a 
+specific color. By understanding ImageData it is possible to achieve effects 
+such as transparency, alpha blending, animation, as well as customized cursors. 
+<P><FONT size=-1>Java and all Java-based trademarks and logos are trademarks or 
+registered trademarks of Sun Microsystems, Inc. in the United States, other 
+countries, or both.</FONT> 
+<P><FONT size=-1>Windows is a trademark of Microsoft corporation in the United 
+States, other countries, or both.</FONT> 
+<P><FONT size=-1>Other company, product, and service names may be trademarks or 
+service marks of others.</FONT> </P></BODY></HTML>

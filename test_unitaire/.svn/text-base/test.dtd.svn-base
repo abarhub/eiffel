@@ -1,0 +1,5 @@
+<!ELEMENT toto:root (file*)>
+<!ELEMENT file (#PCDATA)>
+<!ATTLIST file nom CDATA #REQUIRED>
+<!ATTLIST file nb_erreur CDATA #REQUIRED>
+<!ATTLIST root xmlns:toto CDATA "http://www.w3c.org/">

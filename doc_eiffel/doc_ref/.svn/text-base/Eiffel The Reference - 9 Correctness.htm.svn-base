@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap9.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 9 Correctness</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 9 Correctness_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm"><IMG 
+src="Eiffel The Reference - 9 Correctness_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap10.htm"><IMG 
+src="Eiffel The Reference - 9 Correctness_fichiers/next.gif"></A> 
+<P>
+<H1>9 Correctness </H1>
+<H2>9.5 FORM OF ASSERTIONS</H2>
+<P>In an Assertion, the semicolon separating each Assertion from the next has 
+the same semantics as the <B>and then</B> infix boolean operator. This means 
+that the order of the clauses may be meaningful: 
+<OL>
+  <LI>The value of an Assertion is true if and only if every Assertion_clause in 
+  the Assertion has value true. 
+  <LI>If an Assertion_clause has value false, the whole Assertion in which it 
+  appears has value false, even if the value of a subsequent clause is not 
+  defined. </LI></OL>
+<H2>9.7 THE SPECIFICATION OF A ROUTINE </H2>
+<H3>Definition: specification, subspecification</H3>
+<P>Let <I>pre</I> and <I>post</I> be the precondition and postcondition of a 
+routine <I>rout</I>. The specification of <I>rout</I> is the pair of assertions 
+&lt;<I>pre</I>, <I>post</I>&gt;.
+<P>
+<P>A specification &lt;<I>pre', post'&gt;</I> is said to be a subspecification 
+of &lt;<I>pre, post&gt;</I> if and only if <I>pre</I> implies <I>pre'</I> and 
+<I>post' </I>implies <I>post</I>. Here ''implies'' is boolean implication. 
+<P>
+<H2>9.8 CONSTRAINTS ON ROUTINE ASSERTIONS </H2>
+<P>A Precondition of a routine <I>r</I> of a class <I>C</I> is valid if and only 
+if every feature whose final name appears in any Assertion_clause is available 
+to every class to which <I>r</I> is available. 
+<P>
+<H3>Definition: availability of an assertion clause </H3>
+<P>An Assertion_clause <I>a</I> of a routine Precondition or Postcondition is 
+<B>available</B> to a class <I>B</I> if and only if all the entities involved in 
+<I>a</I> are available to <I>B</I>, with the convention that formal arguments 
+and <I>Result</I> are available to all classes. 
+<P>
+<H2>9.9 OLD EXPRESSION</H2>
+<P>
+<P>
+<P>An Old expression of the form <B>old</B><I> e</I>, where <I>e</I> is an 
+expression of type <I>TE</I>, is valid if and only if it satisfies the following 
+two conditions: 
+<OL>
+  <LI>It appears in a Postcondition clause of a Routine <I>r</I>. 
+  <LI>Transforming <I>r</I> into a function with result type <I>TE</I> (by 
+  adding a result type if <I>r</I> is procedure, or changing its result type if 
+  it is already a function) and replacing its entire Routine part by <B>do</B> 
+  <I>Result </I>:=<I> e</I> <B>end</B> would yield a valid routine.</LI></OL>
+<P>The value of an Old expression <B>old</B><I> e</I> is defined only at the end 
+of the execution of a call to <I>r</I>, just before the call returns; it is the 
+result that would have been produced by evaluating <I>e</I> just before the 
+call's execution began. 
+<P>
+<H2>9.11 CLASS INVARIANTS </H2>
+<H3>Definition: invariant of a class </H3>
+<P>The invariant of a class <I>C</I> is an assertion obtained by concatenating 
+the following assertions (omitting any one which is absent or empty): 
+<OL>
+  <LI>The invariants of all parents (determined recursively through the present 
+  rule), in the order of the corresponding Parent clauses. 
+  <LI>The postconditions of any inherited functions which <I>C</I> redefines as 
+  an attribute, with every occurrence of <I>Result</I> replaced by the 
+  attribute's final name. (If there are two or more such redefinitions, include 
+  them in the order in which their new declarations appear in <I>C</I>.) 
+  <LI>The Assertion in <I>C</I>'s own Invariant clause, if any. </LI></OL>
+<H2>9.12 CONSISTENCY OF A CLASS </H2>
+<H3>Definition: consistency </H3>
+<P>A class <I>C</I> is <B>consistent</B> if and only if it satisfies the 
+following two conditions: 
+<OL>
+  <LI>For every creation procedure <I>p</I> of <I>C</I>: {<I>pre</I><I>p</I>} 
+  <I>do</I><I>p</I> {<I>INV</I><I>C </I><B>and</B> <I>post</I><I>p</I>} 
+  <LI>For every routine <I>r</I> of <I>C</I> exported generally or selectively: 
+  {<I>pre</I><I>r</I> <B>and</B> <I>INV</I><I>C</I>} <I>do</I><I>r</I> 
+  {<I>post</I><I>r</I> <B>and</B> <I>INV</I><I>C</I>}</LI></OL>
+<P>In this rule, <I>INV</I><I>C</I> is the invariant of <I>C </I>and, for any 
+routine <I>s</I>, <I>pre</I><I>s </I>is the precondition of <I>s</I>, 
+<I>post</I><I>s</I> its postcondition, and <I>do</I><I>s</I> its body.
+<P>
+<H2>9.13 CHECK INSTRUCTIONS</H2>
+<H3>Definition: check-correct </H3>
+<P>An effective routine <I>r</I> is <B>check-correct</B> if, for every Check 
+instruction <I>c</I> in <I>r</I>, any execution of <I>c</I> (as part of an 
+execution of <I>r</I>) satisfies all its assertions. 
+<P>
+<H2>9.14 LOOP INVARIANTS AND VARIANTS </H2>
+<P>
+<P>
+<P>A Variant is valid if and only if its Expression is of type <I>INTEGER</I>. 
+<P>
+<P>
+<P>
+<P>
+<P>
+<P>The invariant assertion <I>INV</I> of a loop must have the following two 
+properties: 
+<P>
+<UL>
+  <LI>The loop's Initialization (<B>from</B> clause) ensures the truth of 
+  <I>INV</I>. 
+  <LI>Any execution of the Loop_body, when started in a state that does not 
+  satisfy the Exit_condition, preserves the truth of <I>INV</I> (in other words, 
+  leaves <I>INV</I> true if it finds <I>INV</I> originally true). </LI></UL>
+<H3>Definition: loop-correct </H3>
+<P>A routine is <B>loop-correct</B> if every loop it contains satisfies the 
+following four conditions:
+<P>
+<OL>
+  <LI>{<B>true</B>}<I> INIT </I>{<I>INV</I>} 
+  <LI>{<B>true</B>}<I> INIT </I>{<I>VAR &gt;=</I> 0} 
+  <LI>{<I>INV </I><B>and then</B><I> </I><B>not</B><I> EXIT</I>}<I> BODY 
+  </I>{<I>INV</I>} 
+  <LI>{<I>INV </I><B>and then</B><I> </I><B>not</B><I> EXIT </I><B>and 
+  then</B><I> </I>(<I>VAR = v</I>)}<I> BODY </I>{<I>0 </I><I>VAR &lt; 
+v</I>}</LI></OL>
+<P>where <I>INV</I> is the loop's invariant, <I>VAR</I> its variant, <I>INIT 
+</I>its Initialization, <I>EXIT</I> its Exit condition, and <I>BODY</I> its 
+Loop_body.
+<P>
+<H2>9.16 CORRECTNES S OF A CLASS </H2>
+<H3>Definition: correctness (class) </H3>
+<P>A class is <B>correct</B> if and only if it is consistent and every routine 
+of the class is check-correct, loop-correct and exception-correct.
+<P>
+<H2>9.17 SEMANTICS OF ASSERTIONS</H2>
+<P>For a correct system, assertions, in all cases, will have no effect on the 
+semantics of system execution (except through possible side effects of the 
+functions called by assertions). For an incorrect system, the effect depends on 
+compilation or execution options. Various options of the environment will make 
+it possible to evaluate assertions. If an assertion evaluates to true, it has no 
+further effect on the outcome of the computation. If it evaluates to false, it 
+will trigger an exception, disrupting the normal flow of computation, as 
+discussed in the chapter on exception handling. 
+<P>
+<P>An assertion violation triggers an exception. An exception will also result 
+if a loop iteration fails to decrease the variant or gives it a negative value. 
+<P>
+<P>Here is the rule for determining the recipient of an exception resulting from 
+an assertion violation: 
+<OL>
+  <LI>For postconditions, class invariants, loop invariants, variants and Check 
+  instructions, the recipient is the routine whose text contains the violated 
+  assertion or variant. 
+  <LI>For a violated precondition, the recipient is the calling routine. In this 
+  case no component of the routine's body is executed; the routine fails 
+  immediately, not performing any of its normal actions, and triggering an 
+  exception in the caller. </LI></OL>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 9 Correctness_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap8.htm"><IMG 
+src="Eiffel The Reference - 9 Correctness_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap10.htm"><IMG 
+src="Eiffel The Reference - 9 Correctness_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

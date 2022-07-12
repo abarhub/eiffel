@@ -1,0 +1,557 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 25 Lexical Components</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR>
+<META content="Neil Wilson" name=AUTHOR><!-- $Id: chap25.htm,v 1.4 1995/07/08 09:29:51 neil Exp neil $ --></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap24.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap26.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/next.gif"></A> 
+<P>
+<P>
+<H1>25 Lexical components</H1>
+<P>The following are the lexical components recognised by the language. 
+<H2>25.2 Character Categories</H2>
+<P>An Eiffel text is a stream of characters, or lines of characters. The 
+discussion will rely on a classification of the characters into various 
+categories. 
+<H3><A name=letter><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+letter</A></H3>
+<P>A <B>letter</B> is one of the twenty-six elements of the Roman alphabet, 
+lower-case or upper-case: <CODE></CODE>
+<UL>
+  <LI>a b c d e f g h i j k l m n o p q r s t u v w x y z 
+  <LI>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#alphabetic>alphabetic</a> |<A HREF=" 
+#Identifier>Identifier</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#resword">reserved 
+words</A> 
+<H3><A name=digit><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+digit</A></H3>
+<P>A <B>digit</B> is one of the ten characters: <CODE></CODE>
+<UL>
+  <LI>0 1 2 3 4 5 6 7 8 9 </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#alphabetic>alphabetic</a> |<A HREF=" 
+#Integer?>Integer</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Real">Real</A> 
+
+<H3><A name=alphabetic><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+alphabetic</A></H3>
+<P>An <B>alphabetic</B> character is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#letter">letter</A>, 
+a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#digit">digit</A>, 
+or an underscore <CODE>'_'</CODE>. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#reqsymbol">required 
+symbolic</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier>Identifier</a> |<A HREF=" 
+#usable>usable</A> 
+<H3><A name=quote><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+quote</A></H3>
+<P>A <B>quote</B> character is either a single quote <CODE>'</CODE> or a double 
+quote <CODE>"</CODE>. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#reqsymbol">required 
+symbolic</A> 
+<H3><A name=reqsymbol><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+required symbolic</A></H3>
+<P>A <B>required symbolic</B> character is a non-<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#alphabetic">alphabetic</A> 
+non-<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#quote">quote</A> 
+character required by the Eiffel syntax: <CODE></CODE>
+<UL>
+  <LI>! # $ % ^ &amp; * ( ) - + * , . / : ; &lt; = &gt; ? @ [ \ ] { | } </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#usable">usable</A> 
+
+<H3><A name=usable><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+usable</A></H3>
+<P>A <B>usable</B> character is an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#alphabetic">alphabetic</A>, 
+a tilde <CODE>'~'</CODE> or a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#reqsymbol">required 
+symbolic</A>. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Free_operator">Free_operator</A> 
+
+<H3><A name=keyboard><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+keyboard</A></H3>
+<P>A <B>keyboard</B> character is any character that can be entered via the 
+keyboard on a single line. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#C1">C1 
+character</A> 
+<H3><A name=encoded><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+encoded</A></H3>
+<P>An <B>encoded</B> character is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#C1">C1</A>, 
+<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#C2">C2</A> 
+or <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#C3>C3 </A>character.<H4>See also</H4><A HREF=" 
+#Character_constant?>Character_constant</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_string</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#charvalues>encoded character values</a><H3><A NAME=" 
+C1?><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> C1</A>
+<H3></H3>
+<P>A <B>C1</B> character is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#keyboard>keyboard</A> characterexcept the <A HREF=" 
+#quote>quote</A> characters and the percent <CODE>'%'</CODE>. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">encoded</A> 
+
+<H3><A name=C2><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+C2</A></H3>
+<P>A <B>C2</B> character is the sequence <CODE>%</CODE><EM>k</EM>, where 
+<EM>k</EM> is a one-key code taken from the following list: <CODE></CODE>
+<UL>
+  <LI>A B C D F H L N Q R S T U V % ' " ( ) &lt; &gt; </LI></UL>
+<P>Here letter case is significant, <CODE>%n</CODE> is not a valid C2 character. 
+C2 characters are only valid in constructs that use <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">encoded</A> 
+characters and not elsewhere. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">encoded</A> 
+
+<H3><A name=C3><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+C3</A></H3>
+<P>A <B>C3</B> character is the sequence 
+<CODE>%/</CODE><EM>code</EM><CODE>/</CODE>, where <EM>code</EM> is an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Integer">integer</A>, 
+representing the character of code <EM>code</EM> in the underlying character 
+set. <EM>code</EM> must be in the numerical range representable on the machine. 
+C3 characters are only valid in constructs that use <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">encoded</A> 
+characters and not elsewhere. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">encoded</A> 
+
+<H2>25.3 Breaks</H2>
+<H3><A name=spacer><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+spacer</A></H3>
+<P>A <B>spacer</B> is either a blank (space) or a tab. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Comment">Comment</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string>Manifest_string</a><H3><A NAME=" 
+eol?><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> end of 
+line</A>
+<H3></H3>
+<P>The <B>end of line</B> necessarily depends upon the way the Eiffel text is 
+stored. Suffice to say that the end of line is significant to Eiffel. 
+<P>In a character stream implementation the end of line is normally signified by 
+the newline character, possibly preceded or succeeded by a carriage return 
+character. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Comment">Comment</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string>Manifest_string</a><H3><A NAME=" 
+breakchar?><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> break 
+character</A>
+<H3></H3>
+<P>A <B>break character</B> is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#spacer>spacer</A> or the <A HREF=" 
+#eol?>end of line</A> 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#break">break</A> 
+
+<H3><A name=break><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+break</A></H3>
+<P>A <B>break</B> is a sequence of one or more <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#breakchar>break characters</A>.<H4>See also</H4><A HREF=" 
+#textlayout?>text layout</A> 
+<H2>25.4 Comments</H2>
+<P>Comments may be <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#expectedcomment>expected</A> or <A HREF=" 
+#freecomment?>free</A>. 
+<UL>
+  <LI>An <A name=expectedcomment><B>expected</B></A> comment appears as a 
+  terminal construct (Comment) in the syntax as an optional component of some 
+  construct. An example is the Header_comment of a Routine. 
+  <LI><A name=freecomment><B>Free</B></A> comments, on the other hand, may 
+  appear at almost any position in a class text and are not covered by the 
+  syntax productions. </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#textlayout">text 
+layout</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Features>Features</a> |<A HREF=" 
+chap34.htm#Assertion>Assertions</A> 
+<H3><A name=comment><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+comment</A></H3>
+<P>A <B>comment</B> is made of one or more line segments, each beginning with 
+two consecutive dash characters <CODE>'--'</CODE> and extending to the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#eol>end of line</A>. The line segments can beseparated by any number of <A HREF=" 
+#spacer>spacers</A>. 
+<H2><A name=textlayout>25.5 Text Layout</A></H2>
+<P>An Eiffel text is a sequence; each of the elements of the sequence is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#break">break</A>, 
+a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#comment">comment</A> 
+or a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#token">token</A>. 
+
+<P>You may always insert a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#break>break</A> between twosequence elements without affecting the semantics of the text.<P>A <A HREF=" 
+#break?>break</A> is not required between two adjacent elements if one is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#comment">comment</A> 
+and the other a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#token">token</A>. 
+Two successive <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#comment">comments</A> 
+must be separated by a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#token">token</A> 
+(otherwise only one comment will be recognised, due to the lexical form of a 
+comment). 
+<P>Between two successive <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#token">tokens</A>, 
+a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#break>break</A>may be required or not depending upon the nature of the <A HREF=" 
+#token?>tokens</A>. 
+<H3><A name=token><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"> 
+token</A></H3>
+<P>We may divide <B>tokens</B> into two categories, <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#symbol">symbols</A> 
+or <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#word">words</A>. 
+
+<UL>
+  <LI>A <A name=symbol><B>symbol</B></A> is either a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#specialsymbol">special 
+  symbol</A>, or a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#symop">symbolic 
+  operator</A>. 
+  <LI>A <A name=word><B>word</B></A> is any token which is not a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#symbol">symbol</A>. 
+  </LI></UL>
+<P>It is permitted (recursively) to append token <EM>y</EM> to a token sequence 
+<EM>x</EM> without an intervening <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#break>break</A>if and only if:<UL><LI>the combined token sequence produces the same tokens as <EM>x</EM>and <EM>y</EM> would do separately and only those tokens.</UL><H2>25.6 Token Categories</H2><P>There are two categories of tokens, <A HREF=" 
+#fixedtoken?>fixed</A> and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#variabletoken>variable</A>:<P><UL><LI><A NAME=" 
+fixedtoken?><B>Fixed</B></A> tokens have a single, frozen form. They include the 
+<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#resword">reserved 
+words</A>, <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#stdop">standard 
+operators</A> and the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#specialsymbol">special 
+symbols</A>. 
+<LI><A name=variabletoken><B>Variable</B></A> tokens are specimens of terminal 
+constructs such as <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Integer">Integer</A>, 
+<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#identifier">Identifier</A> 
+or <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Free_operator">Free_operator</A>. 
+
+<UL></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#textlayout">text 
+layout</A> 
+<H2><A name=resword>25.7 Reserved Words</A></H2>
+<P><B>Reserved words</B> include <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#keyword">keywords</A>, 
+<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#preentity">predefined 
+entities</A> and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#preclassname">predefined 
+class name</A> 
+<P>
+<UL>
+  <LI><A name=keyword><B>Keywords</B></A>, such as <B>class</B> or 
+  <B>feature</B>, serve to introduce and delimit the various components of 
+  constructs. 
+  <LI>The <A name=preentity><B>predefined entities</B></A>, <I>Result</I> and 
+  <I>Current</I> are permissible in certain places where a variable entity could 
+  be used. 
+  <LI><A name=preclassname><B>Predefined class names</B></A> can be used where a 
+  variable <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_name">Class_name</A> 
+  could be used. </LI></UL>
+<P>No intervening blanks or other characters are permitted between the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#letter">letters</A> 
+of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#resword">reserved 
+word</A> and letter case is not significant. 
+<H2><A name=specialsymbol>25.8 Special Symbols</A></H2>
+<P>A small number of one- and two-character strings, called <B>special 
+symbols</B>, have a special role in the syntax of various constructs. They are: 
+<UL>
+  <LI>; , : . ! = /= -&gt; .. ( ) [ ] { } &lt;&lt; &gt;&gt; := ?= $ </LI></UL>
+<P>The special symbols must be written as shown above, in particular there must 
+be no intervening blanks or other characters in the middle of two-character 
+special symbols. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/symbols.htm">symbol 
+usage</A> 
+<H2><A name=Identifier>25.9 Identifiers</A></H2>
+<P>An <B>identifier</B> is a terminal construct (Identifier) consisting of a 
+sequence of one or more characters, of which the first is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#letter">letter</A> 
+and each of the subsequent ones, if any, are <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#alphabetic">alphabetic</A> 
+
+<P>There is no limit to the length of identifiers, and all characters are 
+significant. No intervening blanks or other characters are permitted between the 
+letters of an identifier and letter case is not significant. 
+<H3><A name=VIRW><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/validity.gif"> 
+(VIRW) Reserved Word Rule</A></H3>An <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier>Identifier</A> is valid if and only ifit is not one of the language's <A HREF=" 
+#resword?>reserved words</A>. 
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"><A 
+name="upper name">upper name</A>, <A name="lower name">lower name</A> </H3>The 
+form of an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+written all in upper-case is called the <B>upper name</B> of the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A>; 
+the form all in lower-case is called its <B>lower name</B> 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#class name">class 
+name</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Indexing">Indexing</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_header">Class_header</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generics">Formal_generics</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_arguments">Formal_arguments</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assertion">Assertions</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type>Type</a> |<A HREF=" 
+chap34.htm#Entity?>Entity</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Strip">Strip</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#VWID">Identifier 
+Rule (VWID)</A> | 
+<H2><A name=operator>25.10 Operators</A></H2>
+<P>There are two kinds of <B>operators</B>, <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#stdop">standard</A> 
+and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Free_operator">free</A>: 
+
+<UL>
+  <LI>A <A name=stdop><B>standard operator</B></A> is one prescribed by the 
+  language syntax. There are two kinds of standard operator, <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#symop">symbolic</A> 
+  and <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#wordop">word</A>: 
+
+  <UL>
+    <LI>A <A name=symop><B>symbolic operator</B></A> is one of the following: 
+    <UL>
+      <LI>+ - * / &gt; &lt; // \\ &gt;= &lt;= ^ </LI></UL>
+    <LI>A <A name=wordop><B>word operator</B></A> is one of the following: 
+    <UL>
+      <LI><B>not, and, or, xor, implies, and then, or else</B> </LI></UL></LI></UL>
+  <P></P>
+  <LI>A <A name=Free_operator><B>free operator</B></A> is a terminal construct 
+  (Free_operator) consisting of a sequence of one or more characters, whose 
+  first character is one of: 
+  <UL>
+    <LI>@ # | &amp;<BR></LI></UL>
+  <P>and whose subsequent characters, if any, are any <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#usable">usable</A> 
+  character. There is no limit to the length of a free operator and all 
+  characters are significant. Letter case though is not significant. 
+</P></LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix_operator">Prefix_operator</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix_operator">Infix_operator</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Operator_expression>Operator_expressions</a><H2><A NAME=" 
+Manifest_string?>25.11 Strings</A>
+<H2></H2>
+<P>A <B>string</B> is a terminal construct (Manifest_string) that starts with a 
+double quote, followed by any number of either <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">encoded</A> 
+characters or single quotes, and terminated by a double quote. For ease of use a 
+string can be split onto several lines by inserting <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#stringbreak">string 
+breaks</A> at any position between the double quotes. A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#stringbreak">string 
+break</A> is not allowed in the middle of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#C2">C2</A>, 
+or <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#C3">C3</A> 
+character encoding sequence. 
+<P>
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"><A 
+name=stringbreak>string break</A></H3>A <B>string break</B> is the following 
+sequence of characters: 
+<UL>
+  <LI>A required percent '%' 
+  <LI>Any number of <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#spacer">spacers</A> 
+
+  <LI>A required <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#eol">end 
+  of line</A> marker 
+  <LI>Any number of <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#spacer">spacers</A> 
+
+  <LI>A required percent '%' </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Obsolete">Obsolete</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Debug">Debug</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_constant">Manifest_constant</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#External">External</A> 
+
+<H2><A name=Integer>25.12 Integers</A></H2>
+<P>An <B>integer</B> is a terminal construct (Integer) consisting of a sequence 
+of characters, whose first character is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#digit>digit</A>and whose subsequent characters, if any, are <A HREF=" 
+#digit?>digits</A> or underscores. If any underscore is present, then there must 
+be three consecutive <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#digit>digits</A> to the right ofevery underscore, and there must not be any consecutive groupof four <A HREF=" 
+#digit?>digits</A>. 
+<P>Except for underscores, no intervening characters are permitted between <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#digit">digits</A>. 
+
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Integer_constant">Integer_constant</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Real">Real</A> 
+
+<H2><A name=Real>25.13 Real Numbers</A></H2>
+<P>A <B>real</B> number is a terminal construct (Real) made up of the following 
+elements in order: 
+<UL>
+  <LI>An optional <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Integer">integer</A>, 
+  giving the integral part. 
+  <LI>A required "." (dot) <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#symbol>symbol</A><LI>A <A HREF=" 
+  #fracpart?>fractional part</A>. 
+  <LI>An optional <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#exponent">exponent</A>. 
+  </LI></UL>
+<P>No intervening character is allowed between these elements. The integral and 
+<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#fracpart">fractional 
+part</A> may not both be absent. If underscores appear in either the integral or 
+<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#fracpart">fractional 
+part</A> they must appear in the other, unless it has three <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#digit">digits</A> 
+or less. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Real_constant">Real_constant</A> 
+
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"><A 
+name=fracpart>fractional part</A> </H3>A <B>fractional part</B> is a sequence of 
+characters, whose last character is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#digit">digit</A> 
+and whose preceding characters, if any, are <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#digit">digits</A> 
+or underscores. If any underscore is present, then there must be three 
+consecutive <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#digit">digits</A> 
+to the left of every underscore, and there must not be any consecutive group of 
+four <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#digit">digits</A>. 
+
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Real">Real</A> 
+
+<P>
+<H3><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/definit.gif"><A 
+name=exponent>exponent</A> </H3>An <A name=exponent>exponent</A> part is the 
+following: 
+<UL>
+  <LI>the required character 'e' or 'E'; 
+  <LI>optionally either a '-' or a '+' character; 
+  <LI>a required <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Integer">integer</A>. 
+  </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Real">Real</A> 
+
+<H2><A name=Bit_sequence>25.14 Bit Sequences</A></H2>
+<P>A <B>bit sequence</B> is a terminal construct (Bit_sequence) consisting of a 
+sequence of one or more '0' or '1' characters, followed by a 'b' or a 'B', with 
+no other intervening characters 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Bit_constant">Bit_constant</A> 
+
+<H2><A name=Character_constant>25.15 Character Constants</A> </H2>
+<P>A <B>character constant</B> is a terminal construct (Character_constant) 
+consisting of a single quote, followed by either an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">encoded</A> 
+character or a double quote, and terminated by another single quote. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_constant">Manifest_constant</A> 
+
+<HR>
+A flex <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/eiffel3.l">lexical 
+analyser</A> is available for the above definition. 
+<HR>
+
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap24.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap26.htm"><IMG 
+src="Eiffel The Reference - 25 Lexical Components2_fichiers/next.gif"></A> 
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS>
+<P><!-- $Log: chap25.htm,v $
+# Revision 1.4  1995/07/08  09:29:51  neil
+# Road Sign Graphics included
+# Faults spotted by Jim McKim and Steve Tynor fixed
+# Validity rules removed from within blockquote
+# highlighting made consistent
+#
+# Revision 1.3  1995/06/26  09:28:08  neil
+# Regenerated links based on new document naming scheme
+#
+# Revision 1.3  1995/06/26  09:28:08  neil
+# Regenerated links based on new document naming scheme
+#
+# Revision 1.2  1995/06/23  18:28:16  neil
+# Navigation links inserted
+#
+# Revision 1.1  1995/06/21  07:55:11  neil
+# Initial revision
+#
+--></P></LI></BODY></HTML>

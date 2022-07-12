@@ -1,0 +1,16 @@
+class B
+
+inherit A redefine toto;
+
+creation make
+
+feature
+
+	toto is
+	local
+	i:B;
+	do
+
+	end;
+
+end

@@ -1,0 +1,11 @@
+class TEST3
+
+	inherit A
+		redefine var1
+		end;
+
+feature
+
+	var1:INTEGER is 1;
+
+end

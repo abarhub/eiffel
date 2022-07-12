@@ -1,0 +1,86 @@
+Debut de la trace
+Entre methode TEST1.make
+0:b:=true
+1:Call extern  lang("JVM:Test1:static") printb(b)
+2:b:=false
+3:Call extern  lang("JVM:Test1:static") printb(b)
+4:Call extern  lang("JVM:Test1:static") prints(Test and)
+5:b:=true and true
+6:Call extern  lang("JVM:Test1:static") printb(b)
+7:b:=true and false
+8:Call extern  lang("JVM:Test1:static") printb(b)
+9:b:=false and true
+10:Call extern  lang("JVM:Test1:static") printb(b)
+11:b:=false and false
+12:Call extern  lang("JVM:Test1:static") printb(b)
+13:Call extern  lang("JVM:Test1:static") prints(Test or)
+14:b:=true or true
+15:Call extern  lang("JVM:Test1:static") printb(b)
+16:b:=true or false
+17:Call extern  lang("JVM:Test1:static") printb(b)
+18:b:=false or true
+19:Call extern  lang("JVM:Test1:static") printb(b)
+20:b:=false or false
+21:Call extern  lang("JVM:Test1:static") printb(b)
+22:Call extern  lang("JVM:Test1:static") prints(Test xor)
+23:b:=true xor true
+24:Call extern  lang("JVM:Test1:static") printb(b)
+25:b:=true xor false
+26:Call extern  lang("JVM:Test1:static") printb(b)
+27:b:=false xor true
+28:Call extern  lang("JVM:Test1:static") printb(b)
+29:b:=false xor false
+30:Call extern  lang("JVM:Test1:static") printb(b)
+31:Call extern  lang("JVM:Test1:static") prints(Test implies)
+32:b:=true implies true
+33:Call extern  lang("JVM:Test1:static") printb(b)
+34:b:=true implies false
+35:Call extern  lang("JVM:Test1:static") printb(b)
+36:b:=false implies true
+37:Call extern  lang("JVM:Test1:static") printb(b)
+38:b:=false implies false
+39:Call extern  lang("JVM:Test1:static") printb(b)
+40:Call extern  lang("JVM:Test1:static") prints(Test and_then)
+41:b:=true and then true
+42:Call extern  lang("JVM:Test1:static") printb(b)
+43:b:=true and then false
+44:Call extern  lang("JVM:Test1:static") printb(b)
+45:b:=false and then true
+46:Call extern  lang("JVM:Test1:static") printb(b)
+47:b:=false and then false
+48:Call extern  lang("JVM:Test1:static") printb(b)
+49:Call extern  lang("JVM:Test1:static") prints(Test or_else)
+50:b:=true or else true
+51:Call extern  lang("JVM:Test1:static") printb(b)
+52:b:=true or else false
+53:Call extern  lang("JVM:Test1:static") printb(b)
+54:b:=false or else true
+55:Call extern  lang("JVM:Test1:static") printb(b)
+56:b:=false or else false
+57:Call extern  lang("JVM:Test1:static") printb(b)
+58:Call extern  lang("JVM:Test1:static") prints(Test egal)
+59:b:=true = true
+60:Call extern  lang("JVM:Test1:static") printb(b)
+61:b:=true = false
+62:Call extern  lang("JVM:Test1:static") printb(b)
+63:b:=false = true
+64:Call extern  lang("JVM:Test1:static") printb(b)
+65:b:=false = false
+66:Call extern  lang("JVM:Test1:static") printb(b)
+67:Call extern  lang("JVM:Test1:static") prints(Test diff)
+68:b:=true /= true
+69:Call extern  lang("JVM:Test1:static") printb(b)
+70:b:=true /= false
+71:Call extern  lang("JVM:Test1:static") printb(b)
+72:b:=false /= true
+73:Call extern  lang("JVM:Test1:static") printb(b)
+74:b:=false /= false
+75:Call extern  lang("JVM:Test1:static") printb(b)
+76:Call extern  lang("JVM:Test1:static") prints(Test not)
+77:b:=not true
+78:Call extern  lang("JVM:Test1:static") printb(b)
+79:b:=not false
+80:Call extern  lang("JVM:Test1:static") printb(b)
+81:Return
+Sort methode TEST1.make
+Fin de la trace

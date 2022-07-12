@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\test_unitaire\classe.dtd">
+
+<class type="expanded">
+	<nom_classe nom="HELLO"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="INTEGER"/>
+		<corps>
+			<expression>
+				<entier valeur="5"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<expression>
+				<reel valeur="9.75"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<expression>
+				<chaine>
+					<chaine1>"abc"</chaine1>
+				</chaine>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<expression>
+				<car>'a'</car>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<expression>
+				<vrai/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<expression>
+				<faux/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="plus">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="moins">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="fois">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="div">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="div_entier">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="mod">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="xor">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="and_then">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="or_else">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="point">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="implies">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="infs">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="inf">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sups">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="sup">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="c"/>
+		<corps>
+			<expression>
+				<expression_binaire op="diff">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="2"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d"/>
+		<corps>
+			<expression>
+				<expression_unaire op="plus">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d"/>
+		<corps>
+			<expression>
+				<expression_unaire op="moins">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d"/>
+		<corps>
+			<expression>
+				<expression_unaire op="not">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="d"/>
+		<corps>
+			<expression>
+				<expression_unaire op="old">
+					<expression>
+						<variable nom="a"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="t"/>
+		<corps>
+			<expression>
+				<tableau>
+					<expression>
+						<entier valeur="45"/>
+					</expression>
+					<expression>
+						<entier valeur="78"/>
+					</expression>
+				</tableau>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="t"/>
+		<corps>
+			<expression>
+				<tableau>
+				</tableau>
+			</expression>
+		</corps>
+	</feature>
+	<invariant>
+		<assert>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<variable nom="i"/>
+					</expression>
+					<expression>
+						<entier valeur="5"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+		<assert>
+			<expression>
+				<expression_binaire op="egal">
+					<expression>
+						<variable nom="j"/>
+					</expression>
+					<expression>
+						<appel nom="g">
+							<parametre_reel>
+								<expression>
+									<entier valeur="7"/>
+								</expression>
+							</parametre_reel>
+						</appel>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</assert>
+	</invariant>
+</class>

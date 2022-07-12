@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap31.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 32 Basic classes</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 32 Basic classes_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap30.htm"><IMG 
+src="Eiffel The Reference - 32 Basic classes_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap32.htm"><IMG 
+src="Eiffel The Reference - 32 Basic classes_fichiers/next.gif"></A> 
+<P>
+<H1>32 Basic classes</H1>
+<P>The basic class <I>BOOLEAN</I>, <I>CHARACTER</I>, <I>DOUBLE</I>, 
+<I>INTEGER</I> and <I>REAL</I> describe arithmetic objects; class <I>POINTER</I> 
+describes opaque objects representing addresses to be passed to non-Eiffel 
+software. The specification of these classes may be found in the Eiffel Library 
+Standard.
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 32 Basic classes_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap30.htm"><IMG 
+src="Eiffel The Reference - 32 Basic classes_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap32.htm"><IMG 
+src="Eiffel The Reference - 32 Basic classes_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

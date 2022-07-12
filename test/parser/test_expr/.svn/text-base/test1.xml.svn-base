@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST1"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<entier valeur="1"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<entier valeur="532"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<reel valeur="9.56"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<reel valeur="0.1"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<reel valeur=".1"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<variable nom="b"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<vrai/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<faux/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<car>'a'</car>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<car>' '</car>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<chaine>
+					<chaine1>"coucou a tous"</chaine1>
+				</chaine>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<reel valeur="7.56e12"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<entier valeur="1_000"/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_classe nom="A"/>
+		<corps>
+			<expression>
+				<reel valeur="1_000.123_45"/>
+			</expression>
+		</corps>
+	</feature>
+</class>

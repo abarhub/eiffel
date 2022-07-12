@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0034)http://www.eclipse.org/banner.html -->
+<HTML><HEAD><TITLE>Eclipse Banner</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<STYLE type=text/css>.input {
+	FONT-WEIGHT: normal; BACKGROUND: #ffffcc; COLOR: #000000
+}
+A.nav:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.nav:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.nav:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+</STYLE>
+
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY text=#ffffcc vLink=#551a8b aLink=#ff0000 link=#0000ee bgColor=#ffffff>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" bgColor=#006699 
+        border=0><TBODY>
+        <TR>
+          <TD width=116 bgColor=#000000><A target=_top 
+            href="http://www.eclipse.org/"><IMG height=50 
+            src="banner_fichiers/EclipseBannerPic.jpg" width=115 
+border=0></A></TD>
+          <TD width=637><IMG height=50 src="banner_fichiers/gradient.jpg" 
+            width=282 border=0></TD>
+          <TD width=250><IMG height=48 
+            src="banner_fichiers/eclipse-org-simple-small.gif" 
+        width=250></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></BODY></HTML>

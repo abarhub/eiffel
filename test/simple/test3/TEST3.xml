@@ -1,0 +1,529 @@
+<!DOCTYPE classe SYSTEM "..\..\..\test_unitaire\verif.dtd">
+<classe nom="TEST3">
+<liste_verification>
+<methode>
+<verif_type var_type="$Var0">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="argument_count" />
+<param>
+</param>
+<verif_type var_type="$Var1" />
+<position nom_fichier="test\simple\test3\test3.e" x="9" y="13" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var1" />
+<verif_type var_type="$Var2">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var7" />
+<verif_type var_type="$Var5">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var0">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="argument" />
+<param>
+<verif_type var_type="$Var7" />
+</param>
+<verif_type var_type="$Var8" />
+<position nom_fichier="test\simple\test3\test3.e" x="10" y="17" />
+</methode>
+<methode>
+<verif_type var_type="$Var8" />
+<nom_feature nom="is_integer" />
+<param>
+</param>
+<verif_type var_type="$Var9" />
+<position nom_fichier="test\simple\test3\test3.e" x="10" y="29" />
+</methode>
+<methode>
+<verif_type var_type="$Var9" />
+<nom_feature nom="not" type="prefix" />
+<param>
+</param>
+<verif_type var_type="$Var10" />
+<position nom_fichier="test\simple\test3\test3.e" x="10" y="13" />
+</methode>
+<methode>
+<verif_type var_type="$Var4">
+<nom_classe nom="BOOLEAN" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="or else" type="infix" />
+<param>
+<verif_type var_type="$Var11" />
+</param>
+<verif_type var_type="$Var12" />
+<position nom_fichier="test\simple\test3\test3.e" x="9" y="13" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var11" />
+<verif_type var_type="$Var10" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var13">
+<nom_classe nom="BOOLEAN" >
+</nom_classe>
+</verif_type>
+<verif_type var_type="$Var12" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var14">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="io" />
+<param>
+</param>
+<verif_type var_type="$Var15" />
+<position nom_fichier="test\simple\test3\test3.e" x="12" y="13" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var19" />
+<verif_type var_type="$Var17">
+<nom_classe nom="STRING" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var15" />
+<nom_feature nom="put_string" />
+<param>
+<verif_type var_type="$Var19" />
+</param>
+<verif_type var_type="$Var21" />
+<position nom_fichier="test\simple\test3\test3.e" x="12" y="16" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var21" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var23">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="io" />
+<param>
+</param>
+<verif_type var_type="$Var24" />
+<position nom_fichier="test\simple\test3\test3.e" x="13" y="13" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var28" />
+<verif_type var_type="$Var26">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var25">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="argument" />
+<param>
+<verif_type var_type="$Var28" />
+</param>
+<verif_type var_type="$Var29" />
+<position nom_fichier="test\simple\test3\test3.e" x="13" y="27" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var30" />
+<verif_type var_type="$Var29" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var24" />
+<nom_feature nom="put_string" />
+<param>
+<verif_type var_type="$Var30" />
+</param>
+<verif_type var_type="$Var32" />
+<position nom_fichier="test\simple\test3\test3.e" x="13" y="16" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var32" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var34">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="io" />
+<param>
+</param>
+<verif_type var_type="$Var35" />
+<position nom_fichier="test\simple\test3\test3.e" x="14" y="13" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var39" />
+<verif_type var_type="$Var37">
+<nom_classe nom="STRING" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var35" />
+<nom_feature nom="put_string" />
+<param>
+<verif_type var_type="$Var39" />
+</param>
+<verif_type var_type="$Var41" />
+<position nom_fichier="test\simple\test3\test3.e" x="14" y="16" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var41" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var44">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="exit_failure_code" />
+<param>
+</param>
+<verif_type var_type="$Var45" />
+<position nom_fichier="test\simple\test3\test3.e" x="15" y="27" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var46" />
+<verif_type var_type="$Var45" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var43">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="die_with_code" />
+<param>
+<verif_type var_type="$Var46" />
+</param>
+<verif_type var_type="$Var48" />
+<position nom_fichier="test\simple\test3\test3.e" x="15" y="13" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var48" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var50">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="io" />
+<param>
+</param>
+<verif_type var_type="$Var51" />
+<position nom_fichier="test\simple\test3\test3.e" x="17" y="10" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var55" />
+<verif_type var_type="$Var53">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var52">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="argument" />
+<param>
+<verif_type var_type="$Var55" />
+</param>
+<verif_type var_type="$Var56" />
+<position nom_fichier="test\simple\test3\test3.e" x="17" y="35" />
+</methode>
+<methode>
+<verif_type var_type="$Var56" />
+<nom_feature nom="to_integer" />
+<param>
+</param>
+<verif_type var_type="$Var57" />
+<position nom_fichier="test\simple\test3\test3.e" x="17" y="47" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var58" />
+<verif_type var_type="$Var57" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var52">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="fibonacci" />
+<param>
+<verif_type var_type="$Var58" />
+</param>
+<verif_type var_type="$Var59" />
+<position nom_fichier="test\simple\test3\test3.e" x="17" y="25" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var60" />
+<verif_type var_type="$Var59" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var51" />
+<nom_feature nom="put_integer" />
+<param>
+<verif_type var_type="$Var60" />
+</param>
+<verif_type var_type="$Var62" />
+<position nom_fichier="test\simple\test3\test3.e" x="17" y="13" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var62" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var64">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="io" />
+<param>
+</param>
+<verif_type var_type="$Var65" />
+<position nom_fichier="test\simple\test3\test3.e" x="18" y="10" />
+</methode>
+<methode>
+<verif_type var_type="$Var65" />
+<nom_feature nom="put_new_line" />
+<param>
+</param>
+<verif_type var_type="$Var66" />
+<position nom_fichier="test\simple\test3\test3.e" x="18" y="13" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var66" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<attribut_conflit nom_classe="TEST3">
+<nom_feature nom="i" />
+<position nom_fichier="test\simple\test3\test3.e" x="21" y="14" />
+</attribut_conflit>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\test3.e" x="21" y="17" />
+</classe_existe>
+<classe_existe nom="INTEGER">
+<position nom_fichier="test\simple\test3\test3.e" x="21" y="27" />
+</classe_existe>
+<type_conforme>
+<verif_type var_type="$Var69">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<verif_type var_type="$Var70">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var73">
+<nom_classe nom="BOOLEAN" >
+</nom_classe>
+</verif_type>
+<verif_type var_type="$Var72">
+<nom_classe nom="BOOLEAN" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var74">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<verif_type var_type="$Var76">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var79">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<verif_type var_type="$Var80">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var83">
+<nom_classe nom="BOOLEAN" >
+</nom_classe>
+</verif_type>
+<verif_type var_type="$Var82">
+<nom_classe nom="BOOLEAN" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var84">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<verif_type var_type="$Var86">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var90">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="-" type="infix" />
+<param>
+<verif_type var_type="$Var93" />
+</param>
+<verif_type var_type="$Var94" />
+<position nom_fichier="test\simple\test3\test3.e" x="30" y="33" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var93" />
+<verif_type var_type="$Var91">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var95" />
+<verif_type var_type="$Var94" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var89">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="fibonacci" />
+<param>
+<verif_type var_type="$Var95" />
+</param>
+<verif_type var_type="$Var96" />
+<position nom_fichier="test\simple\test3\test3.e" x="30" y="23" />
+</methode>
+<methode>
+<verif_type var_type="$Var97">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="-" type="infix" />
+<param>
+<verif_type var_type="$Var100" />
+</param>
+<verif_type var_type="$Var101" />
+<position nom_fichier="test\simple\test3\test3.e" x="30" y="52" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var100" />
+<verif_type var_type="$Var98">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var102" />
+<verif_type var_type="$Var101" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<methode>
+<verif_type var_type="$Var89">
+<nom_classe nom="TEST3" >
+</nom_classe>
+</verif_type>
+<nom_feature nom="fibonacci" />
+<param>
+<verif_type var_type="$Var102" />
+</param>
+<verif_type var_type="$Var103" />
+<position nom_fichier="test\simple\test3\test3.e" x="30" y="42" />
+</methode>
+<methode>
+<verif_type var_type="$Var96" />
+<nom_feature nom="+" type="infix" />
+<param>
+<verif_type var_type="$Var104" />
+</param>
+<verif_type var_type="$Var105" />
+<position nom_fichier="test\simple\test3\test3.e" x="30" y="23" />
+</methode>
+<type_conforme>
+<verif_type var_type="$Var104" />
+<verif_type var_type="$Var103" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+<type_conforme>
+<verif_type var_type="$Var88">
+<nom_classe nom="INTEGER" >
+</nom_classe>
+</verif_type>
+<verif_type var_type="$Var105" />
+<nom_classe nom="TEST3" >
+</nom_classe>
+</type_conforme>
+</liste_verification>
+</classe>

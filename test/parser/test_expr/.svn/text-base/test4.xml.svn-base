@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST4"/>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<tableau>
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+				</tableau>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<tableau>
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+				</tableau>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<tableau>
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+				</tableau>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<tableau>
+					<expression>
+						<variable nom="a"/>
+					</expression>
+					<expression>
+						<variable nom="b"/>
+					</expression>
+					<expression>
+						<variable nom="c"/>
+					</expression>
+				</tableau>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<tableau/>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<tableau/>
+			</expression>
+		</corps>
+	</feature>
+</class>

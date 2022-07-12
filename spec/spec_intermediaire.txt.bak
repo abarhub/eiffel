@@ -1,0 +1,226 @@
+Spécification du code intermediaire:
+
+programme:
+	(system)?
+	(classe)*
+;
+
+system:
+;
+
+classe:
+	type hierarchie? creation* attribut* invariant? source?
+;
+
+type:
+
+;
+
+hierarchie:
+	type*
+;
+
+
+* conversion:
+
+les heritages ne contiennent que les nom des classes, et pas les export, car,
+chaque classe contient la totalité des attributs qu'il hérite.
+
+les attributs hérités n'ont pas de corps, mais ils ont une indication sur 
+la classe ancetre, et si le nom est différent, il est indiqué le nom de l'ancetre.
+Les attributs qui ont des décendants ont le nom de l'attribut descendant, 
+ainsi que la classe descendante.
+Si un attribut redefinie un ancetre, il aura la référence à l'ancetre, et 
+aussi un corps. S'il ne le redefinie pas, il aura juste la référence à l'ancetre.
+
+pour la clause heritage, il n'y a pas l'indication de l'heritage contraint, car
+ce n'est utile que lors de la validation du programme. Donc ce n'est pas nécéssaire
+pour le code intermediaire. par contre, les types formels sont bien la.
+
+il existe des types primitifs: $integer, $character, $boolean, $double, $real, $array[E], $string
+les classes correspondantes ont un attribut avec le type primitif correspondant.
+pour la classe integer, le champs est $val_int:$integer
+pour la classe character, le champs est $val_char:$character
+pour la classe boolean, le champs est $val_bool:$boolean
+pour la classe double, le champs est $val_double:$double
+pour la classe real, le champs est $val_real:$real
+pour la classe array[E], le champs est $tab:$array[E]
+pour la classe string, le champs est $val_string:$string
+lors de l'optimisation, si une classe n'a qu'un champs avec un type primitif, 
+il faut enlever la classe, et utiliser a la place le champs.
+
+les attributs peuvent être soit des routines, soit des constantes, soit des variables, 
+soit des variables statiques.
+les variables statiques ne peuvent pas être redefinie.
+les variables statiques servent pour les routines once.
+Pour convertir une feature once, 2 champs statiques sont ajoutés, en plus de la routine.
+L'un sert a savoir si la routine a été executé une fois, et l'autre à connaitre le résultat de cette appel.
+pour convertir un attribut constant, la constante est simplement convertie.
+pour une routine, les variables locales sont converties tel quel.
+une suite d'instruction met toutes les variables locales et Result à la valeur par defaut.
+un label "debut_routine" est inseré. il servira s'il y a un retry dans le rescue.
+les instructions sont générées. une instruction return est généré.
+un label "debut_rescue" est inséré, puis les instructions de rescue sont générés.
+a la fin de la routine une instruction raise(4) est généré.
+
+pour un appel, les parametres doivent être du 1er au dernier.
+
+Un attribut qui est implementé dans un ancetre, l'attribut n'a ni routine, ni type de retour.
+Un attribut qui est une routine, a le champs routine qui indique le type de retour, mais
+le champs retour de l'attribut n'a rien (c'est pour limiter les liens)
+
+attributs externes tinyeiffel:
+
+
+
+operations pour chaque type primitif:
+
+$integer: + (binaire+unaire), -(binaire+unaire), *, /(retourne $double ou $real ?), 
+	//(division entiere), \\(modulo)
+	<,<=,>,>=,/=(différent), ^(puissance), 
+	conv_e2d(conversion entier->double),
+	conv_e2r(conversion entier->real)
+
+$character: <,<=,>,>=,=,/=
+
+$boolean: and, or, not and then, or else, implies, xor
+
+$double: + (binaire+unaire), -(binaire+unaire), *, /(retourne $double ou $real ?), 
+	<,<=,>,>=,/=(différent), ^(puissance)
+
+$real: + (binaire+unaire), -(binaire+unaire), *, /(retourne $double ou $real ?), 
+	<,<=,>,>=,/=(différent), ^(puissance)
+
+$array[E]: new E(integer),
+
+$string: $add_string($string,$string), put_string($string,$character,$integer), item_string($integer), 
+	resize_string($string,$integer),$build_string($integer),
+	$count_string($string)
+
+operation pour les classes spéciales:
+
+general:
+
+
+
+a faire:
+* ajouter les operateurs de convertion conv_d2e, conv_d2r,conv_r2e,conv_c2e
+* ajouter les operateurs partie entiere d'un reel ou d'un double
+* implementer l'operateur old
+* implementer les attributs external "C"
+* faire une classe de validation du code intermediaire (identifiants déclarés, typage,etc...)
+* implementer les "and then" et "or else"
+* implementer les assertions dans les preconditions, les postconditions, et les invariants
+* voir si en comparant les classes en format XML on n'a pas un mecanisme incrementiel 
+  (notamment grace a tous les attributs+deferred)
+* ajouter le type contraint pour les generiques
+* implementer l'instruction extern
+
+Pour le CVS :
+
+* Si on veux valider les modifications, il faut faire un commit 
+(cela va changé le no de version+mettre un commentaire). 
+Les modifications sont alors dans l'outils de synchronisation.
+Ensuite, on synchronise avec le bouton "CVS (source eiffel)".
+Alors, les modifications sont dans le repository.
+
+* Si on crée un nouveau fichier, il faut l'ajouter au repository.
+
+* Pour un nouveau repository, il faut en créer un vide, puis ajouter les fichiers,
+puis l'exporter vers un repertoire. C'est ce répertoire qui contient les sources à modifier.
+
+
+Testes de vérifications:
+
++ signifie que le test ne génére pas d'erreur
+- signifie que le test génére des erreurs
+
+* appel
+ fait
+  + appel avec parametre valide (test2)
+  + appel sans parametre valide (test1)
+  - erreur dans le nombre de parametres (test3)
+  - erreur dans le type des parametres (test4)
+  + appel avec parametre conforme en type (test5)
+  +- tester avec une source (test6,test7,test8,test9)
+  +- tester si le nom existe avec et sans source (test10,test11,test12,test13)
+  +- tester si il n'y a pas de variable locale prise pour le nom d'un appel (test14,test15)
+  + test appel extern (test16)
+
+ a faire
+  - tester un appel dans une expression
+
+* label :
+ fait
+  + 2 labels avec des noms différents (test1)
+  - 3 labels dont 2 avec les noms identiques (test2)
+  + 2 labels différents et 2 gotos vers ces labels en avant et en arriere (test3)
+  - goto vers un label inexistant (test4)
+  + sigoto et sinongoto vers des labels existant en avant et en arrière (test5)
+  - sigoto vers label inexistant (test6)
+  - sinongoto vers label inexistant (test7)
+
+* nom attribut :
+ fait
+  - 2 noms d'attribut identique dans la meme classe (test)
+  + tous les noms sont différents (test2)
+  - tester si un attribut herité existe bien dans l'ancetre correpondant (test3,test4,test5,test6,test7)
+
+* nom classe :
+ fait:
+  + types simples sans generique ont une classe (test)
+  - variable locale avec un type inexistant (test2)
+  - 2 classes avec le meme nom (test6)
+
+ a faire
+  - tester si partout la verification est faite (generiques contraint, type retour, type de l'attribut, 
+    type de création,parametres formels, variables locales,...)
+
+* type :
+ fait
+  + type any compatible avec lui meme (test1)
+  + un type descendant d'un autre type est compatible avec son ancetre (test2,test3)
+  - un type n'est pas compatible avec un de ces descendants (test4)
+  - test entre parametres formelles d'une routine (test5)
+  - test entre parametres formelles et variable locale (test6 et test7)
+  - test entre un attribut et une variable locale (test2)
+  - test du typage avec les attributs par defaut (test9)
+
+ a faire
+  - tester si partout, il y a un test de compatibilité (affectation, parametre de l'appel, 
+    raise, si, sinon,redefinition,...)
+  - tester si la compatibilité fonctionne pour les types génériques
+
+* var :
+ fait
+  + equivalence pour les variables locales en majuscule ou en minuscule (test)
+  + attribut fait partie d'une expression (test2)
+  + attribut ancetre fait partie d'une expression (test3)
+  - verification du type pour une variable locale (test4)
+  + parametre fait partie d'une expression (test5)
+
+* classe :
+  fait
+  - l'attibut pour la section création existe bien (test1,test2)
+  - verification qu'une variable dans l'invariant declarée avec un type qui n'existe pas (test3)
+  - unicite du nom dans les attributs de création (test4,test5)
+
+* autre :
+ fait
+  + une routine sans instruction avec classe any,none, et test1
+
+* expression :
+  + tester toutes les expressions si ils sont valide uniquement avec le meme type. (test1,test2,test3,test5,test6)
+  + test appel extern (test7)
+
+ a faire
+  - tester si les expression verifie bien leur type.
+  - tester une expression d'appel
+  - tester une expression Void
+  - tester une expression de création
+  - tester les expressions primitives
+  - tester une expression type
+  - tester une instruction raise
+  - tester une instruction si et si_non
+  - tester si les ascendants sont correctes meme pour les redefinitions (?)
+  

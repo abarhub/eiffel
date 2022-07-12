@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<programme>
+	<system/>
+	<classe>
+		<type nom="TEST1"/>
+		<creation>
+			<nom_attribut nom="make"/>
+		</creation>
+		<attribut>
+			<nom_attribut nom="make"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<instruction>
+					<instr_label label="label1"/>
+					<instr_goto label="label2"/>
+					<instr_label label="label3"/>
+					<instr_label label="label2"/>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="print"/>
+					</instr_extern>
+					<instr_extern lang_extern="JVM:Test1:static">
+						<nom_attribut nom="print2"/>
+						<expression_scalaire type="chaine" text="Appel externe Java"/>
+					</instr_extern>
+					<instr_return/>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+</programme>

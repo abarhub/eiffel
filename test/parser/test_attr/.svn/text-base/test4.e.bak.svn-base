@@ -1,0 +1,22 @@
+class TEST4
+
+feature
+
+	a is
+	obsolete "coucou a tous"
+	do
+	end;
+	
+	b is
+	require
+		true;
+	do
+	ensure
+		false;
+	end;
+
+	frozen a is
+	do
+	end;
+
+end

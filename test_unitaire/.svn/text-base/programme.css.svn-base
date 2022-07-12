@@ -1,0 +1,7 @@
+body {color:black;background-color:white;}
+.toto {color:red;}
+.classe {color:green;}
+.type {color:blue;}
+.mot_clef {color:green;}
+.chaine {color:red;}
+.car {color:blue;}

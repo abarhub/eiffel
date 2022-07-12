@@ -1,0 +1,472 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0069)http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-01/msg00065.html -->
+<HTML><HEAD><TITLE>smalleiffel@loria.fr</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<SCRIPT language=JavaScript>
+<!-- for other browsers
+
+  // To confirm a form submition
+  function request_confirm(my_form, my_message){
+    if (window.confirm(my_message)) {
+      my_form.submit();
+    }
+  }
+
+  // To confirm on a link (A HREF)
+  function request_confirm_link(my_url, my_message){
+    question = confirm(my_message)
+    if (question !="0"){
+         top.location = my_url
+    }
+  }
+
+  // To confirm on a link (A HREF)
+  function refresh_mom_and_die(){
+    window.opener.location = window.opener.location
+    self.close()
+  }
+
+// end browsers -->
+</SCRIPT>
+
+<STYLE title="style sympa" type=text/css>A {
+	TEXT-DECORATION: none
+}
+</STYLE>
+
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#3366cc link=#3366cc bgColor=#ffffff><!-- begin menu.tpl -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD>
+      <TABLE cellSpacing=2 cellPadding=2 width="100%" border=0>
+        <TBODY>
+        <TR align=middle bgColor=#330099>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=2 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD noWrap align=middle bgColor=#ccccff><A 
+                  onclick="window.open('','wws_login','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,copyhistory=no,width=450,height=300')" 
+                  target=wws_login 
+                  href="http://wwsympa.loria.fr/wwsympa/nomenu/loginrequest/arc/smalleiffel"><FONT 
+                  size=-1><B>Login</B></FONT></A> 
+        </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+    <TD width="100%" bgColor=#ffffff>&nbsp;</TD>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR align=middle bgColor=#330099>
+          <TD>
+            <TABLE cellSpacing=2 cellPadding=2 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD noWrap align=middle bgColor=#ccccff><FONT color=#ffffff 
+                  size=-1><B>Pref</B></FONT> </TD>
+                <TD noWrap align=middle bgColor=#ccccff><FONT color=#ffffff 
+                  size=-1><B>Your subscribtions</B></FONT> </TD>
+                <TD noWrap align=middle bgColor=#ccccff><A 
+                  href="http://wwsympa.loria.fr/wwsympa/"><FONT 
+                  size=-1><B>Home</B></FONT></A> </TD>
+                <TD noWrap align=middle bgColor=#ccccff><A 
+                  href="http://wwsympa.loria.fr/wwsympa/help"><FONT 
+                  size=-1><B>Help</B></FONT></A> 
+        </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- end menu.tpl --><!-- begin title.us.tpl --><!-- <TABLE WIDTH="100%" BORDER=0 cellpadding=2 cellspacing=0><TR><TD>-->
+<TABLE cellSpacing=0 cellPadding=2 width="100%" bgColor=#330099 border=0>
+  <TBODY>
+  <TR vAlign=bottom>
+    <TD noWrap align=left><FONT color=#ffffff size=-1></FONT></TD>
+    <TD align=middle width="100%">
+      <TABLE cellPadding=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD noWrap align=middle bgColor=#3366cc><FONT color=#ffffff 
+            size=+2><B>smalleiffel@loria.fr</B></FONT> <BR><FONT 
+            color=#ffffff>Mailing-list archive for SmallEiffel, The GNU Eiffel 
+            Compiler</FONT> </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!--  </TD></TR></TABLE> --><!-- end title.us.tpl -->
+<TABLE cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD><!-- begin list_menu.tpl -->
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR vAlign=top><!-- empty line in the left menu panel -->
+          <TD noWrap width=5 bgColor=#330099>&nbsp;</TD>
+          <TD noWrap width=40 bgColor=#330099>&nbsp;</TD>
+          <TD width=30></TD>
+          <TD width=40></TD></TR>
+        <TR>
+          <TD noWrap width=5 bgColor=#330099>&nbsp;</TD><!-- begin -->
+          <TD noWrap align=right width=70 colSpan=2>
+            <TABLE cellSpacing=2 cellPadding=1 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#330099>
+                  <TABLE cellSpacing=1 cellPadding=2 width="100%" border=0 
+                  VALIGN="top">
+                    <TBODY>
+                    <TR>
+                      <TD noWrap align=right width="100%" bgColor=#ccccff><A 
+                        href="http://wwsympa.loria.fr/wwsympa/info/smalleiffel"><FONT 
+                        size=-1><B>List info</B> 
+                </FONT></A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+          <TD width=40></TD></TR>
+        <TR><!-- empty line in the left menu panel -->
+          <TD noWrap width=45 bgColor=#330099 colSpan=2>&nbsp;</TD>
+          <TD width=70 colSpan=2><BR></TD></TR>
+        <TR><!-- Panel list info -->
+          <TD noWrap width=5 bgColor=#330099>&nbsp;</TD>
+          <TD noWrap align=left width=110 bgColor=#ffffff colSpan=3>
+            <TABLE cellSpacing=2 cellPadding=1 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#330099>
+                  <TABLE cellSpacing=1 cellPadding=2 width="100%" border=0 
+                  VALIGN="top">
+                    <TBODY>
+                    <TR>
+                      <TD bgColor=#ccccff>Subscribers: 
+                        <B>254</B><BR><BR>Owners <BR><FONT size=-1><A 
+                        href="mailto:Dominique.Colnet@loria.fr">Dominique.Colnet@loria.fr</A></FONT> 
+                        <BR><FONT size=-1><A 
+                        href="mailto:Olivier.Zendra@loria.fr">Olivier.Zendra@loria.fr</A></FONT> 
+                        <BR>Moderators 
+            <BR></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
+        <TR><!-- empty line in the left menu panel -->
+          <TD noWrap width=45 bgColor=#330099 colSpan=2>&nbsp;</TD>
+          <TD width=70 colSpan=2><BR></TD></TR><!-- Subscription depending on susbscriber or not, email define or not etc --><!-- else is_subscriber -->
+        <TR>
+          <TD noWrap width=5 bgColor=#330099>&nbsp;</TD>
+          <TD noWrap align=right width=70 colSpan=2>
+            <TABLE cellSpacing=2 cellPadding=1 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#330099>
+                  <TABLE cellSpacing=1 cellPadding=2 width="100%" border=0 
+                  VALIGN="top">
+                    <TBODY>
+                    <TR>
+                      <TD noWrap align=right width="100%" 
+                        bgColor=#ccccff><FONT size=-1><B><A 
+                        onclick="request_confirm_link('/wwsympa/subscribe/smalleiffel', 'Do you really want to subscribe to list smalleiffel?'); return false;" 
+                        href="http://wwsympa.loria.fr/wwsympa/subscribe/smalleiffel">Subscribe</A> 
+                        </B></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+          <TD width=40></TD></TR>
+        <TR>
+          <TD noWrap width=45 bgColor=#330099 colSpan=2>&nbsp;</TD>
+          <TD width=70 colSpan=2><BR></TD></TR>
+        <TR>
+          <TD noWrap width=5 bgColor=#330099>&nbsp;</TD>
+          <TD noWrap align=right width=70 colSpan=2>
+            <TABLE cellSpacing=2 cellPadding=1 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#330099>
+                  <TABLE cellSpacing=1 cellPadding=2 width="100%" border=0 
+                  VALIGN="top">
+                    <TBODY>
+                    <TR>
+                      <TD noWrap align=right width="100%" 
+                        bgColor=#ccccff><FONT size=-1><B><A 
+                        onclick="request_confirm_link('/wwsympa/signoff/smalleiffel', 'Do you really want to unsubscribe from list smalleiffel?'); return false;" 
+                        href="http://wwsympa.loria.fr/wwsympa/signoff/smalleiffel">Unsubscribe</A> 
+                        </B></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+          <TD width=40></TD></TR><!-- END is_subscriber -->
+        <TR>
+          <TD noWrap width=45 bgColor=#330099 colSpan=2>&nbsp;</TD>
+          <TD width=70 colSpan=2><BR></TD></TR>
+        <TR>
+          <TD noWrap width=5 bgColor=#330099>&nbsp;</TD>
+          <TD noWrap align=right width=70 colSpan=2>
+            <TABLE cellSpacing=2 cellPadding=1 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#330099>
+                  <TABLE cellSpacing=1 cellPadding=2 width="100%" border=0 
+                  VALIGN="top">
+                    <TBODY>
+                    <TR>
+                      <TD noWrap align=right width="100%" 
+                        bgColor=#3366cc><FONT color=#ffffff 
+                        size=-1><B>Archive</B></FONT> 
+              </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+          <TD width=40></TD></TR>
+        <TR>
+          <TD noWrap width=45 bgColor=#330099 colSpan=2>&nbsp;</TD>
+          <TD width=70 
+      colSpan=2><BR></TD></TR><!-- END is_archived --></TBODY></TABLE><!-- end list_menu.tpl --></TD>
+    <TD width="100%">
+      <TABLE cellSpacing=0 cellPadding=1 width="100%" border=0 VALIGN="top">
+        <TBODY>
+        <TR>
+          <TD bgColor=#330099>
+            <TABLE width="100%" border=0 VALIGN="top">
+              <TBODY>
+              <TR vAlign=top>
+                <TD bgColor=#ffffff>
+                  <P><BR>
+                  <TABLE width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD align=left>
+                        <FORM action=/wwsympa method=post><INPUT type=hidden 
+                        value=smalleiffel name=list> <INPUT type=hidden 
+                        value=2001-01 name=archive_name> <INPUT type=hidden 
+                        value=phrase name=how> <INPUT type=hidden value=new 
+                        name=age> <INPUT type=hidden value=off name=case> <INPUT 
+                        type=hidden value=partial name=match> <INPUT type=hidden 
+                        value=10 name=limit> <INPUT type=hidden value=True 
+                        name=body> <INPUT size=17 name=key_word> <INPUT 
+                        type=hidden value=arcsearch name=action> <INPUT type=submit value=Search name=action_arcsearch><BR><A 
+                        href="http://wwsympa.loria.fr/wwsympa/arcsearch_form/smalleiffel/2001-01">Advanced 
+                        search</A> </FORM></TD>
+                      <TD align=right>
+                        <TABLE border=0>
+                          <TBODY>
+                          <TR bgColor=#ccccff>
+                            <TD bgColor=#ffffff><FONT 
+                              size=-1><B>1998</B></FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>01</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>02</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>03</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>04</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>05</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>06</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>07</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>08</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>09</FONT> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1998-10"><FONT 
+                              size=-1><B>10</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1998-11"><FONT 
+                              size=-1><B>11</FONT></A> </B></TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1998-12"><FONT 
+                              size=-1><B>12</B></FONT></A> </TD></TR>
+                          <TR bgColor=#ccccff>
+                            <TD bgColor=#ffffff><FONT 
+                              size=-1><B>1999</B></FONT> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-01"><FONT 
+                              size=-1><B>01</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-02"><FONT 
+                              size=-1><B>02</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-03"><FONT 
+                              size=-1><B>03</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-04"><FONT 
+                              size=-1><B>04</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-05"><FONT 
+                              size=-1><B>05</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-06"><FONT 
+                              size=-1><B>06</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-07"><FONT 
+                              size=-1><B>07</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-08"><FONT 
+                              size=-1><B>08</FONT></A> </B></TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-09"><FONT 
+                              size=-1><B>09</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-10"><FONT 
+                              size=-1><B>10</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-11"><FONT 
+                              size=-1><B>11</FONT></A> </B></TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/1999-12"><FONT 
+                              size=-1><B>12</B></FONT></A> </TD></TR>
+                          <TR bgColor=#ccccff>
+                            <TD bgColor=#ffffff><FONT 
+                              size=-1><B>2000</B></FONT> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-01"><FONT 
+                              size=-1><B>01</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-02"><FONT 
+                              size=-1><B>02</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-03"><FONT 
+                              size=-1><B>03</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-04"><FONT 
+                              size=-1><B>04</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-05"><FONT 
+                              size=-1><B>05</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-06"><FONT 
+                              size=-1><B>06</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-07"><FONT 
+                              size=-1><B>07</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-08"><FONT 
+                              size=-1><B>08</FONT></A> </B></TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-09"><FONT 
+                              size=-1><B>09</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-10"><FONT 
+                              size=-1><B>10</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-11"><FONT 
+                              size=-1><B>11</FONT></A> </B></TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2000-12"><FONT 
+                              size=-1><B>12</B></FONT></A> </TD></TR>
+                          <TR bgColor=#ccccff>
+                            <TD bgColor=#ffffff><FONT 
+                              size=-1><B>2001</B></FONT> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-01"><FONT 
+                              size=-1><B>01</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-02"><FONT 
+                              size=-1><B>02</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-03"><FONT 
+                              size=-1><B>03</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-04"><FONT 
+                              size=-1><B>04</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-05"><FONT 
+                              size=-1><B>05</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-06"><FONT 
+                              size=-1><B>06</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-07"><FONT 
+                              size=-1><B>07</B></FONT></A> </TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-08"><FONT 
+                              size=-1><B>08</FONT></A> </B></TD>
+                            <TD><A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-09"><FONT 
+                              size=-1><B>09</B></FONT></A> </TD>
+                            <TD><FONT color=#ffffff size=-1>10</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>11</FONT> </TD>
+                            <TD><FONT color=#ffffff size=-1>12</FONT> 
+                          </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- MHonArc v2.4.6 --><!--X-Subject: ISE Eiffel external clause info --><!--X-From-R13: tryqevqtNcebtfbp.hgf.rqh.nh --><!--X-Date: Fri, 19 Jan 2001 06:42:06 +0100 (MET) --><!--X-Message-Id: 979882903.3a67d3977d882@webmail.progsoc.uts.edu.au --><!--X-Content-Type: text/plain --><!--X-Head-End--><!--X-Body-Begin--><!--X-User-Header--><!--X-User-Header-End--><!--X-TopPNI-->
+                  <CENTER>
+                  <TABLE cellSpacing=2 cellPadding=2 width="100%" border=0>
+                    <TBODY>
+                    <TR align=middle bgColor=#330099>
+                      <TD>
+                        <TABLE cellSpacing=0 cellPadding=2 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR vAlign=center align=middle>
+                            <TD noWrap align=middle 
+                              bgColor=#ccccff>&nbsp;&nbsp;<A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-01/msg00064.html"><IMG 
+                              height=20 src="etl3_fichiers/left.gif" 
+                              align=middle border=0></A>&nbsp;&nbsp;</TD>
+                            <TD noWrap align=middle bgColor=#ccccff><A 
+                              style="TEXT-DECORATION: none" 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-01/mail3.html#00065"><FONT 
+                              size=-1><B>Chronological </B></FONT></A></TD>
+                            <TD noWrap align=middle 
+                              bgColor=#ccccff>&nbsp;&nbsp;<A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-01/msg00066.html"><IMG 
+                              height=20 src="etl3_fichiers/right.gif" 
+                              align=middle border=0></A>&nbsp;&nbsp;</TD>
+                            <TD width="40%" bgColor=#ccccff>&nbsp;</TD>
+                            <TD noWrap align=middle 
+                              bgColor=#ccccff>&nbsp;&nbsp;<A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-01/msg00078.html"><IMG 
+                              height=20 src="etl3_fichiers/left.gif" 
+                              align=middle border=0></A>&nbsp;&nbsp;</TD>
+                            <TD noWrap align=middle bgColor=#ccccff><A 
+                              style="TEXT-DECORATION: none" 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-01/thrd3.html#00065"><FONT 
+                              size=-1><B>Thread </B></FONT></A></TD>
+                            <TD noWrap align=middle 
+                              bgColor=#ccccff>&nbsp;&nbsp;<A 
+                              href="http://wwsympa.loria.fr/wwsympa/arc/smalleiffel/2001-01/msg00066.html"><IMG 
+                              height=20 src="etl3_fichiers/right.gif" 
+                              align=middle 
+                          border=0></A>&nbsp;&nbsp;</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></CENTER>
+                  <HR>
+<!--X-TopPNI-End--><!--X-MsgBody--><!--X-Subject-Header-Begin-->
+                  <TABLE width="100%" border=0>
+                    <TBODY>
+                    <TR bgColor=#ffffff>
+                      <TD><FONT color=#330099 size=+1><B>ISE Eiffel external 
+                        clause info</B></FONT><FONT size=+1> geldridg </FONT></TD>
+                      <TD noWrap align=right></TD></TR></TBODY></TABLE><!--X-Subject-Header-End--><!--X-Head-of-Message-->
+                  <UL>
+                    <LI><STRONG>From</STRONG>: geldridg@progsoc.uts.edu.au 
+                    <LI><STRONG>To</STRONG>: smalleiffel@loria.fr 
+                    <LI><EM>Cc</EM>: elj-win32-dev@egroups.com 
+                    <LI><STRONG>Subject</STRONG>: ISE Eiffel external clause 
+                    info 
+                    <LI><EM>Date</EM>: Fri, 19 Jan 2001 16:41:43 +1100 (EST) 
+                    <LI><EM>User-Agent</EM>: IMP/PHP IMAP webmail program 2.2.3 
+                    </LI></UL><!--X-Head-of-Message-End--><!--X-Head-Body-Sep-Begin-->
+                  <HR>
+<!--X-Head-Body-Sep-End--><!--X-Body-of-Message--><PRE>At some stage it would be nice for SmallEiffel to implement the ISE
+Eiffel external mechanism for C (Darren and Dominique have done it
+already for C++).
+
+The following documentation is a reference for anyone who has the 
+time/inclination/skill to do the work .. it certainly would broaden
+SmallEiffel's interoperability with the ISE Eiffel codebase (besides,
+we would like it very much for eljwin32all).
+
+The ISE Eiffel 4.5 External Mechanism:
+
+   <A href="http://www.eiffel.com/doc/online/eiffel45/papers/externals.html">http://www.eiffel.com/doc/online/eiffel45/papers/externals.html</A>
+
+of particular note are:
+
+ * structs
+ 
+   <A href="http://www.eiffel.com/doc/online/eiffel45/papers/externals.html#structs">http://www.eiffel.com/doc/online/eiffel45/papers/externals.html#structs</A>
+
+   -- this would eliminate much C interface code for structure wrapping:
+   --    <A href="http://www.egroups.com/message/elj-win32-dev/78">http://www.egroups.com/message/elj-win32-dev/78</A>
+
+ * macros
+
+   <A href="http://www.eiffel.com/doc/online/eiffel45/papers/externals.html#macros">http://www.eiffel.com/doc/online/eiffel45/papers/externals.html#macros</A>
+
+&gt;From the working version of ETL3:
+
+   27 Interfacing with C, C++, Java and other languages 
+   <A href="http://eiffel.com/private/meyer/etlnew/others.pdf">http://eiffel.com/private/meyer/etlnew/others.pdf</A>
+
+   -- login details are here:
+   --    <A href="http://www.elj.com/elj.cgi?article=19991001a">http://www.elj.com/elj.cgi?article=19991001a</A>
+
+This is the probable future syntax for the external clause.
+
+If you are wanting to contribute to the SmallEiffel project, this would
+be a good one to start on.
+
+Geoff
+
+-- geoff@elj.com
+-- <A href="http://www.advogato.org/person/elj/">http://www.advogato.org/person/elj/</A>
+
+
+</PRE><!--X-Body-of-Message-End--><!--X-MsgBody-End--><!--X-Follow-Ups-->
+                  <HR>
+<!--X-Follow-Ups-End--><!--X-References--><!--X-References-End--><!--X-BotPNI-->
+                  <UL><!--X-BotPNI-End--><!--X-User-Footer--><!--X-User-Footer-End--></UL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<TABLE align=right border=0>
+  <TBODY>
+  <TR>
+    <TD><I>Powered by</I></TD>
+    <TD><A href="http://listes.cru.fr/sympa/"><IMG alt="Sympa 3.0.3" 
+      src="etl3_fichiers/logo-s.gif" 
+border=0></A></TD></TR></TBODY></TABLE></BODY></HTML>

@@ -1,0 +1,15 @@
+class TEST1
+
+creation toto,tata,toto
+
+feature
+
+	toto is
+	do
+	end;
+
+	tata is
+	do
+	end;
+
+end

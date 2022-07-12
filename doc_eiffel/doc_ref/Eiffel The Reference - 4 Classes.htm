@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0062)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 4 Classes</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><!-- $Id: chap4.htm,v 1.4 1995/07/09 13:46:29 neil Exp neil $ -->
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 4 Classes_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm"><IMG 
+src="Eiffel The Reference - 4 Classes_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm"><IMG 
+src="Eiffel The Reference - 4 Classes_fichiers/next.gif"></A> 
+<P>
+<H1>4 Classes </H1>
+<H2>4.2 Objects </H2>
+<H3><IMG src="Eiffel The Reference - 4 Classes_fichiers/definit.gif"> <A 
+name=object>object</A>, <A name=instance>instance</A></H3>
+<P>Viewed as a type, a class describes the properties of a set of possible data 
+structures, or <B>objects</B>, which may exist during the execution of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#system">system</A> 
+that includes the class; these objects are called the <B>instances</B> of the 
+class. 
+<P>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#feature">feature</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#field">field</A> 
+
+<H2>4.3 Features </H2>
+<H3><IMG src="Eiffel The Reference - 4 Classes_fichiers/definit.gif"> <A 
+name=feature>feature</A> </H3>
+<P>Viewed as a module, a class introduces, through its class text, a set of 
+<B>features</B>. Some features, called <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#attribute">attributes</A>, 
+represent <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#field">fields</A> 
+of the class's direct <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#instance">instances</A>; 
+others, called <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#routine">routines</A>, 
+represent computations applicable to those <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#instance">instances</A>. 
+Since there is no other modular facility than the class, building a software <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#system">system</A> 
+in Eiffel means analyzing the types of <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#object">objects</A> 
+the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#system">system</A> 
+will manipulate, and writing a class for each of these types. 
+<P>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#inherited feature">inherited 
+features</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#immediate feature">immediate 
+features</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#signature">signature</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#argument signature">argument 
+signature</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#identifier feature">identifier 
+feature</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#operator feature">operator 
+feature</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#name of feature in class">name 
+of a feature in a class</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#original name">original 
+name</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name">final 
+name</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#final name set">final 
+name set</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#inherited name">inherited 
+name</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#name">name</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#VFFD">Feature 
+Declaration Rule (VFFD)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#VHRC">Rename 
+Clause Rule (VHRC)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm#multiple declaration rule">multiple 
+declaration rule</A> | 
+<H2>4.5 Class Text Structure</H2>A class is a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#specimen">specimen</A> 
+of the construct <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A>. 
+
+<H2>4.7 Indexing a Class</H2>
+<H3><IMG src="Eiffel The Reference - 4 Classes_fichiers/semantic.gif"></H3>
+<P>The <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Indexing">Indexing</A> 
+clause has no effect on the execution semantics. 
+<P>
+<H2>4.8 Class Header</H2>
+<H3><IMG src="Eiffel The Reference - 4 Classes_fichiers/validity.gif"> <A 
+name=VCCH>(VCCH)</A> Class Header Rule </H3>
+<P>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_header">Class_header</A> 
+appearing in the text of a class <I>C </I>is valid if and only if it satisfies 
+either of the following two conditions: 
+<OL>
+  <LI>There is no <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Header_mark">Header_mark</A> 
+  of the <B>deferred</B> form, and <I>C</I> is effective. 
+  <LI>There is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Header_mark">Header_mark</A> 
+  of the <B>deferred</B> form, and <I>C</I> is deferred. </LI></OL>
+<H2>4.9 Formal Generic Parameters</H2>
+<P>
+<H3><IMG src="Eiffel The Reference - 4 Classes_fichiers/definit.gif"> <A 
+name="formal generic dependency">formal generic dependency</A> </H3>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34#Formal_generic_name">Formal_generic_name</A> 
+<I>X</I> has a <B>formal generic dependency</B> on a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34#Formal_generic_name">Formal_generic_name</A> 
+<I>Y</I> if one of the following holds: 
+<UL>
+  <LI><I>X</I> has a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constraint">Constraint</A> 
+  and <I>Y</I> is appears within it. 
+  <LI>Recursively, there is a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34#Formal_generic_name">Formal_generic_name</A> 
+  <I>Z</I> such that <I>X</I> has a formal generic dependency on <I>Z</I> and 
+  <I>Z</I> has a formal generic dependency on <I>Y</I>. </LI></UL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#VCFG">Formal 
+Generics Rule (VCFG)</A> 
+<H3><IMG src="Eiffel The Reference - 4 Classes_fichiers/validity.gif"> <A 
+name=VCFG>(VCFG)</A> Formal Generics Rule </H3>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generics">Formal_generics</A> 
+part of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A> 
+is valid if and only if every <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generic_name">Formal_generic_name</A> 
+<I>G</I> appearing in it satisfies the following three conditions: 
+<P>
+<OL>
+  <LI><I>G</I> is different from the name of any class in the surrounding <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#universe">universe</A>. 
+
+  <LI><I>G</I> is different from any other <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generic_name">Formal_generic_name</A> 
+  appearing in the same <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generics">Formal_generics</A> 
+  part. 
+  <LI><I>G</I> does not have a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap4.htm#formal generic dependency">formal 
+  generic dependency</A> on itself. </LI></OL>
+<H3><IMG src="Eiffel The Reference - 4 Classes_fichiers/syntax.gif"><A 
+name="restricted type">Restricted Types</A></H3>
+<P>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_type">Restricted_type</A> 
+sequence is a syntactical device to prevent meaningless type declarations in <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constraint">Constraint</A> 
+and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+structures. In all cases a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#specimen">specimen</A> 
+of <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_type">Restricted_type</A> 
+is equivalent to the corresponding <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#specimen">specimen</A> 
+of <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type">Type</A>, 
+in particular all validity and semantic definitions for <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type">Type</A> 
+and its sub-components apply equally in all cases to <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_type">Restricted_type</A> 
+and its sub-components. 
+<H2>4.10 <A name="obsolete class">Obsolete</A> Clause</H2>
+<H3><IMG src="Eiffel The Reference - 4 Classes_fichiers/semantic.gif"> 
+</H3>Declaring a class as <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Obsolete">Obsolete</A> 
+does not affect its semantics. But some <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm#language processing tool">language 
+processing tools</A> should produce a warning when they process a class that 
+relies, as <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap7.htm#client">client</A> 
+or <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap6.htm#descendant">descendant</A>, 
+on an obsolete class. The warning should include the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Message">Message</A>. 
+
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 4 Classes_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm"><IMG 
+src="Eiffel The Reference - 4 Classes_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap5.htm"><IMG 
+src="Eiffel The Reference - 4 Classes_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS>
+<P><!-- $Log: chap4.htm,v $
+# Revision 1.4  1995/07/09  13:46:29  neil
+# New definition: formal generic dependency
+# VCFG (3) rewritten
+# Notes on Restricted Types included
+# Document cross referenced to 2, 3, 4, 5 and 6
+#
+# Revision 1.3  1995/07/09  10:55:55  neil
+# New definition formal generic dependency
+# VCFG (3) rewritten
+# Note about Restricted types included
+# Chapter changing links fixed
+#
+# Revision 1.2  1995/07/08  13:02:37  neil
+# Chapter reformatted
+#
+# Revision 1.1  1995/07/08  09:29:51  neil
+# Initial revision
+#
+--></P></BODY></HTML>

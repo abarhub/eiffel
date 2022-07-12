@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap24.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 24 Interfaces with other languages</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 24 Interfaces with other languages_fichiers/toc.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm"><IMG 
+src="Eiffel The Reference - 24 Interfaces with other languages_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm"><IMG 
+src="Eiffel The Reference - 24 Interfaces with other languages_fichiers/next.gif"></A> 
+
+<P>
+<H1>24 Interfaces with other languages </H1>
+<H2>24.3 EXTERNAL ROUTINES</H2>
+<H2>24.5 ARGUMENT AND RESULT TRANSMISSION </H2>
+<P>For external routines, follow the the semantics of direct reattachment, 
+interpreted as if each formal argument were declared with <B>exactly</B> the 
+same type as the corresponding actual. 
+<P>
+<H2>24.6 PASSING THE ADDRESS OF AN EIFFEL FEATURE </H2>
+<P>An argument of the Address form is of type <I>POINTER</I>. 
+<P>
+<P>The validity constraint on actual arguments of the Address form is clause 4 
+of the argument validity rule, which makes <I>$ f</I> valid as actual argument 
+to a call if and only if <I>f</I> is the final name of a feature of the 
+enclosing class, and that feature is not a constant attribute (which has no 
+address). 
+<P>
+<P>If the rule is satisfied, the feature will have a version <I>df</I> 
+applicable to the current object: this is the version of <I>f</I> for the 
+current object's generator (taking into account possible renaming and 
+redefinition). The value passed for attachment to the corresponding formal 
+argument is the address of <I>df</I>. This applies to both routines and variable 
+attributes; for an attribute, the call will pass the address of the field 
+corresponding to <I>df</I> in the current object. 
+<P>
+<H2>24.7 THE CECIL LIBRARY </H2>
+<P>This section describes a library for interfacing with C software: Cecil.
+<P>
+<P>The Cecil library contains macros, functions, types and error codes. All have 
+names beginning with either <I>eif_</I> (functions and macros) or <I>EIF_</I> 
+(types and error codes); examples are the function <I>eif_type_id</I> and the 
+type <I>EIF_PROC</I>, explained below. Their declarations appear in a C ''header 
+file'', <I>cecil</I>l<I>h</I>, which you may add to a C program through the C 
+preprocessor directive
+<P>
+<P><I>#include &lt;cecil</I>.<I>h&gt; </I>
+<P>
+<P>Let us now look at the principal facilities declared in 
+<I>cecil</I>.<I>h</I>. First of all, the C side will need to refer to Eiffel 
+types. It will know a type through a ''type-id'', of type <I>EIF_</I>TYPE_ID. To 
+obtain a type-id for a non-generic class of name <I>CLASSNAME</I> and record it 
+in a C variable <I>your_id</I>, use the function <I>eif_type_id</I>, which 
+returns a result of type <I>EIF_</I>TYPE_ID: 
+<P>
+<P><I>EIF_TYPE_ID your_id</I>;
+<P>
+<P>...
+<P>
+<P><I>your_id = eif_type_id </I>(<I>"CLASSNAME"</I>); 
+<P>
+<P>If the class is generic, replace the last instruction by 
+<P>
+<P><I>your_id = eif_generic_id </I>(<I>"CLASSNAME", gen1, gen2, </I>...); 
+<P>
+<P>where <I>gen1, gen2, </I>... are type-ids corresponding to the desired actual 
+generic parameters. Function <I>eif_generic_id</I> has a variable number of 
+arguments; the number of arguments following the first one ("<I>CLASSNAME</I>") 
+must match the number of formal generic parameters of the class of name 
+<I>CLASSNAME</I>. 
+<P>
+<P>The result returned by <I>eif_type_id</I> or <I>eif_generic_id</I> describes 
+a type which is expanded if and only if <I>CLASSNAME</I> is declared in Eiffel 
+as <B>expanded</B><I> </I><B>class</B>. To force a result describing an expanded 
+type, apply <I>eif_expanded</I> to the result of either function; the result is 
+another type-id. All these functions return as result the error code 
+<I>EIF_NO_</I>TYPE if they cannot compute a type-id (no class with the given 
+name in the universe, more than one class, wrong number of generic parameters). 
+It is possible to create an object from C, using the function <I>eif_create</I> 
+which takes an <I>EIF_TYPE_ID</I> argument and returns an <I>EIF_OBJ</I>. Here 
+is the list of functions used for calling the various kinds of Eiffel features 
+from C, with their types and template arguments: 
+<P>
+<P><I>EIF_PROC eif_proc </I>(<I>routine_name, type_id</I>)
+<P>
+<P><I>EIF_FN_BOOL eif_fn_bool </I>(<I>routine_name, type_id</I>)
+<P>
+<P><I>EIF_FN_CHAR eif_fn_char </I>(<I>routine_name, type_id</I>)
+<P>
+<P><I>EIF_FN_INT eif_fn_int </I>(<I>routine_name, type_id</I>)
+<P>
+<P><I>EIF_FN_REAL eif_fn_real </I>(<I>routine_name, type_id</I>)
+<P>
+<P><I>EIF_FN_DOUBLE eif_fn_double </I>(<I>routine_name, type_id</I>)
+<P>
+<P><I>EIF_FN_POINTER eif_fn_pointer </I>(<I>routine_name, type_id</I>)
+<P>
+<P><I>EIF_FN_REF eif_fn_ref </I>(<I>routine_name, type_id</I>) 
+<P>
+<P>In all cases the arguments are a string, representing a routine name, and a 
+type-id (obtained through <I>eif_type_id</I> or <I>eif_generic_ic</I>):
+<P>
+<P><I>char *routine_name</I>;<I> EIF_TYPE_ID type_id</I>; 
+<P>
+<P>These functions look for a routine of name <I>routine_name</I> in the base 
+class of the type corresponding to <I>type_id</I>. If no such routine exists, 
+the result is a null pointer. Otherwise it is a pointer to a C function 
+representing the desired routine; you may then call that function on appropriate 
+arguments. 
+<P>
+<P>There is a major difference between the Eiffel call and its C emulation: 
+Cecil <B>does not </B>apply dynamic binding. What you get from <I>eif_proc</I> 
+or one of its sisters is a pointer to a function representing the exact Eiffel 
+routine of the given name in the given class. In the presence of polymorphism 
+and redeclaration, the Eiffel call may trigger a different version of <I>go</I> 
+depending on the type of the object attached to <I>your_list</I> at the time the 
+call is executed. The C form will always call the same version, regardless of 
+the object's type. 
+<P>
+<P>The next Cecil facility enables the C side to access fields of complex 
+objects, corresponding to attributes of the generating classes. To obtain a 
+field of an object, use the macro <I>eif_field</I>. You may use the result of 
+<I>eif_field</I> in two different ways: as an expression, or ''r-value'' in C 
+terminology; or as a writable entity, or ''l-value'', which may then be the 
+target of an assignment. Such an assignment will re-attach the corresponding 
+object field. 
+<P>
+<P>Function <I>eif_field</I> takes three arguments. The first is a value of type 
+<I>EIF_OBJ</I>, representing an object; do not forget to protect it by 
+<I>eif_access</I>. The second is a string giving the name of the desired 
+attribute. The third is one of the following values, describing the type of the 
+attribute: 
+<P>
+<P>EIF_BOOLEAN
+<P>
+<P>EIF_CHARACTER
+<P>
+<P>EIF_INTEGER
+<P>
+<P>EIF_REAL
+<P>
+<P>EIF_DOUBLE
+<P>
+<P>EIF_POINTER
+<P>
+<P>EIF_REFERENCE 
+<P>
+<P>The result of <I>eif_field</I> is undefined if the object does not have a 
+field with the given name and type. 
+<P>
+<P>To call an Eiffel function returning a Bit_type result, use this scheme: 
+<P>
+<P>EIF_BIT your_bit; EIF_FN_BIT your_function;
+<P>
+<P>...
+<P>
+<P>your_function = eif_fn_bit (function_name, type_id);
+<P>
+<P>your_bit = (your_function) (eif_access (object), actual_1, actual_2, ...) 
+<P>
+<P>The last instruction assigns to <I>your_bit</I> a reference to the bit 
+sequence returned by the function. <I>EIF_BIT</I> describes a pointer type. 
+<P>
+<P>Similarly, you may access and modify Bit_type fields as follows: 
+<P>
+<P>EIF_BIT your_bit1, your_bit2;
+<P>
+<P>...
+<P>
+<P>your_bit1 = eif_bit_field (eif_access (your_object), "some_bit_attribute");
+<P>
+<P>eif_bit_set_field (eif_access (your_object), "some_bit_attribute", 
+your_bit2); 
+<P>
+<P>Here two primitives are needed. Function <I>eif_bit_field</I> takes two 
+arguments, an object pointer (returned by <I>eif_access</I>) and an attribute 
+name. In contrast with <I>eif_field</I>, the result of <I>eif_bit_field</I> may 
+only be used as an expression (r-value), not as a writable variable. To change 
+the value of a Bit_type field, use <I>eif_bit_set_field</I>, whose last argument 
+is the new value, of type <I>EIF_BIT</I>. If the object has no appropriate 
+Bit_type field, <I>eif_bit_field</I> returns the value <I>EIF_NO_BFIELD</I> and 
+the effect of <I>eif_bit_set_field</I> is undefined. 
+<P>
+<P>The following primitives are applicable to <I>your_bit</I> of type 
+<I>EIF_BIT</I>: 
+<P>
+<P><I>eif_bit_set </I>(<I>your_bit, position</I>) <I>eif_bit_clear 
+</I>(<I>your_bit, position</I>) <I>eif_bit_ith </I>(<I>your_</I>bit, position) 
+<I>eif_bit_length </I>(<I>your_bit</I>) <I>eif_bit_clone </I>(<I>your_bit</I>) 
+<P>
+<P>Here <I>position</I> is an integer index which must be in the range of the 
+bit sequence (counted from 1); otherwise the first two calls have undefined 
+results, and <I>eif_bit_ith</I> returns <I>EIF_NO_BIT</I>. Routines 
+<I>eif_bit_set</I> and <I>eif_bit_clear</I> set the element of index 
+<I>position</I> to 1 and 0, respectively. Function <I>eif_bit_ith</I> returns an 
+integer, the value of the element of index <I>position</I>. Function 
+<I>eif_bit_length</I> returns an integer, the length of the sequence. Function 
+<I>eif_bit_clone</I> returns an <I>EIF_BIT</I>, a fresh copy of the bit sequence 
+passed as argument. 
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 24 Interfaces with other languages_fichiers/toc.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm"><IMG 
+src="Eiffel The Reference - 24 Interfaces with other languages_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm"><IMG 
+src="Eiffel The Reference - 24 Interfaces with other languages_fichiers/next.gif"></A> 
+
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

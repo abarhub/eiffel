@@ -1,0 +1,182 @@
+Programme:
+Liste des classes:
+0)TEST1
+1)ANY
+2)NONE
+3)STRING
+4)PLATFORM
+5) expanded INTEGER
+6) expanded BOOLEAN
+7)GENERAL
+Heritage directe:
+TEST1->ANY
+ANY->PLATFORM
+NONE->TEST1,ANY,STRING,PLATFORM, expanded INTEGER, expanded BOOLEAN,GENERAL
+STRING->ANY
+PLATFORM->GENERAL
+ expanded INTEGER->ANY
+ expanded BOOLEAN->ANY
+GENERAL->
+Heritage:
+TEST1->ANY,PLATFORM,GENERAL
+ANY->PLATFORM,GENERAL
+NONE->TEST1,ANY,STRING,PLATFORM, expanded INTEGER, expanded BOOLEAN,GENERAL
+STRING->ANY,PLATFORM,GENERAL
+PLATFORM->GENERAL
+ expanded INTEGER->ANY,PLATFORM,GENERAL
+ expanded BOOLEAN->ANY,PLATFORM,GENERAL
+GENERAL->
+Liste detaillé des classes:
+ * Classe TEST1 :
+out{any}:
+type retour:STRING
+Void{any}:
+type retour:NONE
+make{TEST1}:
+
+local
+do
+Label debut_routine
+Call func4(ABC)
+Return
+Label debut_rescue
+raise 4
+end
+func4{TEST1}:
+(s:STRING)
+local
+do
+Label debut_routine
+Call extern  lang("JVM:Utils:static") option="sortie" sortie(s.$val_string)
+Label debut_rescue
+raise 4
+end
+ * Classe ANY :
+out{PLATFORM}:tinyeiffel.intermediaire.CIAttribut_Descendant@4f9fdc,tinyeiffel.intermediaire.CIAttribut_Descendant@18825b3,tinyeiffel.intermediaire.CIAttribut_Descendant@1632847,tinyeiffel.intermediaire.CIAttribut_Descendant@e95a56
+type retour:STRING
+Void{PLATFORM}:tinyeiffel.intermediaire.CIAttribut_Descendant@29e357,tinyeiffel.intermediaire.CIAttribut_Descendant@ca470,tinyeiffel.intermediaire.CIAttribut_Descendant@1ffc686,tinyeiffel.intermediaire.CIAttribut_Descendant@142bece
+type retour:NONE
+ * Classe NONE :
+ * Classe STRING :
+out{any}:
+type retour:STRING
+Void{any}:
+type retour:NONE
+make{STRING}:
+(capacity:INTEGER)
+local
+do
+Label debut_routine
+Return
+Label debut_rescue
+raise 4
+end
+hash_code{STRING}:
+type retour:INTEGER
+:Result:INTEGER
+local
+do
+Result:=0
+Label debut_routine
+Return
+Label debut_rescue
+raise 4
+end
+infix "<"{STRING}:
+type retour:BOOLEAN
+(other:STRING):Result:BOOLEAN
+local
+do
+Result:=false
+Label debut_routine
+Return
+Label debut_rescue
+raise 4
+end
+$val_string{STRING}:
+type retour:$string
+ * Classe PLATFORM :
+out{GENERAL}:tinyeiffel.intermediaire.CIAttribut_Descendant@18b81e3
+type retour:STRING
+Void{GENERAL}:tinyeiffel.intermediaire.CIAttribut_Descendant@1fc6e42
+type retour:NONE
+ * Classe  expanded INTEGER :
+out{any}:
+type retour:STRING
+Void{any}:
+type retour:NONE
+infix "^"{INTEGER}:
+type retour:INTEGER
+(other:INTEGER):Result:INTEGER
+local
+do
+Result:=0
+Label debut_routine
+Return
+Label debut_rescue
+raise 4
+end
+to_string{INTEGER}:
+type retour:STRING
+:Result:STRING
+local
+do
+Result:=Void
+Label debut_routine
+Return
+Label debut_rescue
+raise 4
+end
+hash_code{INTEGER}:
+type retour:INTEGER
+:Result:INTEGER
+local
+do
+Result:=0
+Label debut_routine
+Result:=0
+Return
+Label debut_rescue
+raise 4
+end
+$val_int{INTEGER}:
+type retour:$integer
+ * Classe  expanded BOOLEAN :
+out{any}:
+type retour:STRING
+Void{any}:
+type retour:NONE
+$val_bool{BOOLEAN}:
+type retour:$boolean
+$not{BOOLEAN}:
+type retour:BOOLEAN
+
+local
+Result:BOOLEAN
+do
+Result.$val_bool:=not $val_bool
+end
+ * Classe GENERAL :
+out{GENERAL}:tinyeiffel.intermediaire.CIAttribut_Descendant@1a082e2
+type retour:STRING
+:Result:STRING
+local
+do
+Result:=Void
+Label debut_routine
+Return
+Label debut_rescue
+raise 4
+end
+Void{GENERAL}:tinyeiffel.intermediaire.CIAttribut_Descendant@f0c85e
+type retour:NONE
+:Result:NONE
+local
+do
+Result:=Void
+Label debut_routine
+Return
+Label debut_rescue
+raise 4
+end
+Fin du programme

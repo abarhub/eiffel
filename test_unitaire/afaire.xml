@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="file://D:\projet\eiffel\test_unitaire\liste_a_faire.xsl"?>
+<!DOCTYPE liste_afaire SYSTEM "afaire.dtd">
+<?xml-stylesheet type="text/xsl" href="liste_a_faire.xsl"?>
+<!-- Document cree le 23 octobre 2003 -->
+<!-- Les dates sont en YYYY-MM-JJ -->
+<!-- Cette liste ne concerne que le compilateur -->
+
+<liste_afaire>
+	<herarchie nom="spécification">
+		<afaire debut="2003-10-23">
+			faire un diagramme de classe complet
+		</afaire>
+		<afaire debut="2003-10-23">
+			faire un diagramme des cas d'utilisation
+		</afaire>
+		<afaire debut="2003-10-23">
+			 faire un mécanisme de compilation conditionnel
+		</afaire>
+	</herarchie>
+	<herarchie nom="conception">
+		<afaire debut="2003-10-23">
+			faire un diagramme de composants
+		</afaire>
+		<afaire debut="2003-10-23">
+			 faire un mécanisme de compilation conditionnel
+		</afaire>
+		<herarchie nom="conception des regles de validité">
+			<afaire debut="2003-10-27">***</afaire>
+			<afaire debut="2003-10-27">VAOL</afaire>
+			<afaire debut="2003-10-27">VAPE</afaire>
+			<afaire debut="2003-10-27">VAVE</afaire>
+			<afaire debut="2003-10-27">VBAR</afaire>
+			<afaire debut="2003-10-27">VBGV</afaire>
+			<afaire debut="2003-10-27">VCCH</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VCFG</afaire>
+			<afaire debut="2003-10-27">VCRN</afaire>
+			<afaire debut="2003-10-27">VDCN</afaire>
+			<afaire debut="2003-10-27">VDJR</afaire>
+			<afaire debut="2003-10-27">VDOC</afaire>
+			<afaire debut="2003-10-27">VDRD</afaire>
+			<afaire debut="2003-10-27">VDRS</afaire>
+			<afaire debut="2003-10-27">VDUC</afaire>
+			<afaire debut="2003-10-27">VDUS</afaire>
+			<afaire debut="2003-10-27">VEEN</afaire>
+			<afaire debut="2003-10-27">VFFD</afaire>
+			<afaire debut="2003-10-27">VGCC</afaire>
+			<afaire debut="2003-10-27">VGCI</afaire>
+			<afaire debut="2003-10-27">VGCP</afaire>
+			<afaire debut="2003-10-27">VGCS</afaire>
+			<afaire debut="2003-10-27">VHAY</afaire>
+			<afaire debut="2003-10-27">VHPR</afaire>
+			<afaire debut="2003-10-27">VHRC</afaire>
+			<afaire debut="2003-10-27">VIRW</afaire>
+			<afaire debut="2003-10-27">VJAR</afaire>
+			<afaire debut="2003-10-27">VJRV</afaire>
+			<afaire debut="2003-10-27">VKCN</afaire>
+			<afaire debut="2003-10-27">VLCP</afaire>
+			<afaire debut="2003-10-27">VLEC</afaire>
+			<afaire debut="2003-10-27">VLEL</afaire>
+			<afaire debut="2003-10-27">VMCN</afaire>
+			<afaire debut="2003-10-27">VMFN</afaire>
+			<afaire debut="2003-10-27">VMRC</afaire>
+			<afaire debut="2003-10-27">VMSS</afaire>
+			<afaire debut="2003-10-27">VNCB</afaire>
+			<afaire debut="2003-10-27">VNCC</afaire>
+			<afaire debut="2003-10-27">VNCE</afaire>
+			<afaire debut="2003-10-27">VNCF</afaire>
+			<afaire debut="2003-10-27">VNCG</afaire>
+			<afaire debut="2003-10-27">VNCH</afaire>
+			<afaire debut="2003-10-27">VNCN</afaire>
+			<afaire debut="2003-10-27">VNCS</afaire>
+			<afaire debut="2003-10-27">VNCX</afaire>
+			<afaire debut="2003-10-27">VOMB</afaire>
+			<afaire debut="2003-10-27">VQMC</afaire>
+			<afaire debut="2003-10-27">VQUI</afaire>
+			<afaire debut="2003-10-27">VREG</afaire>
+			<afaire debut="2003-10-27">VRFA</afaire>
+			<afaire debut="2003-10-27">VRLE</afaire>
+			<afaire debut="2003-10-27">VRRR</afaire>
+			<afaire debut="2003-10-27">VSCN</afaire>
+			<afaire debut="2003-10-27">VSRC</afaire>
+			<afaire debut="2003-10-27">VTAT</afaire>
+			<afaire debut="2003-10-27">VTBT</afaire>
+			<afaire debut="2003-10-27">VTCG</afaire>
+			<afaire debut="2003-10-27">VTCT</afaire>
+			<afaire debut="2003-10-27">VTEC</afaire>
+			<afaire debut="2003-10-27">VTUG</afaire>
+			<afaire debut="2003-10-27">VUAR</afaire>
+			<afaire debut="2003-10-27">VUCS</afaire>
+			<afaire debut="2003-10-27">VUEX</afaire>
+			<afaire debut="2003-10-27">VUGV</afaire>
+			<afaire debut="2003-10-27">VWBE</afaire>
+			<afaire debut="2003-10-27">VWCA</afaire>
+			<afaire debut="2003-10-27">VWEQ</afaire>
+			<afaire debut="2003-10-27">VWID</afaire>
+			<afaire debut="2003-10-27">VWMA</afaire>
+			<afaire debut="2003-10-27">VWMS</afaire>
+			<afaire debut="2003-10-27">VWOE</afaire>
+			<afaire debut="2003-10-27">VWST</afaire>
+			<afaire debut="2003-10-27">VXRC</afaire>
+			<afaire debut="2003-10-27">VXRT</afaire>
+		</herarchie>
+		<afaire debut="2003-11-20">
+			Prendre en compte la regle VDRD7 ?
+		</afaire>
+	</herarchie>
+	<herarchie nom="codage">
+		<afaire debut="2003-10-23">terminer le parser</afaire>
+		<afaire debut="2003-10-23">
+			 faire un mécanisme de compilation conditionnel
+		</afaire>
+		<afaire debut="2003-10-23">
+			faire la S-validité
+		</afaire>
+		<afaire debut="2003-10-23">
+			faire la C-validité
+		</afaire>
+		<afaire debut="2003-12-23">
+			traiter les inspect a..z avec a,z unique 
+			et a et z non consecutif
+		</afaire>
+		<herarchie nom="implémentation des regles de validité">
+			<afaire debut="2003-10-27">***</afaire>
+			<afaire debut="2003-10-27">VAOL</afaire>
+			<afaire debut="2003-10-27">VAPE</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-07">VAVE</afaire>
+			<afaire debut="2003-10-27">VBAR</afaire>
+			<afaire debut="2003-10-27">VBGV</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-30">VCCH</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VCFG</afaire>
+			<afaire debut="2003-10-27">VCRN</afaire>
+			<afaire debut="2003-10-27">VDCN</afaire>
+			<afaire debut="2003-10-27">VDJR</afaire>
+			<afaire debut="2003-10-27">VDOC</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VDRD</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VDRS</afaire>
+			<afaire debut="2003-10-27">VDUC</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VDUS</afaire>
+			<afaire debut="2003-10-27">VEEN</afaire>
+			<afaire debut="2003-10-27">VFFD</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-29">VGCC</afaire>
+			<afaire debut="2003-10-27">VGCI</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-03">VGCP</afaire>
+			<afaire debut="2003-10-27">VGCS</afaire>
+			<afaire debut="2003-10-27">VHAY</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VHPR</afaire>
+			<afaire debut="2003-10-27">VHRC</afaire>
+			<afaire debut="2003-10-27">VIRW</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-10-30">VJAR</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-07">VJRV</afaire>
+			<afaire debut="2003-10-27">VKCN</afaire>
+			<afaire debut="2003-10-27">VLCP</afaire>
+			<afaire debut="2003-10-27">VLEC</afaire>
+			<afaire debut="2003-10-27">VLEL</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VMCN</afaire>
+			<afaire debut="2003-10-27">VMFN</afaire>
+			<afaire debut="2003-10-27">VMRC</afaire>
+			<afaire debut="2003-10-27">VMSS</afaire>
+			<afaire debut="2003-10-27">VNCB</afaire>
+			<afaire debut="2003-10-27">VNCC</afaire>
+			<afaire debut="2003-10-27">VNCE</afaire>
+			<afaire debut="2003-10-27">VNCF</afaire>
+			<afaire debut="2003-10-27">VNCG</afaire>
+			<afaire debut="2003-10-27">VNCH</afaire>
+			<afaire debut="2003-10-27">VNCN</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VNCS</afaire>
+			<afaire debut="2003-10-27">VNCX</afaire>
+			<afaire debut="2003-10-27">VOMB</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-03">VQMC</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-03">VQUI</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-01">VREG</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-01">VRFA</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-01">VRLE</afaire>
+			<afaire debut="2003-10-27">VRRR</afaire>
+			<afaire debut="2003-10-27">VSCN</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-04">VSRC</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-05">VTAT</afaire>
+			<afaire debut="2003-10-27">VTBT</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VTCG</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VTCT</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-06">VTEC</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-11-23">VTUG</afaire>
+			<afaire debut="2003-10-27">VUAR</afaire>
+			<afaire debut="2003-10-27">VUCS</afaire>
+			<afaire debut="2003-10-27">VUEX</afaire>
+			<afaire debut="2003-10-27">VUGV</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-07">VWBE</afaire>
+			<afaire debut="2003-10-27">VWCA</afaire>
+			<afaire debut="2003-10-27">VWEQ</afaire>
+			<afaire debut="2003-10-27">VWID</afaire>
+			<afaire debut="2003-10-27">VWMA</afaire>
+			<afaire debut="2003-10-27">VWMS</afaire>
+			<afaire debut="2003-10-27">VWOE</afaire>
+			<afaire debut="2003-10-27">VWST</afaire>
+			<afaire debut="2003-10-27">VXRC</afaire>
+			<afaire debut="2003-10-27" fait="oui" fin="2003-12-30">VXRT</afaire>
+		</herarchie>
+	</herarchie>
+	<herarchie nom="testes">
+		<herarchie nom="testes parser">
+			<afaire debut="2003-10-23">
+				prendre en compte les index
+			</afaire>
+			<afaire debut="2003-10-23">
+				prendre en compte les opérateurs libres
+			</afaire>
+		</herarchie>
+		<herarchie nom="testes contextuels">
+			<afaire debut="2003-10-23">
+				terminer les testes de validité d'eiffel
+			</afaire>
+		</herarchie>
+		<afaire debut="2003-10-27">
+			Salut
+		</afaire>
+		<herarchie nom="teste des regles de validité">
+			<afaire debut="2003-10-27">***</afaire>
+			<afaire debut="2003-10-27">VAOL</afaire>
+			<afaire debut="2003-10-27">VAPE</afaire>
+			<afaire debut="2003-10-27">VAVE</afaire>
+			<afaire debut="2003-10-27">VBAR</afaire>
+			<afaire debut="2003-10-27">VBGV</afaire>
+			<afaire debut="2003-10-27">VCCH</afaire>
+			<afaire debut="2003-10-27">VCFG</afaire>
+			<afaire debut="2003-10-27">VCRN</afaire>
+			<afaire debut="2003-10-27">VDCN</afaire>
+			<afaire debut="2003-10-27">VDJR</afaire>
+			<afaire debut="2003-10-27">VDOC</afaire>
+			<afaire debut="2003-10-27">VDRD</afaire>
+			<afaire debut="2003-10-27">VDRS</afaire>
+			<afaire debut="2003-10-27">VDUC</afaire>
+			<afaire debut="2003-10-27">VDUS</afaire>
+			<afaire debut="2003-10-27">VEEN</afaire>
+			<afaire debut="2003-10-27">VFFD</afaire>
+			<afaire debut="2003-10-27">VGCC</afaire>
+			<afaire debut="2003-10-27">VGCI</afaire>
+			<afaire debut="2003-10-27">VGCP</afaire>
+			<afaire debut="2003-10-27">VGCS</afaire>
+			<afaire debut="2003-10-27">VHAY</afaire>
+			<afaire debut="2003-10-27">VHPR</afaire>
+			<afaire debut="2003-10-27">VHRC</afaire>
+			<afaire debut="2003-10-27">VIRW</afaire>
+			<afaire debut="2003-10-27">VJAR</afaire>
+			<afaire debut="2003-10-27">VJRV</afaire>
+			<afaire debut="2003-10-27">VKCN</afaire>
+			<afaire debut="2003-10-27">VLCP</afaire>
+			<afaire debut="2003-10-27">VLEC</afaire>
+			<afaire debut="2003-10-27">VLEL</afaire>
+			<afaire debut="2003-10-27">VMCN</afaire>
+			<afaire debut="2003-10-27">VMFN</afaire>
+			<afaire debut="2003-10-27">VMRC</afaire>
+			<afaire debut="2003-10-27">VMSS</afaire>
+			<afaire debut="2003-10-27">VNCB</afaire>
+			<afaire debut="2003-10-27">VNCC</afaire>
+			<afaire debut="2003-10-27">VNCE</afaire>
+			<afaire debut="2003-10-27">VNCF</afaire>
+			<afaire debut="2003-10-27">VNCG</afaire>
+			<afaire debut="2003-10-27">VNCH</afaire>
+			<afaire debut="2003-10-27">VNCN</afaire>
+			<afaire debut="2003-10-27">VNCS</afaire>
+			<afaire debut="2003-10-27">VNCX</afaire>
+			<afaire debut="2003-10-27">VOMB</afaire>
+			<afaire debut="2003-10-27">VQMC</afaire>
+			<afaire debut="2003-10-27">VQUI</afaire>
+			<afaire debut="2003-10-27">VREG</afaire>
+			<afaire debut="2003-10-27">VRFA</afaire>
+			<afaire debut="2003-10-27">VRLE</afaire>
+			<afaire debut="2003-10-27">VRRR</afaire>
+			<afaire debut="2003-10-27">VSCN</afaire>
+			<afaire debut="2003-10-27">VSRC</afaire>
+			<afaire debut="2003-10-27">VTAT</afaire>
+			<afaire debut="2003-10-27">VTBT</afaire>
+			<afaire debut="2003-10-27">VTCG</afaire>
+			<afaire debut="2003-10-27">VTCT</afaire>
+			<afaire debut="2003-10-27">VTEC</afaire>
+			<afaire debut="2003-10-27">VTUG</afaire>
+			<afaire debut="2003-10-27">VUAR</afaire>
+			<afaire debut="2003-10-27">VUCS</afaire>
+			<afaire debut="2003-10-27">VUEX</afaire>
+			<afaire debut="2003-10-27">VUGV</afaire>
+			<afaire debut="2003-10-27">VWBE</afaire>
+			<afaire debut="2003-10-27">VWCA</afaire>
+			<afaire debut="2003-10-27">VWEQ</afaire>
+			<afaire debut="2003-10-27">VWID</afaire>
+			<afaire debut="2003-10-27">VWMA</afaire>
+			<afaire debut="2003-10-27">VWMS</afaire>
+			<afaire debut="2003-10-27">VWOE</afaire>
+			<afaire debut="2003-10-27">VWST</afaire>
+			<afaire debut="2003-10-27">VXRC</afaire>
+			<afaire debut="2003-10-27">VXRT</afaire>
+		</herarchie>
+	</herarchie>
+	<herarchie nom="outils annexe">
+		<afaire debut="2003-10-23">
+			faire le short
+		</afaire>
+		<afaire debut="2003-10-23">
+			faire le pretty
+		</afaire>
+		<afaire debut="2003-10-23">
+			faire le debugeur
+		</afaire>
+		<afaire debut="2003-10-23">
+			faire l'IDE
+		</afaire>
+		<afaire debut="2003-10-23">
+			faire les exemples
+		</afaire>
+		<afaire debut="2003-10-23">
+			faire la librairie
+		</afaire>
+	</herarchie>
+</liste_afaire>
+

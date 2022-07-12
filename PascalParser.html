@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Grammar compiler\eiffel.g</TITLE>
+</HEAD>
+<BODY>
+<table summary="" border="1" cellpadding="5">
+<tr>
+<td>
+<font size="+2">Grammar PascalParser</font><br>
+<a href="http://www.ANTLR.org">ANTLR</a>-generated HTML file from compiler\eiffel.g
+<p>
+Terence Parr, <a href="http://www.magelang.com">MageLang Institute</a>
+<br>ANTLR Version 2.7.2; 1989-1999
+</td>
+</tr>
+</table>
+<PRE>
+
+Definition of parser PascalParser, which is a subclass of LLkParser.
+
+
+<a name="classe">classe</a>
+	:	(	<a href="PascalParser.html#indexing">indexing</a> 
+		|	
+		) 
+		(	EXPANDED 
+		|	DEFERRED 
+		|	
+		) 
+		CLASS <a href="PascalParser.html#nom_class">nom_class</a> 
+		(	OBSOLETE <a href="PascalParser.html#string">string</a> 
+		|	
+		) 
+		(	<a href="PascalParser.html#heritage">heritage</a> 
+		|	
+		) 
+		(	<a href="PascalParser.html#creation">creation</a> 
+		|	
+		) 
+		FEATURE ( <a href="PascalParser.html#feature">feature</a> )* 
+		(	INVARIANT <a href="PascalParser.html#liste_assert">liste_assert</a> 
+		|	
+		) 
+		END 
+	;
+
+
+<a name="indexing">indexing</a>
+	:	INDEXING ( ID DOUBLE_POINT 
+			(	ID 
+			|	STRING 
+			) 
+			( VIRGULE 
+				(	ID 
+				|	STRING 
+				) 
+				)* ( SEMI )+ )+ 
+	;
+
+
+<a name="nom_class">nom_class</a>
+	:	<a href="PascalParser.html#decl_type">decl_type</a> 
+	;
+
+
+<a name="string">string</a>
+	:	STRING 
+	|	STRING2 ( STRING3 )* STRING4 
+	;
+
+
+<a name="heritage">heritage</a>
+	:	INHERIT ( <a href="PascalParser.html#type">type</a> 
+			(	RENAME 
+				(	<a href="PascalParser.html#nom_feature">nom_feature</a> AS <a href="PascalParser.html#nom_feature">nom_feature</a> ( VIRGULE <a href="PascalParser.html#nom_feature">nom_feature</a> AS <a href="PascalParser.html#nom_feature">nom_feature</a> )* 
+				|	
+				) 
+			|	
+			) 
+			(	EXPORT ( <a href="PascalParser.html#nom_feature">nom_feature</a> ( VIRGULE <a href="PascalParser.html#nom_feature">nom_feature</a> )* 
+					(	ALL 
+					|	( ACOLADEO <a href="PascalParser.html#type">type</a> ( VIRGULE <a href="PascalParser.html#type">type</a> )* ACOLADEF ) 
+					) 
+					( SEMI ) )+ 
+			|	
+			) 
+			(	UNDEFINE <a href="PascalParser.html#nom_feature">nom_feature</a> ( VIRGULE <a href="PascalParser.html#nom_feature">nom_feature</a> )* 
+			|	
+			) 
+			(	REDEFINE <a href="PascalParser.html#nom_feature">nom_feature</a> ( VIRGULE <a href="PascalParser.html#nom_feature">nom_feature</a> )* 
+			|	
+			) 
+			(	SELECT <a href="PascalParser.html#nom_feature">nom_feature</a> ( VIRGULE <a href="PascalParser.html#nom_feature">nom_feature</a> )* 
+			|	
+			) 
+			(	END 
+			|	
+			) 
+			( SEMI )+ )+ 
+	;
+
+
+<a name="creation">creation</a>
+	:	( CREATION 
+			(	ACOLADEO <a href="PascalParser.html#type">type</a> ( VIRGULE <a href="PascalParser.html#type">type</a> )* ACOLADEF 
+			|	
+			) 
+			<a href="PascalParser.html#nom_feature">nom_feature</a> ( VIRGULE <a href="PascalParser.html#nom_feature">nom_feature</a> )* )+ 
+	;
+
+
+<a name="feature">feature</a>
+	:	( FEATURE 
+			(	ACOLADEO <a href="PascalParser.html#type">type</a> ( VIRGULE <a href="PascalParser.html#type">type</a> )* ACOLADEF 
+			|	
+			) )* 
+		(	FROZEN 
+		|	
+		) 
+		<a href="PascalParser.html#nom_feature">nom_feature</a> ( VIRGULE 
+			(	FROZEN 
+			|	
+			) 
+			<a href="PascalParser.html#nom_feature">nom_feature</a> )* 
+		(	<a href="PascalParser.html#decl_param">decl_param</a> 
+		|	
+		) 
+		(	DOUBLE_POINT <a href="PascalParser.html#type">type</a> 
+		|	
+		) 
+		(	IS <a href="PascalParser.html#corps">corps</a> 
+		|	
+		) 
+		( SEMI )* 
+	;
+
+
+<a name="liste_assert">liste_assert</a>
+	:	( 
+			(	ID DOUBLE_POINT 
+				(	
+				|	<a href="PascalParser.html#expr">expr</a> 
+				|	
+				) 
+			|	<a href="PascalParser.html#expr">expr</a> 
+			) 
+			( SEMI )+ )* 
+	;
+
+
+<a name="type">type</a>
+	:	ID 
+		(	CROCHETO 
+			(	<a href="PascalParser.html#type">type</a> ( VIRGULE <a href="PascalParser.html#type">type</a> )* 
+			|	
+			) 
+			CROCHETF 
+		|	
+		) 
+		
+	|	LIKE <a href="PascalParser.html#expr">expr</a> 
+	;
+
+
+<a name="nom_feature">nom_feature</a>
+	:	ID 
+	|	INFIX <a href="PascalParser.html#string">string</a> 
+	|	PREFIX <a href="PascalParser.html#string">string</a> 
+	;
+
+
+<a name="decl_type">decl_type</a>
+	:	ID 
+		(	CROCHETO 
+			(	<a href="PascalParser.html#type2">type2</a> ( VIRGULE <a href="PascalParser.html#type2">type2</a> )* 
+			|	
+			) 
+			CROCHETF 
+		|	
+		) 
+		
+	;
+
+
+<a name="type2">type2</a>
+	:	ID 
+		(	FLECHED <a href="PascalParser.html#decl_type">decl_type</a> 
+		|	
+		) 
+		
+	;
+
+
+<a name="expr">expr</a>
+	:	<a href="PascalParser.html#expr17">expr17</a> 
+	;
+
+
+<a name="decl_param">decl_param</a>
+	:	LPAREN 
+		(	( ID ( VIRGULE ID )* DOUBLE_POINT <a href="PascalParser.html#type">type</a> 
+				(	SEMI 
+				|	
+				) )+ 
+		|	
+		) 
+		RPAREN 
+	;
+
+
+<a name="corps">corps</a>
+	:	(	OBSOLETE <a href="PascalParser.html#string">string</a> 
+		|	
+		) 
+		(	REQUIRE <a href="PascalParser.html#liste_assert">liste_assert</a> 
+		|	
+		) 
+		<a href="PascalParser.html#corps2">corps2</a> 
+		(	ENSURE <a href="PascalParser.html#liste_assert">liste_assert</a> 
+		|	
+		) 
+		(	RESCUE ( <a href="PascalParser.html#instr">instr</a> ( SEMI )* )* 
+		|	
+		) 
+		END 
+	|	UNIQUE 
+	|	<a href="PascalParser.html#expr">expr</a> 
+	;
+
+
+<a name="corps2">corps2</a>
+	:	(	LOCAL ( ( ID ( VIRGULE ID )* ) DOUBLE_POINT <a href="PascalParser.html#type">type</a> ( SEMI )* )* 
+		|	
+		) 
+		(	DO 
+		|	ONCE 
+		) 
+		( <a href="PascalParser.html#instr">instr</a> ( SEMI )* )* 
+	|	DEFERRED 
+	|	EXTERNAL <a href="PascalParser.html#string">string</a> 
+		(	ALIAS <a href="PascalParser.html#string">string</a> 
+		|	
+		) 
+		
+	;
+
+
+<a name="instr">instr</a>
+	:	ID AFFECT <a href="PascalParser.html#expr">expr</a> 
+	|	ID TENTATIVE_AFFECT <a href="PascalParser.html#expr">expr</a> 
+	|	(	ID 
+			(	<a href="PascalParser.html#exec_param">exec_param</a> 
+			|	
+			) 
+			
+		|	LPARENT <a href="PascalParser.html#expr">expr</a> RPARENT 
+		|	INT 
+		|	<a href="PascalParser.html#string">string</a> 
+		|	REAL 
+		|	CHAR 
+		) 
+		( POINT ID 
+			(	<a href="PascalParser.html#exec_param">exec_param</a> 
+			|	
+			) 
+			)* 
+	|	FROM ( <a href="PascalParser.html#instr">instr</a> SEMI )* UNTIL <a href="PascalParser.html#expr">expr</a> 
+		(	INVARIANT <a href="PascalParser.html#liste_assert">liste_assert</a> 
+		|	
+		) 
+		(	VARIANT <a href="PascalParser.html#expr">expr</a> 
+		|	
+		) 
+		LOOP ( <a href="PascalParser.html#instr">instr</a> SEMI )* END 
+	|	IF <a href="PascalParser.html#expr">expr</a> THEN ( <a href="PascalParser.html#instr">instr</a> ( SEMI )* )* ( ELSEIF <a href="PascalParser.html#expr">expr</a> THEN ( <a href="PascalParser.html#instr">instr</a> ( SEMI )* )* )* 
+		(	ELSE ( <a href="PascalParser.html#instr">instr</a> ( SEMI )* )* 
+		|	
+		) 
+		END 
+	|	EXCLAMATION 
+		(	<a href="PascalParser.html#type">type</a> 
+		|	
+		) 
+		EXCLAMATION ID 
+		(	POINT ID 
+			(	<a href="PascalParser.html#exec_param">exec_param</a> 
+			|	
+			) 
+		|	
+		) 
+		
+	|	RETRY 
+	|	INSPECT <a href="PascalParser.html#expr">expr</a> ( WHEN <a href="PascalParser.html#expr_when">expr_when</a> ( VIRGULE <a href="PascalParser.html#expr_when">expr_when</a> )* THEN ( <a href="PascalParser.html#instr">instr</a> ( SEMI )* )* )* END 
+	|	CHECK <a href="PascalParser.html#liste_assert">liste_assert</a> END 
+	|	DEBUG 
+		(	LPAREN <a href="PascalParser.html#string">string</a> ( VIRGULE <a href="PascalParser.html#string">string</a> )* RPAREN 
+		|	
+		) 
+		( <a href="PascalParser.html#instr">instr</a> ( SEMI )* )* END 
+	;
+
+
+<a name="liste_expr">liste_expr</a>
+	:	<a href="PascalParser.html#expr">expr</a> ( SEMI )+ ( <a href="PascalParser.html#expr">expr</a> ( SEMI )+ )* 
+	;
+
+
+<a name="exec_param">exec_param</a>
+	:	LPAREN 
+		(	<a href="PascalParser.html#expr">expr</a> ( VIRGULE <a href="PascalParser.html#expr">expr</a> )* 
+		|	
+		) 
+		RPAREN 
+	;
+
+
+<a name="expr_when">expr_when</a>
+	:	<a href="PascalParser.html#expr">expr</a> 
+		(	DEUX_POINT <a href="PascalParser.html#expr">expr</a> 
+		|	
+		) 
+	;
+
+
+<a name="expr17">expr17</a>
+	:	<a href="PascalParser.html#expr18">expr18</a> ( (	XOR 
+			|	IMPLIES 
+			) 
+			<a href="PascalParser.html#expr18">expr18</a> )* 
+	;
+
+
+<a name="expr18">expr18</a>
+	:	<a href="PascalParser.html#expr19">expr19</a> ( OR 
+			(	ELSE 
+			|	
+			) 
+			<a href="PascalParser.html#expr19">expr19</a> )* 
+	;
+
+
+<a name="expr19">expr19</a>
+	:	<a href="PascalParser.html#expr20">expr20</a> ( (	AND THEN 
+			|	AND 
+			) 
+			<a href="PascalParser.html#expr20">expr20</a> )* 
+	;
+
+
+<a name="expr20">expr20</a>
+	:	<a href="PascalParser.html#expr21">expr21</a> ( (	EGAL 
+			|	DIFF 
+			|	INFS 
+			|	INF 
+			|	SUPS 
+			|	SUP 
+			) 
+			<a href="PascalParser.html#expr21">expr21</a> )* 
+	;
+
+
+<a name="expr21">expr21</a>
+	:	<a href="PascalParser.html#expr22">expr22</a> ( (	PLUS 
+			|	MOINS 
+			) 
+			<a href="PascalParser.html#expr22">expr22</a> )* 
+	;
+
+
+<a name="expr22">expr22</a>
+	:	<a href="PascalParser.html#expr23">expr23</a> ( (	FOIS 
+			|	DIV 
+			|	DIV_ENTIER 
+			|	MOD 
+			) 
+			<a href="PascalParser.html#expr23">expr23</a> )* 
+	;
+
+
+<a name="expr23">expr23</a>
+	:	<a href="PascalParser.html#expr24">expr24</a> ( PUISS <a href="PascalParser.html#expr24">expr24</a> )* 
+	;
+
+
+<a name="expr24">expr24</a>
+	:	<a href="PascalParser.html#expr25">expr25</a> 
+	;
+
+
+<a name="expr25">expr25</a>
+	:	(	OLD 
+		|	NOT 
+		|	PLUS 
+		|	MOINS 
+		)* 
+		<a href="PascalParser.html#expr26">expr26</a> 
+	;
+
+
+<a name="expr26">expr26</a>
+	:	<a href="PascalParser.html#expr27">expr27</a> ( POINT <a href="PascalParser.html#expr27">expr27</a> )* 
+	;
+
+
+<a name="expr27">expr27</a>
+	:	ID 
+		(	<a href="PascalParser.html#exec_param">exec_param</a> 
+		|	
+		) 
+		
+	|	INT 
+	|	<a href="PascalParser.html#string">string</a> 
+	|	REAL 
+	|	CHAR 
+	|	LPAREN <a href="PascalParser.html#expr">expr</a> RPAREN 
+	|	DEBUT_ARRAY <a href="PascalParser.html#expr">expr</a> ( VIRGULE <a href="PascalParser.html#expr">expr</a> )* FIN_ARRAY 
+	|	TRUE 
+	|	FALSE 
+	;
+
+</PRE>
+</BODY>
+</HTML>

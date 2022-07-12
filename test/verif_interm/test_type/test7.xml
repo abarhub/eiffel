@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- test du typage avec des expressions en parametre et en variable locale -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+		<attribut>
+			<nom_attribut nom="Void"/>
+			<type nom="ANY"/>
+			<type nom="NONE"/>
+		</attribut>
+		<attribut>
+			<nom_attribut nom="make"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature>
+					<declare_var nom="k">
+						<type nom="A"/>
+					</declare_var>
+				</signature>
+				<declare_var nom="tmp">
+					<type nom="B"/>
+				</declare_var>
+				<instruction>
+					<instr_affect>
+						<expression_scalaire type="var">
+							<var nom="tmp"/>
+						</expression_scalaire>
+						<expression>
+							<expression_scalaire type="var">
+								<var nom="k"/>
+							</expression_scalaire>
+						</expression>
+					</instr_affect>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+		<hierarchie/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+	<classe>
+		<type nom="A"/>
+		<hierarchie>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+	<classe>
+		<type nom="B"/>
+		<hierarchie>
+			<type nom="A"/>
+		</hierarchie>
+	</classe>
+</programme>

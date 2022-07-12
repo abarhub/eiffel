@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST4"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<creation2 nom="x">
+							<appel nom="make"/>
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2>
+							<appel nom="x"/>
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="x">
+							<appel nom="make">
+								<parametre_reel>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</parametre_reel>
+								<parametre_reel>
+									<expression>
+										<entier valeur="2"/>
+									</expression>
+								</parametre_reel>
+							</appel>
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="x">
+							<appel nom="make"/>
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="x">
+							<appel nom="make">
+								<parametre_reel>
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+								</parametre_reel>
+							</appel>
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="x">
+							<nom_classe nom="A"/>
+							<appel nom="make"/>
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2>
+							<nom_classe nom="A"/>
+							<appel nom="x"/>
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="x">
+							<nom_classe nom="A"/>
+							<appel nom="make">
+								<parametre_reel>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</parametre_reel>
+								<parametre_reel>
+									<expression>
+										<entier valeur="2"/>
+									</expression>
+								</parametre_reel>
+							</appel>
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="x">
+							<nom_classe nom="A"/>
+							<appel nom="make"/>
+						</creation2>
+					</instruction>
+					<instruction>
+						<creation2 nom="x">
+							<nom_classe nom="A"/>
+							<appel nom="make">
+								<parametre_reel>
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+								</parametre_reel>
+							</appel>
+						</creation2>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

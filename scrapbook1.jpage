@@ -1,0 +1,4 @@
+"ab\rc".replaceAll("\\r","")
+
+"ab\rc\r\nde\nfgh".replaceAll("\\r\\n","\n").length()
+

@@ -1,0 +1,15 @@
+class POINTER_REF
+
+inherit HASHABLE;
+
+feature
+
+item:POINTER;
+
+set_item(p:POINTER) is
+do
+item:=p;
+end;
+
+
+end

@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap11.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 11 Repeated inheritance</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 11 Repeated inheritance_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap10.htm"><IMG 
+src="Eiffel The Reference - 11 Repeated inheritance_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap12.htm"><IMG 
+src="Eiffel The Reference - 11 Repeated inheritance_fichiers/next.gif"></A> 
+<P><A name="93651: Chapter: 11 Repeated inheritance">
+<H1>11 Repeated inheritance </H1>
+<H2>11.2 CASES OF REPEATED INHERITANCE </H2>
+<H3>Definition: repeated inheritance, repeated ancestor, repeated descendant 
+</H3>
+<P>Repeated inheritance occurs whenever (as a result of multiple inheritance) 
+two or more of the ancestors of a class <I>D</I> have a common parent <I>A</I>. 
+<I>D</I> is then called a repeated descendant of <I>A</I>, and <I>A</I> a 
+repeated ancestor of <I>D</I>. 
+<P>
+<H3>Definition: direct repeated inheritance</H3>
+<P>The simplest case, called direct repeated inheritance, corresponds to the 
+following scheme (where <I>D</I> is a ''repeated heir'' of <I>A</I>): 
+<P>
+<P><B>class</B> D <B>inherit</B>
+<P>
+<P><I>A</I> <B>rename</B><I> </I>...<I> </I><B>redefine</B><I> </I>...<I> 
+</I><B>end</B>;
+<P>
+<P><I>A</I> <B>rename</B><I> </I>...<I> </I><B>redefine</B><I> </I>...<I> 
+</I><B>end</B>
+<P>
+<P>...<I> </I>Rest of class omitted ... 
+<P>
+<H3>Definition: indirect repeated inheritance</H3>
+<P>The second case, indirect repeated inheritance, arises when one parent of 
+<I>D</I> is a proper descendant of <I>A</I>, and one or more other parents are 
+descendants of <I>A</I>. (Some of the paths may be direct.) 
+<P>
+<H2>11.3 SHARING AND REPLICATION </H2>
+<P>
+<P>
+<P><B>Repeated Inheritance rule</B> <B></B>
+<P>
+<P>Let <I>D</I> be a class and <I>B</I><I>1</I>, ... <I>B</I><I>n</I> (<I>n</I> 
+&gt;= 2) be parents of <I>D</I> having a common ancestor <I>A</I>. Let 
+<I>f</I><I>1</I>, ... <I>f</I><I>n</I> be features of these respective parents, 
+all having as their seed the same feature <I>f</I> of <I>A</I>. Then: 
+<OL>
+  <LI>Any subset of these features inherited by <I>D</I> under the same final 
+  name yields a single feature of <I>D</I>. 
+  <LI>Any two of these features inherited under a different name yield two 
+  features of <I>D</I>. </LI></OL>
+<H3>Definition: shared, replicated</H3>
+<P>Features will be said to be shared if case 1 of the Repeated Inheritance rule 
+applies, and replicated if case 2 applies. 
+<P>
+<H2>11.10 NAME CLASHES </H2>
+<H3>Definition: name clash </H3>
+<P>A name clash occurs for a certain feature name <I>fname</I> in a class 
+<I>C</I> if, for two different parents <I>A</I> and <I>B</I> of <I>C</I>, both 
+<I>A</I> and <I>B</I> have a feature of name <I>fname</I>. 
+<P>
+<H2>11.11 THE INHERITED FEATURES OF A CLASS </H2>
+<H3>Definition: inherited features </H3>
+<P>Let <I>D</I> be a class. The list <I>inherited</I> of inherited features of 
+<I>D</I> is obtained as follows. Let <I>precursors</I> be the list obtained by 
+concatenating the lists of features of every parent of <I>D</I>; this list may 
+contain duplicates in the case of repeated inheritance. Then <I>inherited</I> is 
+obtained from <I>precursors</I> as follows: 
+<OL>
+  <LI>In list <I>precursors</I>, for any set of two or more elements 
+  representing features that are repeatedly inherited in <I>D</I> under the same 
+  name, so that the Repeated Inheritance rule yields sharing, keep only one of 
+  these elements. The Repeated Inheritance Consistency constraint (sharing case) 
+  indicates that these elements must all represent the same feature, so that it 
+  does not matter which one is kept. 
+  <LI>For every feature <I>f</I> in the resulting list, if <I>D</I> undefines 
+  <I>f</I>, replace <I>f</I> by a deferred feature with the same signature and 
+  specification. 
+  <LI>In the resulting list, for any set of deferred features with the same 
+  final name in <I>D</I>, keep only one of these features, with assertions 
+  joined as per the Join Semantics rule. (Keep the signature, which the Join 
+  rule requires to be the same for all the features involved.) 
+  <LI>In the resulting list, remove any deferred feature such that there is an 
+  effective feature with the same final name in the list. (This is the case in 
+  which a feature <I>f</I> inherited as effective effects one or more deferred 
+  features: of the whole group, only <I>f</I> remains.) 
+  <LI>Let <I>merged_features</I> be the resulting list. All its elements have 
+  different feature names; they are the inherited features of <I>D</I> in their 
+  parent form. From this list, produce a new one as follows: for any feature 
+  which <I>D</I> redeclares (by redefinition or effecting), replace the feature 
+  by the result of the redeclaration; keep any other feature as it is in 
+  <I>merged_features</I>. 
+  <LI>The result is the list <I>inherited</I> of inherited features of <I>D</I>. 
+  </LI></OL>
+<P><B>Feature Name rule</B> 
+<P>
+<P>It is valid for a class <I>C</I> to introduce a feature with the Feature_name 
+<I>fname</I>, or to inherit a feature under the final name <I>fname</I>, if and 
+only if no other feature of <I>C</I> has that same name. 
+<OL>
+  <LI>A class may not introduce two different features, both deferred or both 
+  effective, with the same name. 
+  <LI>If a class introduces a feature with the same name as a feature it 
+  inherits in effective form, it must rename the inherited version. 
+  <LI>If a class inherits two features as effective from different parents and 
+  they have the same name, the class must also (except under sharing for 
+  repeated inheritance) remove the name clash through renaming. </LI></OL>
+<H2>11.12 VERSIONS OF A FEATURE </H2>
+<H3>Definition: potential version </H3>
+<P>Let <I>f</I> be a feature of a class <I>A</I> and <I>D</I> a descendant of 
+<I>A</I>. A potential version of <I>f</I> in <I>D</I> is any inherited feature 
+of <I>D</I> which is either: 
+<P>
+<UL>
+  <LI><I>f</I> itself. 
+  <LI>A feature resulting (recursively) from a redeclaration of a potential 
+  version of <I>f</I>. 
+  <LI>(Recursively) a potential version of a feature of which <I>f</I> is a 
+  redeclaration. 
+  <LI>A feature resulting (recursively) from a generic derivation of <I>A</I>. 
+  </LI></UL>
+<H3>Definition: version </H3>
+<P>Let <I>f</I> be a feature of a class <I>A</I> and <I>D</I> a descendant of 
+<I>A</I>. The version of <I>f</I> in <I>D</I> is the feature <I>df</I> defined 
+as follows: 
+<OL>
+  <LI>If <I>D</I> has only one potential version of <I>f</I>, then <I>df</I> is 
+  that feature. 
+  <LI>If <I>D</I> has two or more potential versions of <I>f</I>, the Repeated 
+  Inheritance Consistency constraint, seen below, states that exactly one of 
+  them must appear, under its final <I>D</I> name, as part of a Select clause in 
+  <I>D</I>; then <I>df</I> is that feature.</LI></OL>
+<H3>Definition: potentially ambiguous </H3>
+<P>Let <I>D</I> be a repeated descendant of a class <I>A</I>. A feature <I>f</I> 
+of <I>A</I> is potentially ambiguous in <I>D</I> if and only if one of the 
+following two conditions holds: 
+<P>
+<OL>
+  <LI><I>f</I> is an attribute. 
+  <LI><I>D</I> has two or more potential versions of <I>f</I>. </LI></OL>
+<H2>11.13 THE REPEATED INHERITANCE CONSISTENCY CONSTRAINT</H2>
+<H3><A name=VMRC>Validity: (VMRC) Repeated Inheritance Consistency 
+Constraint</A></H3>It is valid for a class <I>D</I> to be a repeated descendant 
+of a class <I>A</I> if and only if <I>D</I> satisfies the following two 
+conditions for every feature <I>f</I> of <I>A</I>: 
+<OL>
+  <LI>If the Repeated Inheritance rule implies that <I>f</I> will be shared in 
+  <I>D</I>, then all the inherited versions of <I>f</I> are the same feature. 
+  <LI>If the Repeated Inheritance rule implies that <I>f</I> will be replicated 
+  in <I>D</I> and <I>f</I> is potentially ambiguous, then the Select subclause 
+  of exactly one of the Parent parts of <I>D</I> lists the corresponding version 
+  of <I>f</I>, under its final <I>D</I> name. </LI></OL>
+<P>
+<P>
+<P><B>Select Subclause rule</B> <B></B>
+<P>
+<P>A Select subclause appearing in the Parent part for a class <I>B</I> in a 
+class <I>D</I> is valid if and only if, for every Feature_name <I>fname</I> in 
+its Feature_list, <I>fname</I> is the final name in <I>D</I> of a feature that 
+has two or more potential versions in <I>D</I>, and <I>fname</I> appears only 
+once in the Feature_list. 
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 11 Repeated inheritance_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap10.htm"><IMG 
+src="Eiffel The Reference - 11 Repeated inheritance_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap12.htm"><IMG 
+src="Eiffel The Reference - 11 Repeated inheritance_fichiers/next.gif"></A> 
+<P>
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS></BODY></HTML>

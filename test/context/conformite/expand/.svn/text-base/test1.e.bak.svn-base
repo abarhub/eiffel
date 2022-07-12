@@ -1,0 +1,22 @@
+class TEST1
+
+creation make
+
+feature
+
+	make is
+	local
+	a:A;
+	b:B;
+	c:C;
+	a2:expanded A;
+	do
+	a:=a;
+	b:=b;
+	c:=c;
+	a2:=a;
+	a:=a2;
+	--b:=a2;
+	end;
+
+end

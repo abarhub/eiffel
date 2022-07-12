@@ -1,0 +1,17 @@
+<!ELEMENT module (routine*,classe*)>
+<!ATTLIST module nom CDATA #REQUIRED>
+<!ATTLIST module langage CDATA #REQUIRED>
+
+<!ELEMENT routine (type*)>
+<!ATTLIST routine nom CDATA #REQUIRED>
+<!ATTLIST routine fonction (oui|non) #FIXED "non">
+
+<!ELEMENT type EMPTY >
+<!ATTLIST type nom CDATA #REQUIRED>
+
+<!ELEMENT classe (attribut*)>
+<!ATTLIST classe nom CDATA #REQUIRED>
+
+<!ELEMENT attribut (type*)>
+<!ATTLIST attribut nom CDATA #REQUIRED>
+<!ATTLIST attribut fonction (oui|non) #FIXED "non">

@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST3"/>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="@">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="|">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="#">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="&amp;">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="@a">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="|b">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="#c">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="&amp;d">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="@a0">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="|b52">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="#c_42">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_binaire op="free_op" nom="&amp;d96">
+					<expression>
+						<entier valeur="1"/>
+					</expression>
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_binaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="@">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="|">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="#">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="&amp;">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="@a">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="|b">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="#c">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="&amp;d">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="@a0">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="|b52">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="#c_42">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="toto"/>
+		<corps>
+			<expression>
+				<expression_unaire op="free_op" nom="&amp;d96">
+					<expression>
+						<entier valeur="6"/>
+					</expression>
+				</expression_unaire>
+			</expression>
+		</corps>
+	</feature>
+</class>

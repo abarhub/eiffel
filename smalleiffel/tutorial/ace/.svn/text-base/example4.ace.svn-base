@@ -1,0 +1,29 @@
+-- An example to get the most optimized system.
+system number2
+
+root EXAMPLE2 : "make"
+
+default
+
+   verbose (no); -- Or say yes to see C compiler calls.
+   assertion (boost);
+   trace(no);
+   debug (no);
+
+cluster
+
+   "${SmallEiffelDirectory}/lib/kernel"
+   "${SmallEiffelDirectory}/lib/base"
+   "${SmallEiffelDirectory}/lib/io"
+   "${SmallEiffelDirectory}/lib/number"
+   "${SmallEiffelDirectory}/tutorial/number"
+
+generate
+
+   no_split(no);
+   no_strip(no);
+   clean(no)
+   cc: gcc;
+   c_compiler_options: "-O3 -pipe";   
+
+end

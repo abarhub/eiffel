@@ -1,0 +1,11 @@
+system test2
+
+root test2
+
+cluster
+
+	"test\context\conformite\expand\";
+	--".\std_classe\";
+	".\";
+
+end

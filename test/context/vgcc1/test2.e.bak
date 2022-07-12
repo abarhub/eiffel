@@ -1,0 +1,15 @@
+class TEST2
+
+creation make
+
+feature
+
+	make is
+	local
+	s:STRING;
+	do
+	!!s.make;
+	!STRING!s.make;
+	end;
+
+end

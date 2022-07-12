@@ -1,0 +1,6 @@
+<!ELEMENT liste_classe (classe)>
+<!ELEMENT classe (erreur*)>
+<!ATTLIST classe nom CDATA #REQUIRED>
+
+<!ELEMENT erreur (#PCDATA)>
+<!ATTLIST erreur nom CDATA #REQUIRED>

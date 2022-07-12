@@ -1,0 +1,7 @@
+class STRING
+
+feature
+
+	Void:NONE;
+
+end

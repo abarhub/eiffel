@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+ <HEAD>
+  <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <TITLE>Compiler Java Coverage Report</TITLE>
+  <LINK REL ="stylesheet" TYPE="text/css" HREF="style.css" TITLE="Style">
+ </HEAD>
+ <BODY bgColor="white">
+    <span class="titleText"><b>Compiler Java Coverage Report</b><BR>Clover coverage report</span><P>
+    <span class="navBar"><b><a target="classPane" href="pkgs-summary.html">Overview</a><BR>
+    <a target="packagePane" href="all-classes.html">All Classes</a></b><P>
+    <span class="titleText"><b>All Packages</b></span><BR>
+   <TABLE width="100%" border="0">
+     <TBODY>
+      <TR>
+        <TD noWrap class="itemList">
+            <A target="packagePane" href="tinyeiffel/ast/pkg-classes.html" title="tinyeiffel.ast">tinyeiffel.ast</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/compiler/pkg-classes.html" title="tinyeiffel.compiler">tinyeiffel.compiler</A>
+          <i>(0,1%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/eiffelviewer/pkg-classes.html" title="tinyeiffel.eiffelviewer">tinyeiffel.eiffelviewer</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/erreur/pkg-classes.html" title="tinyeiffel.erreur">tinyeiffel.erreur</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/extern/pkg-classes.html" title="tinyeiffel.extern">tinyeiffel.extern</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/genere_c/pkg-classes.html" title="tinyeiffel.genere_c">tinyeiffel.genere_c</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/intermediaire/pkg-classes.html" title="tinyeiffel.intermediaire">tinyeiffel.intermediaire</A>
+          <i>(27,1%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/interpreteur/pkg-classes.html" title="tinyeiffel.interpreteur">tinyeiffel.interpreteur</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/lace/pkg-classes.html" title="tinyeiffel.lace">tinyeiffel.lace</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/middle/pkg-classes.html" title="tinyeiffel.middle">tinyeiffel.middle</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/outils/compare_xml/pkg-classes.html" title="tinyeiffel.outils.compare_xml">tinyeiffel.outils.compare_xml</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/test_unitaire/pkg-classes.html" title="tinyeiffel.test_unitaire">tinyeiffel.test_unitaire</A>
+          <i>(3,9%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/verification/pkg-classes.html" title="tinyeiffel.verification">tinyeiffel.verification</A>
+          <i>(0%)</i><BR>
+              <A target="packagePane" href="tinyeiffel/verification/type_verif/pkg-classes.html" title="tinyeiffel.verification.type_verif">tinyeiffel.verification.type_verif</A>
+          <i>(0%)</i><BR>
+          </TD>
+       </TR>
+      </TBODY>
+   </TABLE>
+ </font>
+ </BODY>
+</HTML>
+

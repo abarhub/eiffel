@@ -1,0 +1,11 @@
+class TEST2
+
+feature
+
+	toto(a,i:INTEGER) is
+	local
+	i,j:INTEGER;
+	do
+	end;
+
+end

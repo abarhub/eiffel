@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<project name="def_tests.xwp" homepath="E:\projet\eiffel\test_unitaire" example_xsl="" example_xml="" output_folder="" output_ext="">
+	<group name="DTD/Schema Files" filter="*.dtd;*.xsd" description="This folder contains DTDs and XML Schema Files." example_xml="" example_xsl="" output_folder="" output_ext="">
+		<file path="D:\projet\eiffel\test_unitaire\afaire.dtd" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test_unitaire\validite.dtd" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="0" caret_pos_y="0" sel_start_x="0" sel_start_y="0" sel_end_x="0" sel_end_y="0" window_x1="88" window_x2="506" window_y1="88" window_y2="309" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\conforme.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="0" caret_pos_y="0" sel_start_x="0" sel_start_y="0" sel_end_x="0" sel_end_y="0" window_x1="66" window_x2="708" window_y1="99" window_y2="427" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test\interm\tests.dtd" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="0" caret_pos_y="5" sel_start_x="0" sel_start_y="5" sel_end_x="0" sel_end_y="5" window_x1="88" window_x2="506" window_y1="88" window_y2="309" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\programme.dtd" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="19" caret_pos_y="1" sel_start_x="19" sel_start_y="1" sel_end_x="19" sel_end_y="1" window_x1="22" window_x2="440" window_y1="22" window_y2="243" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\extern.dtd" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="20" caret_pos_y="5" sel_start_x="20" sel_start_y="5" sel_end_x="20" sel_end_y="5" window_x1="88" window_x2="687" window_y1="132" window_y2="440" state="3"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\classe.dtd" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="0" caret_pos_y="0" sel_start_x="0" sel_start_y="0" sel_end_x="0" sel_end_y="0" window_x1="66" window_x2="484" window_y1="66" window_y2="287" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\type.dtd" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test_unitaire\context.dtd" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+	</group>
+	<group name="Stylesheets" filter="*.css;*.xsl;*.xslt" description="This folder contains CSS and XSLT Stylesheets." example_xml="" example_xsl="" output_folder="" output_ext="">
+		<file path="D:\projet\eiffel\test_unitaire\valide2.xsl" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="59" caret_pos_y="33" sel_start_x="59" sel_start_y="33" sel_end_x="59" sel_end_y="33" window_x1="88" window_x2="462" window_y1="88" window_y2="375" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\programme.xsl" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="40" caret_pos_y="10" sel_start_x="40" sel_start_y="10" sel_end_x="40" sel_end_y="10" window_x1="66" window_x2="484" window_y1="66" window_y2="287" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\programme.css" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test_unitaire\liste_a_faire.xsl" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="2" caret_pos_y="10" sel_start_x="2" sel_start_y="10" sel_end_x="2" sel_end_y="10" window_x1="66" window_x2="484" window_y1="66" window_y2="287" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\liste_a_faire.css" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test_unitaire\validite.xsl" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test_unitaire\valide.css" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+	</group>
+	<group name="XML Files" filter="*.xml" description="This folder contains XML Files." example_xml="" example_xsl="" output_folder="" output_ext="">
+		<file path="D:\projet\eiffel\test\test5.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test_unitaire\afaire.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="3" caret_pos_y="17" sel_start_x="3" sel_start_y="17" sel_end_x="3" sel_end_y="17" window_x1="66" window_x2="480" window_y1="66" window_y2="283" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\test_class1.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test\test7.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test\interm\test_all.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="0" caret_pos_y="0" sel_start_x="0" sel_start_y="0" sel_end_x="0" sel_end_y="0" window_x1="44" window_x2="686" window_y1="66" window_y2="394" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\validite.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="0" caret_pos_y="1" sel_start_x="0" sel_start_y="1" sel_end_x="0" sel_end_y="1" window_x1="66" window_x2="440" window_y1="66" window_y2="353" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test_unitaire\a_faire.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="0" caret_pos_y="1" sel_start_x="0" sel_start_y="1" sel_end_x="0" sel_end_y="1" window_x1="0" window_x2="642" window_y1="0" window_y2="328" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test\context\test_context.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="30" caret_pos_y="12" sel_start_x="30" sel_start_y="12" sel_end_x="30" sel_end_y="12" window_x1="66" window_x2="480" window_y1="66" window_y2="283" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test\test0.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test_unitaire\test.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl="">
+			<open caret_pos_x="44" caret_pos_y="9" sel_start_x="44" sel_start_y="9" sel_end_x="44" sel_end_y="9" window_x1="88" window_x2="730" window_y1="132" window_y2="460" state="1"/>
+		</file>
+		<file path="D:\projet\eiffel\test\test1.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test\test2.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test\test3.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\projet\eiffel\test\test4.xml" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+	</group>
+	<group name="Output Files" filter="*.htm;*.html" description="This folder receives output from XSL transformations." example_xml="" example_xsl="" output_folder="" output_ext="">
+		<file path="D:\projet\eiffel\test_unitaire\a_faire.html" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\APPLICATION\XMLWRITER 2\Output\validite.html" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+		<file path="D:\APPLICATION\XMLWRITER 2\Output\a_faire.html" description="" output_folder="" output_ext="" example_xml="" example_xsl=""/>
+	</group>
+</project>

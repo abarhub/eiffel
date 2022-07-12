@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST10"/>
+	<creation>
+		<nom_feature nom="make"/>
+	</creation>
+</class>

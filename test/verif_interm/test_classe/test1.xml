@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- section création avec un attribut qui existe   -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+		<creation>
+			<nom_attribut nom="make"/>
+		</creation>
+		<attribut>
+			<nom_attribut nom="make"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<instruction>
+					<instr_label label="debut_routine"/>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+		<hierarchie/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+</programme>

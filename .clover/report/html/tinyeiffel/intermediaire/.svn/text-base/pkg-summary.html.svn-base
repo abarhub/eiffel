@@ -1,0 +1,971 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Compiler Java Coverage Report</title>
+<LINK REL ="stylesheet" TYPE="text/css" HREF="../../style.css" TITLE="Style">
+</head>
+<body>
+  <!-- render overall pkg coverage graph -->
+<TABLE cellspacing="0" cellpadding="2">
+  <TBODY>
+  <TR>
+    <TD colspan="6" class="reportHeader">
+    <TABLE width="100%"><TR>
+    <TD valign="top" class="titleText">Clover coverage report -   Compiler Java Coverage Report <DIV class="timestamp"><b>Coverage timestamp:</b>&nbsp;sam. oct. 15 2005 14:23:03 CEST</DIV>
+            <DIV class="navBar"><a href="../../pkgs-summary.html"><b>Overview</b></a>&nbsp;&nbsp;&nbsp;<font class="navBarCurrent">Package</font>&nbsp;&nbsp;&nbsp;File</DIV>
+    
+<DIV class="navBarLink">
+&nbsp;&nbsp;&nbsp;
+    <A HREF="../../index.html" TARGET="_top">FRAMES</A>&nbsp;&nbsp;
+<A HREF="pkg-summary.html" TARGET="_top">NO FRAMES</A>&nbsp;&nbsp;
+    </DIV>
+
+</TD>
+         <td class="headerStats" valign="top" width="40%" align="right">
+        <table align="right">
+         <tr>
+           <td nowrap><b>package stats:</b></td>
+           <td align="right"><b>LOC:</b></td>
+           <td align="right">8 258</td>
+           <td width="10%">&nbsp;</td>
+           <td align="right"><b>Methods:</b></td>
+           <td align="right">252</td>
+         </tr>
+         <tr>
+           <td></td>
+           <td align="right"><b>NCLOC:</b></td>
+           <td align="right">6 327</td>
+           <td width="10%">&nbsp;</td>
+           <td align="right"><b>Classes:</b></td>
+           <td align="right">46</td>
+         </tr>
+         <tr>
+           <td></td>
+           <td align="right"><b>Files:</b></td>
+           <td align="right">46</td>
+           <td width="10%">&nbsp;</td> 
+             <td></td>
+           <td></td>
+           </tr>
+      </table>
+     </td>
+    </TR></TABLE>
+   </TD>
+  </TR>
+
+<TR><TD class="hbreak" colspan="6">&nbsp;</TD></TR>
+  <TR>
+    <TD class="graphHeaderLeft"><b>&nbsp;Package</b></TD>
+    <TD class="graphHeader">Conditionals</TD>
+    <TD class="graphHeader">Statements</TD>
+    <TD class="graphHeader">Methods</TD>
+    <TD class="graphHeader" align="left" colspan="2"><B>TOTAL</B></TD>
+  </TR>   
+  <TR>
+    <TD class="graphItem">
+        	   tinyeiffel.intermediaire
+	    </TD>
+   
+    <TD class="graphPercent" align="center">19,6%</TD>
+    <TD class="graphPercent" align="center">34,7%</TD>
+    <TD class="graphPercent" align="center">33,3%</TD>
+    <TD class="graphBarLeft" align="center"><B>27,1%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="54" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="146" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+<TR><TD class="hbreak" colspan="6">&nbsp;</TD></TR>
+  <!-- render list of class coverage graphs -->
+         <TR>
+    <TD class="graphHeaderLeft"><b>&nbsp;Classes</b></TD>
+    <TD class="graphHeader">Conditionals</TD>
+    <TD class="graphHeader">Statements</TD>
+    <TD class="graphHeader">Methods</TD>
+    <TD class="graphHeader" align="left" colspan="2"><B>TOTAL</B></TD>
+  </TR>   
+  <TR>
+    <TD class="graphItem">
+        	   CIAssertion
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIAttribut_Descendant
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CICreation
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Appel
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Binaire
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Char
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Creation
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Entier
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Real
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_String
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Type
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Unaire
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Var_Syst
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Void
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIInstruction_Raise
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIInstruction_Return
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIRedefinition
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIResult_Expr
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CISource
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CITypeAncre
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphBarLeft" align="center"><B>0%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	   	    <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif" width="200" height="12"></TD> 
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIRoutine
+	    </TD>
+   
+    <TD class="graphPercent" align="center">1%</TD>
+    <TD class="graphPercent" align="center">2,1%</TD>
+    <TD class="graphPercent" align="center">14,3%</TD>
+    <TD class="graphBarLeft" align="center"><B>1,9%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="3" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="197" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIListe_Global
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">3,8%</TD>
+    <TD class="graphPercent" align="center">11,1%</TD>
+    <TD class="graphBarLeft" align="center"><B>2,8%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="5" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="195" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIInstruction_Appel
+	    </TD>
+   
+    <TD class="graphPercent" align="center">2,1%</TD>
+    <TD class="graphPercent" align="center">12,1%</TD>
+    <TD class="graphPercent" align="center">25%</TD>
+    <TD class="graphBarLeft" align="center"><B>7,1%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="14" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="186" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIClasse
+	    </TD>
+   
+    <TD class="graphPercent" align="center">4,3%</TD>
+    <TD class="graphPercent" align="center">10,9%</TD>
+    <TD class="graphPercent" align="center">28,6%</TD>
+    <TD class="graphBarLeft" align="center"><B>7,7%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="15" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="185" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIDeclare_Var
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">18,2%</TD>
+    <TD class="graphPercent" align="center">20%</TD>
+    <TD class="graphBarLeft" align="center"><B>8,8%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="17" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="183" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Var
+	    </TD>
+   
+    <TD class="graphPercent" align="center">2,1%</TD>
+    <TD class="graphPercent" align="center">12,5%</TD>
+    <TD class="graphPercent" align="center">37,5%</TD>
+    <TD class="graphBarLeft" align="center"><B>9,1%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="18" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="182" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIInstruction_Goto
+	    </TD>
+   
+    <TD class="graphPercent" align="center">4,5%</TD>
+    <TD class="graphPercent" align="center">14,3%</TD>
+    <TD class="graphPercent" align="center">25%</TD>
+    <TD class="graphBarLeft" align="center"><B>10%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="20" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="180" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIExpr_Bool
+	    </TD>
+   
+    <TD class="graphPercent" align="center">0%</TD>
+    <TD class="graphPercent" align="center">16,7%</TD>
+    <TD class="graphPercent" align="center">25%</TD>
+    <TD class="graphBarLeft" align="center"><B>10,7%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="21" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="179" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIProgramme
+	    </TD>
+   
+    <TD class="graphPercent" align="center">6,7%</TD>
+    <TD class="graphPercent" align="center">14,5%</TD>
+    <TD class="graphPercent" align="center">33,3%</TD>
+    <TD class="graphBarLeft" align="center"><B>11,4%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="22" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="178" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIAttribut
+	    </TD>
+   
+    <TD class="graphPercent" align="center">4,3%</TD>
+    <TD class="graphPercent" align="center">15,8%</TD>
+    <TD class="graphPercent" align="center">46,2%</TD>
+    <TD class="graphBarLeft" align="center"><B>11,6%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="23" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="177" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIInstruction_Label
+	    </TD>
+   
+    <TD class="graphPercent" align="center">5,6%</TD>
+    <TD class="graphPercent" align="center">16,7%</TD>
+    <TD class="graphPercent" align="center">25%</TD>
+    <TD class="graphBarLeft" align="center"><B>11,8%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="23" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="177" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIInstruction_Affect
+	    </TD>
+   
+    <TD class="graphPercent" align="center">8,3%</TD>
+    <TD class="graphPercent" align="center">17,6%</TD>
+    <TD class="graphPercent" align="center">25%</TD>
+    <TD class="graphBarLeft" align="center"><B>13,3%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="26" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="174" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIInstruction_Si
+	    </TD>
+   
+    <TD class="graphPercent" align="center">8,3%</TD>
+    <TD class="graphPercent" align="center">20%</TD>
+    <TD class="graphPercent" align="center">25%</TD>
+    <TD class="graphBarLeft" align="center"><B>14%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="27" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="173" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIInstruction_Si_Non
+	    </TD>
+   
+    <TD class="graphPercent" align="center">8,3%</TD>
+    <TD class="graphPercent" align="center">20%</TD>
+    <TD class="graphPercent" align="center">25%</TD>
+    <TD class="graphBarLeft" align="center"><B>14%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="27" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="173" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CITypeSimple
+	    </TD>
+   
+    <TD class="graphPercent" align="center">6%</TD>
+    <TD class="graphPercent" align="center">26,3%</TD>
+    <TD class="graphPercent" align="center">50%</TD>
+    <TD class="graphBarLeft" align="center"><B>16,3%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="32" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="168" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CINom_Attribut
+	    </TD>
+   
+    <TD class="graphPercent" align="center">10,4%</TD>
+    <TD class="graphPercent" align="center">24,3%</TD>
+    <TD class="graphPercent" align="center">40%</TD>
+    <TD class="graphBarLeft" align="center"><B>17,8%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="35" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="165" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIListe_Var
+	    </TD>
+   
+    <TD class="graphPercent" align="center">16,7%</TD>
+    <TD class="graphPercent" align="center">25%</TD>
+    <TD class="graphPercent" align="center">44,4%</TD>
+    <TD class="graphBarLeft" align="center"><B>23,2%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="46" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="154" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIAttribut_Ascendant
+	    </TD>
+   
+    <TD class="graphPercent" align="center">20%</TD>
+    <TD class="graphPercent" align="center">45,2%</TD>
+    <TD class="graphPercent" align="center">50%</TD>
+    <TD class="graphBarLeft" align="center"><B>30,6%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="61" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="139" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIListe_Instr
+	    </TD>
+   
+    <TD class="graphPercent" align="center">21,4%</TD>
+    <TD class="graphPercent" align="center">46,2%</TD>
+    <TD class="graphPercent" align="center">57,1%</TD>
+    <TD class="graphBarLeft" align="center"><B>33,3%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="66" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="134" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIInputXML
+	    </TD>
+   
+    <TD class="graphPercent" align="center">25,9%</TD>
+    <TD class="graphPercent" align="center">51,7%</TD>
+    <TD class="graphPercent" align="center">64,1%</TD>
+    <TD class="graphBarLeft" align="center"><B>38,3%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="76" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="124" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIVerification
+	    </TD>
+   
+    <TD class="graphPercent" align="center">44,8%</TD>
+    <TD class="graphPercent" align="center">42,6%</TD>
+    <TD class="graphPercent" align="center">100%</TD>
+    <TD class="graphBarLeft" align="center"><B>44,2%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="88" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="112" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+            <TR>
+    <TD class="graphItem">
+        	   CIEnvironnement
+	    </TD>
+   
+    <TD class="graphPercent" align="center">65,2%</TD>
+    <TD class="graphPercent" align="center">95,1%</TD>
+    <TD class="graphPercent" align="center">100%</TD>
+    <TD class="graphBarLeft" align="center"><B>80,9%</B></TD>
+    <TD class="graphBar">
+            <TABLE class="barGraph" cellspacing="0">
+        <TBODY>
+          <TR>
+	               <TD class="covered"><img alt="coverage" src="../../img/trans.gif"
+                   width="161" height="12"></TD>
+            <TD class="uncovered"><img alt="coverage" src="../../img/trans.gif"
+                   width="39" height="12"></TD>
+	   	  </TR>
+	</TBODY>
+      </TABLE>
+          </TD>
+  </TR> 
+               <TR><TD class="hbreak" colspan="6">&nbsp;</TD></TR>
+<TR><TD class="footer" colspan="6">
+<table>
+<tr>
+ <td><a target="_new" href="http://www.cenqua.com/clover?7Vs"><img alt="Clover" src="../../img/logo.gif" border="0"></a></td><td nowrap><i>Report generated by </i><a target="_new" href="http://www.cenqua.com/clover?7Vs">Clover Code Coverage v1.3.9</a><i><BR>sam. oct. 15 2005 14:24:35 CEST</i>.</td>
+<td>&nbsp;</td><td style="BORDER-LEFT: #9c9c9c 1px solid;">&nbsp;</td><td>30 day Evaluation License registered to tulipebleu@laposte.net You have 29 day(s) before your Evaluation License expires.</td>
+</tr>
+</table>
+</td>
+</tr></TBODY></TABLE>
+</body>
+</html>

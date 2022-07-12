@@ -1,0 +1,53 @@
+class A
+
+feature
+
+	tyty:A;
+
+	tutu:B;
+
+	fin is
+	do
+	end;
+
+	infix "@" (i:INTEGER):INTEGER is
+	do
+	end;
+
+	infix "&" (i:INTEGER):INTEGER is
+	do
+	end;
+
+	infix "|" (i:INTEGER):INTEGER is
+	do
+	end;
+
+	infix "#" (i:INTEGER):INTEGER is
+	do
+	end;
+
+	infix "@azerty" (i:INTEGER):INTEGER is
+	do
+	end;
+
+	prefix "@":INTEGER is
+	do
+	end;
+
+	prefix "&":INTEGER is
+	do
+	end;
+
+	prefix "|":INTEGER is
+	do
+	end;
+
+	prefix "#":INTEGER is
+	do
+	end;
+
+	prefix "@azerty":INTEGER is
+	do
+	end;
+
+end

@@ -1,0 +1,4395 @@
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+	make -DFICHIER_COMPILE=test\genc\general_basic\test1.e -DFICHIER_REFERENCE=test\genc\general_basic\trace.log test_simple1
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+	java -classpath test_unitaire\junit.jar;.;E:\java\xerces-2_5_0\xercesImpl.jar;E:\java\xerces-2_5_0\xmlParserAPIs.jar;c:\antlr-2.7.3\antlr.jar -ea compiler.Eiffel test\genc\general_basic\test1.e
+Compilation de test\genc\general_basic\test1.e
+parse de test1.e
+Ok
+parse de any.e
+Ok
+parse de A.e
+Ok
+fin du parsing
+parse de BOOLEAN.e
+Ok
+fin du parsing
+parse de STRING.e
+Ok
+fin du parsing
+parse de PLATFORM.e
+Ok
+fin du parsing
+parse de INTEGER.e
+Ok
+fin du parsing
+parse de BOOLEAN_REF.e
+Ok
+fin du parsing
+parse de COMPARABLE.e
+Ok
+fin du parsing
+parse de HASHABLE.e
+Ok
+fin du parsing
+parse de GENERAL.e
+Ok
+fin du parsing
+parse de INTEGER_REF.e
+Ok
+fin du parsing
+parse de STD_FILE.e
+Ok
+fin du parsing
+parse de NUMERIC.e
+Ok
+fin du parsing
+parse de DOUBLE.e
+Ok
+fin du parsing
+parse de CHARACTER.e
+Ok
+fin du parsing
+parse de POINTER.e
+Ok
+fin du parsing
+parse de REAL.e
+Ok
+fin du parsing
+parse de DOUBLE_REF.e
+Ok
+fin du parsing
+parse de CHARACTER_REF.e
+Ok
+fin du parsing
+parse de POINTER_REF.e
+Ok
+fin du parsing
+parse de REAL_REF.e
+Ok
+fin du parsing
+Classes chargees:
+0:TEST1
+1:ANY
+2:NONE
+3:A
+4:BOOLEAN
+5:STRING
+6:PLATFORM
+7:INTEGER
+8:BOOLEAN_REF
+9:COMPARABLE
+10:HASHABLE
+11:GENERAL
+12:INTEGER_REF
+13:STD_FILE
+14:NUMERIC
+15:DOUBLE
+16:CHARACTER
+17:POINTER
+18:REAL
+19:DOUBLE_REF
+20:CHARACTER_REF
+21:POINTER_REF
+22:REAL_REF
+calcul de :TEST1(0)TEST1
+attributs0 de la classe TEST1
+herite de ANY
+attributs0 de la classe ANY
+herit(1,6)
+herite de PLATFORM
+attributs0 de la classe PLATFORM
+herit(6,11)
+herite de GENERAL
+attributs0 de la classe GENERAL
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+Fin des attributs de la classe GENERAL
+Fin des attributs de la classe PLATFORM
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe TEST1
+calcul de :ANY(1)TEST1
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+calcul de :A(3)TEST1
+attributs0 de la classe A
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+Fin des attributs de la classe A
+calcul de :BOOLEAN(4)TEST1
+attributs0 de la classe BOOLEAN
+herit(4,8)
+herite de BOOLEAN_REF
+attributs0 de la classe BOOLEAN_REF
+herit(8,10)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+Fin des attributs de la classe HASHABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+Fin des attributs de la classe BOOLEAN_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+Fin des attributs de la classe BOOLEAN
+calcul de :STRING(5)TEST1
+attributs0 de la classe STRING
+herit(5,9)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+herit(9,1)
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+Fin des attributs de la classe COMPARABLE
+herit(5,10)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+i=0
+i=1
+i=2
+i=3
+Fin des attributs de la classe STRING
+calcul de :PLATFORM(6)TEST1
+attributs0 de la classe PLATFORM
+Fin des attributs de la classe PLATFORM
+calcul de :INTEGER(7)TEST1
+attributs0 de la classe INTEGER
+herit(7,12)
+herite de INTEGER_REF
+attributs0 de la classe INTEGER_REF
+herit(12,9)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+herit(12,10)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+herit(12,14)
+herite de NUMERIC
+attributs0 de la classe NUMERIC
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+Fin des attributs de la classe NUMERIC
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+Fin des attributs de la classe INTEGER_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+Fin des attributs de la classe INTEGER
+calcul de :BOOLEAN_REF(8)TEST1
+attributs0 de la classe BOOLEAN_REF
+Fin des attributs de la classe BOOLEAN_REF
+calcul de :COMPARABLE(9)TEST1
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+calcul de :HASHABLE(10)TEST1
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+calcul de :GENERAL(11)TEST1
+attributs0 de la classe GENERAL
+Fin des attributs de la classe GENERAL
+calcul de :INTEGER_REF(12)TEST1
+attributs0 de la classe INTEGER_REF
+Fin des attributs de la classe INTEGER_REF
+calcul de :STD_FILE(13)TEST1
+attributs0 de la classe STD_FILE
+herite de ANY
+attributs0 de la classe ANY
+Fin des attributs de la classe ANY
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+Fin des attributs de la classe STD_FILE
+calcul de :NUMERIC(14)TEST1
+attributs0 de la classe NUMERIC
+Fin des attributs de la classe NUMERIC
+calcul de :DOUBLE(15)TEST1
+attributs0 de la classe DOUBLE
+herit(15,19)
+herite de DOUBLE_REF
+attributs0 de la classe DOUBLE_REF
+herit(19,10)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+herit(19,14)
+herite de NUMERIC
+attributs0 de la classe NUMERIC
+Fin des attributs de la classe NUMERIC
+herit(19,9)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+Fin des attributs de la classe DOUBLE_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+Fin des attributs de la classe DOUBLE
+calcul de :CHARACTER(16)TEST1
+attributs0 de la classe CHARACTER
+herit(16,20)
+herite de CHARACTER_REF
+attributs0 de la classe CHARACTER_REF
+herit(20,10)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+herit(20,9)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+Fin des attributs de la classe CHARACTER_REF
+i=0
+i=1
+i=2
+Fin des attributs de la classe CHARACTER
+calcul de :POINTER(17)TEST1
+attributs0 de la classe POINTER
+herit(17,21)
+herite de POINTER_REF
+attributs0 de la classe POINTER_REF
+herit(21,10)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+i=0
+i=1
+i=2
+Fin des attributs de la classe POINTER_REF
+Fin des attributs de la classe POINTER
+calcul de :REAL(18)TEST1
+attributs0 de la classe REAL
+herit(18,22)
+herite de REAL_REF
+attributs0 de la classe REAL_REF
+herit(22,9)
+herite de COMPARABLE
+attributs0 de la classe COMPARABLE
+Fin des attributs de la classe COMPARABLE
+herit(22,14)
+herite de NUMERIC
+attributs0 de la classe NUMERIC
+Fin des attributs de la classe NUMERIC
+herit(22,10)
+herite de HASHABLE
+attributs0 de la classe HASHABLE
+Fin des attributs de la classe HASHABLE
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+i=15
+i=16
+i=17
+Fin des attributs de la classe REAL_REF
+i=0
+i=1
+i=2
+i=3
+i=4
+i=5
+i=6
+i=7
+i=8
+i=9
+i=10
+i=11
+i=12
+i=13
+i=14
+Fin des attributs de la classe REAL
+calcul de :DOUBLE_REF(19)TEST1
+attributs0 de la classe DOUBLE_REF
+Fin des attributs de la classe DOUBLE_REF
+calcul de :CHARACTER_REF(20)TEST1
+attributs0 de la classe CHARACTER_REF
+Fin des attributs de la classe CHARACTER_REF
+calcul de :POINTER_REF(21)TEST1
+attributs0 de la classe POINTER_REF
+Fin des attributs de la classe POINTER_REF
+calcul de :REAL_REF(22)TEST1
+attributs0 de la classe REAL_REF
+Fin des attributs de la classe REAL_REF
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STD_FILE , ancetre:STD_FILE
+ref
+Parametre type:STD_FILE->STD_FILE
+Fin parametre type:STD_FILE->STD_FILE:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+ref
+Parametre type:NONE->NONE
+Fin parametre type:NONE->NONE:true
+Ref:=* : true
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:GENERAL , ancetre:GENERAL
+ref
+Parametre type:GENERAL->GENERAL
+Fin parametre type:GENERAL->GENERAL:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:NUMERIC , ancetre:NUMERIC
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:DOUBLE
+expanded
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STD_FILE , ancetre:STD_FILE
+ref
+Parametre type:STD_FILE->STD_FILE
+Fin parametre type:STD_FILE->STD_FILE:true
+Ref:=* : true
+conformite de:STD_FILE , ancetre:STD_FILE
+ref
+Parametre type:STD_FILE->STD_FILE
+Fin parametre type:STD_FILE->STD_FILE:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+ref
+Parametre type:NONE->NONE
+Fin parametre type:NONE->NONE:true
+Ref:=* : true
+conformite de:NONE , ancetre:NONE
+ref
+Parametre type:NONE->NONE
+Fin parametre type:NONE->NONE:true
+Ref:=* : true
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:GENERAL , ancetre:GENERAL
+ref
+Parametre type:GENERAL->GENERAL
+Fin parametre type:GENERAL->GENERAL:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:GENERAL , ancetre:GENERAL
+ref
+Parametre type:GENERAL->GENERAL
+Fin parametre type:GENERAL->GENERAL:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:NUMERIC , ancetre:NUMERIC
+ref
+Parametre type:NUMERIC->NUMERIC
+Fin parametre type:NUMERIC->NUMERIC:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:NUMERIC
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=NUMERIC!15:14
+coucou
+Parametre type:DOUBLE->NUMERIC
+Fin parametre type:DOUBLE->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:INTEGER , ancetre:NUMERIC
+ref
+type de=INTEGER
+coucou2=INTEGER?=NUMERIC!7:14
+coucou
+Parametre type:INTEGER->NUMERIC
+Fin parametre type:INTEGER->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:like Current , ancetre:NUMERIC
+ref
+type de=INTEGER_REF
+coucou2=INTEGER_REF?=NUMERIC!12:14
+coucou
+Parametre type:INTEGER_REF->NUMERIC
+Fin parametre type:INTEGER_REF->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:NUMERIC , ancetre:NUMERIC
+ref
+Parametre type:NUMERIC->NUMERIC
+Fin parametre type:NUMERIC->NUMERIC:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:DOUBLE_REF , ancetre:DOUBLE_REF
+ref
+Parametre type:DOUBLE_REF->DOUBLE_REF
+Fin parametre type:DOUBLE_REF->DOUBLE_REF:true
+Ref:=* : true
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:like Current , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STD_FILE , ancetre:STD_FILE
+ref
+Parametre type:STD_FILE->STD_FILE
+Fin parametre type:STD_FILE->STD_FILE:true
+Ref:=* : true
+conformite de:STD_FILE , ancetre:STD_FILE
+ref
+Parametre type:STD_FILE->STD_FILE
+Fin parametre type:STD_FILE->STD_FILE:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+ref
+Parametre type:NONE->NONE
+Fin parametre type:NONE->NONE:true
+Ref:=* : true
+conformite de:NONE , ancetre:NONE
+ref
+Parametre type:NONE->NONE
+Fin parametre type:NONE->NONE:true
+Ref:=* : true
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:GENERAL , ancetre:GENERAL
+ref
+Parametre type:GENERAL->GENERAL
+Fin parametre type:GENERAL->GENERAL:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:GENERAL , ancetre:GENERAL
+ref
+Parametre type:GENERAL->GENERAL
+Fin parametre type:GENERAL->GENERAL:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:NUMERIC , ancetre:NUMERIC
+ref
+Parametre type:NUMERIC->NUMERIC
+Fin parametre type:NUMERIC->NUMERIC:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:DOUBLE_REF , ancetre:NUMERIC
+ref
+type de=DOUBLE_REF
+coucou2=DOUBLE_REF?=NUMERIC!19:14
+coucou
+Parametre type:DOUBLE_REF->NUMERIC
+Fin parametre type:DOUBLE_REF->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:INTEGER , ancetre:NUMERIC
+ref
+type de=INTEGER
+coucou2=INTEGER?=NUMERIC!7:14
+coucou
+Parametre type:INTEGER->NUMERIC
+Fin parametre type:INTEGER->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:like Current , ancetre:NUMERIC
+ref
+type de=DOUBLE_REF
+coucou2=DOUBLE_REF?=NUMERIC!19:14
+coucou
+Parametre type:DOUBLE_REF->NUMERIC
+Fin parametre type:DOUBLE_REF->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:CHARACTER , ancetre:CHARACTER
+conformite de:CHARACTER , ancetre:CHARACTER
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STD_FILE , ancetre:STD_FILE
+ref
+Parametre type:STD_FILE->STD_FILE
+Fin parametre type:STD_FILE->STD_FILE:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+ref
+Parametre type:NONE->NONE
+Fin parametre type:NONE->NONE:true
+Ref:=* : true
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:GENERAL , ancetre:GENERAL
+ref
+Parametre type:GENERAL->GENERAL
+Fin parametre type:GENERAL->GENERAL:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:POINTER , ancetre:POINTER
+conformite de:POINTER , ancetre:POINTER
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STRING , ancetre:STRING
+conformite de:NONE , ancetre:NONE
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:NUMERIC , ancetre:NUMERIC
+ref
+Parametre type:NUMERIC->NUMERIC
+Fin parametre type:NUMERIC->NUMERIC:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:DOUBLE_REF , ancetre:DOUBLE_REF
+ref
+Parametre type:DOUBLE_REF->DOUBLE_REF
+Fin parametre type:DOUBLE_REF->DOUBLE_REF:true
+Ref:=* : true
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:REAL , ancetre:REAL
+conformite de:REAL , ancetre:REAL
+conformite de:like Current , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:ANY , ancetre:ANY
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+conformite de:like a , ancetre:like a
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:like a , ancetre:like a
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:STD_FILE , ancetre:STD_FILE
+conformite de:STD_FILE , ancetre:STD_FILE
+ref
+Parametre type:STD_FILE->STD_FILE
+Fin parametre type:STD_FILE->STD_FILE:true
+Ref:=* : true
+conformite de:STD_FILE , ancetre:STD_FILE
+ref
+Parametre type:STD_FILE->STD_FILE
+Fin parametre type:STD_FILE->STD_FILE:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+conformite de:NONE , ancetre:NONE
+conformite de:NONE , ancetre:NONE
+ref
+Parametre type:NONE->NONE
+Fin parametre type:NONE->NONE:true
+Ref:=* : true
+conformite de:NONE , ancetre:NONE
+ref
+Parametre type:NONE->NONE
+Fin parametre type:NONE->NONE:true
+Ref:=* : true
+conformite de:GENERAL , ancetre:GENERAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:GENERAL , ancetre:GENERAL
+ref
+Parametre type:GENERAL->GENERAL
+Fin parametre type:GENERAL->GENERAL:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:GENERAL , ancetre:GENERAL
+ref
+Parametre type:GENERAL->GENERAL
+Fin parametre type:GENERAL->GENERAL:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:BOOLEAN , ancetre:BOOLEAN
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:like Current , ancetre:like Current
+conformite de:INTEGER , ancetre:INTEGER
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:NUMERIC , ancetre:NUMERIC
+ref
+Parametre type:NUMERIC->NUMERIC
+Fin parametre type:NUMERIC->NUMERIC:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:DOUBLE_REF , ancetre:NUMERIC
+ref
+type de=DOUBLE_REF
+coucou2=DOUBLE_REF?=NUMERIC!19:14
+coucou
+Parametre type:DOUBLE_REF->NUMERIC
+Fin parametre type:DOUBLE_REF->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:INTEGER , ancetre:NUMERIC
+ref
+type de=INTEGER
+coucou2=INTEGER?=NUMERIC!7:14
+coucou
+Parametre type:INTEGER->NUMERIC
+Fin parametre type:INTEGER->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:like Current , ancetre:NUMERIC
+ref
+type de=REAL_REF
+coucou2=REAL_REF?=NUMERIC!22:14
+coucou
+Parametre type:REAL_REF->NUMERIC
+Fin parametre type:REAL_REF->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:like Current , ancetre:like Current
+like
+conformite de:like Current , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+heritage directe:
+classe TEST1 herite de :ANY
+classe ANY herite de :PLATFORM
+classe NONE herite de :TEST1,ANY,A,BOOLEAN,STRING,PLATFORM,INTEGER,BOOLEAN_REF,COMPARABLE,HASHABLE,GENERAL,INTEGER_REF,STD_FILE,NUMERIC,DOUBLE,CHARACTER,POINTER,REAL,DOUBLE_REF,CHARACTER_REF,POINTER_REF,REAL_REF
+classe A herite de :ANY
+classe BOOLEAN herite de :BOOLEAN_REF
+classe STRING herite de :COMPARABLE,HASHABLE
+classe PLATFORM herite de :GENERAL
+classe INTEGER herite de :INTEGER_REF
+classe BOOLEAN_REF herite de :HASHABLE
+classe COMPARABLE herite de :ANY
+classe HASHABLE herite de :ANY
+classe GENERAL herite de :
+classe INTEGER_REF herite de :COMPARABLE,HASHABLE,NUMERIC
+classe STD_FILE herite de :ANY
+classe NUMERIC herite de :ANY
+classe DOUBLE herite de :DOUBLE_REF
+classe CHARACTER herite de :CHARACTER_REF
+classe POINTER herite de :POINTER_REF
+classe REAL herite de :REAL_REF
+classe DOUBLE_REF herite de :COMPARABLE,HASHABLE,NUMERIC
+classe CHARACTER_REF herite de :COMPARABLE,HASHABLE
+classe POINTER_REF herite de :HASHABLE
+classe REAL_REF herite de :COMPARABLE,HASHABLE,NUMERIC
+heritage complet:
+classe TEST1 herite de :ANY,PLATFORM,GENERAL
+classe ANY herite de :PLATFORM,GENERAL
+classe NONE herite de :TEST1,ANY,A,BOOLEAN,STRING,PLATFORM,INTEGER,BOOLEAN_REF,COMPARABLE,HASHABLE,GENERAL,INTEGER_REF,STD_FILE,NUMERIC,DOUBLE,CHARACTER,POINTER,REAL,DOUBLE_REF,CHARACTER_REF,POINTER_REF,REAL_REF
+classe A herite de :ANY,PLATFORM,GENERAL
+classe BOOLEAN herite de :ANY,PLATFORM,BOOLEAN_REF,HASHABLE,GENERAL
+classe STRING herite de :ANY,PLATFORM,COMPARABLE,HASHABLE,GENERAL
+classe PLATFORM herite de :GENERAL
+classe INTEGER herite de :ANY,PLATFORM,COMPARABLE,HASHABLE,GENERAL,INTEGER_REF,NUMERIC
+classe BOOLEAN_REF herite de :ANY,PLATFORM,HASHABLE,GENERAL
+classe COMPARABLE herite de :ANY,PLATFORM,GENERAL
+classe HASHABLE herite de :ANY,PLATFORM,GENERAL
+classe GENERAL herite de :
+classe INTEGER_REF herite de :ANY,PLATFORM,COMPARABLE,HASHABLE,GENERAL,NUMERIC
+classe STD_FILE herite de :ANY,PLATFORM,GENERAL
+classe NUMERIC herite de :ANY,PLATFORM,GENERAL
+classe DOUBLE herite de :ANY,PLATFORM,COMPARABLE,HASHABLE,GENERAL,NUMERIC,DOUBLE_REF
+classe CHARACTER herite de :ANY,PLATFORM,COMPARABLE,HASHABLE,GENERAL,CHARACTER_REF
+classe POINTER herite de :ANY,PLATFORM,HASHABLE,GENERAL,POINTER_REF
+classe REAL herite de :ANY,PLATFORM,COMPARABLE,HASHABLE,GENERAL,NUMERIC,REAL_REF
+classe DOUBLE_REF herite de :ANY,PLATFORM,COMPARABLE,HASHABLE,GENERAL,NUMERIC
+classe CHARACTER_REF herite de :ANY,PLATFORM,COMPARABLE,HASHABLE,GENERAL
+classe POINTER_REF herite de :ANY,PLATFORM,HASHABLE,GENERAL
+classe REAL_REF herite de :ANY,PLATFORM,COMPARABLE,HASHABLE,GENERAL,NUMERIC
+feature0:make
+conformite de:NONE , ancetre:A
+ref
+type de=NONE
+coucou2=NONE?=A!2:3
+coucou
+Parametre type:NONE->A
+Fin parametre type:NONE->A:true
+res=true
+Ref:=* : true
+conformite de:A , ancetre:A
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:A , ancetre:A
+conformite de:A , ancetre:A
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+Point-----TEST1:a2 "." twin
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:A , ancetre:A
+ref
+Parametre type:A->A
+Fin parametre type:A->A:true
+Ref:=* : true
+conformite de:A , ancetre:A
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+Point-----TEST1:a "." conforms_to(a2)
+salut1
+salut2
+salut3
+salut4
+conformite de:A , ancetre:GENERAL
+ref
+type de=A
+coucou2=A?=GENERAL!3:11
+coucou
+Parametre type:A->GENERAL
+Fin parametre type:A->GENERAL:true
+res=true
+Ref:=* : true
+Fin point
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+Point-----TEST1:a "." conforms_to(b)
+salut1
+salut2
+salut3
+salut4
+conformite de:BOOLEAN , ancetre:GENERAL
+ref
+type de=BOOLEAN
+coucou2=BOOLEAN?=GENERAL!4:11
+coucou
+Parametre type:BOOLEAN->GENERAL
+Fin parametre type:BOOLEAN->GENERAL:true
+res=true
+Ref:=* : true
+Fin point
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+Point-----TEST1:a "." conforms_to(a3)
+salut1
+salut2
+salut3
+salut4
+conformite de:ANY , ancetre:GENERAL
+ref
+type de=ANY
+coucou2=ANY?=GENERAL!1:11
+coucou
+Parametre type:ANY->GENERAL
+Fin parametre type:ANY->GENERAL:true
+res=true
+Ref:=* : true
+Fin point
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+Point-----TEST1:a3 "." conforms_to(a)
+salut1
+salut2
+salut3
+salut4
+conformite de:A , ancetre:GENERAL
+ref
+type de=A
+coucou2=A?=GENERAL!3:11
+coucou
+Parametre type:A->GENERAL
+Fin parametre type:A->GENERAL:true
+res=true
+Ref:=* : true
+Fin point
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+Point-----TEST1:a "." conforms_to(a)
+salut1
+salut2
+salut3
+salut4
+conformite de:A , ancetre:GENERAL
+ref
+type de=A
+coucou2=A?=GENERAL!3:11
+coucou
+Parametre type:A->GENERAL
+Fin parametre type:A->GENERAL:true
+res=true
+Ref:=* : true
+Fin point
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+Point-----TEST1:a "." generating_type
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+Point-----TEST1:a "." generator
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:STRING , ancetre:STRING
+ref
+Parametre type:STRING->STRING
+Fin parametre type:STRING->STRING:true
+Ref:=* : true
+feature0:set_n
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:set_elt
+conformite de:A , ancetre:A
+ref
+Parametre type:A->A
+Fin parametre type:A->A:true
+Ref:=* : true
+feature0:make
+feature0:hash_code
+feature0:infix "<"
+feature0:infix "^"
+feature0:to_string
+feature0:hash_code
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:set_item
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:hash_code
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:prefix "not"
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN_REF
+ref
+type de=BOOLEAN
+coucou2=BOOLEAN?=BOOLEAN_REF!4:8
+coucou
+Parametre type:BOOLEAN->BOOLEAN_REF
+Fin parametre type:BOOLEAN->BOOLEAN_REF:true
+res=true
+Ref:=* : true
+feature0:infix "and"
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN_REF
+ref
+type de=BOOLEAN
+coucou2=BOOLEAN?=BOOLEAN_REF!4:8
+coucou
+Parametre type:BOOLEAN->BOOLEAN_REF
+Fin parametre type:BOOLEAN->BOOLEAN_REF:true
+res=true
+Ref:=* : true
+feature0:infix "and then"
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN_REF
+ref
+type de=BOOLEAN
+coucou2=BOOLEAN?=BOOLEAN_REF!4:8
+coucou
+Parametre type:BOOLEAN->BOOLEAN_REF
+Fin parametre type:BOOLEAN->BOOLEAN_REF:true
+res=true
+Ref:=* : true
+feature0:infix "or"
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN_REF
+ref
+type de=BOOLEAN
+coucou2=BOOLEAN?=BOOLEAN_REF!4:8
+coucou
+Parametre type:BOOLEAN->BOOLEAN_REF
+Fin parametre type:BOOLEAN->BOOLEAN_REF:true
+res=true
+Ref:=* : true
+feature0:infix "or else"
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN_REF
+ref
+type de=BOOLEAN
+coucou2=BOOLEAN?=BOOLEAN_REF!4:8
+coucou
+Parametre type:BOOLEAN->BOOLEAN_REF
+Fin parametre type:BOOLEAN->BOOLEAN_REF:true
+res=true
+Ref:=* : true
+feature0:infix "xor"
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN_REF
+ref
+type de=BOOLEAN
+coucou2=BOOLEAN?=BOOLEAN_REF!4:8
+coucou
+Parametre type:BOOLEAN->BOOLEAN_REF
+Fin parametre type:BOOLEAN->BOOLEAN_REF:true
+res=true
+Ref:=* : true
+feature0:infix "implies"
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:like Current
+like
+conformite de:BOOLEAN , ancetre:BOOLEAN_REF
+ref
+type de=BOOLEAN
+coucou2=BOOLEAN?=BOOLEAN_REF!4:8
+coucou
+Parametre type:BOOLEAN->BOOLEAN_REF
+Fin parametre type:BOOLEAN->BOOLEAN_REF:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:COMPARABLE
+ref
+type de=NONE
+coucou2=NONE?=COMPARABLE!2:9
+coucou
+Parametre type:NONE->COMPARABLE
+Fin parametre type:NONE->COMPARABLE:true
+res=true
+Ref:=* : true
+feature0:infix "<="
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:COMPARABLE
+ref
+type de=NONE
+coucou2=NONE?=COMPARABLE!2:9
+coucou
+Parametre type:NONE->COMPARABLE
+Fin parametre type:NONE->COMPARABLE:true
+res=true
+Ref:=* : true
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:infix ">="
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:COMPARABLE
+ref
+type de=NONE
+coucou2=NONE?=COMPARABLE!2:9
+coucou
+Parametre type:NONE->COMPARABLE
+Fin parametre type:NONE->COMPARABLE:true
+res=true
+Ref:=* : true
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:infix ">"
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:COMPARABLE
+ref
+type de=NONE
+coucou2=NONE?=COMPARABLE!2:9
+coucou
+Parametre type:NONE->COMPARABLE
+Fin parametre type:NONE->COMPARABLE:true
+res=true
+Ref:=* : true
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:is_equal
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:COMPARABLE
+ref
+type de=NONE
+coucou2=NONE?=COMPARABLE!2:9
+coucou
+Parametre type:NONE->COMPARABLE
+Fin parametre type:NONE->COMPARABLE:true
+res=true
+Ref:=* : true
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:max
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:COMPARABLE
+ref
+type de=NONE
+coucou2=NONE?=COMPARABLE!2:9
+coucou
+Parametre type:NONE->COMPARABLE
+Fin parametre type:NONE->COMPARABLE:true
+res=true
+Ref:=* : true
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:like Current , ancetre:like Current
+like
+conformite de:COMPARABLE , ancetre:like Current
+like
+conformite de:COMPARABLE , ancetre:COMPARABLE
+feature0:min
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:COMPARABLE
+ref
+type de=NONE
+coucou2=NONE?=COMPARABLE!2:9
+coucou
+Parametre type:NONE->COMPARABLE
+Fin parametre type:NONE->COMPARABLE:true
+res=true
+Ref:=* : true
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:like Current , ancetre:like Current
+like
+conformite de:COMPARABLE , ancetre:like Current
+like
+conformite de:COMPARABLE , ancetre:COMPARABLE
+feature0:three_way_comparison
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:COMPARABLE
+ref
+type de=NONE
+coucou2=NONE?=COMPARABLE!2:9
+coucou
+Parametre type:NONE->COMPARABLE
+Fin parametre type:NONE->COMPARABLE:true
+res=true
+Ref:=* : true
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:COMPARABLE , ancetre:COMPARABLE
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:equal
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+conformite de:NONE , ancetre:ANY
+ref
+type de=NONE
+coucou2=NONE?=ANY!2:1
+coucou
+Parametre type:NONE->ANY
+Fin parametre type:NONE->ANY:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:ANY
+ref
+type de=NONE
+coucou2=NONE?=ANY!2:1
+coucou
+Parametre type:NONE->ANY
+Fin parametre type:NONE->ANY:true
+res=true
+Ref:=* : true
+Point-----GENERAL:a "." is_equal(b)
+salut1
+salut2
+salut3
+salut4
+conformite de:ANY , ancetre:ANY
+ref
+Parametre type:ANY->ANY
+Fin parametre type:ANY->ANY:true
+Ref:=* : true
+Fin point
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:clone
+conformite de:NONE , ancetre:ANY
+ref
+type de=NONE
+coucou2=NONE?=ANY!2:1
+coucou
+Parametre type:NONE->ANY
+Fin parametre type:NONE->ANY:true
+res=true
+Ref:=* : true
+feature0:io
+classe0:GENERAL
+feature0:out
+feature0:Void
+feature0:set_item
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:infix "<"
+Point-----INTEGER_REF:other "." item
+salut1
+Fin point
+feature0:hash_code
+Point-----INTEGER_REF:item "." hash_code
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:infix "+"
+Point-----INTEGER_REF:other "." item
+salut1
+Fin point
+feature0:infix "-"
+Point-----INTEGER_REF:other "." item
+salut1
+Fin point
+feature0:infix "*"
+Point-----INTEGER_REF:other "." item
+salut1
+Fin point
+feature0:infix "/"
+Point-----INTEGER_REF:other "." item
+salut1
+Fin point
+feature0:divisible
+Point-----INTEGER_REF:other "." item
+salut1
+Fin point
+feature0:exponentiable
+feature0:one
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER_REF
+ref
+type de=INTEGER
+coucou2=INTEGER?=INTEGER_REF!7:12
+coucou
+Parametre type:INTEGER->INTEGER_REF
+Fin parametre type:INTEGER->INTEGER_REF:true
+res=true
+Ref:=* : true
+feature0:zero
+conformite de:INTEGER , ancetre:like Current
+like
+conformite de:INTEGER , ancetre:INTEGER_REF
+ref
+type de=INTEGER
+coucou2=INTEGER?=INTEGER_REF!7:12
+coucou
+Parametre type:INTEGER->INTEGER_REF
+Fin parametre type:INTEGER->INTEGER_REF:true
+res=true
+Ref:=* : true
+feature0:make
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:NUMERIC
+ref
+type de=NONE
+coucou2=NONE?=NUMERIC!2:14
+coucou
+Parametre type:NONE->NUMERIC
+Fin parametre type:NONE->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:NUMERIC
+ref
+type de=NONE
+coucou2=NONE?=NUMERIC!2:14
+coucou
+Parametre type:NONE->NUMERIC
+Fin parametre type:NONE->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:NUMERIC
+ref
+type de=NONE
+coucou2=NONE?=NUMERIC!2:14
+coucou
+Parametre type:NONE->NUMERIC
+Fin parametre type:NONE->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:NUMERIC
+ref
+type de=NONE
+coucou2=NONE?=NUMERIC!2:14
+coucou
+Parametre type:NONE->NUMERIC
+Fin parametre type:NONE->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:NUMERIC
+ref
+type de=NONE
+coucou2=NONE?=NUMERIC!2:14
+coucou
+Parametre type:NONE->NUMERIC
+Fin parametre type:NONE->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:like Current
+like
+conformite de:NONE , ancetre:NUMERIC
+ref
+type de=NONE
+coucou2=NONE?=NUMERIC!2:14
+coucou
+Parametre type:NONE->NUMERIC
+Fin parametre type:NONE->NUMERIC:true
+res=true
+Ref:=* : true
+conformite de:NONE , ancetre:NUMERIC
+ref
+type de=NONE
+coucou2=NONE?=NUMERIC!2:14
+coucou
+Parametre type:NONE->NUMERIC
+Fin parametre type:NONE->NUMERIC:true
+res=true
+Ref:=* : true
+feature0:hash_code
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:divisible
+conformite de:REAL , ancetre:DOUBLE
+expanded
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:exponentiable
+feature0:one
+Point-----DOUBLE:1.0 "." to_double
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE
+expanded
+Parametre type:DOUBLE->DOUBLE
+Fin parametre type:DOUBLE->DOUBLE:true
+Exp:=Exp : true
+feature0:zero
+Point-----DOUBLE:0.0 "." to_double
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE
+expanded
+Parametre type:DOUBLE->DOUBLE
+Fin parametre type:DOUBLE->DOUBLE:true
+Exp:=Exp : true
+feature0:hash_code
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:hash_code
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:divisible
+Point-----REAL:other "." item
+salut1
+Fin point
+feature0:exponentiable
+feature0:one
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL
+expanded
+Parametre type:REAL->REAL
+Fin parametre type:REAL->REAL:true
+Exp:=Exp : true
+feature0:zero
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL
+expanded
+Parametre type:REAL->REAL
+Fin parametre type:REAL->REAL:true
+Exp:=Exp : true
+feature0:set_item
+conformite de:DOUBLE , ancetre:DOUBLE
+expanded
+Parametre type:DOUBLE->DOUBLE
+Fin parametre type:DOUBLE->DOUBLE:true
+Exp:=Exp : true
+feature0:infix "<"
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:hash_code
+Point-----DOUBLE_REF:item "." hash_code
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:infix "+"
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE_REF
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=DOUBLE_REF!15:19
+coucou
+Parametre type:DOUBLE->DOUBLE_REF
+Fin parametre type:DOUBLE->DOUBLE_REF:true
+res=true
+Ref:=* : true
+feature0:infix "-"
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE_REF
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=DOUBLE_REF!15:19
+coucou
+Parametre type:DOUBLE->DOUBLE_REF
+Fin parametre type:DOUBLE->DOUBLE_REF:true
+res=true
+Ref:=* : true
+feature0:infix "*"
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE_REF
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=DOUBLE_REF!15:19
+coucou
+Parametre type:DOUBLE->DOUBLE_REF
+Fin parametre type:DOUBLE->DOUBLE_REF:true
+res=true
+Ref:=* : true
+feature0:infix "/"
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:DOUBLE_REF , ancetre:DOUBLE_REF
+ref
+Parametre type:DOUBLE_REF->DOUBLE_REF
+Fin parametre type:DOUBLE_REF->DOUBLE_REF:true
+Ref:=* : true
+feature0:infix "^"
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE_REF
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=DOUBLE_REF!15:19
+coucou
+Parametre type:DOUBLE->DOUBLE_REF
+Fin parametre type:DOUBLE->DOUBLE_REF:true
+res=true
+Ref:=* : true
+feature0:prefix "+"
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE_REF
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=DOUBLE_REF!15:19
+coucou
+Parametre type:DOUBLE->DOUBLE_REF
+Fin parametre type:DOUBLE->DOUBLE_REF:true
+res=true
+Ref:=* : true
+feature0:prefix "-"
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE_REF
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=DOUBLE_REF!15:19
+coucou
+Parametre type:DOUBLE->DOUBLE_REF
+Fin parametre type:DOUBLE->DOUBLE_REF:true
+res=true
+Ref:=* : true
+feature0:infix "//"
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:infix "\\"
+conformite de:DOUBLE , ancetre:DOUBLE
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE_REF
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=DOUBLE_REF!15:19
+coucou
+Parametre type:DOUBLE->DOUBLE_REF
+Fin parametre type:DOUBLE->DOUBLE_REF:true
+res=true
+Ref:=* : true
+feature0:divisible
+Point-----DOUBLE_REF:other "." item
+salut1
+Fin point
+feature0:exponentiable
+feature0:one
+Point-----DOUBLE_REF:1.0 "." to_double
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE_REF
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=DOUBLE_REF!15:19
+coucou
+Parametre type:DOUBLE->DOUBLE_REF
+Fin parametre type:DOUBLE->DOUBLE_REF:true
+res=true
+Ref:=* : true
+feature0:zero
+Point-----DOUBLE_REF:0.0 "." to_double
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:DOUBLE , ancetre:like Current
+like
+conformite de:DOUBLE , ancetre:DOUBLE_REF
+ref
+type de=DOUBLE
+coucou2=DOUBLE?=DOUBLE_REF!15:19
+coucou
+Parametre type:DOUBLE->DOUBLE_REF
+Fin parametre type:DOUBLE->DOUBLE_REF:true
+res=true
+Ref:=* : true
+feature0:to_real
+feature0:set_item
+conformite de:CHARACTER , ancetre:CHARACTER
+expanded
+Parametre type:CHARACTER->CHARACTER
+Fin parametre type:CHARACTER->CHARACTER:true
+Exp:=Exp : true
+feature0:infix "<"
+conformite de:CHARACTER , ancetre:CHARACTER
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:code
+Point-----CHARACTER_REF:item "." code
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:hash_code
+Point-----CHARACTER_REF:item "." hash_code
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:set_item
+conformite de:POINTER , ancetre:POINTER
+ref
+Parametre type:POINTER->POINTER
+Fin parametre type:POINTER->POINTER:true
+Ref:=* : true
+feature0:hash_code
+feature0:set_item
+conformite de:REAL , ancetre:REAL
+expanded
+Parametre type:REAL->REAL
+Fin parametre type:REAL->REAL:true
+Exp:=Exp : true
+feature0:infix "<"
+conformite de:REAL , ancetre:REAL
+conformite de:BOOLEAN , ancetre:BOOLEAN
+expanded
+Parametre type:BOOLEAN->BOOLEAN
+Fin parametre type:BOOLEAN->BOOLEAN:true
+Exp:=Exp : true
+feature0:hash_code
+Point-----REAL_REF:item "." hash_code
+salut1
+salut2
+salut3
+salut4
+Fin point
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:infix "+"
+conformite de:REAL , ancetre:REAL
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL_REF
+ref
+type de=REAL
+coucou2=REAL?=REAL_REF!18:22
+coucou
+Parametre type:REAL->REAL_REF
+Fin parametre type:REAL->REAL_REF:true
+res=true
+Ref:=* : true
+feature0:infix "-"
+conformite de:REAL , ancetre:REAL
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL_REF
+ref
+type de=REAL
+coucou2=REAL?=REAL_REF!18:22
+coucou
+Parametre type:REAL->REAL_REF
+Fin parametre type:REAL->REAL_REF:true
+res=true
+Ref:=* : true
+feature0:infix "*"
+conformite de:REAL , ancetre:REAL
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL_REF
+ref
+type de=REAL
+coucou2=REAL?=REAL_REF!18:22
+coucou
+Parametre type:REAL->REAL_REF
+Fin parametre type:REAL->REAL_REF:true
+res=true
+Ref:=* : true
+feature0:infix "/"
+conformite de:REAL , ancetre:REAL
+conformite de:DOUBLE_REF , ancetre:DOUBLE_REF
+ref
+Parametre type:DOUBLE_REF->DOUBLE_REF
+Fin parametre type:DOUBLE_REF->DOUBLE_REF:true
+Ref:=* : true
+feature0:infix "^"
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL_REF
+ref
+type de=REAL
+coucou2=REAL?=REAL_REF!18:22
+coucou
+Parametre type:REAL->REAL_REF
+Fin parametre type:REAL->REAL_REF:true
+res=true
+Ref:=* : true
+feature0:prefix "+"
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL_REF
+ref
+type de=REAL
+coucou2=REAL?=REAL_REF!18:22
+coucou
+Parametre type:REAL->REAL_REF
+Fin parametre type:REAL->REAL_REF:true
+res=true
+Ref:=* : true
+feature0:prefix "-"
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL_REF
+ref
+type de=REAL
+coucou2=REAL?=REAL_REF!18:22
+coucou
+Parametre type:REAL->REAL_REF
+Fin parametre type:REAL->REAL_REF:true
+res=true
+Ref:=* : true
+feature0:infix "//"
+conformite de:REAL , ancetre:REAL
+conformite de:INTEGER , ancetre:INTEGER
+expanded
+Parametre type:INTEGER->INTEGER
+Fin parametre type:INTEGER->INTEGER:true
+Exp:=Exp : true
+feature0:infix "\\"
+conformite de:REAL , ancetre:REAL
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL_REF
+ref
+type de=REAL
+coucou2=REAL?=REAL_REF!18:22
+coucou
+Parametre type:REAL->REAL_REF
+Fin parametre type:REAL->REAL_REF:true
+res=true
+Ref:=* : true
+feature0:divisible
+Point-----REAL_REF:other "." item
+salut1
+Fin point
+feature0:exponentiable
+feature0:one
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL_REF
+ref
+type de=REAL
+coucou2=REAL?=REAL_REF!18:22
+coucou
+Parametre type:REAL->REAL_REF
+Fin parametre type:REAL->REAL_REF:true
+res=true
+Ref:=* : true
+feature0:zero
+conformite de:REAL , ancetre:like Current
+like
+conformite de:REAL , ancetre:REAL_REF
+ref
+type de=REAL
+coucou2=REAL?=REAL_REF!18:22
+coucou
+Parametre type:REAL->REAL_REF
+Fin parametre type:REAL->REAL_REF:true
+res=true
+Ref:=* : true
+feature0:to_double
+Les tables des symboles
+Table_Symbol de TEST1:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<ANY>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<ANY>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<ANY>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<ANY>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<ANY>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<ANY>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<ANY>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<ANY>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<ANY>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<ANY>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<ANY>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<ANY>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<ANY>:BOOLEAN)}
+Attribut_Complet make:{directe=make<TEST1>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de ANY:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<PLATFORM>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<PLATFORM>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<PLATFORM>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<PLATFORM>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<PLATFORM>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<PLATFORM>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<PLATFORM>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<PLATFORM>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<PLATFORM>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<PLATFORM>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<PLATFORM>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<PLATFORM>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<PLATFORM>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<PLATFORM>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<PLATFORM>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<PLATFORM>:BOOLEAN)}
+}
+Table_Symbol de PLATFORM:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<GENERAL>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<GENERAL>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<GENERAL>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<GENERAL>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<GENERAL>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<GENERAL>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<GENERAL>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<GENERAL>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<GENERAL>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<GENERAL>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<GENERAL>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<GENERAL>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<GENERAL>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<GENERAL>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<GENERAL>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<GENERAL>:BOOLEAN)}
+}
+Table_Symbol de GENERAL:{
+Attribut_Complet generating_type:{directe=generating_type<GENERAL>:STRING,no_reel=-1,deferred=null}
+Attribut_Complet generator:{directe=generator<GENERAL>:STRING,no_reel=-1,deferred=null}
+Attribut_Complet equal:{directe=equal<GENERAL>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet standard_equal:{directe=standard_equal<GENERAL>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet is_equal:{directe=is_equal<GENERAL>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet standard_is_equal:{directe=standard_is_equal<GENERAL>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet clone:{directe=clone<GENERAL>:like a,no_reel=-1,deferred=null}
+Attribut_Complet standard_clone:{directe=standard_clone<GENERAL>:like a,no_reel=-1,deferred=null}
+Attribut_Complet twin:{directe=twin<GENERAL>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet standard_twin:{directe=standard_twin<GENERAL>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet copy:{directe=copy<GENERAL>:null,no_reel=-1,deferred=null}
+Attribut_Complet standard_copy:{directe=standard_copy<GENERAL>:null,no_reel=-1,deferred=null}
+Attribut_Complet io:{directe=io<GENERAL>:STD_FILE,no_reel=-1,deferred=null}
+Attribut_Complet out:{directe=out<GENERAL>:STRING,no_reel=-1,deferred=null}
+Attribut_Complet Void:{directe=Void<GENERAL>:NONE,no_reel=-1,deferred=null}
+Attribut_Complet conforms_to:{directe=conforms_to<GENERAL>:BOOLEAN,no_reel=-1,deferred=null}
+}
+Table_Symbol de NONE:{
+}
+Table_Symbol de A:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<ANY>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<ANY>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<ANY>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<ANY>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<ANY>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<ANY>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<ANY>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<ANY>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<ANY>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<ANY>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<ANY>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<ANY>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<ANY>:BOOLEAN)}
+Attribut_Complet set_n:{directe=set_n<A>:null,no_reel=-1,deferred=null}
+Attribut_Complet set_elt:{directe=set_elt<A>:null,no_reel=-1,deferred=null}
+Attribut_Complet n:{directe=n<A>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet elt:{directe=elt<A>:A,no_reel=-1,deferred=null}
+}
+Table_Symbol de BOOLEAN:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<BOOLEAN_REF>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<BOOLEAN_REF>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<BOOLEAN_REF>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<BOOLEAN_REF>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<BOOLEAN_REF>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<BOOLEAN_REF>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<BOOLEAN_REF>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<BOOLEAN_REF>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<BOOLEAN_REF>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<BOOLEAN_REF>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<BOOLEAN_REF>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<BOOLEAN_REF>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<BOOLEAN_REF>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<BOOLEAN_REF>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<BOOLEAN_REF>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<BOOLEAN_REF>:BOOLEAN)}
+Attribut_Complet hash_code:{directe=Aucun,no_reel=0,deferred=(hash_code<BOOLEAN_REF>:INTEGER)}
+Attribut_Complet item:{directe=Aucun,no_reel=0,deferred=(item<BOOLEAN_REF>:BOOLEAN)}
+Attribut_Complet set_item:{directe=Aucun,no_reel=0,deferred=(set_item<BOOLEAN_REF>:null)}
+Attribut_Complet prefix "not":{directe=prefix "not"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=(prefix "not"<BOOLEAN_REF>:like Current)}
+Attribut_Complet infix "and":{directe=infix "and"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=(infix "and"<BOOLEAN_REF>:like Current)}
+Attribut_Complet infix "and then":{directe=infix "and then"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=(infix "and then"<BOOLEAN_REF>:like Current)}
+Attribut_Complet infix "or":{directe=infix "or"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=(infix "or"<BOOLEAN_REF>:like Current)}
+Attribut_Complet infix "or else":{directe=infix "or else"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=(infix "or else"<BOOLEAN_REF>:like Current)}
+Attribut_Complet infix "xor":{directe=infix "xor"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=(infix "xor"<BOOLEAN_REF>:like Current)}
+Attribut_Complet infix "implies":{directe=infix "implies"<BOOLEAN>:BOOLEAN,no_reel=-1,deferred=(infix "implies"<BOOLEAN_REF>:like Current)}
+}
+Table_Symbol de BOOLEAN_REF:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<HASHABLE>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<HASHABLE>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<HASHABLE>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<HASHABLE>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<HASHABLE>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<HASHABLE>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<HASHABLE>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<HASHABLE>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<HASHABLE>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<HASHABLE>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<HASHABLE>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<HASHABLE>:BOOLEAN)}
+Attribut_Complet hash_code:{directe=hash_code<BOOLEAN_REF>:INTEGER,no_reel=-1,deferred=(hash_code<HASHABLE>:INTEGER)}
+Attribut_Complet item:{directe=item<BOOLEAN_REF>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet set_item:{directe=set_item<BOOLEAN_REF>:null,no_reel=-1,deferred=null}
+Attribut_Complet prefix "not":{directe=prefix "not"<BOOLEAN_REF>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "and":{directe=infix "and"<BOOLEAN_REF>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "and then":{directe=infix "and then"<BOOLEAN_REF>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "or":{directe=infix "or"<BOOLEAN_REF>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "or else":{directe=infix "or else"<BOOLEAN_REF>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "xor":{directe=infix "xor"<BOOLEAN_REF>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "implies":{directe=infix "implies"<BOOLEAN_REF>:like Current,no_reel=-1,deferred=null}
+}
+Table_Symbol de HASHABLE:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<ANY>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<ANY>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<ANY>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<ANY>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<ANY>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<ANY>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<ANY>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<ANY>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<ANY>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<ANY>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<ANY>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<ANY>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<ANY>:BOOLEAN)}
+Attribut_Complet hash_code:{directe=hash_code<HASHABLE>:INTEGER,no_reel=-1,deferred=null}
+}
+Table_Symbol de STRING:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<COMPARABLE>:STRING),(generating_type<HASHABLE>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<COMPARABLE>:STRING),(generator<HASHABLE>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<COMPARABLE>:BOOLEAN),(equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<COMPARABLE>:BOOLEAN),(standard_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<COMPARABLE>:BOOLEAN),(is_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<COMPARABLE>:BOOLEAN),(standard_is_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<COMPARABLE>:like a),(clone<HASHABLE>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<COMPARABLE>:like a),(standard_clone<HASHABLE>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<COMPARABLE>:like Current),(twin<HASHABLE>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<COMPARABLE>:like Current),(standard_twin<HASHABLE>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<COMPARABLE>:null),(copy<HASHABLE>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<COMPARABLE>:null),(standard_copy<HASHABLE>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<COMPARABLE>:STD_FILE),(io<HASHABLE>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<COMPARABLE>:STRING),(out<HASHABLE>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<COMPARABLE>:NONE),(Void<HASHABLE>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<COMPARABLE>:BOOLEAN),(conforms_to<HASHABLE>:BOOLEAN)}
+Attribut_Complet infix "<":{directe=infix "<"<STRING>:BOOLEAN,no_reel=-1,deferred=(infix "<"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix "<=":{directe=Aucun,no_reel=0,deferred=(infix "<="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">=":{directe=Aucun,no_reel=0,deferred=(infix ">="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">":{directe=Aucun,no_reel=0,deferred=(infix ">"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet max:{directe=Aucun,no_reel=0,deferred=(max<COMPARABLE>:like Current)}
+Attribut_Complet min:{directe=Aucun,no_reel=0,deferred=(min<COMPARABLE>:like Current)}
+Attribut_Complet three_way_comparison:{directe=Aucun,no_reel=0,deferred=(three_way_comparison<COMPARABLE>:INTEGER)}
+Attribut_Complet hash_code:{directe=hash_code<STRING>:INTEGER,no_reel=-1,deferred=(hash_code<HASHABLE>:INTEGER)}
+Attribut_Complet make:{directe=make<STRING>:null,no_reel=-1,deferred=null}
+Attribut_Complet infix "+":{directe=infix "+"<STRING>:STRING,no_reel=-1,deferred=null}
+}
+Table_Symbol de COMPARABLE:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<ANY>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<ANY>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<ANY>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=is_equal<COMPARABLE>:BOOLEAN,no_reel=-1,deferred=(is_equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<ANY>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<ANY>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<ANY>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<ANY>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<ANY>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<ANY>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<ANY>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<ANY>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<ANY>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<ANY>:BOOLEAN)}
+Attribut_Complet infix "<":{directe=infix "<"<COMPARABLE>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet infix "<=":{directe=infix "<="<COMPARABLE>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet infix ">=":{directe=infix ">="<COMPARABLE>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet infix ">":{directe=infix ">"<COMPARABLE>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet max:{directe=max<COMPARABLE>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet min:{directe=min<COMPARABLE>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet three_way_comparison:{directe=three_way_comparison<COMPARABLE>:INTEGER,no_reel=-1,deferred=null}
+}
+Table_Symbol de INTEGER:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<INTEGER_REF>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<INTEGER_REF>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<INTEGER_REF>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<INTEGER_REF>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<INTEGER_REF>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<INTEGER_REF>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<INTEGER_REF>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<INTEGER_REF>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<INTEGER_REF>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<INTEGER_REF>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<INTEGER_REF>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet infix "<":{directe=infix "<"<INTEGER>:BOOLEAN,no_reel=-1,deferred=(infix "<"<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet infix "<=":{directe=Aucun,no_reel=0,deferred=(infix "<="<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet infix ">=":{directe=Aucun,no_reel=0,deferred=(infix ">="<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet infix ">":{directe=Aucun,no_reel=0,deferred=(infix ">"<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet max:{directe=Aucun,no_reel=0,deferred=(max<INTEGER_REF>:like Current)}
+Attribut_Complet min:{directe=Aucun,no_reel=0,deferred=(min<INTEGER_REF>:like Current)}
+Attribut_Complet three_way_comparison:{directe=Aucun,no_reel=0,deferred=(three_way_comparison<INTEGER_REF>:INTEGER)}
+Attribut_Complet hash_code:{directe=hash_code<INTEGER>:INTEGER,no_reel=-1,deferred=(hash_code<INTEGER_REF>:INTEGER)}
+Attribut_Complet one:{directe=Aucun,no_reel=0,deferred=(one<INTEGER_REF>:like Current)}
+Attribut_Complet zero:{directe=Aucun,no_reel=0,deferred=(zero<INTEGER_REF>:like Current)}
+Attribut_Complet divisible:{directe=Aucun,no_reel=0,deferred=(divisible<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet exponentiable:{directe=Aucun,no_reel=0,deferred=(exponentiable<INTEGER_REF>:BOOLEAN)}
+Attribut_Complet infix "+":{directe=infix "+"<INTEGER>:INTEGER,no_reel=-1,deferred=(infix "+"<INTEGER_REF>:like Current)}
+Attribut_Complet infix "-":{directe=infix "-"<INTEGER>:INTEGER,no_reel=-1,deferred=(infix "-"<INTEGER_REF>:like Current)}
+Attribut_Complet infix "*":{directe=infix "*"<INTEGER>:INTEGER,no_reel=-1,deferred=(infix "*"<INTEGER_REF>:like Current)}
+Attribut_Complet infix "/":{directe=infix "/"<INTEGER>:INTEGER,no_reel=-1,deferred=(infix "/"<INTEGER_REF>:DOUBLE)}
+Attribut_Complet infix "^":{directe=infix "^"<INTEGER>:INTEGER,no_reel=-1,deferred=(infix "^"<INTEGER_REF>:like Current)}
+Attribut_Complet prefix "+":{directe=prefix "+"<INTEGER>:INTEGER,no_reel=-1,deferred=(prefix "+"<INTEGER_REF>:like Current)}
+Attribut_Complet prefix "-":{directe=prefix "-"<INTEGER>:INTEGER,no_reel=-1,deferred=(prefix "-"<INTEGER_REF>:like Current)}
+Attribut_Complet item:{directe=Aucun,no_reel=0,deferred=(item<INTEGER_REF>:INTEGER)}
+Attribut_Complet set_item:{directe=Aucun,no_reel=0,deferred=(set_item<INTEGER_REF>:null)}
+Attribut_Complet infix "//":{directe=infix "//"<INTEGER>:INTEGER,no_reel=-1,deferred=(infix "//"<INTEGER_REF>:like Current)}
+Attribut_Complet infix "\\":{directe=infix "\\"<INTEGER>:INTEGER,no_reel=-1,deferred=(infix "\\"<INTEGER_REF>:like Current)}
+Attribut_Complet to_string:{directe=to_string<INTEGER>:STRING,no_reel=-1,deferred=null}
+}
+Table_Symbol de INTEGER_REF:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<COMPARABLE>:STRING),(generating_type<HASHABLE>:STRING),(generating_type<NUMERIC>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<COMPARABLE>:STRING),(generator<HASHABLE>:STRING),(generator<NUMERIC>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<COMPARABLE>:BOOLEAN),(equal<HASHABLE>:BOOLEAN),(equal<NUMERIC>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<COMPARABLE>:BOOLEAN),(standard_equal<HASHABLE>:BOOLEAN),(standard_equal<NUMERIC>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<COMPARABLE>:BOOLEAN),(is_equal<HASHABLE>:BOOLEAN),(is_equal<NUMERIC>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<COMPARABLE>:BOOLEAN),(standard_is_equal<HASHABLE>:BOOLEAN),(standard_is_equal<NUMERIC>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<COMPARABLE>:like a),(clone<HASHABLE>:like a),(clone<NUMERIC>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<COMPARABLE>:like a),(standard_clone<HASHABLE>:like a),(standard_clone<NUMERIC>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<COMPARABLE>:like Current),(twin<HASHABLE>:like Current),(twin<NUMERIC>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<COMPARABLE>:like Current),(standard_twin<HASHABLE>:like Current),(standard_twin<NUMERIC>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<COMPARABLE>:null),(copy<HASHABLE>:null),(copy<NUMERIC>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<COMPARABLE>:null),(standard_copy<HASHABLE>:null),(standard_copy<NUMERIC>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<COMPARABLE>:STD_FILE),(io<HASHABLE>:STD_FILE),(io<NUMERIC>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<COMPARABLE>:STRING),(out<HASHABLE>:STRING),(out<NUMERIC>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<COMPARABLE>:NONE),(Void<HASHABLE>:NONE),(Void<NUMERIC>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<COMPARABLE>:BOOLEAN),(conforms_to<HASHABLE>:BOOLEAN),(conforms_to<NUMERIC>:BOOLEAN)}
+Attribut_Complet infix "<":{directe=infix "<"<INTEGER_REF>:BOOLEAN,no_reel=-1,deferred=(infix "<"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix "<=":{directe=Aucun,no_reel=0,deferred=(infix "<="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">=":{directe=Aucun,no_reel=0,deferred=(infix ">="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">":{directe=Aucun,no_reel=0,deferred=(infix ">"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet max:{directe=Aucun,no_reel=0,deferred=(max<COMPARABLE>:like Current)}
+Attribut_Complet min:{directe=Aucun,no_reel=0,deferred=(min<COMPARABLE>:like Current)}
+Attribut_Complet three_way_comparison:{directe=Aucun,no_reel=0,deferred=(three_way_comparison<COMPARABLE>:INTEGER)}
+Attribut_Complet hash_code:{directe=hash_code<INTEGER_REF>:INTEGER,no_reel=-1,deferred=(hash_code<HASHABLE>:INTEGER)}
+Attribut_Complet one:{directe=one<INTEGER_REF>:like Current,no_reel=-1,deferred=(one<NUMERIC>:like Current)}
+Attribut_Complet zero:{directe=zero<INTEGER_REF>:like Current,no_reel=-1,deferred=(zero<NUMERIC>:like Current)}
+Attribut_Complet divisible:{directe=divisible<INTEGER_REF>:BOOLEAN,no_reel=-1,deferred=(divisible<NUMERIC>:BOOLEAN)}
+Attribut_Complet exponentiable:{directe=exponentiable<INTEGER_REF>:BOOLEAN,no_reel=-1,deferred=(exponentiable<NUMERIC>:BOOLEAN)}
+Attribut_Complet infix "+":{directe=infix "+"<INTEGER_REF>:like Current,no_reel=-1,deferred=(infix "+"<NUMERIC>:like Current)}
+Attribut_Complet infix "-":{directe=infix "-"<INTEGER_REF>:like Current,no_reel=-1,deferred=(infix "-"<NUMERIC>:like Current)}
+Attribut_Complet infix "*":{directe=infix "*"<INTEGER_REF>:like Current,no_reel=-1,deferred=(infix "*"<NUMERIC>:like Current)}
+Attribut_Complet infix "/":{directe=infix "/"<INTEGER_REF>:DOUBLE,no_reel=-1,deferred=(infix "/"<NUMERIC>:NUMERIC)}
+Attribut_Complet infix "^":{directe=infix "^"<INTEGER_REF>:like Current,no_reel=-1,deferred=(infix "^"<NUMERIC>:NUMERIC)}
+Attribut_Complet prefix "+":{directe=prefix "+"<INTEGER_REF>:like Current,no_reel=-1,deferred=(prefix "+"<NUMERIC>:like Current)}
+Attribut_Complet prefix "-":{directe=prefix "-"<INTEGER_REF>:like Current,no_reel=-1,deferred=(prefix "-"<NUMERIC>:like Current)}
+Attribut_Complet item:{directe=item<INTEGER_REF>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet set_item:{directe=set_item<INTEGER_REF>:null,no_reel=-1,deferred=null}
+Attribut_Complet infix "//":{directe=infix "//"<INTEGER_REF>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "\\":{directe=infix "\\"<INTEGER_REF>:like Current,no_reel=-1,deferred=null}
+}
+Table_Symbol de NUMERIC:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<ANY>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<ANY>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<ANY>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<ANY>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<ANY>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<ANY>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<ANY>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<ANY>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<ANY>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<ANY>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<ANY>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<ANY>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<ANY>:BOOLEAN)}
+Attribut_Complet one:{directe=one<NUMERIC>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet zero:{directe=zero<NUMERIC>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet divisible:{directe=divisible<NUMERIC>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet exponentiable:{directe=exponentiable<NUMERIC>:BOOLEAN,no_reel=-1,deferred=null}
+Attribut_Complet infix "+":{directe=infix "+"<NUMERIC>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "-":{directe=infix "-"<NUMERIC>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "*":{directe=infix "*"<NUMERIC>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet infix "/":{directe=infix "/"<NUMERIC>:NUMERIC,no_reel=-1,deferred=null}
+Attribut_Complet infix "^":{directe=infix "^"<NUMERIC>:NUMERIC,no_reel=-1,deferred=null}
+Attribut_Complet prefix "+":{directe=prefix "+"<NUMERIC>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet prefix "-":{directe=prefix "-"<NUMERIC>:like Current,no_reel=-1,deferred=null}
+}
+Table_Symbol de STD_FILE:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<ANY>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<ANY>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<ANY>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<ANY>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<ANY>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<ANY>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<ANY>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<ANY>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<ANY>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<ANY>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<ANY>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<ANY>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<ANY>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<ANY>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<ANY>:BOOLEAN)}
+Attribut_Complet make:{directe=make<STD_FILE>:null,no_reel=-1,deferred=null}
+Attribut_Complet put_string:{directe=put_string<STD_FILE>:null,no_reel=-1,deferred=null}
+Attribut_Complet put_integer:{directe=put_integer<STD_FILE>:null,no_reel=-1,deferred=null}
+Attribut_Complet put_character:{directe=put_character<STD_FILE>:null,no_reel=-1,deferred=null}
+Attribut_Complet put_pointer:{directe=put_pointer<STD_FILE>:null,no_reel=-1,deferred=null}
+Attribut_Complet put_double:{directe=put_double<STD_FILE>:null,no_reel=-1,deferred=null}
+Attribut_Complet put_real:{directe=put_real<STD_FILE>:null,no_reel=-1,deferred=null}
+Attribut_Complet put_boolean:{directe=put_boolean<STD_FILE>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de DOUBLE:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<DOUBLE_REF>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<DOUBLE_REF>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<DOUBLE_REF>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<DOUBLE_REF>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<DOUBLE_REF>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<DOUBLE_REF>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<DOUBLE_REF>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<DOUBLE_REF>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<DOUBLE_REF>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<DOUBLE_REF>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<DOUBLE_REF>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet hash_code:{directe=hash_code<DOUBLE>:INTEGER,no_reel=-1,deferred=(hash_code<DOUBLE_REF>:INTEGER)}
+Attribut_Complet one:{directe=one<DOUBLE>:like Current,no_reel=-1,deferred=(one<DOUBLE_REF>:like Current)}
+Attribut_Complet zero:{directe=zero<DOUBLE>:like Current,no_reel=-1,deferred=(zero<DOUBLE_REF>:like Current)}
+Attribut_Complet divisible:{directe=divisible<DOUBLE>:BOOLEAN,no_reel=-1,deferred=(divisible<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet exponentiable:{directe=exponentiable<DOUBLE>:BOOLEAN,no_reel=-1,deferred=(exponentiable<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet infix "+":{directe=infix "+"<DOUBLE>:like Current,no_reel=-1,deferred=(infix "+"<DOUBLE_REF>:like Current)}
+Attribut_Complet infix "-":{directe=infix "-"<DOUBLE>:like Current,no_reel=-1,deferred=(infix "-"<DOUBLE_REF>:like Current)}
+Attribut_Complet infix "*":{directe=infix "*"<DOUBLE>:like Current,no_reel=-1,deferred=(infix "*"<DOUBLE_REF>:like Current)}
+Attribut_Complet infix "/":{directe=infix "/"<DOUBLE>:DOUBLE_REF,no_reel=-1,deferred=(infix "/"<DOUBLE_REF>:DOUBLE_REF)}
+Attribut_Complet infix "^":{directe=infix "^"<DOUBLE>:like Current,no_reel=-1,deferred=(infix "^"<DOUBLE_REF>:like Current)}
+Attribut_Complet prefix "+":{directe=prefix "+"<DOUBLE>:like Current,no_reel=-1,deferred=(prefix "+"<DOUBLE_REF>:like Current)}
+Attribut_Complet prefix "-":{directe=prefix "-"<DOUBLE>:like Current,no_reel=-1,deferred=(prefix "-"<DOUBLE_REF>:like Current)}
+Attribut_Complet infix "<":{directe=infix "<"<DOUBLE>:BOOLEAN,no_reel=-1,deferred=(infix "<"<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet infix "<=":{directe=Aucun,no_reel=0,deferred=(infix "<="<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet infix ">=":{directe=Aucun,no_reel=0,deferred=(infix ">="<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet infix ">":{directe=Aucun,no_reel=0,deferred=(infix ">"<DOUBLE_REF>:BOOLEAN)}
+Attribut_Complet max:{directe=Aucun,no_reel=0,deferred=(max<DOUBLE_REF>:like Current)}
+Attribut_Complet min:{directe=Aucun,no_reel=0,deferred=(min<DOUBLE_REF>:like Current)}
+Attribut_Complet three_way_comparison:{directe=Aucun,no_reel=0,deferred=(three_way_comparison<DOUBLE_REF>:INTEGER)}
+Attribut_Complet item:{directe=Aucun,no_reel=0,deferred=(item<DOUBLE_REF>:DOUBLE)}
+Attribut_Complet set_item:{directe=Aucun,no_reel=0,deferred=(set_item<DOUBLE_REF>:null)}
+Attribut_Complet infix "//":{directe=infix "//"<DOUBLE>:INTEGER,no_reel=-1,deferred=(infix "//"<DOUBLE_REF>:INTEGER)}
+Attribut_Complet infix "\\":{directe=infix "\\"<DOUBLE>:like Current,no_reel=-1,deferred=(infix "\\"<DOUBLE_REF>:like Current)}
+Attribut_Complet to_real:{directe=Aucun,no_reel=0,deferred=(to_real<DOUBLE_REF>:REAL)}
+}
+Table_Symbol de DOUBLE_REF:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<HASHABLE>:STRING),(generating_type<NUMERIC>:STRING),(generating_type<COMPARABLE>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<HASHABLE>:STRING),(generator<NUMERIC>:STRING),(generator<COMPARABLE>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<HASHABLE>:BOOLEAN),(equal<NUMERIC>:BOOLEAN),(equal<COMPARABLE>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<HASHABLE>:BOOLEAN),(standard_equal<NUMERIC>:BOOLEAN),(standard_equal<COMPARABLE>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=1,deferred=(is_equal<HASHABLE>:BOOLEAN),(is_equal<NUMERIC>:BOOLEAN),(is_equal<COMPARABLE>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<HASHABLE>:BOOLEAN),(standard_is_equal<NUMERIC>:BOOLEAN),(standard_is_equal<COMPARABLE>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<HASHABLE>:like a),(clone<NUMERIC>:like a),(clone<COMPARABLE>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<HASHABLE>:like a),(standard_clone<NUMERIC>:like a),(standard_clone<COMPARABLE>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<HASHABLE>:like Current),(twin<NUMERIC>:like Current),(twin<COMPARABLE>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<HASHABLE>:like Current),(standard_twin<NUMERIC>:like Current),(standard_twin<COMPARABLE>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<HASHABLE>:null),(copy<NUMERIC>:null),(copy<COMPARABLE>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<HASHABLE>:null),(standard_copy<NUMERIC>:null),(standard_copy<COMPARABLE>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<HASHABLE>:STD_FILE),(io<NUMERIC>:STD_FILE),(io<COMPARABLE>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<HASHABLE>:STRING),(out<NUMERIC>:STRING),(out<COMPARABLE>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<HASHABLE>:NONE),(Void<NUMERIC>:NONE),(Void<COMPARABLE>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<HASHABLE>:BOOLEAN),(conforms_to<NUMERIC>:BOOLEAN),(conforms_to<COMPARABLE>:BOOLEAN)}
+Attribut_Complet hash_code:{directe=hash_code<DOUBLE_REF>:INTEGER,no_reel=-1,deferred=(hash_code<HASHABLE>:INTEGER)}
+Attribut_Complet one:{directe=one<DOUBLE_REF>:like Current,no_reel=-1,deferred=(one<NUMERIC>:like Current)}
+Attribut_Complet zero:{directe=zero<DOUBLE_REF>:like Current,no_reel=-1,deferred=(zero<NUMERIC>:like Current)}
+Attribut_Complet divisible:{directe=divisible<DOUBLE_REF>:BOOLEAN,no_reel=-1,deferred=(divisible<NUMERIC>:BOOLEAN)}
+Attribut_Complet exponentiable:{directe=exponentiable<DOUBLE_REF>:BOOLEAN,no_reel=-1,deferred=(exponentiable<NUMERIC>:BOOLEAN)}
+Attribut_Complet infix "+":{directe=infix "+"<DOUBLE_REF>:like Current,no_reel=-1,deferred=(infix "+"<NUMERIC>:like Current)}
+Attribut_Complet infix "-":{directe=infix "-"<DOUBLE_REF>:like Current,no_reel=-1,deferred=(infix "-"<NUMERIC>:like Current)}
+Attribut_Complet infix "*":{directe=infix "*"<DOUBLE_REF>:like Current,no_reel=-1,deferred=(infix "*"<NUMERIC>:like Current)}
+Attribut_Complet infix "/":{directe=infix "/"<DOUBLE_REF>:DOUBLE_REF,no_reel=-1,deferred=(infix "/"<NUMERIC>:NUMERIC)}
+Attribut_Complet infix "^":{directe=infix "^"<DOUBLE_REF>:like Current,no_reel=-1,deferred=(infix "^"<NUMERIC>:NUMERIC)}
+Attribut_Complet prefix "+":{directe=prefix "+"<DOUBLE_REF>:like Current,no_reel=-1,deferred=(prefix "+"<NUMERIC>:like Current)}
+Attribut_Complet prefix "-":{directe=prefix "-"<DOUBLE_REF>:like Current,no_reel=-1,deferred=(prefix "-"<NUMERIC>:like Current)}
+Attribut_Complet infix "<":{directe=infix "<"<DOUBLE_REF>:BOOLEAN,no_reel=-1,deferred=(infix "<"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix "<=":{directe=Aucun,no_reel=0,deferred=(infix "<="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">=":{directe=Aucun,no_reel=0,deferred=(infix ">="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">":{directe=Aucun,no_reel=0,deferred=(infix ">"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet max:{directe=Aucun,no_reel=0,deferred=(max<COMPARABLE>:like Current)}
+Attribut_Complet min:{directe=Aucun,no_reel=0,deferred=(min<COMPARABLE>:like Current)}
+Attribut_Complet three_way_comparison:{directe=Aucun,no_reel=0,deferred=(three_way_comparison<COMPARABLE>:INTEGER)}
+Attribut_Complet item:{directe=item<DOUBLE_REF>:DOUBLE,no_reel=-1,deferred=null}
+Attribut_Complet set_item:{directe=set_item<DOUBLE_REF>:null,no_reel=-1,deferred=null}
+Attribut_Complet infix "//":{directe=infix "//"<DOUBLE_REF>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix "\\":{directe=infix "\\"<DOUBLE_REF>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet to_real:{directe=to_real<DOUBLE_REF>:REAL,no_reel=-1,deferred=null}
+}
+Table_Symbol de CHARACTER:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<CHARACTER_REF>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<CHARACTER_REF>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<CHARACTER_REF>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<CHARACTER_REF>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<CHARACTER_REF>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<CHARACTER_REF>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<CHARACTER_REF>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<CHARACTER_REF>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<CHARACTER_REF>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<CHARACTER_REF>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<CHARACTER_REF>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<CHARACTER_REF>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<CHARACTER_REF>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<CHARACTER_REF>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<CHARACTER_REF>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<CHARACTER_REF>:BOOLEAN)}
+Attribut_Complet hash_code:{directe=hash_code<CHARACTER>:INTEGER,no_reel=-1,deferred=(hash_code<CHARACTER_REF>:INTEGER)}
+Attribut_Complet infix "<":{directe=infix "<"<CHARACTER>:BOOLEAN,no_reel=-1,deferred=(infix "<"<CHARACTER_REF>:BOOLEAN)}
+Attribut_Complet infix "<=":{directe=Aucun,no_reel=0,deferred=(infix "<="<CHARACTER_REF>:BOOLEAN)}
+Attribut_Complet infix ">=":{directe=Aucun,no_reel=0,deferred=(infix ">="<CHARACTER_REF>:BOOLEAN)}
+Attribut_Complet infix ">":{directe=Aucun,no_reel=0,deferred=(infix ">"<CHARACTER_REF>:BOOLEAN)}
+Attribut_Complet max:{directe=Aucun,no_reel=0,deferred=(max<CHARACTER_REF>:like Current)}
+Attribut_Complet min:{directe=Aucun,no_reel=0,deferred=(min<CHARACTER_REF>:like Current)}
+Attribut_Complet three_way_comparison:{directe=Aucun,no_reel=0,deferred=(three_way_comparison<CHARACTER_REF>:INTEGER)}
+Attribut_Complet item:{directe=Aucun,no_reel=0,deferred=(item<CHARACTER_REF>:CHARACTER)}
+Attribut_Complet set_item:{directe=Aucun,no_reel=0,deferred=(set_item<CHARACTER_REF>:null)}
+Attribut_Complet code:{directe=code<CHARACTER>:INTEGER,no_reel=-1,deferred=(code<CHARACTER_REF>:INTEGER)}
+}
+Table_Symbol de CHARACTER_REF:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<HASHABLE>:STRING),(generating_type<COMPARABLE>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<HASHABLE>:STRING),(generator<COMPARABLE>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<HASHABLE>:BOOLEAN),(equal<COMPARABLE>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<HASHABLE>:BOOLEAN),(standard_equal<COMPARABLE>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=1,deferred=(is_equal<HASHABLE>:BOOLEAN),(is_equal<COMPARABLE>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<HASHABLE>:BOOLEAN),(standard_is_equal<COMPARABLE>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<HASHABLE>:like a),(clone<COMPARABLE>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<HASHABLE>:like a),(standard_clone<COMPARABLE>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<HASHABLE>:like Current),(twin<COMPARABLE>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<HASHABLE>:like Current),(standard_twin<COMPARABLE>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<HASHABLE>:null),(copy<COMPARABLE>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<HASHABLE>:null),(standard_copy<COMPARABLE>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<HASHABLE>:STD_FILE),(io<COMPARABLE>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<HASHABLE>:STRING),(out<COMPARABLE>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<HASHABLE>:NONE),(Void<COMPARABLE>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<HASHABLE>:BOOLEAN),(conforms_to<COMPARABLE>:BOOLEAN)}
+Attribut_Complet hash_code:{directe=hash_code<CHARACTER_REF>:INTEGER,no_reel=-1,deferred=(hash_code<HASHABLE>:INTEGER)}
+Attribut_Complet infix "<":{directe=infix "<"<CHARACTER_REF>:BOOLEAN,no_reel=-1,deferred=(infix "<"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix "<=":{directe=Aucun,no_reel=0,deferred=(infix "<="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">=":{directe=Aucun,no_reel=0,deferred=(infix ">="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">":{directe=Aucun,no_reel=0,deferred=(infix ">"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet max:{directe=Aucun,no_reel=0,deferred=(max<COMPARABLE>:like Current)}
+Attribut_Complet min:{directe=Aucun,no_reel=0,deferred=(min<COMPARABLE>:like Current)}
+Attribut_Complet three_way_comparison:{directe=Aucun,no_reel=0,deferred=(three_way_comparison<COMPARABLE>:INTEGER)}
+Attribut_Complet item:{directe=item<CHARACTER_REF>:CHARACTER,no_reel=-1,deferred=null}
+Attribut_Complet set_item:{directe=set_item<CHARACTER_REF>:null,no_reel=-1,deferred=null}
+Attribut_Complet code:{directe=code<CHARACTER_REF>:INTEGER,no_reel=-1,deferred=null}
+}
+Table_Symbol de POINTER:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<POINTER_REF>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<POINTER_REF>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<POINTER_REF>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<POINTER_REF>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<POINTER_REF>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<POINTER_REF>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<POINTER_REF>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<POINTER_REF>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<POINTER_REF>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<POINTER_REF>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<POINTER_REF>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<POINTER_REF>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<POINTER_REF>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<POINTER_REF>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<POINTER_REF>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<POINTER_REF>:BOOLEAN)}
+Attribut_Complet hash_code:{directe=Aucun,no_reel=0,deferred=(hash_code<POINTER_REF>:INTEGER)}
+Attribut_Complet item:{directe=Aucun,no_reel=0,deferred=(item<POINTER_REF>:POINTER)}
+Attribut_Complet set_item:{directe=Aucun,no_reel=0,deferred=(set_item<POINTER_REF>:null)}
+}
+Table_Symbol de POINTER_REF:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<HASHABLE>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<HASHABLE>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<HASHABLE>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<HASHABLE>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<HASHABLE>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<HASHABLE>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<HASHABLE>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<HASHABLE>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<HASHABLE>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<HASHABLE>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<HASHABLE>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<HASHABLE>:BOOLEAN)}
+Attribut_Complet hash_code:{directe=hash_code<POINTER_REF>:INTEGER,no_reel=-1,deferred=(hash_code<HASHABLE>:INTEGER)}
+Attribut_Complet item:{directe=item<POINTER_REF>:POINTER,no_reel=-1,deferred=null}
+Attribut_Complet set_item:{directe=set_item<POINTER_REF>:null,no_reel=-1,deferred=null}
+}
+Table_Symbol de REAL:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<REAL_REF>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<REAL_REF>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<REAL_REF>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<REAL_REF>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=0,deferred=(is_equal<REAL_REF>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<REAL_REF>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<REAL_REF>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<REAL_REF>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<REAL_REF>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<REAL_REF>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<REAL_REF>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<REAL_REF>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<REAL_REF>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<REAL_REF>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<REAL_REF>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<REAL_REF>:BOOLEAN)}
+Attribut_Complet infix "<":{directe=infix "<"<REAL>:BOOLEAN,no_reel=-1,deferred=(infix "<"<REAL_REF>:BOOLEAN)}
+Attribut_Complet infix "<=":{directe=Aucun,no_reel=0,deferred=(infix "<="<REAL_REF>:BOOLEAN)}
+Attribut_Complet infix ">=":{directe=Aucun,no_reel=0,deferred=(infix ">="<REAL_REF>:BOOLEAN)}
+Attribut_Complet infix ">":{directe=Aucun,no_reel=0,deferred=(infix ">"<REAL_REF>:BOOLEAN)}
+Attribut_Complet max:{directe=Aucun,no_reel=0,deferred=(max<REAL_REF>:like Current)}
+Attribut_Complet min:{directe=Aucun,no_reel=0,deferred=(min<REAL_REF>:like Current)}
+Attribut_Complet three_way_comparison:{directe=Aucun,no_reel=0,deferred=(three_way_comparison<REAL_REF>:INTEGER)}
+Attribut_Complet one:{directe=one<REAL>:like Current,no_reel=-1,deferred=(one<REAL_REF>:like Current)}
+Attribut_Complet zero:{directe=zero<REAL>:like Current,no_reel=-1,deferred=(zero<REAL_REF>:like Current)}
+Attribut_Complet divisible:{directe=divisible<REAL>:BOOLEAN,no_reel=-1,deferred=(divisible<REAL_REF>:BOOLEAN)}
+Attribut_Complet exponentiable:{directe=exponentiable<REAL>:BOOLEAN,no_reel=-1,deferred=(exponentiable<REAL_REF>:BOOLEAN)}
+Attribut_Complet infix "+":{directe=infix "+"<REAL>:like Current,no_reel=-1,deferred=(infix "+"<REAL_REF>:like Current)}
+Attribut_Complet infix "-":{directe=infix "-"<REAL>:like Current,no_reel=-1,deferred=(infix "-"<REAL_REF>:like Current)}
+Attribut_Complet infix "*":{directe=infix "*"<REAL>:like Current,no_reel=-1,deferred=(infix "*"<REAL_REF>:like Current)}
+Attribut_Complet infix "/":{directe=infix "/"<REAL>:DOUBLE_REF,no_reel=-1,deferred=(infix "/"<REAL_REF>:DOUBLE_REF)}
+Attribut_Complet infix "^":{directe=infix "^"<REAL>:like Current,no_reel=-1,deferred=(infix "^"<REAL_REF>:like Current)}
+Attribut_Complet prefix "+":{directe=prefix "+"<REAL>:like Current,no_reel=-1,deferred=(prefix "+"<REAL_REF>:like Current)}
+Attribut_Complet prefix "-":{directe=prefix "-"<REAL>:like Current,no_reel=-1,deferred=(prefix "-"<REAL_REF>:like Current)}
+Attribut_Complet hash_code:{directe=hash_code<REAL>:INTEGER,no_reel=-1,deferred=(hash_code<REAL_REF>:INTEGER)}
+Attribut_Complet item:{directe=Aucun,no_reel=0,deferred=(item<REAL_REF>:REAL)}
+Attribut_Complet set_item:{directe=Aucun,no_reel=0,deferred=(set_item<REAL_REF>:null)}
+Attribut_Complet infix "//":{directe=infix "//"<REAL>:INTEGER,no_reel=-1,deferred=(infix "//"<REAL_REF>:INTEGER)}
+Attribut_Complet infix "\\":{directe=infix "\\"<REAL>:like Current,no_reel=-1,deferred=(infix "\\"<REAL_REF>:like Current)}
+Attribut_Complet to_double:{directe=Aucun,no_reel=0,deferred=(to_double<REAL_REF>:DOUBLE)}
+}
+Table_Symbol de REAL_REF:{
+Attribut_Complet generating_type:{directe=Aucun,no_reel=0,deferred=(generating_type<COMPARABLE>:STRING),(generating_type<NUMERIC>:STRING),(generating_type<HASHABLE>:STRING)}
+Attribut_Complet generator:{directe=Aucun,no_reel=0,deferred=(generator<COMPARABLE>:STRING),(generator<NUMERIC>:STRING),(generator<HASHABLE>:STRING)}
+Attribut_Complet equal:{directe=Aucun,no_reel=0,deferred=(equal<COMPARABLE>:BOOLEAN),(equal<NUMERIC>:BOOLEAN),(equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet standard_equal:{directe=Aucun,no_reel=0,deferred=(standard_equal<COMPARABLE>:BOOLEAN),(standard_equal<NUMERIC>:BOOLEAN),(standard_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet is_equal:{directe=Aucun,no_reel=1,deferred=(is_equal<COMPARABLE>:BOOLEAN),(is_equal<NUMERIC>:BOOLEAN),(is_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet standard_is_equal:{directe=Aucun,no_reel=0,deferred=(standard_is_equal<COMPARABLE>:BOOLEAN),(standard_is_equal<NUMERIC>:BOOLEAN),(standard_is_equal<HASHABLE>:BOOLEAN)}
+Attribut_Complet clone:{directe=Aucun,no_reel=0,deferred=(clone<COMPARABLE>:like a),(clone<NUMERIC>:like a),(clone<HASHABLE>:like a)}
+Attribut_Complet standard_clone:{directe=Aucun,no_reel=0,deferred=(standard_clone<COMPARABLE>:like a),(standard_clone<NUMERIC>:like a),(standard_clone<HASHABLE>:like a)}
+Attribut_Complet twin:{directe=Aucun,no_reel=0,deferred=(twin<COMPARABLE>:like Current),(twin<NUMERIC>:like Current),(twin<HASHABLE>:like Current)}
+Attribut_Complet standard_twin:{directe=Aucun,no_reel=0,deferred=(standard_twin<COMPARABLE>:like Current),(standard_twin<NUMERIC>:like Current),(standard_twin<HASHABLE>:like Current)}
+Attribut_Complet copy:{directe=Aucun,no_reel=0,deferred=(copy<COMPARABLE>:null),(copy<NUMERIC>:null),(copy<HASHABLE>:null)}
+Attribut_Complet standard_copy:{directe=Aucun,no_reel=0,deferred=(standard_copy<COMPARABLE>:null),(standard_copy<NUMERIC>:null),(standard_copy<HASHABLE>:null)}
+Attribut_Complet io:{directe=Aucun,no_reel=0,deferred=(io<COMPARABLE>:STD_FILE),(io<NUMERIC>:STD_FILE),(io<HASHABLE>:STD_FILE)}
+Attribut_Complet out:{directe=Aucun,no_reel=0,deferred=(out<COMPARABLE>:STRING),(out<NUMERIC>:STRING),(out<HASHABLE>:STRING)}
+Attribut_Complet Void:{directe=Aucun,no_reel=0,deferred=(Void<COMPARABLE>:NONE),(Void<NUMERIC>:NONE),(Void<HASHABLE>:NONE)}
+Attribut_Complet conforms_to:{directe=Aucun,no_reel=0,deferred=(conforms_to<COMPARABLE>:BOOLEAN),(conforms_to<NUMERIC>:BOOLEAN),(conforms_to<HASHABLE>:BOOLEAN)}
+Attribut_Complet infix "<":{directe=infix "<"<REAL_REF>:BOOLEAN,no_reel=-1,deferred=(infix "<"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix "<=":{directe=Aucun,no_reel=0,deferred=(infix "<="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">=":{directe=Aucun,no_reel=0,deferred=(infix ">="<COMPARABLE>:BOOLEAN)}
+Attribut_Complet infix ">":{directe=Aucun,no_reel=0,deferred=(infix ">"<COMPARABLE>:BOOLEAN)}
+Attribut_Complet max:{directe=Aucun,no_reel=0,deferred=(max<COMPARABLE>:like Current)}
+Attribut_Complet min:{directe=Aucun,no_reel=0,deferred=(min<COMPARABLE>:like Current)}
+Attribut_Complet three_way_comparison:{directe=Aucun,no_reel=0,deferred=(three_way_comparison<COMPARABLE>:INTEGER)}
+Attribut_Complet one:{directe=one<REAL_REF>:like Current,no_reel=-1,deferred=(one<NUMERIC>:like Current)}
+Attribut_Complet zero:{directe=zero<REAL_REF>:like Current,no_reel=-1,deferred=(zero<NUMERIC>:like Current)}
+Attribut_Complet divisible:{directe=divisible<REAL_REF>:BOOLEAN,no_reel=-1,deferred=(divisible<NUMERIC>:BOOLEAN)}
+Attribut_Complet exponentiable:{directe=exponentiable<REAL_REF>:BOOLEAN,no_reel=-1,deferred=(exponentiable<NUMERIC>:BOOLEAN)}
+Attribut_Complet infix "+":{directe=infix "+"<REAL_REF>:like Current,no_reel=-1,deferred=(infix "+"<NUMERIC>:like Current)}
+Attribut_Complet infix "-":{directe=infix "-"<REAL_REF>:like Current,no_reel=-1,deferred=(infix "-"<NUMERIC>:like Current)}
+Attribut_Complet infix "*":{directe=infix "*"<REAL_REF>:like Current,no_reel=-1,deferred=(infix "*"<NUMERIC>:like Current)}
+Attribut_Complet infix "/":{directe=infix "/"<REAL_REF>:DOUBLE_REF,no_reel=-1,deferred=(infix "/"<NUMERIC>:NUMERIC)}
+Attribut_Complet infix "^":{directe=infix "^"<REAL_REF>:like Current,no_reel=-1,deferred=(infix "^"<NUMERIC>:NUMERIC)}
+Attribut_Complet prefix "+":{directe=prefix "+"<REAL_REF>:like Current,no_reel=-1,deferred=(prefix "+"<NUMERIC>:like Current)}
+Attribut_Complet prefix "-":{directe=prefix "-"<REAL_REF>:like Current,no_reel=-1,deferred=(prefix "-"<NUMERIC>:like Current)}
+Attribut_Complet hash_code:{directe=hash_code<REAL_REF>:INTEGER,no_reel=-1,deferred=(hash_code<HASHABLE>:INTEGER)}
+Attribut_Complet item:{directe=item<REAL_REF>:REAL,no_reel=-1,deferred=null}
+Attribut_Complet set_item:{directe=set_item<REAL_REF>:null,no_reel=-1,deferred=null}
+Attribut_Complet infix "//":{directe=infix "//"<REAL_REF>:INTEGER,no_reel=-1,deferred=null}
+Attribut_Complet infix "\\":{directe=infix "\\"<REAL_REF>:like Current,no_reel=-1,deferred=null}
+Attribut_Complet to_double:{directe=to_double<REAL_REF>:DOUBLE,no_reel=-1,deferred=null}
+}
+Fin des tables des symboles
+Compilation du fichier test\genc\general_basic\test1.e
+Generation du C :test1(make)
+classe=TEST1
+Temp total recherche=1490 ms
+Temp total genere c=1100 ms
+Fin de la compilation
+Fin du programme
+	make compc3
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+	bcc32 -P -y -v -d -DMSS genere_c\test1.c genere_c\programme.c genere_c\debug.c genere_c\extern_fun.c genere_c\memoire.c genere_c\erreur.c genere_c\runtime.c genere_c\interprete.c e:\projet\eiffel\genere_c\mss121\mss32.lib -etest1.exe
+Borland C++ 5.5 for Win32 Copyright (c) 1993, 2000 Borland
+genere_c\TEST1.C:
+genere_c\programme.c:
+genere_c\debug.c:
+genere_c\extern_fun.c:
+genere_c\memoire.c:
+genere_c\erreur.c:
+genere_c\runtime.c:
+Warning W8004 genere_c\runtime.c 282: 'res' is assigned a value that is never used in function generator(TEIF_Donnee *)
+Warning W8004 genere_c\runtime.c 292: 'res' is assigned a value that is never used in function generating_type(TEIF_Donnee *)
+Error E2288 genere_c\runtime.c 335: Pointer to structure required on left side of -> or ->* in function affiche_heritage()
+Error E2288 genere_c\runtime.c 345: Pointer to structure required on left side of -> or ->* in function affiche_heritage()
+Error E2288 genere_c\runtime.c 354: Pointer to structure required on left side of -> or ->* in function affiche_heritage()
+Error E2288 genere_c\runtime.c 364: Pointer to structure required on left side of -> or ->* in function affiche_heritage()
+*** 4 errors in Compile ***
+genere_c\interprete.c:
+Warning W8004 genere_c\interprete.c 1752: 'v2' is assigned a value that is never used in function evalue(TEIF_Donnee *,TEIF_Expr *)
+Warning W8057 genere_c\interprete.c 2054: Parameter 'nom' is never used in function trouve_nom_feature(TEIF_Type *,TEIF_Type *,TEIF_NomFeature *)
+
+** error 1 ** deleting compc3
+
+** error 1 ** deleting test_simple1
+
+** error 1 ** deleting test_simple2

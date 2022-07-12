@@ -1,0 +1,54 @@
+Debut de la trace
+Entre methode TEST1.make
+0:c:='P'
+1:Call extern  lang("JVM:Test1:static") printc(c)
+2:Call extern  lang("JVM:Test1:static") prints(Test sup)
+3:b:='b' >= 'a'
+4:Call extern  lang("JVM:Test1:static") printb(b)
+5:b:='b' >= 'b'
+6:Call extern  lang("JVM:Test1:static") printb(b)
+7:b:='b' >= 'c'
+8:Call extern  lang("JVM:Test1:static") printb(b)
+9:Call extern  lang("JVM:Test1:static") prints(Test supS)
+10:b:='b' > 'a'
+11:Call extern  lang("JVM:Test1:static") printb(b)
+12:b:='b' > 'b'
+13:Call extern  lang("JVM:Test1:static") printb(b)
+14:b:='b' > 'c'
+15:Call extern  lang("JVM:Test1:static") printb(b)
+16:Call extern  lang("JVM:Test1:static") prints(Test egal)
+17:b:='b' = 'a'
+18:Call extern  lang("JVM:Test1:static") printb(b)
+19:b:='b' = 'b'
+20:Call extern  lang("JVM:Test1:static") printb(b)
+21:b:='b' = 'c'
+22:Call extern  lang("JVM:Test1:static") printb(b)
+23:Call extern  lang("JVM:Test1:static") prints(Test inf)
+24:b:='b' <= 'a'
+25:Call extern  lang("JVM:Test1:static") printb(b)
+26:b:='b' <= 'b'
+27:Call extern  lang("JVM:Test1:static") printb(b)
+28:b:='b' <= 'c'
+29:Call extern  lang("JVM:Test1:static") printb(b)
+30:Call extern  lang("JVM:Test1:static") prints(Test infS)
+31:b:='b' < 'a'
+32:Call extern  lang("JVM:Test1:static") printb(b)
+33:b:='b' < 'b'
+34:Call extern  lang("JVM:Test1:static") printb(b)
+35:b:='b' < 'c'
+36:Call extern  lang("JVM:Test1:static") printb(b)
+37:Call extern  lang("JVM:Test1:static") prints(Test diff)
+38:b:='b' /= 'a'
+39:Call extern  lang("JVM:Test1:static") printb(b)
+40:b:='b' /= 'b'
+41:Call extern  lang("JVM:Test1:static") printb(b)
+42:b:='b' /= 'c'
+43:Call extern  lang("JVM:Test1:static") printb(b)
+44:Call extern  lang("JVM:Test1:static") prints(Test conv entier)
+45:i:=conv_c2e 'b'
+46:Call extern  lang("JVM:Test1:static") printi(i)
+47:c:=conv_e2c 97
+48:Call extern  lang("JVM:Test1:static") printc(c)
+44:Return
+Sort methode TEST1.make
+Fin de la trace

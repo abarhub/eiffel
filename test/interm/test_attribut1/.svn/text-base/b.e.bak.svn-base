@@ -1,0 +1,31 @@
+class B
+
+inherit A
+	redefine tata
+	end;
+
+feature
+
+	tata is
+	do
+	end;
+
+	titi is
+	do
+	end;
+
+	titi2:ANY;
+
+	titi3:ANY is
+	do
+	end;
+
+	titi4(a,b:ANY):ANY is
+	do
+	end;
+
+	titi5(a,b:ANY) is
+	do
+	end;
+
+end

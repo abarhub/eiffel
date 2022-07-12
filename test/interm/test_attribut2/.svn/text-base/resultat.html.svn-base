@@ -1,0 +1,145 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+   <link rel="stylesheet" href="..\..\..\test_unitaire\programme.css"></link>
+   <body><SPAN CLASS="toto">Programme :</SPAN><br></br>
+      		var_global:<br></br><span class="classe">classe</span><span class="type">TEST1</span><br></br>
+      		ancetre:(<span class="type">any</span>)<br></br>Void
+      		[<span class="type">any</span>]
+      		<br></br>
+      			:
+      		(asc:0
+      		)
+      	<br></br>make
+      		[<span class="type">TEST1</span>]
+      		<br></br>
+      		{
+                          <span class="mot_clef">label</span>debut_routine:<br></br>
+                          <span class="mot_clef">return</span><br></br>
+                          <span class="mot_clef">label</span>debut_rescue:<br></br>
+                          <span class="mot_clef">raise</span>
+                                  4
+                              ,
+      		<br></br>
+                      }
+      	<br></br>$once_traite_TEST1$test_once
+      		[<span class="type">TEST1</span>]
+      		<br></br>
+      			:<span class="type">$boolean</span><br></br>test_once
+      		[<span class="type">TEST1</span>]
+      		<br></br>a : <span class="type">A</span><br></br>
+      		{
+                          a
+      		:= 
+                                  
+      				Void
+      			
+                              <br></br>
+                          <span class="mot_clef">label</span>debut_routine:<br></br>
+                          
+                              
+                                  $once_traite_TEST1$test_once
+                              
+                          
+                          <span class="mot_clef">return</span><br></br>
+                          <span class="mot_clef">label</span>label_once0:<br></br>
+                          $once_traite_TEST1$test_once
+      		:= 
+                                  true
+                              <br></br>
+                          a
+      		:= 
+                                  Void
+                              <br></br>
+                          <span class="mot_clef">return</span><br></br>
+                          <span class="mot_clef">label</span>debut_rescue:<br></br>
+                          <span class="mot_clef">raise</span>
+                                  4
+                              ,
+      		<br></br>
+                      }
+      	<br></br>$once_traite_TEST1$test_once2
+      		[<span class="type">TEST1</span>]
+      		<br></br>
+      			:<span class="type">$boolean</span><br></br>$once_result_TEST1$test_once2
+      		[<span class="type">TEST1</span>]
+      		<br></br>
+      			:<span class="type">B</span><br></br>test_once2
+      		[<span class="type">TEST1</span>]
+      		<br></br>Result : <span class="type">B</span><br></br>a : <span class="type">A</span><br></br>
+      		{
+                          Result
+      		:= 
+                                  
+      				Void
+      			
+                              <br></br>
+                          a
+      		:= 
+                                  
+      				Void
+      			
+                              <br></br>
+                          <span class="mot_clef">label</span>debut_routine:<br></br>
+                          
+                              
+                                  $once_traite_TEST1$test_once2
+                              
+                          
+                          result
+      		:= 
+                                  $once_result_TEST1$test_once2
+                              <br></br>
+                          <span class="mot_clef">return</span><br></br>
+                          <span class="mot_clef">label</span>label_once0:<br></br>
+                          $once_traite_TEST1$test_once2
+      		:= 
+                                  true
+                              <br></br>
+                          a
+      		:= 
+                                  Void
+                              <br></br>
+                          Result
+      		:= 
+                                  Void
+                              <br></br>
+                          $once_result_TEST1$test_once2
+      		:= 
+                                  result
+                              <br></br>
+                          <span class="mot_clef">return</span><br></br>
+                          <span class="mot_clef">label</span>debut_rescue:<br></br>
+                          <span class="mot_clef">raise</span>
+                                  4
+                              ,
+      		<br></br>
+                      }
+      	<br></br><span class="classe">classe</span><span class="type">ANY</span><br></br>
+      		ancetre:()<br></br>Void
+      		[<span class="type">ANY</span>]
+      		<br></br>
+      			:<span class="type">NONE</span>
+      		(desc:Void
+      		,<span class="type">TEST1</span>)
+      	
+      		(desc:Void
+      		,<span class="type">A</span>)
+      	
+      		(desc:Void
+      		,<span class="type">B</span>)
+      	<br></br><span class="classe">classe</span><span class="type">NONE</span><br></br>
+      		ancetre:(<span class="type">TEST1</span><span class="type">ANY</span><span class="type">A</span><span class="type">B</span>)<br></br><span class="classe">classe</span><span class="type">A</span><br></br>
+      		ancetre:(<span class="type">any</span>)<br></br>Void
+      		[<span class="type">any</span>]
+      		<br></br>
+      			:
+      		(asc:0
+      		)
+      	<br></br><span class="classe">classe</span><span class="type">B</span><br></br>
+      		ancetre:(<span class="type">any</span>)<br></br>Void
+      		[<span class="type">any</span>]
+      		<br></br>
+      			:
+      		(asc:0
+      		)
+      	<br></br></body>
+</html>

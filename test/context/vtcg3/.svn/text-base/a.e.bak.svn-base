@@ -1,0 +1,5 @@
+class A[X->INTEGER_REF,B,C->INTEGER_REF]
+
+feature
+
+end

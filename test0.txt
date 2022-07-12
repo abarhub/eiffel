@@ -1,0 +1,327 @@
+MAKE Version 5.2  Copyright (c) 1987, 2000 Borland
+	java -classpath test_unitaire\junit.jar;.;E:\java\xerces-2_5_0\xercesImpl.jar;E:\java\xerces-2_5_0\xmlParserAPIs.jar;c:\antlr-2.7.3\antlr.jar -ea test_unitaire.TestXmlSimple
+Test de vitesse
+Lexer+Parsing
+ > classe;  > lexer mID; c==c
+ < lexer mID; c== 
+LA(1)==class,  > lexer mWS; c== 
+ < lexer mWS; c==S
+ > lexer mID; c==S
+ < lexer mID; c==
+LA(2)==STRING,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==
+ > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==f
+ > lexer mID; c==f
+ < lexer mID; c==
+LA(3)==feature,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==
+ > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c==h
+ > lexer mID; c==h
+ < lexer mID; c==:
+LA(4)==hash_code
+  > nom_class; LA(1)==STRING, LA(2)==feature, LA(3)==hash_code,  > lexer mDOUBLE_POINT; c==:
+ < lexer mDOUBLE_POINT; c== 
+LA(4)==:
+   > decl_type; LA(1)==STRING, LA(2)==feature, LA(3)==hash_code, LA(4)==:
+   < decl_type; LA(1)==feature, LA(2)==hash_code, LA(3)==:,  > lexer mWS; c== 
+ < lexer mWS; c==I
+ > lexer mID; c==I
+ < lexer mID; c== 
+LA(4)==INTEGER
+  < nom_class; LA(1)==feature, LA(2)==hash_code, LA(3)==:, LA(4)==INTEGER
+  > feature; LA(1)==hash_code, LA(2)==:, LA(3)==INTEGER,  > lexer mWS; c== 
+ < lexer mWS; c==i
+ > lexer mID; c==i
+ < lexer mID; c==
+LA(4)==is
+   > nom_feature; LA(1)==hash_code, LA(2)==:, LA(3)==INTEGER, LA(4)==is
+   < nom_feature; LA(1)==:, LA(2)==INTEGER, LA(3)==is,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c==d
+ > lexer mID; c==d
+ < lexer mID; c==
+LA(4)==do
+   > type; LA(1)==INTEGER, LA(2)==is, LA(3)==do,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c==f
+ > lexer mID; c==f
+ < lexer mID; c==
+LA(4)==from
+   < type; LA(1)==is, LA(2)==do, LA(3)==from,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==-
+ > lexer mCOMMENTAIRE; c==-
+ < lexer mCOMMENTAIRE; c==
+ > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==	
+ > lexer mWS; c==	
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c==i
+ > lexer mID; c==i
+ < lexer mID; c== 
+LA(4)==i
+   > corps; LA(1)==do, LA(2)==from, LA(3)==i,  > lexer mWS; c== 
+ < lexer mWS; c==:
+ > lexer mAFFECT; c==:
+ < lexer mAFFECT; c== 
+LA(4)==:=
+    > corps2; LA(1)==do, LA(2)==from, LA(3)==i, LA(4)==:=
+Suite28*
+     > instr; LA(1)==from, LA(2)==i, LA(3)==:=,  > lexer mWS; c== 
+ < lexer mWS; c==1
+ > lexer mINT; c==1
+  > lexer mDIGIT; c==1
+  < lexer mDIGIT; c==
+ < lexer mINT; c==
+LA(4)==1
+Suite40
+      > instr; LA(1)==i, LA(2)==:=, LA(3)==1,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==	
+ > lexer mWS; c==	
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c==u
+ > lexer mID; c==u
+ < lexer mID; c==
+LA(4)==until
+Suite40
+       > expr; LA(1)==1, LA(2)==until,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==	
+ > lexer mWS; c==	
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c==t
+ > lexer mID; c==t
+ < lexer mID; c==
+LA(3)==true,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==	
+ > lexer mWS; c==	
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c==l
+ > lexer mID; c==l
+ < lexer mID; c==
+LA(4)==loop
+        > expr17; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+         > expr18; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+          > expr19; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+           > expr20; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+            > expr21; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+             > expr22; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+              > expr23; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+               > expr24; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+                > expr24_2; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+                 > expr25; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+                  > expr26; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+                   > expr27; LA(1)==1, LA(2)==until, LA(3)==true, LA(4)==loop
+                   < expr27; LA(1)==until, LA(2)==true, LA(3)==loop,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c==e
+ > lexer mID; c==e
+ < lexer mID; c==;
+LA(4)==end
+                  < expr26; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+                 < expr25; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+                < expr24_2; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+               < expr24; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+              < expr23; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+             < expr22; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+            < expr21; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+           < expr20; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+          < expr19; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+         < expr18; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+        < expr17; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+       < expr; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+      < instr; LA(1)==until, LA(2)==true, LA(3)==loop, LA(4)==end
+      > expr; LA(1)==true, LA(2)==loop, LA(3)==end,  > lexer mSEMI; c==;
+ < lexer mSEMI; c==
+LA(4)==;
+       > expr17; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+        > expr18; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+         > expr19; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+          > expr20; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+           > expr21; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+            > expr22; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+             > expr23; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+              > expr24; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+               > expr24_2; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+                > expr25; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+                 > expr26; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+                  > expr27; LA(1)==true, LA(2)==loop, LA(3)==end, LA(4)==;
+                  < expr27; LA(1)==loop, LA(2)==end, LA(3)==;,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c== 
+ > lexer mWS; c== 
+ < lexer mWS; c==e
+ > lexer mID; c==e
+ < lexer mID; c==;
+LA(4)==end
+                 < expr26; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+                < expr25; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+               < expr24_2; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+              < expr24; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+             < expr23; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+            < expr22; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+           < expr21; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+          < expr20; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+         < expr19; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+        < expr18; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+       < expr17; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+      < expr; LA(1)==loop, LA(2)==end, LA(3)==;, LA(4)==end
+     < instr; LA(1)==;, LA(2)==end,  > lexer mSEMI; c==;
+ < lexer mSEMI; c==
+LA(3)==;,  > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==
+ > lexer mWS; c==
+ < lexer mWS; c==
+
+ > lexer mWS; c==
+
+ < lexer mWS; c==e
+ > lexer mID; c==e
+ < lexer mID; c==?
+LA(4)==end
+Suite21*
+    < corps2; LA(1)==end, LA(2)==;, LA(3)==end, LA(4)==null
+   < corps; LA(1)==;, LA(2)==end, LA(3)==null, LA(4)==null
+  < feature; LA(1)==end, LA(2)==null, LA(3)==null, LA(4)==null
+ < classe; LA(1)==null, LA(2)==null, LA(3)==null, LA(4)==null
+Avant GC:
+total mem:2031616, max mem=134217728, free mem=1356144
+Apres GC:
+total mem:2031616, max mem=134217728, free mem=1592800, libere=236656
+Apres GC2:
+total mem:2031616, max mem=134217728, free mem=1592800, libere=0
+Durée:
+Sat May 01 17:33:13 CEST 2004->Sat May 01 17:33:17 CEST 2004(1 analyses)
+Terminer

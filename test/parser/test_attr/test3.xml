@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST3"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<nom_feature nom="b"/>
+		<nom_feature nom="c"/>
+		<parametre_formel nom="x">
+			<nom_classe nom="A"/>
+		</parametre_formel>
+		<parametre_formel nom="y">
+			<nom_classe nom="A"/>
+		</parametre_formel>
+		<parametre_formel nom="z">
+			<nom_classe nom="B"/>
+		</parametre_formel>
+		<parametre_formel nom="t">
+			<nom_classe nom="A"/>
+		</parametre_formel>
+		<nom_classe nom="C"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="+" type="infix"/>
+		<nom_feature nom="b"/>
+		<nom_feature nom="not" type="prefix"/>
+		<parametre_formel nom="x">
+			<nom_classe nom="A"/>
+		</parametre_formel>
+		<parametre_formel nom="y">
+			<nom_classe nom="A"/>
+		</parametre_formel>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a" frozen="on"/>
+		<nom_feature nom="b" frozen="on"/>
+		<parametre_formel nom="x">
+			<nom_classe nom="A"/>
+		</parametre_formel>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+</class>

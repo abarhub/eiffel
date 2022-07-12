@@ -1,0 +1,7 @@
+class TEST2
+
+feature
+
+	toto:BOOLEAN is 1;
+
+end

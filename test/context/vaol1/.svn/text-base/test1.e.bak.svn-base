@@ -1,0 +1,16 @@
+class TEST1
+
+creation make
+
+feature
+
+	make is
+	do
+	ensure
+		old i=i+1;
+	end;
+
+	i,j:INTEGER;
+	a:A;
+
+end

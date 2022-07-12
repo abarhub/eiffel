@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\test_unitaire\classe.dtd">
+<class  >
+<nom_classe nom="TEST13" >
+</nom_classe>
+<feature>
+<nom_feature nom="toto" />
+<nom_classe nom="POINTER" >
+</nom_classe>
+<corps>
+<expression>
+<expression_unaire op="addr">
+<expression>
+<variable nom="a"/>
+</expression>
+</expression_unaire>
+</expression>
+</corps>
+</feature>
+<feature>
+<nom_feature nom="toto2" />
+<nom_classe nom="POINTER" >
+</nom_classe>
+<corps>
+<expression>
+<expression_unaire op="addr">
+<expression>
+<variable nom="b"/>
+</expression>
+</expression_unaire>
+</expression>
+</corps>
+</feature>
+<feature>
+<nom_feature nom="toto3" />
+<nom_classe nom="POINTER" >
+</nom_classe>
+<corps>
+<expression>
+<expression_unaire op="addr">
+<expression>
+<expression_binaire op="div">
+<expression>
+<entier valeur="5" />
+</expression>
+<expression>
+<variable nom="r"/>
+</expression>
+</expression_binaire>
+</expression>
+</expression_unaire>
+</expression>
+</corps>
+</feature>
+</class>

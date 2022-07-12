@@ -1,0 +1,25 @@
+P
+Test sup
+true
+true
+false
+Test supS
+true
+false
+false
+Test egal
+false
+true
+false
+Test inf
+false
+true
+true
+Test infS
+false
+false
+true
+Test diff
+true
+false
+true

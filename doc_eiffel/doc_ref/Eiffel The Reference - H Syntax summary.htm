@@ -1,0 +1,1454 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - H Syntax summary</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR>
+<META content="Neil Wilson" name=AUTHOR><!-- $Id: chap34.htm,v 1.8 1995/07/09 13:52:56 neil Exp neil $ --></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - H Syntax summary_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap33.htm"><IMG 
+src="Eiffel The Reference - H Syntax summary_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap35.htm"><IMG 
+src="Eiffel The Reference - H Syntax summary_fichiers/next.gif"></A> 
+<P>
+<P>
+<H1>H - Syntax Summary</H1>
+<H2>H.1 Overview</H2>
+<P>This document describes the syntax of the Eiffel language using a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap2.htm">meta 
+language</A> and in a roughly top down fashion. Extra navigation links have been 
+provided so that you can go back up the structure as well as down it. 
+<P>An <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap35.htm">alphabetical 
+list</A> of constructs is also available. 
+<H2>H.2</H2><IMG 
+src="Eiffel The Reference - H Syntax summary_fichiers/syntax.gif"> 
+<H3>CLASS TEXT STRUCTURE</H3>
+<DL>
+  <DT><A name=Class_declaration>Class_declaration</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Indexing">Indexing</A>] 
+
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_header">Class_header</A> 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generics">Formal_generics</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Obsolete">Obsolete</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance">Inheritance</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creators">Creators</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Features">Features</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Invariant">Invariant</A>] 
+
+  <DT>
+  <DD><B>end</B> </DD></DL>
+<HR>
+
+<H3>INDEXING A CLASS</H3>
+<DL>
+  <DT><A name=Indexing>Indexing</A> ::= 
+  <DD><B>indexing</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Index_list">Index_list</A> 
+
+  <DT><A name=Index_list>Index_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Index_clause">Index_clause</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Separator">Separator</A> 
+  ...} 
+  <DT><A name=Index_clause>Index_clause</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Index">Index</A>] 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Index_terms">Index_terms</A> 
+
+  <DT><A name=Index>Index</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  ":" 
+  <DT><A name=Index_terms>Index_terms</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Index_value">Index_value</A> 
+  "," ...}+ 
+  <DT><A name=Index_value>Index_value</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_constant">Manifest_constant</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A> 
+
+<HR>
+
+<H3>CLASS HEADER</H3>
+<DL>
+  <DT><A name=Class_header>Class_header</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Header_mark">Header_mark</A>] 
+  <B>class</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_name">Class_name</A> 
+
+  <DT><A name=Header_mark>Header_mark</A> ::= 
+  <DD><B>deferred</B> | <B>expanded</B> 
+  <DT><A name=Class_name>Class_name</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Clients">Clients</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type">Type</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap3.htm#class name">class 
+name</A> 
+<HR>
+
+<H3>FORMAL GENERIC PARAMETERS</H3>
+<DL>
+  <DT><A name=Formal_generics>Formal_generics</A> ::= 
+  <DD>"[" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generic_list">Formal_generic_list</A> 
+  "]" 
+  <DT><A name=Formal_generic_list>Formal_generic_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generic">Formal_generic</A> 
+  "," ...} 
+  <DT><A name=Formal_generic>Formal_generic</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generic_name">Formal_generic_name</A> 
+  [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constraint">Constraint</A>] 
+
+  <DT><A name=Formal_generic_name>Formal_generic_name</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+
+  <DT><A name=Constraint>Constraint</A> ::= 
+  <DD>"-&gt;" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_type">Restricted_type</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type">Type</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_type">Restricted_type</A> 
+
+<HR>
+
+<H3>OBSOLETE CLAUSE</H3>
+<DL>
+  <DT><A name=Obsolete>Obsolete</A> ::= 
+  <DD><B>obsolete</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Message">Message</A> 
+
+  <DT><A name=Message>Message</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_string</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine">Routine</A> 
+
+<HR>
+
+<H3>FEATURES PART</H3>
+<DL>
+  <DT><A name=Features>Features</A> ::= 
+  <DD><B>feature</B> {<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_clause">Feature_clause</A> 
+  <B>feature</B> ...}+ 
+  <DT><A name=Feature_clause>Feature_clause</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Clients">Clients</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Header_comment">Header_comment</A>] 
+
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration_list">Feature_declaration_list</A> 
+
+  <DT><A name=Feature_declaration_list>Feature_declaration_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Separator">Separator</A> 
+  ...} 
+  <DT><A name=Header_comment>Header_comment</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#comment">Comment</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine">Routine</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creators">Creators</A> 
+
+<HR>
+
+<H3>FEATURE DECLARATIONS</H3>
+<DL>
+  <DT><A name=Feature_declaration>Feature_declaration</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_feature_list">New_feature_list</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Declaration_body">Declaration_body</A> 
+
+  <DT><A name=Declaration_body>Declaration_body</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_arguments">Formal_arguments</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type_mark">Type_mark</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constant_or_routine">Constant_or_routine</A>] 
+
+  <DT><A name=Constant_or_routine>Constant_or_routine</A> ::= 
+  <DD><B>is</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_value">Feature_value</A> 
+
+  <DT><A name=Feature_value>Feature_value</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_constant">Manifest_constant</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unique">Unique</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine">Routine</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Features">Features</A> 
+
+<HR>
+
+<H3>COMPONENTS OF A FEATURE DECLARATION</H3>
+<DL>
+  <DT><A name=New_feature_list>New_feature_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_feature">New_feature</A> 
+  "," ...}+ 
+  <DT><A name=New_feature>New_feature</A> ::= 
+  <DD>[<B>frozen</B>] <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+
+<HR>
+
+<H3>FEATURE NAMES</H3>
+<DL>
+  <DT><A name=Feature_name>Feature_name</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix">Prefix</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix">Infix</A> 
+
+  <DT><A name=Prefix>Prefix</A> ::= 
+  <DD><B>prefix</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix_name">Prefix_name</A> 
+
+  <DT><A name=Infix>Infix</A> ::= 
+  <DD><B>infix</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix_name">Infix_name</A> 
+
+  <DT><A name=Prefix_name>Prefix_name</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_string</A> 
+
+  <DT><A name=Infix_name>Infix_name</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_string</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_feature_list">New_feature_list</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rename">Rename</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_exports>New_exports</a> |<A HREF=" 
+#Actuals>Actuals</A> 
+<HR>
+
+<H3>OPERATORS</H3>
+<DL>
+  <DT><A name=Unary>Unary</A> ::= 
+  <DD><B>not</B> | "+" | "-" 
+  <DT><A name=Binary>Binary</A> ::= 
+  <DD>"+" | "-" | "*" | "/" | 
+  <DT>
+  <DD>"&lt;" | "&gt;" | "&lt;=" | "&gt;=" | 
+  <DT>
+  <DD>"//" | "\\" | "^" | 
+  <DT>
+  <DD><B>and</B> | <B>or</B> | <B>xor</B> | 
+  <DT>
+  <DD><B>and then</B> | <B>or else</B> | <B>implies</B> </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Operator_expression">Operator_expression</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#semi_strict">semi-strict 
+boolean operators</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#balancing">arithmetic 
+balancing rule</A> 
+<HR>
+
+<H3>INHERITANCE PART</H3>
+<DL>
+  <DT><A name=Inheritance>Inheritance</A> ::= 
+  <DD><B>inherit</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent_list">Parent_list</A> 
+
+  <DT><A name=Parent_list>Parent_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parent">Parent</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Separator">Separator</A> 
+  ...} 
+  <DT><A name=Parent>Parent</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_class_type">Restricted_class_type</A> 
+  [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_adaptation">Feature_adaptation</A>] 
+
+  <DT><A name=Feature_adaptation>Feature_adaptation</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rename">Rename</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_exports">New_exports</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Undefine">Undefine</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Redefine">Redefine</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Select">Select</A>] 
+
+  <DT>
+  <DD><B>end</B> </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A> 
+
+<HR>
+
+<H3>RENAMING</H3>
+<DL>
+  <DT><A name=Rename>Rename</A> ::= 
+  <DD><B>rename</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rename_list">Rename_list</A> 
+
+  <DT><A name=Rename_list>Rename_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rename_pair">Rename_pair</A> 
+  "," ...} 
+  <DT><A name=Rename_pair>Rename_pair</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+  <B>as</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance">Inheritance</A> 
+
+<HR>
+
+<H3>CLIENTS PART</H3>
+<DL>
+  <DT><A name=Clients>Clients</A> ::= 
+  <DD>"{" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_list">Class_list</A> 
+  "}" 
+  <DT><A name=Class_list>Class_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_name">Class_name</A> 
+  "," ...} </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Features">Features</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_exports">New_exports</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creators">Creators</A> 
+
+<HR>
+
+<H3>ADAPTING THE EXPORT STATUS</H3>
+<DL>
+  <DT><A name=New_exports>New_exports</A> ::= 
+  <DD><B>export</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_export_list">New_export_list</A> 
+
+  <DT><A name=New_export_list>New_export_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_export_item">New_export_item</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Separator">Separator</A> 
+  ...} 
+  <DT><A name=New_export_item>New_export_item</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Clients">Clients</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_set">Feature_set</A> 
+
+  <DT><A name=Feature_set>Feature_set</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_list">Feature_list</A> 
+  | <B>all</B> 
+  <DT><A name=Feature_list>Feature_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+  "," ...} </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance">Inheritance</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Redefine">Redefine</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Undefine">Undefine</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Select">Select</A> 
+
+<HR>
+
+<H3>FORMAL ARGUMENTS</H3>
+<DL>
+  <DT><A name=Formal_arguments>Formal_arguments</A> ::= 
+  <DD>"(" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Entity_declaration_list">Entity_declaration_list</A> 
+  ")" 
+  <DT><A name=Entity_declaration_list>Entity_declaration_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Entity_declaration_group">Entity_declaration_group</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Separator">Separator</A> 
+  ...} 
+  <DT><A name=Entity_declaration_group>Entity_declaration_group</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Identifier_list">Identifier_list</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type_mark">Type_mark</A> 
+
+  <DT><A name=Identifier_list>Identifier_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  "," ...}+ 
+  <DT><A name=Type_mark>Type_mark</A> ::= 
+  <DD>":" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type">Type</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Local_declarations">Local_declarations</A> 
+
+<HR>
+
+<H3>ROUTINE STRUCTURE</H3>
+<DL>
+  <DT><A name=Routine>Routine</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Obsolete">Obsolete</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Header_comment">Header_comment</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Precondition">Precondition</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Local_declarations">Local_declarations</A>] 
+
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine_body">Routine_body</A> 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Postcondition">Postcondition</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rescue">Rescue</A>] 
+
+  <DT>
+  <DD><B>end</B> </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+
+<HR>
+
+<H3>ROUTINE BODY</H3>
+<DL>
+  <DT><A name=Routine_body>Routine_body</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Effective">Effective</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Deferred">Deferred</A> 
+
+  <DT><A name=Effective>Effective</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Internal">Internal</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#External">External</A> 
+
+  <DT><A name=Internal>Internal</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine_mark">Routine_mark</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Compound">Compound</A> 
+
+  <DT><A name=Routine_mark>Routine_mark</A> ::= 
+  <DD><B>do</B> | <B>once</B> 
+  <DT><A name=Deferred>Deferred</A> ::= 
+  <DD><B>deferred</B> </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine">Routine</A> 
+
+<HR>
+
+<H3>LOCAL ENTITIES</H3>
+<DL>
+  <DT><A name=Local_declarations>Local_declarations</A> ::= 
+  <DD><B>local</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Entity_declaration_list">Entity_declaration_list</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine">Routine</A> 
+
+<HR>
+
+<H3>TYPES OF INSTRUCTION</H3>
+<DL>
+  <DT><A name=Instruction>Instruction</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creation">Creation</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Call">Call</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assignment">Assignment</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assignment_attempt">Assignment_attempt</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Conditional">Conditional</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Multi_branch">Multi_branch</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Loop">Loop</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Debug">Debug</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Check">Check</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Retry">Retry</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Null">Null</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Compound">Compound</A> 
+
+<HR>
+
+<H3>FORM OF ASSERTIONS</H3>
+<DL>
+  <DT><A name=Precondition>Precondition</A> ::= 
+  <DD><B>require</B> [<B>else</B>] <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assertion">Assertion</A> 
+
+  <DT><A name=Postcondition>Postcondition</A> ::= 
+  <DD><B>ensure</B> [<B>then</B>] <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assertion">Assertion</A> 
+
+  <DT><A name=Invariant>Invariant</A> ::= 
+  <DD><B>invariant</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assertion">Assertion</A> 
+
+  <DT><A name=Assertion>Assertion</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assertion_clause">Assertion_clause</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Separator">Separator</A> 
+  ...} 
+  <DT><A name=Assertion_clause>Assertion_clause</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Tag_mark">Tag_mark</A>] 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unlabeled_assertion_clause">Unlabeled_assertion_clause</A> 
+
+  <DT><A name=Unlabeled_assertion_clause>Unlabeled_assertion_clause</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Boolean_expression">Boolean_expression</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#comment">Comment</A> 
+
+  <DT><A name=Tag_mark>Tag_mark</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Tag">Tag</A> 
+  ":" 
+  <DT><A name=Tag>Tag</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine">Routine</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Check">Check</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Variant>Variant</a> |<A HREF=" 
+#Loop?>Loop</A> 
+<HR>
+
+<H3>OLD EXPRESSION</H3>
+<DL>
+  <DT><A name=Old>Old</A> ::= 
+  <DD><B>old</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+
+<HR>
+
+<H3>CHECK INSTRUCTIONS</H3>
+<DL>
+  <DT><A name=Check>Check</A> ::= 
+  <DD><B>check</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assertion">Assertion</A> 
+  <B>end</B> </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>LOOP VARIANTS</H3>
+<DL>
+  <DT><A name=Variant>Variant</A> ::= 
+  <DD><B>variant</B> [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Tag_mark">Tag_mark</A>] 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Loop">Loop</A> 
+
+<HR>
+
+<H3>REDEFINITION AND UNDEFINITION</H3>
+<DL>
+  <DT><A name=Redefine>Redefine</A> ::= 
+  <DD><B>redefine</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_list">Feature_list</A> 
+
+  <DT><A name=Undefine>Undefine</A> ::= 
+  <DD><B>undefine</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_list">Feature_list</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance>Inheritance</a><HR><H3>SELECT</H3><DL><DT><A NAME=" 
+Select?>Select</A> ::= 
+<DD><B>select</B> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_list">Feature_list</A> 
+
+<DL></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance>Inheritance</a><HR><H3>TYPE DECLARATION</H3><DL><DT><A NAME=" 
+Type?>Type</A> ::= 
+<DD><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_type">Class_type</A> 
+| 
+<DT>
+<DD><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_type_expanded">Class_type_expanded</A> 
+| 
+<DT>
+<DD><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generic_name">Formal_generic_name</A> 
+| 
+<DT>
+<DD><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Anchored">Anchored</A> 
+| 
+<DT>
+<DD><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Bit_type">Bit_type</A> 
+
+<DT><A name=Class_type>Class_type</A> ::= 
+<DD><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_name">Class_name</A> 
+[<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Actual_generics">Actual_generics</A>] 
+
+<DT><A name=Actual_generics>Actual_generics</A> ::= 
+<DD>"[" <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type_list">Type_list</A> 
+"]" 
+<DT><A name=Type_list>Type_list</A> ::= 
+<DD>{<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type">Type</A> 
+"," ...} 
+<DT><A name=Class_type_expanded>Class_type_expanded</A> ::= 
+<DD><B>expanded</B> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_type">Class_type</A> 
+
+<DT><A name=Bit_type>Bit_type</A> ::= 
+<DD><I>BIT</I> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constant">Constant</A> 
+
+<DT><A name=Anchored>Anchored</A> ::= 
+<DD><B>like</B> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Anchor">Anchor</A> 
+
+<DT><A name=Anchor>Anchor</A> ::= 
+<DD><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+| <I>Current</I> 
+<DL></DL>
+<H4>See Also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_arguments">Formal_arguments</A> 
+<A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creation">Creation</A> 
+
+<HR>
+
+<H3>RESTRICTED TYPE DECLARATION</H3>
+<DL>
+  <DT><A name=Restricted_type>Restricted_type</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_class_type">Restricted_class_type</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generic_name">Formal_generic_name</A> 
+  | 
+  <DT><A name=Restricted_class_type>Restricted_class_type</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_name">Class_name</A> 
+  [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_actual_generics">Restricted_actual_generics</A>] 
+
+  <DT><A name=Restricted_actual_generics>Restricted_actual_generics</A> ::= 
+  <DD>"[" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_type_list">Restricted_type_list</A> 
+  "]" 
+  <DT><A name=Restricted_type_list>Restricted_type_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Restricted_type">Restricted_type</A> 
+  "," ...} </DD></DL>
+<H4>See Also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_generics">Formal_generics</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance">Inheritance</A> 
+
+<HR>
+
+<H3>COMPOUND</H3>
+<DL>
+  <DT><A name=Compound>Compound</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Separator">Separator</A> 
+  ...} 
+  <DT><A name=Separator>Separator</A> ::= 
+  <DD>[";"] </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine_body">Routine_body</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Conditional">Conditional</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Multi_branch">Multi_branch</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Loop">Loop</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Debug">Debug</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Rescue">Rescue</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Indexing">Indexing</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Features">Features</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Inheritance">Inheritance</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#New_exports">New_exports</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal_arguments">Formal_arguments</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assertion">Assertion</A> 
+
+<HR>
+
+<H3>NULL</H3>
+<DL>
+  <DT><A name=Null>Null</A> ::= 
+  <DD></DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>CONDITIONAL</H3>
+<DL>
+  <DT><A name=Conditional>Conditional</A> ::= 
+  <DD><B>if</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Then_part_list">Then_part_list</A> 
+  [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Else_part">Else_part</A>] 
+  <B>end</B> 
+  <DT><A name=Then_part_list>Then_part_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Then_part">Then_part</A> 
+  <B>elseif</B> ...}+ 
+  <DT><A name=Then_part>Then_part</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Boolean_expression">Boolean_expression</A> 
+  <B>then</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Compound">Compound</A> 
+
+  <DT><A name=Else_part>Else_part</A> ::= 
+  <DD><B>else</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Compound">Compound</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>MULTI-BRANCH CHOICE</H3>
+<DL>
+  <DT><A name=Multi_branch>Multi_branch</A> ::= 
+  <DD><B>inspect</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#When_part_list">When_part_list</A>][<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Else_part">Else_part</A>] 
+  <B>end</B> 
+  <DT><A name=When_part_list>When_part_list</A> ::= 
+  <DD><B>when</B> {<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#When_part">When_part</A> 
+  <B>when</B> ...}+ 
+  <DT><A name=When_part>When_part</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Choices">Choices</A> 
+  <B>then</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Compound">Compound</A> 
+
+  <DT><A name=Choices>Choices</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Choice">Choice</A> 
+  "," ...} 
+  <DT><A name=Choice>Choice</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constant">Constant</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Interval">Interval</A> 
+
+  <DT><A name=Interval>Interval</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constant">Constant</A> 
+  ".." <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constant">Constant</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>LOOP</H3>
+<DL>
+  <DT><A name=Loop>Loop</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Initialization">Initialization</A> 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Invariant">Invariant</A>] 
+
+  <DT>
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Variant">Variant</A>] 
+
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Loop_body">Loop_body</A> 
+
+  <DT>
+  <DD><B>end</B> 
+  <DT><A name=Initialization>Initialization</A> ::= 
+  <DD><B>from</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Compound">Compound</A> 
+
+  <DT><A name=Loop_body>Loop_body</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Exit">Exit</A> 
+  <B>loop</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Compound">Compound</A> 
+
+  <DT><A name=Exit>Exit</A> ::= 
+  <DD><B>until</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Boolean_expression">Boolean_expression</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>DEBUG</H3>
+<DL>
+  <DT><A name=Debug>Debug</A> ::= 
+  <DD><B>debug</B> [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Debug_keys">Debug_keys</A>] 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Compound">Compound</A> 
+  <B>end</B> 
+  <DT><A name=Debug_keys>Debug_keys</A> ::= 
+  <DD>"(" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Debug_key_list">Debug_key_list</A> 
+  ")" 
+  <DT><A name=Debug_key_list>Debug_key_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Debug_key">Debug_key</A> 
+  "," ...} 
+  <DT><A name=Debug_key>Debug_key</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_string</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>RESCUE</H3>
+<DL>
+  <DT><A name=Rescue>Rescue</A> ::= 
+  <DD><B>rescue</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Compound">Compound</A> 
+
+  <DT><A name=Retry>Retry</A> ::= 
+  <DD><B>retry</B> </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>UNIQUE ATTRIBUTES</H3>
+<DL>
+  <DT><A name=Unique>Unique</A> ::= 
+  <DD><B>unique</B> </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_declaration">Feature_declaration</A> 
+
+<HR>
+
+<H3>ENTITIES</H3>
+<DL>
+  <DT><A name=Entity>Entity</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Writable">Writable</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Read_only">Read_only</A> 
+
+  <DT><A name=Writable>Writable</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Attribute">Attribute</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Local">Local</A> 
+
+  <DT><A name=Attribute>Attribute</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+
+  <DT><A name=Local>Local</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  | <I>Result</I> 
+  <DT><A name=Read_only>Read_only</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Formal">Formal</A> 
+  | <I>Current</I> 
+  <DT><A name=Formal>Formal</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Call">Call</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constant">Constant</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creation">Creation</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assignment">Assignment</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assignment_attempt">Assignment_attempt</A> 
+
+<HR>
+
+<H3>CREATION PART</H3>
+<DL>
+  <DT><A name=Creators>Creators</A> ::= 
+  <DD><B>creation</B> {<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creation_clause">Creation_clause</A> 
+  <B>creation</B> ...}+ 
+  <DT><A name=Creation_clause>Creation_clause</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Clients">Clients</A>][<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Header_comment">Header_comment</A>] 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_list">Feature_list</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Class_declaration">Class_declaration</A> 
+
+<HR>
+
+<H3>CREATION PROCEDURE</H3>
+<DL>
+  <DT><A name=Creation>Creation</A> ::= 
+  <DD>"!" [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type">Type</A>] 
+  "!" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Writable">Writable</A> 
+  [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creation_call">Creation_call</A>] 
+
+  <DT><A name=Creation_call>Creation_call</A> ::= 
+  <DD>"." <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unqualified_call">Unqualified_call</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>DIRECT REATTACHMENT</H3>
+<DL>
+  <DT><A name=Assignment>Assignment</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Writable">Writable</A> 
+  ":=" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>ASSIGNMENT_ATTEMPT</H3>
+<DL>
+  <DT><A name=Assignment_attempt>Assignment_attempt</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Writable">Writable</A> 
+  "?=" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+
+<HR>
+
+<H3>FORM OF A CALL</H3>
+<DL>
+  <DT><A name=Call>Call</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parenthesized_qualifier">Parenthesized_qualifier</A>] 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Call_chain">Call_chain</A> 
+
+  <DT><A name=Parenthesized_qualifier>Parenthesized_qualifier</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parenthesized">Parenthesized</A> 
+  "." 
+  <DT><A name=Call_chain>Call_chain</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unqualified_call">Unqualified_call</A> 
+  "." ...}+ 
+  <DT><A name=Unqualified_call>Unqualified_call</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Entity">Entity</A> 
+  [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Actuals">Actuals</A>] 
+
+  <DT><A name=Actuals>Actuals</A> ::= 
+  <DD>"(" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Actual_list">Actual_list</A> 
+  ")" 
+  <DT><A name=Actual_list>Actual_list</A> ::= 
+  <DD>{<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Actual">Actual</A> 
+  "," ...} 
+  <DT><A name=Actual>Actual</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Address">Address</A> 
+
+  <DT><A name=Address>Address</A> ::= 
+  <DD>"$" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Address_mark">Address_mark</A> 
+
+  <DT><A name=Address_mark>Address_mark</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Feature_name">Feature_name</A> 
+  | <I>Current</I> | <I>Result</I> </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Instruction">Instruction</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Creation">Creation</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+
+<HR>
+
+<H3>GENERAL FORM OF EXPRESSIONS</H3>
+<DL>
+  <DT><A name=Expression>Expression</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Call">Call</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Operator_expression">Operator_expression</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Equality">Equality</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_constant">Manifest_constant</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_array">Manifest_array</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Old">Old</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Strip">Strip</A> 
+
+  <DT><A name=Boolean_expression>Boolean_expression</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  </DD></DL>
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Call">Call</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assignment">Assignment</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assignment_attempt">Assignment_attempt</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Old">Old</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Assertion>Assertions</a> |<A HREF=" 
+#Conditional>Conditional</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Multi_branch">Multi_branch</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Loop">Loop</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#VWBE">Boolean 
+Expression Rule (VWBE)</A> 
+<HR>
+
+<H3>EQUALITY EXPRESSIONS</H3>
+<DL>
+  <DT><A name=Equality>Equality</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Comparison">Comparison</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+
+  <DT><A name=Comparison>Comparison</A> ::= 
+  <DD>"=" | "/=" </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#VWEQ">Equality 
+Expression Rule (VWEQ)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equalitysem">equality 
+semantics</A> 
+<HR>
+
+<H3>OPERATOR EXPRESSIONS</H3>
+<DL>
+  <DT><A name=Operator_expression>Operator_expression</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parenthesized">Parenthesized</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unary_expression">Unary_expression</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Binary_expression">Binary_expression</A> 
+
+  <DT><A name=Parenthesized>Parenthesized</A> ::= 
+  <DD>"(" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  ")" 
+  <DT><A name=Unary_expression>Unary_expression</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix_operator">Prefix_operator</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+
+  <DT><A name=Binary_expression>Binary_expression</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix_operator">Infix_operator</A> 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+
+  <DT><A name=Prefix_operator>Prefix_operator</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unary">Unary</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Free_operator">Free_operator</A> 
+
+  <DT><A name=Infix_operator>Infix_operator</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Binary">Binary</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Free_operator">Free_operator</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Call">Call</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#Operator_expression>disambiguation</a> |<A HREF=" 
+chap23.htm#VWOE?>Operator Expression Rule (VWOE)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#operatorsem">operator 
+semantics</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#precrules">precedence 
+rules</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equivalent dot form">equivalent 
+dot form</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#semi_strict">semi-strict 
+boolean operators</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#balancing">arithmetic 
+balancing rule</A> 
+<HR>
+
+<H3>CONSTANTS</H3>
+<DL>
+  <DT><A name=Constant>Constant</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_constant">Manifest_constant</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constant_attribute">Constant_attribute</A> 
+
+  <DT><A name=Constant_attribute>Constant_attribute</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Entity">Entity</A> 
+
+  <DT><A name=Manifest_constant>Manifest_constant</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Boolean_constant">Boolean_constant</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Character_constant">Character_constant</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Integer_constant">Integer_constant</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Real_constant">Real_constant</A> 
+  | 
+  <DT>
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_string</A> 
+  | <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Bit_constant">Bit_constant</A> 
+
+  <DT><A name=Sign>Sign</A> ::= 
+  <DD>"+" | "-" 
+  <DT><A name=Integer_constant>Integer_constant</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Sign">Sign</A>] 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Integer">Integer</A> 
+
+  <DT><A name=Real_constant>Real_constant</A> ::= 
+  <DD>[<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Sign">Sign</A>] 
+  <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Real">Real</A> 
+
+  <DT><A name=Boolean_constant>Boolean_constant</A> ::= 
+  <DD><B>true</B> | <B>false</B> 
+  <DT><A name=Bit_constant>Bit_constant</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Bit_sequence">Bit_sequence</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Type">Type</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Multi_branch">Multi_branch</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#VWCA">Constant 
+Attribute Rule (VWCA)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#Integer_constant">integer 
+constant semantics</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#Real_constant">real 
+constant semantics</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#Bit_constatn">bit 
+constant semantics</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#Boolean_constant">boolean 
+constant semantics</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#Character_constant">character 
+constant semantics</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#Manifest_string">manifest 
+string semantics</A> 
+<HR>
+
+<H3>MANIFEST ARRAYS</H3>
+<DL>
+  <DT><A name=Manifest_array>Manifest_array</A> ::= 
+  <DD>"&lt;&lt;" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression_list">Expression_list</A> 
+  "&gt;&gt;" 
+  <DT><A name=Expression_list>Expression_list</A> ::- 
+  <DD>{ <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  "," ...} </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#VWMA">Manifest 
+Array Rule (VWMA)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#VWMU">Manifest 
+Array Usage Rule (VWMU)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#manarraysem">manifest 
+array semantics</A> 
+<HR>
+
+<H3>STRIP EXPRESSIONS</H3>
+<DL>
+  <DT><A name=Strip>Strip</A> ::= 
+  <DD><B>strip</B> "(" <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Attribute_list">Attribute_list</A> 
+  ")" 
+  <DT><A name=Attribute_list>Attribute_list</A> ::= 
+  <DD>{ <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  "," ...} </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+| <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#VWST">Strip 
+Expression Rule (VWST)</A> | <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#stripsem">strip 
+expression semantics</A> 
+<HR>
+
+<H3>EXTERNAL ROUTINES</H3>
+<DL>
+  <DT><A name=External>External</A> ::= 
+  <DD><B>external</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Language_name">Language_name</A> 
+  [<A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#External_name">External_name</A>] 
+
+  <DT><A name=Language_name>Language_name</A> ::= 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_string</A> 
+
+  <DT><A name=External_name>External_name</A> ::= 
+  <DD><B>alias</B> <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_string</A> 
+  </DD></DL>
+<H4>See also </H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Routine_body">Routine_body</A> 
+
+<HR>
+
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - H Syntax summary_fichiers/toc.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap33.htm"><IMG 
+src="Eiffel The Reference - H Syntax summary_fichiers/previous.gif"></A> <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap35.htm"><IMG 
+src="Eiffel The Reference - H Syntax summary_fichiers/next.gif"></A> 
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS>
+<P><!-- $Log: chap34.htm,v $
+# Revision 1.8  1995/07/09  13:52:56  neil
+# Prefix and Infix changed
+#
+# Revision 1.7  1995/07/09  10:57:16  neil
+# Separator links fixed
+# Syntax of Parent and Constraint altered
+# New structure Restricted_type
+#
+# Revision 1.6  1995/07/08  09:29:51  neil
+# Syncing changes prior to update
+#
+# Revision 1.5  1995/06/26  09:30:58  neil
+# Syntax summary
+#
+# Revision 1.5  1995/06/26  09:30:58  neil
+# Syntax summary
+#
+# Revision 1.4  1995/06/23  14:27:14  neil
+# Hyperlinks in place
+#
+# Revision 1.3  1995/06/23  14:02:51  neil
+# Syntax complete, hyperlinks missing
+#
+# Revision 1.2  1995/06/23  11:15:12  neil
+# Backward references completed for syntax
+# that is present.
+#
+# Revision 1.1  1995/06/21  07:55:11  neil
+# Initial revision
+#
+--></P></DD></BODY></HTML>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST4"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<obsolete>
+				<chaine>
+					<chaine1>"coucou a tous"</chaine1>
+				</chaine>
+			</obsolete>
+			<corps2>
+				<code/>
+			</corps2>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="b"/>
+		<corps>
+			<require>
+				<assert>
+					<expression>
+						<vrai/>
+					</expression>
+				</assert>
+			</require>
+			<corps2>
+				<code/>
+			</corps2>
+			<ensure>
+				<assert>
+					<expression>
+						<faux/>
+					</expression>
+				</assert>
+			</ensure>
+		</corps>
+	</feature>
+	<feature>
+		<nom_feature nom="a" frozen="on"/>
+		<corps>
+			<corps2>
+				<code/>
+			</corps2>
+			<rescue>
+				<instruction>
+					<affect>
+						<variable nom="a"/>
+						<expression>
+							<entier valeur="1"/>
+						</expression>
+					</affect>
+				</instruction>
+			</rescue>
+		</corps>
+	</feature>
+</class>

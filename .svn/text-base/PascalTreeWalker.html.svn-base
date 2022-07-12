@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Grammar compiler\eiffel.g</TITLE>
+</HEAD>
+<BODY>
+<table summary="" border="1" cellpadding="5">
+<tr>
+<td>
+<font size="+2">Grammar PascalTreeWalker</font><br>
+<a href="http://www.ANTLR.org">ANTLR</a>-generated HTML file from compiler\eiffel.g
+<p>
+Terence Parr, <a href="http://www.magelang.com">MageLang Institute</a>
+<br>ANTLR Version 2.7.2; 1989-1999
+</td>
+</tr>
+</table>
+<PRE>
+
+
+Definition of tree parser PascalTreeWalker, which is a subclass of TreeParser.
+
+	
+	
+<a name="programme">programme</a>
+		:				 #( CLASS ( index | ) n:ID FEATURE ) 
+		;
+	
+	
+<a name="index">index</a>
+		:				 #( INDEXING ( ID DOUBLE_POINT ( ID | STRING )+ SEMI )+ ) 
+		;
+

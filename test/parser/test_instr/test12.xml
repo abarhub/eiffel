@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST12"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<check>
+							<assert>
+								<expression>
+									<expression_binaire op="egal">
+										<expression>
+											<variable nom="x"/>
+										</expression>
+										<expression>
+											<entier valeur="5"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</assert>
+						</check>
+					</instruction>
+					<instruction>
+						<check>
+							<assert tag="a">
+								<expression>
+									<expression_binaire op="egal">
+										<expression>
+											<variable nom="x"/>
+										</expression>
+										<expression>
+											<entier valeur="6"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</assert>
+						</check>
+					</instruction>
+					<instruction>
+						<check>
+							<assert>
+								<expression>
+									<expression_binaire op="egal">
+										<expression>
+											<variable nom="a"/>
+										</expression>
+										<expression>
+											<variable nom="b"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</assert>
+							<assert>
+								<expression>
+									<expression_binaire op="egal">
+										<expression>
+											<variable nom="b"/>
+										</expression>
+										<expression>
+											<variable nom="c"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</assert>
+						</check>
+					</instruction>
+					<instruction>
+						<check>
+							<assert tag="y">
+								<expression>
+									<expression_binaire op="egal">
+										<expression>
+											<variable nom="a"/>
+										</expression>
+										<expression>
+											<variable nom="b"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</assert>
+							<assert>
+								<expression>
+									<expression_binaire op="egal">
+										<expression>
+											<variable nom="z"/>
+										</expression>
+										<expression>
+											<entier valeur="0"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</assert>
+							<assert tag="x">
+								<expression>
+									<expression_binaire op="egal">
+										<expression>
+											<variable nom="b"/>
+										</expression>
+										<expression>
+											<variable nom="c"/>
+										</expression>
+									</expression_binaire>
+								</expression>
+							</assert>
+						</check>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

@@ -1,0 +1,143 @@
+<!ELEMENT class (nom_classe,(obsolete)?,heritage*,
+			creation*,feature*,invariant?)>
+<!ATTLIST class type (deferred|expanded) #IMPLIED>
+
+<!ELEMENT nom_classe (nom_classe*|like)>
+<!ATTLIST nom_classe nom CDATA #IMPLIED>
+<!ATTLIST nom_classe expanded (yes|no) #IMPLIED>
+<!ELEMENT like (expression)>
+
+<!ELEMENT heritage (nom_classe,rename*,export*,
+			undefine?,redefine?,select?)>
+<!ELEMENT rename (nom_feature,nom_feature)>
+<!ELEMENT export (nom_feature*,nom_classe*)>
+<!ELEMENT undefine (nom_feature)*>
+<!ELEMENT redefine (nom_feature)*>
+<!ELEMENT select (nom_feature)*>
+
+
+<!ELEMENT creation (nom_classe*,nom_feature*)>
+<!ATTLIST creation export_none (true|false) #IMPLIED>
+
+<!ELEMENT obsolete (chaine)>
+
+<!ELEMENT nom_feature EMPTY>
+<!ATTLIST nom_feature frozen (on) #IMPLIED>
+<!ATTLIST nom_feature nom CDATA #REQUIRED>
+<!ATTLIST nom_feature type (infix|prefix) #IMPLIED>
+
+<!ELEMENT feature (liste_export?,nom_feature*,
+			parametre_formel*,nom_classe?,corps?)>
+<!ELEMENT liste_export (nom_classe*)>
+<!ELEMENT parametre_formel (nom_classe)>
+<!ATTLIST parametre_formel nom CDATA #REQUIRED>
+
+
+<!ELEMENT corps ((obsolete?,commentaire?,require?,corps2,
+			ensure?,rescue?)|expression|unique)>
+<!ELEMENT corps2 (code|external|deferred)>
+
+<!ELEMENT commentaire (com+)>
+<!ELEMENT com (#PCDATA)>
+
+<!ELEMENT unique EMPTY>
+
+<!ELEMENT code (local*,instruction*)>
+<!ATTLIST code once (yes|no) #IMPLIED>
+
+<!ELEMENT local (nom_classe)>
+<!ATTLIST local nom CDATA #REQUIRED>
+
+<!ELEMENT external (chaine,chaine?)>
+
+<!ELEMENT deferred EMPTY>
+
+<!ELEMENT instruction (if|inspect|debug|creation2|
+			affect|tentative_affect|loop|check|
+			appel|retry)>
+
+<!ELEMENT retry EMPTY>
+
+<!ELEMENT if (expression,instruction*,elseif*,else*)>
+<!ELEMENT elseif (expression,instruction*)>
+<!ELEMENT else (instruction*)>
+
+<!ELEMENT inspect (expression,when_then*)>
+<!ELEMENT when_then (expression_when*,instruction*)>
+<!ELEMENT expression_when (expression*)>
+
+<!ELEMENT debug (chaine*,instruction*)>
+<!ELEMENT check (assert*)>
+
+<!ELEMENT creation2 (nom_classe?,appel)>
+<!ATTLIST creation2 nom CDATA #IMPLIED>
+
+<!ELEMENT affect (variable,expression)>
+<!ATTLIST affect current CDATA #IMPLIED>
+
+<!ELEMENT tentative_affect (variable,expression)>
+<!ATTLIST tentative_affect current CDATA #IMPLIED>
+
+<!ELEMENT loop (instruction*,expression,variant?,
+			invariant?,instruction*)>
+
+<!ELEMENT rescue (instruction)*>
+
+<!ELEMENT require (assert)*>
+<!ELEMENT ensure (assert)*>
+<!ELEMENT variant (expression)>
+<!ELEMENT invariant (assert)*>
+
+<!ELEMENT assert (expression)>
+<!ATTLIST assert tag CDATA #IMPLIED>
+
+<!ELEMENT expression (expression_binaire|
+			expression_unaire|variable|entier|
+			chaine|reel|appel|car|vrai|faux|
+			tableau)>
+<!ELEMENT expression_binaire (expression,expression)>
+<!ATTLIST expression_binaire op (plus|moins|fois|
+			div|or_else|and_then|implies|inf|infs|
+			sup|sups|div_entier|egal|diff|mod|
+			point|puiss|xor|or|and|free_op) #REQUIRED>
+<!ATTLIST expression_binaire nom CDATA #IMPLIED>
+<!ELEMENT expression_unaire (expression)>
+<!ATTLIST expression_unaire op (plus|moins|old|
+			not|free_op|addr) #REQUIRED>
+<!ATTLIST expression_unaire nom CDATA #IMPLIED>
+
+<!ELEMENT tableau (expression)*>
+
+<!ELEMENT vrai EMPTY>
+<!ELEMENT faux EMPTY>
+
+<!ELEMENT variable (appel)?>
+<!ATTLIST variable nom CDATA #REQUIRED>
+
+<!ELEMENT appel (parametre_reel*,appel?)>
+<!ATTLIST appel nom CDATA #REQUIRED>
+<!ELEMENT parametre_reel (expression)*>
+
+<!ELEMENT entier EMPTY>
+<!ATTLIST entier valeur CDATA #REQUIRED>
+
+<!ELEMENT reel EMPTY>
+<!ATTLIST reel valeur CDATA #REQUIRED>
+
+<!ELEMENT car (#PCDATA)>
+<!ELEMENT chaine (chaine1*)>
+<!ELEMENT chaine1 (#PCDATA)>
+
+<!-- Les Erreurs -->
+
+<!ELEMENT liste_erreur (erreur)*>
+<!ELEMENT erreur (VDUS3|VFFD2|VFFD3)>
+
+<!ELEMENT VDUS3 (nom,nom_feature,nom)>
+<!ELEMENT VFFD2 (nom)>
+<!ELEMENT VFFD3 (nom)>
+
+<!ELEMENT nom (#PCDATA)>
+
+<!ELEMENT erreur_context (#PCDATA)>
+<!ATTLIST erreur_context nom CDATA #REQUIRED>

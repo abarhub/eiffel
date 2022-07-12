@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14203</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>init_logger</method>
+  <thread>10</thread>
+  <message>Logger initialisé</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14205</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Compilation de test\interm\test_attribut2\test1.ace</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14217</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Classes chargees:</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859515</millis>
+  <sequence>14227</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Compilation du fichier test\interm\test_attribut2\test1.ace</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859562</millis>
+  <sequence>14231</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Résultat:</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859578</millis>
+  <sequence>14234</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Code intermediaire Ok</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859578</millis>
+  <sequence>14235</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>compile</method>
+  <thread>10</thread>
+  <message>Fin de la compilation</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859578</millis>
+  <sequence>14236</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>test_gc</method>
+  <thread>10</thread>
+  <message>free mem=4182464 ; total mem=5177344 ; max mem=66650112</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859578</millis>
+  <sequence>14237</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>test_gc</method>
+  <thread>10</thread>
+  <message>GC ...</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859593</millis>
+  <sequence>14238</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>test_gc</method>
+  <thread>10</thread>
+  <message>free mem=4390392 ; total mem=5177344 ; max mem=66650112</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859593</millis>
+  <sequence>14239</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>test_gc</method>
+  <thread>10</thread>
+  <message>diff free mem=207928 ; diff total mem=0 ; diff max mem=0</message>
+</record>
+<record>
+  <date>2008-10-19T16:34:19</date>
+  <millis>1224426859593</millis>
+  <sequence>14240</sequence>
+  <logger>tinyeiffel.compiler</logger>
+  <level>INFO</level>
+  <class>tinyeiffel.compiler.Compiler_Eiffel</class>
+  <method>test_gc</method>
+  <thread>10</thread>
+  <message>duree total : 15 ms = 0 s</message>
+</record>
+</log>

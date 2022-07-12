@@ -1,0 +1,6 @@
+<!ELEMENT test_all (test*)>
+
+<!ELEMENT test EMPTY>
+<!ATTLIST test source CDATA #REQUIRED>
+<!ATTLIST test reference CDATA #REQUIRED>
+<!ATTLIST test reference_erreur CDATA #IMPLIED>

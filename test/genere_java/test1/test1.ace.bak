@@ -1,0 +1,15 @@
+system test1
+
+root test1
+
+cluster
+
+	"test\genere_java\test1\";
+	"..\..\..\std_classe\";
+	".\";
+
+--external
+
+--	external_kernel_path:"kernel.xml";
+
+end

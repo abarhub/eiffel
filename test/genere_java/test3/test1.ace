@@ -1,0 +1,10 @@
+system test1
+
+root test1
+
+cluster
+
+	"test\genere_java\test3\";
+	"test\genere_java\std_classe\";
+	".\";
+end

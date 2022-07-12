@@ -1,0 +1,15 @@
+Initialisation
+prologue(1:TEST1.make)
+instr : !A!a(obj=6, loc=(14,9,'!','test\genc\creation_basic\test1.e'))
+instr : !B!b.make(obj=10, loc=(16,9,'!','test\genc\creation_basic\test1.e'))
+prologue(7:B.make)
+instr : i:=I3( loc=(11,9,'i','test\genc\creation_basic\B.e'))
+epilogue(7:B.make)
+instr : !B!b.make2(obj=16, loc=(17,9,'!','test\genc\creation_basic\test1.e'))
+prologue(13:B.make2)
+prologue(17:integer."+")
+epilogue(17:integer."+")
+instr : i:=I13( loc=(18,9,'i','test\genc\creation_basic\B.e'))
+epilogue(13:B.make2)
+epilogue(1:TEST1.make)
+Terminaison

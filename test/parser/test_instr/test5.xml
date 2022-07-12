@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE class SYSTEM "..\..\..\test_unitaire\classe.dtd">
+<class>
+	<nom_classe nom="TEST5"/>
+	<feature>
+		<nom_feature nom="a"/>
+		<corps>
+			<corps2>
+				<code>
+					<instruction>
+						<appel nom="x">
+							<appel nom="make"/>
+						</appel>
+					</instruction>
+					<instruction>
+						<appel nom="make"/>
+					</instruction>
+					<instruction>
+						<appel nom="x">
+							<appel nom="make">
+								<parametre_reel>
+									<expression>
+										<entier valeur="1"/>
+									</expression>
+								</parametre_reel>
+								<parametre_reel>
+									<expression>
+										<entier valeur="2"/>
+									</expression>
+								</parametre_reel>
+							</appel>
+						</appel>
+					</instruction>
+					<instruction>
+						<appel nom="x">
+							<appel nom="make"/>
+						</appel>
+					</instruction>
+					<instruction>
+						<appel nom="x">
+							<appel nom="make">
+								<parametre_reel>
+									<expression>
+										<entier valeur="5"/>
+									</expression>
+								</parametre_reel>
+							</appel>
+						</appel>
+					</instruction>
+					<instruction>
+						<appel nom="make">
+							<parametre_reel>
+								<expression>
+									<entier valeur="1"/>
+								</expression>
+							</parametre_reel>
+							<parametre_reel>
+								<expression>
+									<entier valeur="2"/>
+								</expression>
+							</parametre_reel>
+						</appel>
+					</instruction>
+					<instruction>
+						<appel nom="make"/>
+					</instruction>
+					<instruction>
+						<appel nom="make">
+							<parametre_reel>
+								<expression>
+									<entier valeur="5"/>
+								</expression>
+							</parametre_reel>
+						</appel>
+					</instruction>
+					<instruction>
+						<appel nom="make">
+							<parametre_reel>
+								<expression>
+									<entier valeur="5"/>
+								</expression>
+							</parametre_reel>
+							<appel nom="toto">
+								<appel nom="tata">
+									<parametre_reel>
+										<expression>
+											<chaine>
+												<chaine1>"coucou"</chaine1>
+											</chaine>
+										</expression>
+									</parametre_reel>
+									<appel nom="x"/>
+								</appel>
+							</appel>
+						</appel>
+					</instruction>
+				</code>
+			</corps2>
+		</corps>
+	</feature>
+</class>

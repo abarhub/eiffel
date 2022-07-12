@@ -1,0 +1,7 @@
+class A
+
+feature
+
+	var1:INTEGER is 0;
+
+end

@@ -1,0 +1,365 @@
+<!doctype html public "-//IETF//DTD HTML//EN">
+<HTML>
+
+<HEAD>
+
+<TITLE>Eiffel: The Reference - 25 Lexical Components</TITLE>
+
+<!-- $Id: chap2.htm,v 1.3 1995/07/08 09:29:51 neil Exp neil $ -->
+</HEAD>
+
+<BODY>
+<p><a href="TOC.htm"><IMG SRC=toc.gif></a>
+<a href="chap1.htm"><IMG SRC=previous.gif></a>
+<a href="chap3.htm"><IMG SRC=next.gif></a>
+<p>
+<title>Eiffel: The Reference - 2   Syntax, validity and semantics </title>
+<h1>2   Syntax, validity and semantics </h1>
+<h2>2.2   Syntax, Components, Specimens and Constructs 
+</h2>
+<p>
+Eiffel's <A HREF="chap34.htm">syntax</a> is the set of rules describing the structure of class
+texts. It covers neither limitations on valid texts (described by
+<A HREF="#validity constraint">validity constraints</a>) nor the execution-time meaning or effect of these
+texts (described by <A HREF="#semantics">semantic</a> rules).
+
+<p>
+<h3><A NAME="component"><IMG SRC=definit.gif> component</a>
+</h3>
+<p>
+Any class text, or syntactically meaningful part of that text, such as
+an instruction, an expression or an identifier, is called a
+<B>component</B>.
+
+<H4>See also</h4>
+
+<A HREF="#construct">construct</a> | <A HREF="#specimen">specimen</a> |
+<A HREF="#VBGV">General Validity Rule (VBGV)</a> |
+<A HREF="#semantics">2.8 Semantics</a> |
+<A HREF="#requirements">2.11 Requirements on language processing tools</a>
+
+<p>
+<h3><IMG SRC=definit.gif> <A NAME="construct">construct</a>,
+<A NAME="specimen">specimen </a>
+</h3>
+<p>
+The structure of any <A HREF="#component">component</a> is described by
+a <B>construct</B>. A <A HREF="#component">component</a> conforming to
+a certain construct is called a <B>specimen</B> of that construct. For
+example, the construct <A HREF="chap34.htm#Class_declaration">Class_declaration</a> describes
+the structure of class texts; any particular class text, built
+according to the rules given in this book, is a specimen of this
+construct.
+
+<p>
+All constructs have names beginning with a capital letter and are written
+in the default (roman) font. Each appears in the index with a reference
+to its syntactical definition.
+
+<H4>See also</H4>
+<A HREF="#terminal">terminal</a> | <A HREF="#non-terminal">non-terminal</a> |
+<A HREF="#production">production</a> |
+<A HREF="#valid">valid</a>
+<A HREF="#VBGV">General Validity Rule (VBGV)</a> |
+<A HREF="#semantics">2.8 Semantics</a>
+
+<h3><IMG SRC=definit.gif><A NAME="anx">An X</a>
+</h3>
+<p>
+An important convention will simplify the discussions: the phrase ''an
+X'', where X is the name of a construct, serves as a shorthand for ''a
+specimen of construct X''. For example, ''a Class'' means ''a specimen
+of construct Class'', in other words a text built according to the
+syntactical specification of construct Class.
+
+<p>
+<h2>2.3   Terminals, Non-terminals and Lexical Components
+</h2>
+<p>
+Every <A HREF="#construct">construct</a> is either a ''terminal'' or a ''non-terminal'' as defined next.<p>
+<h3><IMG SRC=definit.gif><A NAME="terminal">terminal</a>,
+<A NAME="non-terminal">non-terminal</a></h3>
+<p>
+Specimens of a <b>terminal</b> construct have no further syntactical
+structure. Examples include <A HREF="chap25.htm#resword">reserved
+words</a> (such as <B>class</B><I>, Result</I> etc.), constants such as
+<A HREF="chap25.htm#Integer>integers</a>, and
+<A HREF="chap25.htm#Identifier">identifiers</a> used to denote classes,
+features and entities. In contrast, the specimens of a
+<b>non-terminal</b> construct are defined in terms of other
+<A HREF="#construct">constructs</a>.
+
+<H4>See also</H4>
+<A HREF="#production">production</a>
+
+<p>
+<h3><IMG SRC=definit.gif><A NAME="lexical component">lexical component</a></h3>
+<p>
+The specimens of terminal constructs are called
+<A HREF="chap25.htm#token">tokens</a> or <B>lexical components</B>.  They
+form the basic vocabulary out of which you may build more complex texts
+- specimens of <A HREF="#non-terminal">non-terminals</a>.
+
+<p>
+<h2><A NAME="productions">2.4   Productions </A>
+</h2>
+<h3><IMG SRC=definit.gif><A NAME="production">production</a>
+</h3>
+<p>
+To understand a non-terminal, you need a formal description of the
+structure of its <A HREF="#specimen">specimens</a>. Such a description
+is called the <B>production</B> for the
+<A HREF="#construct">construct</a>.
+
+<p>
+<IMG SRC=syntax.gif>
+<P>A production has the form 
+<p>
+<DL>
+<DT>Construct ::=
+<DD>right-hand-side
+</DL>
+<p>
+Every <A HREF="#non-terminal">non-terminal</a> construct appears on the
+left-hand side of exactly one such production. The symbol ::= means ''is
+defined as''.
+
+<p>
+The right-hand-side of the production describes the structure of
+<A HREF="#specimen">specimens</a> of the left-hand-side
+<A HREF="#construct">construct</a>. Three forms of right-hand-side are
+available:
+<p>
+<ul>
+<li>Aggregate, describing a <A HREF="#construct">construct</a> made of
+a fixed number of parts (some of which may be optional) to be
+concatenated in a given order.
+
+<li>Choice, describing a <A HREF="#construct">construct</a> having a number of given variants. 
+
+<li>Repetition, describing a <A HREF="#construct">construct</a> made of
+a variable number of parts, which are all
+<A HREF="#specimen">specimens</a> of a given construct.
+</ul><p>
+An aggregate right-hand-side is a non-empty sequence of
+<A HREF="#construct">construct</a>, some of which may be in square
+brackets [ ] to indicate optional parts.
+<p>
+<p>
+A choice right-hand side is a non-empty sequence of
+<A HREF="#construct">construct</a> separated by vertical bars | .
+<p>
+<p>
+A repetition right-hand side is of one of the two forms 
+<p>
+<DL>
+<DT>
+<DD>{<A HREF="#construct">construct</a> &#167; ...}
+<DT>
+<DD>{<A HREF="#construct">construct</a> &#167; ...} +
+</DL>
+<p>
+where &#167;, the separator, is some <A HREF="#construct">construct</a>
+ usually, but not necessarily, <A HREF="#terminal">terminal</a>.
+Appearing in a production for a left-hand side <A
+HREF="#construct">construct</a> <EM>R</EM>, this states that a <A
+HREF="#specimen">specimen</a> of <EM>R</EM> consists of zero or more <A
+HREF="#specimen">specimens</a> of <em>B</em>, separated, if more than one, by
+the separator &#167;. In the first form, without a +, <A
+HREF="#specimen">specimens</a> of <EM>R</EM> may be empty; in the second form,
+with a +, they must include at least one <em>B</em>.
+
+<p>
+<h2>2.6   Validity 
+</h2>
+<p>
+The <A HREF="#production">productions</a> and other elements
+as described so far, specify the 
+structure of <A HREF="#construct">constructs</a>. 
+<p>
+<h3><IMG SRC=definit.gif><A NAME="validity constraint">validity constraint</a>, <A NAME="valid">valid</a></h3>
+<p>
+Supplementary requirements on the syntactically well-formed
+<A HREF="#specimen">specimens</a> of a construct are called <B>validity
+constraints</B> on the construct. Paragraphs introducing them are
+labeled by the VALIDITY road sign.
+<p>
+A <A HREF="#specimen">specimen</a> which follows the syntactic rules
+and satisfies the constraints will be accepted by the language
+processing tools of any Eiffel environment and is said to be
+<B>valid</B>.
+
+<p>
+Every validity constraint has a four-character code beginning with V 
+as well as a title.
+
+<H4>See also</h4>
+<A HREF="#VBGV">General Validity Rule (VBGV)</a> |
+<A HREF="#semantics">2.8 Semantics</a> |
+<A HREF="#correctness">2.9 Correctness</a> |
+<A HREF="#requirements">2.11 Requirements on language processing tools</a>
+
+
+<h2>2.7   Interpreting the Constraints 
+</h2>
+<p>
+<H3><IMG SRC=validity.gif><A NAME="VBGV">(VBGV)</a> General Validity Rule</h3>
+<p>
+Every <A HREF="#validity constraint">validity constraint</a> relative
+to a <A HREF="#construct">construct</a> is considered to include an
+implicit supplementary condition stating that every
+<A HREF="#component">component</a> of the
+<A HREF="#construct">construct</a> satisfies every
+<A HREF="#validity constraint">validity constraint</a> applicable to the
+<A HREF="#component">component</a>.
+
+<p>
+<h2><A NAME="semantics">2.8   Semantics </a>
+</h2>
+<p>
+A construct <A HREF="#specimen">specimen</a> which is syntactically
+legal and <a HREF="#valid">valid</a> has associated
+<b>semantics</b>, specifying its <A HREF="#run time">run-time</a>
+effect in a system in which the <A HREF="#specimen">specimen</a>
+appears. Those semantics may include executing certain actions,
+producing a value, or both. It is defined by the paragraphs. For
+<A HREF="#specimen">specimens</a> made of further
+<A HREF="#component">components</a>, the specification usually refers
+recursively to the <A HREF="#component">components'</a> own semantics.
+
+<p>
+It is important to remember that the SEMANTICS paragraphs only apply to
+valid <A HREF="#specimen">specimens</a>. In many cases, the semantic
+rules would not even make sense otherwise.  Clearly, attempting to
+describe the effect of an invalid component would be useless.
+
+<p>
+<h2><A NAME="correctness">2.9   Correctness </a>
+</h2>
+<p>
+Validity is only a structural property; <A HREF="#valid">valid</a>
+Eiffel software is not guaranteed to perform according to any expected
+behavior. In fact, execution of <A HREF="#valid">valid</a> software may
+lead to non-termination, or to exceptions and eventual failure.
+
+<p> For a <A HREF="#valid">valid</a> component, then, we need a more
+advanced criterion: its ability to operate properly at <A HREF="#run time">run-time</a>. This
+is called <b>correctness</b> and is a more elusive aim than validity,
+since it involves semantic properties.
+
+<p>
+<h2>2.10   The Context of Executing Systems</h2>
+<h3><IMG SRC=definit.gif>
+<A NAME="run time">run time</a>,
+<A NAME="machine">machine</a>,
+<A NAME="platform">platform</a>,
+<A NAME="language processing tool">language processing tool</a>
+</h3>
+<p>
+The following terminology will serve to discuss the context of system
+execution:
+<p>
+<ul>
+<li><b>Run time</b> is the period during which a system is executed.
+
+<li>The <b>machine</b> is the combination of hardware (one or more
+computers) and operating system which makes it possible to execute
+systems.
+
+<li>The machine type, that is to say a certain kind of computer and a
+certain operating system, is called a <b>platform</b>.
+
+<li>To make the text of an Eiffel system executable by a machine, you
+will need software tools such as compilers and interpreters, for which
+this book will use the term <b>language processing tool</b>, general
+enough to cover various implementation techniques.
+</ul>
+<H4>See also</h4>
+<A HREF="#correctness">2.9 Correctness</a> |
+<A HREF="#requirements">2.11 Requirements on language processing tools</a>
+
+<h2><A NAME="requirements">2.11   Requirements on Language Processing Tools </a>
+</h2>
+<p>
+The definition of Eiffel syntax, validity and semantics contained in
+this book is also a specification of certain aspects of the
+corresponding <A HREF="#language processing tool">language processing tools</a>.
+
+<p>
+Not all aspects apply to all <A HREF="#language processing tool">language processing tools</a>.
+<p>
+A <A HREF="#language processing tool">language processing tools</a>that
+processes software components at a certain level (syntax, validity,
+semantics) is not required to perform the tasks associated with that
+level on <A HREF="#component">components</a> which do not not satisfy
+the requirements at the previous levels.
+
+<p>
+In almost all cases, authors of tools should follow a stricter
+guideline and make sure that their tools <B>reject</B> any input that
+does not satisfy the rules applying to the earlier levels. Such
+rejection should include a clear error message. For syntax, the message
+should identify the <A HREF="#production">production</a> which is not
+properly observed; for validity it should give the code of the violated
+<A HREF="#validity constraint">validity constraint</a> (and the clause
+number for constraints divided into clauses).
+
+<p>
+Two special considerations may justify occasional departures from this
+general obligation of rejection:
+<ol>
+
+<li>A semantic tool may be able to process valid parts of a text, even
+if other parts are invalid. For example, a compiler may generate code
+for some <A HREF="#valid">valid</a> classes in a system, rejecting classes which are not
+<A HREF="#valid">valid</a>.
+
+<li>A tool author may have a particular reason for providing a tool or
+tool option which accepts input violating a specific
+<A HREF="#validity constraint">validity constraint</a>. A possible
+application would be for a prototyping mode which attempts to execute
+incomplete systems, or skips certain checks.  Such tool variants are
+outside of the semantics of Eiffel proper and should be clearly labeled
+as such, reminding developers that acceptance of an input text provides
+no guarantee that the text satisfies the full language rules.
+
+</ol>
+<p>
+One final note, intended for implementors of Eiffel, and regarding what
+they might <I>not</I> find here. Although this book goes to great
+lengths to include every relevant validity and semantic property, it
+may of course have left an occasional one out. Such an oversight might
+be a case of <I>incompleteness</I> (a missing <A HREF="#validity constraint">validity constraint</a> or
+semantic specification) or <I>inconsistency</I> (ambiguous or
+contradictory answers).
+
+<p>
+If you run into such a case while trying to produce language processing
+tools, please contact the language committee of NICE by sending
+electronic mail to
+<A HREF="mailto:NICE-ESG-Lang-chair@atlanta.twr.com">&lt;<I>NICE-ESG-Lang-chair@atlanta.twr.com</I>&gt;</a><p>
+<p><a href="TOC.htm"><IMG SRC=toc.gif></a>
+<a href="chap1.htm"><IMG SRC=previous.gif></a>
+<a href="chap3.htm"><IMG SRC=next.gif></a>
+<p>
+<ADDRESS>
+Layout Copyright 1995 Mossy Rock Productions<BR>
+Eiffel is a trademark of the Nonprofit International Consortium
+for Eiffel (NICE).<BR>
+Contact NICE at <A HREF="mailto:nice@twr.com">nice@twr.com</A>
+
+</ADDRESS>
+
+<P>
+<!-- $Log: chap2.htm,v $
+# Revision 1.3  1995/07/08  09:29:51  neil
+# highlighting made consistent
+#
+# Revision 1.2  1995/06/28  12:04:57  neil
+# Initial update. Intra-chapter links inserted
+#
+-->
+</BODY>
+
+</HTML>
+

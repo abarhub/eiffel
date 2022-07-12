@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml-stylesheet type="text/xsl" href="..\..\..\test_unitaire\programme.xsl"?>
+<!DOCTYPE programme SYSTEM "..\..\..\test_unitaire\programme.dtd">
+<!-- test appel extern  -->
+<programme>
+	<classe>
+		<type nom="TEST1"/>
+		<attribut>
+			<nom_attribut nom="make"/>
+			<type nom="TEST1"/>
+			<routine>
+				<signature/>
+				<declare_var nom="a1">
+					<type nom="ANY"/>
+				</declare_var>
+				<declare_var nom="test2">
+					<type nom="ANY"/>
+				</declare_var>
+				<instruction>
+					<instr_extern lang_extern="C">
+						<nom_attribut nom="toto"/>
+					</instr_extern>
+					<instr_extern lang_extern="fortran">
+						<nom_attribut nom="toto"/>
+						<expression_scalaire type="booleen" text="true"/>
+					</instr_extern>
+					<instr_extern lang_extern="prolog" opt_extern="coucou">
+						<nom_attribut nom="toto"/>
+						<expression_scalaire type="booleen" text="true"/>
+					</instr_extern>
+				</instruction>
+			</routine>
+		</attribut>
+	</classe>
+	<classe>
+		<type nom="ANY"/>
+	</classe>
+	<classe>
+		<type nom="NONE"/>
+		<hierarchie>
+			<type nom="TEST1"/>
+			<type nom="ANY"/>
+		</hierarchie>
+	</classe>
+</programme>

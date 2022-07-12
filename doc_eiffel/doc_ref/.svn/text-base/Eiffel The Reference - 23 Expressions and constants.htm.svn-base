@@ -1,0 +1,498 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0063)http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm -->
+<HTML><HEAD><TITLE>Eiffel: The Reference - 23 Expressions and constants</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 5.50.4134.100" name=GENERATOR>
+<META content="Neil Wilson" name=AUTHOR><!-- $Id: chap23.htm,v 1.4 1995/07/08 09:29:51 neil Exp neil $ --></HEAD>
+<BODY>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/toc.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap22.htm"><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap24.htm"><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/next.gif"></A> 
+
+<P>
+<P>
+<H1>23 Expressions and constants</H1>
+<H2>23.2 General Form of Expressions</H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/validity.gif"><A 
+name=VWBE>(VWBE) Boolean Expression Rule</A> </H3>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Boolean_expression">Boolean_expression</A> 
+is valid if and only if it is an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+of type <I>BOOLEAN</I>. 
+<H2>23.3 Equality Expressions</H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/validity.gif"><A 
+name=VWEQ>(VWEQ) Equality Expression Rule</A> </H3>An <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Equality">Equality</A> 
+expression is valid if and only if either of its operands conforms to the other. 
+
+<H3><A name=equalitysem><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></A></H3>
+<P>An <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Equality">Equality</A> 
+expression <I>e</I> = <I>f</I> is an expression of type <I>BOOLEAN</I>. How its 
+value is determined depends upon the expansion status of the operands: 
+<UL>
+  <LI>where both operands are reference types, the expression will return true 
+  if and only if either: 
+  <UL>
+    <LI>both <I>e</I> and <I>f</I> are <I>Void</I> 
+    <LI><I>e</I> is attached to the same object as <I>f</I>. </LI></UL>
+  <LI>otherwise the result depends upon the conformance of <I>e</I> and 
+  <I>f</I>: 
+  <UL>
+    <LI>If <I>f</I> conforms to <I>e</I> the result is that of the call 
+    <I>standard_equal</I> (<I>e</I>, <I>f</I>). 
+    <LI>otherwise the result is that of the call <I>standard_equal</I> 
+    (<I>f</I>, <I>e</I>). </LI></UL></LI></UL>
+<P>The effect of the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Equality">Equality</A> 
+expression <I>e</I> /= <I>f</I> is defined in all cases as equivalent to 
+<B>not</B> (<I>e</I> = <I>f</I>). 
+<H2><A name=Operator_expression>23.5 Operator Expressions and Precedence 
+Rules</A></H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/syntax.gif"></H3>
+<P>You may build <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Operator_expression>Operator_expressions</A>by combining simpler expressions through <A HREF=" 
+chap34.htm#Prefix_operator>prefix</A> and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix_operator>infix</A> operators. Theymay be <A HREF=" 
+chap34.htm#Parenthesized?>Parenthesized</A> to avoid ambiguities where 
+necessary. 
+<P>Without parentheses the syntax for <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Operator_expression>Operator_expression</A>is highly ambiguous. To get a practically usable syntactical definitionthis must be complemented by <A HREF=" 
+#precrules>precedence rules</A>. Operators and syntax elements that behave like 
+operators (ie. <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Equality">Equality</A> 
+and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Old">Old</A>) 
+are disambiguated by these rules. 
+<P>Parentheses override any implicit grouping implied by the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#precrules">precedence 
+rules</A>. If <I>exp</I> and <I>other_exp</I> are arbitrary expressions, and @@ 
+an arbitrary <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix_operator">Infix_operator</A> 
+(or a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Comparison">Comparison</A>), 
+the first operand of @@ in the expression (<I>exp</I>) @@ <I>other_exp</I> is 
+always the value of <I>exp</I>. Similarly, the second operand of @@ in the 
+expression <I>other_exp</I> @@ (<I>exp</I>) is always the value of <I>exp</I>. 
+<P>The expression ## (<I>exp</I>) (where ## is <B>old</B> or a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix_operator">Prefix_operator</A>) 
+always denotes the application of ## to the value of <I>exp</I>. 
+<H4>Operator precedence</H4>
+<DL>
+  <DT>9 
+  <DD><B>old</B>, all <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix_operator">prefix 
+  operators</A>. 
+  <DT>8 
+  <DD>all free <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Infix_operator">infix 
+  operators</A>. 
+  <DT>7 
+  <DD>^ 
+  <DT>6 
+  <DD>*, /, \\, // 
+  <DT>5 
+  <DD><A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Binary>Binary</A>+, <A HREF=" 
+  chap34.htm#Binary>Binary</A>- 
+  <DT>4 
+  <DD>&lt;, =, /=, &gt;, &lt;=, &gt;= 
+  <DT>3 
+  <DD><B>and</B>, <B>and then</B> 
+  <DT>2 
+  <DD><B>or</B>, <B>or else</B>, <B>xor</B> 
+  <DT>1 
+  <DD><B>implies</B> </DD></DL>
+<H4><A name=precrules>Precedence rules</A></H4>
+<P>In the following discussion, reference to infix operator includes the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Comparison>Comparison</A> operators andreference to prefix operator includes <B>old</B>.<P>To interpret expressions containing two or more consecutive operators@@ and ##, with no intervening parentheses. The relevantcases are:<OL><LI>@@ and ## are the same infix operator, as in <I>a</I>@@ <I>b</I> @@ <I>c</I>.<LI>@@ and ## are different infix operators, as in <I>a</I>@@ <I>b</I> ## <I>c</I>.<LI>@@ and ## are prefix operators, as in @@ ##<I>a</I>.<LI>One operator is infix and the other one is prefix, as in ##<I>a</I> @@ <I>b</I> or <I>a</I> @@ ## <I>b</I> (where@@ is infix and ## is prefix).</OL><P>For two or more consecutive occurrences of the same infix operator@@ (case 1), left-to-right association always applies, exceptif @@ is the operator ^, for which the association is right-to-left.This means that <I>a</I> @@ <I>b</I> @@ <I>c</I> is understoodas <I>a</I> @@ (<I>b</I> @@ <I>c</I>) unless @@ is^, where <I>a</I> ^ <I>b</I> ^ <I>c</I> is understood as <I>a</I>^ (<I>b</I> ^ <I>c</I>).<P>For different infix operators (case 2) precedence determines thegrouping unless it is the same for both operators. So the expression<I>a</I> @@ <I>b</I> ## <I>c</I> is understood as <I>a</I>@@ (<I>b</I> ## <I>c</I>), if ## has a higher precedencethan @@ . If the two operators have the same precedence or## has a lower precedence than @@ then left-to-right associationapplies and the expression is understood as (<I>a</I> @@ <I>b</I>)## <I>c</I>.<P>For prefix operators (case 3) the expression ## @@ <I>a</I>is understood as ## (@@ <I>a</I>) in all cases even if## and @@ are the same operator.<P>For a mixture of infix and prefix operators (case 4) the prefixoperators will always bind tightest. Therefore ## <I>a</I>@@ <I>b</I> is understood as (##<I>a</I>) @@ <I>b</I>and <I>a</I> @@ ## <I>b</I> is understood as <I>a</I>@@ (##<I>b</I>). This applies in particular when @@and ## are the same operator, used as infix in one case andprefix in the other. So <I>a</I> - - <I>b</I> means the same as<I>a</I>- (- <I>b</I>)<H2>23.6 Validity and Semantics of Operator Expressions</H2><H3><IMG SRC=validity.gif><A NAME=" 
+VWOE?>(VWOE) Operator Expression Rule</A> 
+<H3></H3>An <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Operator_expression">Operator_expression</A> 
+is valid if and only if its <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equivalent dot form">equivalent 
+dot form</A> is a valid <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Call">Call</A> 
+
+<H3><A name=operatorsem><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></A></H3>
+<P>The semantics of an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Operator_expression">Operator_expression</A> 
+is simply the semantics of calls: the value of an operator expression is the 
+value that would be returned by the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equivalent dot form>equivalent dot form</A>.This is complemented by a <A HREF=" 
+#semi_strict?>special rule</A> for semi-strict boolean operators. 
+<H2><A name="equivalent dot form">23.7 Equivalent Dot Form</A></H2>
+<P>To obtain the equivalent dot form of an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A>, 
+first disambiguate the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression>Expression</a> byapplying the <A HREF=" 
+#precrules?>precedence rules</A>. Then: 
+<UL>
+  <LI>Replace every <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unary_expression">Unary_expression</A> 
+  of the form @@ <I>e</I> by the equivalent dot form 
+  (<I>e'</I>).<I>equiv_name</I> where <I>equiv_name</I> is the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equivalentid">equivalent 
+  identifier name</A> for operator @@ and <I>e'</I> is (recursively) the 
+  equivalent dot form of <I>e</I>. 
+  <LI>For every <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Binary_expression">Binary_expression</A> 
+  of the form <I>e</I> @@ <I>f</I> apply the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#balancing">Arithmetic 
+  Balancing Rule</A> and then replace by the equivalent dot form 
+  (<I>e'</I>).<I>equiv_name</I> (<I>f '</I>) where <I>equiv_name</I> is the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equivalentid">equivalent 
+  identifier name</A> for operator @@ and <I>e'</I> and <I>f'</I> are 
+  (recursively) the equivalent dot forms of <I>e</I> and <I>f</I>. 
+  <LI>Replace every <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parenthesized">Parenthesized</A> 
+  expression (<I>e</I>), where <I>e</I> is not in equivalent dot form, by 
+  (<I>e'</I>), where <I>e'</I> is (recursively) the equivalent dot form of 
+  <I>e</I>. 
+  <LI>For other kinds of <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  <I>e</I>, the equivalent dot form is obtained by applying the transformation 
+  recursively to the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  sub-components of <I>e</I>. Where <I>e</I> has no <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+  sub-components then <I>e</I> is its own equivalent dot form. </LI></UL>
+<H3><A name=equivalentid><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/definit.gif">equivalent 
+identifier name</A> </H3>
+<P>For every <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Prefix_operator>Prefix_operator</A> andevery <A HREF=" 
+chap34.htm#Infix_operator?>Infix_operator</A> in a class there exists, for the 
+purposes of determining <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equivalent dot form">equivalent 
+dot form</A> and no other, an <B>equivalent identifier name</B>. The form of 
+this name is not defined by the language, other than it must not conflict with 
+any other feature name or other equivalent identifier name within the class. 
+<P>A consequence of the fact that these names exist only for determining <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equivalent dot form">equivalent 
+dot form</A> is that they can cause no name clashes with user defined entities. 
+<H2><A name=semi_strict>23.9 Semi-strict Boolean Operators</A> </H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></H3>
+<P>For operands of values <I>v1</I> and <I>v2</I> these operators yield the 
+following results: 
+<UL>
+  <LI><B>and then</B>: false if <I>v1</I> is false, otherwise the value of 
+  <I>v2</I>. 
+  <LI><B>or else</B>: true if <I>v1</I> is true, otherwise the value of 
+  <I>v2</I>. 
+  <LI><B>implies</B>: true if <I>v1</I> is false, otherwise the value of 
+  <I>v2</I>. (In other words <I>a</I> <B>implies</B> <I>b</I> has the same value 
+  as <B>not</B> <I>a</I> <B>or else</B> <I>b</I>). </LI></UL>
+<P>The semantics of these operators is semi-strict. This means that any one of 
+these operators may yield a result on the sole basis of its first operand 
+<I>v1</I>. This occurs when <I>v1</I> is false for <B>and then</B> and true for 
+the other two. In these cases the implementation must not under any 
+circumstances evaluate <I>v2</I>. 
+<P>The semi-strict evaluation need only occur for the versions of these 
+operators whose origin is the class <I>BOOLEAN</I>. It need not occur (and 
+probably won't make sense) for any other version. 
+<H4>See also</H4><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#operatorsem">operator 
+semantics</A> 
+<H2>23.10 Arithmetic Operators and the Balancing Rule</H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"><A 
+name=balancing>Arithmetic Expression Balancing Rule</A></H3>
+<P>In determining the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equivalent dot form">equivalent 
+dot form</A> of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Binary_expression">Binary_expression</A> 
+involving operands of arithmetic types (one or more of <I>DOUBLE</I>, 
+<I>REAL</I> and <I>INTEGER</I>), first convert all operands to the heaviest 
+operand type occurring in the expression. 
+<H2>23.12 Entities</H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/validity.gif"><A 
+name=VWID>(VWID)</A> Identifier Rule</H3>An <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+appearing in an expression as part of the text of a routine <I>r</I> in a class 
+<I>C</I>, either by itself or as the target or actual argument of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Call">Call</A>, 
+must be the name of a feature of <I>C</I>, a local entity of <I>r</I>, or a 
+formal argument of <I>r</I>. 
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></H3>
+<P>The value of an entity of each possible form, evaluated during a call to the 
+enclosing routine, is defined as follows: 
+<UL>
+  <LI>The value of a Local entity (including <I>Result</I>) results from the 
+  successive instructions that may have been applied to the entity since the 
+  default initializations, performed anew on each call. 
+  <LI>The value of a routine's Formal argument is obtained, according to the 
+  rules of direct reattachment, from the value of the corresponding actual 
+  argument at the time of the current call. This value may not change for the 
+  duration of that call (although fields of the attached object, if any, may 
+  change). 
+  <LI>The value of <I>Current</I> is the current object. </LI></UL>
+<H2>23.13 Constants</H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/validity.gif"> 
+<A name=VWCA>(VWCA)</A> Constant Attribute Rule </H3>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Constant_attribute">Constant_attribute</A> 
+appearing in a class <I>C</I> is valid if and only if its <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Entity">Entity</A> 
+is the final name of a constant attribute of <I>C</I>. 
+<H2><A name=Integer_constant>23.14 Integer Constants</A></H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></H3>
+<P>The value of an <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Integer_constant">Integer_constant</A> 
+is of type <I>INTEGER</I> and depends upon its form: 
+<UL>
+  <LI>With a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Sign">Sign</A> 
+  the value is (recursively) that which would be obtained if the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Integer_constant">Integer_constant</A> 
+  was evaluated as a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unary_expression">Unary_expression</A>. 
+
+  <LI>Otherwise the value is that suggested by the sequence of digits in the 
+  associated <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Integer">Integer</A>. 
+  Any underscores are discounted and do not affect the meaning. </LI></UL>
+<H2><A name=Real_constant>23.15 Real Constants</A></H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></H3>
+<P>The value of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Real_constant">Real_constant</A> 
+depends upon its form: 
+<UL>
+  <LI>With a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Sign">Sign</A> 
+  the value is (recursively) that which would be obtained if the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Real_constant">Real_constant</A> 
+  was evaluated as a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Unary_expression">Unary_expression</A>. 
+
+  <LI>Otherwise the value is that suggested by the sequence of digits in the 
+  integral part and the fractional part. An empty part is taken to mean 0. 
+  Underscores are discounted and do not affect the meaning. If the exponent part 
+  is present then the value before the exponent is to be scaled by 10 to the 
+  power of the value of the optional sign and <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Integer">Integer</A> 
+  evaluated as an <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#Integer_constant">Integer_constant</A>. 
+  </LI></UL>
+<P>The type of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Real_constant">Real_constant</A> 
+is <I>REAL</I> if the constant is small enough to be completely represented in 
+this type, otherwise the type is <I>DOUBLE</I>. 
+<H2><A name=Bit_constant>23.16 Bit Constants</A></H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></H3>
+<P>The value of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Bit_constant">Bit_constant</A> 
+is the binary number suggested by the sequence of zeros and ones in the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Bit_sequence">Bit_sequence</A>. 
+
+<P>Such a constant is of type <I>BIT N</I>, where <I>N</I> is the number of 
+zeros and ones in the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Bit_sequence">Bit_sequence</A>. 
+
+<H2><A name=Boolean_constant>23.16(A) Boolean Constants</A> </H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></H3>
+<P>The value of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Boolean_constant">Boolean_constant</A> 
+is of type <I>BOOLEAN</I> and is true if and only if the constant is the keyword 
+<B>true</B>. 
+<H2><A name=Character_constant>23.17 Character Constants</A> </H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></H3>
+<P>The value of the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Character_constant">Character_constant</A> 
+is the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#charvalues">value</A> 
+of the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">encoded</A> 
+character between the single quotes. The constant is of type <I>CHARACTER</I>. 
+<H3><A name=charvalues><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/definit.gif"> 
+Encoded Character Values</A> </H3>
+<P><A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">Encoded 
+characters</A> allow the representation of characters that cannot be directly 
+typed via the keyboard. They can only be used within <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Character_constant">Character_constants</A> 
+and <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_strings</A>. 
+Their values are as follows: 
+<UL>
+  <LI>The value of a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#C1>C1</A> character isthe character itself.<LI>The value of a <A HREF=" 
+  chap25.htm#C2>C2</A> character is taken from the <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#C2values">C2 
+  character values table</A>. 
+  <LI>The value of a <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#C3>C3</A> character isthe character from the underlying character set represented by<EM>code</EM>, the encapsulated <A HREF=" 
+  chap25.htm#Integer>Integer</A>. </LI></UL>
+<H4><A name=C2values>C2 Character Values</A></H4>
+<P><CODE></CODE>
+<DL>
+  <DT>%A 
+  <DD>At sign - @ 
+  <DT>%B 
+  <DD>Backspace 
+  <DT>%C 
+  <DD>Circumflex - ^ 
+  <DT>%D 
+  <DD>Dollar - $ 
+  <DT>%F 
+  <DD>Form feed 
+  <DT>%H 
+  <DD>backslasH - \ 
+  <DT>%L 
+  <DD>tiLda - ~ 
+  <DT>%N 
+  <DD>Newline 
+  <DT>%Q 
+  <DD>backQuote - ` 
+  <DT>%R 
+  <DD>carriage Return 
+  <DT>%S 
+  <DD>Sharp - # 
+  <DT>%T 
+  <DD>horizontal Tab 
+  <DT>%U 
+  <DD>nUll character 
+  <DT>%V 
+  <DD>Vertical bar 
+  <DT>%% 
+  <DD>percent - % 
+  <DT>%' 
+  <DD>single quote - ' 
+  <DT>%" 
+  <DD>double quote - " 
+  <DT>%( 
+  <DD>opening bracket - [ 
+  <DT>%) 
+  <DD>closing bracket - ] 
+  <DT>%&lt; 
+  <DD>opening brace - { 
+  <DT>%&gt; 
+  <DD>closing brace - } </DD></DL>
+<H2><A name=Manifest_string>23.18 Manifest Strings</A></H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></H3>
+<P>The value of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Manifest_string">Manifest_string</A> 
+is the sequence of <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#encoded">encoded</A> 
+character <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#charvalues">values</A> 
+between the double quotes, after all the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#stringbreak">string 
+breaks</A> have been removed. 
+<P>A manifest string is of type <I>STRING</I>. 
+<H2><A name=Manifest_array>23.20 Manifest Arrays</A></H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/validity.gif"> 
+<A name=VWMA>(VWMA)</A> Manifest Array Rule</H3>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_array">Manifest_array</A> 
+&lt;&lt;<I>e1</I>, <I>e2</I>, ... <I>en</I>&gt;&gt; is a valid expression of 
+type <I>ARRAY</I> [<I>T</I>] if and only if the type of every <I>ei</I> conforms 
+to <I>T</I> 
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/validity.gif"> 
+<A name=VWMU>(VWMU)</A> Manifest Array Usage Rule </H3>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_array">Manifest_array</A> 
+may not be used directly as the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Expression">Expression</A> 
+part of <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parenthesized">Parenthesized</A> 
+within the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Parenthesized_qualifier>Parenthesized_qualifier</A>part of a <A HREF=" 
+chap34.htm#Call?>Call</A> (whether in <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap23.htm#equivalent dot form">Equivalent 
+Dot Form</A> or otherwise). 
+<H3><A name=manarraysem><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></A></H3>
+<P>The value of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_array">Manifest_array</A> 
+made of <I>N</I> expressions is an array of bounds 1 and <I>N</I>, whose 
+elements are the values of the successive expressions in the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Manifest_array">Manifest_array</A>. 
+In this definition, an "array" is an instance of the class <I>ARRAY</I>. The 
+exact type of the instance is determined statically by the context at the point 
+of declaration, and is not changed to reflect redeclarations in descendants. 
+<H2><A name=Strip>23.21 Strip Expressions</A></H2>
+<H3><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/validity.gif"> 
+<A name=VWST>(VWST)</A> Strip Expression Rule </H3>A <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Strip">Strip</A> 
+expression appearing in class <I>C</I> is valid if and only if its <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Attribute_list">Attribute_list</A> 
+satisfies the following conditions: 
+<UL>
+  <LI>Every <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  appearing in the list is the final name of an attribute of <I>C</I>. 
+  <LI>No <A 
+  href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap25.htm#Identifier">Identifier</A> 
+  appears twice in the list. </LI></UL>
+<H3><A name=stripsem><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/semantic.gif"></A></H3>
+<P>Consider the evaluation of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Strip">Strip</A> 
+expression as part of a call to a routine <I>r</I>, whose origin is a class 
+<I>C</I>. Let <I>a1</I>, ..., <I>an</I> be the set containing all the attributes 
+of <I>C</I> except for those listed in the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Attribute_list">Attribute_list</A>, 
+if present, of the <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Strip">Strip</A> 
+expression. Let CO be the current object for the call (CO is an instance, not 
+necessarily direct, of a type based on <I>C</I>). Then the value of the 
+expression is an array bounded from 1 to <I>n</I> whose elements are the fields 
+of CO corresponding to attributes <I>a1</I>, ..., <I>an</I> appearing in an 
+order which only depends on class <I>C</I> (that is to say, is the same for all 
+possible values of the object CO). 
+<P>The type of a <A 
+href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap34.htm#Strip">Strip</A> 
+expression is <I>ARRAY</I> [<I>ANY</I>] 
+<HR>
+
+<P>
+<P><A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/TOC.htm"><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/toc.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap22.htm"><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/previous.gif"></A> 
+<A href="http://www.wiwi.uni-karlsruhe.de/info/doc/eiffel_ref/chap24.htm"><IMG 
+src="Eiffel The Reference - 23 Expressions and constants_fichiers/next.gif"></A> 
+
+<P>
+<ADDRESS>Layout Copyright 1995 Mossy Rock Productions<BR>Eiffel is a trademark 
+of the Nonprofit International Consortium for Eiffel (NICE).<BR>Contact NICE at 
+<A href="mailto:nice@twr.com">nice@twr.com</A> </ADDRESS><!-- $Log: chap23.htm,v $
+# Revision 1.4  1995/07/08  09:29:51  neil
+# Road Sign Graphics included
+# Faults spotted by Jim McKim and Steve Tynor fixed
+# Validity rules removed from within blockquote
+#
+# Revision 1.3  1995/06/26  09:32:11  neil
+# Regenerated links based on new document naming scheme
+#
+# Revision 1.3  1995/06/26  09:32:11  neil
+# Regenerated links based on new document naming scheme
+#
+# Revision 1.2  1995/06/23  18:27:02  neil
+# Precedence rules incorporated into e.d.f
+# Navigation links inserted
+#
+# Revision 1.1  1995/06/21  07:55:11  neil
+# Initial revision
+#
+--></BODY></HTML>

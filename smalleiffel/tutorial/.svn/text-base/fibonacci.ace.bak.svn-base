@@ -1,0 +1,20 @@
+system fibonnacci
+
+root fibonnacci
+
+cluster
+
+	"smalleiffel\tutorial\";
+	"smalleiffel\lib\base\";
+	"smalleiffel\lib\io\";
+	"smalleiffel\lib\iterator\";
+	"smalleiffel\lib\kernel\";
+	"smalleiffel\lib\number\";
+	"smalleiffel\lib\random\";
+	"smalleiffel\lib\sorting\";
+	"smalleiffel\lib\time\";
+
+	--".\std_classe\";
+	".\";
+
+end

@@ -1,0 +1,9 @@
+Buildfile: build.xml
+
+compile:
+     [echo] Debut:D:\projet\eiffel
+    [javac] Compiling 154 source files
+     [echo] Terminer
+
+BUILD SUCCESSFUL
+Total time: 16 seconds
